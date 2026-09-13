@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment voyage une page web — GotIt</title>
+<meta name="description" content="L’annuaire du web, le trajet des données et le cadenas du navigateur, expliqués en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/reseau">Réseau</a><span>/</span>Comment ça circule<span>/</span>Les bases
+      </div>
+      <h1>Comment voyage une page web</h1>
+      <p class="lead">
+        Vous tapez une adresse, la page s’affiche. Entre les deux, il s’est passé un annuaire,
+        un trajet de quelques milliers de kilomètres et une négociation de sécurité — en moins
+        d’une seconde.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-1">Découverte</span><span class="tag">7 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Internet n’est pas un endroit : c’est un <strong>accord</strong>. Des millions de machines
+        acceptent de se transmettre des paquets d’informations selon les mêmes règles. Rien
+        d’autre. Le web, lui, n’est qu’un usage parmi d’autres de cet accord.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : la résolution d’une adresse web">
+        <div class="scene-title">Scène 1 — Trouver la bonne machine</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un nom de domaine est traduit en adresse IP par un annuaire, le DNS">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="60" width="230" height="72" rx="12" class="s-box"/>
+              <text x="155" y="90" text-anchor="middle" class="s-label-xs">CE QUE VOUS TAPEZ</text>
+              <text x="155" y="116" text-anchor="middle" class="s-label">exemple.fr</text>
+            </g>
+
+            <g data-show="2-4" class="m-pop">
+              <rect x="320" y="60" width="170" height="72" rx="12" class="s-box-teal"/>
+              <text x="405" y="90" text-anchor="middle" class="s-label">L’annuaire</text>
+              <text x="405" y="112" text-anchor="middle" class="s-label-xs">le « DNS »</text>
+              <path d="M278 96 H 316" class="s-line m-draw" data-show="2-4"/>
+            </g>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="540" y="60" width="220" height="72" rx="12" class="s-box-accent"/>
+              <text x="650" y="90" text-anchor="middle" class="s-label-xs">L’ADRESSE RÉELLE</text>
+              <text x="650" y="116" text-anchor="middle" class="s-label">93.184.42.7</text>
+              <path d="M498 96 H 536" class="s-line m-draw" data-show="3-4"/>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="150" y="176" width="500" height="86" rx="12" class="s-box"/>
+              <text x="400" y="206" text-anchor="middle" class="s-label-sm">un nom se retient, un numéro se route</text>
+              <text x="400" y="232" text-anchor="middle" class="s-label-xs">« exemple.fr » est pour vous, « 93.184.42.7 » est pour le réseau</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Vous tapez un nom.</b><span>« exemple.fr » est fait pour être retenu par un humain. Le réseau, lui, ne sait pas quoi en faire.</span></p>
+          <p class="step" data-duration="4600"><b>Le navigateur consulte un annuaire.</b><span>C’est le DNS : l’équivalent des pages blanches. On lui donne un nom, il rend un numéro.</span></p>
+          <p class="step" data-duration="4400"><b>Il obtient une adresse IP.</b><span>Une suite de chiffres qui désigne une machine précise sur le réseau — comme une adresse postale désigne un bâtiment.</span></p>
+          <p class="step" data-duration="4800"><b>Deux systèmes de nommage, deux publics.</b><span>Changer d’hébergeur, c’est changer le numéro dans l’annuaire sans changer le nom. Vos visiteurs ne voient rien.</span></p>
+        </div>
+      </section>
+
+      <h2>Le trajet, étape par étape</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : le trajet d’une requête jusqu’au serveur">
+        <div class="scene-title">Scène 2 — Le voyage aller-retour</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une requête passe de l’ordinateur à la box, puis à l’opérateur, puis au serveur, et la réponse revient découpée en paquets">
+            <g data-show="1-5" class="s-label-sm">
+              <rect x="30" y="110" width="130" height="70" rx="10" class="s-box"/>
+              <text x="95" y="142" text-anchor="middle" class="s-label-sm">Vous</text>
+              <text x="95" y="162" text-anchor="middle" class="s-label-xs">wifi</text>
+
+              <rect x="220" y="110" width="130" height="70" rx="10" class="s-box-teal"/>
+              <text x="285" y="150" text-anchor="middle" class="s-label-sm">La box</text>
+
+              <rect x="410" y="110" width="150" height="70" rx="10" class="s-box-violet"/>
+              <text x="485" y="142" text-anchor="middle" class="s-label-sm">L’opérateur</text>
+              <text x="485" y="162" text-anchor="middle" class="s-label-xs">puis la fibre</text>
+
+              <rect x="620" y="110" width="150" height="70" rx="10" class="s-box-accent"/>
+              <text x="695" y="150" text-anchor="middle" class="s-label-sm">Le serveur</text>
+            </g>
+
+            <path d="M165 132 H 215" class="s-line m-draw" data-show="1-5"/>
+            <path d="M355 132 H 405" class="s-line m-draw" data-show="2-5"/>
+            <path d="M565 132 H 615" class="s-line m-draw" data-show="3-5"/>
+            <circle r="7" class="packet" data-show="1" style="offset-path:path('M165 132 H 215')"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M355 132 H 405')"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M565 132 H 615')"/>
+
+            <g data-show="4-5">
+              <path d="M615 162 H 165" class="s-line m-draw" data-show="4-5"/>
+              <circle r="6" class="packet packet-teal" data-show="4-5" style="offset-path:path('M615 162 H 165')"/>
+              <text x="390" y="196" text-anchor="middle" class="s-label-xs" data-show="4-5">la page revient découpée en paquets</text>
+            </g>
+
+            <g data-show="5" class="m-rise">
+              <rect x="230" y="222" width="340" height="40" rx="20" class="s-box-teal"/>
+              <text x="400" y="248" text-anchor="middle" class="s-label-sm">le tout en une fraction de seconde</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>1. Votre appareil parle à la box.</b><span>En wifi ou par câble. La box est la porte de sortie de votre logement.</span></p>
+          <p class="step" data-duration="4200"><b>2. La box confie la demande à votre opérateur.</b><span>Qui la fait passer de réseau en réseau, souvent par des câbles sous-marins.</span></p>
+          <p class="step" data-duration="4200"><b>3. La demande arrive au serveur.</b><span>La machine repérée à l’étape précédente. Elle prépare la page.</span></p>
+          <p class="step" data-duration="4800"><b>4. La réponse revient, découpée en paquets.</b><span>Une page n’arrive pas d’un bloc : elle est coupée en morceaux numérotés, qui peuvent emprunter des chemins différents et sont réassemblés à l’arrivée.</span></p>
+          <p class="step" data-duration="4800"><b>5. Et si un paquet se perd, il est redemandé.</b><span>C’est cette mécanique de renvoi qui rend le réseau robuste — et qui explique qu’une page s’affiche par morceaux quand la connexion est mauvaise.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Envoyer un livre par la poste, page par page, dans des enveloppes numérotées. Chaque
+          enveloppe peut suivre une route différente ; le destinataire les remet dans l’ordre.
+          Si l’enveloppe 37 n’arrive pas, il la redemande. C’est très exactement ce que fait
+          votre navigateur.
+        </p>
+      </div>
+
+      <h2>Et le petit cadenas ?</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : ce que protège le HTTPS">
+        <div class="scene-title">Scène 3 — Ce que change le « s » de https</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Sans chiffrement le message est lisible en route, avec chiffrement il est illisible">
+            <g data-show="1-2">
+              <rect x="40" y="50" width="720" height="90" rx="12" class="s-box"/>
+              <text x="70" y="78" class="s-label-xs">SANS CHIFFREMENT (http)</text>
+              <text x="70" y="110" class="s-label-sm">mot de passe : soleil2024</text>
+              <g data-show="2">
+                <rect x="470" y="62" width="270" height="62" rx="10" fill="#F6E2DD" stroke="var(--danger)" class="pulse" data-show="2"/>
+                <text x="605" y="88" text-anchor="middle" class="s-label-xs" fill="var(--danger)">qui est sur le chemin</text>
+                <text x="605" y="110" text-anchor="middle" class="s-label-xs" fill="var(--danger)">peut lire</text>
+              </g>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="40" y="170" width="720" height="90" rx="12" class="s-box-teal"/>
+              <text x="70" y="198" class="s-label-xs">AVEC CHIFFREMENT (https)</text>
+              <text x="70" y="230" class="s-label-sm">8f3a d901 77bc 41ee</text>
+              <g data-show="4">
+                <rect x="470" y="182" width="270" height="62" rx="10" class="s-box"/>
+                <text x="605" y="208" text-anchor="middle" class="s-label-xs">illisible en route</text>
+                <text x="605" y="230" text-anchor="middle" class="s-label-xs">déchiffré à l’arrivée</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Vos données traversent des machines qui ne vous appartiennent pas.</b><span>La box, l’opérateur, des relais, un wifi de gare.</span></p>
+          <p class="step" data-duration="4400"><b>Sans chiffrement, tout est lisible en chemin.</b><span>Le contenu, les mots de passe, ce que vous écrivez dans un formulaire.</span></p>
+          <p class="step" data-duration="4600"><b>Avec https, le message est brouillé au départ.</b><span>Seul le serveur destinataire sait le remettre en clair. Les machines intermédiaires ne voient passer que du charabia.</span></p>
+          <p class="step" data-duration="5200"><b>Attention à ce que le cadenas ne promet pas.</b><span>Il garantit que <em>personne ne lit en route</em> et que vous parlez bien au site annoncé. Il ne garantit pas que le site est honnête : un site frauduleux peut, lui aussi, avoir un cadenas.</span></p>
+        </div>
+      </section>
+
+      <h2>Le vocabulaire, en une ligne chacun</h2>
+      <div class="compare">
+        <div>
+          <h4>Les adresses</h4>
+          <ul>
+            <li><strong>URL</strong> — l’adresse complète d’une page.</li>
+            <li><strong>Nom de domaine</strong> — le nom loué, « exemple.fr ».</li>
+            <li><strong>DNS</strong> — l’annuaire nom → numéro.</li>
+            <li><strong>IP</strong> — le numéro d’une machine sur le réseau.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Le transport</h4>
+          <ul>
+            <li><strong>Paquet</strong> — un morceau numéroté de la donnée.</li>
+            <li><strong>Débit</strong> — combien passe par seconde.</li>
+            <li><strong>Latence</strong> — le délai avant la première réponse.</li>
+            <li><strong>VPN</strong> — un tunnel qui masque votre point de sortie.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Chez vous</h4>
+          <ul>
+            <li><strong>Box</strong> — la porte entre chez vous et le réseau.</li>
+            <li><strong>Wifi</strong> — le dernier mètre, sans fil.</li>
+            <li><strong>Réseau local</strong> — vos appareils entre eux.</li>
+            <li><strong>Pare-feu</strong> — le filtre qui décide ce qui passe.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Internet est <strong>un accord entre machines</strong>, pas un lieu.</li>
+        <li>Le <strong>DNS</strong> traduit un nom lisible en numéro de machine.</li>
+        <li>Les données voyagent en <strong>paquets</strong>, réassemblés à l’arrivée.</li>
+        <li><strong>https</strong> rend le contenu illisible en route — il ne dit rien de l’honnêteté du site.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="logiciel.html">← Logiciel, système, application</a>
+        <a class="btn btn-primary" href="base-de-donnees.html">C’est quoi une base de données&nbsp;? →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

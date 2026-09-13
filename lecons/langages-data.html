@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les langages de la data, situés — GotIt</title>
+<meta name="description" content="SQL, Python, R, DAX, Spark : à quel moment de la chaîne de données chacun sert, expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/data">Data</a><span>/</span>Exploiter les données<span>/</span>Les langages
+      </div>
+      <h1>Les langages de la data, situés</h1>
+      <p class="lead">
+        SQL, Python, R, DAX, Spark… On les cite en rafale comme s’ils étaient concurrents.
+        Ils ne le sont presque jamais : chacun intervient à un endroit précis de la chaîne.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">7 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Une donnée suit toujours le même parcours : elle est <strong>collectée</strong>,
+        <strong>stockée</strong>, <strong>transformée</strong>, <strong>analysée</strong>, puis
+        <strong>restituée</strong> à quelqu’un. Situer un langage, c’est simplement dire à quelle
+        étape il travaille.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : la chaîne de la donnée et les langages associés">
+        <div class="scene-title">Scène 1 — Qui travaille où</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Les cinq étapes du parcours d’une donnée, avec les langages utilisés à chaque étape">
+            <g data-show="1-5" class="s-label-sm">
+              <rect x="24" y="70" width="140" height="64" rx="10" class="s-box"/>
+              <text x="94" y="108" text-anchor="middle" class="s-label-sm">Collecter</text>
+              <rect x="180" y="70" width="140" height="64" rx="10" class="s-box"/>
+              <text x="250" y="108" text-anchor="middle" class="s-label-sm">Stocker</text>
+              <rect x="336" y="70" width="140" height="64" rx="10" class="s-box"/>
+              <text x="406" y="108" text-anchor="middle" class="s-label-sm">Transformer</text>
+              <rect x="492" y="70" width="140" height="64" rx="10" class="s-box"/>
+              <text x="562" y="108" text-anchor="middle" class="s-label-sm">Analyser</text>
+              <rect x="648" y="70" width="130" height="64" rx="10" class="s-box"/>
+              <text x="713" y="108" text-anchor="middle" class="s-label-sm">Restituer</text>
+            </g>
+
+            <g data-show="2-5" class="m-rise">
+              <rect x="180" y="160" width="296" height="52" rx="10" class="s-box-teal"/>
+              <text x="328" y="182" text-anchor="middle" class="s-label">SQL</text>
+              <text x="328" y="202" text-anchor="middle" class="s-label-xs">interroger et croiser des tables</text>
+            </g>
+
+            <g data-show="3-5" class="m-rise">
+              <rect x="336" y="224" width="296" height="52" rx="10" class="s-box-violet"/>
+              <text x="484" y="246" text-anchor="middle" class="s-label">Python</text>
+              <text x="484" y="266" text-anchor="middle" class="s-label-xs">tout ce que SQL ne sait pas faire</text>
+            </g>
+
+            <g data-show="4-5" class="m-rise">
+              <rect x="596" y="160" width="182" height="52" rx="10" class="s-box-accent"/>
+              <text x="687" y="182" text-anchor="middle" class="s-label">DAX</text>
+              <text x="687" y="202" text-anchor="middle" class="s-label-xs">dans Power BI</text>
+            </g>
+
+            <g data-show="5" class="m-rise">
+              <rect x="24" y="224" width="290" height="52" rx="10" class="s-box"/>
+              <text x="169" y="246" text-anchor="middle" class="s-label">Spark</text>
+              <text x="169" y="266" text-anchor="middle" class="s-label-xs">pour les très gros volumes</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Le parcours est toujours le même.</b><span>Collecter, stocker, transformer, analyser, restituer. Un projet data, c’est cette chaîne — rien de plus.</span></p>
+          <p class="step" data-duration="4800"><b>SQL règne au milieu.</b><span>C’est le langage pour parler aux bases : sélectionner, filtrer, regrouper, croiser des tables. Si vous ne devez en connaître qu’un, c’est celui-là.</span></p>
+          <p class="step" data-duration="4800"><b>Python prend le relais quand ça se complique.</b><span>Appeler un service, nettoyer du texte, entraîner un modèle, automatiser toute la chaîne : tout ce qui dépasse une requête.</span></p>
+          <p class="step" data-duration="4600"><b>DAX vit dans les tableaux de bord.</b><span>C’est le langage de Power BI : il calcule des indicateurs au moment où l’on clique sur un filtre.</span></p>
+          <p class="step" data-duration="4800"><b>Spark, lui, est une question de taille.</b><span>Ce n’est pas vraiment un langage mais un moteur : il répartit le calcul sur des dizaines de machines quand une seule ne suffit plus.</span></p>
+        </div>
+      </section>
+
+      <h2>SQL, en une image</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : une requête SQL lue comme une phrase">
+        <div class="scene-title">Scène 2 — Une requête est une phrase</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une phrase en français traduite en requête SQL, ligne à ligne">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="50" width="680" height="52" rx="12" class="s-box-accent"/>
+              <text x="400" y="82" text-anchor="middle" class="s-label">« Le total dépensé par mes clients lyonnais »</text>
+            </g>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="124" width="330" height="44" rx="10" class="s-box-teal"/>
+              <text x="80" y="152" class="s-label-sm">SELECT nom, SUM(montant)</text>
+              <text x="410" y="152" class="s-label-xs">ce que je veux voir</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="60" y="180" width="330" height="44" rx="10" class="s-box-teal"/>
+              <text x="80" y="208" class="s-label-sm">FROM clients JOIN commandes</text>
+              <text x="410" y="208" class="s-label-xs">où je vais le chercher</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="60" y="236" width="330" height="44" rx="10" class="s-box-teal"/>
+              <text x="80" y="264" class="s-label-sm">WHERE ville = 'Lyon'</text>
+              <text x="410" y="264" class="s-label-xs">ce que je garde</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On part d’une question en français.</b><span>C’est toujours ainsi que ça commence — et c’est la partie difficile.</span></p>
+          <p class="step" data-duration="4400"><b>SELECT : ce que je veux voir.</b><span>Les colonnes à afficher, et les calculs à faire dessus — ici, une somme.</span></p>
+          <p class="step" data-duration="4600"><b>FROM … JOIN : où je vais le chercher.</b><span>Les tables concernées, et comment elles se rejoignent. C’est le lien par identifiant vu dans la leçon précédente.</span></p>
+          <p class="step" data-duration="5000"><b>WHERE : ce que je garde.</b><span>Le filtre. Voilà, vous savez lire une requête SQL : trois lignes qui disent quoi, où, et à quelle condition.</span></p>
+        </div>
+      </section>
+
+      <h2>SQL ou Python ? La bonne question</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : quand utiliser SQL et quand utiliser Python">
+        <div class="scene-title">Scène 3 — Deux outils, deux gestes</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Comparaison des usages de SQL et de Python">
+            <g data-show="1-3" class="m-rise">
+              <rect x="40" y="50" width="330" height="200" rx="12" class="s-box-teal"/>
+              <text x="205" y="86" text-anchor="middle" class="s-label">SQL</text>
+              <text x="205" y="116" text-anchor="middle" class="s-label-xs">« donne-moi »</text>
+              <text x="70" y="152" class="s-label-sm">· compter, sommer, classer</text>
+              <text x="70" y="180" class="s-label-sm">· croiser des tables</text>
+              <text x="70" y="208" class="s-label-sm">· filtrer des millions</text>
+              <text x="70" y="236" class="s-label-sm">· là où vivent les données</text>
+            </g>
+
+            <g data-show="2-3" class="m-right">
+              <rect x="430" y="50" width="330" height="200" rx="12" class="s-box-violet"/>
+              <text x="595" y="86" text-anchor="middle" class="s-label">Python</text>
+              <text x="595" y="116" text-anchor="middle" class="s-label-xs">« fais-moi »</text>
+              <text x="460" y="152" class="s-label-sm">· nettoyer du texte</text>
+              <text x="460" y="180" class="s-label-sm">· prédire, classer, apprendre</text>
+              <text x="460" y="208" class="s-label-sm">· appeler d’autres outils</text>
+              <text x="460" y="236" class="s-label-sm">· automatiser la chaîne</text>
+            </g>
+
+            <g data-show="3" class="m-rise">
+              <text x="400" y="288" text-anchor="middle" class="s-label-sm" fill="var(--accent)">en pratique : on filtre en SQL, puis on travaille en Python</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>SQL dit ce qu’on veut, pas comment le faire.</b><span>On décrit le résultat attendu, la base se débrouille. Et elle travaille là où les données sont déjà : c’est pour ça qu’elle est imbattable sur les gros volumes.</span></p>
+          <p class="step" data-duration="4800"><b>Python dit comment faire.</b><span>Étape par étape. On y va dès qu’il faut une logique que SQL ne sait pas exprimer : du texte à nettoyer, un modèle à entraîner, un service à interroger.</span></p>
+          <p class="step" data-duration="5000"><b>La bonne pratique tient en une phrase.</b><span>Réduire d’abord avec SQL — passer d’un milliard de lignes à dix mille — puis travailler en Python. L’inverse consiste à ramener un entrepôt entier sur un ordinateur portable.</span></p>
+        </div>
+      </section>
+
+      <h2>Le reste du vocabulaire, une ligne chacun</h2>
+      <div class="compare">
+        <div>
+          <h4>Les langages</h4>
+          <ul>
+            <li><strong>SQL</strong> — interroger une base. Le socle.</li>
+            <li><strong>Python</strong> — le couteau suisse : nettoyage, automatisation, IA.</li>
+            <li><strong>R</strong> — le cousin statisticien de Python, très présent en recherche et en santé.</li>
+            <li><strong>DAX</strong> — les calculs à l’intérieur de Power BI.</li>
+            <li><strong>Scala / Java</strong> — les langages historiques des très gros volumes.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Les outils qu’on cite avec</h4>
+          <ul>
+            <li><strong>Spark</strong> — un moteur qui répartit le calcul sur plusieurs machines.</li>
+            <li><strong>pandas</strong> — la boîte à outils Python pour manipuler des tableaux.</li>
+            <li><strong>dbt</strong> — organise et documente les transformations SQL.</li>
+            <li><strong>Power BI / Tableau</strong> — la restitution : tableaux de bord.</li>
+            <li><strong>No-code</strong> — les mêmes gestes à la souris, sans écrire de code.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Les formats</h4>
+          <ul>
+            <li><strong>CSV</strong> — un tableau en texte brut. Universel, fragile.</li>
+            <li><strong>JSON</strong> — une fiche avec des champs libres, imbriqués.</li>
+            <li><strong>Parquet</strong> — un format compressé, rangé par colonnes, fait pour l’analyse.</li>
+            <li><strong>API</strong> — pas un format : une porte pour venir chercher la donnée.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title">Pour situer quelqu’un en réunion</div>
+        <p>
+          « Je fais du SQL » → il interroge des bases, souvent côté analyse ou BI.
+          « Je fais du Python » → il transforme, automatise, ou fait du modèle.
+          « Je fais du Spark » → il travaille sur de très gros volumes.
+          « Je fais du Power BI » → il restitue, c’est lui que verront les décideurs.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Les langages de la data ne sont pas concurrents : ils occupent <strong>des étapes différentes</strong>.</li>
+        <li><strong>SQL</strong> interroge les bases — c’est le socle, et il se lit comme une phrase.</li>
+        <li><strong>Python</strong> prend le relais dès que la logique dépasse une requête.</li>
+        <li><strong>DAX</strong> vit dans les tableaux de bord, <strong>Spark</strong> répond à un problème de volume.</li>
+        <li>La règle d’or : <strong>filtrer au plus près des données</strong>, travailler ensuite.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="entrepots-data.html">← Lac, entrepôt, magasin</a>
+        <a class="btn btn-primary" href="si-briques.html">C’est quoi un système d’information&nbsp;? →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

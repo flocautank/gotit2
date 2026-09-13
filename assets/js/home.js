@@ -125,8 +125,14 @@
       card.appendChild(el('div', 'card-title', family.title));
       card.appendChild(el('p', 'card-sum', family.description));
 
+      // Les leçons disponibles passent devant celles qui sont encore à venir.
+      var preview = ids.slice().sort(function (a, b) {
+        var soonA = data.LESSONS[a] && data.LESSONS[a].soon ? 1 : 0;
+        var soonB = data.LESSONS[b] && data.LESSONS[b].soon ? 1 : 0;
+        return soonA - soonB;
+      });
       var topics = el('ul', 'card-topics');
-      ids.slice(0, 3).forEach(function (id) {
+      preview.slice(0, 3).forEach(function (id) {
         if (data.LESSONS[id]) topics.appendChild(el('li', null, data.LESSONS[id].title));
       });
       card.appendChild(topics);

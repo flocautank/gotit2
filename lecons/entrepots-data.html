@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lac, entrepôt, magasin de données — GotIt</title>
+<meta name="description" content="Data lake, data warehouse, data mart, lakehouse : les lieux où vivent les données d’une entreprise, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/data">Data</a><span>/</span>Stocker les données<span>/</span>Lacs, entrepôts et magasins
+      </div>
+      <h1>Lac, entrepôt, magasin de données</h1>
+      <p class="lead">
+        <em>Data lake</em>, <em>data warehouse</em>, <em>data mart</em>, <em>lakehouse</em> :
+        quatre mots qui font peur et qui racontent, en réalité, une seule histoire — celle
+        d’une entreprise qui essaie de savoir combien elle a vendu.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">7 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Une base de données sert à <strong>faire tourner</strong> une activité : enregistrer une
+        commande, un salarié, un contrat. Les lieux dont parle cette leçon servent à autre chose :
+        <strong>comprendre</strong> cette activité, en rassemblant ce que les outils du quotidien
+        ont éparpillé.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : des données éparpillées dans plusieurs outils">
+        <div class="scene-title">Scène 1 — Le problème de départ</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Les données d’une entreprise sont dispersées entre plusieurs logiciels, empêchant une vision d’ensemble">
+            <g data-show="1-4" class="s-label-sm">
+              <g class="m-pop" data-show="1-4"><rect x="40" y="50" width="160" height="54" rx="10" class="s-box"/><text x="120" y="83" text-anchor="middle" class="s-label-sm">Site e-commerce</text></g>
+              <g class="m-pop" data-show="1-4"><rect x="40" y="128" width="160" height="54" rx="10" class="s-box"/><text x="120" y="161" text-anchor="middle" class="s-label-sm">Caisse magasin</text></g>
+              <g class="m-pop" data-show="1-4"><rect x="40" y="206" width="160" height="54" rx="10" class="s-box"/><text x="120" y="239" text-anchor="middle" class="s-label-sm">CRM</text></g>
+              <g class="m-pop" data-show="2-4"><rect x="250" y="50" width="160" height="54" rx="10" class="s-box"/><text x="330" y="83" text-anchor="middle" class="s-label-sm">Compta</text></g>
+              <g class="m-pop" data-show="2-4"><rect x="250" y="128" width="160" height="54" rx="10" class="s-box"/><text x="330" y="161" text-anchor="middle" class="s-label-sm">Pub en ligne</text></g>
+              <g class="m-pop" data-show="2-4"><rect x="250" y="206" width="160" height="54" rx="10" class="s-box"/><text x="330" y="239" text-anchor="middle" class="s-label-sm">Fichiers Excel</text></g>
+            </g>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="470" y="104" width="290" height="102" rx="12" class="s-box-accent"/>
+              <text x="615" y="142" text-anchor="middle" class="s-label">« On a vendu combien</text>
+              <text x="615" y="166" text-anchor="middle" class="s-label">ce trimestre&nbsp;? »</text>
+            </g>
+
+            <g data-show="4">
+              <rect x="470" y="222" width="290" height="60" rx="12" fill="#F6EBD8" stroke="var(--warn)" class="m-rise" data-show="4"/>
+              <text x="615" y="248" text-anchor="middle" class="s-label-sm" fill="var(--warn)" data-show="4">six réponses différentes</text>
+              <text x="615" y="270" text-anchor="middle" class="s-label-xs" fill="var(--warn)" data-show="4">et trois semaines de travail</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Chaque outil garde ses propres données.</b><span>Le site, la caisse, le CRM : chacun a sa base, parfaitement adaptée à son métier.</span></p>
+          <p class="step" data-duration="4200"><b>Et il y en a toujours plus qu’on ne croit.</b><span>La compta, la régie publicitaire, sans compter les fichiers Excel que tout le monde garde dans un coin.</span></p>
+          <p class="step" data-duration="4400"><b>Puis vient une question simple.</b><span>« Combien a-t-on vendu ce trimestre, tous canaux confondus ? » Elle traverse six outils qui ne se connaissent pas.</span></p>
+          <p class="step" data-duration="5000"><b>Et la réponse n’arrive jamais.</b><span>Chaque service sort son chiffre, aucun ne concorde, personne n’a tort. C’est pour régler ça qu’on construit un lieu commun.</span></p>
+        </div>
+      </section>
+
+      <h2>Les trois lieux, dans l’ordre</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : du lac de données au magasin de données">
+        <div class="scene-title">Scène 2 — Le lac, l’entrepôt, le magasin</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 330" role="img" aria-label="Les données brutes arrivent dans un lac, sont rangées dans un entrepôt, puis découpées en magasins par métier">
+            <g data-show="1-4" class="m-rise">
+              <rect x="30" y="70" width="210" height="120" rx="12" class="s-box-violet"/>
+              <text x="135" y="106" text-anchor="middle" class="s-label">Le lac</text>
+              <text x="135" y="130" text-anchor="middle" class="s-label-xs">data lake</text>
+              <text x="135" y="158" text-anchor="middle" class="s-label-sm">tout, en vrac, brut</text>
+              <text x="135" y="216" text-anchor="middle" class="s-label-xs">on garde d’abord,</text>
+              <text x="135" y="236" text-anchor="middle" class="s-label-xs">on trie plus tard</text>
+            </g>
+
+            <g data-show="2-4" class="m-right">
+              <rect x="290" y="70" width="220" height="120" rx="12" class="s-box-teal"/>
+              <text x="400" y="106" text-anchor="middle" class="s-label">L’entrepôt</text>
+              <text x="400" y="130" text-anchor="middle" class="s-label-xs">data warehouse</text>
+              <text x="400" y="158" text-anchor="middle" class="s-label-sm">nettoyé et rangé</text>
+              <text x="400" y="216" text-anchor="middle" class="s-label-xs">un seul chiffre officiel</text>
+              <text x="400" y="236" text-anchor="middle" class="s-label-xs">pour toute l’entreprise</text>
+              <path d="M245 130 H 286" class="s-line m-draw" data-show="2-4"/>
+            </g>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="560" y="70" width="210" height="52" rx="10" class="s-box-accent"/>
+              <text x="665" y="102" text-anchor="middle" class="s-label-sm">Magasin Marketing</text>
+              <rect x="560" y="134" width="210" height="52" rx="10" class="s-box-accent"/>
+              <text x="665" y="166" text-anchor="middle" class="s-label-sm">Magasin Finance</text>
+              <text x="665" y="216" text-anchor="middle" class="s-label-xs">data mart : le rayon</text>
+              <text x="665" y="236" text-anchor="middle" class="s-label-xs">d’un seul métier</text>
+              <path d="M515 130 H 556" class="s-line m-draw" data-show="3-4"/>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="120" y="272" width="560" height="42" rx="21" class="s-box"/>
+              <text x="400" y="299" text-anchor="middle" class="s-label-sm">on va toujours du plus brut vers le plus prêt à l’emploi</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="5000"><b>Le lac : on déverse tout, tel quel.</b><span>Ventes, clics, logs, photos, fichiers — sans les ranger, parce qu’on ignore encore à quoi ils serviront. Stocker coûte peu ; jeter une donnée qu’on regrettera coûte cher.</span></p>
+          <p class="step" data-duration="5200"><b>L’entrepôt : on nettoie et on range.</b><span>Mêmes formats de date, mêmes noms de produits, doublons fusionnés, règles de calcul écrites une fois pour toutes. C’est ici que naît « le » chiffre d’affaires — celui sur lequel tout le monde s’accorde.</span></p>
+          <p class="step" data-duration="5000"><b>Le magasin : un rayon par métier.</b><span>Le marketing n’a pas besoin de tout l’entrepôt. On lui prépare un extrait, plus petit et plus rapide, avec ses indicateurs à lui. C’est le <em>data mart</em>.</span></p>
+          <p class="step" data-duration="4800"><b>Un seul sens de circulation.</b><span>Du brut vers le prêt à l’emploi. Chaque étape perd en détail et gagne en confiance — et l’on peut toujours remonter au lac pour vérifier.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le <strong>lac</strong>, c’est l’arrivage au port : des caisses non ouvertes, de tout,
+          de partout. L’<strong>entrepôt</strong>, c’est le hangar où l’on a ouvert, trié, étiqueté,
+          rangé par rayons. Le <strong>magasin</strong>, c’est la boutique de quartier : peu de
+          références, exactement celles dont le client du coin a besoin.
+        </p>
+      </div>
+
+      <h2>Et le « lakehouse » ?</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : le lakehouse réunit le lac et l’entrepôt">
+        <div class="scene-title">Scène 3 — Réunir les deux</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Deux systèmes séparés, puis un seul système assurant les deux rôles">
+            <g data-show="1-2">
+              <rect x="60" y="60" width="290" height="100" rx="12" class="s-box-violet"/>
+              <text x="205" y="100" text-anchor="middle" class="s-label">Un lac</text>
+              <text x="205" y="126" text-anchor="middle" class="s-label-xs">pas cher, tout garder</text>
+              <rect x="450" y="60" width="290" height="100" rx="12" class="s-box-teal"/>
+              <text x="595" y="100" text-anchor="middle" class="s-label">Un entrepôt</text>
+              <text x="595" y="126" text-anchor="middle" class="s-label-xs">rapide, fiable, cher</text>
+              <g data-show="2">
+                <path d="M355 110 H 445" class="s-line m-draw" data-show="2"/>
+                <text x="400" y="190" text-anchor="middle" class="s-label-sm" fill="var(--warn)">tout recopier d’un côté à l’autre</text>
+                <text x="400" y="214" text-anchor="middle" class="s-label-xs" fill="var(--warn)">deux systèmes, deux factures, deux vérités</text>
+              </g>
+            </g>
+
+            <g data-show="3" class="m-rise">
+              <rect x="180" y="70" width="440" height="120" rx="14" class="s-box-accent"/>
+              <text x="400" y="118" text-anchor="middle" class="s-label">Le lakehouse</text>
+              <text x="400" y="146" text-anchor="middle" class="s-label-sm">le stockage du lac, la rigueur de l’entrepôt</text>
+              <text x="400" y="230" text-anchor="middle" class="s-label-sm">un seul endroit, une seule copie</text>
+              <text x="400" y="256" text-anchor="middle" class="s-label-xs">Databricks, Snowflake, BigQuery…</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Longtemps, il a fallu les deux.</b><span>Un lac pour tout garder à bas coût, un entrepôt pour analyser vite et juste. Deux technologies, deux équipes.</span></p>
+          <p class="step" data-duration="4600"><b>Avec un inconvénient de taille.</b><span>On recopie sans arrêt les données de l’un vers l’autre. Deux factures, deux calendriers de mise à jour, et régulièrement deux chiffres qui divergent.</span></p>
+          <p class="step" data-duration="5200"><b>Le lakehouse fait les deux au même endroit.</b><span>Le stockage bon marché du lac, plus les garanties de l’entrepôt. C’est ce que proposent aujourd’hui la plupart des plateformes du marché — d’où le mot, qu’on entend partout.</span></p>
+        </div>
+      </section>
+
+      <h2>Les mots qui vont avec</h2>
+      <div class="compare">
+        <div>
+          <h4>Déplacer les données</h4>
+          <ul>
+            <li><strong>Pipeline</strong> — la chaîne automatique qui déplace et transforme.</li>
+            <li><strong>ETL</strong> — on transforme <em>avant</em> de charger.</li>
+            <li><strong>ELT</strong> — on charge d’abord, on transforme ensuite (l’usage courant aujourd’hui).</li>
+            <li><strong>Ingestion</strong> — l’arrivée des données dans le lac.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>S’en servir</h4>
+          <ul>
+            <li><strong>BI</strong> — les tableaux de bord (Power BI, Tableau, Looker).</li>
+            <li><strong>KPI</strong> — un indicateur suivi dans le temps.</li>
+            <li><strong>Référentiel</strong> — la liste qui fait foi (clients, produits).</li>
+            <li><strong>Gouvernance</strong> — qui a le droit de voir quoi, et qui répond de la qualité.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Le piège</div>
+        <p>
+          Un lac sans gouvernance devient un <em>marécage</em> : des téraoctets dont plus personne
+          ne sait d’où ils viennent ni s’ils sont à jour. L’outil ne fait pas le travail —
+          ce qui compte, c’est la discipline sur la définition des indicateurs.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li><strong>Lac</strong> : tout, brut, pas cher — on garde d’abord, on trie plus tard.</li>
+        <li><strong>Entrepôt</strong> : nettoyé, rangé, fiable — la source du chiffre officiel.</li>
+        <li><strong>Magasin</strong> : un extrait taillé pour un métier.</li>
+        <li><strong>Lakehouse</strong> : les deux premiers réunis en un seul endroit.</li>
+        <li>Le vrai sujet n’est pas l’outil, mais de <strong>se mettre d’accord sur les définitions</strong>.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="base-de-donnees.html">← C’est quoi une base de données&nbsp;?</a>
+        <a class="btn btn-primary" href="langages-data.html">Les langages de la data →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

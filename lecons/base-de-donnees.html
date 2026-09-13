@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C’est quoi une base de données ? — GotIt</title>
+<meta name="description" content="Base de données relationnelle ou non : tables, clés, documents et graphes expliqués en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/data">Data</a><span>/</span>Stocker les données<span>/</span>Les bases de données
+      </div>
+      <h1>C’est quoi une base de données&nbsp;?</h1>
+      <p class="lead">
+        Un tableur qui aurait grandi, appris à se faire interroger par mille personnes à la fois,
+        et à ne jamais se contredire. Et parfois : un tableur sans colonnes.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-1">Découverte</span><span class="tag">7 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Tout le monde a déjà fait une base de données&nbsp;: un fichier Excel avec une ligne par
+        client. Une vraie base part de la même idée, puis règle les trois problèmes qu’un tableur
+        ne sait pas résoudre.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : du tableur à la base de données">
+        <div class="scene-title">Scène 1 — Pourquoi pas un tableur&nbsp;?</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un tableur atteint ses limites : volume, accès simultané, incohérences">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="60" width="300" height="150" rx="10" class="s-box"/>
+              <g stroke="var(--line-strong)" stroke-width="1">
+                <path d="M60 96 H 360"/><path d="M60 132 H 360"/><path d="M60 168 H 360"/>
+                <path d="M160 60 V 210"/><path d="M260 60 V 210"/>
+              </g>
+              <text x="210" y="240" text-anchor="middle" class="s-label-sm">Un fichier Excel</text>
+            </g>
+
+            <g data-show="2-4" class="m-right">
+              <rect x="440" y="52" width="300" height="42" rx="10" class="s-box"/>
+              <text x="460" y="79" class="s-label-sm">1 million de lignes : il rame</text>
+
+              <rect x="440" y="106" width="300" height="42" rx="10" class="s-box" data-show="3-4"/>
+              <text x="460" y="133" class="s-label-sm" data-show="3-4">à dix dessus : la pagaille</text>
+
+              <rect x="440" y="160" width="300" height="42" rx="10" class="s-box" data-show="4"/>
+              <text x="460" y="187" class="s-label-sm" data-show="4">« Dupond » ou « Dupont » ?</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="230" y="242" width="340" height="40" rx="20" class="s-box-accent"/>
+              <text x="400" y="268" text-anchor="middle" class="s-label-sm">une base règle ces trois problèmes</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Au départ, un tableau.</b><span>Des lignes, des colonnes. Pour cent clients, un tableur suffit parfaitement.</span></p>
+          <p class="step" data-duration="4200"><b>Premier mur : le volume.</b><span>À partir de quelques centaines de milliers de lignes, le fichier devient inutilisable.</span></p>
+          <p class="step" data-duration="4400"><b>Deuxième mur : le monde entier écrit en même temps.</b><span>Deux personnes qui modifient la même ligne à la même seconde : une base sait arbitrer, un fichier non.</span></p>
+          <p class="step" data-duration="5000"><b>Troisième mur : la cohérence.</b><span>Rien n’empêche de saisir deux orthographes, une date au mauvais format, un client sans e-mail. Une base, si : elle peut <em>refuser</em> une donnée invalide.</span></p>
+        </div>
+      </section>
+
+      <h2>Le modèle relationnel : des tables qui se parlent</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : plusieurs tables reliées par des clés">
+        <div class="scene-title">Scène 2 — Ne jamais écrire deux fois la même chose</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Une table clients et une table commandes reliées par un identifiant">
+            <g data-show="1-4" class="m-rise">
+              <rect x="50" y="60" width="290" height="130" rx="10" class="s-box-teal"/>
+              <text x="70" y="86" class="s-label">CLIENTS</text>
+              <text x="70" y="116" class="s-label-sm">C1 · Marie Petit · Lyon</text>
+              <text x="70" y="144" class="s-label-sm">C2 · Ali Bennani · Nantes</text>
+              <text x="70" y="172" class="s-label-sm">C3 · Luc Meyer · Lille</text>
+            </g>
+
+            <g data-show="2-4" class="m-right">
+              <rect x="450" y="60" width="300" height="130" rx="10" class="s-box-violet"/>
+              <text x="470" y="86" class="s-label">COMMANDES</text>
+              <text x="470" y="116" class="s-label-sm">#412 · C1 · 89 €</text>
+              <text x="470" y="144" class="s-label-sm">#413 · C1 · 24 €</text>
+              <text x="470" y="172" class="s-label-sm">#414 · C2 · 156 €</text>
+            </g>
+
+            <g data-show="3-4">
+              <path d="M344 118 C 400 118, 400 118, 446 118" class="s-line-accent m-draw" data-show="3-4"/>
+              <text x="395" y="102" text-anchor="middle" class="s-label-xs" fill="var(--accent)">C1 = C1</text>
+              <text x="395" y="212" text-anchor="middle" class="s-label-xs">l’identifiant fait le lien</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="120" y="240" width="560" height="58" rx="12" class="s-box-accent"/>
+              <text x="400" y="266" text-anchor="middle" class="s-label-sm">Marie déménage&nbsp;: on corrige une seule ligne</text>
+              <text x="400" y="288" text-anchor="middle" class="s-label-xs">et ses 40 commandes sont à jour</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On sépare ce qui est de nature différente.</b><span>Les clients d’un côté, les commandes de l’autre. Chaque table ne parle que d’une chose.</span></p>
+          <p class="step" data-duration="4400"><b>Chaque ligne reçoit un identifiant unique.</b><span>« C1 », « C2 » — une étiquette qui ne change jamais, même si le nom, lui, change.</span></p>
+          <p class="step" data-duration="4600"><b>Les tables se rejoignent par cet identifiant.</b><span>Une commande ne stocke pas « Marie Petit, Lyon » : elle stocke « C1 ». C’est ce lien qu’on appelle une <em>relation</em>.</span></p>
+          <p class="step" data-duration="5200"><b>Et là, tout devient simple.</b><span>Une information n’existe qu’à un seul endroit. Corriger une adresse, c’est corriger une ligne — pas retrouver les quarante endroits où elle avait été recopiée.</span></p>
+        </div>
+      </section>
+
+      <div class="callout">
+        <div class="callout-title">Le mot à retenir</div>
+        <p>
+          On interroge ces bases avec <strong>SQL</strong>, un langage volontairement proche de
+          l’anglais courant : <em>« sélectionne le nom depuis clients où la ville est Lyon »</em>.
+          PostgreSQL, MySQL, SQL Server, Oracle en sont les représentants les plus courants.
+        </p>
+      </div>
+
+      <h2>Et quand les lignes ne se ressemblent pas&nbsp;?</h2>
+      <p>
+        Le modèle en tables suppose que toutes les lignes ont les mêmes colonnes. Parfois c’est
+        faux, ou trop rigide. D’où une autre famille de bases, dite <strong>NoSQL</strong>
+        — comprendre&nbsp;: « pas seulement des tables ».
+      </p>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : les familles de bases non relationnelles">
+        <div class="scene-title">Scène 3 — Les autres façons de ranger</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Bases orientées documents, clé-valeur et graphe">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="60" width="220" height="150" rx="10" class="s-box-teal"/>
+              <text x="150" y="90" text-anchor="middle" class="s-label">Documents</text>
+              <text x="150" y="118" text-anchor="middle" class="s-label-xs">une fiche par élément</text>
+              <text x="150" y="142" text-anchor="middle" class="s-label-xs">chacune avec ses champs</text>
+              <text x="150" y="172" text-anchor="middle" class="s-label-sm">MongoDB</text>
+              <text x="150" y="238" text-anchor="middle" class="s-label-xs">catalogue produits, contenus</text>
+            </g>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="290" y="60" width="220" height="150" rx="10" class="s-box-violet"/>
+              <text x="400" y="90" text-anchor="middle" class="s-label">Clé — valeur</text>
+              <text x="400" y="118" text-anchor="middle" class="s-label-xs">une étiquette, un contenu</text>
+              <text x="400" y="142" text-anchor="middle" class="s-label-xs">très rapide, très simple</text>
+              <text x="400" y="172" text-anchor="middle" class="s-label-sm">Redis</text>
+              <text x="400" y="238" text-anchor="middle" class="s-label-xs">panier, session, cache</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="540" y="60" width="220" height="150" rx="10" class="s-box-accent"/>
+              <text x="650" y="90" text-anchor="middle" class="s-label">Graphe</text>
+              <text x="650" y="118" text-anchor="middle" class="s-label-xs">des liens avant tout</text>
+              <text x="650" y="142" text-anchor="middle" class="s-label-xs">« qui connaît qui »</text>
+              <text x="650" y="172" text-anchor="middle" class="s-label-sm">Neo4j</text>
+              <text x="650" y="238" text-anchor="middle" class="s-label-xs">recommandation, fraude</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="150" y="266" width="500" height="40" rx="20" class="s-box"/>
+              <text x="400" y="292" text-anchor="middle" class="s-label-sm">on choisit d’abord la question, la base ensuite</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>Les bases de documents.</b><span>Chaque élément est une fiche complète, avec les champs qu’il veut. Pratique quand un produit a douze caractéristiques et le suivant trois.</span></p>
+          <p class="step" data-duration="4400"><b>Les bases clé-valeur.</b><span>Une étiquette, un contenu, rien d’autre. C’est la consigne à bagages : extrêmement rapide, mais elle ne sait répondre qu’à « donne-moi le numéro 42 ».</span></p>
+          <p class="step" data-duration="4600"><b>Les bases graphe.</b><span>Ici, l’important n’est pas la fiche mais le lien. « Les amis des amis de Marie qui habitent Lyon » se répond en un instant, là où des tables souffriraient.</span></p>
+          <p class="step" data-duration="5200"><b>Aucune n’est meilleure : elles répondent à des questions différentes.</b><span>Et dans la vraie vie, une entreprise en utilise plusieurs à la fois — souvent une relationnelle au centre, et les autres autour.</span></p>
+        </div>
+      </section>
+
+      <h2>Relationnel ou non : comment trancher</h2>
+      <div class="compare">
+        <div>
+          <h4>Plutôt relationnel quand…</h4>
+          <ul>
+            <li>les données ont une forme stable&nbsp;;</li>
+            <li>elles se croisent beaucoup&nbsp;;</li>
+            <li>l’exactitude est critique (facturation, paie, stock)&nbsp;;</li>
+            <li>on veut pouvoir tout interroger avec SQL.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Plutôt NoSQL quand…</h4>
+          <ul>
+            <li>la forme des données varie beaucoup&nbsp;;</li>
+            <li>le volume et la vitesse priment&nbsp;;</li>
+            <li>on écrit énormément, on croise peu&nbsp;;</li>
+            <li>les liens comptent plus que les fiches (graphe).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Le malentendu courant</div>
+        <p>
+          « NoSQL » ne veut pas dire « moderne » et « relationnel » ne veut pas dire « dépassé ».
+          Les bases relationnelles ont cinquante ans et font tourner l’essentiel des banques,
+          des ERP et des sites de commerce. Le choix se fait sur la question posée, jamais sur
+          l’air du temps.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Une base de données, c’est un tableur qui sait gérer le <strong>volume</strong>, l’<strong>accès simultané</strong> et la <strong>cohérence</strong>.</li>
+        <li><strong>Relationnel</strong> = des tables reliées par des identifiants, interrogées en SQL.</li>
+        <li>Le principe fondateur : <strong>une information, un seul endroit</strong>.</li>
+        <li><strong>NoSQL</strong> regroupe d’autres façons de ranger : documents, clé-valeur, graphe.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="../index.html#/data">← Data</a>
+        <a class="btn btn-primary" href="entrepots-data.html">Lac, entrepôt, magasin →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

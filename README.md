@@ -9,25 +9,37 @@ faciles à corriger.
 
 ## Contenus disponibles
 
-| Leçon | Famille | Niveau |
+| Leçon | Domaine | Niveau |
 |---|---|---|
-| [C'est quoi un serveur ?](lecons/serveur.html) | Le numérique › Infrastructure | Découverte |
-| [Local ou cloud : quelle différence ?](lecons/local-vs-cloud.html) | Le numérique › Infrastructure | Découverte |
-| [Les « skills » d'une IA](lecons/ia-skills.html) | IA › Agents & outils | Intermédiaire |
-| [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA › Agents & outils | Intermédiaire |
+| [Ce qu'il y a dans un ordinateur](lecons/ordinateur.html) | Informatique | Découverte |
+| [C'est quoi un serveur ?](lecons/serveur.html) | Informatique | Découverte |
+| [Logiciel, système, application](lecons/logiciel.html) | Informatique | Découverte |
+| [Local ou cloud : quelle différence ?](lecons/local-vs-cloud.html) | Informatique | Découverte |
+| [Comment voyage une page web](lecons/internet.html) | Réseau | Découverte |
+| [C'est quoi une base de données ?](lecons/base-de-donnees.html) | Data | Découverte |
+| [Lac, entrepôt, magasin de données](lecons/entrepots-data.html) | Data | Intermédiaire |
+| [Les langages de la data, situés](lecons/langages-data.html) | Data | Intermédiaire |
+| [C'est quoi un système d'information ?](lecons/si-briques.html) | Système d'information | Découverte |
+| [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
+| [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 
 D'autres sujets sont déjà déclarés dans le catalogue et apparaissent en « Bientôt »
-(API, chiffrement, modèles de langage, hallucinations, RAG…).
+(API, chiffrement, cybersécurité, gouvernance des données, RGPD, projets SI,
+modèles de langage, hallucinations, RAG).
+
+Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
+Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours
+après l'idée — jamais avant.
 
 ## Organisation du contenu
 
 Le catalogue est hiérarchisé sur trois niveaux, décrits dans `assets/js/data.js` :
 
 ```
-Famille            ex. « Intelligence artificielle »
-└── Catégorie      ex. « Agents & outils »
-    └── Sous-catégorie   ex. « Étendre un assistant »
-        └── Leçon        ex. « Un serveur MCP, c'est quoi ? »
+Domaine            ex. « Data »
+└── Catégorie      ex. « Stocker les données »
+    └── Sous-catégorie   ex. « Lacs, entrepôts et magasins »
+        └── Leçon        ex. « Lac, entrepôt, magasin de données »
 ```
 
 ## Structure du dépôt
