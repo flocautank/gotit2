@@ -18,6 +18,9 @@ Dans `assets/js/data.js`, ajouter une fiche à `LESSONS` :
 ```
 
 Puis référencer son identifiant dans la sous-catégorie voulue, dans `FAMILIES`.
+L'accueil se construit à partir de cette hiérarchie : on choisit un domaine, puis une
+catégorie, avant de voir les leçons. Une leçon introuvable par ce chemin reste
+accessible par la recherche, qui interroge titres, résumés et `keywords`.
 Une leçon encore à écrire se déclare avec `soon: true` et sans `path` : elle s'affiche
 en grisé sur l'accueil.
 
@@ -74,6 +77,16 @@ Indique à quelles étapes l'élément est visible :
 | `s-box`, `s-box-accent`, `s-box-violet`, `s-box-teal` | boîtes |
 | `s-line`, `s-line-accent` | traits |
 | `s-label`, `s-label-sm`, `s-label-xs` | textes |
+
+### Tenir sur un écran de téléphone
+
+Les schémas ne défilent jamais horizontalement : ils sont réduits pour tenir dans
+la largeur. Comme les tailles de police du SVG sont exprimées en unités du `viewBox`,
+`lesson.css` les agrandit sur petit écran pour compenser cette réduction.
+
+Conséquence : **un texte qui tient au large peut déborder du cadre sur mobile.**
+Gardez les libellés courts (une poignée de mots), et vérifiez avec la fenêtre du
+navigateur réduite à 390 px que rien ne sort du `viewBox`.
 
 ### Bonnes pratiques
 

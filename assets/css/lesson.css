@@ -2,48 +2,48 @@
 
 /* ---------- Mise en page d'une leçon ---------- */
 
-.lesson-hero { padding: 54px 0 26px; }
+.lesson-hero { padding: 46px 0 22px; }
 .breadcrumb { font-size: .86rem; color: var(--text-faint); margin-bottom: 14px; }
 .breadcrumb a { color: var(--text-dim); }
-.breadcrumb span { margin: 0 6px; opacity: .5; }
+.breadcrumb span { margin: 0 6px; opacity: .55; }
 
 .lesson-hero h1 {
-  font-size: clamp(1.9rem, 5vw, 3rem);
-  letter-spacing: -.035em; line-height: 1.08; margin: 0 0 14px;
+  font-size: clamp(1.9rem, 4.8vw, 2.9rem);
+  line-height: 1.12; margin: 0 0 14px; font-weight: 500;
 }
-.lesson-hero .lead { color: var(--text-dim); font-size: 1.08rem; max-width: 64ch; margin: 0 0 18px; }
+.lesson-hero .lead { color: var(--text-dim); font-size: 1.06rem; max-width: 62ch; margin: 0 0 18px; }
 .lesson-meta { display: flex; gap: 8px; flex-wrap: wrap; }
 
-.lesson-body { max-width: 860px; margin-inline: auto; padding-bottom: 40px; }
-.lesson-body h2 { font-size: 1.5rem; letter-spacing: -.02em; margin: 46px 0 10px; }
-.lesson-body h3 { font-size: 1.12rem; margin: 30px 0 8px; }
+.lesson-body { max-width: 800px; margin-inline: auto; padding-bottom: 40px; }
+.lesson-body h2 { font-size: 1.48rem; margin: 46px 0 10px; font-weight: 500; }
+.lesson-body h3 { font-size: 1.1rem; margin: 30px 0 8px; }
 .lesson-body p { color: var(--text-dim); }
-.lesson-body strong { color: var(--text); font-weight: 650; }
+.lesson-body strong { color: var(--text); font-weight: 600; }
 .lesson-body ul, .lesson-body ol { color: var(--text-dim); padding-left: 1.2em; }
 .lesson-body li { margin: 6px 0; }
 
 .callout {
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent);
-  background: var(--bg-soft);
+  background: var(--surface);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   padding: 14px 18px;
   margin: 24px 0;
 }
 .callout p { margin: 0; }
 .callout .callout-title {
-  font-size: .76rem; text-transform: uppercase; letter-spacing: .12em;
+  font-size: .74rem; text-transform: uppercase; letter-spacing: .12em;
   color: var(--accent); font-weight: 700; margin-bottom: 4px;
 }
-.callout-analogy { border-left-color: var(--accent-3); }
-.callout-analogy .callout-title { color: var(--accent-3); }
+.callout-analogy { border-left-color: var(--sage); background: var(--sage-soft); }
+.callout-analogy .callout-title { color: var(--sage); }
 .callout-warn { border-left-color: var(--warn); }
 .callout-warn .callout-title { color: var(--warn); }
 
-.compare { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin: 22px 0; }
+.compare { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 22px 0; }
 .compare > div { border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); padding: 16px; }
-.compare h4 { margin: 0 0 8px; font-size: 1rem; }
-.compare ul { margin: 0; font-size: .93rem; }
+.compare h4 { margin: 0 0 8px; font-size: 1rem; font-family: var(--serif); font-weight: 600; }
+.compare ul { margin: 0; font-size: .92rem; }
 
 .lesson-nav {
   display: flex; gap: 12px; justify-content: space-between; flex-wrap: wrap;
@@ -56,18 +56,18 @@
   margin: 34px 0;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: linear-gradient(170deg, var(--surface), var(--bg-soft));
+  background: var(--surface);
   overflow: hidden;
 }
 
 .scene-title {
   display: flex; align-items: center; gap: 10px;
-  padding: 14px 18px; border-bottom: 1px solid var(--line);
-  font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  padding: 13px 18px; border-bottom: 1px solid var(--line);
+  font-size: .74rem; letter-spacing: .12em; text-transform: uppercase;
   color: var(--text-faint); font-weight: 700;
 }
 
-.stage { position: relative; padding: 8px 10px 0; }
+.stage { position: relative; padding: 10px 12px 0; }
 .stage svg { display: block; width: 100%; height: auto; }
 
 .scene-caption {
@@ -77,13 +77,15 @@
 }
 .scene-caption .step {
   position: absolute; inset: 16px 20px auto;
+  margin: 0;
   opacity: 0; transform: translateY(8px);
   transition: opacity .45s var(--ease), transform .45s var(--ease);
   pointer-events: none;
 }
 .scene-caption .step.is-current { opacity: 1; transform: none; pointer-events: auto; }
-.scene-caption .step b { color: var(--text); display: block; margin-bottom: 2px; }
-.scene-caption .step span { color: var(--text-dim); font-size: .96rem; }
+.scene-caption .step > b { color: var(--text); display: block; margin-bottom: 2px; font-weight: 600; }
+.scene-caption .step span b { color: var(--text); font-weight: 600; }
+.scene-caption .step span { color: var(--text-dim); font-size: .95rem; }
 
 .scene-controls {
   display: flex; align-items: center; gap: 10px;
@@ -92,29 +94,30 @@
 }
 
 .ctrl {
-  width: 38px; height: 38px;
+  width: 36px; height: 36px;
   display: grid; place-items: center;
-  border-radius: 999px; border: 1px solid var(--line);
-  background: var(--surface-2); color: var(--text);
+  border-radius: 999px; border: 1px solid var(--line-strong);
+  background: var(--surface-2); color: var(--text-dim);
   cursor: pointer; padding: 0;
-  transition: background .18s, border-color .18s, transform .18s var(--ease);
+  transition: background .18s, border-color .18s, color .18s;
 }
-.ctrl:hover { background: #26304a; transform: translateY(-1px); }
-.ctrl:disabled { opacity: .35; cursor: not-allowed; transform: none; }
-.ctrl svg { width: 16px; height: 16px; fill: currentColor; }
-.ctrl-play { background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #06121c; border-color: transparent; }
+.ctrl:hover { border-color: var(--accent); color: var(--accent); }
+.ctrl:disabled { opacity: .35; cursor: not-allowed; }
+.ctrl svg { width: 15px; height: 15px; fill: currentColor; }
+.ctrl-play { background: var(--accent); color: #FBF9F5; border-color: var(--accent); }
+.ctrl-play:hover { background: #AE5637; border-color: #AE5637; color: #FBF9F5; }
 
-.dots { display: flex; gap: 7px; margin-left: 4px; }
+.dots { display: flex; gap: 6px; margin-left: 4px; }
 .dot {
-  width: 26px; height: 6px; border-radius: 999px; padding: 0;
-  border: none; background: var(--surface-2); cursor: pointer;
+  width: 24px; height: 5px; border-radius: 999px; padding: 0;
+  border: none; background: var(--line); cursor: pointer;
   transition: background .25s;
 }
-.dot:hover { background: #32405f; }
-.dot.is-current { background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
-.dot.is-done { background: #3b4a6b; }
+.dot:hover { background: var(--line-strong); }
+.dot.is-current { background: var(--accent); }
+.dot.is-done { background: #DCC3B4; }
 
-.scene-step-label { margin-left: auto; font-size: .82rem; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+.scene-step-label { margin-left: auto; font-size: .8rem; color: var(--text-faint); font-variant-numeric: tabular-nums; }
 
 /* ---------- Utilitaires d'animation SVG ---------- */
 
@@ -134,19 +137,19 @@
 .m-draw.is-on { stroke-dashoffset: 0; }
 
 /* Éléments graphiques réutilisables */
-.s-box { fill: #1b2233; stroke: #2f3b58; stroke-width: 1.5; }
-.s-box-accent { fill: rgba(100, 210, 255, .10); stroke: var(--accent); stroke-width: 1.5; }
-.s-box-violet { fill: rgba(167, 139, 250, .10); stroke: var(--accent-2); stroke-width: 1.5; }
-.s-box-teal { fill: rgba(94, 234, 212, .10); stroke: var(--accent-3); stroke-width: 1.5; }
-.s-line { stroke: #3b4a6b; stroke-width: 2; fill: none; }
+.s-box { fill: #FFFDF8; stroke: var(--line-strong); stroke-width: 1.4; }
+.s-box-accent { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.4; }
+.s-box-violet { fill: var(--slate-soft); stroke: var(--slate); stroke-width: 1.4; }
+.s-box-teal { fill: var(--sage-soft); stroke: var(--sage); stroke-width: 1.4; }
+.s-line { stroke: var(--line-strong); stroke-width: 2; fill: none; }
 .s-line-accent { stroke: var(--accent); stroke-width: 2; fill: none; }
-.s-label { fill: var(--text); font-size: 13px; font-weight: 600; font-family: inherit; }
-.s-label-sm { fill: var(--text-dim); font-size: 11px; font-family: inherit; }
-.s-label-xs { fill: var(--text-faint); font-size: 10px; font-family: inherit; letter-spacing: .06em; }
+.s-label { fill: var(--text); font-size: 13px; font-weight: 600; font-family: var(--sans); }
+.s-label-sm { fill: var(--text-dim); font-size: 11.5px; font-family: var(--sans); }
+.s-label-xs { fill: var(--text-faint); font-size: 10.5px; font-family: var(--sans); }
 
 /* Paquet qui circule sur un trajet (offset-path défini en ligne) */
 .packet { fill: var(--accent); }
-.packet-teal { fill: var(--accent-3); }
+.packet-teal { fill: var(--sage); }
 .packet.is-on { animation: packet-run 1.9s var(--ease) infinite; }
 @keyframes packet-run {
   0%   { offset-distance: 0%;   opacity: 0; }
@@ -158,11 +161,11 @@
 .pulse.is-on { animation: pulse 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 @keyframes pulse {
   0%, 100% { opacity: .45; transform: scale(1); }
-  50%      { opacity: 1;   transform: scale(1.06); }
+  50%      { opacity: 1;   transform: scale(1.05); }
 }
 
 .blink.is-on { animation: blink 1.6s steps(1) infinite; }
-@keyframes blink { 0%, 60% { opacity: 1; } 61%, 100% { opacity: .2; } }
+@keyframes blink { 0%, 60% { opacity: 1; } 61%, 100% { opacity: .25; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -170,11 +173,26 @@
   .packet.is-on, .pulse.is-on, .blink.is-on { animation: none; }
 }
 
-@media (max-width: 700px) {
-  /* Les schémas restent lisibles : on les laisse déborder dans un conteneur défilant. */
-  .stage { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .stage svg { min-width: 620px; }
-  .scene-caption { min-height: 150px; }
-  .scene-controls { padding-top: 4px; }
+/* ---------- Écrans étroits ----------
+   Le schéma tient toujours en largeur : jamais de défilement horizontal.
+   Comme les tailles de police du SVG sont exprimées en unités du viewBox,
+   les agrandir ici compense la réduction d'échelle et garde le texte lisible. */
+
+@media (max-width: 760px) {
+  .s-label    { font-size: 17px; }
+  .s-label-sm { font-size: 15px; }
+  .s-label-xs { font-size: 14px; }
+  .s-box, .s-box-accent, .s-box-violet, .s-box-teal { stroke-width: 2; }
+  .s-line, .s-line-accent { stroke-width: 2.6; }
+  .stage { padding: 8px 6px 0; }
+  .scene-caption { min-height: 148px; padding: 14px 16px 4px; }
+  .scene-caption .step { inset: 14px 16px auto; }
+  .scene-controls { padding: 8px 14px 14px; }
   .dots { display: none; }
+}
+
+@media (max-width: 460px) {
+  .s-label    { font-size: 23px; }
+  .s-label-sm { font-size: 20px; }
+  .s-label-xs { font-size: 18.5px; }
 }

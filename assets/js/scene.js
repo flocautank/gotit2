@@ -56,9 +56,17 @@
       return { el: el, match: parseRange(el.getAttribute('data-show')) };
     });
 
+    this.caption = root.querySelector('.scene-caption');
     this.buildControls();
     this.go(1, true);
+    this.sizeCaption();
     this.observe();
+
+    var self = this;
+    window.addEventListener('resize', function () {
+      clearTimeout(self.resizeTimer);
+      self.resizeTimer = setTimeout(function () { self.sizeCaption(); }, 200);
+    });
   }
 
   Scene.prototype.buildControls = function () {
@@ -118,6 +126,15 @@
       el.setAttribute('aria-label', label);
       return el;
     }
+  };
+
+  /* Les étapes sont superposées : on réserve la hauteur de la plus longue,
+     sinon la dernière ligne d'une légende recouvre les boutons. */
+  Scene.prototype.sizeCaption = function () {
+    if (!this.caption) return;
+    var tallest = 0;
+    this.steps.forEach(function (el) { tallest = Math.max(tallest, el.offsetHeight); });
+    if (tallest) this.caption.style.minHeight = (tallest + 26) + 'px';
   };
 
   Scene.prototype.go = function (step, silent) {

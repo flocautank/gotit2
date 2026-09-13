@@ -1,12 +1,21 @@
-/* GotIt — rendu du catalogue sur la page d'accueil + recherche. */
+/* GotIt — navigation du catalogue.
+ *
+ * On n'affiche jamais les leçons d'emblée : on choisit d'abord un domaine, puis
+ * une catégorie. La recherche, elle, court-circuite la hiérarchie et cherche
+ * directement dans toutes les leçons.
+ *
+ * L'état de navigation vit dans le fragment d'URL (#/ia, #/ia/agents), ce qui
+ * rend le bouton « retour » du navigateur utilisable.
+ */
 (function () {
   'use strict';
 
   var data = window.GOTIT;
-  var root = document.getElementById('catalogue');
+  var view = document.getElementById('view');
   var search = document.getElementById('search');
-  var summaryEl = document.getElementById('catalogue-summary');
-  if (!data || !root) return;
+  var hint = document.getElementById('search-hint');
+  var empty = document.getElementById('empty-state');
+  if (!data || !view) return;
 
   function el(tag, className, text) {
     var node = document.createElement(tag);
@@ -15,7 +24,48 @@
     return node;
   }
 
-  function lessonCard(id) {
+  function lessonsOf(node) {
+    // Récupère récursivement les identifiants de leçons d'une famille ou d'une catégorie.
+    var out = [];
+    (node.categories || [node]).forEach(function (category) {
+      (category.subcategories || []).forEach(function (sub) {
+        out = out.concat(sub.lessons);
+      });
+    });
+    return out;
+  }
+
+  function countLabel(ids) {
+    var ready = ids.filter(function (id) { return data.LESSONS[id] && !data.LESSONS[id].soon; }).length;
+    var soon = ids.length - ready;
+    var label = ready + (ready > 1 ? ' leçons' : ' leçon');
+    if (soon) label += ' · ' + soon + ' à venir';
+    return label;
+  }
+
+  function findFamily(id) {
+    return data.FAMILIES.filter(function (f) { return f.id === id; })[0];
+  }
+  function findCategory(family, id) {
+    return family && family.categories.filter(function (c) { return c.id === id; })[0];
+  }
+
+  /* Chemin lisible d'une leçon, pour les résultats de recherche. */
+  function pathOf(lessonId) {
+    var found = null;
+    data.FAMILIES.forEach(function (family) {
+      family.categories.forEach(function (category) {
+        category.subcategories.forEach(function (sub) {
+          if (sub.lessons.indexOf(lessonId) !== -1) {
+            found = family.title + ' › ' + category.title + ' › ' + sub.title;
+          }
+        });
+      });
+    });
+    return found;
+  }
+
+  function lessonCard(id, withPath) {
     var lesson = data.LESSONS[id];
     if (!lesson) return null;
 
@@ -32,91 +82,169 @@
     if (lesson.soon) meta.appendChild(el('span', 'tag', 'Bientôt'));
     card.appendChild(meta);
 
-    card.dataset.search = (lesson.title + ' ' + lesson.summary + ' ' + (lesson.keywords || []).join(' ')).toLowerCase();
+    if (withPath) {
+      var path = pathOf(id);
+      if (path) card.appendChild(el('div', 'card-path', path));
+    }
     return card;
   }
 
-  function render() {
-    var published = 0;
-    var planned = 0;
-
-    data.FAMILIES.forEach(function (family) {
-      var section = el('section', 'family');
-      section.id = family.id;
-
-      var head = el('div', 'family-head');
-      head.appendChild(el('h2', null, family.title));
-      var familyCount = el('span', 'count');
-      head.appendChild(familyCount);
-      section.appendChild(head);
-      section.appendChild(el('p', 'family-desc', family.description));
-
-      var familyTotal = 0;
-
-      family.categories.forEach(function (category) {
-        var catNode = el('div', 'category');
-        catNode.appendChild(el('h3', null, category.title));
-
-        category.subcategories.forEach(function (sub) {
-          var subNode = el('div', 'subcategory');
-          subNode.appendChild(el('h4', null, sub.title));
-
-          var cards = el('div', 'cards');
-          sub.lessons.forEach(function (id) {
-            var card = lessonCard(id);
-            if (!card) return;
-            cards.appendChild(card);
-            familyTotal++;
-            if (data.LESSONS[id].soon) planned++; else published++;
-          });
-
-          subNode.appendChild(cards);
-          catNode.appendChild(subNode);
-        });
-
-        section.appendChild(catNode);
-      });
-
-      familyCount.textContent = familyTotal + (familyTotal > 1 ? ' contenus' : ' contenu');
-      root.appendChild(section);
+  function crumbs(items) {
+    var bar = el('nav', 'crumbs');
+    bar.setAttribute('aria-label', 'Fil d’Ariane');
+    items.forEach(function (item, i) {
+      if (i) bar.appendChild(el('span', 'sep', '/'));
+      if (item.route == null) {
+        bar.appendChild(el('span', 'here', item.label));
+      } else {
+        var button = el('button', null, item.label);
+        button.type = 'button';
+        button.addEventListener('click', function () { location.hash = item.route; });
+        bar.appendChild(button);
+      }
     });
-
-    if (summaryEl) {
-      summaryEl.textContent = published + ' leçon' + (published > 1 ? 's' : '') +
-        ' disponible' + (published > 1 ? 's' : '') + ' · ' + planned + ' en préparation';
-    }
+    return bar;
   }
 
-  function filter(query) {
-    var q = query.trim().toLowerCase();
-    var noResult = true;
+  function head(title, description) {
+    var box = el('div', 'view-head');
+    box.appendChild(el('h2', null, title));
+    if (description) box.appendChild(el('p', null, description));
+    return box;
+  }
 
-    Array.prototype.forEach.call(root.querySelectorAll('.card'), function (card) {
-      var hit = !q || card.dataset.search.indexOf(q) !== -1;
-      card.style.display = hit ? '' : 'none';
-      if (hit) noResult = false;
-    });
+  /* ---------- Les trois écrans ---------- */
 
-    // On masque les blocs devenus vides pour garder une page lisible.
-    Array.prototype.forEach.call(root.querySelectorAll('.subcategory'), function (node) {
-      node.style.display = node.querySelector('.card:not([style*="none"])') ? '' : 'none';
-    });
-    ['.category', '.family'].forEach(function (selector) {
-      Array.prototype.forEach.call(root.querySelectorAll(selector), function (node) {
-        var visible = Array.prototype.some.call(node.querySelectorAll('.card'), function (card) {
-          return card.style.display !== 'none';
-        });
-        node.style.display = visible ? '' : 'none';
+  function renderFamilies() {
+    var cards = el('div', 'cards cards-wide');
+
+    data.FAMILIES.forEach(function (family) {
+      var ids = lessonsOf(family);
+      var card = el('a', 'card card-family');
+      card.href = '#/' + family.id;
+      card.appendChild(el('div', 'card-title', family.title));
+      card.appendChild(el('p', 'card-sum', family.description));
+
+      var topics = el('ul', 'card-topics');
+      ids.slice(0, 3).forEach(function (id) {
+        if (data.LESSONS[id]) topics.appendChild(el('li', null, data.LESSONS[id].title));
       });
+      card.appendChild(topics);
+
+      var meta = el('div', 'card-meta');
+      meta.appendChild(el('span', 'card-count', countLabel(ids)));
+      card.appendChild(meta);
+      cards.appendChild(card);
     });
 
-    var empty = document.getElementById('empty-state');
-    if (empty) empty.hidden = !noResult;
+    view.appendChild(head('Par où commencer ?', 'Choisissez un domaine, puis une catégorie — ou tapez un mot-clé dans la barre ci-dessus.'));
+    view.appendChild(cards);
+  }
+
+  function renderFamily(family) {
+    view.appendChild(crumbs([
+      { label: 'Tous les domaines', route: '#/' },
+      { label: family.title }
+    ]));
+    view.appendChild(head(family.title, family.description));
+
+    var cards = el('div', 'cards cards-wide');
+    family.categories.forEach(function (category) {
+      var ids = lessonsOf(category);
+      var card = el('a', 'card');
+      card.href = '#/' + family.id + '/' + category.id;
+      card.appendChild(el('div', 'card-title', category.title));
+
+      var topics = el('ul', 'card-topics');
+      category.subcategories.forEach(function (sub) { topics.appendChild(el('li', null, sub.title)); });
+      card.appendChild(topics);
+
+      var meta = el('div', 'card-meta');
+      meta.appendChild(el('span', 'card-count', countLabel(ids)));
+      card.appendChild(meta);
+      cards.appendChild(card);
+    });
+    view.appendChild(cards);
+  }
+
+  function renderCategory(family, category) {
+    view.appendChild(crumbs([
+      { label: 'Tous les domaines', route: '#/' },
+      { label: family.title, route: '#/' + family.id },
+      { label: category.title }
+    ]));
+    view.appendChild(head(category.title));
+
+    category.subcategories.forEach(function (sub) {
+      var block = el('div', 'subcategory');
+      block.appendChild(head(sub.title));
+      block.querySelector('h2').style.fontSize = '1.12rem';
+      var cards = el('div', 'cards');
+      sub.lessons.forEach(function (id) {
+        var card = lessonCard(id);
+        if (card) cards.appendChild(card);
+      });
+      block.appendChild(cards);
+      block.style.marginBottom = '30px';
+      view.appendChild(block);
+    });
+  }
+
+  function renderSearch(query) {
+    var q = query.trim().toLowerCase();
+    var hits = Object.keys(data.LESSONS).filter(function (id) {
+      var lesson = data.LESSONS[id];
+      var haystack = (lesson.title + ' ' + lesson.summary + ' ' + (lesson.keywords || []).join(' ')).toLowerCase();
+      return haystack.indexOf(q) !== -1;
+    });
+
+    empty.hidden = hits.length > 0;
+    view.appendChild(el('p', 'results-count',
+      hits.length + (hits.length > 1 ? ' résultats' : ' résultat') + ' pour « ' + query.trim() + ' »'));
+
+    var cards = el('div', 'cards');
+    hits.forEach(function (id) {
+      var card = lessonCard(id, true);
+      if (card) cards.appendChild(card);
+    });
+    view.appendChild(cards);
+  }
+
+  /* ---------- Routage ---------- */
+
+  function render() {
+    view.textContent = '';
+    empty.hidden = true;
+
+    if (search && search.value.trim().length >= 2) {
+      hint.hidden = false;
+      hint.textContent = 'Effacez la recherche pour revenir à la navigation par domaine.';
+      renderSearch(search.value);
+      return;
+    }
+
+    hint.hidden = true;
+
+    var parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+    var family = parts[0] && findFamily(parts[0]);
+    var category = family && parts[1] && findCategory(family, parts[1]);
+
+    if (category) renderCategory(family, category);
+    else if (family) renderFamily(family);
+    else renderFamilies();
+  }
+
+  window.addEventListener('hashchange', function () {
+    render();
+    // On ne remonte en haut que lorsqu'on change d'écran depuis le bas de la page.
+    var anchor = document.getElementById('catalogue');
+    if (anchor && anchor.getBoundingClientRect().top < 0) anchor.scrollIntoView();
+  });
+
+  if (search) {
+    search.addEventListener('input', render);
+    search.addEventListener('search', render);
   }
 
   render();
-
-  if (search) {
-    search.addEventListener('input', function () { filter(search.value); });
-  }
 })();

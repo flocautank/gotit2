@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Local ou cloud : quelle différence ? — GotIt</title>
 <meta name="description" content="Local ou cloud, expliqué en schémas animés : où sont vraiment vos fichiers, qui entretient la machine, et ce que ça change au quotidien.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2364d2ff'/><text x='50' y='68' font-size='54' font-family='sans-serif' font-weight='bold' text-anchor='middle' fill='%2306121c'>G</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
 <link rel="stylesheet" href="../assets/css/main.css">
 <link rel="stylesheet" href="../assets/css/lesson.css">
 </head>
@@ -58,7 +58,7 @@
             <!-- Maison / local -->
             <g data-show="1-4">
               <path d="M60 130 L165 58 L270 130 V246 H60 Z" class="s-box"/>
-              <rect x="128" y="176" width="74" height="70" rx="4" fill="#0d1421" stroke="#2f3b58"/>
+              <rect x="128" y="176" width="74" height="70" rx="4" fill="#F1EBDF" stroke="var(--line-strong)"/>
               <text x="165" y="278" text-anchor="middle" class="s-label">Chez vous</text>
               <text x="165" y="296" text-anchor="middle" class="s-label-xs">« en local »</text>
             </g>
@@ -66,12 +66,12 @@
             <!-- Datacenter / cloud -->
             <g data-show="2-4" class="m-right">
               <rect x="530" y="92" width="212" height="154" rx="12" class="s-box-accent"/>
-              <g fill="#0d1421" stroke="#2f3b58">
+              <g fill="#F1EBDF" stroke="var(--line-strong)">
                 <rect x="548" y="110" width="52" height="118" rx="5"/>
                 <rect x="610" y="110" width="52" height="118" rx="5"/>
                 <rect x="672" y="110" width="52" height="118" rx="5"/>
               </g>
-              <g class="blink" data-show="2-4" fill="var(--accent-3)">
+              <g class="blink" data-show="2-4" fill="var(--sage)">
                 <circle cx="560" cy="124" r="3"/><circle cx="622" cy="124" r="3"/><circle cx="684" cy="124" r="3"/>
               </g>
               <text x="636" y="278" text-anchor="middle" class="s-label">Chez un hébergeur</text>
@@ -80,9 +80,9 @@
 
             <!-- La photo -->
             <g data-show="1-4" class="m-pop">
-              <rect x="142" y="190" width="46" height="38" rx="4" fill="rgba(94,234,212,.18)" stroke="var(--accent-3)"/>
-              <circle cx="154" cy="202" r="4" fill="var(--accent-3)"/>
-              <path d="M146 224 l14 -14 l10 10 l8 -6 v10 z" fill="var(--accent-3)" opacity=".7"/>
+              <rect x="142" y="190" width="46" height="38" rx="4" fill="var(--sage-soft)" stroke="var(--sage)"/>
+              <circle cx="154" cy="202" r="4" fill="var(--sage)"/>
+              <path d="M146 224 l14 -14 l10 10 l8 -6 v10 z" fill="var(--sage)" opacity=".7"/>
             </g>
 
             <!-- Copie vers le cloud -->
@@ -116,7 +116,7 @@
           <svg viewBox="0 0 800 360" role="img" aria-label="Tableau comparatif animé entre local et cloud">
             <g data-show="1-5">
               <rect x="40" y="40" width="340" height="290" rx="14" class="s-box"/>
-              <text x="210" y="74" text-anchor="middle" class="s-label" fill="var(--accent-3)">LOCAL</text>
+              <text x="210" y="74" text-anchor="middle" class="s-label" fill="var(--sage)">LOCAL</text>
               <text x="210" y="94" text-anchor="middle" class="s-label-xs">la machine est à vous</text>
               <rect x="420" y="40" width="340" height="290" rx="14" class="s-box"/>
               <text x="590" y="74" text-anchor="middle" class="s-label" fill="var(--accent)">CLOUD</text>
@@ -143,7 +143,7 @@
                 <text x="450" y="278">On augmente en quelques clics</text>
               </g>
               <g data-show="5" class="m-rise">
-                <text x="70" y="308" class="s-label-xs" fill="var(--accent-3)">SANS INTERNET : ça marche</text>
+                <text x="70" y="308" class="s-label-xs" fill="var(--sage)">SANS INTERNET : ça marche</text>
                 <text x="450" y="308" class="s-label-xs" fill="var(--danger)">SANS INTERNET : plus rien</text>
               </g>
             </g>
@@ -192,9 +192,9 @@
                 <text x="150" y="80">Vos applications</text>
                 <text x="150" y="132">Le système, les mises à jour</text>
                 <text x="150" y="184">La machine, les disques</text>
-                <text x="150" y="236">Le local, l’électricité, le réseau</text>
+                <text x="150" y="236">Local, courant, réseau</text>
               </g>
-              <text x="150" y="278" text-anchor="middle" class="s-label-xs" fill="var(--accent-3)">100 % à votre charge</text>
+              <text x="150" y="278" text-anchor="middle" class="s-label-xs" fill="var(--sage)">100 % à votre charge</text>
             </g>
 
             <!-- Colonne cloud : couches reprises une à une -->
@@ -208,7 +208,7 @@
               <text x="640" y="80">Vos applications</text>
               <text x="640" y="132">Le système, les mises à jour</text>
               <text x="640" y="184">La machine, les disques</text>
-              <text x="640" y="236">Le local, l’électricité, le réseau</text>
+              <text x="640" y="236">Local, courant, réseau</text>
             </g>
             <g class="s-box-accent">
               <rect x="550" y="208" width="180" height="44" rx="8" data-show="2-4" class="m-pop"/>
@@ -216,7 +216,7 @@
               <rect x="550" y="104" width="180" height="44" rx="8" data-show="4" class="m-pop"/>
             </g>
             <g class="s-label-sm" text-anchor="middle" fill="var(--accent)">
-              <text x="640" y="236" data-show="2-4">Le local, l’électricité, le réseau</text>
+              <text x="640" y="236" data-show="2-4">Local, courant, réseau</text>
               <text x="640" y="184" data-show="3-4">La machine, les disques</text>
               <text x="640" y="132" data-show="4">Le système, les mises à jour</text>
             </g>

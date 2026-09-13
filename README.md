@@ -36,7 +36,7 @@ Famille            ex. « Intelligence artificielle »
 index.html              Accueil : catalogue + recherche
 lecons/*.html           Une page par leçon
 assets/js/data.js       Le catalogue (taxonomie + fiches des leçons)
-assets/js/home.js       Rendu de l'accueil et filtre de recherche
+assets/js/home.js       Navigation du catalogue (domaine > catégorie) et recherche
 assets/js/scene.js      Moteur d'animation des scènes (étapes, lecture, clavier)
 assets/css/main.css     Styles généraux
 assets/css/lesson.css   Styles des leçons et utilitaires d'animation
@@ -60,8 +60,16 @@ Le site est publié par GitHub Pages depuis la branche `gh-pages`
 Il n'y a rien à faire à la main : le workflow `.github/workflows/publier.yml`
 recopie `main` sur `gh-pages` à chaque push. On travaille donc toujours sur `main`.
 
+## Parti pris visuel
+
+Palette chaude et claire — fond ivoire, texte brun sombre, accent terre cuite, sauge
+et ardoise en secondaires — avec une serif pour les titres et une sans-serif système
+pour le texte. Tout est défini en variables CSS en haut de `assets/css/main.css` :
+changer la charte, c'est changer ce bloc.
+
 ## Accessibilité
 
 - Les scènes se pilotent au clavier (`←`, `→`, `Espace`) et se mettent en pause hors écran.
+- Les schémas tiennent dans la largeur de l'écran : aucun défilement horizontal, y compris sur mobile.
 - Le réglage système « réduire les animations » est respecté.
 - Chaque schéma porte une description textuelle, et chaque étape existe sous forme de texte.
