@@ -1,0 +1,36 @@
+# Publie le site statique sur GitHub Pages à chaque mise à jour de la branche principale.
+name: Déploiement GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # enablement: true active GitHub Pages (source « GitHub Actions ») si ce
+      # n'est pas déjà fait, au lieu d'échouer avec un 404 sur un dépôt neuf.
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Publier la racine du dépôt comme artefact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

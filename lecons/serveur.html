@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C’est quoi un serveur ? — GotIt</title>
+<meta name="description" content="Un serveur expliqué en schémas animés : une machine allumée en permanence qui attend des demandes et y répond.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2364d2ff'/><text x='50' y='68' font-size='54' font-family='sans-serif' font-weight='bold' text-anchor='middle' fill='%2306121c'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav">
+      <a href="../index.html#numerique">Numérique</a>
+      <a href="../index.html#ia">IA</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html">Accueil</a><span>/</span>Le numérique<span>/</span>Infrastructure<span>/</span>Les fondations
+      </div>
+      <h1>C’est quoi un serveur&nbsp;?</h1>
+      <p class="lead">
+        On en parle comme d’une chose abstraite — « c’est sur le serveur », « le serveur est tombé ».
+        En réalité, c’est un objet parfaitement concret, et sa mission tient en une phrase.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-1">Découverte</span>
+        <span class="tag">5 min</span>
+        <span class="tag">4 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Un serveur n’est pas une technologie mystérieuse&nbsp;: <strong>c’est un ordinateur</strong>.
+        Ce qui le distingue de celui posé sur votre bureau, c’est son emploi du temps.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un ordinateur qui ne s’éteint jamais">
+        <div class="scene-title">Scène 1 — La même machine, un autre métier</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 330" role="img" aria-label="Comparaison entre un ordinateur personnel éteint la nuit et un serveur allumé en permanence">
+            <!-- Ordinateur personnel -->
+            <g data-show="1-3" class="m-rise">
+              <rect x="90" y="90" width="180" height="118" rx="10" class="s-box"/>
+              <rect x="104" y="104" width="152" height="90" rx="6" fill="#0d1421" stroke="#2f3b58"/>
+              <path d="M60 208 H300 l-18 26 H78 Z" class="s-box"/>
+              <text x="180" y="272" text-anchor="middle" class="s-label">Votre ordinateur</text>
+              <text x="180" y="292" text-anchor="middle" class="s-label-sm">un outil que vous utilisez</text>
+            </g>
+            <g data-show="1" class="m-pop">
+              <circle cx="180" cy="149" r="26" fill="rgba(251,191,36,.12)" stroke="var(--warn)"/>
+              <path d="M180 136 v16" stroke="var(--warn)" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M169 140 a15 15 0 1 0 22 0" stroke="var(--warn)" stroke-width="2.5" fill="none"/>
+              <text x="180" y="60" text-anchor="middle" class="s-label-sm">allumé quand vous en avez besoin</text>
+            </g>
+
+            <!-- Serveur -->
+            <g data-show="2-3" class="m-right">
+              <rect x="530" y="66" width="150" height="176" rx="10" class="s-box-accent"/>
+              <g fill="#0d1421" stroke="#2f3b58">
+                <rect x="544" y="82" width="122" height="30" rx="5"/>
+                <rect x="544" y="120" width="122" height="30" rx="5"/>
+                <rect x="544" y="158" width="122" height="30" rx="5"/>
+                <rect x="544" y="196" width="122" height="30" rx="5"/>
+              </g>
+              <g class="blink" data-show="2-3" fill="var(--accent-3)">
+                <circle cx="558" cy="97" r="4"/><circle cx="558" cy="135" r="4"/>
+                <circle cx="558" cy="173" r="4"/><circle cx="558" cy="211" r="4"/>
+              </g>
+              <text x="605" y="272" text-anchor="middle" class="s-label">Un serveur</text>
+              <text x="605" y="292" text-anchor="middle" class="s-label-sm">la même informatique, en continu</text>
+            </g>
+            <g data-show="2-3" class="m-fall">
+              <rect x="548" y="24" width="114" height="28" rx="14" fill="rgba(94,234,212,.12)" stroke="var(--accent-3)"/>
+              <text x="605" y="43" text-anchor="middle" class="s-label-sm" fill="var(--accent-3)">allumé 24 h / 24</text>
+            </g>
+
+            <!-- Demande -->
+            <g data-show="3">
+              <path id="srv-s1-path" d="M310 150 H520" class="s-line-accent m-draw" data-show="3"
+                    marker-end="url(#srv-arrow)"/>
+              <text x="415" y="134" text-anchor="middle" class="s-label-sm" data-show="3">« tu peux me donner… ? »</text>
+              <text x="415" y="182" text-anchor="middle" class="s-label-xs" data-show="3">il attend, il répond, il recommence</text>
+            </g>
+
+            <defs>
+              <marker id="srv-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/>
+              </marker>
+            </defs>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Votre ordinateur travaille quand vous êtes là.</b><span>Vous l’allumez, vous vous en servez, vous le refermez. Il attend votre retour.</span></p>
+          <p class="step" data-duration="4600"><b>Un serveur, c’est le même genre de machine — mais qui ne s’arrête jamais.</b><span>Pas d’écran, pas de clavier, souvent rangé à plat dans une armoire métallique. Et surtout&nbsp;: jamais éteint.</span></p>
+          <p class="step" data-duration="5200"><b>Sa mission tient en une phrase : attendre une demande, et y répondre.</b><span>« Serveur » vient de « servir ». Il sert des pages, des fichiers, des réponses — à qui les demande.</span></p>
+        </div>
+      </section>
+
+      <h2>Le dialogue client ↔ serveur</h2>
+      <p>
+        Tout ce que vous faites en ligne suit le même aller-retour&nbsp;: votre appareil
+        (le <strong>client</strong>) pose une question, une machine distante (le <strong>serveur</strong>)
+        y répond. C’est aussi simple que de commander au comptoir.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : le trajet d’une demande et de sa réponse">
+        <div class="scene-title">Scène 2 — Une demande, une réponse</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un ordinateur envoie une requête à un serveur qui renvoie une page">
+            <g data-show="1-4">
+              <rect x="50" y="104" width="150" height="96" rx="10" class="s-box"/>
+              <rect x="62" y="116" width="126" height="72" rx="6" fill="#0d1421" stroke="#2f3b58"/>
+              <text x="125" y="228" text-anchor="middle" class="s-label">Vous</text>
+              <text x="125" y="246" text-anchor="middle" class="s-label-xs">le « client »</text>
+            </g>
+            <g data-show="1-4">
+              <rect x="600" y="86" width="140" height="132" rx="10" class="s-box-accent"/>
+              <g fill="#0d1421" stroke="#2f3b58">
+                <rect x="613" y="100" width="114" height="26" rx="5"/>
+                <rect x="613" y="134" width="114" height="26" rx="5"/>
+                <rect x="613" y="168" width="114" height="26" rx="5"/>
+              </g>
+              <text x="670" y="240" text-anchor="middle" class="s-label">Le serveur</text>
+            </g>
+
+            <!-- Aller -->
+            <path d="M215 128 H585" class="s-line m-draw" data-show="1-4" stroke-dasharray="600"/>
+            <circle r="8" class="packet" data-show="1" style="offset-path:path('M215 128 H585')"/>
+            <text x="400" y="112" text-anchor="middle" class="s-label-sm" data-show="1">« donne-moi la page d’accueil »</text>
+
+            <!-- Traitement -->
+            <g data-show="2">
+              <circle cx="670" cy="152" r="46" fill="rgba(100,210,255,.10)" stroke="var(--accent)" class="pulse" data-show="2"/>
+              <text x="670" y="58" text-anchor="middle" class="s-label-sm" fill="var(--accent)">il cherche, il assemble</text>
+            </g>
+
+            <!-- Retour -->
+            <path d="M585 176 H215" class="s-line m-draw" data-show="3-4"/>
+            <circle r="8" class="packet packet-teal" data-show="3-4"  style="offset-path:path('M585 176 H215')"/>
+            <text x="400" y="200" text-anchor="middle" class="s-label-sm" data-show="3-4">la page arrive</text>
+
+            <g data-show="4" class="m-fall">
+              <rect x="316" y="232" width="168" height="30" rx="15" fill="rgba(94,234,212,.12)" stroke="var(--accent-3)"/>
+              <text x="400" y="252" text-anchor="middle" class="s-label-sm" fill="var(--accent-3)">le tout en ~0,2 seconde</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>1. Vous demandez.</b><span>Vous tapez une adresse ou cliquez sur un lien&nbsp;: votre appareil envoie une demande, appelée <em>requête</em>.</span></p>
+          <p class="step" data-duration="4200"><b>2. Le serveur travaille.</b><span>Il vérifie qui vous êtes, va chercher les informations, fabrique la page.</span></p>
+          <p class="step" data-duration="4200"><b>3. Il répond.</b><span>Il renvoie le résultat, que votre navigateur affiche.</span></p>
+          <p class="step" data-duration="4600"><b>4. Et ça recommence, des milliards de fois par jour.</b><span>Chaque image, chaque message, chaque « like » est un aller-retour de ce type.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le serveur, c’est le comptoir d’une boulangerie ouverte en permanence. Vous commandez
+          (requête), la personne va chercher derrière (traitement), elle vous tend le pain (réponse).
+          Le mot « serveur » désigne d’ailleurs autant la machine que le logiciel qui tient le comptoir.
+        </p>
+      </div>
+
+      <h2>Un serveur, des milliers de clients</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : plusieurs clients pour un même serveur">
+        <div class="scene-title">Scène 3 — Pourquoi un site « tombe »</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 340" role="img" aria-label="Plusieurs appareils se connectent au même serveur, qui sature, puis est multiplié">
+            <!-- Serveur central -->
+            <g data-show="1-4">
+              <rect x="345" y="126" width="110" height="104" rx="10" class="s-box-accent" id="srv3-core"/>
+              <g fill="#0d1421" stroke="#2f3b58">
+                <rect x="357" y="138" width="86" height="22" rx="4"/>
+                <rect x="357" y="167" width="86" height="22" rx="4"/>
+                <rect x="357" y="196" width="86" height="22" rx="4"/>
+              </g>
+              <text x="400" y="252" text-anchor="middle" class="s-label">Un serveur</text>
+            </g>
+
+            <!-- Clients -->
+            <g class="s-label-sm">
+              <g data-show="1-4" class="m-pop"><rect x="60" y="40" width="96" height="58" rx="8" class="s-box"/><text x="108" y="75" text-anchor="middle" class="s-label-sm">Vous</text></g>
+              <g data-show="2-4" class="m-pop"><rect x="60" y="250" width="96" height="58" rx="8" class="s-box"/><text x="108" y="285" text-anchor="middle" class="s-label-sm">Un voisin</text></g>
+              <g data-show="2-4" class="m-pop"><rect x="644" y="40" width="96" height="58" rx="8" class="s-box"/><text x="692" y="75" text-anchor="middle" class="s-label-sm">Un collègue</text></g>
+              <g data-show="2-4" class="m-pop"><rect x="644" y="250" width="96" height="58" rx="8" class="s-box"/><text x="692" y="285" text-anchor="middle" class="s-label-sm">Un inconnu</text></g>
+              <g data-show="3-4" class="m-pop"><rect x="352" y="16" width="96" height="42" rx="8" class="s-box"/><text x="400" y="42" text-anchor="middle" class="s-label-sm">+ 10 000</text></g>
+            </g>
+
+            <!-- Liaisons -->
+            <path d="M156 69 C 250 69, 280 150, 345 158" class="s-line m-draw" data-show="1-4"/>
+            <path d="M156 279 C 250 279, 280 208, 345 200" class="s-line m-draw" data-show="2-4"/>
+            <path d="M644 69 C 550 69, 520 150, 455 158" class="s-line m-draw" data-show="2-4"/>
+            <path d="M644 279 C 550 279, 520 208, 455 200" class="s-line m-draw" data-show="2-4"/>
+            <path d="M400 58 V 126" class="s-line m-draw" data-show="3-4"/>
+
+            <!-- Saturation -->
+            <g data-show="3">
+              <rect x="335" y="116" width="130" height="124" rx="12" fill="rgba(251,113,133,.12)" stroke="var(--danger)" class="pulse" data-show="3"/>
+              <text x="400" y="296" text-anchor="middle" class="s-label-sm" fill="var(--danger)">saturé — tout ralentit</text>
+            </g>
+
+            <!-- Mise à l'échelle -->
+            <g data-show="4" class="m-rise">
+              <rect x="212" y="126" width="86" height="104" rx="10" class="s-box-teal"/>
+              <rect x="502" y="126" width="86" height="104" rx="10" class="s-box-teal"/>
+              <text x="400" y="296" text-anchor="middle" class="s-label-sm" fill="var(--accent-3)">on en ajoute d’autres, et la charge se partage</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Un serveur ne sert pas qu’une personne.</b><span>Il répond à tous ceux qui le sollicitent, en même temps.</span></p>
+          <p class="step" data-duration="4200"><b>Des dizaines, des milliers, des millions de clients.</b><span>Chacun envoie ses propres requêtes, sans savoir que les autres existent.</span></p>
+          <p class="step" data-duration="4600"><b>Quand il y a trop de monde, il sature.</b><span>C’est exactement ce qui se passe quand un site « tombe » un soir de grosse affluence&nbsp;: la machine n’arrive plus à suivre.</span></p>
+          <p class="step" data-duration="4800"><b>La parade : en mettre plusieurs.</b><span>On duplique le serveur et on répartit les visiteurs entre les copies. C’est ce qu’on appelle « passer à l’échelle ».</span></p>
+        </div>
+      </section>
+
+      <h2>Mais il est où, physiquement&nbsp;?</h2>
+
+      <!-- ============ SCÈNE 4 ============ -->
+      <section class="scene" aria-label="Animation : l’intérieur d’un centre de données">
+        <div class="scene-title">Scène 4 — Dans un bâtiment, quelque part</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un centre de données rempli d’armoires de serveurs, relié à Internet">
+            <g data-show="1-3" class="m-rise">
+              <rect x="70" y="60" width="660" height="180" rx="14" class="s-box"/>
+              <text x="400" y="272" text-anchor="middle" class="s-label-sm">Un centre de données (« datacenter »)</text>
+            </g>
+            <g data-show="1-3">
+              <g fill="#0d1421" stroke="#2f3b58">
+                <rect x="100" y="86" width="52" height="128" rx="6"/><rect x="168" y="86" width="52" height="128" rx="6"/>
+                <rect x="236" y="86" width="52" height="128" rx="6"/><rect x="304" y="86" width="52" height="128" rx="6"/>
+                <rect x="372" y="86" width="52" height="128" rx="6"/><rect x="440" y="86" width="52" height="128" rx="6"/>
+                <rect x="508" y="86" width="52" height="128" rx="6"/><rect x="576" y="86" width="52" height="128" rx="6"/>
+                <rect x="644" y="86" width="52" height="128" rx="6"/>
+              </g>
+              <g class="blink" data-show="1-3" fill="var(--accent-3)" opacity=".9">
+                <circle cx="112" cy="100" r="3"/><circle cx="180" cy="100" r="3"/><circle cx="248" cy="100" r="3"/>
+                <circle cx="316" cy="100" r="3"/><circle cx="384" cy="100" r="3"/><circle cx="452" cy="100" r="3"/>
+                <circle cx="520" cy="100" r="3"/><circle cx="588" cy="100" r="3"/><circle cx="656" cy="100" r="3"/>
+              </g>
+            </g>
+            <g data-show="2-3">
+              <rect x="296" y="112" width="72" height="76" rx="6" fill="rgba(100,210,255,.16)" stroke="var(--accent)" class="pulse" data-show="2-3"/>
+              <text x="332" y="42" text-anchor="middle" class="s-label-sm" fill="var(--accent)">« votre » serveur est l’un d’eux</text>
+              <path d="M332 50 V 106" class="s-line-accent m-draw" data-show="2-3"/>
+            </g>
+            <g data-show="3" class="m-rise">
+              <text x="400" y="292" text-anchor="middle" class="s-label-xs">électricité de secours · climatisation · fibre optique · accès surveillé</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Les serveurs vivent en colocation.</b><span>Des bâtiments entiers, remplis d’armoires, refroidis en permanence&nbsp;: les centres de données.</span></p>
+          <p class="step" data-duration="4400"><b>« Le serveur du site » est l’une de ces machines.</b><span>Une adresse physique, quelque part&nbsp;: près de Paris, à Francfort, en Virginie…</span></p>
+          <p class="step" data-duration="4600"><b>Ce qu’on paie, c’est surtout la continuité.</b><span>Courant de secours, climatisation, double connexion fibre, gardiennage. Un serveur qui ne s’arrête jamais, ça s’entretient.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un serveur est <strong>un ordinateur</strong>, allumé en permanence, dédié à répondre aux demandes.</li>
+        <li>Le <strong>client</strong> demande, le <strong>serveur</strong> répond&nbsp;: c’est tout le fonctionnement du web.</li>
+        <li>Il répond à <strong>beaucoup de monde à la fois</strong>&nbsp;; s’il y en a trop, il sature — d’où la duplication.</li>
+        <li>Il est <strong>physiquement quelque part</strong>, dans un centre de données conçu pour ne jamais s’arrêter.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Si un serveur peut être n’importe où… quelle différence avec « le cloud »&nbsp;? C’est exactement le sujet de la leçon suivante.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="../index.html">← Tous les contenus</a>
+        <a class="btn btn-primary" href="local-vs-cloud.html">Local ou cloud&nbsp;? →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

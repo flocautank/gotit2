@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un serveur MCP, c’est quoi ? — GotIt</title>
+<meta name="description" content="Le Model Context Protocol expliqué en schémas animés : la prise universelle qui relie un assistant IA à vos outils et à vos données.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2364d2ff'/><text x='50' y='68' font-size='54' font-family='sans-serif' font-weight='bold' text-anchor='middle' fill='%2306121c'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav">
+      <a href="../index.html#numerique">Numérique</a>
+      <a href="../index.html#ia">IA</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html">Accueil</a><span>/</span>Intelligence artificielle<span>/</span>Agents &amp; outils<span>/</span>Étendre un assistant
+      </div>
+      <h1>Un serveur MCP, c’est quoi&nbsp;?</h1>
+      <p class="lead">
+        Un assistant IA, seul, ne voit rien de vos outils. Le MCP est la prise standard qui lui
+        permet de s’y brancher — comme l’USB-C a mis fin au tiroir de chargeurs.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span>
+        <span class="tag">7 min</span>
+        <span class="tag">4 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        MCP veut dire <em>Model Context Protocol</em>. Retenez surtout le dernier mot&nbsp;:
+        <strong>un protocole</strong>, c’est-à-dire une langue commune. Et un
+        <strong>serveur MCP</strong>, c’est un petit programme qui parle cette langue au nom
+        d’un de vos outils.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un assistant coupé de vos outils">
+        <div class="scene-title">Scène 1 — L’assistant sous cloche</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 330" role="img" aria-label="Un assistant IA séparé de la messagerie, de l’agenda et des fichiers par un mur">
+            <g data-show="1-4">
+              <circle cx="210" cy="160" r="70" class="s-box-violet"/>
+              <text x="210" y="156" text-anchor="middle" class="s-label">L’assistant</text>
+              <text x="210" y="176" text-anchor="middle" class="s-label-xs">il raisonne très bien</text>
+            </g>
+
+            <!-- Le mur -->
+            <g data-show="2-4">
+              <path d="M400 30 V 300" stroke="var(--danger)" stroke-width="3" stroke-dasharray="10 8" fill="none" class="m-draw" data-show="2-4"/>
+              <text x="400" y="20" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2-4">il ne voit rien de l’autre côté</text>
+            </g>
+
+            <!-- Les outils -->
+            <g data-show="2-4" class="m-right">
+              <rect x="470" y="46" width="250" height="48" rx="10" class="s-box"/><text x="595" y="76" text-anchor="middle" class="s-label-sm">votre messagerie</text>
+              <rect x="470" y="110" width="250" height="48" rx="10" class="s-box"/><text x="595" y="140" text-anchor="middle" class="s-label-sm">votre agenda</text>
+              <rect x="470" y="174" width="250" height="48" rx="10" class="s-box"/><text x="595" y="204" text-anchor="middle" class="s-label-sm">le fichier clients</text>
+              <rect x="470" y="238" width="250" height="48" rx="10" class="s-box"/><text x="595" y="268" text-anchor="middle" class="s-label-sm">vos documents</text>
+            </g>
+
+            <!-- Copier-coller manuel -->
+            <g data-show="3-4">
+              <path d="M470 262 C 380 280, 300 250, 250 226" class="s-line m-draw" data-show="3-4"/>
+              <text x="330" y="306" text-anchor="middle" class="s-label-xs" fill="var(--warn)" data-show="3-4">vous, en train de copier-coller</text>
+            </g>
+
+            <g data-show="4" class="m-fall">
+              <rect x="70" y="34" width="280" height="30" rx="15" fill="rgba(251,191,36,.12)" stroke="var(--warn)"/>
+              <text x="210" y="54" text-anchor="middle" class="s-label-sm" fill="var(--warn)">c’est vous, la passerelle</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Un assistant IA sait raisonner sur ce qu’on lui donne.</b><span>Rien de plus&nbsp;: il ne « voit » pas votre ordinateur, ni vos logiciels.</span></p>
+          <p class="step" data-duration="4400"><b>Or tout ce qui compte est de l’autre côté du mur.</b><span>Vos e-mails, votre agenda, vos dossiers clients, vos documents.</span></p>
+          <p class="step" data-duration="4400"><b>Alors on fait la navette à la main.</b><span>On copie un extrait, on le colle dans la conversation, on recopie la réponse dans l’outil. Fastidieux, et vite obsolète.</span></p>
+          <p class="step" data-duration="4600"><b>La passerelle, c’est vous.</b><span>Toute la question du MCP tient là&nbsp;: comment supprimer cette corvée sans ouvrir grand la porte à n’importe quoi&nbsp;?</span></p>
+        </div>
+      </section>
+
+      <h2>Une prise standard plutôt que du sur-mesure</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : du branchement sur mesure au protocole commun">
+        <div class="scene-title">Scène 2 — Pourquoi un protocole</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 340" role="img" aria-label="Des connexions sur mesure entre assistants et outils, remplacées par un protocole unique">
+            <!-- Assistants -->
+            <g data-show="1-4" class="s-label-sm">
+              <rect x="40" y="70" width="130" height="40" rx="10" class="s-box-violet"/><text x="105" y="95" text-anchor="middle" class="s-label-sm">Assistant A</text>
+              <rect x="40" y="150" width="130" height="40" rx="10" class="s-box-violet"/><text x="105" y="175" text-anchor="middle" class="s-label-sm">Assistant B</text>
+              <rect x="40" y="230" width="130" height="40" rx="10" class="s-box-violet"/><text x="105" y="255" text-anchor="middle" class="s-label-sm">Assistant C</text>
+            </g>
+            <!-- Outils -->
+            <g data-show="1-4" class="s-label-sm">
+              <rect x="630" y="70" width="130" height="40" rx="10" class="s-box"/><text x="695" y="95" text-anchor="middle" class="s-label-sm">Agenda</text>
+              <rect x="630" y="150" width="130" height="40" rx="10" class="s-box"/><text x="695" y="175" text-anchor="middle" class="s-label-sm">CRM</text>
+              <rect x="630" y="230" width="130" height="40" rx="10" class="s-box"/><text x="695" y="255" text-anchor="middle" class="s-label-sm">Fichiers</text>
+            </g>
+
+            <!-- Spaghetti -->
+            <g data-show="2" stroke="var(--danger)" stroke-width="1.6" fill="none" opacity=".85">
+              <path d="M170 90 C 350 90, 450 90, 630 90"/><path d="M170 90 C 350 100, 450 160, 630 170"/><path d="M170 90 C 350 110, 450 230, 630 250"/>
+              <path d="M170 170 C 350 130, 450 100, 630 90"/><path d="M170 170 C 350 170, 450 170, 630 170"/><path d="M170 170 C 350 200, 450 240, 630 250"/>
+              <path d="M170 250 C 350 240, 450 110, 630 90"/><path d="M170 250 C 350 240, 450 180, 630 170"/><path d="M170 250 C 350 250, 450 250, 630 250"/>
+              <text x="400" y="316" text-anchor="middle" class="s-label-sm" fill="var(--danger)" stroke="none">9 branchements à écrire… puis à maintenir</text>
+            </g>
+
+            <!-- MCP -->
+            <g data-show="3-4">
+              <rect x="326" y="120" width="148" height="100" rx="14" class="s-box-accent m-pop" data-show="3-4"/>
+              <text x="400" y="164" text-anchor="middle" class="s-label" fill="var(--accent)" data-show="3-4">MCP</text>
+              <text x="400" y="184" text-anchor="middle" class="s-label-xs" data-show="3-4">une langue commune</text>
+              <g class="s-line" data-show="3-4">
+                <path d="M170 90 C 250 90, 280 150, 326 152" class="m-draw" data-show="3-4"/>
+                <path d="M170 170 H 326" class="m-draw" data-show="3-4"/>
+                <path d="M170 250 C 250 250, 280 190, 326 188" class="m-draw" data-show="3-4"/>
+                <path d="M474 152 C 540 150, 560 90, 630 90" class="m-draw" data-show="3-4"/>
+                <path d="M474 170 H 630" class="m-draw" data-show="3-4"/>
+                <path d="M474 188 C 540 190, 560 250, 630 250" class="m-draw" data-show="3-4"/>
+              </g>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <text x="400" y="316" text-anchor="middle" class="s-label-sm" fill="var(--accent-3)">chaque outil n’expose qu’une prise, une fois pour toutes</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Il y a plusieurs assistants, et beaucoup d’outils.</b><span>Et l’envie, pour chacun, de parler à chacun.</span></p>
+          <p class="step" data-duration="4600"><b>Sans règle commune, il faut tout brancher à la main.</b><span>Trois assistants et trois outils&nbsp;? Neuf intégrations sur mesure — et neuf choses qui casseront un jour.</span></p>
+          <p class="step" data-duration="4600"><b>Le MCP fixe une langue commune.</b><span>Comment se présenter, comment annoncer ce qu’on sait faire, comment demander et répondre. Un protocole, comme l’USB-C pour les chargeurs.</span></p>
+          <p class="step" data-duration="4800"><b>Chaque outil n’a plus qu’une prise à fournir.</b><span>Il l’expose une fois, et tous les assistants compatibles peuvent s’y brancher. C’est ce petit programme qu’on appelle <b>un serveur MCP</b>.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Avant l’USB-C, chaque appareil avait son chargeur et son tiroir de câbles. Depuis, une prise
+          suffit pour tout le monde. Le MCP joue ce rôle entre les assistants IA et les logiciels&nbsp;:
+          le serveur MCP est la prise soudée sur l’appareil.
+        </p>
+      </div>
+
+      <h2>Ce qu’un serveur MCP met à disposition</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : outils, données et modèles exposés par un serveur MCP">
+        <div class="scene-title">Scène 3 — Le menu du serveur</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un serveur MCP expose des actions, des données et des modèles de demande">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="76" width="176" height="136" rx="12" class="s-box-accent"/>
+              <text x="128" y="130" text-anchor="middle" class="s-label" fill="var(--accent)">Serveur MCP</text>
+              <text x="128" y="150" text-anchor="middle" class="s-label-xs">« logiciel RH »</text>
+              <text x="128" y="238" text-anchor="middle" class="s-label-xs">posé devant l’outil existant</text>
+            </g>
+
+            <g data-show="2-4" class="m-right">
+              <rect x="290" y="40" width="470" height="62" rx="12" class="s-box"/>
+              <text x="312" y="66" class="s-label" fill="var(--accent-3)">Des actions</text>
+              <text x="312" y="88" class="s-label-sm">poser un congé · déclarer une absence · éditer une attestation</text>
+            </g>
+            <g data-show="3-4" class="m-right">
+              <rect x="290" y="114" width="470" height="62" rx="12" class="s-box"/>
+              <text x="312" y="140" class="s-label" fill="var(--accent-3)">Des données</text>
+              <text x="312" y="162" class="s-label-sm">solde de congés · calendrier de l’équipe · fiches de poste</text>
+            </g>
+            <g data-show="4" class="m-right">
+              <rect x="290" y="188" width="470" height="62" rx="12" class="s-box"/>
+              <text x="312" y="214" class="s-label" fill="var(--accent-3)">Des demandes toutes prêtes</text>
+              <text x="312" y="236" class="s-label-sm">« prépare ma demande de congés d’été »</text>
+            </g>
+
+            <g class="s-line" data-show="2-4">
+              <path d="M220 130 C 250 130, 258 72, 286 72" class="m-draw" data-show="2-4"/>
+              <path d="M220 144 H 286" class="m-draw" data-show="3-4"/>
+              <path d="M220 158 C 250 158, 258 218, 286 218" class="m-draw" data-show="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Un serveur MCP ne remplace pas votre logiciel.</b><span>Il se pose devant, et traduit ses possibilités dans la langue commune.</span></p>
+          <p class="step" data-duration="4400"><b>Il annonce d’abord des actions.</b><span>« Voilà ce que je sais faire »&nbsp;: poser un congé, éditer une attestation. L’assistant les découvre tout seul en se connectant.</span></p>
+          <p class="step" data-duration="4400"><b>Ensuite des données consultables.</b><span>Votre solde de congés, le calendrier de l’équipe&nbsp;: des informations à jour, lues à la source plutôt que recopiées.</span></p>
+          <p class="step" data-duration="4600"><b>Et parfois des demandes toutes prêtes.</b><span>Des formulations types, fournies par l’outil lui-même, pour les cas les plus fréquents.</span></p>
+        </div>
+      </section>
+
+      <h2>Une demande, du début à la fin</h2>
+
+      <!-- ============ SCÈNE 4 ============ -->
+      <section class="scene" aria-label="Animation : le trajet complet d’une question utilisant un serveur MCP">
+        <div class="scene-title">Scène 4 — « Combien de congés me reste-t-il&nbsp;? »</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une question passe de l’utilisateur à l’assistant, puis au serveur MCP, au logiciel RH, et revient">
+            <g data-show="1-5" class="s-label-sm">
+              <rect x="30" y="110" width="130" height="60" rx="12" class="s-box"/><text x="95" y="146" text-anchor="middle" class="s-label-sm">Vous</text>
+              <rect x="220" y="110" width="150" height="60" rx="12" class="s-box-violet"/><text x="295" y="146" text-anchor="middle" class="s-label-sm">L’assistant</text>
+              <rect x="430" y="110" width="150" height="60" rx="12" class="s-box-accent"/><text x="505" y="140" text-anchor="middle" class="s-label-sm">Serveur MCP</text><text x="505" y="158" text-anchor="middle" class="s-label-xs">RH</text>
+              <rect x="640" y="110" width="130" height="60" rx="12" class="s-box"/><text x="705" y="140" text-anchor="middle" class="s-label-sm">Logiciel RH</text><text x="705" y="158" text-anchor="middle" class="s-label-xs">base de données</text>
+            </g>
+
+            <path d="M160 140 H 216" class="s-line m-draw" data-show="1-5"/>
+            <path d="M370 140 H 426" class="s-line m-draw" data-show="2-5"/>
+            <path d="M580 140 H 636" class="s-line m-draw" data-show="3-5"/>
+
+            <circle r="7" class="packet" data-show="1" style="offset-path:path('M160 140 H 216')"/>
+            <text x="295" y="86" text-anchor="middle" class="s-label-xs" data-show="1">« il me reste combien de jours ? »</text>
+
+            <g data-show="2">
+              <rect x="396" y="42" width="218" height="30" rx="15" fill="rgba(251,191,36,.12)" stroke="var(--warn)" class="m-fall" data-show="2"/>
+              <text x="505" y="62" text-anchor="middle" class="s-label-xs" fill="var(--warn)" data-show="2">vous autorisez l’accès</text>
+              <circle r="7" class="packet" data-show="2" style="offset-path:path('M370 140 H 426')"/>
+            </g>
+
+            <g data-show="3">
+              <circle r="7" class="packet" data-show="3" style="offset-path:path('M580 140 H 636')"/>
+              <text x="608" y="86" text-anchor="middle" class="s-label-xs" data-show="3">lecture du solde</text>
+            </g>
+
+            <g data-show="4-5">
+              <path d="M636 186 H 216" class="s-line m-draw" data-show="4-5"/>
+              <circle r="7" class="packet packet-teal" data-show="4-5"  style="offset-path:path('M636 186 H 216')"/>
+              <text x="430" y="210" text-anchor="middle" class="s-label-xs" data-show="4-5">« 12,5 jours »</text>
+            </g>
+
+            <g data-show="5" class="m-rise">
+              <path d="M216 186 H 160" class="s-line-accent m-draw" data-show="5"/>
+              <rect x="20" y="228" width="420" height="34" rx="17" fill="rgba(94,234,212,.12)" stroke="var(--accent-3)"/>
+              <text x="230" y="250" text-anchor="middle" class="s-label-sm" fill="var(--accent-3)">« Il te reste 12,5 jours, dont 4 à poser avant mai. »</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>1. Vous posez une question en français.</b><span>Vous ne savez pas — et n’avez pas à savoir — quel outil détient la réponse.</span></p>
+          <p class="step" data-duration="4600"><b>2. L’assistant choisit l’action adaptée, et vous demande l’autorisation.</b><span>Point essentiel&nbsp;: il ne se sert pas tout seul. Vous décidez à quels serveurs il a droit, et pour quoi faire.</span></p>
+          <p class="step" data-duration="4200"><b>3. Le serveur MCP interroge le vrai logiciel.</b><span>C’est lui qui connaît la base, les identifiants, les règles métier.</span></p>
+          <p class="step" data-duration="4200"><b>4. La réponse remonte, brute.</b><span>Un chiffre, une date&nbsp;: la donnée exacte, à l’instant présent.</span></p>
+          <p class="step" data-duration="4800"><b>5. L’assistant la met en phrase.</b><span>Aucune invention&nbsp;: il reformule ce que l’outil a répondu. C’est tout l’intérêt de brancher une IA sur la source.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Et la sécurité&nbsp;?</div>
+        <p>
+          Un serveur MCP est une porte&nbsp;: elle ne doit s’ouvrir que sur ce qui est nécessaire.
+          Trois réflexes&nbsp;: n’installer que des serveurs de confiance, n’accorder que les droits
+          utiles (lire plutôt qu’écrire, quand ça suffit), et garder une validation humaine sur les
+          actions qui engagent — envoyer, payer, supprimer.
+        </p>
+      </div>
+
+      <h2>Où tourne ce serveur&nbsp;?</h2>
+      <p>
+        Souvent <strong>sur votre propre machine</strong>, à côté de l’assistant&nbsp;: c’est le cas
+        le plus simple et le plus discret, vos données ne sortent pas. Il peut aussi tourner
+        <strong>à distance</strong>, chez l’éditeur du logiciel, pour être partagé par toute une
+        équipe. La différence est exactement celle de la leçon
+        <a href="local-vs-cloud.html">local ou cloud</a>.
+      </p>
+
+      <h2>Skills et MCP, à ne pas confondre</h2>
+      <div class="compare">
+        <div>
+          <h4><a href="ia-skills.html">Une skill</a> — le savoir-faire</h4>
+          <ul>
+            <li>Une méthode écrite, vos règles&nbsp;;</li>
+            <li>change la <em>façon</em> de répondre&nbsp;;</li>
+            <li>du texte, rien à brancher.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Un serveur MCP — l’accès</h4>
+          <ul>
+            <li>Un branchement vers un outil réel&nbsp;;</li>
+            <li>change ce à quoi l’assistant <em>a accès</em>&nbsp;;</li>
+            <li>un programme qui tourne, avec des droits.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ensemble</h4>
+          <ul>
+            <li>Le MCP va chercher les vrais chiffres&nbsp;;</li>
+            <li>la skill dit comment les présenter&nbsp;;</li>
+            <li>c’est là que l’assistant devient utile.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>MCP = <strong>un protocole</strong>, une langue commune entre les assistants IA et les outils.</li>
+        <li>Un <strong>serveur MCP</strong> est un petit programme qui expose un outil dans cette langue.</li>
+        <li>Il propose des <strong>actions</strong>, des <strong>données</strong> et des demandes toutes prêtes.</li>
+        <li>Il évite les intégrations sur mesure&nbsp;: une prise pour tout le monde.</li>
+        <li>Rien ne se déclenche sans <strong>votre autorisation</strong> — les droits accordés sont le vrai sujet.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="ia-skills.html">← Les « skills » d’une IA</a>
+        <a class="btn btn-primary" href="../index.html">Tous les contenus →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

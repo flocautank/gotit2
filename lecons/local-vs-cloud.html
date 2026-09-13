@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local ou cloud : quelle différence ? — GotIt</title>
+<meta name="description" content="Local ou cloud, expliqué en schémas animés : où sont vraiment vos fichiers, qui entretient la machine, et ce que ça change au quotidien.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2364d2ff'/><text x='50' y='68' font-size='54' font-family='sans-serif' font-weight='bold' text-anchor='middle' fill='%2306121c'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav">
+      <a href="../index.html#numerique">Numérique</a>
+      <a href="../index.html#ia">IA</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html">Accueil</a><span>/</span>Le numérique<span>/</span>Infrastructure<span>/</span>Les fondations
+      </div>
+      <h1>Local ou cloud&nbsp;: quelle différence&nbsp;?</h1>
+      <p class="lead">
+        « C’est dans le cloud » ne veut pas dire « c’est dans les nuages ». Ça veut dire&nbsp;:
+        c’est sur l’ordinateur de quelqu’un d’autre. Voici ce que ça change concrètement.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-1">Découverte</span>
+        <span class="tag">6 min</span>
+        <span class="tag">4 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Deux questions suffisent à trancher&nbsp;: <strong>où est la machine qui travaille</strong>,
+        et <strong>qui s’en occupe</strong>&nbsp;? Tout le reste — le prix, la vitesse, la sécurité,
+        la tranquillité d’esprit — découle de ces deux réponses.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : la même photo stockée en local ou dans le cloud">
+        <div class="scene-title">Scène 1 — Où vit votre photo&nbsp;?</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 340" role="img" aria-label="Une photo stockée sur un ordinateur personnel, puis copiée vers un serveur distant">
+            <!-- Maison / local -->
+            <g data-show="1-4">
+              <path d="M60 130 L165 58 L270 130 V246 H60 Z" class="s-box"/>
+              <rect x="128" y="176" width="74" height="70" rx="4" fill="#0d1421" stroke="#2f3b58"/>
+              <text x="165" y="278" text-anchor="middle" class="s-label">Chez vous</text>
+              <text x="165" y="296" text-anchor="middle" class="s-label-xs">« en local »</text>
+            </g>
+
+            <!-- Datacenter / cloud -->
+            <g data-show="2-4" class="m-right">
+              <rect x="530" y="92" width="212" height="154" rx="12" class="s-box-accent"/>
+              <g fill="#0d1421" stroke="#2f3b58">
+                <rect x="548" y="110" width="52" height="118" rx="5"/>
+                <rect x="610" y="110" width="52" height="118" rx="5"/>
+                <rect x="672" y="110" width="52" height="118" rx="5"/>
+              </g>
+              <g class="blink" data-show="2-4" fill="var(--accent-3)">
+                <circle cx="560" cy="124" r="3"/><circle cx="622" cy="124" r="3"/><circle cx="684" cy="124" r="3"/>
+              </g>
+              <text x="636" y="278" text-anchor="middle" class="s-label">Chez un hébergeur</text>
+              <text x="636" y="296" text-anchor="middle" class="s-label-xs">« dans le cloud »</text>
+            </g>
+
+            <!-- La photo -->
+            <g data-show="1-4" class="m-pop">
+              <rect x="142" y="190" width="46" height="38" rx="4" fill="rgba(94,234,212,.18)" stroke="var(--accent-3)"/>
+              <circle cx="154" cy="202" r="4" fill="var(--accent-3)"/>
+              <path d="M146 224 l14 -14 l10 10 l8 -6 v10 z" fill="var(--accent-3)" opacity=".7"/>
+            </g>
+
+            <!-- Copie vers le cloud -->
+            <path d="M285 180 C 380 180, 430 150, 520 150" class="s-line m-draw" data-show="3-4"/>
+            <circle r="7" class="packet packet-teal" data-show="3-4"  style="offset-path:path('M285 180 C 380 180, 430 150, 520 150')"/>
+            <text x="400" y="140" text-anchor="middle" class="s-label-sm" data-show="3-4">une copie part par Internet</text>
+
+            <!-- Accès depuis partout -->
+            <g data-show="4">
+              <rect x="330" y="238" width="140" height="52" rx="10" class="s-box-teal m-rise" data-show="4"/>
+              <text x="400" y="260" text-anchor="middle" class="s-label-sm" data-show="4">votre téléphone</text>
+              <text x="400" y="278" text-anchor="middle" class="s-label-xs" data-show="4">n’importe où dans le monde</text>
+              <path d="M470 250 C 510 240, 500 190, 528 172" class="s-line-accent m-draw" data-show="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Vous prenez une photo : elle est d’abord chez vous.</b><span>Sur le disque de votre appareil. Personne d’autre n’y a accès — et personne d’autre ne la sauvegarde.</span></p>
+          <p class="step" data-duration="4400"><b>Ailleurs, il existe des bâtiments pleins de machines à louer.</b><span>Ce sont eux qu’on appelle « le cloud ». Pas un nuage&nbsp;: des serveurs, très concrets, qui appartiennent à une entreprise.</span></p>
+          <p class="step" data-duration="4400"><b>Envoyer la photo « dans le cloud », c’est en déposer une copie là-bas.</b><span>Elle voyage par Internet et se pose sur le disque d’un serveur que vous ne verrez jamais.</span></p>
+          <p class="step" data-duration="5000"><b>Et c’est là que le cloud devient intéressant.</b><span>La photo devient accessible depuis n’importe quel appareil connecté&nbsp;: elle n’est plus prisonnière d’une seule machine.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que ça change vraiment</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : comparaison point par point entre local et cloud">
+        <div class="scene-title">Scène 2 — Le match, point par point</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 360" role="img" aria-label="Tableau comparatif animé entre local et cloud">
+            <g data-show="1-5">
+              <rect x="40" y="40" width="340" height="290" rx="14" class="s-box"/>
+              <text x="210" y="74" text-anchor="middle" class="s-label" fill="var(--accent-3)">LOCAL</text>
+              <text x="210" y="94" text-anchor="middle" class="s-label-xs">la machine est à vous</text>
+              <rect x="420" y="40" width="340" height="290" rx="14" class="s-box"/>
+              <text x="590" y="74" text-anchor="middle" class="s-label" fill="var(--accent)">CLOUD</text>
+              <text x="590" y="94" text-anchor="middle" class="s-label-xs">la machine est louée</text>
+            </g>
+
+            <g class="s-label-sm">
+              <g data-show="2-5" class="m-rise">
+                <text x="70" y="136" class="s-label-xs">QUI PAIE QUOI</text>
+                <text x="70" y="158">Achat une fois, puis c’est à vous</text>
+                <text x="450" y="136" class="s-label-xs">QUI PAIE QUOI</text>
+                <text x="450" y="158">Abonnement, tant que ça tourne</text>
+              </g>
+              <g data-show="3-5" class="m-rise">
+                <text x="70" y="196" class="s-label-xs">QUI ENTRETIENT</text>
+                <text x="70" y="218">Vous (panne, mises à jour, sauvegardes)</text>
+                <text x="450" y="196" class="s-label-xs">QUI ENTRETIENT</text>
+                <text x="450" y="218">L’hébergeur, c’est son métier</text>
+              </g>
+              <g data-show="4-5" class="m-rise">
+                <text x="70" y="256" class="s-label-xs">SI ÇA GRANDIT</text>
+                <text x="70" y="278">Il faut racheter du matériel</text>
+                <text x="450" y="256" class="s-label-xs">SI ÇA GRANDIT</text>
+                <text x="450" y="278">On augmente en quelques clics</text>
+              </g>
+              <g data-show="5" class="m-rise">
+                <text x="70" y="308" class="s-label-xs" fill="var(--accent-3)">SANS INTERNET : ça marche</text>
+                <text x="450" y="308" class="s-label-xs" fill="var(--danger)">SANS INTERNET : plus rien</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3600"><b>Deux façons d’avoir la même informatique.</b><span>Ni bien ni mal&nbsp;: des compromis différents.</span></p>
+          <p class="step" data-duration="4400"><b>Le coût.</b><span>En local, vous achetez une machine et elle est à vous. Dans le cloud, vous louez&nbsp;: peu au début, tous les mois, à vie.</span></p>
+          <p class="step" data-duration="4600"><b>L’entretien.</b><span>Un disque qui lâche, une mise à jour de sécurité, une sauvegarde oubliée&nbsp;: en local, c’est pour vous. Dans le cloud, c’est inclus.</span></p>
+          <p class="step" data-duration="4600"><b>La croissance.</b><span>Besoin de dix fois plus de puissance demain matin&nbsp;? En local, il faut commander du matériel. Dans le cloud, c’est un réglage.</span></p>
+          <p class="step" data-duration="4800"><b>Et la panne d’Internet.</b><span>C’est la différence qu’on oublie toujours&nbsp;: sans connexion, le cloud n’existe plus pour vous. Le local, lui, continue.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le local, c’est votre voiture&nbsp;: achetée, garée en bas, à entretenir vous-même, disponible
+          même en pleine campagne. Le cloud, c’est le taxi&nbsp;: rien à acheter, rien à réparer,
+          on en prend un plus grand si besoin — mais il faut du réseau pour le commander, et le
+          compteur tourne.
+        </p>
+      </div>
+
+      <h2>Le mot « cloud » cache surtout un déménagement de responsabilité</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : ce que l’hébergeur prend en charge">
+        <div class="scene-title">Scène 3 — Qui s’occupe de quoi</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Empilement des couches techniques, de plus en plus prises en charge par l’hébergeur">
+            <g data-show="1-4">
+              <text x="150" y="34" text-anchor="middle" class="s-label-xs">EN LOCAL</text>
+              <text x="640" y="34" text-anchor="middle" class="s-label-xs">DANS LE CLOUD</text>
+            </g>
+
+            <!-- Colonne locale : tout à vous -->
+            <g data-show="1-4">
+              <g class="s-box">
+                <rect x="60" y="52" width="180" height="44" rx="8"/>
+                <rect x="60" y="104" width="180" height="44" rx="8"/>
+                <rect x="60" y="156" width="180" height="44" rx="8"/>
+                <rect x="60" y="208" width="180" height="44" rx="8"/>
+              </g>
+              <g class="s-label-sm" text-anchor="middle">
+                <text x="150" y="80">Vos applications</text>
+                <text x="150" y="132">Le système, les mises à jour</text>
+                <text x="150" y="184">La machine, les disques</text>
+                <text x="150" y="236">Le local, l’électricité, le réseau</text>
+              </g>
+              <text x="150" y="278" text-anchor="middle" class="s-label-xs" fill="var(--accent-3)">100 % à votre charge</text>
+            </g>
+
+            <!-- Colonne cloud : couches reprises une à une -->
+            <g class="s-box">
+              <rect x="550" y="52" width="180" height="44" rx="8" data-show="1-4"/>
+              <rect x="550" y="104" width="180" height="44" rx="8" data-show="1-4"/>
+              <rect x="550" y="156" width="180" height="44" rx="8" data-show="1-4"/>
+              <rect x="550" y="208" width="180" height="44" rx="8" data-show="1-4"/>
+            </g>
+            <g class="s-label-sm" text-anchor="middle" data-show="1-4">
+              <text x="640" y="80">Vos applications</text>
+              <text x="640" y="132">Le système, les mises à jour</text>
+              <text x="640" y="184">La machine, les disques</text>
+              <text x="640" y="236">Le local, l’électricité, le réseau</text>
+            </g>
+            <g class="s-box-accent">
+              <rect x="550" y="208" width="180" height="44" rx="8" data-show="2-4" class="m-pop"/>
+              <rect x="550" y="156" width="180" height="44" rx="8" data-show="3-4" class="m-pop"/>
+              <rect x="550" y="104" width="180" height="44" rx="8" data-show="4" class="m-pop"/>
+            </g>
+            <g class="s-label-sm" text-anchor="middle" fill="var(--accent)">
+              <text x="640" y="236" data-show="2-4">Le local, l’électricité, le réseau</text>
+              <text x="640" y="184" data-show="3-4">La machine, les disques</text>
+              <text x="640" y="132" data-show="4">Le système, les mises à jour</text>
+            </g>
+            <text x="640" y="278" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="4">il ne vous reste que votre travail</text>
+
+            <g data-show="2-4">
+              <path d="M262 230 H 536" class="s-line m-draw" data-show="2-4" marker-end="url(#c3-arrow)"/>
+              <text x="399" y="216" text-anchor="middle" class="s-label-xs">on confie une couche…</text>
+            </g>
+            <defs>
+              <marker id="c3-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/>
+              </marker>
+            </defs>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Toute informatique est un empilement.</b><span>Un local, du courant, une machine, un système, et enfin vos applications.</span></p>
+          <p class="step" data-duration="4400"><b>Aller dans le cloud, c’est confier les couches du bas.</b><span>Le bâtiment, l’électricité, la fibre&nbsp;: ce n’est plus votre problème.</span></p>
+          <p class="step" data-duration="4400"><b>Puis le matériel.</b><span>Un disque meurt&nbsp;? Quelqu’un le remplace, la nuit, sans que vous le sachiez.</span></p>
+          <p class="step" data-duration="5000"><b>Puis parfois le système lui-même.</b><span>Plus on monte, plus c’est confortable — et plus on dépend du fournisseur. C’est le vrai arbitrage du cloud&nbsp;: du confort contre de l’autonomie.</span></p>
+        </div>
+      </section>
+
+      <h2>Et entre les deux&nbsp;?</h2>
+      <p>
+        Dans la vraie vie, presque personne n’est 100&nbsp;% d’un côté. Votre téléphone garde vos
+        photos en local <em>et</em> les synchronise dans le cloud. Une entreprise garde ses données
+        sensibles chez elle et loue de la puissance de calcul ailleurs&nbsp;: on parle alors
+        d’<strong>hybride</strong>.
+      </p>
+
+      <div class="compare">
+        <div>
+          <h4>Plutôt local quand…</h4>
+          <ul>
+            <li>les données ne doivent pas sortir&nbsp;;</li>
+            <li>il faut que ça marche sans réseau&nbsp;;</li>
+            <li>l’usage est stable et prévisible&nbsp;;</li>
+            <li>on a déjà les compétences pour entretenir.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Plutôt cloud quand…</h4>
+          <ul>
+            <li>on veut démarrer vite, sans investir&nbsp;;</li>
+            <li>la charge varie fortement&nbsp;;</li>
+            <li>plusieurs personnes accèdent de partout&nbsp;;</li>
+            <li>on préfère payer pour ne pas gérer.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Le piège classique</div>
+        <p>
+          « C’est dans le cloud, donc c’est sauvegardé. » Pas forcément&nbsp;: un fichier synchronisé
+          est <em>copié</em>, pas <em>archivé</em>. Si vous le supprimez, la suppression se synchronise
+          aussi. Une vraie sauvegarde, c’est une copie que l’on peut remonter <em>dans le temps</em>.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le cloud, c’est <strong>l’ordinateur de quelqu’un d’autre</strong>, loué à l’usage.</li>
+        <li>Local = vous possédez et vous entretenez. Cloud = vous louez et vous déléguez.</li>
+        <li>Le cloud apporte <strong>l’accès de partout et la souplesse</strong>&nbsp;; il coûte de la dépendance et un abonnement.</li>
+        <li>Sans Internet, le cloud disparaît&nbsp;; le local, non.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="serveur.html">← C’est quoi un serveur&nbsp;?</a>
+        <a class="btn btn-primary" href="ia-skills.html">Les « skills » d’une IA →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

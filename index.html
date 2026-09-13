@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GotIt — comprendre enfin, en images animées</title>
+<meta name="description" content="Des concepts techniques expliqués par des animations et des schémas : serveurs, cloud, intelligence artificielle, skills, MCP.">
+<meta property="og:title" content="GotIt — comprendre enfin, en images animées">
+<meta property="og:description" content="Des concepts techniques expliqués par des animations et des schémas.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2364d2ff'/><text x='50' y='68' font-size='54' font-family='sans-serif' font-weight='bold' text-anchor='middle' fill='%2306121c'>G</text></svg>">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#catalogue">Aller au catalogue</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">G</span>
+      GotIt
+    </a>
+    <nav class="site-nav">
+      <a href="#numerique">Numérique</a>
+      <a href="#ia">IA</a>
+      <a href="#a-propos">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Comprendre, <span class="grad">enfin</span>.</h1>
+      <p class="lead">
+        Un serveur, le cloud, les « skills » d’une IA, un serveur MCP… Des notions simples à vivre,
+        difficiles à raconter. Ici, chaque concept est expliqué par des schémas qui s’animent
+        étape par étape — on regarde, et ça devient évident.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="lecons/serveur.html">Commencer : c’est quoi un serveur ?</a>
+        <a class="btn" href="#catalogue">Parcourir le catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="search-bar">
+        <span class="icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path>
+          </svg>
+        </span>
+        <label class="visually-hidden" for="search">Rechercher un concept</label>
+        <input id="search" type="search" placeholder="Rechercher un concept : cloud, MCP, API…" autocomplete="off">
+      </div>
+      <p id="catalogue-summary" class="family-desc" style="margin-bottom:26px"></p>
+
+      <div id="catalogue"></div>
+      <p id="empty-state" class="empty-state" hidden>Aucun contenu ne correspond à cette recherche — pour l’instant.</p>
+    </div>
+  </section>
+
+  <section class="section" id="a-propos">
+    <div class="wrap" style="max-width:780px">
+      <h2 style="font-size:1.6rem;letter-spacing:-.02em">À propos</h2>
+      <p style="color:var(--text-dim)">
+        GotIt est un petit site de vulgarisation visuelle. Le principe : une idée par schéma,
+        un schéma qui se construit sous vos yeux, et le moins de jargon possible. Chaque leçon
+        se lit en quelques minutes et peut se rejouer image par image.
+      </p>
+      <p style="color:var(--text-dim)">
+        Les animations sont générées par du code (SVG + CSS), pas par des vidéos : elles restent
+        nettes sur tous les écrans, se chargent instantanément et se corrigent facilement.
+        Le site respecte le réglage « animations réduites » de votre système.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>GotIt — vulgarisation visuelle.</span>
+    <span>Fait avec du SVG, du CSS et beaucoup d’analogies.</span>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>

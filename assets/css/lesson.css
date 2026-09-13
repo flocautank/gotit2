@@ -1,0 +1,180 @@
+/* GotIt — styles des leçons et du moteur de scènes animées */
+
+/* ---------- Mise en page d'une leçon ---------- */
+
+.lesson-hero { padding: 54px 0 26px; }
+.breadcrumb { font-size: .86rem; color: var(--text-faint); margin-bottom: 14px; }
+.breadcrumb a { color: var(--text-dim); }
+.breadcrumb span { margin: 0 6px; opacity: .5; }
+
+.lesson-hero h1 {
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  letter-spacing: -.035em; line-height: 1.08; margin: 0 0 14px;
+}
+.lesson-hero .lead { color: var(--text-dim); font-size: 1.08rem; max-width: 64ch; margin: 0 0 18px; }
+.lesson-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.lesson-body { max-width: 860px; margin-inline: auto; padding-bottom: 40px; }
+.lesson-body h2 { font-size: 1.5rem; letter-spacing: -.02em; margin: 46px 0 10px; }
+.lesson-body h3 { font-size: 1.12rem; margin: 30px 0 8px; }
+.lesson-body p { color: var(--text-dim); }
+.lesson-body strong { color: var(--text); font-weight: 650; }
+.lesson-body ul, .lesson-body ol { color: var(--text-dim); padding-left: 1.2em; }
+.lesson-body li { margin: 6px 0; }
+
+.callout {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  background: var(--bg-soft);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 14px 18px;
+  margin: 24px 0;
+}
+.callout p { margin: 0; }
+.callout .callout-title {
+  font-size: .76rem; text-transform: uppercase; letter-spacing: .12em;
+  color: var(--accent); font-weight: 700; margin-bottom: 4px;
+}
+.callout-analogy { border-left-color: var(--accent-3); }
+.callout-analogy .callout-title { color: var(--accent-3); }
+.callout-warn { border-left-color: var(--warn); }
+.callout-warn .callout-title { color: var(--warn); }
+
+.compare { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin: 22px 0; }
+.compare > div { border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); padding: 16px; }
+.compare h4 { margin: 0 0 8px; font-size: 1rem; }
+.compare ul { margin: 0; font-size: .93rem; }
+
+.lesson-nav {
+  display: flex; gap: 12px; justify-content: space-between; flex-wrap: wrap;
+  border-top: 1px solid var(--line); margin-top: 48px; padding-top: 24px;
+}
+
+/* ---------- Scène ---------- */
+
+.scene {
+  margin: 34px 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(170deg, var(--surface), var(--bg-soft));
+  overflow: hidden;
+}
+
+.scene-title {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 18px; border-bottom: 1px solid var(--line);
+  font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--text-faint); font-weight: 700;
+}
+
+.stage { position: relative; padding: 8px 10px 0; }
+.stage svg { display: block; width: 100%; height: auto; }
+
+.scene-caption {
+  min-height: 112px;
+  padding: 16px 20px 4px;
+  position: relative;
+}
+.scene-caption .step {
+  position: absolute; inset: 16px 20px auto;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .45s var(--ease), transform .45s var(--ease);
+  pointer-events: none;
+}
+.scene-caption .step.is-current { opacity: 1; transform: none; pointer-events: auto; }
+.scene-caption .step b { color: var(--text); display: block; margin-bottom: 2px; }
+.scene-caption .step span { color: var(--text-dim); font-size: .96rem; }
+
+.scene-controls {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 18px 16px;
+  flex-wrap: wrap;
+}
+
+.ctrl {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border-radius: 999px; border: 1px solid var(--line);
+  background: var(--surface-2); color: var(--text);
+  cursor: pointer; padding: 0;
+  transition: background .18s, border-color .18s, transform .18s var(--ease);
+}
+.ctrl:hover { background: #26304a; transform: translateY(-1px); }
+.ctrl:disabled { opacity: .35; cursor: not-allowed; transform: none; }
+.ctrl svg { width: 16px; height: 16px; fill: currentColor; }
+.ctrl-play { background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #06121c; border-color: transparent; }
+
+.dots { display: flex; gap: 7px; margin-left: 4px; }
+.dot {
+  width: 26px; height: 6px; border-radius: 999px; padding: 0;
+  border: none; background: var(--surface-2); cursor: pointer;
+  transition: background .25s;
+}
+.dot:hover { background: #32405f; }
+.dot.is-current { background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.dot.is-done { background: #3b4a6b; }
+
+.scene-step-label { margin-left: auto; font-size: .82rem; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+
+/* ---------- Utilitaires d'animation SVG ---------- */
+
+[data-show] {
+  opacity: 0;
+  transition: opacity .55s var(--ease), transform .65s var(--ease), stroke-dashoffset .9s var(--ease);
+}
+[data-show].is-on { opacity: 1; transform: none; }
+
+.m-rise  { transform: translateY(16px); }
+.m-fall  { transform: translateY(-16px); }
+.m-left  { transform: translateX(-22px); }
+.m-right { transform: translateX(22px); }
+.m-pop   { transform: scale(.82); transform-box: fill-box; transform-origin: center; }
+
+.m-draw { opacity: 1; stroke-dasharray: var(--len, 600); stroke-dashoffset: var(--len, 600); }
+.m-draw.is-on { stroke-dashoffset: 0; }
+
+/* Éléments graphiques réutilisables */
+.s-box { fill: #1b2233; stroke: #2f3b58; stroke-width: 1.5; }
+.s-box-accent { fill: rgba(100, 210, 255, .10); stroke: var(--accent); stroke-width: 1.5; }
+.s-box-violet { fill: rgba(167, 139, 250, .10); stroke: var(--accent-2); stroke-width: 1.5; }
+.s-box-teal { fill: rgba(94, 234, 212, .10); stroke: var(--accent-3); stroke-width: 1.5; }
+.s-line { stroke: #3b4a6b; stroke-width: 2; fill: none; }
+.s-line-accent { stroke: var(--accent); stroke-width: 2; fill: none; }
+.s-label { fill: var(--text); font-size: 13px; font-weight: 600; font-family: inherit; }
+.s-label-sm { fill: var(--text-dim); font-size: 11px; font-family: inherit; }
+.s-label-xs { fill: var(--text-faint); font-size: 10px; font-family: inherit; letter-spacing: .06em; }
+
+/* Paquet qui circule sur un trajet (offset-path défini en ligne) */
+.packet { fill: var(--accent); }
+.packet-teal { fill: var(--accent-3); }
+.packet.is-on { animation: packet-run 1.9s var(--ease) infinite; }
+@keyframes packet-run {
+  0%   { offset-distance: 0%;   opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+.pulse.is-on { animation: pulse 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes pulse {
+  0%, 100% { opacity: .45; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.06); }
+}
+
+.blink.is-on { animation: blink 1.6s steps(1) infinite; }
+@keyframes blink { 0%, 60% { opacity: 1; } 61%, 100% { opacity: .2; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-show] { transition-duration: .01ms; }
+  .packet.is-on, .pulse.is-on, .blink.is-on { animation: none; }
+}
+
+@media (max-width: 700px) {
+  /* Les schémas restent lisibles : on les laisse déborder dans un conteneur défilant. */
+  .stage { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .stage svg { min-width: 620px; }
+  .scene-caption { min-height: 150px; }
+  .scene-controls { padding-top: 4px; }
+  .dots { display: none; }
+}
