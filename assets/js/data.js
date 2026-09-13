@@ -154,14 +154,55 @@ window.GOTIT = (function () {
       keywords: ['sécurité', 'phishing', 'hameçonnage', 'mot de passe', 'mfa', 'double authentification', 'arnaque', 'piratage']
     },
 
+    'cout-ia': {
+      title: 'Ce que coûte une IA',
+      summary: 'Jetons, abonnements, fenêtre de contexte : pourquoi un long document coûte cher.',
+      path: 'lecons/cout-ia.html',
+      duration: '6 min', level: 2,
+      keywords: ['token', 'jeton', 'coût', 'tarif', 'contexte', 'abonnement', 'facturation', 'api']
+    },
+    'ia-donnees': {
+      title: 'Vos données et l\u2019IA',
+      summary: 'Ce qui part, ce qui reste, ce qui sert à l\u2019entraînement — et les questions à poser.',
+      path: 'lecons/ia-donnees.html',
+      duration: '6 min', level: 2,
+      keywords: ['confidentialité', 'données', 'entraînement', 'rgpd', 'secret', 'fournisseur', 'grand public', 'entreprise']
+    },
+    'ia-limites': {
+      title: 'Ce qu\u2019une IA ne sait pas faire',
+      summary: 'Les limites structurelles — celles qui ne partiront pas avec la prochaine version.',
+      path: 'lecons/ia-limites.html',
+      duration: '6 min', level: 2,
+      keywords: ['limites', 'calcul', 'temps réel', 'responsabilité', 'jugement', 'fiabilité', 'compter']
+    },
+    'chiffrement': {
+      title: 'Le chiffrement expliqué simplement',
+      summary: 'Le coffre et sa clé, la double serrure, et ce que « chiffré de bout en bout » veut dire.',
+      path: 'lecons/chiffrement.html',
+      duration: '7 min', level: 2,
+      keywords: ['chiffrement', 'clé', 'https', 'bout en bout', 'whatsapp', 'sécurité', 'déchiffrer', 'cadenas']
+    },
+    'cloud-saas': {
+      title: 'SaaS, PaaS, IaaS',
+      summary: 'Trois niveaux de location, de la machine nue au logiciel clé en main.',
+      path: 'lecons/cloud-saas.html',
+      duration: '6 min', level: 2,
+      keywords: ['saas', 'paas', 'iaas', 'cloud', 'abonnement', 'hébergement', 'licence', 'location']
+    },
+    'gouvernance-data': {
+      title: 'Pourquoi deux tableaux ne disent jamais pareil',
+      summary: 'Qualité, définitions, propriétaire : le vrai sujet derrière « gouvernance des données ».',
+      path: 'lecons/gouvernance-data.html',
+      duration: '7 min', level: 2,
+      keywords: ['qualité', 'gouvernance', 'définition', 'référentiel', 'doublon', 'propriétaire', 'indicateur', 'kpi']
+    },
+
     /* ---------- Leçons prévues (affichées en grisé) ---------- */
 
-    'cout-ia': { title: 'Ce que coûte une IA', summary: 'Jetons, abonnements, et pourquoi un long document coûte cher.', soon: true, level: 2, keywords: ['token', 'jeton', 'coût', 'tarif', 'contexte'] },
-    'ia-limites': { title: 'Ce qu\u2019une IA ne sait pas faire', summary: 'Les limites structurelles, pas les défauts passagers.', soon: true, level: 2, keywords: ['limites', 'fiabilité', 'calcul', 'temps réel'] },
-    'ia-donnees': { title: 'Vos données et l\u2019IA', summary: 'Ce qui part, ce qui reste, ce qui sert à l\u2019entraînement.', soon: true, level: 2, keywords: ['confidentialité', 'données', 'entraînement', 'rgpd'] },
-    'cloud-saas': { title: 'SaaS, PaaS, IaaS', summary: 'Trois niveaux de location, une seule logique.', soon: true, level: 2, keywords: ['saas', 'paas', 'iaas', 'cloud', 'abonnement'] },
-    'chiffrement': { title: 'Le chiffrement expliqué simplement', summary: 'Ce que protège vraiment le cadenas du navigateur.', soon: true, level: 2, keywords: ['chiffrement', 'https', 'sécurité', 'clé'] },
-    'gouvernance-data': { title: 'Qualité et gouvernance des données', summary: 'Pourquoi deux tableaux ne donnent jamais le même chiffre.', soon: true, level: 2, keywords: ['qualité', 'gouvernance', 'rgpd', 'référentiel'] },
+    'fichiers': { title: 'Fichiers, formats et dossiers', summary: 'Pourquoi un .docx s\u2019ouvre et un .heic non.', soon: true, level: 1, keywords: ['fichier', 'format', 'extension', 'dossier', 'pdf'] },
+    'navigateur': { title: 'Ce que sait votre navigateur', summary: 'Cookies, traces, onglets : ce qui est enregistré et par qui.', soon: true, level: 1, keywords: ['navigateur', 'cookie', 'trace', 'pub', 'cache'] },
+    'wifi-box': { title: 'Wifi, box et débit', summary: 'Pourquoi ça rame dans la chambre du fond.', soon: true, level: 1, keywords: ['wifi', 'box', 'débit', 'fibre', 'réseau local'] },
+    'sauvegarde': { title: 'Sauvegarder pour de vrai', summary: 'Synchroniser n\u2019est pas sauvegarder.', soon: true, level: 1, keywords: ['sauvegarde', 'backup', 'synchronisation', 'ransomware'] },
     'rgpd': { title: 'Le RGPD en clair', summary: 'Ce qu’on a le droit de faire avec les données des gens.', soon: true, level: 1, keywords: ['rgpd', 'données personnelles', 'consentement'] },
     'projet-si': { title: 'Comment se déroule un projet SI', summary: 'Du besoin métier à la mise en production.', soon: true, level: 2, keywords: ['projet', 'cadrage', 'recette', 'déploiement'] },
   };
@@ -176,7 +217,8 @@ window.GOTIT = (function () {
           id: 'materiel', title: 'Le matériel',
           subcategories: [
             { id: 'dans-la-machine', title: 'Dans la machine', lessons: ['ordinateur', 'serveur'] },
-            { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas'] }
+            { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas'] },
+            { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['fichiers'] }
           ]
         },
         {
@@ -195,14 +237,15 @@ window.GOTIT = (function () {
         {
           id: 'circulation', title: 'Comment ça circule',
           subcategories: [
-            { id: 'bases-reseau', title: 'Les bases', lessons: ['internet'] }
+            { id: 'bases-reseau', title: 'Les bases', lessons: ['internet', 'wifi-box'] },
+            { id: 'traces', title: 'Les traces qu\u2019on laisse', lessons: ['navigateur'] }
           ]
         },
         {
           id: 'securite', title: 'Se protéger',
           subcategories: [
             { id: 'gestes', title: 'Les gestes du quotidien', lessons: ['cybersecurite'] },
-            { id: 'protection', title: 'Ce qui protège les données', lessons: ['chiffrement'] }
+            { id: 'protection', title: 'Ce qui protège les données', lessons: ['chiffrement', 'sauvegarde'] }
           ]
         }
       ]

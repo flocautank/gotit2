@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vos données et l’IA — GotIt</title>
+<meta name="description" content="Ce qui part chez le fournisseur quand on utilise une IA, ce qui sert à l’entraînement, et les questions à poser.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/ia">Intelligence artificielle</a><span>/</span>Travailler avec l’IA<span>/</span>Coûts et confidentialité
+      </div>
+      <h1>Vos données et l’IA</h1>
+      <p class="lead">
+        « Est-ce que je peux coller ce document&nbsp;? » La bonne réponse n’est ni « jamais »
+        ni « ça ne risque rien » : elle dépend de trois choses, et elles sont faciles à vérifier.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Point de départ indispensable&nbsp;: quand vous écrivez à un assistant en ligne, votre
+        texte <strong>quitte votre machine</strong>. Il part sur des serveurs, chez un fournisseur.
+        Ce n’est pas un scandale — c’est le fonctionnement normal de tout service en ligne,
+        de la messagerie au stockage de fichiers. Encore faut-il le savoir.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : le trajet de votre texte vers le fournisseur">
+        <div class="scene-title">Scène 1 — Où va ce que vous tapez</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Le texte saisi quitte l’ordinateur, atteint le serveur du fournisseur, est traité, puis conservé un certain temps">
+            <g data-show="1-4" class="s-label-sm">
+              <rect x="40" y="110" width="170" height="76" rx="12" class="s-box"/>
+              <text x="125" y="155" text-anchor="middle" class="s-label-sm">Vous</text>
+
+              <rect x="320" y="110" width="180" height="76" rx="12" class="s-box-accent"/>
+              <text x="410" y="145" text-anchor="middle" class="s-label-sm">Le fournisseur</text>
+              <text x="410" y="167" text-anchor="middle" class="s-label-xs">le modèle tourne ici</text>
+
+              <rect x="610" y="110" width="150" height="76" rx="12" class="s-box-violet"/>
+              <text x="685" y="145" text-anchor="middle" class="s-label-sm">Les journaux</text>
+              <text x="685" y="167" text-anchor="middle" class="s-label-xs">conservés un temps</text>
+            </g>
+
+            <path d="M215 148 H 315" class="s-line m-draw" data-show="1-4"/>
+            <circle r="7" class="packet" data-show="1-2" style="offset-path:path('M215 148 H 315')"/>
+            <text x="265" y="94" text-anchor="middle" class="s-label-xs" data-show="1-4">votre texte</text>
+
+            <path d="M505 148 H 605" class="s-line m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M505 148 H 605')"/>
+
+            <g data-show="4" class="m-rise">
+              <rect x="150" y="226" width="500" height="46" rx="23" class="s-box-teal"/>
+              <text x="400" y="255" text-anchor="middle" class="s-label-sm">le vrai sujet : qui peut le lire, et pendant combien de temps</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Ce que vous tapez part sur un serveur.</b><span>Le modèle est bien trop gros pour tourner sur votre ordinateur : il s’exécute chez le fournisseur. Votre texte voyage donc, chiffré en route.</span></p>
+          <p class="step" data-duration="4200"><b>Il y est traité, puis la réponse revient.</b><span>Quelques secondes. Jusque-là, rien de différent d’un moteur de recherche ou d’un webmail.</span></p>
+          <p class="step" data-duration="4600"><b>Mais il en reste souvent une trace.</b><span>Des journaux techniques, conservés quelques jours ou quelques semaines — pour la sécurité, la facturation, la lutte contre les abus.</span></p>
+          <p class="step" data-duration="5000"><b>La question n’est donc pas « est-ce que ça part » — ça part.</b><span>Elle est : qui peut le lire, combien de temps c’est gardé, et est-ce que ça sert à entraîner un modèle.</span></p>
+        </div>
+      </section>
+
+      <h2>La ligne de partage : grand public ou professionnel</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : différence entre offre grand public et offre professionnelle">
+        <div class="scene-title">Scène 2 — Deux régimes très différents</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Comparaison entre un compte gratuit grand public et un contrat professionnel">
+            <g data-show="1-3" class="m-rise">
+              <rect x="40" y="50" width="340" height="200" rx="12" class="s-box"/>
+              <text x="210" y="86" text-anchor="middle" class="s-label">Compte grand public</text>
+              <text x="70" y="128" class="s-label-sm">· souvent gratuit</text>
+              <text x="70" y="158" class="s-label-sm">· peut servir à l’entraînement</text>
+              <text x="70" y="188" class="s-label-sm">· option à désactiver soi-même</text>
+              <text x="70" y="218" class="s-label-sm">· aucun engagement écrit</text>
+            </g>
+            <g data-show="2-3" class="m-right">
+              <rect x="420" y="50" width="340" height="200" rx="12" class="s-box-teal"/>
+              <text x="590" y="86" text-anchor="middle" class="s-label">Contrat professionnel</text>
+              <text x="450" y="128" class="s-label-sm">· payant</text>
+              <text x="450" y="158" class="s-label-sm">· pas d’entraînement dessus</text>
+              <text x="450" y="188" class="s-label-sm">· durée de conservation définie</text>
+              <text x="450" y="218" class="s-label-sm">· engagement contractuel</text>
+            </g>
+            <g data-show="3">
+              <text x="400" y="286" text-anchor="middle" class="s-label-sm" fill="var(--accent)">même interface, garanties opposées</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>Sur un compte personnel, le principe est souvent l’inverse de ce qu’on croit.</b><span>Vos échanges peuvent servir à améliorer les modèles, sauf si vous désactivez l’option — qui existe, mais qu’il faut aller chercher dans les réglages.</span></p>
+          <p class="step" data-duration="4800"><b>Sur un contrat professionnel, c’est écrit noir sur blanc.</b><span>Pas d’entraînement sur vos données, durée de conservation définie, parfois choix de la zone géographique d’hébergement. C’est précisément ce qu’on achète.</span></p>
+          <p class="step" data-duration="5200"><b>Et l’interface, elle, est identique.</b><span>C’est tout le danger : rien à l’écran ne distingue un compte personnel d’un compte d’entreprise. D’où la règle simple — pour le travail, utilisez l’accès fourni par votre organisation, pas votre compte perso.</span></p>
+        </div>
+      </section>
+
+      <h2>Que colle-t-on, concrètement&nbsp;?</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : classer l’information avant de la coller">
+        <div class="scene-title">Scène 3 — Le réflexe en trois tiroirs</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Trois catégories d’information : sans risque, à anonymiser, à ne pas coller">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="50" width="220" height="170" rx="12" class="s-box-teal"/>
+              <text x="150" y="88" text-anchor="middle" class="s-label">Sans souci</text>
+              <text x="150" y="124" text-anchor="middle" class="s-label-sm">un texte public</text>
+              <text x="150" y="150" text-anchor="middle" class="s-label-sm">une idée à reformuler</text>
+              <text x="150" y="176" text-anchor="middle" class="s-label-sm">une question générale</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="290" y="50" width="220" height="170" rx="12" class="s-box-accent"/>
+              <text x="400" y="88" text-anchor="middle" class="s-label">À anonymiser</text>
+              <text x="400" y="124" text-anchor="middle" class="s-label-sm">un compte rendu</text>
+              <text x="400" y="150" text-anchor="middle" class="s-label-sm">un mail client</text>
+              <text x="400" y="176" text-anchor="middle" class="s-label-sm">un tableau de chiffres</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="540" y="50" width="220" height="170" rx="12" class="s-box-violet"/>
+              <text x="650" y="88" text-anchor="middle" class="s-label">À ne pas coller</text>
+              <text x="650" y="124" text-anchor="middle" class="s-label-sm">données de santé</text>
+              <text x="650" y="150" text-anchor="middle" class="s-label-sm">mots de passe</text>
+              <text x="650" y="176" text-anchor="middle" class="s-label-sm">secrets industriels</text>
+            </g>
+            <g data-show="4" class="m-rise">
+              <text x="400" y="264" text-anchor="middle" class="s-label-sm" fill="var(--accent)">le test : seriez-vous gêné que ça sorte&nbsp;?</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Premier tiroir : ce qui pourrait être public.</b><span>Une reformulation, une question de méthode, un texte déjà publié. Aucun état d’âme à avoir.</span></p>
+          <p class="step" data-duration="4800"><b>Deuxième tiroir : à passer au tamis.</b><span>Un compte rendu, un mail client, un tableau : remplacez les noms par « client A », retirez les montants réels. L’IA travaille très bien sur une version anonymisée — elle n’a pas besoin des vrais noms pour reformuler.</span></p>
+          <p class="step" data-duration="4600"><b>Troisième tiroir : on ne colle pas.</b><span>Santé, identifiants, données de mineurs, secrets industriels, tout ce qui relève d’un accord de confidentialité. Sauf si votre organisation a validé un outil pour ça.</span></p>
+          <p class="step" data-duration="5000"><b>Un seul test suffit à trancher.</b><span>« Serais-je ennuyé que ce texte se retrouve chez un prestataire extérieur&nbsp;? » Si oui, anonymisez ou abstenez-vous. C’est le même réflexe que pour un document envoyé par mail à l’extérieur.</span></p>
+        </div>
+      </section>
+
+      <div class="callout">
+        <div class="callout-title">Les quatre questions à poser à un fournisseur</div>
+        <p>
+          Est-ce que mes données servent à entraîner vos modèles&nbsp;?
+          Combien de temps les conservez-vous&nbsp;?
+          Où sont-elles hébergées géographiquement&nbsp;?
+          Qui, chez vous, peut y accéder et dans quelles conditions&nbsp;?
+          Un fournisseur sérieux répond aux quatre par écrit.
+        </p>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Deux malentendus fréquents</div>
+        <p>
+          « Le modèle va réciter mon document à quelqu’un d’autre. » C’est très improbable&nbsp;:
+          un modèle n’est pas une base de documents, et une conversation n’entre pas dans son
+          entraînement en temps réel. Le vrai risque est plus ordinaire — un document confidentiel
+          transmis à un tiers sans autorisation, ce qui est un problème contractuel, pas magique.
+          Et&nbsp;: « c’est une IA française, donc c’est bon. » L’hébergement compte, mais ce sont
+          les engagements écrits qui font foi.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Ce que vous tapez <strong>part chez un fournisseur</strong> — comme tout service en ligne.</li>
+        <li>Compte <strong>grand public</strong> et contrat <strong>professionnel</strong> n’offrent pas les mêmes garanties, pour une interface identique.</li>
+        <li>Trois tiroirs : <strong>sans souci</strong>, <strong>à anonymiser</strong>, <strong>à ne pas coller</strong>.</li>
+        <li>Le test&nbsp;: seriez-vous gêné que ce texte sorte de l’entreprise&nbsp;?</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="cout-ia.html">← Ce que coûte une IA</a>
+        <a class="btn btn-primary" href="ia-limites.html">Ce qu’une IA ne sait pas faire →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ce que coûte une IA — GotIt</title>
+<meta name="description" content="Jetons, abonnements et fenêtre de contexte : comment se facture une IA, expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/ia">Intelligence artificielle</a><span>/</span>Travailler avec l’IA<span>/</span>Coûts et confidentialité
+      </div>
+      <h1>Ce que coûte une IA</h1>
+      <p class="lead">
+        Vingt euros par mois d’un côté, des factures à quatre chiffres de l’autre, et entre
+        les deux un mot qui revient sans cesse : le « jeton ». Voici comment tout cela se compte.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Il existe deux façons de payer une IA, et on les confond souvent&nbsp;: l’<strong>abonnement</strong>,
+        pour une personne qui discute avec un assistant, et l’<strong>usage</strong>, quand un
+        logiciel appelle le modèle des milliers de fois par jour.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : les deux modes de facturation">
+        <div class="scene-title">Scène 1 — Deux façons de payer</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Un abonnement par personne, ou une facturation à l’usage pour les applications">
+            <g data-show="1-3" class="m-rise">
+              <rect x="40" y="60" width="330" height="150" rx="12" class="s-box-teal"/>
+              <text x="205" y="100" text-anchor="middle" class="s-label">L’abonnement</text>
+              <text x="205" y="132" text-anchor="middle" class="s-label-sm">un prix fixe par personne</text>
+              <text x="205" y="158" text-anchor="middle" class="s-label-sm">et par mois</text>
+              <text x="205" y="188" text-anchor="middle" class="s-label-xs">pour discuter avec l’assistant</text>
+            </g>
+            <g data-show="2-3" class="m-right">
+              <rect x="430" y="60" width="330" height="150" rx="12" class="s-box-accent"/>
+              <text x="595" y="100" text-anchor="middle" class="s-label">L’usage</text>
+              <text x="595" y="132" text-anchor="middle" class="s-label-sm">on paie ce qu’on consomme</text>
+              <text x="595" y="158" text-anchor="middle" class="s-label-sm">au jeton</text>
+              <text x="595" y="188" text-anchor="middle" class="s-label-xs">quand un logiciel appelle le modèle</text>
+            </g>
+            <g data-show="3" class="m-rise">
+              <rect x="150" y="230" width="500" height="44" rx="22" class="s-box"/>
+              <text x="400" y="258" text-anchor="middle" class="s-label-sm">même modèle derrière, deux compteurs différents</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>L’abonnement, c’est le cas que tout le monde connaît.</b><span>Une vingtaine d’euros par mois et par personne pour un assistant grand public. Simple, prévisible, avec des limites d’usage quotidiennes.</span></p>
+          <p class="step" data-duration="4600"><b>L’usage, c’est ce que paient les entreprises qui intègrent l’IA.</b><span>Quand votre logiciel métier appelle un modèle à chaque fiche client, il n’y a plus d’abonnement : on paie à la quantité de texte échangée.</span></p>
+          <p class="step" data-duration="4800"><b>Le modèle est le même — le compteur, non.</b><span>C’est pour ça qu’un projet peut coûter mille fois l’abonnement d’un utilisateur : ce n’est pas le même usage, ni le même volume.</span></p>
+        </div>
+      </section>
+
+      <h2>Le jeton, unité de compte</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : entrée et sortie facturées séparément">
+        <div class="scene-title">Scène 2 — On paie l’aller et le retour</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Le texte envoyé et le texte reçu sont tous deux facturés, à des tarifs différents">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="50" width="330" height="90" rx="12" class="s-box-teal"/>
+              <text x="60" y="80" class="s-label-xs">CE QUE VOUS ENVOYEZ</text>
+              <text x="60" y="108" class="s-label-sm">question + documents + historique</text>
+              <text x="60" y="130" class="s-label-xs">facturé</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="430" y="50" width="330" height="90" rx="12" class="s-box-accent"/>
+              <text x="450" y="80" class="s-label-xs">CE QU’IL RÉPOND</text>
+              <text x="450" y="108" class="s-label-sm">le texte produit</text>
+              <text x="450" y="130" class="s-label-xs">facturé plus cher</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="40" y="168" width="720" height="52" rx="12" class="s-box"/>
+              <text x="60" y="199" class="s-label-sm">à chaque nouveau message, tout l’historique est renvoyé</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="150" y="240" width="500" height="46" rx="23" fill="#F6EBD8" stroke="var(--warn)"/>
+              <text x="400" y="269" text-anchor="middle" class="s-label-sm" fill="var(--warn)">une longue conversation coûte de plus en plus cher</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Tout ce que vous envoyez est compté.</b><span>Votre question, mais aussi les documents joints et les consignes. En français, comptez environ trois jetons pour quatre mots — une page A4 ≈ 700 jetons.</span></p>
+          <p class="step" data-duration="4400"><b>Et ce qu’il répond aussi, généralement plus cher.</b><span>Produire du texte coûte davantage que le lire. D’où un conseil terre à terre : demander une réponse courte quand une réponse courte suffit.</span></p>
+          <p class="step" data-duration="5000"><b>Le piège est ailleurs : l’historique repart à chaque fois.</b><span>Un modèle n’a pas de mémoire. Pour qu’il « se souvienne » du début de la conversation, on lui renvoie l’intégralité du fil à chaque message.</span></p>
+          <p class="step" data-duration="5000"><b>D’où une conversation qui s’alourdit toute seule.</b><span>Au vingtième message, chaque nouvelle question fait repayer les dix-neuf précédentes. Ouvrir une conversation neuve pour un nouveau sujet n’est pas un détail d’hygiène : c’est une économie.</span></p>
+        </div>
+      </section>
+
+      <h2>La fenêtre de contexte</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : la limite de la fenêtre de contexte">
+        <div class="scene-title">Scène 3 — Ce qu’il peut garder sous les yeux</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="La fenêtre de contexte a une taille maximale ; au-delà, le début de la conversation sort du cadre">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="60" width="680" height="120" rx="12" class="s-box"/>
+              <text x="80" y="90" class="s-label-xs">LA FENÊTRE DE CONTEXTE</text>
+              <text x="80" y="120" class="s-label-sm">consignes · documents · toute la conversation</text>
+              <text x="80" y="148" class="s-label-xs">tout doit tenir là-dedans, en même temps</text>
+            </g>
+
+            <g data-show="2-4" class="m-pop">
+              <rect x="80" y="196" width="150" height="44" rx="10" class="s-box-teal"/>
+              <text x="155" y="224" text-anchor="middle" class="s-label-xs">consignes</text>
+              <rect x="244" y="196" width="240" height="44" rx="10" class="s-box-teal"/>
+              <text x="364" y="224" text-anchor="middle" class="s-label-xs">vos documents</text>
+              <rect x="498" y="196" width="222" height="44" rx="10" class="s-box-teal"/>
+              <text x="609" y="224" text-anchor="middle" class="s-label-xs">la conversation</text>
+            </g>
+
+            <g data-show="3-4">
+              <rect x="60" y="196" width="120" height="44" rx="10" fill="#F6E2DD" stroke="var(--danger)" class="m-left" data-show="3-4"/>
+              <text x="120" y="224" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3-4">oublié</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <text x="400" y="278" text-anchor="middle" class="s-label-sm" fill="var(--accent)">plein, le plus ancien sort du cadre</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Un modèle ne voit qu’une fenêtre.</b><span>Une quantité maximale de texte qu’il peut avoir sous les yeux au même instant. Selon les modèles : quelques dizaines à quelques centaines de pages.</span></p>
+          <p class="step" data-duration="4400"><b>Tout doit y tenir ensemble.</b><span>Les consignes, les documents fournis, et l’intégralité de l’échange. Ce n’est pas un disque : c’est un bureau, de taille finie.</span></p>
+          <p class="step" data-duration="4800"><b>Quand c’est plein, le plus ancien tombe.</b><span>Voilà pourquoi un assistant « oublie » une consigne donnée très en amont d’une longue conversation. Ce n’est pas de la négligence : le texte n’est physiquement plus là.</span></p>
+          <p class="step" data-duration="5000"><b>Deux réflexes en découlent.</b><span>Rappeler les consignes importantes quand la discussion s’allonge, et redémarrer une conversation propre en changeant de sujet — plus fiable <em>et</em> moins cher.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un traducteur payé au mot, qui travaille sur un bureau de taille fixe. Il facture ce
+          que vous posez devant lui et ce qu’il écrit. Et comme il n’a aucune mémoire d’un jour
+          sur l’autre, vous devez tout reposer sur le bureau à chaque fois — jusqu’à ce que le
+          bureau déborde.
+        </p>
+      </div>
+
+      <h2>Les ordres de grandeur, pour se repérer</h2>
+      <div class="compare">
+        <div>
+          <h4>Ce qui coûte peu</h4>
+          <ul>
+            <li>Une question courte, une réponse courte&nbsp;;</li>
+            <li>reformuler un paragraphe&nbsp;;</li>
+            <li>un usage individuel au forfait&nbsp;;</li>
+            <li>un petit modèle, quand la tâche est simple.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ce qui coûte cher</h4>
+          <ul>
+            <li>Joindre un gros document à chaque appel&nbsp;;</li>
+            <li>les conversations-fleuves&nbsp;;</li>
+            <li>traiter des milliers de fiches automatiquement&nbsp;;</li>
+            <li>un agent qui boucle : chaque tour est un appel.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Les leviers</h4>
+          <ul>
+            <li>N’envoyer que l’extrait utile (c’est le RAG)&nbsp;;</li>
+            <li>demander des réponses brèves&nbsp;;</li>
+            <li>réserver le gros modèle aux tâches difficiles&nbsp;;</li>
+            <li>mettre en cache ce qui se répète.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Le calcul qu’on oublie</div>
+        <p>
+          Le coût du modèle est rarement le poste principal d’un projet. Préparer les données,
+          intégrer aux outils existants, vérifier la qualité et former les équipes pèsent
+          généralement bien plus lourd. Un pilote à 200 € de consommation peut demander
+          plusieurs semaines de travail autour.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Deux modèles économiques : <strong>abonnement</strong> par personne, ou <strong>usage</strong> au jeton.</li>
+        <li>On paie <strong>ce qu’on envoie et ce qui est produit</strong> — la sortie coûte plus cher.</li>
+        <li>L’<strong>historique est renvoyé</strong> à chaque message : les longues conversations s’alourdissent.</li>
+        <li>La <strong>fenêtre de contexte</strong> est finie : au-delà, le plus ancien est oublié.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="llm.html">← Comment un modèle de langage écrit</a>
+        <a class="btn btn-primary" href="ia-donnees.html">Vos données et l’IA →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

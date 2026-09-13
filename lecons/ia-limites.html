@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ce qu’une IA ne sait pas faire — GotIt</title>
+<meta name="description" content="Les limites structurelles d’une IA générative, celles qui ne partiront pas avec la prochaine version.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/ia">Intelligence artificielle</a><span>/</span>Travailler avec l’IA<span>/</span>Bien s’en servir
+      </div>
+      <h1>Ce qu’une IA ne sait pas faire</h1>
+      <p class="lead">
+        Certaines faiblesses disparaissent d’une version à l’autre. D’autres tiennent à la nature
+        même de l’outil : les connaître évite à la fois les déceptions et les mauvaises décisions.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Un modèle produit du texte vraisemblable à partir de ce qu’on lui donne. Tout ce qui
+        s’éloigne de ce geste lui coûte — et certaines choses lui échappent complètement,
+        non par manque de puissance, mais par construction.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : ce qui est hors de portée par construction">
+        <div class="scene-title">Scène 1 — Ce qu’il n’a tout simplement pas</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Trois choses absentes par construction : l’accès au présent, la mémoire entre conversations, l’accès aux systèmes">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="60" width="220" height="150" rx="12" class="s-box"/>
+              <text x="150" y="100" text-anchor="middle" class="s-label">Le présent</text>
+              <text x="150" y="136" text-anchor="middle" class="s-label-sm">il ignore aujourd’hui</text>
+              <text x="150" y="164" text-anchor="middle" class="s-label-sm">sauf si on le branche</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="290" y="60" width="220" height="150" rx="12" class="s-box"/>
+              <text x="400" y="100" text-anchor="middle" class="s-label">La mémoire</text>
+              <text x="400" y="136" text-anchor="middle" class="s-label-sm">rien d’une fois sur l’autre</text>
+              <text x="400" y="164" text-anchor="middle" class="s-label-sm">sauf mécanisme dédié</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="540" y="60" width="220" height="150" rx="12" class="s-box"/>
+              <text x="650" y="100" text-anchor="middle" class="s-label">Vos systèmes</text>
+              <text x="650" y="136" text-anchor="middle" class="s-label-sm">il ne voit aucun outil</text>
+              <text x="650" y="164" text-anchor="middle" class="s-label-sm">sauf si on l’y connecte</text>
+            </g>
+            <g data-show="4" class="m-rise">
+              <rect x="120" y="240" width="560" height="46" rx="23" class="s-box-teal"/>
+              <text x="400" y="269" text-anchor="middle" class="s-label-sm">ces trois-là se règlent en lui donnant des outils</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Il ne connaît pas le présent.</b><span>Son savoir s’arrête à la fin de son entraînement. Sans recherche web branchée, il ignore l’actualité, les prix d’aujourd’hui, la version actuelle d’un logiciel.</span></p>
+          <p class="step" data-duration="4600"><b>Il n’a pas de mémoire entre deux conversations.</b><span>Chaque nouvelle discussion repart de zéro. Ce qu’on appelle « mémoire » dans certains produits est un carnet de notes ajouté à côté — pas un souvenir du modèle.</span></p>
+          <p class="step" data-duration="4400"><b>Il ne voit pas vos outils.</b><span>Ni votre boîte mail, ni votre CRM, ni vos fichiers. Sauf branchement explicite, il travaille en aveugle.</span></p>
+          <p class="step" data-duration="5000"><b>Bonne nouvelle : ces trois limites se contournent.</b><span>Recherche web, base documentaire, serveur MCP : ce sont des outils qu’on lui donne. Elles sont techniques, pas structurelles.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce qui, en revanche, tient à sa nature</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : pourquoi un modèle calcule mal">
+        <div class="scene-title">Scène 2 — Pourquoi il compte mal</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Le modèle ne calcule pas, il produit le résultat qui a l’air juste, sauf s’il utilise un vrai outil de calcul">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="50" width="300" height="52" rx="12" class="s-box-accent"/>
+              <text x="210" y="82" text-anchor="middle" class="s-label">4 736 × 812 = ?</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="440" y="50" width="300" height="52" rx="12" class="s-box"/>
+              <text x="590" y="82" text-anchor="middle" class="s-label-sm">il écrit un nombre plausible</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="60" y="126" width="680" height="52" rx="12" class="s-box"/>
+              <text x="80" y="158" class="s-label-sm">il ne pose pas l’opération : il devine ce qui « ressemble » au résultat</text>
+            </g>
+            <g data-show="4" class="m-rise">
+              <rect x="60" y="200" width="680" height="62" rx="12" class="s-box-teal"/>
+              <text x="80" y="228" class="s-label">La parade</text>
+              <text x="80" y="250" class="s-label-sm">lui donner une calculatrice — un vrai outil qui calcule pour de bon</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Posez-lui une multiplication à quatre chiffres.</b><span>Il répondra, immédiatement et avec assurance.</span></p>
+          <p class="step" data-duration="4400"><b>Et il se trompera souvent.</b><span>Non par bêtise : parce qu’il n’a pas calculé. Il a produit la suite de chiffres qui ressemble le plus à un résultat.</span></p>
+          <p class="step" data-duration="4800"><b>C’est la même mécanique que pour le texte.</b><span>D’où les erreurs sur ce qui demande une procédure exacte : compter des occurrences, trier une longue liste, appliquer un barème à la lettre.</span></p>
+          <p class="step" data-duration="5000"><b>La parade n’est pas d’attendre un meilleur modèle.</b><span>C’est de lui donner un outil qui calcule vraiment. Les assistants modernes le font — et c’est exactement pour cette raison. Le modèle décide <em>quoi</em> calculer ; l’outil calcule.</span></p>
+        </div>
+      </section>
+
+      <h2>Et ce qui ne lui reviendra jamais</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : ce qui reste de la responsabilité humaine">
+        <div class="scene-title">Scène 3 — Ce qui reste à vous</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Trois responsabilités qui restent humaines : savoir ce qu’on veut, décider, répondre de la décision">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="46" width="680" height="58" rx="12" class="s-box-teal"/>
+              <text x="80" y="74" class="s-label">Savoir ce que vous voulez</text>
+              <text x="80" y="94" class="s-label-sm">il exécute une demande ; il ne la formule pas à votre place</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="118" width="680" height="58" rx="12" class="s-box-teal"/>
+              <text x="80" y="146" class="s-label">Trancher</text>
+              <text x="80" y="166" class="s-label-sm">il liste les options ; arbitrer suppose des valeurs et un contexte</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="60" y="190" width="680" height="58" rx="12" class="s-box-accent"/>
+              <text x="80" y="218" class="s-label">Assumer</text>
+              <text x="80" y="238" class="s-label-sm">devant un client, un juge ou une équipe, c’est vous qui signez</text>
+            </g>
+            <g data-show="4">
+              <text x="400" y="278" text-anchor="middle" class="s-label-sm" fill="var(--accent)">aucune version future ne changera cette ligne</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>Savoir ce qu’on veut.</b><span>C’est la part la plus difficile de n’importe quel travail, et elle ne se délègue pas. Une demande floue reste floue, quel que soit l’outil.</span></p>
+          <p class="step" data-duration="4800"><b>Trancher.</b><span>Une IA énumère très bien les options et leurs conséquences. Choisir suppose de savoir ce qui compte pour vous, ce que votre équipe peut encaisser, ce qui s’est mal passé la dernière fois.</span></p>
+          <p class="step" data-duration="5000"><b>Et assumer.</b><span>« L’IA l’a écrit » n’est une défense nulle part. Le texte publié, le chiffre envoyé, la décision prise sont les vôtres — juridiquement comme humainement.</span></p>
+          <p class="step" data-duration="5000"><b>Cette limite-là n’est pas technique.</b><span>Elle ne bougera pas avec la prochaine version, parce qu’elle ne porte pas sur les capacités de l’outil mais sur qui répond de quoi.</span></p>
+        </div>
+      </section>
+
+      <h2>Le tri utile</h2>
+      <div class="compare">
+        <div>
+          <h4>Limites qui se contournent</h4>
+          <ul>
+            <li>Ne pas connaître l’actualité → recherche web&nbsp;;</li>
+            <li>ignorer vos documents → base documentaire&nbsp;;</li>
+            <li>ne pas accéder aux outils → API, MCP&nbsp;;</li>
+            <li>mal calculer → un vrai outil de calcul.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Limites qui s’atténuent</h4>
+          <ul>
+            <li>Les erreurs factuelles : moins fréquentes, jamais nulles&nbsp;;</li>
+            <li>les raisonnements longs : meilleurs, encore fragiles&nbsp;;</li>
+            <li>le suivi de consignes nombreuses&nbsp;;</li>
+            <li>l’aveu d’ignorance, qui progresse.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Limites qui restent</h4>
+          <ul>
+            <li>Vouloir quelque chose&nbsp;;</li>
+            <li>arbitrer selon des valeurs&nbsp;;</li>
+            <li>engager une responsabilité&nbsp;;</li>
+            <li>garantir 100 % de fiabilité.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Le piège de l’adoption</div>
+        <p>
+          L’erreur la plus coûteuse n’est pas de sous-estimer l’outil, c’est de le placer là où
+          une erreur ne se voit pas. Un texte faux se repère à la relecture&nbsp;; un chiffre faux
+          glissé dans un tableau de bord vit sa vie pendant des mois. Priorisez les usages où
+          la vérification est <em>naturelle</em>.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Actualité, mémoire, accès aux outils&nbsp;: des limites <strong>qui se règlent par branchement</strong>.</li>
+        <li>Il ne <strong>calcule pas</strong> — il produit un résultat plausible, sauf s’il utilise un vrai outil.</li>
+        <li>Vouloir, trancher, assumer&nbsp;: <strong>hors de portée</strong>, et pas pour des raisons techniques.</li>
+        <li>Placez l’IA là où <strong>l’erreur se voit</strong>.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="ia-donnees.html">← Vos données et l’IA</a>
+        <a class="btn btn-primary" href="../index.html#/ia">Intelligence artificielle →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

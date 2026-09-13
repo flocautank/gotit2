@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pourquoi deux tableaux ne disent jamais pareil — GotIt</title>
+<meta name="description" content="Qualité des données, définitions et propriétaire : le vrai sujet derrière la gouvernance, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/data">Data</a><span>/</span>Exploiter les données<span>/</span>Qualité &amp; cadre légal
+      </div>
+      <h1>Pourquoi deux tableaux ne disent jamais pareil</h1>
+      <p class="lead">
+        Deux services, deux chiffres d’affaires, deux fichiers Excel — et trois heures de réunion
+        à chercher qui a tort. Personne n’a tort. C’est ça, le problème.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">7 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        On appelle cela la « gouvernance des données », et le mot décourage. Il recouvre pourtant
+        trois questions très concrètes&nbsp;: <strong>la donnée est-elle juste&nbsp;?</strong>,
+        <strong>que veut dire exactement ce mot&nbsp;?</strong>, <strong>qui en répond&nbsp;?</strong>
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : deux chiffres différents pour un même indicateur">
+        <div class="scene-title">Scène 1 — La réunion qui dérape</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Deux services présentent des chiffres différents parce qu’ils ne comptent pas la même chose">
+            <g data-show="1-4" class="m-rise">
+              <rect x="50" y="60" width="300" height="110" rx="12" class="s-box-teal"/>
+              <text x="200" y="98" text-anchor="middle" class="s-label">Le commerce</text>
+              <text x="200" y="136" text-anchor="middle" class="s-label">4,2 M€</text>
+            </g>
+            <g data-show="1-4" class="m-rise">
+              <rect x="450" y="60" width="300" height="110" rx="12" class="s-box-violet"/>
+              <text x="600" y="98" text-anchor="middle" class="s-label">La finance</text>
+              <text x="600" y="136" text-anchor="middle" class="s-label">3,8 M€</text>
+            </g>
+
+            <g data-show="2-4">
+              <text x="400" y="128" text-anchor="middle" class="s-label" fill="var(--danger)" data-show="2-4">≠</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="50" y="196" width="300" height="80" rx="12" class="s-box"/>
+              <text x="200" y="224" text-anchor="middle" class="s-label-sm">commande signée</text>
+              <text x="200" y="250" text-anchor="middle" class="s-label-xs">TTC, remises comprises</text>
+              <rect x="450" y="196" width="300" height="80" rx="12" class="s-box"/>
+              <text x="600" y="224" text-anchor="middle" class="s-label-sm">facture encaissée</text>
+              <text x="600" y="250" text-anchor="middle" class="s-label-xs">HT, hors avoirs</text>
+            </g>
+
+            <g data-show="4">
+              <text x="400" y="232" text-anchor="middle" class="s-label-sm" fill="var(--accent)">deux</text>
+              <text x="400" y="252" text-anchor="middle" class="s-label-sm" fill="var(--accent)">définitions</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Deux services, deux chiffres.</b><span>Même indicateur, même trimestre, même entreprise. Quatre cent mille euros d’écart.</span></p>
+          <p class="step" data-duration="4200"><b>La réunion cherche le coupable.</b><span>Quel outil s’est trompé ? Qui a mal extrait ? On y passe la matinée, régulièrement.</span></p>
+          <p class="step" data-duration="4800"><b>Il n’y a pas d’erreur.</b><span>Le commerce compte les commandes signées, la finance les factures encaissées. L’un en TTC remises comprises, l’autre en HT hors avoirs. Les deux chiffres sont exacts.</span></p>
+          <p class="step" data-duration="5000"><b>Le problème n’est pas la donnée, c’est le mot.</b><span>« Chiffre d’affaires » n’a jamais été défini au même endroit pour tout le monde. Aucun outil, aucune IA ne règle ça — c’est une décision d’organisation.</span></p>
+        </div>
+      </section>
+
+      <h2>Les quatre défauts qui reviennent toujours</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : les défauts classiques de qualité des données">
+        <div class="scene-title">Scène 2 — Ce qui abîme une base</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Doublons, champs vides, formats incohérents et données périmées">
+            <g data-show="1-5" class="m-rise">
+              <rect x="40" y="50" width="720" height="52" rx="10" class="s-box"/>
+              <text x="60" y="82" class="s-label-sm">Marie Petit · marie.petit@ex.fr · 06 12 34 56 78 · Lyon</text>
+            </g>
+            <g data-show="2-5" class="m-rise">
+              <rect x="40" y="112" width="720" height="52" rx="10" class="s-box-accent"/>
+              <text x="60" y="144" class="s-label-sm">M. PETIT · marie.petit@ex.fr · 0612345678 · lyon</text>
+              <text x="700" y="144" text-anchor="end" class="s-label-xs">doublon</text>
+            </g>
+            <g data-show="3-5" class="m-rise">
+              <rect x="40" y="174" width="720" height="52" rx="10" class="s-box-accent"/>
+              <text x="60" y="206" class="s-label-sm">Luc Meyer ·  —  · 03 20 00 00 00 · Lille</text>
+              <text x="700" y="206" text-anchor="end" class="s-label-xs">champ vide</text>
+            </g>
+            <g data-show="4-5" class="m-rise">
+              <rect x="40" y="236" width="720" height="52" rx="10" class="s-box-accent"/>
+              <text x="60" y="268" class="s-label-sm">Ali Bennani · ali@ancienne-boite.fr · Nantes</text>
+              <text x="700" y="268" text-anchor="end" class="s-label-xs">périmé</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Une ligne propre, pour commencer.</b><span>Nom, e-mail, téléphone, ville. C’est ce qu’on imagine quand on parle d’une base clients.</span></p>
+          <p class="step" data-duration="4800"><b>Le doublon.</b><span>La même personne, saisie deux fois, avec une casse différente et un téléphone écrit autrement. Votre outil les compte comme deux clients — et lui envoie deux fois la même campagne.</span></p>
+          <p class="step" data-duration="4400"><b>Le champ vide.</b><span>Un e-mail manquant, et voilà un client injoignable qui fausse tous les taux de contact. On ne sait jamais s’il est vide parce qu’inconnu ou parce qu’inexistant.</span></p>
+          <p class="step" data-duration="4600"><b>Le format incohérent.</b><span>« Lyon », « lyon », « LYON », « Lyon 3e ». Pour un humain c’est la même ville ; pour un regroupement automatique, ce sont quatre villes différentes.</span></p>
+          <p class="step" data-duration="5000"><b>Et le plus sournois : le périmé.</b><span>Une donnée exacte il y a trois ans, fausse aujourd’hui. Rien ne signale qu’elle a vieilli — elle est parfaitement bien formée, et parfaitement inutile.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un carnet d’adresses de famille tenu par quatre personnes, chacune dans son coin,
+          pendant dix ans. Rien n’est faux&nbsp;: chacun a noté ce qu’il savait, à sa façon,
+          au moment où il le savait. C’est l’absence de règle commune qui rend le carnet
+          inutilisable — pas la bêtise de ses auteurs.
+        </p>
+      </div>
+
+      <h2>Ce qui règle le problème</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : les trois décisions de gouvernance">
+        <div class="scene-title">Scène 3 — Trois décisions, pas un outil</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Un dictionnaire des définitions, un propriétaire par donnée, et un contrôle automatique à la saisie">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="46" width="680" height="58" rx="12" class="s-box-teal"/>
+              <text x="80" y="74" class="s-label">1. Écrire les définitions</text>
+              <text x="80" y="94" class="s-label-sm">« client actif » = une commande dans les 12 derniers mois</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="118" width="680" height="58" rx="12" class="s-box-teal"/>
+              <text x="80" y="146" class="s-label">2. Nommer un responsable par donnée</text>
+              <text x="80" y="166" class="s-label-sm">une personne, pas un service — c’est elle qui tranche</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="60" y="190" width="680" height="58" rx="12" class="s-box-accent"/>
+              <text x="80" y="218" class="s-label">3. Contrôler à la saisie</text>
+              <text x="80" y="238" class="s-label-sm">refuser une adresse mal formée coûte mille fois moins que la corriger</text>
+            </g>
+            <g data-show="4">
+              <text x="400" y="278" text-anchor="middle" class="s-label-sm" fill="var(--accent)">aucune de ces trois décisions n’est technique</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="5000"><b>Écrire les définitions, noir sur blanc.</b><span>Un document — on dit un « dictionnaire de données » — où chaque indicateur est défini une fois : ce qu’il inclut, ce qu’il exclut, sa source. Cinq lignes par indicateur suffisent, et elles font gagner des années.</span></p>
+          <p class="step" data-duration="4800"><b>Nommer un responsable par donnée.</b><span>Une personne identifiée, souvent côté métier, qui tranche les litiges et valide les évolutions. Sans nom, la définition dérive dès la première exception.</span></p>
+          <p class="step" data-duration="4800"><b>Contrôler au moment de la saisie.</b><span>Une adresse mal formée refusée à l’entrée, un doublon détecté immédiatement, une liste déroulante plutôt qu’un champ libre. C’est là que tout se joue — après, on nettoie sans fin.</span></p>
+          <p class="step" data-duration="5200"><b>Aucune de ces trois décisions n’est technique.</b><span>C’est pour ça que les projets data échouent en réunion et non en production. On achète un outil en espérant qu’il tranchera les définitions à notre place ; il ne le fera jamais.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Le lien avec l’IA</div>
+        <p>
+          Une IA branchée sur des données mal définies produit des réponses fausses avec
+          davantage d’assurance qu’un tableur — et à une bien plus grande échelle. C’est la
+          raison la plus fréquente d’échec d’un projet d’IA en entreprise&nbsp;: le problème
+          était en amont, et personne ne voulait le regarder.
+        </p>
+      </div>
+
+      <h2>Le vocabulaire, en une ligne chacun</h2>
+      <div class="compare">
+        <div>
+          <h4>Les mots</h4>
+          <ul>
+            <li><strong>Dictionnaire de données</strong> — le document des définitions.</li>
+            <li><strong>Référentiel</strong> — la liste qui fait foi (clients, produits).</li>
+            <li><strong>Data owner</strong> — la personne qui répond d’une donnée.</li>
+            <li><strong>Dédoublonnage</strong> — fusionner les fiches en double.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Les signaux d’alerte</h4>
+          <ul>
+            <li>Deux tableaux de bord qui divergent&nbsp;;</li>
+            <li>un fichier Excel « de retraitement » indispensable&nbsp;;</li>
+            <li>une seule personne sait produire le chiffre&nbsp;;</li>
+            <li>personne ne sait d’où sort une colonne.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Deux chiffres différents viennent presque toujours de <strong>deux définitions</strong>, pas d’une erreur.</li>
+        <li>Quatre défauts classiques : <strong>doublons, champs vides, formats, données périmées</strong>.</li>
+        <li>Trois décisions règlent l’essentiel : <strong>définir, nommer un responsable, contrôler à la saisie</strong>.</li>
+        <li>Ce sont des décisions d’<strong>organisation</strong> — aucun outil ne les prendra à votre place.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="entrepots-data.html">← Lac, entrepôt, magasin</a>
+        <a class="btn btn-primary" href="../index.html#/data">Data →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

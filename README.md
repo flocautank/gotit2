@@ -15,24 +15,30 @@ faciles à corriger.
 | [C'est quoi un serveur ?](lecons/serveur.html) | Informatique | Découverte |
 | [Logiciel, système, application](lecons/logiciel.html) | Informatique | Découverte |
 | [Local ou cloud : quelle différence ?](lecons/local-vs-cloud.html) | Informatique | Découverte |
+| [SaaS, PaaS, IaaS](lecons/cloud-saas.html) | Informatique | Intermédiaire |
 | [Comment voyage une page web](lecons/internet.html) | Réseau | Découverte |
 | [Les bases de la cybersécurité](lecons/cybersecurite.html) | Réseau | Découverte |
+| [Le chiffrement expliqué simplement](lecons/chiffrement.html) | Réseau | Intermédiaire |
 | [C'est quoi une base de données ?](lecons/base-de-donnees.html) | Data | Découverte |
 | [Lac, entrepôt, magasin de données](lecons/entrepots-data.html) | Data | Intermédiaire |
 | [Les langages de la data, situés](lecons/langages-data.html) | Data | Intermédiaire |
+| [Pourquoi deux tableaux ne disent jamais pareil](lecons/gouvernance-data.html) | Data | Intermédiaire |
 | [C'est quoi un système d'information ?](lecons/si-briques.html) | Système d'information | Découverte |
 | [C'est quoi une API ?](lecons/api.html) | Système d'information | Découverte |
 | [Comment un modèle de langage écrit](lecons/llm.html) | IA | Découverte |
 | [Pourquoi une IA invente parfois](lecons/hallucination.html) | IA | Intermédiaire |
 | [Bien demander à une IA](lecons/prompt.html) | IA | Découverte |
+| [Ce qu'une IA ne sait pas faire](lecons/ia-limites.html) | IA | Intermédiaire |
+| [Ce que coûte une IA](lecons/cout-ia.html) | IA | Intermédiaire |
+| [Vos données et l'IA](lecons/ia-donnees.html) | IA | Intermédiaire |
 | [Donner ses documents à une IA](lecons/rag.html) | IA | Intermédiaire |
 | [C'est quoi un agent IA ?](lecons/agent.html) | IA | Intermédiaire |
 | [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 
 D'autres sujets sont déjà déclarés dans le catalogue et apparaissent en « Bientôt » :
-chiffrement, SaaS/PaaS/IaaS, gouvernance des données, RGPD, projets SI, coût d'une IA,
-limites d'une IA, confidentialité des données face à l'IA.
+fichiers et formats, ce que sait le navigateur, wifi et débit, sauvegarder pour de vrai,
+le RGPD, le déroulé d'un projet SI.
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours

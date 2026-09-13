@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SaaS, PaaS, IaaS — GotIt</title>
+<meta name="description" content="Les trois niveaux de location du cloud, de la machine nue au logiciel clé en main, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/informatique">Informatique</a><span>/</span>Le matériel<span>/</span>Où tournent les programmes
+      </div>
+      <h1>SaaS, PaaS, IaaS</h1>
+      <p class="lead">
+        Trois sigles qui reviennent dans toutes les réunions, et une seule idée derrière :
+        jusqu’où décidez-vous de louer plutôt que de faire vous-même&nbsp;?
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Le point commun des trois&nbsp;: le « aaS » final, pour <em>as a Service</em> —
+        « en tant que service », c’est-à-dire loué à l’usage. Ce qui change, c’est
+        <strong>ce qu’on loue</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : les trois niveaux de location">
+        <div class="scene-title">Scène 1 — Où s’arrête la location</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 310" role="img" aria-label="Trois colonnes montrant ce que le fournisseur prend en charge en IaaS, PaaS et SaaS">
+            <g data-show="1-4" class="s-label-xs">
+              <text x="150" y="34" text-anchor="middle" class="s-label">IaaS</text>
+              <text x="400" y="34" text-anchor="middle" class="s-label">PaaS</text>
+              <text x="650" y="34" text-anchor="middle" class="s-label">SaaS</text>
+            </g>
+
+            <g class="s-box" data-show="1-4">
+              <rect x="50" y="52" width="200" height="52" rx="8"/><rect x="50" y="110" width="200" height="52" rx="8"/>
+              <rect x="50" y="168" width="200" height="52" rx="8"/><rect x="50" y="226" width="200" height="52" rx="8"/>
+              <rect x="300" y="52" width="200" height="52" rx="8"/><rect x="300" y="110" width="200" height="52" rx="8"/>
+              <rect x="300" y="168" width="200" height="52" rx="8"/><rect x="300" y="226" width="200" height="52" rx="8"/>
+              <rect x="550" y="52" width="200" height="52" rx="8"/><rect x="550" y="110" width="200" height="52" rx="8"/>
+              <rect x="550" y="168" width="200" height="52" rx="8"/><rect x="550" y="226" width="200" height="52" rx="8"/>
+            </g>
+            <g class="s-label-sm" text-anchor="middle" data-show="1-4">
+              <text x="150" y="84">Le logiciel</text><text x="150" y="142">Les réglages</text>
+              <text x="150" y="200">Le système</text><text x="150" y="258">La machine</text>
+              <text x="400" y="84">Le logiciel</text><text x="400" y="142">Les réglages</text>
+              <text x="400" y="200">Le système</text><text x="400" y="258">La machine</text>
+              <text x="650" y="84">Le logiciel</text><text x="650" y="142">Les réglages</text>
+              <text x="650" y="200">Le système</text><text x="650" y="258">La machine</text>
+            </g>
+
+            <g class="s-box-accent">
+              <rect x="50" y="226" width="200" height="52" rx="8" data-show="2-4" class="m-pop"/>
+              <rect x="300" y="226" width="200" height="52" rx="8" data-show="3-4" class="m-pop"/>
+              <rect x="300" y="168" width="200" height="52" rx="8" data-show="3-4" class="m-pop"/>
+              <rect x="550" y="226" width="200" height="52" rx="8" data-show="4" class="m-pop"/>
+              <rect x="550" y="168" width="200" height="52" rx="8" data-show="4" class="m-pop"/>
+              <rect x="550" y="110" width="200" height="52" rx="8" data-show="4" class="m-pop"/>
+              <rect x="550" y="52" width="200" height="52" rx="8" data-show="4" class="m-pop"/>
+            </g>
+            <g class="s-label-sm" text-anchor="middle" fill="var(--accent)">
+              <text x="150" y="258" data-show="2-4">La machine</text>
+              <text x="400" y="258" data-show="3-4">La machine</text>
+              <text x="400" y="200" data-show="3-4">Le système</text>
+              <text x="650" y="258" data-show="4">La machine</text>
+              <text x="650" y="200" data-show="4">Le système</text>
+              <text x="650" y="142" data-show="4">Les réglages</text>
+              <text x="650" y="84" data-show="4">Le logiciel</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Toute informatique est un empilement.</b><span>Une machine, un système, des réglages, et enfin le logiciel que les gens utilisent. La question est : qui s’occupe de quelle couche ?</span></p>
+          <p class="step" data-duration="4800"><b>IaaS : on loue la machine, rien d’autre.</b><span>Le fournisseur livre un serveur nu et du réseau. Tout le reste vous incombe : installer, configurer, mettre à jour, sécuriser. Maximum de liberté, maximum de travail.</span></p>
+          <p class="step" data-duration="4800"><b>PaaS : on loue aussi l’environnement.</b><span>Machine, système, base de données, mises à jour : tout est prêt. Vous ne déposez que votre application. C’est le confort des équipes techniques qui veulent développer sans administrer.</span></p>
+          <p class="step" data-duration="5200"><b>SaaS : on loue le logiciel fini.</b><span>Vous ouvrez un navigateur, vous vous connectez, vous travaillez. Votre messagerie en ligne, votre CRM, votre outil de visio : tout cela est du SaaS, et c’est de loin le cas le plus fréquent.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Se nourrir. <strong>IaaS</strong>&nbsp;: on vous loue une cuisine équipée — les courses,
+          la recette et la vaisselle sont pour vous. <strong>PaaS</strong>&nbsp;: on vous livre les
+          ingrédients préparés, vous n’avez qu’à cuisiner. <strong>SaaS</strong>&nbsp;: vous allez
+          au restaurant. Aucune formule n’est meilleure&nbsp;: tout dépend du temps, du budget,
+          et de votre envie de choisir vos ingrédients.
+        </p>
+      </div>
+
+      <h2>Ce que vous gagnez, ce que vous cédez</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : l’arbitrage entre confort et maîtrise">
+        <div class="scene-title">Scène 2 — L’arbitrage</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 270" role="img" aria-label="Plus on monte vers le SaaS, plus le confort augmente et la maîtrise diminue">
+            <g data-show="1-3" class="m-rise">
+              <path d="M80 200 H 720" class="s-line"/>
+              <text x="110" y="230" text-anchor="middle" class="s-label-sm">IaaS</text>
+              <text x="400" y="230" text-anchor="middle" class="s-label-sm">PaaS</text>
+              <text x="690" y="230" text-anchor="middle" class="s-label-sm">SaaS</text>
+            </g>
+            <g data-show="2-3" class="m-rise">
+              <path d="M110 170 L 690 80" class="s-line-accent m-draw" data-show="2-3"/>
+              <text x="720" y="74" text-anchor="end" class="s-label-sm" fill="var(--accent)">confort</text>
+            </g>
+            <g data-show="3" class="m-rise">
+              <path d="M110 80 L 690 170" class="s-line m-draw" data-show="3" stroke="var(--sage)"/>
+              <text x="120" y="66" class="s-label-sm" fill="var(--sage)">maîtrise</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Les trois se rangent sur une même ligne.</b><span>De la machine nue au logiciel clé en main.</span></p>
+          <p class="step" data-duration="4400"><b>Plus on monte, plus c’est confortable.</b><span>Moins de compétences nécessaires, démarrage en quelques minutes, aucune mise à jour à gérer, aucune panne matérielle à subir.</span></p>
+          <p class="step" data-duration="5000"><b>Et plus on cède de maîtrise.</b><span>Le SaaS impose ses fonctions, son rythme de nouveautés, ses tarifs. Si l’éditeur supprime une fonctionnalité que vous utilisiez, vous ne pouvez rien faire. Le gain de confort se paie toujours en dépendance.</span></p>
+        </div>
+      </section>
+
+      <h2>La vraie question : la réversibilité</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : pouvoir partir d’un fournisseur">
+        <div class="scene-title">Scène 3 — Pouvoir partir</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="Trois questions à se poser avant de s’engager : récupérer ses données, le format, le coût de sortie">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="46" width="680" height="56" rx="12" class="s-box-teal"/>
+              <text x="80" y="72" class="s-label">Puis-je récupérer mes données&nbsp;?</text>
+              <text x="80" y="92" class="s-label-sm">toutes, pas seulement un aperçu</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="116" width="680" height="56" rx="12" class="s-box-teal"/>
+              <text x="80" y="142" class="s-label">Dans quel format&nbsp;?</text>
+              <text x="80" y="162" class="s-label-sm">exploitable ailleurs, ou illisible hors de l’outil</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="60" y="186" width="680" height="56" rx="12" class="s-box-accent"/>
+              <text x="80" y="212" class="s-label">Combien coûterait le départ&nbsp;?</text>
+              <text x="80" y="232" class="s-label-sm">en temps, en formation, en reconstruction</text>
+            </g>
+            <g data-show="4">
+              <text x="400" y="270" text-anchor="middle" class="s-label-sm" fill="var(--accent)">à poser avant de signer, jamais après</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Première question : la récupération.</b><span>Un fournisseur sérieux permet d’exporter l’intégralité de vos données à tout moment. Si l’export est partiel ou payant, c’est un signal.</span></p>
+          <p class="step" data-duration="4600"><b>Deuxième : le format.</b><span>Exporter dans un format que seul l’outil sait relire n’est pas un export. Cherchez des formats standards, lisibles par d’autres logiciels.</span></p>
+          <p class="step" data-duration="4800"><b>Troisième : le coût réel du départ.</b><span>Rarement le prix de l’export — plutôt les mois de reparamétrage, la réécriture des intégrations, la formation. C’est ce qu’on appelle l’enfermement.</span></p>
+          <p class="step" data-duration="5000"><b>Ces questions se posent avant de signer.</b><span>Après trois ans d’usage, il est trop tard : on ne négocie plus, on subit. C’est le point le plus souvent oublié dans un choix d’outil.</span></p>
+        </div>
+      </section>
+
+      <h2>Pour se repérer</h2>
+      <div class="compare">
+        <div>
+          <h4>Vous utilisez déjà du SaaS</h4>
+          <ul>
+            <li>Une messagerie en ligne&nbsp;;</li>
+            <li>un espace de fichiers partagé&nbsp;;</li>
+            <li>un outil de visio&nbsp;;</li>
+            <li>un CRM, une paie, une compta en ligne.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Le PaaS concerne surtout…</h4>
+          <ul>
+            <li>Les équipes qui développent leurs applications&nbsp;;</li>
+            <li>les bases de données gérées&nbsp;;</li>
+            <li>les plateformes d’hébergement de sites&nbsp;;</li>
+            <li>rarement les utilisateurs finaux.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>L’IaaS, c’est…</h4>
+          <ul>
+            <li>Des serveurs loués à l’heure&nbsp;;</li>
+            <li>du stockage brut&nbsp;;</li>
+            <li>pour des besoins sur mesure&nbsp;;</li>
+            <li>avec une équipe technique dédiée.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Les trois désignent <strong>jusqu’où va la location</strong> : machine, environnement, ou logiciel fini.</li>
+        <li><strong>IaaS</strong> = la machine. <strong>PaaS</strong> = la machine et l’environnement. <strong>SaaS</strong> = tout.</li>
+        <li>Plus on monte, plus c’est <strong>confortable</strong> et moins on a de <strong>maîtrise</strong>.</li>
+        <li>La question décisive est la <strong>réversibilité</strong> — et elle se pose avant de signer.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="local-vs-cloud.html">← Local ou cloud&nbsp;?</a>
+        <a class="btn btn-primary" href="../index.html#/informatique">Informatique →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

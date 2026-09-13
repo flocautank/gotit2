@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le chiffrement expliqué simplement — GotIt</title>
+<meta name="description" content="Le coffre et la clé, la double serrure et le chiffrement de bout en bout, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/reseau">Réseau</a><span>/</span>Se protéger<span>/</span>Ce qui protège les données
+      </div>
+      <h1>Le chiffrement expliqué simplement</h1>
+      <p class="lead">
+        Rendre un message illisible pour tout le monde sauf son destinataire. L’idée a trois
+        mille ans ; ce qui a changé, c’est qu’on sait désormais le faire avec quelqu’un qu’on
+        n’a jamais rencontré.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">7 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Chiffrer, c’est transformer un texte lisible en charabia selon une règle. Déchiffrer,
+        c’est faire l’inverse. La règle, c’est la <strong>clé</strong> — et toute la difficulté
+        tient à une question&nbsp;: comment la partager&nbsp;?
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : le principe du chiffrement avec une clé partagée">
+        <div class="scene-title">Scène 1 — Le coffre et la clé</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Un message est chiffré avec une clé, transite illisible, puis est déchiffré avec la même clé">
+            <g data-show="1-4" class="s-label-sm">
+              <rect x="30" y="100" width="160" height="80" rx="12" class="s-box-teal"/>
+              <text x="110" y="134" text-anchor="middle" class="s-label-sm">Bonjour</text>
+              <text x="110" y="158" text-anchor="middle" class="s-label-xs">en clair</text>
+
+              <rect x="320" y="100" width="160" height="80" rx="12" class="s-box"/>
+              <text x="400" y="134" text-anchor="middle" class="s-label-sm">8f3a d901</text>
+              <text x="400" y="158" text-anchor="middle" class="s-label-xs">illisible</text>
+
+              <rect x="610" y="100" width="160" height="80" rx="12" class="s-box-teal"/>
+              <text x="690" y="134" text-anchor="middle" class="s-label-sm">Bonjour</text>
+              <text x="690" y="158" text-anchor="middle" class="s-label-xs">en clair</text>
+            </g>
+
+            <path d="M195 140 H 315" class="s-line m-draw" data-show="1-4"/>
+            <text x="255" y="86" text-anchor="middle" class="s-label-xs" data-show="1-4">on chiffre</text>
+            <path d="M485 140 H 605" class="s-line m-draw" data-show="2-4"/>
+            <text x="545" y="86" text-anchor="middle" class="s-label-xs" data-show="2-4">on déchiffre</text>
+
+            <g data-show="3-4">
+              <rect x="300" y="204" width="200" height="42" rx="21" fill="#F6E2DD" stroke="var(--danger)" class="m-rise" data-show="3-4"/>
+              <text x="400" y="231" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3-4">un curieux ne voit que ça</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <text x="400" y="278" text-anchor="middle" class="s-label-sm" fill="var(--accent)">mais il faut que les deux aient la clé…</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On transforme le message avec une clé.</b><span>Une opération mathématique, réversible uniquement si l’on connaît cette clé.</span></p>
+          <p class="step" data-duration="4000"><b>À l’arrivée, on applique l’inverse.</b><span>Le destinataire, qui a la même clé, retrouve le texte d’origine.</span></p>
+          <p class="step" data-duration="4400"><b>Entre les deux, personne ne lit rien.</b><span>Ni l’opérateur, ni le wifi de la gare, ni celui qui intercepte. Le message circule en charabia.</span></p>
+          <p class="step" data-duration="5000"><b>Reste le problème historique : transmettre la clé.</b><span>Si je dois vous envoyer la clé pour que vous puissiez lire, comment l’envoyer sans qu’elle soit interceptée&nbsp;? Pendant des siècles, il fallait se rencontrer.</span></p>
+        </div>
+      </section>
+
+      <h2>La double serrure</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : clé publique et clé privée">
+        <div class="scene-title">Scène 2 — Deux clés au lieu d’une</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une clé publique qui ferme et une clé privée qui ouvre permettent d’échanger sans s’être rencontrés">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="50" width="330" height="90" rx="12" class="s-box-accent"/>
+              <text x="205" y="84" text-anchor="middle" class="s-label">La clé publique</text>
+              <text x="205" y="112" text-anchor="middle" class="s-label-sm">elle ne sait que fermer</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="430" y="50" width="330" height="90" rx="12" class="s-box-teal"/>
+              <text x="595" y="84" text-anchor="middle" class="s-label">La clé privée</text>
+              <text x="595" y="112" text-anchor="middle" class="s-label-sm">elle seule sait ouvrir</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="40" y="164" width="720" height="52" rx="12" class="s-box"/>
+              <text x="400" y="196" text-anchor="middle" class="s-label-sm">la publique se donne, la privée ne sort jamais</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="120" y="238" width="560" height="48" rx="24" class="s-box-teal"/>
+              <text x="400" y="268" text-anchor="middle" class="s-label-sm">on peut donc écrire à un inconnu, sans rien s’être échangé d’abord</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4800"><b>L’idée géniale : deux clés différentes.</b><span>L’une ferme le coffre, l’autre l’ouvre. Et connaître celle qui ferme ne permet pas de deviner celle qui ouvre.</span></p>
+          <p class="step" data-duration="4400"><b>La clé qui ferme est publique.</b><span>On la distribue à tout le monde — elle est même affichée. N’importe qui peut donc vous écrire un message que vous seul lirez.</span></p>
+          <p class="step" data-duration="4600"><b>La clé qui ouvre reste secrète.</b><span>Elle ne quitte jamais votre appareil. C’est la seule chose à protéger, et tout le reste en découle.</span></p>
+          <p class="step" data-duration="5200"><b>Le problème millénaire est résolu.</b><span>Plus besoin de se rencontrer pour convenir d’un secret. C’est ce mécanisme qui se déclenche, en silence, chaque fois que vous ouvrez un site en https.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Une boîte aux lettres. La fente est publique&nbsp;: tout le monde peut y glisser un
+          courrier, et son adresse est dans l’annuaire. La clé de la porte, elle, n’appartient
+          qu’à vous. Pouvoir déposer n’a jamais permis de relever.
+        </p>
+      </div>
+
+      <h2>« De bout en bout » : ce que ça change</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : chiffrement de transport contre chiffrement de bout en bout">
+        <div class="scene-title">Scène 3 — Où le message redevient lisible</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Avec un chiffrement de transport le serveur lit le message ; avec un chiffrement de bout en bout il ne le peut pas">
+            <g data-show="1-2">
+              <text x="60" y="42" class="s-label-xs">CHIFFRÉ JUSQU’AU SERVEUR</text>
+              <rect x="40" y="56" width="140" height="60" rx="10" class="s-box-teal"/>
+              <text x="110" y="92" text-anchor="middle" class="s-label-sm">Vous</text>
+              <rect x="330" y="56" width="150" height="60" rx="10" class="s-box"/>
+              <text x="405" y="92" text-anchor="middle" class="s-label-sm">Le service</text>
+              <rect x="630" y="56" width="140" height="60" rx="10" class="s-box-teal"/>
+              <text x="700" y="92" text-anchor="middle" class="s-label-sm">Votre ami</text>
+              <path d="M185 86 H 325" class="s-line m-draw" data-show="1-2"/>
+              <path d="M485 86 H 625" class="s-line m-draw" data-show="1-2"/>
+              <g data-show="2">
+                <rect x="330" y="56" width="150" height="60" rx="10" fill="#F6E2DD" stroke="var(--danger)" class="pulse" data-show="2"/>
+                <text x="405" y="92" text-anchor="middle" class="s-label-sm" fill="var(--danger)">il lit</text>
+              </g>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <text x="60" y="176" class="s-label-xs">CHIFFRÉ DE BOUT EN BOUT</text>
+              <rect x="40" y="190" width="140" height="60" rx="10" class="s-box-teal"/>
+              <text x="110" y="226" text-anchor="middle" class="s-label-sm">Vous</text>
+              <rect x="330" y="190" width="150" height="60" rx="10" class="s-box"/>
+              <text x="405" y="220" text-anchor="middle" class="s-label-sm">Le service</text>
+              <text x="405" y="240" text-anchor="middle" class="s-label-xs">ne peut pas lire</text>
+              <rect x="630" y="190" width="140" height="60" rx="10" class="s-box-teal"/>
+              <text x="700" y="226" text-anchor="middle" class="s-label-sm">Votre ami</text>
+              <path d="M185 220 H 625" class="s-line-accent m-draw" data-show="3-4"/>
+            </g>
+            <g data-show="4">
+              <text x="400" y="286" text-anchor="middle" class="s-label-sm" fill="var(--accent)">la clé n’existe que sur les deux téléphones</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Le cas le plus courant : chiffré jusqu’au serveur.</b><span>Votre message est protégé sur le trajet, puis déchiffré à l’arrivée chez le service, qui le rechiffre pour le destinataire.</span></p>
+          <p class="step" data-duration="4800"><b>Ce qui veut dire que le service, lui, peut lire.</b><span>C’est le cas de la plupart des messageries d’entreprise et des mails. Ce n’est pas forcément un problème — cela permet l’antivirus, la recherche, l’archivage légal — mais il faut le savoir.</span></p>
+          <p class="step" data-duration="4800"><b>De bout en bout, la clé reste aux extrémités.</b><span>Le message est chiffré sur votre appareil et déchiffré sur celui du destinataire. Entre les deux, personne — pas même l’éditeur du service — ne peut le lire.</span></p>
+          <p class="step" data-duration="5200"><b>Avec une conséquence qu’on oublie.</b><span>Si personne d’autre n’a la clé, personne ne peut rien récupérer. Perdre son téléphone sans sauvegarde, c’est parfois perdre l’historique définitivement. La protection et la fragilité sont la même propriété.</span></p>
+        </div>
+      </section>
+
+      <h2>Où le chiffrement vous protège déjà</h2>
+      <div class="compare">
+        <div>
+          <h4>Sans que vous y pensiez</h4>
+          <ul>
+            <li>Le <strong>https</strong> de chaque site&nbsp;;</li>
+            <li>le wifi de votre domicile&nbsp;;</li>
+            <li>le disque de votre téléphone&nbsp;;</li>
+            <li>votre carte bancaire.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ce que ça protège</h4>
+          <ul>
+            <li>La lecture <strong>en chemin</strong>&nbsp;;</li>
+            <li>le contenu d’un appareil volé&nbsp;;</li>
+            <li>l’identité du site où vous êtes&nbsp;;</li>
+            <li>l’intégrité : un message modifié se détecte.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ce que ça ne protège pas</h4>
+          <ul>
+            <li>Un destinataire malveillant&nbsp;;</li>
+            <li>votre écran, si l’on regarde par-dessus&nbsp;;</li>
+            <li>un mot de passe donné volontairement&nbsp;;</li>
+            <li>les <em>métadonnées</em> : qui parle à qui, et quand.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">La nuance qui compte</div>
+        <p>
+          Le chiffrement protège le <em>contenu</em>, rarement le <em>fait</em> d’avoir communiqué.
+          Qu’un numéro ait appelé un autre, à quelle heure et pendant combien de temps reste
+          visible. Dans bien des situations, ces métadonnées en disent plus long que le message
+          lui-même.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Chiffrer, c’est rendre illisible <strong>sauf pour qui a la clé</strong>.</li>
+        <li>Deux clés — une <strong>publique qui ferme</strong>, une <strong>privée qui ouvre</strong> — permettent d’échanger sans s’être rencontrés.</li>
+        <li><strong>De bout en bout</strong> = seuls les deux appareils peuvent lire, pas même le service.</li>
+        <li>Ça protège le contenu, pas les <strong>métadonnées</strong> ni un destinataire indélicat.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="cybersecurite.html">← Les bases de la cybersécurité</a>
+        <a class="btn btn-primary" href="../index.html#/reseau">Réseau →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>
