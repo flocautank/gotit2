@@ -54,8 +54,11 @@ python3 -m http.server 8000
 
 ## Publication
 
-Le site est publié par GitHub Pages via `.github/workflows/pages.yml` à chaque push sur `main`.
-Dans **Settings → Pages**, choisir la source **GitHub Actions**.
+Le site est publié par GitHub Pages depuis la branche `gh-pages`
+(**Settings → Pages → Deploy from a branch → `gh-pages` / `/ (root)`**).
+
+Il n'y a rien à faire à la main : le workflow `.github/workflows/publier.yml`
+recopie `main` sur `gh-pages` à chaque push. On travaille donc toujours sur `main`.
 
 ## Accessibilité
 
