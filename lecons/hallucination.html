@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pourquoi une IA invente parfois — GotIt</title>
+<meta name="description" content="L’origine des hallucinations d’une IA, et les réflexes qui permettent de les rattraper, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/ia">Intelligence artificielle</a><span>/</span>Fondamentaux<span>/</span>Les modèles de langage
+      </div>
+      <h1>Pourquoi une IA invente parfois</h1>
+      <p class="lead">
+        Elle ne ment pas, et elle ne se trompe pas non plus au sens habituel : elle fait
+        exactement ce pour quoi elle est faite — produire une suite vraisemblable. Le problème,
+        c’est que vraisemblable et vrai ne sont pas la même chose.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        On appelle cela une <strong>hallucination</strong> : une réponse fausse, énoncée avec le
+        même aplomb qu’une réponse juste. Un nom d’auteur inventé, une date déplacée, un article
+        de loi qui n’existe pas, une référence parfaitement formatée et parfaitement fictive.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : vraisemblable n’est pas vrai">
+        <div class="scene-title">Scène 1 — Deux objectifs différents</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Le modèle optimise la vraisemblance, pas la vérité : les deux ne coïncident que partiellement">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="70" width="300" height="120" rx="12" class="s-box-teal"/>
+              <text x="210" y="116" text-anchor="middle" class="s-label">Ce qu’il cherche</text>
+              <text x="210" y="144" text-anchor="middle" class="s-label-sm">une suite vraisemblable</text>
+            </g>
+
+            <g data-show="2-4" class="m-right">
+              <rect x="440" y="70" width="300" height="120" rx="12" class="s-box-accent"/>
+              <text x="590" y="116" text-anchor="middle" class="s-label">Ce que vous voulez</text>
+              <text x="590" y="144" text-anchor="middle" class="s-label-sm">une réponse vraie</text>
+            </g>
+
+            <g data-show="3-4">
+              <path d="M368 130 H 432" class="s-line m-draw" data-show="3-4"/>
+              <text x="400" y="212" text-anchor="middle" class="s-label-sm" data-show="3-4">le plus souvent, les deux coïncident</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="200" y="238" width="400" height="48" rx="24" fill="#F6EBD8" stroke="var(--warn)"/>
+              <text x="400" y="268" text-anchor="middle" class="s-label-sm" fill="var(--warn)">mais rien ne le garantit</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Un modèle vise la vraisemblance.</b><span>Sa seule mécanique : quel mot vient naturellement ensuite. Rien, dans ce geste, ne vérifie quoi que ce soit.</span></p>
+          <p class="step" data-duration="4200"><b>Vous, vous attendez la vérité.</b><span>Un chiffre juste, une référence qui existe, une règle réellement applicable.</span></p>
+          <p class="step" data-duration="4600"><b>La plupart du temps, cela revient au même.</b><span>Parce que ce qui a été écrit des millions de fois est en général exact : la capitale de la France, la formule de politesse, la structure d’un contrat.</span></p>
+          <p class="step" data-duration="5000"><b>Mais quand les deux divergent, rien ne l’arrête.</b><span>Il continue à produire du vraisemblable. Une référence inventée a exactement la même allure qu’une vraie — c’est pour ça qu’elle passe inaperçue.</span></p>
+        </div>
+      </section>
+
+      <h2>Trois situations à risque</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : les situations où le risque d’erreur augmente">
+        <div class="scene-title">Scène 2 — Quand s’en méfier</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Trois cas où le risque d’invention est élevé : information rare, actualité récente, données internes">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="60" width="220" height="150" rx="12" class="s-box"/>
+              <text x="150" y="100" text-anchor="middle" class="s-label">Le détail rare</text>
+              <text x="150" y="132" text-anchor="middle" class="s-label-sm">une référence précise</text>
+              <text x="150" y="158" text-anchor="middle" class="s-label-sm">un article de loi</text>
+              <text x="150" y="184" text-anchor="middle" class="s-label-sm">une citation exacte</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="290" y="60" width="220" height="150" rx="12" class="s-box"/>
+              <text x="400" y="100" text-anchor="middle" class="s-label">L’actualité</text>
+              <text x="400" y="132" text-anchor="middle" class="s-label-sm">après sa date d’arrêt</text>
+              <text x="400" y="158" text-anchor="middle" class="s-label-sm">un prix, une version</text>
+              <text x="400" y="184" text-anchor="middle" class="s-label-sm">un dirigeant en poste</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="540" y="60" width="220" height="150" rx="12" class="s-box"/>
+              <text x="650" y="100" text-anchor="middle" class="s-label">Votre maison</text>
+              <text x="650" y="132" text-anchor="middle" class="s-label-sm">vos procédures</text>
+              <text x="650" y="158" text-anchor="middle" class="s-label-sm">vos chiffres</text>
+              <text x="650" y="184" text-anchor="middle" class="s-label-sm">vos clients</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="120" y="240" width="560" height="46" rx="23" class="s-box-accent"/>
+              <text x="400" y="269" text-anchor="middle" class="s-label-sm">point commun : il ne peut pas le savoir, et il répond quand même</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Le détail rare.</b><span>Plus une information est précise et peu répandue, moins elle a été vue à l’entraînement — et plus le modèle comble par ce qui « sonne juste ».</span></p>
+          <p class="step" data-duration="4200"><b>Tout ce qui est récent.</b><span>Un modèle ignore ce qui s’est passé après son entraînement. Sans accès à une recherche, il répondra avec l’état du monde d’il y a un ou deux ans.</span></p>
+          <p class="step" data-duration="4400"><b>Et tout ce qui vous est propre.</b><span>Vos process, vos tarifs, l’historique d’un client : il n’en a jamais rien vu. S’il répond, il improvise.</span></p>
+          <p class="step" data-duration="5000"><b>Le vrai problème n’est pas l’erreur, c’est l’assurance.</b><span>Un humain qui ignore hésite. Le modèle, lui, formule une réponse fausse avec exactement le même ton qu’une réponse juste. C’est cette absence de signal qui rend la vérification indispensable.</span></p>
+        </div>
+      </section>
+
+      <h2>Les trois réflexes qui règlent l’essentiel</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : les parades aux hallucinations">
+        <div class="scene-title">Scène 3 — Les parades</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Trois parades : fournir la source, demander les sources, vérifier ce qui est chiffré">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="50" width="680" height="62" rx="12" class="s-box-teal"/>
+              <text x="80" y="78" class="s-label">1. Donner la matière</text>
+              <text x="80" y="100" class="s-label-sm">collez le document plutôt que de demander « de mémoire »</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="126" width="680" height="62" rx="12" class="s-box-teal"/>
+              <text x="80" y="154" class="s-label">2. Demander les sources</text>
+              <text x="80" y="176" class="s-label-sm">une source vérifiable, ou l’aveu qu’il ne sait pas</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="60" y="202" width="680" height="62" rx="12" class="s-box-teal"/>
+              <text x="80" y="230" class="s-label">3. Vérifier chiffres, noms et dates</text>
+              <text x="80" y="252" class="s-label-sm">c’est exactement là que se logent les erreurs</text>
+            </g>
+            <g data-show="4">
+              <text x="400" y="290" text-anchor="middle" class="s-label-sm" fill="var(--accent)">un brouillon brillant, jamais une source</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4800"><b>1. Fournissez la matière.</b><span>La différence est spectaculaire : sur un texte que vous lui donnez, le modèle est fiable ; sur ses souvenirs, beaucoup moins. C’est tout le principe du RAG.</span></p>
+          <p class="step" data-duration="4600"><b>2. Exigez des sources vérifiables.</b><span>Et vérifiez qu’elles existent : une référence inventée est plausible, mais un lien mort ou un titre introuvable trahit l’invention.</span></p>
+          <p class="step" data-duration="4600"><b>3. Contrôlez systématiquement chiffres, noms et dates.</b><span>Le raisonnement et la forme sont généralement solides. Ce sont les détails factuels qui glissent.</span></p>
+          <p class="step" data-duration="5200"><b>La bonne posture tient en une phrase.</b><span>Traitez la réponse comme le brouillon d’un collègue brillant mais parfois sûr de lui à tort : très utile pour avancer, jamais à publier sans relecture.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Deux idées fausses à écarter</div>
+        <p>
+          « Il suffira de modèles plus gros. » Les modèles récents se trompent moins et savent
+          mieux dire qu’ils ne savent pas — mais le mécanisme, lui, reste probabiliste.
+          Et&nbsp;: « il ment » n’a pas de sens : mentir suppose de connaître la vérité et de
+          choisir de la cacher. Il n’a ni l’un ni l’autre.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Une IA produit du <strong>vraisemblable</strong>, ce qui coïncide souvent — mais pas toujours — avec le vrai.</li>
+        <li>Trois zones à risque : le <strong>détail rare</strong>, l’<strong>actualité</strong>, vos <strong>données internes</strong>.</li>
+        <li>Le danger vient de l’<strong>assurance du ton</strong>, pas de la fréquence des erreurs.</li>
+        <li>La parade la plus efficace : <strong>lui donner la matière</strong> au lieu de la lui demander.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="llm.html">← Comment un modèle de langage écrit</a>
+        <a class="btn btn-primary" href="prompt.html">Bien demander à une IA →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

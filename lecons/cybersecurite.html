@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les bases de la cybersécurité — GotIt</title>
+<meta name="description" content="Mot de passe, hameçonnage, double authentification : les gestes qui comptent vraiment, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/reseau">Réseau</a><span>/</span>Se protéger<span>/</span>Les gestes du quotidien
+      </div>
+      <h1>Les bases de la cybersécurité</h1>
+      <p class="lead">
+        Les attaques qui réussissent ne sont presque jamais des prouesses techniques. Ce sont
+        des mots de passe réutilisés et des messages bien imités. Trois gestes suffisent à
+        écarter l’immense majorité du risque.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-1">Découverte</span><span class="tag">7 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        On imagine un génie encapuchonné forçant un pare-feu. La réalité est plus banale&nbsp;:
+        quelqu’un essaie un mot de passe qui a fuité ailleurs, ou vous écrit un message si
+        crédible que vous le donnez vous-même.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : la réutilisation d’un mot de passe">
+        <div class="scene-title">Scène 1 — Le mot de passe réutilisé</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un mot de passe ayant fuité sur un site est essayé automatiquement sur tous les autres comptes">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="60" width="230" height="90" rx="12" class="s-box"/>
+              <text x="155" y="96" text-anchor="middle" class="s-label-sm">Un petit site</text>
+              <text x="155" y="122" text-anchor="middle" class="s-label-xs">inscrit en 2018, oublié</text>
+            </g>
+
+            <g data-show="2-4">
+              <rect x="40" y="60" width="230" height="90" rx="12" fill="#F6E2DD" stroke="var(--danger)" class="pulse" data-show="2-4"/>
+              <text x="155" y="96" text-anchor="middle" class="s-label-sm" fill="var(--danger)">piraté</text>
+              <text x="155" y="122" text-anchor="middle" class="s-label-xs" fill="var(--danger)">e-mail + mot de passe</text>
+            </g>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="530" y="36" width="230" height="52" rx="10" class="s-box"/>
+              <text x="645" y="68" text-anchor="middle" class="s-label-sm">Votre messagerie</text>
+              <rect x="530" y="100" width="230" height="52" rx="10" class="s-box"/>
+              <text x="645" y="132" text-anchor="middle" class="s-label-sm">Votre banque</text>
+              <rect x="530" y="164" width="230" height="52" rx="10" class="s-box"/>
+              <text x="645" y="196" text-anchor="middle" class="s-label-sm">Vos réseaux</text>
+              <path d="M280 105 C 400 105, 420 62, 524 62" class="s-line m-draw" data-show="3-4"/>
+              <path d="M280 115 H 524" class="s-line m-draw" data-show="3-4"/>
+              <path d="M280 125 C 400 125, 420 190, 524 190" class="s-line m-draw" data-show="3-4"/>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="130" y="230" width="540" height="46" rx="23" class="s-box-accent"/>
+              <text x="400" y="259" text-anchor="middle" class="s-label-sm">tout est essayé automatiquement, en quelques secondes</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Vous vous étiez inscrit sur un petit site.</b><span>Un forum, une boutique, un service oublié depuis. Avec votre e-mail habituel et votre mot de passe habituel.</span></p>
+          <p class="step" data-duration="4200"><b>Ce site s’est fait pirater.</b><span>Ça arrive tous les jours. Son fichier d’utilisateurs se retrouve en vente : votre adresse, et votre mot de passe.</span></p>
+          <p class="step" data-duration="4600"><b>Le même couple est alors essayé partout.</b><span>Messagerie, banque, réseaux sociaux. Automatiquement, sur des milliers de sites, en quelques secondes. C’est du remplissage de formulaires, pas du piratage.</span></p>
+          <p class="step" data-duration="5200"><b>D’où la seule règle qui compte vraiment.</b><span>Un mot de passe <em>différent</em> par site. Impossible à retenir ? C’est exactement le travail d’un gestionnaire de mots de passe : vous n’en mémorisez plus qu’un seul, long.</span></p>
+        </div>
+      </section>
+
+      <div class="callout">
+        <div class="callout-title">Un bon mot de passe en 2026</div>
+        <p>
+          Long avant tout&nbsp;: quatre mots sans rapport valent mieux que « P@ssw0rd! ».
+          « girafe-tramway-orange-cuillère » se retient et résiste. Et la question de sécurité
+          « nom de votre premier animal » se trouve souvent sur vos réseaux sociaux — répondez-y
+          n’importe quoi, et notez-le.
+        </p>
+      </div>
+
+      <h2>Le message qui imite parfaitement</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : reconnaître un message d’hameçonnage">
+        <div class="scene-title">Scène 2 — L’hameçonnage</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Un message frauduleux imite un expéditeur légitime ; trois signaux permettent de le repérer">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="46" width="680" height="110" rx="12" class="s-box"/>
+              <text x="80" y="76" class="s-label-sm">De : service-client@votre-banque-securite.com</text>
+              <text x="80" y="104" class="s-label-sm">Votre compte sera suspendu sous 24 h.</text>
+              <text x="80" y="132" class="s-label-sm">Cliquez ici pour vérifier votre identité.</text>
+            </g>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="174" width="215" height="60" rx="10" class="s-box-accent"/>
+              <text x="167" y="200" text-anchor="middle" class="s-label-sm">L’urgence</text>
+              <text x="167" y="222" text-anchor="middle" class="s-label-xs">« sous 24 h »</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="292" y="174" width="215" height="60" rx="10" class="s-box-accent"/>
+              <text x="399" y="200" text-anchor="middle" class="s-label-sm">L’adresse</text>
+              <text x="399" y="222" text-anchor="middle" class="s-label-xs">presque la bonne</text>
+            </g>
+            <g data-show="4" class="m-rise">
+              <rect x="525" y="174" width="215" height="60" rx="10" class="s-box-accent"/>
+              <text x="632" y="200" text-anchor="middle" class="s-label-sm">La demande</text>
+              <text x="632" y="222" text-anchor="middle" class="s-label-xs">un identifiant</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="130" y="256" width="540" height="46" rx="23" class="s-box-teal"/>
+              <text x="400" y="285" text-anchor="middle" class="s-label-sm">ne cliquez pas : ouvrez le site vous-même</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Le message a l’air vrai — et il l’aura de plus en plus.</b><span>Logo correct, ton juste, plus aucune faute d’orthographe : les outils de rédaction ont supprimé le signal auquel on s’était habitué.</span></p>
+          <p class="step" data-duration="4400"><b>Premier signal : l’urgence.</b><span>« Sous 24 h », « dernier avertissement », « votre colis sera détruit ». On cherche à vous empêcher de réfléchir. Aucune administration, aucune banque ne fonctionne ainsi.</span></p>
+          <p class="step" data-duration="4600"><b>Deuxième signal : l’adresse, presque juste.</b><span>Un mot ajouté, un tiret, une extension différente. Regardez la fin du nom de domaine, juste avant le premier « / » : c’est elle qui dit chez qui vous êtes.</span></p>
+          <p class="step" data-duration="5200"><b>Troisième signal : ce qu’on vous demande.</b><span>Un identifiant, un code reçu par SMS, un paiement. La parade est toujours la même : ne cliquez pas dans le message, ouvrez le site ou l’application par vos propres moyens et vérifiez.</span></p>
+        </div>
+      </section>
+
+      <h2>La deuxième serrure</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : la double authentification">
+        <div class="scene-title">Scène 3 — La double authentification</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Même avec le bon mot de passe, un second facteur bloque l’accès">
+            <g data-show="1-4" class="s-label-sm">
+              <rect x="40" y="110" width="170" height="70" rx="12" class="s-box"/>
+              <text x="125" y="152" text-anchor="middle" class="s-label-sm">L’attaquant</text>
+
+              <rect x="290" y="110" width="200" height="70" rx="12" class="s-box-teal"/>
+              <text x="390" y="142" text-anchor="middle" class="s-label-sm">Mot de passe</text>
+              <text x="390" y="164" text-anchor="middle" class="s-label-xs">il l’a</text>
+
+              <rect x="570" y="110" width="190" height="70" rx="12" class="s-box-accent"/>
+              <text x="665" y="142" text-anchor="middle" class="s-label-sm">Votre téléphone</text>
+              <text x="665" y="164" text-anchor="middle" class="s-label-xs">il ne l’a pas</text>
+            </g>
+
+            <path d="M215 145 H 285" class="s-line m-draw" data-show="2-4"/>
+            <circle r="6" class="packet" data-show="2" style="offset-path:path('M215 145 H 285')"/>
+
+            <g data-show="3-4">
+              <path d="M495 145 H 565" class="s-line m-draw" data-show="3-4"/>
+              <path d="M520 118 L 545 172 M545 118 L 520 172" stroke="var(--danger)" stroke-width="3" fill="none" data-show="3-4" class="m-pop"/>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="150" y="226" width="500" height="46" rx="23" class="s-box-teal"/>
+              <text x="400" y="255" text-anchor="middle" class="s-label-sm">le mot de passe volé ne suffit plus</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Partons du pire : votre mot de passe a fuité.</b><span>Malgré les précautions, ça arrive.</span></p>
+          <p class="step" data-duration="4200"><b>L’attaquant franchit la première porte.</b><span>Il saisit votre e-mail et votre mot de passe, qui sont corrects.</span></p>
+          <p class="step" data-duration="4800"><b>Et bute sur la seconde.</b><span>Le service réclame un code temporaire, présent uniquement sur votre téléphone. Il ne l’a pas. Il s’arrête là.</span></p>
+          <p class="step" data-duration="5200"><b>C’est le geste le plus rentable de toute la sécurité.</b><span>Cinq minutes d’activation sur votre messagerie — car c’est par elle qu’on réinitialise tous vos autres comptes. Une application d’authentification est préférable au SMS, qui peut être détourné.</span></p>
+        </div>
+      </section>
+
+      <h2>Les autres réflexes, par ordre d’utilité</h2>
+      <div class="compare">
+        <div>
+          <h4>À faire</h4>
+          <ul>
+            <li>Un mot de passe <strong>unique</strong> par site, dans un gestionnaire&nbsp;;</li>
+            <li>la <strong>double authentification</strong> sur la messagerie d’abord&nbsp;;</li>
+            <li>les <strong>mises à jour</strong> : elles bouchent des trous connus&nbsp;;</li>
+            <li>une <strong>sauvegarde</strong> déconnectée de vos fichiers importants.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>À éviter</h4>
+          <ul>
+            <li>Cliquer sur un lien reçu, même crédible&nbsp;;</li>
+            <li>donner un code reçu par SMS, à qui que ce soit&nbsp;;</li>
+            <li>brancher une clé USB trouvée&nbsp;;</li>
+            <li>installer un logiciel hors de sa source officielle.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Si ça arrive quand même</h4>
+          <ul>
+            <li>Changer le mot de passe du compte <em>et</em> de la messagerie&nbsp;;</li>
+            <li>vérifier les règles de transfert de mails&nbsp;;</li>
+            <li>prévenir la banque sans attendre&nbsp;;</li>
+            <li>en entreprise : signaler tout de suite, sans crainte.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Le piège de l’époque</div>
+        <p>
+          On peut aujourd’hui imiter une voix à partir de quelques secondes d’enregistrement.
+          Un appel affolé d’un proche, ou d’un « dirigeant » réclamant un virement urgent, n’est
+          plus une preuve. La parade est ancienne et imparable&nbsp;: raccrochez, et rappelez au
+          numéro que vous connaissez.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>La plupart des attaques exploitent un <strong>mot de passe réutilisé</strong>, pas une faille.</li>
+        <li>L’hameçonnage se repère à l’<strong>urgence</strong>, à l’<strong>adresse</strong> et à <strong>ce qu’on vous demande</strong>.</li>
+        <li>Ne cliquez pas dans le message&nbsp;: <strong>ouvrez le site vous-même</strong>.</li>
+        <li>La <strong>double authentification</strong> sur votre messagerie est le geste le plus rentable.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="internet.html">← Comment voyage une page web</a>
+        <a class="btn btn-primary" href="../index.html#/reseau">Réseau →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

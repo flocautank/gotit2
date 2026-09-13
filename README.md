@@ -16,16 +16,23 @@ faciles à corriger.
 | [Logiciel, système, application](lecons/logiciel.html) | Informatique | Découverte |
 | [Local ou cloud : quelle différence ?](lecons/local-vs-cloud.html) | Informatique | Découverte |
 | [Comment voyage une page web](lecons/internet.html) | Réseau | Découverte |
+| [Les bases de la cybersécurité](lecons/cybersecurite.html) | Réseau | Découverte |
 | [C'est quoi une base de données ?](lecons/base-de-donnees.html) | Data | Découverte |
 | [Lac, entrepôt, magasin de données](lecons/entrepots-data.html) | Data | Intermédiaire |
 | [Les langages de la data, situés](lecons/langages-data.html) | Data | Intermédiaire |
 | [C'est quoi un système d'information ?](lecons/si-briques.html) | Système d'information | Découverte |
+| [C'est quoi une API ?](lecons/api.html) | Système d'information | Découverte |
+| [Comment un modèle de langage écrit](lecons/llm.html) | IA | Découverte |
+| [Pourquoi une IA invente parfois](lecons/hallucination.html) | IA | Intermédiaire |
+| [Bien demander à une IA](lecons/prompt.html) | IA | Découverte |
+| [Donner ses documents à une IA](lecons/rag.html) | IA | Intermédiaire |
+| [C'est quoi un agent IA ?](lecons/agent.html) | IA | Intermédiaire |
 | [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 
-D'autres sujets sont déjà déclarés dans le catalogue et apparaissent en « Bientôt »
-(API, chiffrement, cybersécurité, gouvernance des données, RGPD, projets SI,
-modèles de langage, hallucinations, RAG).
+D'autres sujets sont déjà déclarés dans le catalogue et apparaissent en « Bientôt » :
+chiffrement, SaaS/PaaS/IaaS, gouvernance des données, RGPD, projets SI, coût d'une IA,
+limites d'une IA, confidentialité des données face à l'IA.
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours

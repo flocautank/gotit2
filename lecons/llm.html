@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment un modèle de langage écrit — GotIt</title>
+<meta name="description" content="Ce que fait vraiment une IA générative : prédire le mot suivant, expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/ia">Intelligence artificielle</a><span>/</span>Fondamentaux<span>/</span>Les modèles de langage
+      </div>
+      <h1>Comment un modèle de langage écrit</h1>
+      <p class="lead">
+        Il ne cherche pas la réponse, il ne consulte aucune base, il ne sait pas où il va.
+        Il choisit le mot suivant. Puis recommence. Comprendre ce geste explique presque tout
+        le reste — y compris les erreurs.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-1">Découverte</span><span class="tag">7 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Derrière ChatGPT, Claude ou Gemini, il y a un <strong>modèle de langage</strong>. Le mot
+        « modèle » est bien choisi&nbsp;: c’est une maquette du langage, construite en observant
+        d’énormes quantités de textes.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : la prédiction du mot suivant">
+        <div class="scene-title">Scène 1 — Le geste de base</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="À partir d’un début de phrase, le modèle propose plusieurs mots possibles avec des probabilités différentes">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="50" width="380" height="56" rx="12" class="s-box-accent"/>
+              <text x="230" y="84" text-anchor="middle" class="s-label">« Le chat dort sur le… »</text>
+            </g>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="40" y="128" width="380" height="40" rx="10" class="s-box-teal"/>
+              <text x="60" y="154" class="s-label-sm">canapé</text>
+              <text x="380" y="154" text-anchor="end" class="s-label-sm">62 %</text>
+
+              <rect x="40" y="176" width="290" height="40" rx="10" class="s-box"/>
+              <text x="60" y="202" class="s-label-sm">tapis</text>
+              <text x="290" y="202" text-anchor="end" class="s-label-sm">24 %</text>
+
+              <rect x="40" y="224" width="150" height="40" rx="10" class="s-box"/>
+              <text x="60" y="250" class="s-label-sm">toit</text>
+              <text x="150" y="250" text-anchor="end" class="s-label-sm">9 %</text>
+            </g>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="470" y="128" width="290" height="70" rx="12" class="s-box-accent"/>
+              <text x="615" y="158" text-anchor="middle" class="s-label">il en choisit un</text>
+              <text x="615" y="180" text-anchor="middle" class="s-label-xs">pas toujours le premier</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="470" y="212" width="290" height="66" rx="12" class="s-box-teal"/>
+              <text x="615" y="240" text-anchor="middle" class="s-label-sm">puis il recommence</text>
+              <text x="615" y="262" text-anchor="middle" class="s-label-xs">avec le mot qu’il vient d’écrire</text>
+              <path d="M615 204 V 206" class="s-line"/>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On lui donne un début.</b><span>Votre question, la conversation en cours, les consignes : tout cela n’est, pour lui, qu’un long texte à continuer.</span></p>
+          <p class="step" data-duration="4600"><b>Il évalue tous les mots possibles.</b><span>Et leur attribue une probabilité, à partir de ce qu’il a observé dans des milliards de phrases. « Canapé » est plus vraisemblable que « théorème ».</span></p>
+          <p class="step" data-duration="4800"><b>Il en choisit un — pas forcément le plus probable.</b><span>Une part de hasard est volontairement conservée : c’est ce qui rend le texte vivant, et ce qui explique que la même question donne deux réponses différentes.</span></p>
+          <p class="step" data-duration="5000"><b>Puis il recommence, mot après mot.</b><span>Chaque mot écrit devient le point de départ du suivant. Une réponse de dix lignes, c’est ce geste répété quelques centaines de fois — d’où l’effet « machine à écrire » à l’affichage.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          La saisie prédictive de votre téléphone, en infiniment plus fin. Votre clavier propose
+          le mot suivant à partir des deux derniers&nbsp;; un modèle de langage le fait en tenant
+          compte de tout ce qui précède, sur des pages entières, et avec une mémoire de la
+          structure du discours.
+        </p>
+      </div>
+
+      <h2>D’où lui vient ce savoir&nbsp;?</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : entraînement puis utilisation du modèle">
+        <div class="scene-title">Scène 2 — Entraîner, puis utiliser</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 310" role="img" aria-label="Une phase d’entraînement longue et coûteuse produit un modèle figé, ensuite utilisé instantanément">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="50" width="300" height="130" rx="12" class="s-box-violet"/>
+              <text x="190" y="82" text-anchor="middle" class="s-label">L’entraînement</text>
+              <text x="190" y="112" text-anchor="middle" class="s-label-sm">des milliards de textes</text>
+              <text x="190" y="138" text-anchor="middle" class="s-label-sm">des mois de calcul</text>
+              <text x="190" y="164" text-anchor="middle" class="s-label-sm">une fois pour toutes</text>
+            </g>
+
+            <g data-show="2-4">
+              <path d="M348 115 H 440" class="s-line m-draw" data-show="2-4"/>
+              <text x="394" y="98" text-anchor="middle" class="s-label-xs" data-show="2-4">résultat</text>
+            </g>
+
+            <g data-show="2-4" class="m-right">
+              <rect x="450" y="50" width="310" height="130" rx="12" class="s-box-accent"/>
+              <text x="605" y="86" text-anchor="middle" class="s-label">Le modèle</text>
+              <text x="605" y="114" text-anchor="middle" class="s-label-sm">une immense grille de réglages</text>
+              <text x="605" y="140" text-anchor="middle" class="s-label-sm">figée</text>
+              <text x="605" y="166" text-anchor="middle" class="s-label-xs">c’est ce qu’on installe et qu’on appelle</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="120" y="210" width="560" height="42" rx="21" class="s-box-teal"/>
+              <text x="400" y="237" text-anchor="middle" class="s-label-sm">quand vous l’utilisez, il n’apprend rien</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <text x="400" y="284" text-anchor="middle" class="s-label-sm" fill="var(--accent)">il a une date d’arrêt des connaissances</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="5000"><b>D’abord une phase d’entraînement, longue et coûteuse.</b><span>On lui fait lire d’énormes quantités de texte en lui demandant de deviner le mot masqué, des milliards de fois. À chaque erreur, on ajuste très légèrement ses réglages internes.</span></p>
+          <p class="step" data-duration="4800"><b>Le résultat est un fichier de réglages, figé.</b><span>Pas une base de données consultable : aucun texte d’origine n’est stocké. Ce qui reste, ce sont des régularités — des manières de tourner les phrases et d’associer les idées.</span></p>
+          <p class="step" data-duration="5000"><b>Ensuite, à l’usage, il n’apprend plus.</b><span>Votre conversation ne modifie pas le modèle. Il « se souvient » de ce que vous avez dit plus haut uniquement parce qu’on lui repasse tout le fil à chaque fois — et cette mémoire disparaît avec la conversation.</span></p>
+          <p class="step" data-duration="5000"><b>D’où la date d’arrêt des connaissances.</b><span>Un modèle entraîné jusqu’à une certaine date ignore tout ce qui a suivi. Pour qu’il connaisse l’actualité ou vos documents, il faut les lui <em>donner</em> — par une recherche web ou par vos fichiers.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que ça implique, très concrètement</h2>
+      <div class="compare">
+        <div>
+          <h4>Ce qu’il fait très bien</h4>
+          <ul>
+            <li>Reformuler, résumer, traduire&nbsp;;</li>
+            <li>rédiger une première version&nbsp;;</li>
+            <li>expliquer, structurer, changer de ton&nbsp;;</li>
+            <li>travailler sur un texte que vous fournissez.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ce qui lui coûte</h4>
+          <ul>
+            <li>Les faits précis et vérifiables&nbsp;;</li>
+            <li>les calculs exacts, les dates&nbsp;;</li>
+            <li>l’actualité récente&nbsp;;</li>
+            <li>ce qui n’existe que dans vos documents internes.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>La bonne parade</h4>
+          <ul>
+            <li>Lui <strong>donner</strong> la matière plutôt que la lui demander&nbsp;;</li>
+            <li>le brancher sur une recherche ou vos fichiers&nbsp;;</li>
+            <li>vérifier tout ce qui est chiffré ou daté&nbsp;;</li>
+            <li>le traiter comme un brouillon, pas comme une source.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Les jetons, ou pourquoi on compte en « tokens »</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : le découpage d’un texte en jetons">
+        <div class="scene-title">Scène 3 — Il ne lit pas des mots</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="Une phrase découpée en morceaux appelés jetons, qui servent d’unité de mesure et de facturation">
+            <g data-show="1-3" class="m-rise">
+              <rect x="140" y="50" width="520" height="52" rx="12" class="s-box-accent"/>
+              <text x="400" y="83" text-anchor="middle" class="s-label">« anticonstitutionnellement »</text>
+            </g>
+
+            <g data-show="2-3" class="m-rise">
+              <rect x="140" y="126" width="150" height="48" rx="10" class="s-box-teal"/>
+              <text x="215" y="156" text-anchor="middle" class="s-label-sm">anti</text>
+              <rect x="302" y="126" width="196" height="48" rx="10" class="s-box-teal"/>
+              <text x="400" y="156" text-anchor="middle" class="s-label-sm">constitution</text>
+              <rect x="510" y="126" width="150" height="48" rx="10" class="s-box-teal"/>
+              <text x="585" y="156" text-anchor="middle" class="s-label-sm">nellement</text>
+              <text x="400" y="196" text-anchor="middle" class="s-label-xs">trois jetons</text>
+            </g>
+
+            <g data-show="3" class="m-rise">
+              <rect x="140" y="216" width="520" height="48" rx="24" class="s-box"/>
+              <text x="400" y="246" text-anchor="middle" class="s-label-sm">on paie, et on limite, au nombre de jetons</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Un modèle ne manipule pas des mots entiers.</b><span>Il travaille sur des morceaux : des <em>jetons</em>, ou <em>tokens</em>.</span></p>
+          <p class="step" data-duration="4600"><b>Un mot courant fait un jeton, un mot rare en fait plusieurs.</b><span>En français, comptez environ trois jetons pour quatre mots. Une page A4 ≈ 700 jetons.</span></p>
+          <p class="step" data-duration="5000"><b>C’est l’unité de mesure de tout le reste.</b><span>Le prix se compte en jetons, et la « fenêtre de contexte » — la quantité de texte qu’il peut garder sous les yeux — aussi. D’où ce qu’on entend parfois : un long document coûte cher et finit par déborder.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un modèle de langage <strong>prédit le mot suivant</strong>, encore et encore.</li>
+        <li>Il a été <strong>entraîné une fois</strong>, puis figé : à l’usage, il n’apprend pas.</li>
+        <li>Il ne consulte <strong>aucune base</strong> : sans document fourni, il produit ce qui est vraisemblable.</li>
+        <li>Il compte en <strong>jetons</strong> — l’unité du prix comme des limites.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="../index.html#/ia">← Intelligence artificielle</a>
+        <a class="btn btn-primary" href="hallucination.html">Pourquoi une IA invente parfois →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C’est quoi une API ? — GotIt</title>
+<meta name="description" content="Une API expliquée en schémas animés : le passe-plat entre deux logiciels, son menu de demandes et sa clé d’accès.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/si">Système d’information</a><span>/</span>La carte du SI<span>/</span>Faire dialoguer les outils
+      </div>
+      <h1>C’est quoi une API&nbsp;?</h1>
+      <p class="lead">
+        Deux logiciels qui ne se connaissent pas doivent échanger. Ils ne vont pas se promener
+        dans les fichiers l’un de l’autre : l’un ouvre un guichet, avec une liste précise de
+        demandes possibles. Ce guichet, c’est une API.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-1">Découverte</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        API veut dire « interface de programmation ». Retenez le premier mot&nbsp;:
+        une <strong>interface</strong>, c’est-à-dire une surface de contact. Ce que vous voyez
+        d’un restaurant depuis votre table, ce n’est pas la cuisine&nbsp;: c’est le menu et le serveur.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : deux logiciels qui doivent échanger">
+        <div class="scene-title">Scène 1 — Le problème</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Deux logiciels séparés, d’abord sans moyen d’échanger, puis reliés par un guichet">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="90" width="230" height="110" rx="12" class="s-box-teal"/>
+              <text x="155" y="136" text-anchor="middle" class="s-label">Votre site</text>
+              <text x="155" y="160" text-anchor="middle" class="s-label-xs">il prend les commandes</text>
+            </g>
+            <g data-show="1-4" class="m-rise">
+              <rect x="530" y="90" width="230" height="110" rx="12" class="s-box-violet"/>
+              <text x="645" y="136" text-anchor="middle" class="s-label">Le transporteur</text>
+              <text x="645" y="160" text-anchor="middle" class="s-label-xs">il livre les colis</text>
+            </g>
+
+            <g data-show="2">
+              <text x="400" y="130" text-anchor="middle" class="s-label-sm" fill="var(--danger)">« où est le colis ? »</text>
+              <text x="400" y="166" text-anchor="middle" class="s-label-xs" fill="var(--danger)">deux logiciels étrangers l’un à l’autre</text>
+            </g>
+
+            <g data-show="3-4" class="m-pop">
+              <rect x="330" y="86" width="140" height="118" rx="12" class="s-box-accent"/>
+              <text x="400" y="132" text-anchor="middle" class="s-label">L’API</text>
+              <text x="400" y="156" text-anchor="middle" class="s-label-xs">le guichet</text>
+              <path d="M275 145 H 326" class="s-line m-draw" data-show="3-4"/>
+              <path d="M474 145 H 526" class="s-line m-draw" data-show="3-4"/>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="150" y="238" width="500" height="42" rx="21" class="s-box"/>
+              <text x="400" y="265" text-anchor="middle" class="s-label-sm">on ne rentre pas dans la cuisine : on commande au guichet</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Deux logiciels, deux mondes.</b><span>Votre site encaisse les commandes. Le transporteur, lui, suit les colis. Chacun a sa base, son équipe, son entreprise.</span></p>
+          <p class="step" data-duration="4600"><b>Et pourtant il faut bien qu’ils se parlent.</b><span>« Où en est le colis 412 ? » La mauvaise réponse serait de donner à l’un un accès direct à la base de l’autre : dangereux, et cassé au premier changement.</span></p>
+          <p class="step" data-duration="4800"><b>D’où le guichet.</b><span>Le transporteur publie une liste de demandes qu’il accepte, et la forme exacte de ses réponses. Personne n’entre chez personne.</span></p>
+          <p class="step" data-duration="5000"><b>C’est tout ce qu’est une API.</b><span>Un contrat : voilà ce que vous pouvez me demander, voilà ce que je réponds. Ce qui se passe derrière ne regarde que celui qui l’a construit.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le restaurant. Vous ne choisissez pas vos ingrédients dans le frigo&nbsp;: vous lisez
+          le <strong>menu</strong> (la liste des demandes possibles), vous commandez auprès du
+          <strong>serveur</strong> (l’API), et la <strong>cuisine</strong> reste invisible.
+          Le chef peut changer de fournisseur ou refaire sa cuisine&nbsp;: tant que le menu ne
+          change pas, vous ne voyez rien.
+        </p>
+      </div>
+
+      <h2>À quoi ressemble une demande</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : une requête d’API et sa réponse">
+        <div class="scene-title">Scène 2 — Une demande, une réponse</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une demande adressée à une API et la réponse structurée qu’elle renvoie">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="50" width="340" height="52" rx="10" class="s-box-teal"/>
+              <text x="60" y="82" class="s-label-sm">GET /colis/412</text>
+              <text x="400" y="82" class="s-label-xs">« donne-moi le colis 412 »</text>
+            </g>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="40" y="118" width="340" height="52" rx="10" class="s-box"/>
+              <text x="60" y="150" class="s-label-sm">clé : 8f3a-d901-77bc</text>
+              <text x="400" y="150" class="s-label-xs">« et voici qui je suis »</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="40" y="186" width="340" height="94" rx="10" class="s-box-accent"/>
+              <text x="60" y="214" class="s-label-xs">LA RÉPONSE</text>
+              <text x="60" y="240" class="s-label-sm">statut : en transit</text>
+              <text x="60" y="266" class="s-label-sm">livraison : 14 mars</text>
+              <text x="400" y="240" class="s-label-xs">toujours la même forme</text>
+              <text x="400" y="266" class="s-label-xs">lisible par un programme</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="470" y="118" width="290" height="120" rx="12" class="s-box-violet"/>
+              <text x="615" y="158" text-anchor="middle" class="s-label">Ce n’est pas une page</text>
+              <text x="615" y="186" text-anchor="middle" class="s-label-sm">pas de couleurs, pas de boutons</text>
+              <text x="615" y="212" text-anchor="middle" class="s-label-sm">du texte structuré, pour machine</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Une demande tient en une ligne.</b><span>Un verbe (donne, crée, modifie, supprime) et une adresse. Ici : « donne-moi le colis 412 ».</span></p>
+          <p class="step" data-duration="4600"><b>Avec une clé, presque toujours.</b><span>C’est le badge d’entrée : elle identifie qui demande, et détermine ce à quoi il a droit. Une clé qui fuite, c’est une porte ouverte — d’où les précautions autour.</span></p>
+          <p class="step" data-duration="4600"><b>La réponse arrive dans une forme fixe.</b><span>Toujours les mêmes champs, au même endroit. C’est ce qui permet à un programme de la lire sans se tromper — le format le plus courant s’appelle JSON.</span></p>
+          <p class="step" data-duration="5000"><b>Une API ne renvoie pas une page web.</b><span>Pas de mise en forme, pas de bouton : juste de l’information brute. C’est le programme qui reçoit qui décidera de l’afficher — ou d’en faire tout autre chose.</span></p>
+        </div>
+      </section>
+
+      <h2>Pourquoi tout le monde en parle</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : une API utilisée par plusieurs applications">
+        <div class="scene-title">Scène 3 — Un guichet, beaucoup de clients</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Une même API sert un site, une application mobile, un outil interne et un assistant IA">
+            <g data-show="1-4" class="m-pop">
+              <rect x="310" y="126" width="180" height="80" rx="12" class="s-box-accent"/>
+              <text x="400" y="162" text-anchor="middle" class="s-label">L’API</text>
+              <text x="400" y="184" text-anchor="middle" class="s-label-xs">écrite une fois</text>
+            </g>
+
+            <g class="s-label-sm">
+              <g data-show="1-4" class="m-pop"><rect x="40" y="40" width="170" height="56" rx="10" class="s-box"/><text x="125" y="74" text-anchor="middle" class="s-label-sm">Le site web</text></g>
+              <g data-show="2-4" class="m-pop"><rect x="40" y="236" width="170" height="56" rx="10" class="s-box"/><text x="125" y="270" text-anchor="middle" class="s-label-sm">L’appli mobile</text></g>
+              <g data-show="3-4" class="m-pop"><rect x="590" y="40" width="170" height="56" rx="10" class="s-box"/><text x="675" y="74" text-anchor="middle" class="s-label-sm">Un partenaire</text></g>
+              <g data-show="4" class="m-pop"><rect x="590" y="236" width="170" height="56" rx="10" class="s-box-violet"/><text x="675" y="270" text-anchor="middle" class="s-label-sm">Un assistant IA</text></g>
+            </g>
+
+            <g class="s-line">
+              <path d="M215 72 C 280 72, 300 120, 314 138" class="m-draw" data-show="1-4"/>
+              <path d="M215 262 C 280 262, 300 214, 314 196" class="m-draw" data-show="2-4"/>
+              <path d="M585 72 C 520 72, 500 120, 486 138" class="m-draw" data-show="3-4"/>
+              <path d="M585 262 C 520 262, 500 214, 486 196" class="m-draw" data-show="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Le site interroge l’API.</b><span>La logique métier — les prix, les règles, les stocks — n’est écrite qu’une seule fois, derrière le guichet.</span></p>
+          <p class="step" data-duration="4200"><b>L’application mobile aussi.</b><span>Elle ne réimplémente rien : même guichet, mêmes réponses, même vérité.</span></p>
+          <p class="step" data-duration="4400"><b>Et les partenaires extérieurs.</b><span>C’est ainsi qu’un comparateur affiche vos disponibilités, ou qu’un logiciel de caisse envoie ses ventes à votre compta.</span></p>
+          <p class="step" data-duration="5200"><b>Et désormais, les assistants IA.</b><span>C’est exactement ce que fait un serveur MCP : il traduit vos API dans une langue qu’un assistant comprend. Sans API, une IA n’a rien à quoi se brancher.</span></p>
+        </div>
+      </section>
+
+      <h2>Le vocabulaire, en une ligne chacun</h2>
+      <div class="compare">
+        <div>
+          <h4>Les mots du guichet</h4>
+          <ul>
+            <li><strong>Endpoint</strong> — une adresse précise du menu.</li>
+            <li><strong>REST</strong> — la façon la plus répandue d’organiser ce menu.</li>
+            <li><strong>JSON</strong> — le format des réponses.</li>
+            <li><strong>Clé d’API / token</strong> — le badge d’entrée.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ce qu’on entend en réunion</h4>
+          <ul>
+            <li><strong>Webhook</strong> — l’inverse : c’est l’API qui vous prévient quand il se passe quelque chose.</li>
+            <li><strong>Rate limit</strong> — le nombre de demandes autorisées par minute.</li>
+            <li><strong>Documentation</strong> — le menu écrit. Une API sans doc est inutilisable.</li>
+            <li><strong>Versioning</strong> — faire évoluer le menu sans casser les clients existants.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Le malentendu courant</div>
+        <p>
+          « Il suffit de brancher l’API. » Techniquement, oui. Mais une API expose ce que
+          l’éditeur a bien voulu exposer&nbsp;: si la donnée qui vous intéresse n’est pas au menu,
+          aucune intégration ne la fera apparaître. La vraie question d’un projet n’est jamais
+          « y a-t-il une API&nbsp;? », c’est « que permet-elle exactement&nbsp;? ».
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Une API est <strong>un guichet</strong> : une liste de demandes possibles et de réponses garanties.</li>
+        <li>Elle évite que les logiciels aillent <strong>fouiller chez les autres</strong>.</li>
+        <li>Elle renvoie de l’<strong>information brute</strong>, pas une page web.</li>
+        <li>Un <strong>même guichet</strong> sert le site, le mobile, les partenaires — et les assistants IA.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="si-briques.html">← C’est quoi un système d’information&nbsp;?</a>
+        <a class="btn btn-primary" href="mcp.html">Un serveur MCP, c’est quoi&nbsp;? →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

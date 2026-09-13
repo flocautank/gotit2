@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donner ses documents à une IA — GotIt</title>
+<meta name="description" content="Le principe du RAG expliqué en schémas animés : chercher dans vos documents d’abord, répondre ensuite.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C3623F'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' text-anchor='middle' fill='%23FBF9F5'>G</text></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span> GotIt</a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/ia">Intelligence artificielle</a><span>/</span>Agents &amp; outils<span>/</span>Lui donner de la connaissance
+      </div>
+      <h1>Donner ses documents à une IA</h1>
+      <p class="lead">
+        Un modèle ne connaît pas vos procédures, vos contrats, vos comptes rendus. La solution
+        n’est pas de le réentraîner : c’est de lui glisser les bons extraits sous les yeux,
+        juste avant qu’il réponde. C’est ce qu’on appelle le RAG.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">7 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Le sigle veut dire « génération augmentée par la recherche ». Dans l’ordre inverse,
+        c’est plus clair&nbsp;: on <strong>cherche d’abord</strong>, on <strong>répond ensuite</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : le problème des connaissances internes">
+        <div class="scene-title">Scène 1 — Ce qu’il ne peut pas savoir</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Le modèle connaît le monde public mais ignore les documents internes de l’entreprise">
+            <g data-show="1-3" class="m-rise">
+              <rect x="60" y="60" width="300" height="130" rx="12" class="s-box-violet"/>
+              <text x="210" y="102" text-anchor="middle" class="s-label">Ce qu’il a lu</text>
+              <text x="210" y="132" text-anchor="middle" class="s-label-sm">des textes publics</text>
+              <text x="210" y="158" text-anchor="middle" class="s-label-sm">jusqu’à une certaine date</text>
+            </g>
+            <g data-show="2-3" class="m-right">
+              <rect x="440" y="60" width="300" height="130" rx="12" class="s-box-teal"/>
+              <text x="590" y="102" text-anchor="middle" class="s-label">Ce dont vous parlez</text>
+              <text x="590" y="132" text-anchor="middle" class="s-label-sm">vos procédures, contrats</text>
+              <text x="590" y="158" text-anchor="middle" class="s-label-sm">comptes rendus, tarifs</text>
+            </g>
+            <g data-show="3">
+              <path d="M400 50 V 200" stroke="var(--danger)" stroke-width="3" stroke-dasharray="10 8" fill="none" class="m-draw" data-show="3"/>
+              <text x="400" y="240" text-anchor="middle" class="s-label-sm" fill="var(--danger)">aucun recouvrement</text>
+              <text x="400" y="266" text-anchor="middle" class="s-label-xs" fill="var(--danger)">et pourtant il répondra quand même</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Un modèle a lu le web, pas votre serveur.</b><span>Des textes publics, jusqu’à une date donnée. C’est déjà énorme — et ça ne contient rien de chez vous.</span></p>
+          <p class="step" data-duration="4200"><b>Or vos questions portent sur vos documents.</b><span>« Que dit notre politique de retour ? », « qu’a-t-on décidé en comité en mars ? »</span></p>
+          <p class="step" data-duration="5000"><b>Les deux ensembles ne se recoupent pas.</b><span>Et comme il répond toujours, il produira une réponse plausible — donc une invention. Le problème n’est pas le modèle : c’est qu’on lui pose une question sans lui donner la matière.</span></p>
+        </div>
+      </section>
+
+      <h2>Le principe : chercher, puis répondre</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : le fonctionnement du RAG">
+        <div class="scene-title">Scène 2 — Les quatre temps du RAG</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="La question déclenche une recherche dans les documents, les extraits trouvés sont joints à la question, puis le modèle répond avec ses sources">
+            <g data-show="1-5" class="s-label-sm">
+              <rect x="30" y="120" width="140" height="66" rx="10" class="s-box"/>
+              <text x="100" y="159" text-anchor="middle" class="s-label-sm">Votre question</text>
+
+              <rect x="220" y="120" width="160" height="66" rx="10" class="s-box-teal"/>
+              <text x="300" y="152" text-anchor="middle" class="s-label-sm">Vos documents</text>
+              <text x="300" y="172" text-anchor="middle" class="s-label-xs">découpés en morceaux</text>
+
+              <rect x="430" y="120" width="160" height="66" rx="10" class="s-box-accent"/>
+              <text x="510" y="152" text-anchor="middle" class="s-label-sm">Les 3 extraits</text>
+              <text x="510" y="172" text-anchor="middle" class="s-label-xs">les plus proches</text>
+
+              <rect x="640" y="120" width="140" height="66" rx="10" class="s-box-violet"/>
+              <text x="710" y="159" text-anchor="middle" class="s-label-sm">Le modèle</text>
+            </g>
+
+            <path d="M175 153 H 215" class="s-line m-draw" data-show="2-5"/>
+            <circle r="6" class="packet" data-show="2" style="offset-path:path('M175 153 H 215')"/>
+            <path d="M385 153 H 425" class="s-line m-draw" data-show="3-5"/>
+            <circle r="6" class="packet" data-show="3" style="offset-path:path('M385 153 H 425')"/>
+            <path d="M595 153 H 635" class="s-line m-draw" data-show="4-5"/>
+            <circle r="6" class="packet" data-show="4" style="offset-path:path('M595 153 H 635')"/>
+
+            <text x="300" y="98" text-anchor="middle" class="s-label-xs" data-show="2">on cherche</text>
+            <text x="510" y="98" text-anchor="middle" class="s-label-xs" data-show="3">on retient</text>
+            <text x="710" y="98" text-anchor="middle" class="s-label-xs" data-show="4">on joint à la question</text>
+
+            <g data-show="5" class="m-rise">
+              <rect x="180" y="230" width="440" height="66" rx="12" class="s-box-teal"/>
+              <text x="400" y="258" text-anchor="middle" class="s-label-sm">« Selon la procédure P-12, page 4… »</text>
+              <text x="400" y="282" text-anchor="middle" class="s-label-xs">réponse appuyée sur une source citable</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>1. Vous posez une question.</b><span>En français, comme d’habitude. Rien ne change de votre côté.</span></p>
+          <p class="step" data-duration="4800"><b>2. Le système cherche dans vos documents.</b><span>Ils ont été découpés en morceaux de quelques paragraphes, à l’avance. La recherche ne se fait pas sur les mots exacts mais sur le <em>sens</em> : « congés » retrouvera un passage qui parle d’« absences ».</span></p>
+          <p class="step" data-duration="4400"><b>3. Il retient les meilleurs extraits.</b><span>Trois, cinq, dix. Pas les documents entiers : seulement les passages utiles.</span></p>
+          <p class="step" data-duration="4600"><b>4. Ces extraits sont joints à votre question.</b><span>Le modèle reçoit donc : « voici la question, et voici les passages pertinents ». Il ne puise plus dans ses souvenirs, il lit un texte.</span></p>
+          <p class="step" data-duration="5200"><b>5. Et il répond en citant ses sources.</b><span>C’est le vrai gain : une réponse vérifiable, avec le document et la page. Vous pouvez aller contrôler — et donc faire confiance.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un consultant très cultivé à qui vous demandez une note sur votre entreprise. S’il
+          répond de tête, il vous sert des généralités. Si vous lui posez d’abord le classeur
+          ouvert à la bonne page, il écrit quelque chose de juste. Le RAG, c’est l’assistant
+          documentaire qui va chercher la bonne page — automatiquement, en une demi-seconde.
+        </p>
+      </div>
+
+      <h2>Ce que ça change, et ce que ça ne règle pas</h2>
+      <div class="compare">
+        <div>
+          <h4>Ce que ça apporte</h4>
+          <ul>
+            <li>Des réponses ancrées dans <strong>vos</strong> documents&nbsp;;</li>
+            <li>des sources citables, donc vérifiables&nbsp;;</li>
+            <li>une mise à jour immédiate : on ajoute un fichier, c’est pris en compte&nbsp;;</li>
+            <li>aucun réentraînement, donc un coût sans commune mesure.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ce que ça ne règle pas</h4>
+          <ul>
+            <li>Un document faux reste faux — et sera cité avec aplomb&nbsp;;</li>
+            <li>si la recherche rate le bon passage, la réponse rate aussi&nbsp;;</li>
+            <li>les questions globales (« résume nos 3 000 contrats ») s’y prêtent mal&nbsp;;</li>
+            <li>les droits d’accès doivent être gérés, sinon chacun lit tout.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Le mot qui fait peur : les « vecteurs »</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : la recherche par le sens">
+        <div class="scene-title">Scène 3 — Chercher par le sens</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Des phrases de sens voisin sont placées côte à côte sur une carte, permettant une recherche par proximité">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="50" width="680" height="200" rx="14" class="s-box"/>
+              <text x="80" y="80" class="s-label-xs">UNE CARTE DU SENS</text>
+            </g>
+
+            <g data-show="2-4" class="m-pop">
+              <rect x="110" y="104" width="200" height="44" rx="22" class="s-box-teal"/>
+              <text x="210" y="132" text-anchor="middle" class="s-label-sm">poser des congés</text>
+              <rect x="130" y="160" width="200" height="44" rx="22" class="s-box-teal"/>
+              <text x="230" y="188" text-anchor="middle" class="s-label-sm">déclarer une absence</text>
+            </g>
+
+            <g data-show="3-4" class="m-pop">
+              <rect x="500" y="150" width="200" height="44" rx="22" class="s-box-violet"/>
+              <text x="600" y="178" text-anchor="middle" class="s-label-sm">changer de bureau</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <circle cx="220" cy="146" r="86" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 6"/>
+              <text x="400" y="278" text-anchor="middle" class="s-label-sm" fill="var(--accent)">on cherche les voisins, pas les mots identiques</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Chaque morceau de texte reçoit une position.</b><span>Une suite de nombres, calculée à partir de son sens. C’est cela, un « vecteur » — une coordonnée sur une carte.</span></p>
+          <p class="step" data-duration="4600"><b>Les phrases de sens voisin se retrouvent côte à côte.</b><span>« Poser des congés » et « déclarer une absence » atterrissent au même endroit, bien qu’elles n’aient aucun mot en commun.</span></p>
+          <p class="step" data-duration="4400"><b>Ce qui n’a rien à voir est loin.</b><span>« Changer de bureau » se place à l’autre bout de la carte.</span></p>
+          <p class="step" data-duration="5000"><b>Chercher, c’est alors regarder autour.</b><span>On place la question sur la carte et on prend les passages les plus proches. Voilà tout ce que recouvre « base vectorielle » — un index qui range par sens plutôt que par mot.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le RAG, c’est <strong>chercher d’abord, répondre ensuite</strong>.</li>
+        <li>Le modèle n’est <strong>pas modifié</strong> : on lui fournit les bons extraits au moment de répondre.</li>
+        <li>Le vrai gain, ce sont les <strong>sources citables</strong> — donc la possibilité de vérifier.</li>
+        <li>« Vecteurs » = une <strong>carte du sens</strong>, où l’on cherche par proximité et non par mots exacts.</li>
+        <li>Un document erroné restera cité avec assurance : <strong>la qualité documentaire reste le sujet</strong>.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="prompt.html">← Bien demander à une IA</a>
+        <a class="btn btn-primary" href="agent.html">C’est quoi un agent IA&nbsp;? →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

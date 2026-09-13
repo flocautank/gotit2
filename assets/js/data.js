@@ -104,17 +104,66 @@ window.GOTIT = (function () {
       keywords: ['mcp', 'model context protocol', 'outils', 'connecteur', 'api', 'agent', 'ia']
     },
 
+    'api': {
+      title: 'C\u2019est quoi une API ?',
+      summary: 'Le passe-plat entre deux logiciels : un menu de demandes possibles, et rien d\u2019autre.',
+      path: 'lecons/api.html',
+      duration: '6 min', level: 1,
+      keywords: ['api', 'interface', 'intégration', 'rest', 'json', 'connecteur', 'webhook', 'endpoint']
+    },
+    'llm': {
+      title: 'Comment un modèle de langage écrit',
+      summary: 'Un mot après l\u2019autre, sans jamais savoir où il va — et pourquoi ça marche quand même.',
+      path: 'lecons/llm.html',
+      duration: '7 min', level: 1,
+      keywords: ['llm', 'modèle de langage', 'token', 'prédiction', 'entraînement', 'chatgpt', 'claude', 'ia générative']
+    },
+    'prompt': {
+      title: 'Bien demander à une IA',
+      summary: 'Les quatre ingrédients d\u2019une bonne demande, et pourquoi « fais-moi un truc sympa » échoue.',
+      path: 'lecons/prompt.html',
+      duration: '6 min', level: 1,
+      keywords: ['prompt', 'demande', 'consigne', 'contexte', 'exemple', 'itération', 'prompt engineering']
+    },
+    'hallucination': {
+      title: 'Pourquoi une IA invente parfois',
+      summary: 'L\u2019origine des erreurs sûres d\u2019elles — et les trois réflexes qui les rattrapent.',
+      path: 'lecons/hallucination.html',
+      duration: '6 min', level: 2,
+      keywords: ['hallucination', 'erreur', 'fiabilité', 'vérification', 'source', 'confiance']
+    },
+    'rag': {
+      title: 'Donner ses documents à une IA',
+      summary: 'Chercher d\u2019abord, répondre ensuite : le principe du RAG, sans jargon.',
+      path: 'lecons/rag.html',
+      duration: '7 min', level: 2,
+      keywords: ['rag', 'documents', 'recherche', 'vecteurs', 'base de connaissance', 'source', 'contexte']
+    },
+    'agent': {
+      title: 'C\u2019est quoi un agent IA ?',
+      summary: 'La différence entre un assistant qui répond et un assistant qui agit.',
+      path: 'lecons/agent.html',
+      duration: '6 min', level: 2,
+      keywords: ['agent', 'autonomie', 'boucle', 'outils', 'action', 'automatisation', 'validation']
+    },
+    'cybersecurite': {
+      title: 'Les bases de la cybersécurité',
+      summary: 'Mot de passe, hameçonnage, double authentification : les trois gestes qui comptent vraiment.',
+      path: 'lecons/cybersecurite.html',
+      duration: '7 min', level: 1,
+      keywords: ['sécurité', 'phishing', 'hameçonnage', 'mot de passe', 'mfa', 'double authentification', 'arnaque', 'piratage']
+    },
+
     /* ---------- Leçons prévues (affichées en grisé) ---------- */
 
-    'api': { title: 'C’est quoi une API ?', summary: 'Le menu d’un restaurant, version logicielle.', soon: true, level: 2, keywords: ['api', 'interface', 'intégration', 'rest'] },
+    'cout-ia': { title: 'Ce que coûte une IA', summary: 'Jetons, abonnements, et pourquoi un long document coûte cher.', soon: true, level: 2, keywords: ['token', 'jeton', 'coût', 'tarif', 'contexte'] },
+    'ia-limites': { title: 'Ce qu\u2019une IA ne sait pas faire', summary: 'Les limites structurelles, pas les défauts passagers.', soon: true, level: 2, keywords: ['limites', 'fiabilité', 'calcul', 'temps réel'] },
+    'ia-donnees': { title: 'Vos données et l\u2019IA', summary: 'Ce qui part, ce qui reste, ce qui sert à l\u2019entraînement.', soon: true, level: 2, keywords: ['confidentialité', 'données', 'entraînement', 'rgpd'] },
+    'cloud-saas': { title: 'SaaS, PaaS, IaaS', summary: 'Trois niveaux de location, une seule logique.', soon: true, level: 2, keywords: ['saas', 'paas', 'iaas', 'cloud', 'abonnement'] },
     'chiffrement': { title: 'Le chiffrement expliqué simplement', summary: 'Ce que protège vraiment le cadenas du navigateur.', soon: true, level: 2, keywords: ['chiffrement', 'https', 'sécurité', 'clé'] },
-    'cybersecurite': { title: 'Les bases de la cybersécurité', summary: 'Mot de passe, hameçonnage, double authentification.', soon: true, level: 1, keywords: ['sécurité', 'phishing', 'mot de passe', 'mfa'] },
     'gouvernance-data': { title: 'Qualité et gouvernance des données', summary: 'Pourquoi deux tableaux ne donnent jamais le même chiffre.', soon: true, level: 2, keywords: ['qualité', 'gouvernance', 'rgpd', 'référentiel'] },
     'rgpd': { title: 'Le RGPD en clair', summary: 'Ce qu’on a le droit de faire avec les données des gens.', soon: true, level: 1, keywords: ['rgpd', 'données personnelles', 'consentement'] },
     'projet-si': { title: 'Comment se déroule un projet SI', summary: 'Du besoin métier à la mise en production.', soon: true, level: 2, keywords: ['projet', 'cadrage', 'recette', 'déploiement'] },
-    'llm': { title: 'Comment un modèle de langage écrit', summary: 'Un mot après l’autre, et pourquoi ça marche.', soon: true, level: 1, keywords: ['llm', 'modèle', 'token', 'prédiction'] },
-    'hallucination': { title: 'Pourquoi une IA invente parfois', summary: 'L’origine des erreurs sûres d’elles.', soon: true, level: 2, keywords: ['hallucination', 'erreur', 'fiabilité'] },
-    'rag': { title: 'Donner ses documents à une IA (RAG)', summary: 'Chercher d’abord, répondre ensuite.', soon: true, level: 3, keywords: ['rag', 'recherche', 'documents', 'vecteurs'] }
   };
 
   var FAMILIES = [
@@ -127,7 +176,7 @@ window.GOTIT = (function () {
           id: 'materiel', title: 'Le matériel',
           subcategories: [
             { id: 'dans-la-machine', title: 'Dans la machine', lessons: ['ordinateur', 'serveur'] },
-            { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud'] }
+            { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas'] }
           ]
         },
         {
@@ -146,8 +195,14 @@ window.GOTIT = (function () {
         {
           id: 'circulation', title: 'Comment ça circule',
           subcategories: [
-            { id: 'bases-reseau', title: 'Les bases', lessons: ['internet'] },
-            { id: 'securite', title: 'Sécurité', lessons: ['chiffrement', 'cybersecurite'] }
+            { id: 'bases-reseau', title: 'Les bases', lessons: ['internet'] }
+          ]
+        },
+        {
+          id: 'securite', title: 'Se protéger',
+          subcategories: [
+            { id: 'gestes', title: 'Les gestes du quotidien', lessons: ['cybersecurite'] },
+            { id: 'protection', title: 'Ce qui protège les données', lessons: ['chiffrement'] }
           ]
         }
       ]
@@ -205,9 +260,17 @@ window.GOTIT = (function () {
           ]
         },
         {
+          id: 'usage-ia', title: 'Travailler avec l\u2019IA',
+          subcategories: [
+            { id: 'bien-demander', title: 'Bien s\u2019en servir', lessons: ['prompt', 'ia-limites'] },
+            { id: 'cadre', title: 'Coûts et confidentialité', lessons: ['cout-ia', 'ia-donnees'] }
+          ]
+        },
+        {
           id: 'agents', title: 'Agents & outils',
           subcategories: [
             { id: 'etendre', title: 'Étendre un assistant', lessons: ['ia-skills', 'mcp'] },
+            { id: 'autonomie', title: 'Quand l\u2019assistant agit', lessons: ['agent'] },
             { id: 'connaissance', title: 'Lui donner de la connaissance', lessons: ['rag'] }
           ]
         }
