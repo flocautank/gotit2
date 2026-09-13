@@ -89,12 +89,16 @@ h1, h2, h3, .card-title, .brand { font-family: var(--serif); font-weight: 600; l
 .brand:hover { text-decoration: none; }
 
 .brand-mark {
-  width: 28px; height: 28px;
-  border-radius: 8px;
-  background: var(--accent);
-  display: grid; place-items: center;
-  color: #FBF9F5; font-family: var(--serif); font-weight: 600; font-size: .84rem;
+  width: 30px; height: 30px;
+  display: block;
+  color: var(--accent); /* la bulle reprend la couleur d'accent */
+  flex: none;
 }
+.brand-mark svg { width: 100%; height: 100%; display: block; }
+
+/* Le nom d'un bloc, pour que le « ! » reste collé malgré le gap du flex */
+.brand-word { white-space: nowrap; }
+.brand .bang { color: var(--accent); }
 
 .site-nav { margin-left: auto; display: flex; gap: 18px; align-items: center; }
 .site-nav a { color: var(--text-dim); font-size: .94rem; }

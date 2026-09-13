@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wifi, box et débit — GotIt !</title>
+<meta name="description" content="Pourquoi ça rame dans la chambre du fond : débit, latence et portée du wifi, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/reseau">Réseau</a><span>/</span>Comment ça circule<span>/</span>Les bases</div>
+      <h1>Wifi, box et débit</h1>
+      <p class="lead">« J’ai la fibre, et pourtant ça rame. » Les deux ne sont pas contradictoires&nbsp;: le tuyau qui arrive chez vous et le dernier mètre jusqu’à votre canapé sont deux choses différentes.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">6 min</span><span class="tag">3 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Trois notions suffisent à diagnostiquer 90&nbsp;% des problèmes de connexion domestique&nbsp;:
+        le <strong>débit</strong>, la <strong>latence</strong>, et la <strong>portée du wifi</strong>.
+        Elles n’ont rien à voir entre elles.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : débit et latence">
+        <div class="scene-title">Scène 1 — Débit et latence</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Le débit est la largeur du tuyau, la latence le délai avant la première réponse">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="50" width="680" height="80" rx="12" class="s-box-teal"/>
+              <text x="80" y="80" class="s-label">Le débit</text>
+              <text x="80" y="104" class="s-label-sm">combien de données passent par seconde — la largeur du tuyau</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="146" width="680" height="80" rx="12" class="s-box-accent"/>
+              <text x="80" y="176" class="s-label">La latence</text>
+              <text x="80" y="200" class="s-label-sm">le délai avant la première réponse — la longueur du tuyau</text>
+            </g>
+            <g data-show="3-4">
+              <text x="400" y="256" text-anchor="middle" class="s-label-sm" data-show="3-4">un gros téléchargement veut du débit</text>
+            </g>
+            <g data-show="4">
+              <text x="400" y="280" text-anchor="middle" class="s-label-sm" fill="var(--accent)">une visio ou un jeu veulent une faible latence</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Le débit, c’est la largeur du tuyau.</b><span>Mesuré en mégabits par seconde. C’est le chiffre que vend votre opérateur — et celui qu’on regarde en premier, souvent à tort.</span></p>
+          <p class="step" data-duration="4600"><b>La latence, c’est le délai avant la première goutte.</b><span>Mesurée en millisecondes. Vous cliquez, et il se passe un temps avant que quoi que ce soit arrive. Un tuyau très large mais très long reste lent à répondre.</span></p>
+          <p class="step" data-duration="4400"><b>Selon l’usage, ce n’est pas la même qui compte.</b><span>Télécharger un gros fichier ou regarder une série en 4K : c’est une affaire de débit.</span></p>
+          <p class="step" data-duration="5000"><b>Mais une visio qui saccade, c’est presque toujours la latence.</b><span>Ou des pertes de paquets. Augmenter le débit n’y changera rien — d’où la déception de ceux qui paient plus cher sans rien gagner.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le débit, c’est le nombre de voies de l’autoroute. La latence, c’est la distance à
+          parcourir. Pour déménager, il faut des voies. Pour une conversation, il faut de la
+          proximité — une autoroute à dix voies entre Paris et Sydney ne rendra jamais un appel
+          fluide.
+        </p>
+      </div>
+
+      <h2>Le dernier mètre : le wifi</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : l’affaiblissement du wifi à travers les murs">
+        <div class="scene-title">Scène 2 — Ce qui traverse, et ce qui s’arrête</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Le signal wifi s’affaiblit à mesure qu’il traverse les murs">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="110" width="150" height="80" rx="12" class="s-box-accent"/>
+              <text x="115" y="146" text-anchor="middle" class="s-label">La box</text>
+              <text x="115" y="170" text-anchor="middle" class="s-label-xs">au fond du couloir</text>
+            </g>
+
+            <g data-show="2-4">
+              <path d="M230 150 V 80 M230 210 V 150" stroke="var(--line-strong)" stroke-width="6" data-show="2-4"/>
+              <path d="M430 150 V 80 M430 210 V 150" stroke="var(--line-strong)" stroke-width="6" data-show="3-4"/>
+              <path d="M630 150 V 80 M630 210 V 150" stroke="var(--line-strong)" stroke-width="6" data-show="4"/>
+              <text x="230" y="240" text-anchor="middle" class="s-label-xs" data-show="2-4">mur</text>
+              <text x="430" y="240" text-anchor="middle" class="s-label-xs" data-show="3-4">mur</text>
+              <text x="630" y="240" text-anchor="middle" class="s-label-xs" data-show="4">mur porteur</text>
+            </g>
+
+            <g data-show="2-4"><rect x="250" y="132" width="160" height="36" rx="18" class="s-box-teal"/><text x="330" y="156" text-anchor="middle" class="s-label-xs">bon signal</text></g>
+            <g data-show="3-4"><rect x="450" y="132" width="160" height="36" rx="18" class="s-box"/><text x="530" y="156" text-anchor="middle" class="s-label-xs">signal moyen</text></g>
+            <g data-show="4"><rect x="650" y="132" width="110" height="36" rx="18" fill="#F6E2DD" stroke="var(--danger)"/><text x="705" y="156" text-anchor="middle" class="s-label-xs" fill="var(--danger)">ça rame</text></g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>La fibre s’arrête à la box.</b><span>Ce qui se passe après, c’est du wifi — c’est-à-dire des ondes radio, avec toutes les faiblesses de la radio.</span></p>
+          <p class="step" data-duration="4200"><b>Chaque mur en avale une partie.</b><span>Une cloison légère, un peu. Du béton armé, un miroir ou une baignoire, beaucoup.</span></p>
+          <p class="step" data-duration="4400"><b>Au deuxième mur, la vitesse a déjà fondu.</b><span>Vous payez toujours 1 Gb/s, mais il n’en arrive qu’une fraction dans la pièce.</span></p>
+          <p class="step" data-duration="5000"><b>D’où la chambre du fond, éternelle victime.</b><span>Le problème n’est pas votre abonnement mais la distance et les murs. Trois solutions : rapprocher la box, ajouter un répéteur ou un boîtier CPL, ou brancher un câble — qui reste imbattable.</span></p>
+        </div>
+      </section>
+
+      <h2>Les réglages qui changent quelque chose</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : les deux bandes de fréquence du wifi">
+        <div class="scene-title">Scène 3 — 2,4 ou 5 GHz&nbsp;?</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="La bande 2,4 GHz porte loin mais lentement, la bande 5 GHz est rapide mais de courte portée">
+            <g data-show="1-3" class="m-rise">
+              <rect x="50" y="50" width="330" height="160" rx="12" class="s-box-teal"/>
+              <text x="215" y="88" text-anchor="middle" class="s-label">2,4 GHz</text>
+              <text x="215" y="124" text-anchor="middle" class="s-label-sm">porte loin, traverse mieux</text>
+              <text x="215" y="154" text-anchor="middle" class="s-label-sm">plus lent, plus encombré</text>
+              <text x="215" y="186" text-anchor="middle" class="s-label-xs">pour la chambre du fond</text>
+            </g>
+            <g data-show="2-3" class="m-right">
+              <rect x="420" y="50" width="330" height="160" rx="12" class="s-box-accent"/>
+              <text x="585" y="88" text-anchor="middle" class="s-label">5 GHz</text>
+              <text x="585" y="124" text-anchor="middle" class="s-label-sm">beaucoup plus rapide</text>
+              <text x="585" y="154" text-anchor="middle" class="s-label-sm">portée courte, murs fatals</text>
+              <text x="585" y="186" text-anchor="middle" class="s-label-xs">pour la pièce de la box</text>
+            </g>
+            <g data-show="3">
+              <text x="400" y="252" text-anchor="middle" class="s-label-sm" fill="var(--accent)">votre box diffuse souvent les deux, sous deux noms</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>La bande 2,4 GHz porte loin.</b><span>Elle traverse mieux les murs, mais elle est lente et très encombrée : les voisins, le four à micro-ondes et les objets connectés s’y bousculent.</span></p>
+          <p class="step" data-duration="4600"><b>La bande 5 GHz est bien plus rapide.</b><span>Mais elle s’arrête vite : deux murs suffisent souvent à la faire disparaître.</span></p>
+          <p class="step" data-duration="5000"><b>La bonne pratique est contre-intuitive.</b><span>Près de la box, forcez le 5 GHz. Loin, restez en 2,4. Si votre box diffuse deux réseaux (souvent « …_5GHz »), choisir à la main selon la pièce change parfois tout.</span></p>
+        </div>
+      </section>
+
+      <h2>Le diagnostic en quatre gestes</h2>
+      <div class="compare">
+        <div>
+          <h4>Dans l’ordre</h4>
+          <ul>
+            <li>Tester avec un câble : si c’est bon, c’est le wifi&nbsp;;</li>
+            <li>tester à côté de la box : si c’est bon, c’est la portée&nbsp;;</li>
+            <li>tester un autre appareil : sinon, c’est l’appareil&nbsp;;</li>
+            <li>redémarrer la box, en dernier — pas en premier.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ce qui aide vraiment</h4>
+          <ul>
+            <li>Une box en hauteur, dégagée, au centre du logement&nbsp;;</li>
+            <li>un câble pour la télé et le bureau fixe&nbsp;;</li>
+            <li>un répéteur ou du CPL pour l’étage&nbsp;;</li>
+            <li>choisir la bonne bande selon la pièce.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Les fausses pistes</h4>
+          <ul>
+            <li>Payer un débit supérieur pour régler une visio&nbsp;;</li>
+            <li>poser la box derrière la télé, dans un meuble&nbsp;;</li>
+            <li>multiplier les répéteurs en cascade&nbsp;;</li>
+            <li>accuser le site d’en face.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li><strong>Débit</strong> = la largeur du tuyau. <strong>Latence</strong> = le délai de réponse. Deux problèmes distincts.</li>
+        <li>La fibre s’arrête à la box&nbsp;: après, c’est du <strong>wifi</strong>, donc de la radio.</li>
+        <li>Chaque <strong>mur</strong> avale une part du signal.</li>
+        <li><strong>5 GHz</strong> près de la box, <strong>2,4 GHz</strong> au loin — et un câble quand c’est possible.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="internet.html">← Comment voyage une page web</a>
+        <a class="btn btn-primary" href="../index.html#/reseau">Réseau →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+TITRE: Sauvegarder pour de vrai
+DESC: Pourquoi synchroniser n’est pas sauvegarder, et la règle des trois copies, en schémas animés.
+FIL: <a href="../index.html#/reseau">Réseau</a><span>/</span>Se protéger<span>/</span>Ce qui protège les données
+LEAD: « Tout est dans le cloud, donc c’est sauvegardé. » C’est l’erreur la plus répandue — et celle qui coûte des années de photos.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+
+      <p>
+        Synchroniser et sauvegarder ressemblent au même geste&nbsp;: une copie de vos fichiers
+        existe ailleurs. Mais les deux répondent à deux dangers différents, et l’un ne protège
+        pas de l’autre.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : la synchronisation propage aussi les erreurs">
+        <div class="scene-title">Scène 1 — Le miroir</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Un fichier supprimé sur l’ordinateur disparaît aussi du cloud synchronisé">
+            <g data-show="1-4" class="s-label-sm">
+              <rect x="60" y="80" width="260" height="110" rx="12" class="s-box-teal"/>
+              <text x="190" y="124" text-anchor="middle" class="s-label">Votre ordinateur</text>
+              <text x="190" y="154" text-anchor="middle" class="s-label-sm">photos-2019</text>
+
+              <rect x="480" y="80" width="260" height="110" rx="12" class="s-box-teal"/>
+              <text x="610" y="124" text-anchor="middle" class="s-label">Le cloud</text>
+              <text x="610" y="154" text-anchor="middle" class="s-label-sm">photos-2019</text>
+            </g>
+            <path d="M325 135 H 475" class="s-line m-draw" data-show="1-4"/>
+            <text x="400" y="118" text-anchor="middle" class="s-label-xs" data-show="1-4">synchronisé</text>
+
+            <g data-show="2-4">
+              <rect x="60" y="80" width="260" height="110" rx="12" fill="#F6E2DD" stroke="var(--danger)"/>
+              <text x="190" y="124" text-anchor="middle" class="s-label" fill="var(--danger)">supprimé par erreur</text>
+            </g>
+            <g data-show="3-4">
+              <rect x="480" y="80" width="260" height="110" rx="12" fill="#F6E2DD" stroke="var(--danger)" class="pulse" data-show="3-4"/>
+              <text x="610" y="124" text-anchor="middle" class="s-label" fill="var(--danger)">supprimé aussi</text>
+              <circle r="7" class="packet" data-show="3" style="offset-path:path('M325 135 H 475')"/>
+            </g>
+            <g data-show="4" class="m-rise">
+              <rect x="130" y="222" width="540" height="46" rx="23" class="s-box"/>
+              <text x="400" y="251" text-anchor="middle" class="s-label-sm">un miroir reflète aussi les catastrophes</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>La synchronisation maintient deux copies identiques.</b><span>Vous modifiez ici, c’est modifié là-bas. C’est très pratique pour retrouver ses fichiers sur tous ses appareils.</span></p>
+          <p class="step" data-duration="4200"><b>Un jour, vous supprimez un dossier par erreur.</b><span>Ou un logiciel le corrompt, ou un rançongiciel le chiffre.</span></p>
+          <p class="step" data-duration="4600"><b>Et la suppression se synchronise, elle aussi.</b><span>Fidèlement, en quelques secondes. La copie « de sécurité » vient de disparaître exactement comme l’original.</span></p>
+          <p class="step" data-duration="5000"><b>C’est là toute la différence.</b><span>La synchronisation protège de la <em>panne</em> — disque mort, téléphone perdu. Elle ne protège pas de l’<em>erreur</em>, qu’elle recopie avec zèle.</span></p>
+        </div>
+      </section>
+
+      <h2>Une vraie sauvegarde remonte le temps</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : une sauvegarde conserve des versions dans le temps">
+        <div class="scene-title">Scène 2 — Des versions, pas une copie</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="Une sauvegarde conserve plusieurs états successifs, permettant de revenir avant l’incident">
+            <g data-show="1-4" class="s-label-sm">
+              <rect x="40" y="80" width="150" height="80" rx="10" class="s-box"/>
+              <text x="115" y="116" text-anchor="middle" class="s-label-sm">lundi</text>
+              <text x="115" y="140" text-anchor="middle" class="s-label-xs">intact</text>
+
+              <rect x="220" y="80" width="150" height="80" rx="10" class="s-box"/>
+              <text x="295" y="116" text-anchor="middle" class="s-label-sm">mardi</text>
+              <text x="295" y="140" text-anchor="middle" class="s-label-xs">intact</text>
+
+              <rect x="400" y="80" width="150" height="80" rx="10" class="s-box"/>
+              <text x="475" y="116" text-anchor="middle" class="s-label-sm">mercredi</text>
+              <text x="475" y="140" text-anchor="middle" class="s-label-xs">intact</text>
+
+              <rect x="580" y="80" width="180" height="80" rx="10" class="s-box"/>
+              <text x="670" y="116" text-anchor="middle" class="s-label-sm">aujourd’hui</text>
+            </g>
+
+            <g data-show="2-4">
+              <rect x="580" y="80" width="180" height="80" rx="10" fill="#F6E2DD" stroke="var(--danger)"/>
+              <text x="670" y="116" text-anchor="middle" class="s-label-sm" fill="var(--danger)">aujourd’hui</text>
+              <text x="670" y="140" text-anchor="middle" class="s-label-xs" fill="var(--danger)">tout est chiffré</text>
+            </g>
+
+            <g data-show="3-4">
+              <rect x="400" y="80" width="150" height="80" rx="10" class="s-box-teal" />
+              <text x="475" y="116" text-anchor="middle" class="s-label-sm">mercredi</text>
+              <text x="475" y="140" text-anchor="middle" class="s-label-xs">on repart d’ici</text>
+              <path d="M560 190 H 420" class="s-line-accent m-draw" data-show="3-4" />
+              <text x="490" y="214" text-anchor="middle" class="s-label-xs" data-show="3-4">restauration</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <text x="400" y="258" text-anchor="middle" class="s-label-sm" fill="var(--accent)">sauvegarder, c’est garder l’histoire — pas l’état présent</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Une sauvegarde conserve plusieurs états successifs.</b><span>Celui de lundi, de mardi, de mercredi. Chacun figé, indépendant des suivants.</span></p>
+          <p class="step" data-duration="4400"><b>Survient l’incident.</b><span>Un rançongiciel chiffre tout, ou vous découvrez qu’un dossier a disparu il y a trois semaines.</span></p>
+          <p class="step" data-duration="4600"><b>On revient à l’état d’avant.</b><span>C’est la seule chose qui sauve vraiment : pouvoir choisir un point dans le passé. Une simple copie du présent, elle, contient déjà le problème.</span></p>
+          <p class="step" data-duration="4800"><b>D’où la définition.</b><span>Sauvegarder, ce n’est pas avoir une copie ailleurs : c’est avoir des copies <em>datées</em>, qu’aucune bêtise récente ne peut atteindre.</span></p>
+        </div>
+      </section>
+
+      <h2>La règle des 3-2-1</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : la règle 3-2-1 des sauvegardes">
+        <div class="scene-title">Scène 3 — Trois, deux, un</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="Trois copies, sur deux supports différents, dont une hors du domicile">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="46" width="680" height="58" rx="12" class="s-box-teal"/>
+              <text x="80" y="74" class="s-label">3 copies de ce qui compte</text>
+              <text x="80" y="94" class="s-label-sm">l’original, plus deux autres</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="118" width="680" height="58" rx="12" class="s-box-teal"/>
+              <text x="80" y="146" class="s-label">2 supports différents</text>
+              <text x="80" y="166" class="s-label-sm">le disque interne et un disque externe, par exemple</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="60" y="190" width="680" height="58" rx="12" class="s-box-accent"/>
+              <text x="80" y="218" class="s-label">1 copie ailleurs</text>
+              <text x="80" y="238" class="s-label-sm">hors du domicile : incendie, dégât des eaux, cambriolage</text>
+            </g>
+            <g data-show="4">
+              <text x="400" y="272" text-anchor="middle" class="s-label-sm" fill="var(--accent)">et surtout : vérifier qu’on sait restaurer</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Trois copies.</b><span>L’original et deux sauvegardes. Deux, parce qu’une sauvegarde peut elle-même échouer sans prévenir.</span></p>
+          <p class="step" data-duration="4400"><b>Sur deux types de support.</b><span>Un disque externe et un service en ligne, par exemple. Deux clés USB du même lot peuvent lâcher le même mois.</span></p>
+          <p class="step" data-duration="4600"><b>Dont une hors de chez vous.</b><span>Un disque rangé à côté de l’ordinateur brûle avec lui. C’est le point que tout le monde saute — et c’est le seul qui protège des sinistres.</span></p>
+          <p class="step" data-duration="5200"><b>Dernier point, le plus négligé : essayez de restaurer.</b><span>Une sauvegarde jamais testée est une hypothèse. Une fois par an, prenez un fichier au hasard et vérifiez que vous savez le récupérer.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          La synchronisation, c’est un double des clés dans la poche du voisin&nbsp;: très utile
+          si vous perdez les vôtres. La sauvegarde, c’est l’album photo de la maison rangé chez
+          vos parents&nbsp;: il ne sert jamais, jusqu’au jour où il est la seule chose qui reste.
+        </p>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Le piège des corbeilles</div>
+        <p>
+          La plupart des services en ligne conservent les fichiers supprimés 30 jours, et
+          parfois les versions précédentes. C’est un filet utile — mais un filet court&nbsp;:
+          une suppression découverte six mois plus tard n’est plus récupérable. Ne confondez
+          pas une corbeille avec une sauvegarde.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li><strong>Synchroniser ≠ sauvegarder</strong> : le miroir recopie aussi les erreurs.</li>
+        <li>Une vraie sauvegarde permet de <strong>revenir en arrière dans le temps</strong>.</li>
+        <li>Règle <strong>3-2-1</strong> : trois copies, deux supports, une hors du domicile.</li>
+        <li>Une sauvegarde <strong>jamais testée</strong> n’est pas une sauvegarde.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="cybersecurite.html">← Les bases de la cybersécurité</a>
+        <a class="btn btn-primary" href="navigateur.html">Ce que sait votre navigateur →</a>
+      </nav>

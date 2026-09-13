@@ -1,4 +1,9 @@
-# GotIt — comprendre, enfin
+<img src="assets/img/logo.svg" alt="GotIt !" width="230">
+
+# GotIt ! — comprendre, enfin
+
+Le nom se lit « Got it! » : le moment où ça fait tilt. Le logo reprend cette idée —
+une bulle d'explication qui contient une coche.
 
 Site de vulgarisation visuelle : des concepts techniques expliqués par des **schémas animés**,
 étape par étape. Pas de vidéo à produire, pas de framework : les animations sont générées par
@@ -14,15 +19,20 @@ faciles à corriger.
 | [Ce qu'il y a dans un ordinateur](lecons/ordinateur.html) | Informatique | Découverte |
 | [C'est quoi un serveur ?](lecons/serveur.html) | Informatique | Découverte |
 | [Logiciel, système, application](lecons/logiciel.html) | Informatique | Découverte |
+| [Fichiers, formats et dossiers](lecons/fichiers.html) | Informatique | Découverte |
 | [Local ou cloud : quelle différence ?](lecons/local-vs-cloud.html) | Informatique | Découverte |
 | [SaaS, PaaS, IaaS](lecons/cloud-saas.html) | Informatique | Intermédiaire |
 | [Comment voyage une page web](lecons/internet.html) | Réseau | Découverte |
+| [Wifi, box et débit](lecons/wifi-box.html) | Réseau | Découverte |
+| [Ce que sait votre navigateur](lecons/navigateur.html) | Réseau | Découverte |
 | [Les bases de la cybersécurité](lecons/cybersecurite.html) | Réseau | Découverte |
+| [Sauvegarder pour de vrai](lecons/sauvegarde.html) | Réseau | Découverte |
 | [Le chiffrement expliqué simplement](lecons/chiffrement.html) | Réseau | Intermédiaire |
 | [C'est quoi une base de données ?](lecons/base-de-donnees.html) | Data | Découverte |
 | [Lac, entrepôt, magasin de données](lecons/entrepots-data.html) | Data | Intermédiaire |
 | [Les langages de la data, situés](lecons/langages-data.html) | Data | Intermédiaire |
 | [Pourquoi deux tableaux ne disent jamais pareil](lecons/gouvernance-data.html) | Data | Intermédiaire |
+| [Le RGPD en clair](lecons/rgpd.html) | Data | Découverte |
 | [C'est quoi un système d'information ?](lecons/si-briques.html) | Système d'information | Découverte |
 | [C'est quoi une API ?](lecons/api.html) | Système d'information | Découverte |
 | [Comment un modèle de langage écrit](lecons/llm.html) | IA | Découverte |
@@ -36,9 +46,7 @@ faciles à corriger.
 | [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 
-D'autres sujets sont déjà déclarés dans le catalogue et apparaissent en « Bientôt » :
-fichiers et formats, ce que sait le navigateur, wifi et débit, sauvegarder pour de vrai,
-le RGPD, le déroulé d'un projet SI.
+Un sujet reste déclaré en « Bientôt » : le déroulé d'un projet SI.
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours
@@ -65,6 +73,8 @@ assets/js/home.js       Navigation du catalogue (domaine > catégorie) et recher
 assets/js/scene.js      Moteur d'animation des scènes (étapes, lecture, clavier)
 assets/css/main.css     Styles généraux
 assets/css/lesson.css   Styles des leçons et utilitaires d'animation
+assets/img/             Logo, marque seule et image de partage
+.outils/gabarit.py      Assemble une page de leçon à partir d'un fragment
 CONTRIBUER.md           Comment ajouter une leçon
 ```
 

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le RGPD en clair — GotIt !</title>
+<meta name="description" content="Ce qu’on a le droit de faire avec les données des gens : les principes du RGPD en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/data">Data</a><span>/</span>Exploiter les données<span>/</span>Qualité &amp; cadre légal</div>
+      <h1>Le RGPD en clair</h1>
+      <p class="lead">Ce n’est pas une formalité juridique ni une case à cocher. Le RGPD répond à une question simple&nbsp;: qu’a-t-on le droit de faire avec les informations qui concernent une personne&nbsp;?</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">7 min</span><span class="tag">3 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Cette leçon explique les principes — elle ne remplace pas un conseil juridique.
+        Mais comprendre la logique suffit à éviter l’immense majorité des erreurs, et à savoir
+        quand il faut demander.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : ce qu’est une donnée personnelle">
+        <div class="scene-title">Scène 1 — Bien plus large qu’on ne croit</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Les données personnelles incluent l’identité, mais aussi les identifiants techniques et les données sensibles">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="50" width="220" height="150" rx="12" class="s-box-teal"/>
+              <text x="150" y="86" text-anchor="middle" class="s-label">L’évidence</text>
+              <text x="150" y="122" text-anchor="middle" class="s-label-sm">nom, e-mail</text>
+              <text x="150" y="150" text-anchor="middle" class="s-label-sm">téléphone, adresse</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="290" y="50" width="220" height="150" rx="12" class="s-box-accent"/>
+              <text x="400" y="86" text-anchor="middle" class="s-label">Moins évident</text>
+              <text x="400" y="122" text-anchor="middle" class="s-label-sm">adresse IP, cookie</text>
+              <text x="400" y="150" text-anchor="middle" class="s-label-sm">plaque, photo, voix</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="540" y="50" width="220" height="150" rx="12" class="s-box-violet"/>
+              <text x="650" y="86" text-anchor="middle" class="s-label">Sensible</text>
+              <text x="650" y="122" text-anchor="middle" class="s-label-sm">santé, religion</text>
+              <text x="650" y="150" text-anchor="middle" class="s-label-sm">opinions, biométrie</text>
+            </g>
+            <g data-show="4" class="m-rise">
+              <rect x="120" y="228" width="560" height="46" rx="23" class="s-box"/>
+              <text x="400" y="257" text-anchor="middle" class="s-label-sm">le critère : peut-on remonter à une personne&nbsp;?</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>D’abord, ce à quoi tout le monde pense.</b><span>Nom, e-mail, téléphone, adresse postale : une personne identifiée.</span></p>
+          <p class="step" data-duration="4800"><b>Ensuite, ce qu’on oublie systématiquement.</b><span>Une adresse IP, un numéro de cookie, une plaque d’immatriculation, un enregistrement de voix, une photo. Rien de tout cela ne porte un nom — et pourtant on peut remonter à quelqu’un.</span></p>
+          <p class="step" data-duration="4600"><b>Et une catégorie à part, dite sensible.</b><span>Santé, origine, opinions politiques, religion, orientation sexuelle, données biométriques. Leur traitement est interdit par principe, avec des exceptions étroites.</span></p>
+          <p class="step" data-duration="5000"><b>Le critère tient en une question.</b><span>Peut-on, seul ou en croisant, remonter à une personne physique ? Si oui, c’est une donnée personnelle — même sans nom, même dans un fichier technique.</span></p>
+        </div>
+      </section>
+
+      <h2>On ne collecte pas « au cas où »</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : les trois principes de collecte">
+        <div class="scene-title">Scène 2 — Trois questions avant de collecter</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Trois principes : une base légale, le minimum de données, une durée limitée">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="46" width="680" height="58" rx="12" class="s-box-teal"/>
+              <text x="80" y="74" class="s-label">1. De quel droit&nbsp;?</text>
+              <text x="80" y="94" class="s-label-sm">consentement, contrat, obligation légale, intérêt légitime</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="118" width="680" height="58" rx="12" class="s-box-teal"/>
+              <text x="80" y="146" class="s-label">2. Pour quoi faire, exactement&nbsp;?</text>
+              <text x="80" y="166" class="s-label-sm">un but précis, annoncé — et rien que les données qui y servent</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="60" y="190" width="680" height="58" rx="12" class="s-box-accent"/>
+              <text x="80" y="218" class="s-label">3. Pendant combien de temps&nbsp;?</text>
+              <text x="80" y="238" class="s-label-sm">une durée décidée d’avance, puis suppression</text>
+            </g>
+            <g data-show="4">
+              <text x="400" y="276" text-anchor="middle" class="s-label-sm" fill="var(--accent)">« on garde tout, ça servira peut-être » n’est pas une réponse</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="5000"><b>Il faut un motif valable — on dit une base légale.</b><span>Le consentement n’est que l’un des six possibles : exécuter un contrat, respecter une obligation légale ou poursuivre un intérêt légitime en sont d’autres. D’où une conséquence contre-intuitive : tout ne nécessite pas une case à cocher.</span></p>
+          <p class="step" data-duration="4800"><b>Il faut un but précis, et s’y tenir.</b><span>Collecter un e-mail pour livrer une commande ne donne pas le droit d’envoyer une newsletter. Et on ne demande que ce qui sert : pas de date de naissance pour un devis de plomberie.</span></p>
+          <p class="step" data-duration="4600"><b>Il faut une durée, décidée à l’avance.</b><span>Trois ans après le dernier contact, dix ans pour une facture. Passé ce délai, on supprime ou on anonymise.</span></p>
+          <p class="step" data-duration="5000"><b>C’est le renversement qu’apporte le texte.</b><span>Avant, on collectait et on cherchait un usage. Depuis, on part de l’usage et on ne collecte que le nécessaire. « Ça pourrait servir » est précisément ce que le RGPD interdit.</span></p>
+        </div>
+      </section>
+
+      <h2>Les droits des personnes</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : les droits que chacun peut exercer">
+        <div class="scene-title">Scène 3 — Ce que chacun peut exiger</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Accès, rectification, effacement, opposition et portabilité">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="50" width="220" height="70" rx="10" class="s-box-teal"/>
+              <text x="150" y="80" text-anchor="middle" class="s-label-sm">Savoir</text>
+              <text x="150" y="102" text-anchor="middle" class="s-label-xs">quelles données vous avez</text>
+              <rect x="290" y="50" width="220" height="70" rx="10" class="s-box-teal"/>
+              <text x="400" y="80" text-anchor="middle" class="s-label-sm">Corriger</text>
+              <text x="400" y="102" text-anchor="middle" class="s-label-xs">ce qui est faux</text>
+              <rect x="540" y="50" width="220" height="70" rx="10" class="s-box-teal"/>
+              <text x="650" y="80" text-anchor="middle" class="s-label-sm">Effacer</text>
+              <text x="650" y="102" text-anchor="middle" class="s-label-xs">sous conditions</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="165" y="136" width="220" height="70" rx="10" class="s-box-accent"/>
+              <text x="275" y="166" text-anchor="middle" class="s-label-sm">S’opposer</text>
+              <text x="275" y="188" text-anchor="middle" class="s-label-xs">à la prospection, toujours</text>
+              <rect x="415" y="136" width="220" height="70" rx="10" class="s-box-accent"/>
+              <text x="525" y="166" text-anchor="middle" class="s-label-sm">Emporter</text>
+              <text x="525" y="188" text-anchor="middle" class="s-label-xs">ses données ailleurs</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="120" y="226" width="560" height="46" rx="23" class="s-box"/>
+              <text x="400" y="255" text-anchor="middle" class="s-label-sm">réponse attendue sous un mois</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>Savoir, corriger, effacer.</b><span>Toute personne peut demander ce que vous détenez sur elle, faire rectifier une erreur, et demander la suppression — sauf obligation légale de conservation, comme une facture.</span></p>
+          <p class="step" data-duration="4600"><b>S’opposer, et emporter.</b><span>L’opposition à la prospection commerciale est absolue : pas de justification à fournir. Et chacun peut récupérer ses données dans un format réutilisable pour aller ailleurs.</span></p>
+          <p class="step" data-duration="4800"><b>Avec un délai d’un mois.</b><span>C’est souvent là que ça coince : répondre suppose de savoir <em>où</em> se trouvent les données de cette personne. Une entreprise incapable de le dire a un problème de cartographie avant d’avoir un problème juridique.</span></p>
+          <p class="step" data-duration="5000"><b>C’est pour ça que le sujet n’est pas que juridique.</b><span>Un SI bien tenu, avec un référentiel client clair, répond en quelques minutes. Un SI éparpillé y passe des jours — et c’est le même travail que celui décrit dans la leçon sur les systèmes d’information.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Une donnée personnelle, c’est un objet qu’on vous prête, pas qu’on vous donne. Vous
+          devez dire pourquoi vous en avez besoin, ne pas vous en servir pour autre chose,
+          le ranger en lieu sûr, le rendre sur demande, et le restituer quand vous n’en avez
+          plus l’usage.
+        </p>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Trois idées fausses</div>
+        <p>
+          « Il faut le consentement pour tout » — non&nbsp;: exécuter un contrat ou une obligation
+          légale suffit souvent.
+          « Ça ne concerne que les grandes entreprises » — non&nbsp;: un fichier client de
+          cinquante lignes est concerné.
+          « Un bandeau cookies suffit » — non&nbsp;: c’est une petite partie du sujet, et un
+          bandeau sans vrai choix de refus n’est pas conforme.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Une donnée est personnelle dès qu’on peut <strong>remonter à quelqu’un</strong> — IP et cookies compris.</li>
+        <li>Trois questions avant de collecter&nbsp;: <strong>de quel droit</strong>, <strong>pour quoi</strong>, <strong>combien de temps</strong>.</li>
+        <li>On part de l’usage&nbsp;; « ça pourrait servir » n’est pas un motif.</li>
+        <li>Les personnes peuvent <strong>savoir, corriger, effacer, s’opposer, emporter</strong> — sous un mois.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="gouvernance-data.html">← Pourquoi deux tableaux ne disent jamais pareil</a>
+        <a class="btn btn-primary" href="../index.html#/data">Data →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

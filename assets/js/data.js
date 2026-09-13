@@ -197,13 +197,39 @@ window.GOTIT = (function () {
       keywords: ['qualité', 'gouvernance', 'définition', 'référentiel', 'doublon', 'propriétaire', 'indicateur', 'kpi']
     },
 
+    'fichiers': {
+      title: 'Fichiers, formats et dossiers',
+      summary: 'Pourquoi un fichier ne s\u2019ouvre pas, et pourquoi le PDF existe.',
+      path: 'lecons/fichiers.html', duration: '6 min', level: 1,
+      keywords: ['fichier', 'format', 'extension', 'dossier', 'pdf', 'jpg', 'csv', 'zip', 'convertir']
+    },
+    'navigateur': {
+      title: 'Ce que sait votre navigateur',
+      summary: 'Cookies, pistage, navigation priv\u00e9e : ce qui est enregistr\u00e9, et par qui.',
+      path: 'lecons/navigateur.html', duration: '7 min', level: 1,
+      keywords: ['navigateur', 'cookie', 'trace', 'publicit\u00e9', 'pistage', 'navigation priv\u00e9e', 'cache', 'vie priv\u00e9e']
+    },
+    'wifi-box': {
+      title: 'Wifi, box et d\u00e9bit',
+      summary: 'Pourquoi \u00e7a rame dans la chambre du fond, alors qu\u2019on a la fibre.',
+      path: 'lecons/wifi-box.html', duration: '6 min', level: 1,
+      keywords: ['wifi', 'box', 'd\u00e9bit', 'latence', 'fibre', 'r\u00e9p\u00e9teur', 'ghz', 'connexion']
+    },
+    'sauvegarde': {
+      title: 'Sauvegarder pour de vrai',
+      summary: 'Synchroniser n\u2019est pas sauvegarder : la r\u00e8gle des trois copies.',
+      path: 'lecons/sauvegarde.html', duration: '6 min', level: 1,
+      keywords: ['sauvegarde', 'backup', 'synchronisation', 'rançongiciel', 'restauration', 'cloud', 'disque']
+    },
+    'rgpd': {
+      title: 'Le RGPD en clair',
+      summary: 'Ce qu\u2019on a le droit de faire avec les donn\u00e9es des gens.',
+      path: 'lecons/rgpd.html', duration: '7 min', level: 1,
+      keywords: ['rgpd', 'donn\u00e9es personnelles', 'consentement', 'cnil', 'droits', 'conservation', 'vie priv\u00e9e']
+    },
+
     /* ---------- Leçons prévues (affichées en grisé) ---------- */
 
-    'fichiers': { title: 'Fichiers, formats et dossiers', summary: 'Pourquoi un .docx s\u2019ouvre et un .heic non.', soon: true, level: 1, keywords: ['fichier', 'format', 'extension', 'dossier', 'pdf'] },
-    'navigateur': { title: 'Ce que sait votre navigateur', summary: 'Cookies, traces, onglets : ce qui est enregistré et par qui.', soon: true, level: 1, keywords: ['navigateur', 'cookie', 'trace', 'pub', 'cache'] },
-    'wifi-box': { title: 'Wifi, box et débit', summary: 'Pourquoi ça rame dans la chambre du fond.', soon: true, level: 1, keywords: ['wifi', 'box', 'débit', 'fibre', 'réseau local'] },
-    'sauvegarde': { title: 'Sauvegarder pour de vrai', summary: 'Synchroniser n\u2019est pas sauvegarder.', soon: true, level: 1, keywords: ['sauvegarde', 'backup', 'synchronisation', 'ransomware'] },
-    'rgpd': { title: 'Le RGPD en clair', summary: 'Ce qu’on a le droit de faire avec les données des gens.', soon: true, level: 1, keywords: ['rgpd', 'données personnelles', 'consentement'] },
     'projet-si': { title: 'Comment se déroule un projet SI', summary: 'Du besoin métier à la mise en production.', soon: true, level: 2, keywords: ['projet', 'cadrage', 'recette', 'déploiement'] },
   };
 

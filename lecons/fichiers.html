@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fichiers, formats et dossiers — GotIt !</title>
+<meta name="description" content="Ce qu’est un fichier, à quoi sert son extension et pourquoi certains ne s’ouvrent pas, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/informatique">Informatique</a><span>/</span>Le matériel<span>/</span>Fichiers et formats
+      </div>
+      <h1>Fichiers, formats et dossiers</h1>
+      <p class="lead">
+        Pourquoi une photo envoyée par un ami ne s’ouvre pas, pourquoi un document change
+        de mise en page en changeant d’ordinateur, et pourquoi le PDF existe.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-1">Découverte</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Un fichier, c’est une suite de nombres enregistrée sur un disque. Rien d’autre.
+        Ce qui en fait une photo, une chanson ou une facture, c’est la <strong>convention</strong>
+        selon laquelle on les lit.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un fichier est une suite de nombres interprétée par un format">
+        <div class="scene-title">Scène 1 — Les mêmes chiffres, deux lectures</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Une même suite de nombres devient une image ou du son selon le format utilisé pour la lire">
+            <g data-show="1-4" class="m-rise">
+              <rect x="230" y="46" width="340" height="56" rx="12" class="s-box"/>
+              <text x="400" y="80" text-anchor="middle" class="s-label-sm">01001000 01101001 00100001</text>
+            </g>
+            <text x="400" y="124" text-anchor="middle" class="s-label-xs" data-show="1-4">ce qui est vraiment sur le disque</text>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="160" width="300" height="96" rx="12" class="s-box-teal"/>
+              <text x="210" y="194" text-anchor="middle" class="s-label">Lu comme une image</text>
+              <text x="210" y="224" text-anchor="middle" class="s-label-sm">des couleurs, pixel par pixel</text>
+              <path d="M330 108 C 300 130, 250 140, 215 156" class="s-line m-draw" data-show="2-4"/>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="440" y="160" width="300" height="96" rx="12" class="s-box-violet"/>
+              <text x="590" y="194" text-anchor="middle" class="s-label">Lu comme du son</text>
+              <text x="590" y="224" text-anchor="middle" class="s-label-sm">des vibrations, dans le temps</text>
+              <path d="M470 108 C 500 130, 550 140, 585 156" class="s-line m-draw" data-show="3-4"/>
+            </g>
+
+            <g data-show="4">
+              <text x="400" y="282" text-anchor="middle" class="s-label-sm" fill="var(--accent)">le format, c’est la règle de lecture</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Sur le disque, il n’y a que des nombres.</b><span>Aucune image, aucun texte : des zéros et des uns, à la file.</span></p>
+          <p class="step" data-duration="4400"><b>Lus comme une image, ils deviennent des couleurs.</b><span>« Les trois premiers nombres donnent la couleur du premier point, les trois suivants celle du deuxième… »</span></p>
+          <p class="step" data-duration="4400"><b>Lus comme du son, ils deviennent des vibrations.</b><span>Exactement les mêmes nombres, une autre convention, un résultat sans aucun rapport.</span></p>
+          <p class="step" data-duration="5000"><b>Un format n’est donc rien d’autre qu’une règle de lecture.</b><span>Et c’est pour ça qu’un fichier ouvert avec le mauvais logiciel affiche du charabia : la règle appliquée n’est pas la bonne.</span></p>
+        </div>
+      </section>
+
+      <h2>L’extension : une étiquette, pas une nature</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : le rôle de l’extension d’un fichier">
+        <div class="scene-title">Scène 2 — Ce que dit « .jpg »</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="L’extension indique quel logiciel doit ouvrir le fichier, mais ne change pas son contenu">
+            <g data-show="1-4" class="m-rise">
+              <rect x="230" y="46" width="340" height="60" rx="12" class="s-box-accent"/>
+              <text x="400" y="83" text-anchor="middle" class="s-label">vacances.jpg</text>
+            </g>
+            <g data-show="2-4">
+              <path d="M330 118 V 146" class="s-line m-draw" data-show="2-4"/>
+              <text x="250" y="142" text-anchor="middle" class="s-label-xs" data-show="2-4">le nom : pour vous</text>
+              <path d="M470 118 V 146" class="s-line m-draw" data-show="2-4"/>
+              <text x="560" y="142" text-anchor="middle" class="s-label-xs" data-show="2-4">l’extension : pour la machine</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="150" y="166" width="500" height="52" rx="12" class="s-box-teal"/>
+              <text x="400" y="198" text-anchor="middle" class="s-label-sm">elle dit quel logiciel doit l’ouvrir</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="150" y="230" width="500" height="52" rx="12" fill="#F6EBD8" stroke="var(--warn)"/>
+              <text x="400" y="262" text-anchor="middle" class="s-label-sm" fill="var(--warn)">la changer ne convertit rien du tout</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Un nom de fichier a deux parties.</b><span>Avant le point, ce que vous avez choisi. Après le point, l’extension.</span></p>
+          <p class="step" data-duration="4200"><b>Le nom est pour vous, l’extension pour la machine.</b><span>Vous pouvez renommer « vacances » en « été 2024 » sans rien casser. L’extension, elle, sert au système à savoir quoi faire du fichier.</span></p>
+          <p class="step" data-duration="4400"><b>Elle désigne le logiciel qui doit s’en charger.</b><span>Double-clic sur un .jpg : le visualiseur de photos. Sur un .xlsx : le tableur. C’est un simple aiguillage.</span></p>
+          <p class="step" data-duration="5200"><b>Attention au malentendu le plus répandu.</b><span>Renommer « film.mkv » en « film.mp4 » ne convertit pas la vidéo : ça met juste une fausse étiquette sur le pot. Convertir, c’est réécrire le contenu — c’est le travail d’un logiciel dédié.</span></p>
+        </div>
+      </section>
+
+      <h2>Pourquoi le PDF existe</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : document modifiable contre document figé">
+        <div class="scene-title">Scène 3 — Modifiable ou figé</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Un document modifiable change d’aspect selon l’ordinateur, un PDF garde sa mise en page">
+            <g data-show="1-3" class="m-rise">
+              <rect x="50" y="50" width="320" height="170" rx="12" class="s-box-teal"/>
+              <text x="210" y="86" text-anchor="middle" class="s-label">Le document vivant</text>
+              <text x="210" y="120" text-anchor="middle" class="s-label-sm">.docx · .xlsx · .pptx</text>
+              <text x="210" y="152" text-anchor="middle" class="s-label-sm">fait pour être modifié</text>
+              <text x="210" y="184" text-anchor="middle" class="s-label-xs">l’aspect dépend de la machine</text>
+            </g>
+            <g data-show="2-3" class="m-right">
+              <rect x="430" y="50" width="320" height="170" rx="12" class="s-box-accent"/>
+              <text x="590" y="86" text-anchor="middle" class="s-label">Le document figé</text>
+              <text x="590" y="120" text-anchor="middle" class="s-label-sm">.pdf</text>
+              <text x="590" y="152" text-anchor="middle" class="s-label-sm">fait pour être lu et imprimé</text>
+              <text x="590" y="184" text-anchor="middle" class="s-label-xs">identique partout</text>
+            </g>
+            <g data-show="3" class="m-rise">
+              <text x="400" y="264" text-anchor="middle" class="s-label-sm" fill="var(--accent)">on travaille dans l’un, on envoie l’autre</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4800"><b>Un document de travail décrit des intentions.</b><span>« Titre en Garamond 14, centré. » Si la police n’existe pas sur l’autre ordinateur, le logiciel en choisit une autre — et la mise en page bouge.</span></p>
+          <p class="step" data-duration="4800"><b>Un PDF, lui, décrit un résultat.</b><span>« Ce trait ici, cette lettre là, à ce millimètre près », polices embarquées comprises. D’où sa promesse : il s’affiche pareil chez tout le monde, et s’imprime comme il s’affiche.</span></p>
+          <p class="step" data-duration="5000"><b>D’où la règle simple.</b><span>On rédige dans un format modifiable, on diffuse en PDF. Envoyer un .docx à un client, c’est prendre le risque que la mise en page s’effondre chez lui — et lui permettre de le modifier.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le document modifiable, c’est la recette&nbsp;: chacun la réalise avec son four et
+          ses ingrédients, et le résultat varie. Le PDF, c’est la photographie du plat fini —
+          impossible à refaire autrement, identique pour tous ceux qui la regardent.
+        </p>
+      </div>
+
+      <h2>Les formats qu’on croise, en une ligne chacun</h2>
+      <div class="compare">
+        <div>
+          <h4>Images</h4>
+          <ul>
+            <li><strong>.jpg</strong> — photos, compressé, un peu de perte.</li>
+            <li><strong>.png</strong> — captures et logos, supporte le transparent.</li>
+            <li><strong>.heic</strong> — photos d’iPhone, plus léger mais parfois illisible ailleurs.</li>
+            <li><strong>.svg</strong> — dessin décrit par des formes : net à toute taille.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Documents</h4>
+          <ul>
+            <li><strong>.pdf</strong> — figé, pour diffuser.</li>
+            <li><strong>.docx / .xlsx</strong> — modifiables, pour travailler.</li>
+            <li><strong>.csv</strong> — un tableau en texte brut, lisible par tout le monde.</li>
+            <li><strong>.txt</strong> — du texte, sans aucune mise en forme.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Les autres</h4>
+          <ul>
+            <li><strong>.zip</strong> — un carton qui contient d’autres fichiers, compressé.</li>
+            <li><strong>.mp3 / .mp4</strong> — son et vidéo compressés.</li>
+            <li><strong>.exe / .dmg</strong> — un programme à installer : à n’ouvrir que si la source est sûre.</li>
+            <li><strong>.json</strong> — des données structurées, pour les programmes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Le réflexe de sécurité</div>
+        <p>
+          Un fichier reçu dont l’extension est <strong>.exe</strong>, <strong>.scr</strong> ou
+          qui demande d’« activer les macros » dans un document Office mérite une méfiance
+          immédiate&nbsp;: ce ne sont pas des documents, ce sont des programmes. Un vrai devis
+          n’a jamais besoin d’exécuter quoi que ce soit.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un fichier n’est qu’une <strong>suite de nombres</strong> ; le format est la <strong>règle de lecture</strong>.</li>
+        <li>L’<strong>extension</strong> est une étiquette d’aiguillage : la changer ne convertit rien.</li>
+        <li>On <strong>travaille</strong> dans un format modifiable, on <strong>diffuse</strong> en PDF.</li>
+        <li>Un fichier qui veut <strong>s’exécuter</strong> n’est pas un document.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="ordinateur.html">← Ce qu’il y a dans un ordinateur</a>
+        <a class="btn btn-primary" href="sauvegarde.html">Sauvegarder pour de vrai →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>
