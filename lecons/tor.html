@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le réseau Tor, comment ça marche — GotIt !</title>
+<meta name="description" content="Pourquoi le chiffrement ne suffit pas à cacher qui vous êtes, et comment trois relais et un oignon de chiffrement le permettent.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/reseau">Réseau</a><span>/</span>Se protéger<span>/</span>Rester anonyme
+      </div>
+      <h1>Le réseau Tor, comment ça marche</h1>
+      <p class="lead">
+        Le chiffrement cache ce que vous dites. Il ne cache pas à qui vous parlez.
+        Tor a été conçu pour ce deuxième problème&nbsp;: rendre le lien lui-même invisible.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">7 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        « Tor » vient de <em>The Onion Router</em>, « le routeur oignon ». Le nom n’est pas un
+        hasard&nbsp;: c’est tout le principe du système, empilé en couches comme un oignon,
+        qu’on retire une par une.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : même chiffré, un site voit toujours votre adresse">
+        <div class="scene-title">Scène 1 — Ce que le chiffrement ne cache pas</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Le contenu du message est chiffré, mais votre adresse et le site visité restent visibles">
+            <g data-show="1-4" class="s-label-sm">
+              <rect x="30" y="110" width="160" height="70" rx="12" class="s-box-teal"/>
+              <text x="110" y="150" text-anchor="middle" class="s-label-sm">Vous</text>
+              <rect x="620" y="110" width="150" height="70" rx="12" class="s-box"/>
+              <text x="695" y="150" text-anchor="middle" class="s-label-sm">Le site</text>
+            </g>
+
+            <path d="M195 145 H 615" class="s-line m-draw" data-show="1-4"/>
+            <g data-show="1-4">
+              <rect x="330" y="118" width="150" height="54" rx="10" class="s-box-accent m-pop"/>
+              <text x="405" y="150" text-anchor="middle" class="s-label-xs">8f3a d901</text>
+            </g>
+            <text x="405" y="100" text-anchor="middle" class="s-label-xs" data-show="1-4">le message est chiffré</text>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="196" width="220" height="40" rx="20" fill="#F6E2DD" stroke="var(--danger)"/>
+              <text x="170" y="221" text-anchor="middle" class="s-label-xs" fill="var(--danger)">votre adresse reste visible</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="530" y="196" width="220" height="40" rx="20" fill="#F6E2DD" stroke="var(--danger)"/>
+              <text x="640" y="221" text-anchor="middle" class="s-label-xs" fill="var(--danger)">sa destination aussi</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <text x="400" y="270" text-anchor="middle" class="s-label-sm" fill="var(--accent)">le contenu est protégé, pas le lien entre les deux</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Un site en https chiffre le contenu échangé.</b><span>Personne en chemin ne peut lire le message — c’est le principe vu dans la leçon sur le chiffrement.</span></p>
+          <p class="step" data-duration="4400"><b>Mais le site visité voit toujours votre adresse.</b><span>Chaque connexion porte une adresse IP, un peu comme une adresse retour sur une enveloppe.</span></p>
+          <p class="step" data-duration="4400"><b>Et votre fournisseur d’accès voit toujours la destination.</b><span>Il ignore ce que vous y faites, mais pas le site auquel vous vous connectez, ni quand.</span></p>
+          <p class="step" data-duration="5000"><b>Le contenu est caché ; le lien, lui, reste visible.</b><span>C’est exactement ce second problème que Tor a été conçu pour résoudre.</span></p>
+        </div>
+      </section>
+
+      <h2>Trois relais, et un oignon de chiffrement</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : le principe du routage en oignon à travers trois relais">
+        <div class="scene-title">Scène 2 — Personne ne voit le trajet en entier</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Le message passe par trois relais successifs, chacun ne connaissant que le maillon précédent et le suivant">
+            <g data-show="1-4" class="s-label-xs">
+              <rect x="20" y="120" width="110" height="60" rx="10" class="s-box-teal"/>
+              <text x="75" y="155" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+            <g data-show="1-4">
+              <rect x="670" y="120" width="110" height="60" rx="10" class="s-box"/>
+              <text x="725" y="155" text-anchor="middle" class="s-label-sm">Le site</text>
+            </g>
+
+            <g data-show="1-4" class="m-rise">
+              <rect x="185" y="120" width="120" height="60" rx="10" class="s-box-accent"/>
+              <text x="245" y="145" text-anchor="middle" class="s-label-xs">Relais</text>
+              <text x="245" y="163" text-anchor="middle" class="s-label-xs">d’entrée</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="340" y="120" width="120" height="60" rx="10" class="s-box-accent"/>
+              <text x="400" y="145" text-anchor="middle" class="s-label-xs">Relais</text>
+              <text x="400" y="163" text-anchor="middle" class="s-label-xs">du milieu</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="495" y="120" width="120" height="60" rx="10" class="s-box-accent"/>
+              <text x="555" y="145" text-anchor="middle" class="s-label-xs">Relais</text>
+              <text x="555" y="163" text-anchor="middle" class="s-label-xs">de sortie</text>
+            </g>
+
+            <path d="M135 150 H 180" class="s-line m-draw" data-show="1-4"/>
+            <path d="M310 150 H 335" class="s-line m-draw" data-show="2-4"/>
+            <path d="M465 150 H 490" class="s-line m-draw" data-show="3-4"/>
+            <path d="M620 150 H 665" class="s-line m-draw" data-show="3-4"/>
+
+            <g data-show="1" class="m-pop">
+              <text x="245" y="200" text-anchor="middle" class="s-label-xs">3 couches de chiffrement</text>
+            </g>
+            <g data-show="2" class="m-pop">
+              <text x="245" y="200" text-anchor="middle" class="s-label-xs">connaît votre adresse</text>
+              <text x="245" y="216" text-anchor="middle" class="s-label-xs">pas la destination</text>
+            </g>
+            <g data-show="3" class="m-pop">
+              <text x="400" y="200" text-anchor="middle" class="s-label-xs">ne connaît ni l’une ni l’autre</text>
+            </g>
+            <g data-show="4" class="m-pop">
+              <text x="555" y="200" text-anchor="middle" class="s-label-xs">connaît le site</text>
+              <text x="555" y="216" text-anchor="middle" class="s-label-xs">pas votre adresse</text>
+            </g>
+
+            <text x="400" y="270" text-anchor="middle" class="s-label-sm" fill="var(--accent)" data-show="4">aucun relais ne voit à la fois le départ et l’arrivée</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>Tor fait passer votre connexion par trois relais tirés au hasard.</b><span>Au lieu d’aller directement au site, le message fait un détour par trois ordinateurs, choisis parmi des milliers de relais tenus par des bénévoles.</span></p>
+          <p class="step" data-duration="5000"><b>Le message part enveloppé de trois couches de chiffrement — une par relais.</b><span>Comme un oignon. Le premier relais connaît votre adresse, retire sa couche, et ne voit rien d’autre que le relais suivant.</span></p>
+          <p class="step" data-duration="4800"><b>Le relais du milieu ne connaît ni l’un ni l’autre.</b><span>Il reçoit un paquet chiffré d’un inconnu, en renvoie un autre à un autre inconnu. C’est son seul rôle.</span></p>
+          <p class="step" data-duration="5200"><b>Le dernier relais retire la dernière couche et contacte le site.</b><span>Il connaît la destination — mais jamais qui vous êtes. Aucun des trois n’a les deux informations à la fois.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Trois coursiers qui se relaient pour livrer une enveloppe scellée dans deux autres
+          enveloppes. Le premier connaît votre adresse et remet le paquet, encore scellé, au
+          deuxième. Le deuxième ne connaît que le troisième. Le troisième ouvre la dernière
+          enveloppe et sonne chez le destinataire — sans jamais savoir qui l’a envoyée.
+        </p>
+      </div>
+
+      <h2>Qui fait tourner ce réseau — et pour qui</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : un réseau bénévole, entre usages légitimes et détournements">
+        <div class="scene-title">Scène 3 — Un réseau sans propriétaire</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 260" role="img" aria-label="Le réseau Tor est tenu par des bénévoles dans le monde entier et coordonné par une association à but non lucratif">
+            <g data-show="1-4" class="m-pop">
+              <circle cx="180" cy="90" r="34" class="s-box-accent"/>
+              <circle cx="290" cy="130" r="26" class="s-box-accent"/>
+              <circle cx="120" cy="160" r="22" class="s-box-accent"/>
+              <circle cx="380" cy="80" r="24" class="s-box-accent"/>
+              <text x="250" y="200" text-anchor="middle" class="s-label-xs">des milliers de relais bénévoles</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="470" y="70" width="290" height="70" rx="12" class="s-box"/>
+              <text x="615" y="98" text-anchor="middle" class="s-label-sm">Le Tor Project</text>
+              <text x="615" y="120" text-anchor="middle" class="s-label-xs">association à but non lucratif</text>
+            </g>
+            <g data-show="3" class="m-rise">
+              <text x="400" y="220" text-anchor="middle" class="s-label-sm">journalistes · sources protégées · censure contournée</text>
+            </g>
+            <g data-show="4" class="m-rise">
+              <text x="400" y="220" text-anchor="middle" class="s-label-sm" fill="var(--danger)">…mais aussi des usages illégaux : un tuyau neutre, pas un camp</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Aucune entreprise ne possède Tor.</b><span>Le réseau tourne sur des milliers de relais, installés et entretenus par des bénévoles partout dans le monde, sur leur propre matériel.</span></p>
+          <p class="step" data-duration="4600"><b>Le logiciel est développé par une association, le Tor Project.</b><span>Un organisme à but non lucratif, héritier d’une recherche de la marine américaine sur les communications indétectables.</span></p>
+          <p class="step" data-duration="5000"><b>Il sert à qui a besoin de se connecter sans être repéré.</b><span>Journalistes, sources protégées, personnes vivant sous censure ou sous surveillance : pour eux, l’anonymat n’est pas un confort.</span></p>
+          <p class="step" data-duration="5400"><b>Mais un réseau anonyme profite à tout le monde, sans distinction.</b><span>Y compris à des marchés illégaux du « dark web ». Tor n’est ni un outil de héros ni un outil de hors-la-loi : c’est un tuyau neutre, et l’usage dépend de qui s’en sert.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que Tor protège — et ce qu’il ne protège pas</h2>
+      <div class="compare">
+        <div>
+          <h4>Ce qu’il cache</h4>
+          <ul>
+            <li>Votre <strong>adresse</strong> vis-à-vis du site visité&nbsp;;</li>
+            <li>le site visité vis-à-vis de votre <strong>fournisseur d’accès</strong>&nbsp;;</li>
+            <li>le lien entre les deux, pour quiconque surveille un point du trajet.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ce qu’il ne protège pas</h4>
+          <ul>
+            <li>Le contenu, si le site n’est pas en <strong>https</strong>&nbsp;;</li>
+            <li>votre identité, si vous vous connectez à un <strong>compte personnel</strong>&nbsp;;</li>
+            <li>la vitesse&nbsp;: trois relais, c’est plus lent qu’une connexion directe.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">La nuance qui compte</div>
+        <p>
+          Se connecter à sa messagerie personnelle en passant par Tor révèle immédiatement qui
+          vous êtes, quel que soit le nombre de relais traversés. L’anonymat protège le
+          <em>trajet</em>, pas ce que vous décidez d’y révéler vous-même à l’arrivée.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le chiffrement cache <strong>ce qui est dit</strong>&nbsp;; Tor cache <strong>qui parle à qui</strong>.</li>
+        <li>Le message traverse <strong>trois relais</strong>, enveloppé d’autant de couches de chiffrement — comme un oignon.</li>
+        <li>Aucun relais ne connaît à la fois votre adresse et votre destination.</li>
+        <li>Le réseau est tenu par des <strong>bénévoles</strong>, coordonnés par une association à but non lucratif — pas par une entreprise.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="chiffrement.html">← Le chiffrement expliqué simplement</a>
+        <a class="btn btn-primary" href="../index.html#/reseau">Réseau →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>

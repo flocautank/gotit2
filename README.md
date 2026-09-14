@@ -37,6 +37,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Les bases de la cybersécurité](lecons/cybersecurite.html) | Réseau | Découverte |
 | [Sauvegarder pour de vrai](lecons/sauvegarde.html) | Réseau | Découverte |
 | [Le chiffrement expliqué simplement](lecons/chiffrement.html) | Réseau | Intermédiaire |
+| [Le réseau Tor, comment ça marche](lecons/tor.html) | Réseau | Intermédiaire |
 | [C'est quoi une base de données ?](lecons/base-de-donnees.html) | Data | Découverte |
 | [Lac, entrepôt, magasin de données](lecons/entrepots-data.html) | Data | Intermédiaire |
 | [Les langages de la data, situés](lecons/langages-data.html) | Data | Intermédiaire |

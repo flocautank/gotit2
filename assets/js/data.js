@@ -242,6 +242,12 @@ window.GOTIT = (function () {
       keywords: ['rgpd', 'donn\u00e9es personnelles', 'consentement', 'cnil', 'droits', 'conservation', 'vie priv\u00e9e']
     },
 
+    'tor': {
+      title: 'Le r\u00e9seau Tor, comment \u00e7a marche',
+      summary: 'Le chiffrement cache ce qui est dit ; Tor cache qui parle \u00e0 qui \u2014 trois relais et un oignon de chiffrement.',
+      path: 'lecons/tor.html', duration: '7 min', level: 2,
+      keywords: ['tor', 'onion routing', 'oignon', 'anonymat', 'dark web', 'relais', 'navigateur tor', 'vie priv\u00e9e']
+    },
     /* ---------- Leçons prévues (affichées en grisé) ---------- */
 
   };
@@ -284,7 +290,8 @@ window.GOTIT = (function () {
           id: 'securite', title: 'Se protéger',
           subcategories: [
             { id: 'gestes', title: 'Les gestes du quotidien', lessons: ['cybersecurite'] },
-            { id: 'protection', title: 'Ce qui protège les données', lessons: ['chiffrement', 'sauvegarde'] }
+            { id: 'protection', title: 'Ce qui protège les données', lessons: ['chiffrement', 'sauvegarde'] },
+            { id: 'anonymat', title: 'Rester anonyme', lessons: ['tor'] }
           ]
         }
       ]
