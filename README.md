@@ -12,6 +12,15 @@ faciles à corriger.
 
 👉 **Le site :** https://flocautank.github.io/gotit2/
 
+## Deux formats
+
+**Les leçons** (`lecons/`) — un concept expliqué par des schémas animés, 5 à 7 minutes.
+**Les cartes** (`cartes.html`) — le même concept en une phrase, puis en quatre étapes, pour
+retrouver une définition en dix secondes. Les cartes renvoient vers la leçon quand elle existe,
+et la recherche de l'accueil les remonte en premier.
+
+Toutes les explications du site suivent le même rythme : **quatre étapes**.
+
 ## Contenus disponibles
 
 | Leçon | Domaine | Niveau |
@@ -36,6 +45,7 @@ faciles à corriger.
 | [C'est quoi un système d'information ?](lecons/si-briques.html) | Système d'information | Découverte |
 | [C'est quoi une API ?](lecons/api.html) | Système d'information | Découverte |
 | [Comment un modèle de langage écrit](lecons/llm.html) | IA | Découverte |
+| [Pourquoi l'IA a besoin de cartes graphiques](lecons/gpu.html) | IA | Découverte |
 | [Pourquoi une IA invente parfois](lecons/hallucination.html) | IA | Intermédiaire |
 | [Bien demander à une IA](lecons/prompt.html) | IA | Découverte |
 | [Ce qu'une IA ne sait pas faire](lecons/ia-limites.html) | IA | Intermédiaire |
@@ -45,6 +55,11 @@ faciles à corriger.
 | [C'est quoi un agent IA ?](lecons/agent.html) | IA | Intermédiaire |
 | [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
+
+**24 cartes de concept** couvrent le jargon de l'IA : jeton, fenêtre de contexte, prompt,
+prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
+IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
+ouvert, benchmark, garde-fous.
 
 Un sujet reste déclaré en « Bientôt » : le déroulé d'un projet SI.
 

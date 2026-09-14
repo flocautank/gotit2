@@ -196,6 +196,36 @@
     });
   }
 
+  /* Les cartes de concept répondent souvent mieux qu'une leçon à un mot isolé :
+     on les montre en premier, avec un lien direct vers la carte concernée. */
+  function renderCardHits(q) {
+    var hits = (data.CARDS || []).filter(function (c) {
+      var foin = (c.terme + ' ' + c.une + ' ' + c.aka.join(' ')).toLowerCase();
+      return foin.indexOf(q) !== -1;
+    });
+    if (!hits.length) return 0;
+
+    var bloc = el('div', 'subcategory');
+    bloc.style.marginBottom = '30px';
+    var titre = el('h4', null, hits.length > 1 ? 'Définitions rapides' : 'Définition rapide');
+    bloc.appendChild(titre);
+
+    var cards = el('div', 'cards');
+    hits.slice(0, 6).forEach(function (c) {
+      var a = el('a', 'card card-concept');
+      a.href = 'cartes.html#' + c.id;
+      a.appendChild(el('div', 'card-title', c.terme));
+      a.appendChild(el('p', 'card-sum', c.une));
+      var meta = el('div', 'card-meta');
+      meta.appendChild(el('span', 'tag', 'Carte · 4 étapes'));
+      a.appendChild(meta);
+      cards.appendChild(a);
+    });
+    bloc.appendChild(cards);
+    view.appendChild(bloc);
+    return hits.length;
+  }
+
   function renderSearch(query) {
     var q = query.trim().toLowerCase();
     var hits = Object.keys(data.LESSONS).filter(function (id) {
@@ -204,9 +234,13 @@
       return haystack.indexOf(q) !== -1;
     });
 
-    empty.hidden = hits.length > 0;
-    view.appendChild(el('p', 'results-count',
-      hits.length + (hits.length > 1 ? ' résultats' : ' résultat') + ' pour « ' + query.trim() + ' »'));
+    var nbCartes = renderCardHits(q);
+    empty.hidden = (hits.length + nbCartes) > 0;
+
+    if (hits.length) {
+      view.appendChild(el('p', 'results-count',
+        hits.length + (hits.length > 1 ? ' leçons' : ' leçon') + ' pour « ' + query.trim() + ' »'));
+    }
 
     var cards = el('div', 'cards');
     hits.forEach(function (id) {

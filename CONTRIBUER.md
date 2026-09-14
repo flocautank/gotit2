@@ -1,3 +1,29 @@
+# Ajouter du contenu
+
+Deux formats coexistent : les **leçons** (schémas animés) et les **cartes** (définitions).
+Les deux suivent la même règle : **une explication se fait en quatre étapes**.
+
+## Ajouter une carte
+
+Dans `.outils/cartes-ia.py`, ajouter une entrée :
+
+```python
+dict(id='mon-concept', terme='Mon concept', aka=['synonyme', 'sigle'], dom='IA',
+  une="La définition en une seule phrase, sans jargon.",
+  etapes=[
+   "1. Le problème ou le point de départ.",
+   "2. L'idée, en une phrase.",
+   "3. Comment ça marche concrètement.",
+   "4. Ce que ça change — ou le piège à éviter."],
+  voir='identifiant-de-lecon',          # facultatif
+  pas="le concept voisin, parce que…"), # facultatif
+```
+
+Puis régénérer le bloc `CARDS` de `assets/js/data.js`. Les quatre étapes sont obligatoires :
+un contrôle échoue si une carte en compte un autre nombre.
+
+`aka` est important : ce sont les mots que les gens tapent réellement dans la recherche.
+
 # Ajouter une leçon
 
 Trois étapes, une quinzaine de minutes une fois le schéma en tête.

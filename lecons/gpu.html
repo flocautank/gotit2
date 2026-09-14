@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pourquoi l’IA a besoin de cartes graphiques — GotIt !</title>
+<meta name="description" content="Ce qu’est un GPU, pourquoi l’IA en consomme des milliers, et ce que cela change, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Catalogue</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/ia">Intelligence artificielle</a><span>/</span>Fondamentaux<span>/</span>Les modèles de langage</div>
+      <h1>Pourquoi l’IA a besoin de cartes graphiques</h1>
+      <p class="lead">Des puces conçues pour afficher des jeux vidéo sont devenues la ressource la plus disputée de l’industrie. Ce n’est pas un hasard&nbsp;: elles font exactement le geste dont l’IA a besoin.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">7 min</span><span class="tag">4 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Pour comprendre pourquoi l’IA coûte si cher, il faut regarder ce qu’elle fait réellement
+        quand elle « réfléchit »&nbsp;: des multiplications. Des milliards de multiplications
+        minuscules, toutes en même temps.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : ce que fait un modèle quand il répond">
+        <div class="scene-title">Scène 1 — Ce qu’il y a sous le capot</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Un mot devient des nombres, qui traversent d’immenses tableaux de réglages, pour produire le mot suivant">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="104" width="150" height="72" rx="12" class="s-box-accent"/>
+              <text x="115" y="146" text-anchor="middle" class="s-label">« Le chat »</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="240" y="104" width="150" height="72" rx="12" class="s-box"/>
+              <text x="315" y="138" text-anchor="middle" class="s-label-sm">des nombres</text>
+              <text x="315" y="160" text-anchor="middle" class="s-label-xs">0,42 · 1,7 · 0,03…</text>
+              <path d="M195 140 H 236" class="s-line m-draw" data-show="2-4"/>
+            </g>
+            <g data-show="3-4" class="m-right">
+              <rect x="440" y="80" width="170" height="120" rx="12" class="s-box-violet"/>
+              <text x="525" y="124" text-anchor="middle" class="s-label">Les réglages</text>
+              <text x="525" y="150" text-anchor="middle" class="s-label-sm">des milliards</text>
+              <text x="525" y="172" text-anchor="middle" class="s-label-xs">multipliés, additionnés</text>
+              <path d="M395 140 H 436" class="s-line m-draw" data-show="3-4"/>
+            </g>
+            <g data-show="4" class="m-right">
+              <rect x="660" y="104" width="120" height="72" rx="12" class="s-box-teal"/>
+              <text x="720" y="146" text-anchor="middle" class="s-label">« dort »</text>
+              <path d="M615 140 H 656" class="s-line m-draw" data-show="4"/>
+              <text x="400" y="252" text-anchor="middle" class="s-label-sm" fill="var(--accent)">et cela recommence pour chaque mot produit</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Tout part de votre texte.</b><span>« Le chat… » : quelques mots, que le modèle doit prolonger.</span></p>
+          <p class="step" data-duration="4400"><b>Ces mots deviennent des nombres.</b><span>Chaque jeton est converti en une longue liste de nombres. À partir de là, plus rien n’est du texte : ce sont des mathématiques.</span></p>
+          <p class="step" data-duration="4800"><b>Ces nombres traversent les réglages du modèle.</b><span>Des milliards de valeurs, organisées en immenses tableaux. Chaque nombre d’entrée est multiplié par des milliers d’autres, et tout est additionné.</span></p>
+          <p class="step" data-duration="5000"><b>Il en ressort le mot suivant.</b><span>Puis on recommence, du début, pour le mot d’après. Une réponse de dix lignes, ce sont des milliers de milliards d’opérations.</span></p>
+        </div>
+      </section>
+
+      <h2>Un contremaître ou une foule&nbsp;?</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : processeur classique contre carte graphique">
+        <div class="scene-title">Scène 2 — Deux façons de calculer</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un processeur a quelques cœurs très rapides, une carte graphique en a des milliers, plus lents mais simultanés">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="50" width="330" height="200" rx="12" class="s-box-teal"/>
+              <text x="205" y="86" text-anchor="middle" class="s-label">Le processeur</text>
+              <g class="s-box">
+                <rect x="110" y="110" width="60" height="60" rx="8"/>
+                <rect x="190" y="110" width="60" height="60" rx="8"/>
+              </g>
+              <text x="205" y="204" text-anchor="middle" class="s-label-sm">quelques cœurs très rapides</text>
+              <text x="205" y="228" text-anchor="middle" class="s-label-xs">un problème compliqué à la fois</text>
+            </g>
+
+            <g data-show="2-4" class="m-right">
+              <rect x="430" y="50" width="330" height="200" rx="12" class="s-box-accent"/>
+              <text x="595" y="86" text-anchor="middle" class="s-label">La carte graphique</text>
+              <g fill="var(--accent)" opacity=".55">
+                <rect x="470" y="106" width="16" height="16" rx="3"/><rect x="494" y="106" width="16" height="16" rx="3"/>
+                <rect x="518" y="106" width="16" height="16" rx="3"/><rect x="542" y="106" width="16" height="16" rx="3"/>
+                <rect x="566" y="106" width="16" height="16" rx="3"/><rect x="590" y="106" width="16" height="16" rx="3"/>
+                <rect x="614" y="106" width="16" height="16" rx="3"/><rect x="638" y="106" width="16" height="16" rx="3"/>
+                <rect x="662" y="106" width="16" height="16" rx="3"/><rect x="686" y="106" width="16" height="16" rx="3"/>
+                <rect x="470" y="130" width="16" height="16" rx="3"/><rect x="494" y="130" width="16" height="16" rx="3"/>
+                <rect x="518" y="130" width="16" height="16" rx="3"/><rect x="542" y="130" width="16" height="16" rx="3"/>
+                <rect x="566" y="130" width="16" height="16" rx="3"/><rect x="590" y="130" width="16" height="16" rx="3"/>
+                <rect x="614" y="130" width="16" height="16" rx="3"/><rect x="638" y="130" width="16" height="16" rx="3"/>
+                <rect x="662" y="130" width="16" height="16" rx="3"/><rect x="686" y="130" width="16" height="16" rx="3"/>
+                <rect x="470" y="154" width="16" height="16" rx="3"/><rect x="494" y="154" width="16" height="16" rx="3"/>
+                <rect x="518" y="154" width="16" height="16" rx="3"/><rect x="542" y="154" width="16" height="16" rx="3"/>
+                <rect x="566" y="154" width="16" height="16" rx="3"/><rect x="590" y="154" width="16" height="16" rx="3"/>
+                <rect x="614" y="154" width="16" height="16" rx="3"/><rect x="638" y="154" width="16" height="16" rx="3"/>
+                <rect x="662" y="154" width="16" height="16" rx="3"/><rect x="686" y="154" width="16" height="16" rx="3"/>
+              </g>
+              <text x="595" y="204" text-anchor="middle" class="s-label-sm">des milliers de petits cœurs</text>
+              <text x="595" y="228" text-anchor="middle" class="s-label-xs">la même opération simple, partout</text>
+            </g>
+
+            <g data-show="3-4">
+              <text x="400" y="278" text-anchor="middle" class="s-label-sm" data-show="3">une seule multiplication : le processeur gagne</text>
+            </g>
+            <g data-show="4">
+              <text x="400" y="278" text-anchor="middle" class="s-label-sm" fill="var(--accent)">un milliard de multiplications : la carte écrase tout</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Un processeur classique a quelques cœurs, très rapides et très savants.</b><span>Il excelle à dérouler une suite d’instructions compliquées, l’une après l’autre. C’est ce qu’il faut pour un système d’exploitation ou un tableur.</span></p>
+          <p class="step" data-duration="4800"><b>Une carte graphique a des milliers de petits cœurs, simples et lents.</b><span>Chacun ne sait faire que des opérations élémentaires — mais tous travaillent en même temps.</span></p>
+          <p class="step" data-duration="4400"><b>Pour un calcul isolé, le processeur gagne haut la main.</b><span>Un petit cœur de carte graphique est bien plus lent que lui.</span></p>
+          <p class="step" data-duration="5200"><b>Pour un milliard de calculs identiques et indépendants, c’est l’inverse.</b><span>Là où le processeur les enchaîne, la carte en traite des milliers simultanément. C’est précisément la forme des calculs d’une IA — et c’est tout le secret.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Repeindre un immeuble. Le processeur, c’est un peintre virtuose&nbsp;: il fait les
+          moulures et les angles délicats mieux que personne. La carte graphique, c’est mille
+          peintres ordinaires avec un rouleau chacun. Pour une fresque, prenez le virtuose.
+          Pour cinquante façades unies, prenez la foule.
+        </p>
+      </div>
+
+      <h2>Pourquoi les jeux vidéo&nbsp;?</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : du pixel au neurone, les mêmes mathématiques">
+        <div class="scene-title">Scène 3 — Le hasard heureux</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="Le calcul des pixels et le calcul d’un réseau de neurones reposent sur les mêmes opérations">
+            <g data-show="1-4" class="m-rise">
+              <rect x="50" y="60" width="290" height="120" rx="12" class="s-box-teal"/>
+              <text x="195" y="98" text-anchor="middle" class="s-label">Afficher un jeu</text>
+              <text x="195" y="128" text-anchor="middle" class="s-label-sm">2 millions de pixels</text>
+              <text x="195" y="154" text-anchor="middle" class="s-label-sm">60 fois par seconde</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="460" y="60" width="290" height="120" rx="12" class="s-box-violet"/>
+              <text x="605" y="98" text-anchor="middle" class="s-label">Faire tourner une IA</text>
+              <text x="605" y="128" text-anchor="middle" class="s-label-sm">des milliards de réglages</text>
+              <text x="605" y="154" text-anchor="middle" class="s-label-sm">à chaque mot</text>
+            </g>
+            <g data-show="3-4">
+              <path d="M345 120 H 455" class="s-line-accent m-draw" data-show="3-4"/>
+              <text x="400" y="212" text-anchor="middle" class="s-label-sm" data-show="3-4">les mêmes multiplications de tableaux</text>
+            </g>
+            <g data-show="4">
+              <text x="400" y="250" text-anchor="middle" class="s-label-sm" fill="var(--accent)">l’outil existait avant le besoin</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Afficher un jeu, c’est calculer des millions de pixels.</b><span>Pour chacun : sa couleur, sa lumière, son ombre. Deux millions de points, recalculés soixante fois par seconde.</span></p>
+          <p class="step" data-duration="4200"><b>Faire tourner une IA, c’est traverser des milliards de réglages.</b><span>Deux problèmes qui n’ont apparemment rien à voir.</span></p>
+          <p class="step" data-duration="4800"><b>Sauf qu’en mathématiques, c’est la même opération.</b><span>Dans les deux cas : multiplier de grands tableaux de nombres, en parallèle. Les puces conçues pour les pixels se sont trouvées taillées pour les neurones artificiels.</span></p>
+          <p class="step" data-duration="5000"><b>C’est un des plus beaux hasards de cette histoire.</b><span>L’outil existait, industrialisé et bon marché, avant qu’on ait le besoin. Sans trente ans de jeu vidéo, l’IA actuelle aurait eu des années de retard.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que ça implique, très concrètement</h2>
+
+      <!-- ============ SCÈNE 4 ============ -->
+      <section class="scene" aria-label="Animation : l’échelle des besoins en cartes graphiques">
+        <div class="scene-title">Scène 4 — Les ordres de grandeur</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Une carte pour un petit modèle local, quelques-unes pour servir des utilisateurs, des dizaines de milliers pour entraîner">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="46" width="680" height="58" rx="12" class="s-box-teal"/>
+              <text x="80" y="74" class="s-label">1 carte</text>
+              <text x="80" y="94" class="s-label-sm">un petit modèle chez vous, pour un usage personnel</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="118" width="680" height="58" rx="12" class="s-box"/>
+              <text x="80" y="146" class="s-label">Quelques dizaines</text>
+              <text x="80" y="166" class="s-label-sm">servir les questions de milliers d’utilisateurs</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="60" y="190" width="680" height="58" rx="12" class="s-box-accent"/>
+              <text x="80" y="218" class="s-label">Des dizaines de milliers, pendant des mois</text>
+              <text x="80" y="238" class="s-label-sm">entraîner un grand modèle à partir de zéro</text>
+            </g>
+            <g data-show="4">
+              <text x="400" y="276" text-anchor="middle" class="s-label-sm" fill="var(--accent)">d’où les pénuries, les prix, et les centres de données géants</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Une carte suffit pour un petit modèle chez soi.</b><span>Sur un ordinateur récent, on peut faire tourner un modèle ouvert en local : plus modeste, mais rien ne sort de la machine.</span></p>
+          <p class="step" data-duration="4400"><b>Quelques dizaines pour servir une entreprise.</b><span>Répondre à des milliers de questions par jour demande des machines dédiées, chez un hébergeur.</span></p>
+          <p class="step" data-duration="4800"><b>Des dizaines de milliers pour entraîner un grand modèle.</b><span>Pendant des mois, en continu. C’est un investissement de plusieurs centaines de millions — la raison pour laquelle si peu d’acteurs en fabriquent.</span></p>
+          <p class="step" data-duration="5200"><b>Et cela explique presque toute l’actualité du secteur.</b><span>Les files d’attente pour les cartes, les centres de données qui sortent de terre, la consommation électrique, et le fait qu’utiliser une IA se facture à l’usage plutôt qu’à la licence.</span></p>
+        </div>
+      </section>
+
+      <div class="callout">
+        <div class="callout-title">Les mots qu’on entend</div>
+        <p>
+          <strong>GPU</strong> — la carte graphique.
+          <strong>VRAM</strong> — sa mémoire propre&nbsp;: c’est elle qui décide de la taille du modèle qu’on peut y charger.
+          <strong>Cluster</strong> — un ensemble de machines qui calculent ensemble.
+          <strong>Inférence</strong> — utiliser le modèle.
+          <strong>Entraînement</strong> — le fabriquer.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>« Réfléchir », pour une IA, c’est faire des <strong>milliards de multiplications</strong> simples.</li>
+        <li>Un <strong>processeur</strong> excelle sur un problème compliqué à la fois&nbsp;; une <strong>carte graphique</strong> sur des millions de calculs simples simultanés.</li>
+        <li>Les puces faites pour les <strong>pixels</strong> se sont trouvées parfaites pour l’IA — un hasard heureux.</li>
+        <li>Entraîner mobilise des <strong>dizaines de milliers de cartes</strong> pendant des mois&nbsp;: d’où les prix et les pénuries.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="llm.html">← Comment un modèle de langage écrit</a>
+        <a class="btn btn-primary" href="../cartes.html">Toutes les cartes →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+</body>
+</html>
