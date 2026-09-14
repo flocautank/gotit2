@@ -29,6 +29,17 @@ un contrôle échoue si une carte en compte un autre nombre.
 
 `aka` est important : ce sont les mots que les gens tapent réellement dans la recherche.
 
+# Les deux thèmes
+
+Le site se porte en deux charte : GotIt (par défaut) et Klint. Il n'y a rien à faire
+pour qu'une nouvelle page suive : tout est en variables CSS, et `.outils/gabarit.py`
+branche déjà `assets/css/theme-klint.css` et `assets/js/theme.js`. Un contrôle refuse
+une page qui les oublierait.
+
+Une seule règle en écrivant un schéma : **peindre avec les variables**
+(`var(--accent)`, `var(--sage)`, `var(--slate)`, `var(--line)`), jamais avec une
+couleur en dur — sinon le schéma resterait terre cuite en thème Klint.
+
 # Ajouter une leçon
 
 Trois étapes, une quinzaine de minutes une fois le schéma en tête.
@@ -140,7 +151,7 @@ problème dans l'onglet Actions.
 Deux contrôles automatiques, à lancer depuis la racine du dépôt :
 
 ```bash
-python3 .outils/verifier.py          # structure, liens, catalogue, règle des 4 étapes
+python3 .outils/verifier.py          # structure, liens, catalogue, règle des 4 étapes, thème
 
 python3 -m http.server 8766 &        # puis, pour le contrôle mobile :
 node .outils/audit-mobile.js         # aucun texte ne doit sortir du cadre à 390 px

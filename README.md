@@ -88,7 +88,10 @@ assets/js/home.js       Navigation du catalogue (domaine > catégorie) et recher
 assets/js/scene.js      Moteur d'animation des scènes (étapes, lecture, clavier)
 assets/css/main.css     Styles généraux
 assets/css/lesson.css   Styles des leçons et utilitaires d'animation
+assets/css/theme-klint.css  Thème Klint (surcouche de variables)
+assets/js/theme.js      Sélecteur de thème GotIt / Klint
 assets/img/             Logo, marque seule et image de partage
+assets/img/klint/       Logos Klint (signature et pied de page)
 .outils/gabarit.py      Assemble une page de leçon à partir d'un fragment
 .outils/verifier.py     Contrôles de cohérence (à lancer avant de publier)
 .outils/audit-mobile.js Contrôle des débordements sur petit écran
@@ -163,6 +166,24 @@ Palette chaude et claire — fond ivoire, texte brun sombre, accent terre cuite,
 et ardoise en secondaires — avec une serif pour les titres et une sans-serif système
 pour le texte. Tout est défini en variables CSS en haut de `assets/css/main.css` :
 changer la charte, c'est changer ce bloc.
+
+### Le thème Klint
+
+Un second thème reprend la charte Klint : bleu nuit, cyan, vert menthe, Raleway,
+coins arrondis. Il ne duplique rien — `assets/css/theme-klint.css` se contente de
+redéfinir les mêmes variables sous `html[data-theme="klint"]`. Les schémas animés
+suivent tout seuls, puisqu'ils sont peints avec `var(--accent)`, `var(--sage)` et
+`var(--slate)`.
+
+`assets/js/theme.js` pose le sélecteur « GotIt / Klint » dans la barre de navigation
+et mémorise le choix du visiteur dans son navigateur. Le thème GotIt reste celui par
+défaut. En thème Klint s'ajoutent la signature « Une initiative Klint » à côté de la
+marque et le pied de page Klint (agences et contact).
+
+**Toute nouvelle page doit charger les deux fichiers** — `theme-klint.css` après les
+autres feuilles de style, `theme.js` avant `</body>`, préfixés de `../` depuis
+`lecons/`. `.outils/gabarit.py` le fait déjà, et `.outils/verifier.py` refuse une
+page qui les oublierait.
 
 ## Accessibilité
 
