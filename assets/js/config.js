@@ -8,5 +8,5 @@
  * à modifier.
  */
 window.GOTIT_CONFIG = {
-  RELAIS_IDEES: ''
+  RELAIS_IDEES: 'patient-mouse-b502.flocautank.workers.dev'
 };
