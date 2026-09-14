@@ -119,8 +119,12 @@ Une demande de contenu traitée est fermée automatiquement : la pull request po
 
 Une routine quotidienne traite les demandes de contenu reçues, ou décide elle-même
 de ce qui manque, l'écrit, et pousse son travail sur une branche `claude/...`. Le workflow `.github/workflows/controles.yml`
-rejoue alors les contrôles ci-dessous et **fusionne la pull request si, et seulement
-si, ils passent**. Le site se republie ensuite tout seul.
+rejoue alors les contrôles ci-dessous, **fusionne la pull request si, et seulement si,
+ils passent**, puis publie dans la foulée sur `gh-pages`.
+
+Ce dernier point n'est pas un détail : un push effectué avec le jeton d'Actions ne
+déclenche pas les autres workflows. Si la publication n'était pas faite dans le même
+job que la fusion, le contenu fusionné automatiquement ne serait jamais mis en ligne.
 
 Aucune intervention manuelle n'est nécessaire. Pour reprendre la main, il suffit de
 désactiver la routine, ou de retirer le job `fusion` du workflow pour repasser en
