@@ -56,4 +56,16 @@ jobs:
               pull_number: pr.number,
               merge_method: 'squash',
             });
-            core.info('Fusionnée. Le déploiement sur gh-pages suit automatiquement.');
+            core.info('Fusionnée.');
+
+      # Un push effectué avec le jeton d'Actions ne déclenche pas les autres
+      # workflows : le déploiement doit donc se faire ici, dans la foulée de la
+      # fusion, sinon le contenu fusionné ne serait jamais mis en ligne.
+      - name: Récupérer main après fusion
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Publier sur gh-pages
+        run: git push --force origin HEAD:gh-pages
