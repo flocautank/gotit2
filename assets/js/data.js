@@ -559,11 +559,9 @@ window.GOTIT = (function () {
       id: "harness", terme: "Harness", domaine: "IA",
       aka: ["harness", "enveloppe", "produit", "outillage"],
       une: "Tout ce qu’on installe autour du modèle pour en faire un outil utilisable.",
-      etapes: [
-        "Un modèle nu ne fait que produire du texte. Il ne voit aucun fichier, n’appelle aucun outil, ne retient rien.",
+      etapes: [        "Un modèle nu ne fait que produire du texte. Il ne voit aucun fichier, n’appelle aucun outil, ne retient rien.",
         "Le harness est la couche autour : la conversation, les outils disponibles, la mémoire, les droits, les garde-fous, l’affichage.",
-        "C’est lui qui décide quoi envoyer au modèle, que faire de sa réponse, et jusqu’où il a le droit d’aller.",
-        "Deux produits bâtis sur le même modèle peuvent être incomparables : la différence est presque toujours là."
+        "C’est lui qui décide quoi envoyer au modèle, que faire de sa réponse, et jusqu’où il a le droit d’aller."
       ]
     },
     {
