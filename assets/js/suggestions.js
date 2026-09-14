@@ -13,7 +13,17 @@
 (function () {
   'use strict';
 
-  var RELAIS = (window.GOTIT_CONFIG && window.GOTIT_CONFIG.RELAIS_IDEES) || '';
+  /* Une adresse sans « https:// » serait comprise comme un chemin du site :
+     l'appel partirait vers le site lui-même au lieu du relais. On la complète. */
+  function adresseRelais() {
+    var brute = (window.GOTIT_CONFIG && window.GOTIT_CONFIG.RELAIS_IDEES) || '';
+    brute = brute.trim().replace(/\/+$/, '');
+    if (!brute) return '';
+    if (!/^https?:\/\//i.test(brute)) brute = 'https://' + brute;
+    return brute;
+  }
+
+  var RELAIS = adresseRelais();
   var DEPOT_ISSUES = 'https://github.com/flocautank/gotit2/issues/new';
 
   var TYPES = {
@@ -116,7 +126,14 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(donnees())
     })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (r) {
+        return r.text().then(function (texte) {
+          var d;
+          try { d = JSON.parse(texte); }
+          catch (e) { d = { erreur: 'L’adresse du relais semble incorrecte.' }; }
+          return { ok: r.ok, d: d };
+        });
+      })
       .then(function (res) {
         envoyer.textContent = libelle;
         if (res.ok && res.d && res.d.ok) {

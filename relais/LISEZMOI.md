@@ -41,7 +41,9 @@ Sur [dash.cloudflare.com](https://dash.cloudflare.com) (compte gratuit) :
    - `JETON_GITHUB` : le jeton de l'étape 1 ;
    - `DEPOT` : `flocautank/gotit2` ;
 4. Déployez à nouveau pour que les secrets soient pris en compte ;
-5. Copiez l'adresse du worker, du type `https://xxxxx.workers.dev`.
+5. Copiez l'adresse **complète** du worker, `https://` compris — du type
+   `https://xxxxx.workers.dev`. Cloudflare l'affiche souvent sans le `https://` :
+   le code le rajoute désormais si vous l'oubliez, mais autant coller l'adresse entière.
 
 ### 3. Brancher le site
 
