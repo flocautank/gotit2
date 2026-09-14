@@ -123,6 +123,13 @@ navigateur réduite à 390 px que rien ne sort du `viewBox`.
 - **4 à 5 étapes par scène** : au-delà, couper en deux scènes.
 - Terminer par un « À retenir » de trois ou quatre puces.
 
+## Publier
+
+Poussez votre travail sur une branche nommée `claude/...` et ouvrez une pull request :
+les contrôles ci-dessous sont rejoués automatiquement, et la fusion se fait toute
+seule s'ils passent. Une proposition qui échoue reste ouverte, avec le détail du
+problème dans l'onglet Actions.
+
 ## Vérifier — obligatoire avant de publier
 
 Deux contrôles automatiques, à lancer depuis la racine du dépôt :
