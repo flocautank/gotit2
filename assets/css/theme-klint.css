@@ -1,0 +1,146 @@
+/* GotIt — thème Klint.
+   Surcouche de main.css : on ne redéfinit que les variables de la charte.
+   Actif uniquement quand <html data-theme="klint">. Rien n'est touché sinon.
+   Palette et typographie : charte graphique Klint 2023. */
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,500&display=swap");
+
+html[data-theme="klint"] {
+  /* Fonds : blanc et gris froids, plus de bleu clair en surface d'accent */
+  --bg: #FFFFFF;
+  --bg-warm: #EEF5F6;
+  --surface: #FFFFFF;
+  --surface-2: #F1F4F6;
+  --line: #E3E7EC;
+  --line-strong: #C7CDD6;
+
+  /* Textes : bleu nuit Klint */
+  --text: #001036;
+  --text-dim: #29344A;
+  --text-faint: #6B7689;
+
+  /* Accents : cyan en principal, vert menthe et bleu nuit secondaire */
+  --accent: #40A7C3;
+  --accent-soft: #E4F0F5;
+  --sage: #2E9D68;
+  --sage-soft: #E6F8EF;
+  --slate: #001D63;
+  --slate-soft: #E6E9EF;
+  --warn: #B07C00;
+  --danger: #C2410C;
+
+  /* Formes : coins très généreux (gélule / carte 22px) */
+  --radius: 22px;
+  --radius-sm: 14px;
+  --shadow: 0 8px 24px rgba(0, 16, 54, .09);
+
+  /* Typographie : Raleway exclusivement */
+  --serif: "Raleway", system-ui, sans-serif;
+  --sans: "Raleway", system-ui, sans-serif;
+}
+
+/* Titres aériens en Light, titres de section en Bold — hiérarchie Klint. */
+html[data-theme="klint"] h1,
+html[data-theme="klint"] .hero h1,
+html[data-theme="klint"] .lesson-hero h1 { font-weight: 300; letter-spacing: -.01em; }
+html[data-theme="klint"] h2,
+html[data-theme="klint"] h3,
+html[data-theme="klint"] .card-title,
+html[data-theme="klint"] .brand { font-weight: 700; letter-spacing: 0; }
+html[data-theme="klint"] .view-head h2 { font-weight: 300; }
+
+/* Boutons pleins : hover par éclaircissement, press léger (états Klint). */
+html[data-theme="klint"] .btn-primary:hover { background: var(--accent); border-color: var(--accent); filter: brightness(1.08); }
+html[data-theme="klint"] .btn:active,
+html[data-theme="klint"] .ctrl:active { transform: scale(.97); }
+html[data-theme="klint"] .ctrl-play:hover { background: var(--accent); border-color: var(--accent); filter: brightness(1.08); }
+html[data-theme="klint"] .dot.is-done { background: #A8D0D5; }
+html[data-theme="klint"] :focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(64, 167, 195, .45); }
+
+/* Les schémas SVG suivent : ils sont déjà peints avec les variables. */
+html[data-theme="klint"] .s-box { fill: #FFFFFF; }
+
+/* ---------- Le sélecteur de thème ---------- */
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  flex: none;
+}
+.theme-switch button {
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  padding: 5px 13px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+  transition: background .18s, color .18s;
+}
+.theme-switch button[aria-pressed="true"] {
+  background: var(--accent);
+  color: #FBF9F5;
+}
+html[data-theme="klint"] .theme-switch button[aria-pressed="true"] { color: #FFFFFF; }
+
+/* La signature Klint, affichée seulement en thème Klint. */
+.klint-signature { display: none; }
+html[data-theme="klint"] .klint-signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 14px;
+  border-left: 1px solid var(--line);
+  color: var(--text-faint);
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex: none;
+}
+.klint-signature img { height: 13px; width: auto; display: block; position: relative; top: 1px; }
+
+/* Le pied de page Klint (agences + contact), masqué hors thème Klint. */
+.klint-wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 20px; }
+.klint-footer { display: none; }
+html[data-theme="klint"] .klint-footer {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 26px;
+  padding: 26px 28px;
+  border-radius: var(--radius);
+  background: #001036;
+  color: #FFFFFF;
+}
+.klint-footer strong { display: block; color: #FFFFFF; }
+.klint-footer span { color: #A9B4CC; }
+.klint-footer a { color: #5CD696; }
+.klint-footer .klint-eyebrow { font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: #A8D0D5; }
+
+/* Le bandeau du header suit le fond du thème : sans cela il resterait ivoire
+   au-dessus d'une page blanche. */
+html[data-theme="klint"] .site-header { background: rgba(241, 244, 246, .88); }
+
+/* Le header ne doit jamais déborder quand le sélecteur s'ajoute à la barre. */
+.site-nav { flex-wrap: wrap; justify-content: flex-end; min-width: 0; gap: 14px; }
+.site-nav a { white-space: nowrap; }
+
+/* Sur mobile, le header est collant : il doit tenir en deux lignes, sinon il
+   mange l'écran. On retire la signature (décorative) et on resserre le
+   sélecteur pour que les liens et lui tiennent sur la même ligne. */
+@media (max-width: 700px) {
+  html[data-theme="klint"] .klint-signature { display: none; }
+  .site-nav { gap: 12px; }
+  .theme-switch { padding: 2px; }
+  .theme-switch button { font-size: .76rem; padding: 4px 10px; }
+}

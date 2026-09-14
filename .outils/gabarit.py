@@ -25,6 +25,7 @@ PAGE = """<!doctype html>
 <link rel="icon" href="data:image/svg+xml,{fav}">
 <link rel="stylesheet" href="../assets/css/main.css">
 <link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
 </head>
 <body>
 <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -58,6 +59,7 @@ PAGE = """<!doctype html>
 </footer>
 
 <script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
 </body>
 </html>
 """
