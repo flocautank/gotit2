@@ -123,11 +123,22 @@ navigateur réduite à 390 px que rien ne sort du `viewBox`.
 - **4 à 5 étapes par scène** : au-delà, couper en deux scènes.
 - Terminer par un « À retenir » de trois ou quatre puces.
 
-## Vérifier
+## Vérifier — obligatoire avant de publier
+
+Deux contrôles automatiques, à lancer depuis la racine du dépôt :
 
 ```bash
-python3 -m http.server 8000
+python3 .outils/verifier.py          # structure, liens, catalogue, règle des 4 étapes
+
+python3 -m http.server 8766 &        # puis, pour le contrôle mobile :
+node .outils/audit-mobile.js         # aucun texte ne doit sortir du cadre à 390 px
 ```
 
-Puis contrôler : la leçon apparaît sur l'accueil, la recherche la trouve, chaque scène
-se déroule seule à l'arrivée dans l'écran, et les flèches du clavier la pilotent.
+Le second est le plus important : sur petit écran, les polices des schémas sont
+agrandies pour rester lisibles, ce qui fait déborder les libellés trop longs.
+Quand il signale une sortie de cadre, raccourcissez le libellé — ne réduisez pas
+la police.
+
+Puis contrôler à l'œil : la leçon apparaît sur l'accueil, la recherche la trouve,
+chaque scène se déroule seule à l'arrivée dans l'écran, et les flèches du clavier
+la pilotent.

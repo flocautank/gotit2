@@ -90,7 +90,16 @@ assets/css/main.css     Styles généraux
 assets/css/lesson.css   Styles des leçons et utilitaires d'animation
 assets/img/             Logo, marque seule et image de partage
 .outils/gabarit.py      Assemble une page de leçon à partir d'un fragment
+.outils/verifier.py     Contrôles de cohérence (à lancer avant de publier)
+.outils/audit-mobile.js Contrôle des débordements sur petit écran
 CONTRIBUER.md           Comment ajouter une leçon
+```
+
+## Contrôles
+
+```bash
+python3 .outils/verifier.py     # structure, liens, catalogue, règle des 4 étapes
+node .outils/audit-mobile.js    # aucun débordement des schémas à 390 px
 ```
 
 ## Développer en local
