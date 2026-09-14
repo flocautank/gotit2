@@ -94,6 +94,17 @@ assets/img/             Logo, marque seule et image de partage
 CONTRIBUER.md           Comment ajouter une leçon
 ```
 
+## Alimentation automatique
+
+Une routine quotidienne décide de ce qui manque au site, l'écrit, et pousse son
+travail sur une branche `claude/...`. Le workflow `.github/workflows/controles.yml`
+rejoue alors les contrôles ci-dessous et **fusionne la pull request si, et seulement
+si, ils passent**. Le site se republie ensuite tout seul.
+
+Aucune intervention manuelle n'est nécessaire. Pour reprendre la main, il suffit de
+désactiver la routine, ou de retirer le job `fusion` du workflow pour repasser en
+validation manuelle. L'historique Git permet de revenir sur tout contenu indésirable.
+
 ## Contrôles
 
 ```bash
