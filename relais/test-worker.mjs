@@ -1,5 +1,12 @@
+/**
+ * Contrôles du relais d'idées, hors ligne : rien n'est réellement appelé.
+ *
+ *   node relais/test-worker.mjs
+ *
+ * Sort en code 1 si un cas échoue.
+ */
 import fs from 'fs';
-const src = fs.readFileSync('new URL('./worker.js', import.meta.url)', 'utf8');
+const src = fs.readFileSync(new URL('./worker.js', import.meta.url), 'utf8');
 const mod = await import('data:text/javascript;base64,' + Buffer.from(src).toString('base64'));
 const worker = mod.default;
 
