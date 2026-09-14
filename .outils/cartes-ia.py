@@ -207,4 +207,32 @@ CARTES = [
    "On borne donc en amont : quels outils, en lecture ou en écriture, sur quelles données, pour quels utilisateurs.",
    "On borne en aval : validation humaine sur ce qui engage — envoyer, payer, supprimer, publier.",
    "Et on garde une trace de ce qui a été fait et pourquoi, seul moyen de comprendre après coup."]),
+
+ dict(id='cahier-des-charges', terme='Cahier des charges', aka=['cahier des charges','spécifications','expression de besoin','cdc'], dom='SI',
+  une="Le document qui décrit noir sur blanc ce qu’un projet doit produire, avant qu’on commence à le construire.",
+  etapes=[
+   "Un projet part toujours d’un besoin, souvent flou au départ : « on voudrait que ce soit plus simple ».",
+   "Le cadrage le transforme en exigences précises : qui l’utilisera, ce qu’il doit permettre de faire, sous quelles contraintes.",
+   "Le tout est rassemblé dans le cahier des charges, lu et approuvé par le métier qui demande et l’équipe qui va construire.",
+   "C’est la référence commune : en cas de désaccord plus tard, c’est ce document qui tranche, pas le souvenir de chacun."],
+  voir='projet-si'),
+
+ dict(id='recette', terme='Recette (informatique)', aka=['recette','tests utilisateurs','uat','recette fonctionnelle'], dom='SI',
+  une="L’étape où les futurs utilisateurs testent l’outil avec de vrais cas, avant qu’il ne soit mis en service.",
+  etapes=[
+   "Une fois construit, un outil n’a été essayé que par ceux qui l’ont développé — un angle de vue partiel.",
+   "La recette fait rejouer les scénarios réels par les futurs utilisateurs eux-mêmes, avec leurs propres dossiers.",
+   "Chaque écart devient une anomalie, classée par gravité, corrigée, puis retestée jusqu’à disparition.",
+   "Le déploiement n’est autorisé — le « go » — que lorsque plus aucune anomalie bloquante ne subsiste."],
+  voir='projet-si',
+  pas="les tests techniques menés par les développeurs pendant la construction : la recette, elle, vient après, et se fait par les utilisateurs."),
+
+ dict(id='moa-moe', terme='MOA / MOE', aka=['moa','moe','maîtrise d’ouvrage','maîtrise d’œuvre'], dom='SI',
+  une="Qui demande, et qui construit : les deux rôles qui doivent se parler tout au long d’un projet.",
+  etapes=[
+   "Un projet informatique réunit toujours deux points de vue : celui qui a le besoin, celui qui sait construire.",
+   "La MOA — maîtrise d’ouvrage — c’est le métier : il exprime le besoin, valide les choix, réceptionne le résultat.",
+   "La MOE — maîtrise d’œuvre — c’est l’équipe technique : elle conçoit, développe et teste la solution.",
+   "Un projet qui échoue a presque toujours laissé ces deux rôles se parler trop peu, trop tard."],
+  voir='projet-si'),
 ]
