@@ -94,10 +94,31 @@ assets/img/             Logo, marque seule et image de partage
 CONTRIBUER.md           Comment ajouter une leçon
 ```
 
+## Retours des visiteurs
+
+La page `idees.html` recueille trois choses : un **concept à expliquer**, une **suggestion**
+sur le site, un **bug**. Le site étant statique, il ne peut rien écrire dans GitHub sans y
+cacher une clé — ce qui serait une clé publique, donc perdue. Le formulaire compose donc le
+message et l'envoie de deux façons au choix :
+
+- **Envoyer via GitHub** — ouvre une issue déjà remplie (compte GitHub requis) ;
+- **Copier le texte** — met tout dans le presse-papier, pour un mail ou un message.
+
+Le tri se fait sur le préfixe du titre, `[Contenu]`, `[Suggestion]` ou `[Bug]` : c'est ce qui
+permet aux routines de travailler sans dépendre des étiquettes GitHub.
+
+| Type | Qui le traite | Quand |
+|---|---|---|
+| `[Contenu]` | routine d'enrichissement | la nuit suivante, en priorité |
+| `[Suggestion]` et `[Bug]` | routine de rapport | rapport hebdomadaire dans `rapports/` |
+
+Une demande de contenu traitée est fermée automatiquement : la pull request porte un
+`Closes #N`, et la fusion ferme l'issue.
+
 ## Alimentation automatique
 
-Une routine quotidienne décide de ce qui manque au site, l'écrit, et pousse son
-travail sur une branche `claude/...`. Le workflow `.github/workflows/controles.yml`
+Une routine quotidienne traite les demandes de contenu reçues, ou décide elle-même
+de ce qui manque, l'écrit, et pousse son travail sur une branche `claude/...`. Le workflow `.github/workflows/controles.yml`
 rejoue alors les contrôles ci-dessous et **fusionne la pull request si, et seulement
 si, ils passent**. Le site se republie ensuite tout seul.
 

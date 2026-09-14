@@ -40,7 +40,7 @@ class Structure(HTMLParser):
 
 
 def verifier_pages():
-    pages = ['index.html', 'cartes.html'] + sorted(glob.glob('lecons/*.html'))
+    pages = ['index.html', 'cartes.html', 'idees.html'] + sorted(glob.glob('lecons/*.html'))
     for fichier in pages:
         source = open(fichier, encoding='utf-8').read()
 
