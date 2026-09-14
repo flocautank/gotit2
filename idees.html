@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Idées et suggestions — GotIt !</title>
+<meta name="description" content="Demandez un concept à expliquer, proposez une amélioration du site, ou signalez un bug.">
+<meta property="og:title" content="Idées et suggestions — GotIt !">
+<meta property="og:description" content="Un concept qui manque, une idée pour le site, un bug : dites-le ici.">
+<meta property="og:image" content="https://flocautank.github.io/gotit2/assets/img/og.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/lesson.css">
+</head>
+<body>
+<a class="skip-link" href="#formulaire">Aller au formulaire</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav">
+      <a href="index.html#catalogue">Leçons</a>
+      <a href="cartes.html">Cartes</a>
+      <a href="idees.html" aria-current="page">Idées</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero hero-court">
+    <div class="wrap">
+      <h1>Vos <em>idées</em>.</h1>
+      <p class="lead">
+        Ce site existe pour rendre des choses compliquées évidentes. Vous êtes donc le mieux placé
+        pour dire ce qui manque&nbsp;: un mot jamais expliqué, une page qui s’affiche mal,
+        une idée pour que ce soit plus clair.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap wrap-etroit">
+
+      <div class="trois-motifs">
+        <div><strong>Un concept à expliquer</strong><span>Un mot entendu en réunion, un sujet qui vous échappe. C’est la demande la plus utile.</span></div>
+        <div><strong>Une idée pour le site</strong><span>Une gêne, un manque, une fonction qui vous rendrait service.</span></div>
+        <div><strong>Un bug</strong><span>Une animation figée, un texte qui déborde, un lien mort.</span></div>
+      </div>
+
+      <form id="formulaire" class="formulaire" autocomplete="off" onsubmit="return false">
+        <div class="champ">
+          <label for="type">De quoi s’agit-il&nbsp;?</label>
+          <div class="select-enveloppe">
+            <select id="type">
+              <option value="contenu">Un concept que j’aimerais voir expliqué</option>
+              <option value="suggestion">Une suggestion pour améliorer le site</option>
+              <option value="bug">Un bug à signaler</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="champ">
+          <label for="titre" id="question-type">Quel concept aimeriez-vous voir expliqué&nbsp;?</label>
+          <input id="titre" type="text" maxlength="120" placeholder="…">
+        </div>
+
+        <div class="champ">
+          <label for="detail">Quelques précisions <span class="facultatif">— facultatif, mais très utile</span></label>
+          <textarea id="detail" rows="5" placeholder="…"></textarea>
+          <p class="aide" id="aide-detail"></p>
+        </div>
+
+        <div class="champ" id="champ-page" hidden>
+          <label for="page">Sur quelle page&nbsp;? <span class="facultatif">— rempli automatiquement si possible</span></label>
+          <input id="page" type="text" maxlength="120" placeholder="ex. : lecons/rag.html">
+        </div>
+
+        <div class="champ">
+          <label for="auteur">Qui êtes-vous&nbsp;? <span class="facultatif">— facultatif</span></label>
+          <input id="auteur" type="text" maxlength="80" placeholder="un prénom, un contact… ou rien du tout">
+        </div>
+
+        <div class="actions">
+          <button type="button" id="envoyer" class="btn btn-primary">Envoyer via GitHub</button>
+          <button type="button" id="copier" class="btn">Copier le texte</button>
+        </div>
+        <p class="retour" id="retour" hidden></p>
+        <p class="aide" id="suite"></p>
+      </form>
+
+      <div class="callout callout-analogy" style="margin-top:34px">
+        <div class="callout-title">Où va votre message</div>
+        <p>
+          Ce site est une simple page, sans serveur derrière&nbsp;: il ne peut rien enregistrer
+          tout seul sans y cacher un mot de passe — ce qui serait un mot de passe public, donc
+          un mot de passe perdu. Votre message part donc dans les <em>issues</em> du dépôt GitHub
+          du site, là où tout est relu. Le bouton <strong>Envoyer via GitHub</strong> ouvre une
+          issue déjà remplie&nbsp;; il demande un compte GitHub, gratuit. Sans compte, le bouton
+          <strong>Copier le texte</strong> met tout dans votre presse-papier, à coller dans un
+          message ou un mail.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>GotIt ! — vulgarisation visuelle.</span>
+    <span><a href="index.html">Toutes les leçons</a></span>
+  </div>
+</footer>
+
+<script src="assets/js/suggestions.js"></script>
+</body>
+</html>

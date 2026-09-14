@@ -1,5 +1,10 @@
 # Ajouter du contenu
 
+> Une idée de leçon, une suggestion ou un bug ? Le plus simple est la page
+> [Idées](idees.html) du site : elle dépose votre message dans les issues du dépôt.
+
+
+
 Deux formats coexistent : les **leçons** (schémas animés) et les **cartes** (définitions).
 Les deux suivent la même règle : **une explication se fait en quatre étapes**.
 
