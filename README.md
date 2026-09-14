@@ -97,12 +97,14 @@ CONTRIBUER.md           Comment ajouter une leçon
 ## Retours des visiteurs
 
 La page `idees.html` recueille trois choses : un **concept à expliquer**, une **suggestion**
-sur le site, un **bug**. Le site étant statique, il ne peut rien écrire dans GitHub sans y
-cacher une clé — ce qui serait une clé publique, donc perdue. Le formulaire compose donc le
-message et l'envoie de deux façons au choix :
+sur le site, un **bug**. L'envoi se fait **sans quitter le site** : le formulaire s'adresse à un petit relais
+hébergé (`relais/worker.js`), qui détient la clé GitHub à la place de la page — une clé
+dans une page publique serait une clé perdue — et crée l'issue. Le visiteur ne voit jamais
+GitHub, et aucun compte ne lui est demandé.
 
-- **Envoyer via GitHub** — ouvre une issue déjà remplie (compte GitHub requis) ;
-- **Copier le texte** — met tout dans le presse-papier, pour un mail ou un message.
+Le déploiement du relais est décrit dans `relais/LISEZMOI.md` : une dizaine de minutes,
+une seule fois. Tant que son adresse n'est pas renseignée dans `assets/js/config.js`, le
+formulaire bascule sur un envoi par GitHub pré-rempli, moins confortable mais fonctionnel.
 
 Le tri se fait sur le préfixe du titre, `[Contenu]`, `[Suggestion]` ou `[Bug]` : c'est ce qui
 permet aux routines de travailler sans dépendre des étiquettes GitHub.

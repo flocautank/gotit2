@@ -449,6 +449,20 @@ h1, h2, h3, .card-title, .brand { font-family: var(--serif); font-weight: 600; l
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   color: var(--text); font-size: .93rem;
 }
+.retour-erreur { border-left-color: var(--danger); background: #F6E2DD; }
+
+.lien-secours {
+  display: inline-block; margin-top: 12px;
+  font-size: .9rem; color: var(--text-dim);
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.lien-secours:hover { color: var(--accent); }
+
+/* Champ piège à robots : hors de l'écran, jamais atteint au clavier. */
+.piege {
+  position: absolute; left: -9999px;
+  width: 1px; height: 1px; overflow: hidden;
+}
 
 @media (max-width: 620px) {
   .formulaire { padding: 18px; }

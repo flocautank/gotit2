@@ -80,24 +80,27 @@
           <input id="auteur" type="text" maxlength="80" placeholder="un prénom, un contact… ou rien du tout">
         </div>
 
+        <!-- Champ piège : invisible pour un humain, rempli par les robots. -->
+        <div class="piege" aria-hidden="true">
+          <label for="site">Ne rien écrire ici</label>
+          <input id="site" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
         <div class="actions">
-          <button type="button" id="envoyer" class="btn btn-primary">Envoyer via GitHub</button>
-          <button type="button" id="copier" class="btn">Copier le texte</button>
+          <button type="button" id="envoyer" class="btn btn-primary">Envoyer</button>
         </div>
         <p class="retour" id="retour" hidden></p>
         <p class="aide" id="suite"></p>
       </form>
 
       <div class="callout callout-analogy" style="margin-top:34px">
-        <div class="callout-title">Où va votre message</div>
+        <div class="callout-title">Ce qui se passe ensuite</div>
         <p>
-          Ce site est une simple page, sans serveur derrière&nbsp;: il ne peut rien enregistrer
-          tout seul sans y cacher un mot de passe — ce qui serait un mot de passe public, donc
-          un mot de passe perdu. Votre message part donc dans les <em>issues</em> du dépôt GitHub
-          du site, là où tout est relu. Le bouton <strong>Envoyer via GitHub</strong> ouvre une
-          issue déjà remplie&nbsp;; il demande un compte GitHub, gratuit. Sans compte, le bouton
-          <strong>Copier le texte</strong> met tout dans votre presse-papier, à coller dans un
-          message ou un mail.
+          Votre message arrive directement dans la liste de travail du site. Les demandes de
+          concept sont examinées dès la nuit suivante&nbsp;; les suggestions et les bugs sont
+          repris chaque semaine. Aucun compte n’est nécessaire, et rien d’autre que ce que vous
+          écrivez ici n’est transmis&nbsp;: ni votre nom, ni votre adresse, sauf si vous les
+          indiquez vous-même.
         </p>
       </div>
 
@@ -112,6 +115,7 @@
   </div>
 </footer>
 
+<script src="assets/js/config.js"></script>
 <script src="assets/js/suggestions.js"></script>
 </body>
 </html>
