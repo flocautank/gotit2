@@ -689,6 +689,19 @@ window.GOTIT = (function () {
       ],
       voir: "projet-si"
     },
+    {
+      id: "tor", terme: "Tor (réseau)", domaine: "Réseau",
+      aka: ["tor", "the onion router", "réseau tor", "navigateur tor", "dark web"],
+      une: "Un réseau qui ne cache pas ce que vous dites, mais à qui vous parlez.",
+      etapes: [
+        "Le chiffrement protège le contenu d’un échange, pas le fait que vous parliez à tel site : votre adresse et sa destination restent visibles.",
+        "Tor fait passer la connexion par trois relais tirés au hasard, chacun enveloppé d’une couche de chiffrement — comme un oignon (« The Onion Router »).",
+        "Aucun des trois relais ne connaît à la fois qui vous êtes et où vous allez : le premier voit votre adresse, le dernier voit le site, celui du milieu ne voit ni l’un ni l’autre.",
+        "Il est développé par une association à but non lucratif, le Tor Project, et fait tourner par des milliers de bénévoles — un tuyau neutre, pas un camp."
+      ],
+      voir: "tor",
+      pas: "un VPN, qui masque votre adresse auprès d’un seul intermédiaire — le VPN lui-même. Tor la répartit entre trois relais indépendants, sans aucun point unique de confiance."
+    },
   ];
 
   var LEVELS = { 1: 'Découverte', 2: 'Intermédiaire', 3: 'Avancé' };
