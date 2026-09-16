@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C’est quoi un algorithme ? — GotIt !</title>
+<meta name="description" content="Une suite d’instructions précises pour résoudre un problème, toujours de la même façon — expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/informatique">Informatique</a><span>/</span>Le logiciel<span>/</span>De quoi est fait un programme
+      </div>
+      <h1>C’est quoi un algorithme ?</h1>
+      <p class="lead">
+        Un mot qui sonne savant pour désigner quelque chose que vous suivez déjà tous les jours :
+        une méthode, écrite d’avance, qui marche à chaque fois.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-1">Découverte</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Un ordinateur ne devine rien. Pour qu’il résolve un problème, il faut lui donner une
+        <strong>suite d’instructions précises</strong>, dans un ordre précis — un
+        <strong>algorithme</strong>. Le mot fait peur ; l’idée, elle, tient en une phrase.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : d’un problème à un résultat, via une suite d’instructions précises">
+        <div class="scene-title">Scène 1 — Une méthode, pas un mystère</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un problème traverse un algorithme composé d’instructions numérotées pour produire un résultat">
+            <g data-show="1-4" class="m-rise">
+              <rect x="30" y="110" width="170" height="90" rx="10" class="s-box"/>
+              <text x="115" y="148" text-anchor="middle" class="s-label-sm">Trier ces</text>
+              <text x="115" y="168" text-anchor="middle" class="s-label-sm">cartes</text>
+              <text x="115" y="220" text-anchor="middle" class="s-label-xs">le problème</text>
+            </g>
+
+            <path d="M205 155 H 260" class="s-line m-draw" data-show="2-4"/>
+
+            <g data-show="2-4" class="m-pop">
+              <rect x="270" y="60" width="260" height="190" rx="12" class="s-box-accent"/>
+              <text x="400" y="88" text-anchor="middle" class="s-label">L’algorithme</text>
+              <text x="292" y="120" class="s-label-sm">1. comparer deux cartes</text>
+              <text x="292" y="148" class="s-label-sm">2. échanger si besoin</text>
+              <text x="292" y="176" class="s-label-sm">3. recommencer</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <text x="400" y="228" text-anchor="middle" class="s-label-xs" fill="var(--accent)">chaque ligne, sans ambiguïté</text>
+            </g>
+
+            <path d="M540 155 H 595" class="s-line m-draw" data-show="4"/>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M540 155 H 595')"/>
+
+            <g data-show="4" class="m-right">
+              <rect x="605" y="110" width="170" height="90" rx="10" class="s-box-teal"/>
+              <text x="690" y="148" text-anchor="middle" class="s-label-sm">Cartes</text>
+              <text x="690" y="168" text-anchor="middle" class="s-label-sm">triées</text>
+              <text x="690" y="220" text-anchor="middle" class="s-label-xs">le résultat</text>
+            </g>
+
+            <text x="400" y="280" text-anchor="middle" class="s-label-sm" fill="var(--accent)" data-show="4">même méthode, même résultat, chaque fois</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Tout part d’un problème qui revient souvent.</b><span>Trier des cartes, calculer une remise, trouver un itinéraire : le genre de tâche qu’on refait sans arrêt, et qu’on aimerait ne plus avoir à réfléchir chaque fois.</span></p>
+          <p class="step" data-duration="4600"><b>Un algorithme, c’est la méthode, figée à l’avance.</b><span>Une suite d’instructions numérotées, dans un ordre précis, qui mène toujours du problème au résultat.</span></p>
+          <p class="step" data-duration="4600"><b>Chaque instruction doit être sans ambiguïté.</b><span>Une machine ne complète jamais un sous-entendu. « Compare », « échange », « recommence » — pas « range un peu ces cartes ».</span></p>
+          <p class="step" data-duration="5000"><b>Suivie à la lettre, la méthode donne toujours le résultat.</b><span>C’est tout l’intérêt : on ne réfléchit plus au problème, on exécute la recette — et elle marche à chaque fois.</span></p>
+        </div>
+      </section>
+
+      <h2>Plusieurs méthodes, pas la même vitesse</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : deux algorithmes différents pour le même problème, avec des vitesses différentes">
+        <div class="scene-title">Scène 2 — Le même problème, deux façons de le faire</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une méthode en cinq petites étapes contre une méthode en deux grandes étapes, pour le même résultat">
+            <g data-show="1-4" class="m-rise">
+              <text x="30" y="70" class="s-label-sm">Méthode A</text>
+              <rect x="30" y="86" width="60" height="46" rx="8" class="s-box-violet"/>
+              <rect x="100" y="86" width="60" height="46" rx="8" class="s-box-violet"/>
+              <rect x="170" y="86" width="60" height="46" rx="8" class="s-box-violet"/>
+              <rect x="240" y="86" width="60" height="46" rx="8" class="s-box-violet"/>
+              <rect x="310" y="86" width="60" height="46" rx="8" class="s-box-violet"/>
+              <text x="200" y="152" text-anchor="middle" class="s-label-xs">5 petites étapes</text>
+            </g>
+
+            <g data-show="2-4" class="m-rise">
+              <text x="30" y="200" class="s-label-sm">Méthode B</text>
+              <rect x="30" y="216" width="150" height="46" rx="8" class="s-box-teal"/>
+              <rect x="200" y="216" width="150" height="46" rx="8" class="s-box-teal"/>
+              <text x="175" y="282" text-anchor="middle" class="s-label-xs">2 grandes étapes</text>
+            </g>
+
+            <g data-show="3-4" class="m-pop">
+              <rect x="470" y="140" width="230" height="60" rx="12" class="s-box"/>
+              <text x="585" y="176" text-anchor="middle" class="s-label-sm">le même résultat</text>
+            </g>
+
+            <path d="M375 109 C 420 109, 420 165, 465 165" class="s-line m-draw" data-show="4"/>
+            <path d="M355 239 C 420 239, 420 168, 465 168" class="s-line m-draw" data-show="4"/>
+
+            <text x="400" y="20" text-anchor="middle" class="s-label-sm" fill="var(--accent)" data-show="4">moins d’étapes, souvent plus vite</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Voici une première façon de trier.</b><span>Comparer deux cartes, échanger si besoin, recommencer — cinq petites comparaisons pour cinq cartes.</span></p>
+          <p class="step" data-duration="4600"><b>Et voici une deuxième façon.</b><span>Séparer le tas en deux petits tas déjà triés, puis les fusionner en une seule fois — deux étapes plus larges.</span></p>
+          <p class="step" data-duration="4400"><b>Les deux arrivent exactement au même résultat.</b><span>Les cartes sont triées dans les deux cas. Aucune des deux méthodes n’est « fausse ».</span></p>
+          <p class="step" data-duration="5000"><b>Mais pas dans le même temps.</b><span>Avec dix mille cartes plutôt que cinq, la première méthode s’écroule ; la seconde tient encore. Choisir un bon algorithme, c’est choisir le moins coûteux pour la taille réelle du problème.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Une recette de cuisine est déjà un algorithme&nbsp;: des ingrédients (les données de
+          départ), des étapes dans un ordre précis, un plat à la fin (le résultat). Deux recettes
+          peuvent donner la même tarte — l’une en trois étapes, l’autre en dix. Les deux
+          fonctionnent ; une seule vous fait gagner du temps en cuisine.
+        </p>
+      </div>
+
+      <h2>L’algorithme, puis le code</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : le même algorithme traduit dans deux langages de programmation différents">
+        <div class="scene-title">Scène 3 — Une idée, plusieurs traductions</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un algorithme écrit en langage courant est traduit aussi bien en Python qu’en Java" >
+            <g data-show="1-4" class="m-rise">
+              <rect x="30" y="90" width="220" height="130" rx="10" class="s-box"/>
+              <text x="140" y="116" text-anchor="middle" class="s-label-xs">L’ALGORITHME</text>
+              <text x="50" y="146" class="s-label-sm">1. lire le montant</text>
+              <text x="50" y="170" class="s-label-sm">2. si &gt; 100€, remise 10%</text>
+              <text x="50" y="194" class="s-label-sm">3. sinon, aucune remise</text>
+            </g>
+
+            <path d="M260 130 H 320" class="s-line m-draw" data-show="2-4"/>
+            <text x="290" y="116" text-anchor="middle" class="s-label-xs" data-show="2-4">traduction</text>
+
+            <g data-show="2-4" class="m-pop">
+              <rect x="330" y="60" width="200" height="100" rx="10" class="s-box-teal"/>
+              <text x="430" y="84" text-anchor="middle" class="s-label-xs">PYTHON</text>
+              <text x="350" y="114" class="s-label-sm">if montant &gt; 100:</text>
+              <text x="350" y="138" class="s-label-sm">  remise = 0.10</text>
+            </g>
+
+            <path d="M260 220 H 320" class="s-line m-draw" data-show="3-4"/>
+            <text x="290" y="206" text-anchor="middle" class="s-label-xs" data-show="3-4">traduction</text>
+
+            <g data-show="3-4" class="m-pop">
+              <rect x="330" y="180" width="200" height="100" rx="10" class="s-box-violet"/>
+              <text x="430" y="204" text-anchor="middle" class="s-label-xs">JAVA</text>
+              <text x="350" y="234" class="s-label-sm">if (montant &gt; 100)</text>
+              <text x="350" y="258" class="s-label-sm">  remise = 0.10;</text>
+            </g>
+
+            <text x="660" y="150" text-anchor="middle" class="s-label-sm" fill="var(--accent)" data-show="4">même algorithme,</text>
+            <text x="660" y="172" text-anchor="middle" class="s-label-sm" fill="var(--accent)" data-show="4">dix langages possibles</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>L’algorithme se pense d’abord en français.</b><span>On peut l’écrire sur un papier, sans jamais avoir ouvert un logiciel de programmation.</span></p>
+          <p class="step" data-duration="4800"><b>Le code, c’est cette idée traduite pour la machine.</b><span>En Python, la même règle devient trois lignes précises que l’ordinateur sait exécuter.</span></p>
+          <p class="step" data-duration="4800"><b>Le même algorithme se traduit aussi en Java.</b><span>Ou en JavaScript, en C++, dans n’importe quel langage : la syntaxe change, la méthode reste identique.</span></p>
+          <p class="step" data-duration="5200"><b>D’où l’ordre du travail chez qui programme.</b><span>Penser l’algorithme d’abord, l’écrire ensuite. Un bon développeur passe souvent plus de temps sur la première étape que sur la seconde.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un algorithme est une <strong>suite d’instructions précises et ordonnées</strong> qui résout un problème.</li>
+        <li>Un même problème admet souvent <strong>plusieurs algorithmes</strong>, plus ou moins rapides.</li>
+        <li>Le <strong>code</strong> est la traduction de l’algorithme dans un langage que la machine comprend.</li>
+        <li>Trier, chercher, calculer un itinéraire&nbsp;: la plupart des programmes ne sont qu’un empilement d’algorithmes déjà connus.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="logiciel.html">← Logiciel, système, application</a>
+        <a class="btn btn-primary" href="../index.html#/informatique">Informatique →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

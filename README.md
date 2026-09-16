@@ -29,6 +29,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [C'est quoi un serveur ?](lecons/serveur.html) | Informatique | Découverte |
 | [Logiciel, système, application](lecons/logiciel.html) | Informatique | Découverte |
 | [Fichiers, formats et dossiers](lecons/fichiers.html) | Informatique | Découverte |
+| [C’est quoi un algorithme ?](lecons/algorithme.html) | Informatique | Découverte |
 | [Local ou cloud : quelle différence ?](lecons/local-vs-cloud.html) | Informatique | Découverte |
 | [SaaS, PaaS, IaaS](lecons/cloud-saas.html) | Informatique | Intermédiaire |
 | [Comment voyage une page web](lecons/internet.html) | Réseau | Découverte |
@@ -58,11 +59,12 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 
-**28 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**32 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
 ouvert, benchmark, garde-fous —, celui des projets SI : cahier des charges, recette, MOA/MOE,
-et un premier mot de réseau : Tor.
+un premier mot de réseau (Tor), deux d'informatique générale (octet, cache) et deux de la data
+(ETL/ELT, KPI).
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours

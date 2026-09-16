@@ -245,4 +245,40 @@ CARTES = [
    "Il est développé par une association à but non lucratif, le Tor Project, et fait tourner par des milliers de bénévoles — un tuyau neutre, pas un camp."],
   voir='tor',
   pas="un VPN, qui masque votre adresse auprès d’un seul intermédiaire — le VPN lui-même. Tor la répartit entre trois relais indépendants, sans aucun point unique de confiance."),
+
+ dict(id='octet', terme='Octet (byte)', aka=['octet','byte','bit','ko','mo','go'], dom='Informatique',
+  une="Le paquet de huit bits qui sert d’unité pour compter toute information numérique.",
+  etapes=[
+   "Un bit est la plus petite unité possible : un 0 ou un 1, un interrupteur allumé ou éteint.",
+   "Un seul bit ne dit presque rien. On les regroupe donc par huit — un octet — pour représenter quelque chose d’utile, comme une lettre.",
+   "Au-delà, on compte en multiples : environ mille octets font un kilooctet (Ko), un million un mégaoctet (Mo), un milliard un gigaoctet (Go).",
+   "Une page de texte pèse quelques Ko, une photo quelques Mo, un film plusieurs Go : l’unité ne change pas, seule l’échelle grandit."],
+  voir='ordinateur'),
+
+ dict(id='cache', terme='Cache (navigateur)', aka=['cache','cache navigateur','vider le cache','mise en cache'], dom='Informatique',
+  une="Une copie locale gardée sous la main pour ne pas retélécharger ce qui n’a pas changé.",
+  etapes=[
+   "Un site est fait de dizaines de fichiers : images, styles, scripts. Les retélécharger à chaque page serait lent.",
+   "Le navigateur garde donc une copie de ces fichiers sur votre machine, avec une date de validité indiquée par le site.",
+   "À la visite suivante, il compare : rien n’a changé, il réutilise la copie ; sinon, il retélécharge seulement ce qui a bougé.",
+   "D’où le vieux réflexe « vider le cache » quand une page affiche une version ancienne : on force le navigateur à tout retélécharger."],
+  voir='navigateur'),
+
+ dict(id='etl', terme='ETL / ELT', aka=['etl','elt','extract transform load','pipeline de données'], dom='Data',
+  une="La chaîne qui déplace des données d’un outil vers un autre, en les nettoyant au passage.",
+  etapes=[
+   "Extract : on va chercher les données à la source — un logiciel de vente, un fichier, une base.",
+   "Transform : on les nettoie et on les met en forme — mêmes unités, mêmes noms de colonnes, doublons retirés.",
+   "Load : on les dépose dans leur destination, le plus souvent un entrepôt de données.",
+   "L’ETL transforme avant de charger ; l’ELT, plus courant aujourd’hui, charge d’abord et transforme ensuite, une fois les données déjà en place."],
+  voir='entrepots-data'),
+
+ dict(id='kpi', terme='KPI (indicateur clé)', aka=['kpi','indicateur clé','indicateur de performance','key performance indicator'], dom='Data',
+  une="Un chiffre choisi à l’avance pour suivre si les choses vont dans le bon sens.",
+  etapes=[
+   "Une activité produit des centaines de chiffres possibles. Un KPI est celui qu’on a décidé de regarder en premier, régulièrement.",
+   "Il n’a de valeur que défini une fois pour toutes : ce qu’il compte, ce qu’il exclut, sur quelle période.",
+   "Suivi dans le temps — semaine après semaine, mois après mois — il révèle une tendance qu’un chiffre isolé ne montre jamais.",
+   "Un tableau de bord surchargé de vingt indicateurs n’aide personne : mieux vaut trois KPI suivis vraiment que vingt regardés une fois."],
+  voir='gouvernance-data'),
 ]
