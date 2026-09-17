@@ -281,4 +281,43 @@ CARTES = [
    "Suivi dans le temps — semaine après semaine, mois après mois — il révèle une tendance qu’un chiffre isolé ne montre jamais.",
    "Un tableau de bord surchargé de vingt indicateurs n’aide personne : mieux vaut trois KPI suivis vraiment que vingt regardés une fois."],
   voir='gouvernance-data'),
+
+ dict(id='crm', terme='CRM (gestion de la relation client)', aka=['crm','gestion de la relation client','customer relationship management'], dom='SI',
+  une="Le logiciel qui garde la mémoire de chaque client, partagée par toute l’entreprise.",
+  etapes=[
+   "Sans lui, chaque service — commercial, support, marketing — garde sa propre trace du même client, sans se parler.",
+   "Le CRM regroupe tout sur une fiche unique : appels, e-mails, achats, tickets, consultable par tous les services.",
+   "Il suit aussi les ventes en cours, appelées opportunités, par étapes : prospect, qualifié, proposition, gagné ou perdu.",
+   "Résultat : plus personne ne raconte deux fois la même histoire, et l’entreprise sait où en est chaque vente."],
+  voir='crm',
+  pas="l’ERP, qui gère l’activité interne (stocks, factures) ; le CRM gère la relation avec l’extérieur : prospects et clients."),
+
+ dict(id='erp', terme='ERP (progiciel de gestion)', aka=['erp','progiciel de gestion intégré','enterprise resource planning'], dom='SI',
+  une="Le grand registre qui fait tourner l’activité interne d’une entreprise : commandes, stocks, factures.",
+  etapes=[
+   "Avant l’ERP, chaque service — achats, stocks, facturation — tenait son propre registre, parfois sur un tableur séparé.",
+   "L’ERP regroupe ces registres dans un seul outil : une commande y déclenche automatiquement la sortie de stock et la facture.",
+   "Un seul chiffre pour chaque donnée — un stock, un prix — au lieu de trois versions qui finissent par diverger.",
+   "Quand on dit « c’est dans le système » dans une entreprise, c’est presque toujours de l’ERP qu’il s’agit."],
+  voir='si-briques',
+  pas="le CRM, qui garde la mémoire de la relation avec les clients et prospects — l’ERP, lui, ne regarde que l’intérieur."),
+
+ dict(id='adresse-ip', terme='Adresse IP', aka=['adresse ip','ip','adresse réseau'], dom='Réseau',
+  une="Le numéro qui désigne une machine précise sur un réseau, comme une adresse postale désigne un bâtiment.",
+  etapes=[
+   "Pour qu’un message arrive au bon endroit sur Internet, chaque machine a besoin d’un numéro qui la distingue de toutes les autres.",
+   "Ce numéro, l’adresse IP, ressemble à quatre nombres séparés de points, par exemple 192.168.1.12.",
+   "Retenir des numéros serait pénible : on tape donc un nom de site, traduit en adresse IP par un annuaire, le DNS.",
+   "Deux familles coexistent : les adresses IPv4, plus anciennes et en nombre limité, et les IPv6, plus récentes et bien plus nombreuses."],
+  voir='internet',
+  pas="le DNS, qui traduit un nom en adresse IP — l’adresse, elle, est le numéro final utilisé pour acheminer les données."),
+
+ dict(id='sql', terme='SQL', aka=['sql','requête sql','structured query language'], dom='Data',
+  une="Le langage universel pour interroger une base de données : trier, filtrer, croiser des tables.",
+  etapes=[
+   "Une base de données range l’information dans des tables, comme des feuilles de tableur reliées entre elles.",
+   "SQL est le langage qui permet de leur poser des questions : quels clients, sur quelle période, triés comment.",
+   "Trois mots suffisent à lire l’essentiel d’une requête : SELECT (quoi), FROM (où), WHERE (à quelle condition).",
+   "Conçu dans les années 1970, il reste aujourd’hui le langage le plus utilisé pour parler aux bases de données, quel que soit l’outil."],
+  voir='langages-data'),
 ]
