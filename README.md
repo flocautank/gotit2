@@ -40,9 +40,11 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [C'est quoi une base de données ?](lecons/base-de-donnees.html) | Data | Découverte |
 | [Lac, entrepôt, magasin de données](lecons/entrepots-data.html) | Data | Intermédiaire |
 | [Les langages de la data, situés](lecons/langages-data.html) | Data | Intermédiaire |
+| [Ce qu'il y a derrière un tableau de bord](lecons/bi-tableau-de-bord.html) | Data | Intermédiaire |
 | [Pourquoi deux tableaux ne disent jamais pareil](lecons/gouvernance-data.html) | Data | Intermédiaire |
 | [Le RGPD en clair](lecons/rgpd.html) | Data | Découverte |
 | [C'est quoi un système d'information ?](lecons/si-briques.html) | Système d'information | Découverte |
+| [C'est quoi un ERP ?](lecons/erp.html) | Système d'information | Découverte |
 | [C'est quoi une API ?](lecons/api.html) | Système d'information | Découverte |
 | [Comment un modèle de langage écrit](lecons/llm.html) | IA | Découverte |
 | [Pourquoi l'IA a besoin de cartes graphiques](lecons/gpu.html) | IA | Découverte |
@@ -56,10 +58,11 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 
-**24 cartes de concept** couvrent le jargon de l'IA : jeton, fenêtre de contexte, prompt,
+**27 cartes de concept** couvrent le jargon de l'IA : jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
-ouvert, benchmark, garde-fous.
+ouvert, benchmark, garde-fous — et trois mots hors IA : deux de réseau (VPN, pare-feu) et
+un de data (Big Data).
 
 Un sujet reste déclaré en « Bientôt » : le déroulé d'un projet SI.
 

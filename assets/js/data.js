@@ -76,6 +76,13 @@ window.GOTIT = (function () {
       duration: '7 min', level: 2,
       keywords: ['sql', 'python', 'r', 'dax', 'spark', 'scala', 'dbt', 'langage', 'requête', 'pandas', 'no-code']
     },
+    'bi-tableau-de-bord': {
+      title: 'Ce qu’il y a derrière un tableau de bord',
+      summary: 'De la donnée rangée au graphique du lundi matin : ce que fait vraiment un outil de BI.',
+      path: 'lecons/bi-tableau-de-bord.html',
+      duration: '6 min', level: 2,
+      keywords: ['bi', 'business intelligence', 'tableau de bord', 'dashboard', 'kpi', 'power bi', 'tableau', 'looker', 'reporting', 'seuil']
+    },
 
     /* ---------- Système d'information ---------- */
 
@@ -85,6 +92,13 @@ window.GOTIT = (function () {
       path: 'lecons/si-briques.html',
       duration: '7 min', level: 1,
       keywords: ['système d’information', 'si', 'erp', 'crm', 'urbanisation', 'processus', 'métier', 'intégration', 'référentiel']
+    },
+    'erp': {
+      title: 'C’est quoi un ERP ?',
+      summary: 'Le grand registre qui fait tourner l’activité interne : stock, commandes, factures, un seul chiffre partagé.',
+      path: 'lecons/erp.html',
+      duration: '6 min', level: 1,
+      keywords: ['erp', 'progiciel de gestion', 'stock', 'facture', 'commande', 'intégré', 'enterprise resource planning', 'sap']
     },
 
     /* ---------- Intelligence artificielle ---------- */
@@ -299,6 +313,7 @@ window.GOTIT = (function () {
           id: 'exploiter', title: 'Exploiter les données',
           subcategories: [
             { id: 'langages', title: 'Les langages', lessons: ['langages-data'] },
+            { id: 'piloter', title: 'Piloter par les chiffres', lessons: ['bi-tableau-de-bord'] },
             { id: 'qualite', title: 'Qualité & cadre légal', lessons: ['gouvernance-data', 'rgpd'] }
           ]
         }
@@ -312,7 +327,7 @@ window.GOTIT = (function () {
         {
           id: 'cartographie', title: 'La carte du SI',
           subcategories: [
-            { id: 'briques', title: 'Les grandes briques', lessons: ['si-briques'] },
+            { id: 'briques', title: 'Les grandes briques', lessons: ['si-briques', 'erp'] },
             { id: 'dialogue', title: 'Faire dialoguer les outils', lessons: ['api'] }
           ]
         },
@@ -638,6 +653,42 @@ window.GOTIT = (function () {
         "On borne en aval : validation humaine sur ce qui engage — envoyer, payer, supprimer, publier.",
         "Et on garde une trace de ce qui a été fait et pourquoi, seul moyen de comprendre après coup."
       ]
+    },
+    {
+      id: "vpn", terme: "VPN (réseau privé virtuel)", domaine: "Réseau",
+      aka: ["vpn", "réseau privé virtuel", "virtual private network"],
+      une: "Un tunnel chiffré qui fait croire aux sites visités que vous naviguez depuis un autre endroit.",
+      etapes: [
+        "Sans rien, votre fournisseur d’accès et les sites visités voient votre adresse IP réelle, donc votre localisation approximative.",
+        "Un VPN fait passer votre connexion par un serveur intermédiaire, à travers un tunnel chiffré : personne entre vous et lui ne peut lire ce qui circule.",
+        "Les sites visités ne voient plus que l’adresse du serveur VPN, souvent dans un autre pays — d’où son usage pour contourner un blocage géographique.",
+        "Le fournisseur du VPN, lui, voit tout passer : changer de masque ne sert à rien si l’on ne fait que déplacer sa confiance vers un nouvel intermédiaire."
+      ],
+      voir: "chiffrement"
+    },
+    {
+      id: "pare-feu", terme: "Pare-feu (firewall)", domaine: "Réseau",
+      aka: ["pare-feu", "firewall", "coupe-feu"],
+      une: "Le poste de contrôle qui filtre ce qui entre et sort d’un réseau.",
+      etapes: [
+        "Une machine connectée à Internet reçoit en permanence des tentatives de connexion, la plupart indésirables.",
+        "Le pare-feu se place à l’entrée du réseau et applique des règles : telle porte ouverte pour tel usage précis, toutes les autres fermées.",
+        "Il bloque ainsi l’essentiel du bruit — scans automatiques, tentatives d’intrusion — avant même qu’il n’atteigne un ordinateur.",
+        "Une box Internet ou un antivirus en contient déjà un, discret et déjà activé ; les entreprises en ajoutent des plus stricts en bordure de leur réseau."
+      ],
+      voir: "cybersecurite"
+    },
+    {
+      id: "big-data", terme: "Big Data", domaine: "Data",
+      aka: ["big data", "mégadonnées", "grosses données"],
+      une: "Le nom donné à des données trop volumineuses ou trop rapides pour un tableur ou une base classique.",
+      etapes: [
+        "Un tableur gère bien quelques centaines de milliers de lignes. Au-delà — des millions de capteurs, de clics, de transactions — il s’effondre.",
+        "On parle de Big Data quand trois seuils sont franchis à la fois : le volume (des téraoctets), la vitesse d’arrivée (en continu), et la variété (texte, image, capteur, mélangés).",
+        "Cela demande des outils spécifiques, répartis sur plusieurs machines à la fois, plutôt qu’un seul ordinateur qui ferait tout.",
+        "Le mot a surtout servi d’étendard il y a une quinzaine d’années ; aujourd’hui, on parle plus volontiers de data lake, d’entrepôt, ou tout simplement de données."
+      ],
+      voir: "entrepots-data"
     },
   ];
 
