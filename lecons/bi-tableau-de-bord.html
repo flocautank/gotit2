@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ce qu’il y a derrière un tableau de bord — GotIt</title>
+<meta name="description" content="De la donnée rangée au graphique du lundi matin : ce que fait vraiment un outil de BI, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/data">Data</a><span>/</span>Exploiter les données<span>/</span>Piloter par les chiffres
+      </div>
+      <h1>Ce qu’il y a derrière un tableau de bord</h1>
+      <p class="lead">
+        Des courbes, des couleurs, un chiffre en gros au milieu de l’écran. Ce qu’on ouvre le
+        lundi matin cache une chaîne bien précise — et un piège si la base en dessous n’est
+        pas fiable.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">2 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        On l’appelle la <strong>BI</strong> — <em>Business Intelligence</em>, en français
+        « informatique décisionnelle ». Le mot est intimidant ; l’objet, lui, tient en une
+        phrase&nbsp;: transformer un tas de chiffres rangés en repères que quelqu’un peut lire
+        d’un coup d’œil, sans ouvrir un seul tableau.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : d’une question métier à un repère visuel coloré">
+        <div class="scene-title">Scène 1 — De la question au repère visuel</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une question métier devient une requête sur l’entrepôt de données, puis un repère visuel avec un code couleur de seuil">
+            <g data-show="1-4" class="m-pop">
+              <rect x="30" y="110" width="190" height="90" rx="12" class="s-box-accent"/>
+              <text x="125" y="146" text-anchor="middle" class="s-label-sm">« Combien de</text>
+              <text x="125" y="168" text-anchor="middle" class="s-label-sm">nouveaux clients&nbsp;? »</text>
+            </g>
+
+            <path d="M220 155 H 300" class="s-line m-draw" data-show="2-4"/>
+            <g data-show="2-4" class="m-pop">
+              <rect x="300" y="110" width="190" height="90" rx="12" class="s-box-teal"/>
+              <text x="395" y="146" text-anchor="middle" class="s-label-sm">Requête sur</text>
+              <text x="395" y="168" text-anchor="middle" class="s-label-sm">l’entrepôt rangé</text>
+            </g>
+
+            <path d="M490 155 H 570" class="s-line m-draw" data-show="3-4"/>
+            <g data-show="3-4" class="m-pop">
+              <rect x="570" y="110" width="200" height="90" rx="12" class="s-box-violet"/>
+              <text x="670" y="140" text-anchor="middle" class="s-label">128</text>
+              <text x="670" y="164" text-anchor="middle" class="s-label-xs">un nombre, seul</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="540" y="222" width="230" height="60" rx="30" fill="var(--sage)" opacity="0.18" stroke="var(--sage)"/>
+              <text x="655" y="248" text-anchor="middle" class="s-label-sm" fill="var(--sage)">128 ▲ au-dessus du seuil</text>
+              <text x="655" y="268" text-anchor="middle" class="s-label-xs">vert : rien à faire</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Tout part d’une question précise.</b><span>Pas « comment ça va », mais « combien de nouveaux clients ce mois-ci ». Plus la question est précise, plus le tableau de bord sera utile.</span></p>
+          <p class="step" data-duration="4600"><b>L’outil de BI va chercher la réponse.</b><span>Par une requête automatique dans l’entrepôt de données — déjà nettoyé, avec des définitions déjà tranchées.</span></p>
+          <p class="step" data-duration="4400"><b>Il en ressort un nombre : 128.</b><span>Seul, un chiffre ne dit rien. Encore faut-il savoir si c’est bien ou mal.</span></p>
+          <p class="step" data-duration="5000"><b>D’où le code couleur.</b><span>Un seuil fixé à l’avance — l’objectif du mois — transforme le nombre en verdict lisible en une seconde : vert, ça va ; rouge, il faut réagir.</span></p>
+        </div>
+      </section>
+
+      <h2>Toujours à jour, jamais retapé</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : le passage d’un export manuel hebdomadaire à une mise à jour automatique nocturne">
+        <div class="scene-title">Scène 2 — Le rafraîchissement automatique</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Avant, quelqu’un exportait un fichier chaque semaine ; aujourd’hui, une requête programmée met à jour le tableau de bord chaque nuit">
+            <g data-show="1-4" class="m-rise">
+              <rect x="50" y="50" width="320" height="90" rx="12" class="s-box"/>
+              <text x="210" y="86" text-anchor="middle" class="s-label-sm">Avant</text>
+              <text x="210" y="110" text-anchor="middle" class="s-label-xs">export manuel, une fois par semaine</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="430" y="50" width="320" height="90" rx="12" class="s-box-teal"/>
+              <text x="590" y="86" text-anchor="middle" class="s-label-sm">Aujourd’hui</text>
+              <text x="590" y="110" text-anchor="middle" class="s-label-xs">requête programmée, chaque nuit</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="240" y="170" width="320" height="66" rx="12" class="s-box-accent"/>
+              <text x="400" y="200" text-anchor="middle" class="s-label-sm">le tableau de bord se met à jour seul</text>
+              <text x="400" y="222" text-anchor="middle" class="s-label-xs">ouvert le lundi, il montre déjà le week-end</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="140" y="252" width="520" height="34" rx="17" fill="var(--warn)" opacity="0.14" stroke="var(--warn)"/>
+              <text x="400" y="275" text-anchor="middle" class="s-label-xs" fill="var(--warn)">mais fiable seulement si la donnée en dessous l’est</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Autrefois, quelqu’un exportait un fichier.</b><span>Chaque semaine, une personne recopiait des chiffres dans un tableur et refaisait les graphiques à la main.</span></p>
+          <p class="step" data-duration="4600"><b>Aujourd’hui, une requête programmée s’en charge.</b><span>Elle va chercher les nouvelles données chaque nuit, sans qu’on y pense.</span></p>
+          <p class="step" data-duration="4800"><b>Le tableau de bord se met à jour seul.</b><span>On l’ouvre le lundi matin, et le week-end y figure déjà.</span></p>
+          <p class="step" data-duration="5200"><b>Mais l’automatisation ne rend pas juste ce qui était faux.</b><span>Un tableau de bord n’est fiable que si la donnée qu’il affiche l’est déjà — d’où le lien direct avec la gouvernance des données.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le tableau de bord d’une voiture ne montre pas le fonctionnement du moteur&nbsp;:
+          seulement les jauges qui comptent pour conduire — vitesse, essence, température. Un
+          tableau de bord d’entreprise fait la même chose avec les chiffres&nbsp;: il ne montre
+          pas toute la base de données, seulement ce qui aide à décider maintenant.
+        </p>
+      </div>
+
+      <h2>Le vocabulaire, en une ligne chacun</h2>
+      <div class="compare">
+        <div>
+          <h4>Les mots</h4>
+          <ul>
+            <li><strong>BI</strong> — le domaine des tableaux de bord (Power BI, Tableau, Looker).</li>
+            <li><strong>KPI</strong> — un indicateur suivi dans le temps.</li>
+            <li><strong>Seuil</strong> — la valeur qui bascule le code couleur.</li>
+            <li><strong>Drill-down</strong> — cliquer sur un chiffre pour voir le détail derrière.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Les signaux d’alerte</h4>
+          <ul>
+            <li>Un tableau de bord que plus personne ne consulte&nbsp;;</li>
+            <li>vingt indicateurs affichés, aucun vraiment suivi&nbsp;;</li>
+            <li>deux tableaux de bord qui donnent deux chiffres différents&nbsp;;</li>
+            <li>un export Excel encore nécessaire « pour vérifier ».</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un tableau de bord traduit un chiffre déjà rangé en <strong>repère visuel</strong> : courbe, barre, couleur de seuil.</li>
+        <li>Il se met à jour <strong>seul</strong>, par une requête programmée, sans ressaisie ni export manuel.</li>
+        <li>Il n’est fiable que si les <strong>données du dessous le sont</strong> : pas de bon tableau de bord sur une base mal gouvernée.</li>
+        <li>Comme celui d’une voiture, il ne montre pas tout — seulement <strong>ce qui aide à décider maintenant</strong>.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="langages-data.html">← Les langages de la data, situés</a>
+        <a class="btn btn-primary" href="gouvernance-data.html">Pourquoi deux tableaux ne disent jamais pareil →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

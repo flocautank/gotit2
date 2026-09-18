@@ -42,9 +42,11 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [C'est quoi une base de données ?](lecons/base-de-donnees.html) | Data | Découverte |
 | [Lac, entrepôt, magasin de données](lecons/entrepots-data.html) | Data | Intermédiaire |
 | [Les langages de la data, situés](lecons/langages-data.html) | Data | Intermédiaire |
+| [Ce qu'il y a derrière un tableau de bord](lecons/bi-tableau-de-bord.html) | Data | Intermédiaire |
 | [Pourquoi deux tableaux ne disent jamais pareil](lecons/gouvernance-data.html) | Data | Intermédiaire |
 | [Le RGPD en clair](lecons/rgpd.html) | Data | Découverte |
 | [C'est quoi un système d'information ?](lecons/si-briques.html) | Système d'information | Découverte |
+| [C'est quoi un ERP ?](lecons/erp.html) | Système d'information | Découverte |
 | [C'est quoi un CRM ?](lecons/crm.html) | Système d'information | Découverte |
 | [C'est quoi une API ?](lecons/api.html) | Système d'information | Découverte |
 | [Comment se déroule un projet SI](lecons/projet-si.html) | Système d'information | Intermédiaire |
@@ -60,12 +62,12 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 
-**36 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**39 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
 ouvert, benchmark, garde-fous —, celui des projets SI : cahier des charges, recette, MOA/MOE,
-CRM, ERP, deux mots de réseau (Tor, adresse IP), deux d'informatique générale (octet, cache)
-et trois de la data (ETL/ELT, KPI, SQL).
+CRM, ERP, quatre mots de réseau (Tor, adresse IP, VPN, pare-feu), deux d'informatique générale
+(octet, cache) et quatre de la data (ETL/ELT, KPI, SQL, Big Data).
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours
