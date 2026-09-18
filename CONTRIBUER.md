@@ -1,5 +1,10 @@
 # Ajouter du contenu
 
+> Une idée de leçon, une suggestion ou un bug ? Le plus simple est la page
+> [Idées](idees.html) du site : elle dépose votre message dans les issues du dépôt.
+
+
+
 Deux formats coexistent : les **leçons** (schémas animés) et les **cartes** (définitions).
 Les deux suivent la même règle : **une explication se fait en quatre étapes**.
 
@@ -23,6 +28,17 @@ Puis régénérer le bloc `CARDS` de `assets/js/data.js`. Les quatre étapes son
 un contrôle échoue si une carte en compte un autre nombre.
 
 `aka` est important : ce sont les mots que les gens tapent réellement dans la recherche.
+
+# Les deux thèmes
+
+Le site se porte en deux charte : GotIt (par défaut) et Klint. Il n'y a rien à faire
+pour qu'une nouvelle page suive : tout est en variables CSS, et `.outils/gabarit.py`
+branche déjà `assets/css/theme-klint.css` et `assets/js/theme.js`. Un contrôle refuse
+une page qui les oublierait.
+
+Une seule règle en écrivant un schéma : **peindre avec les variables**
+(`var(--accent)`, `var(--sage)`, `var(--slate)`, `var(--line)`), jamais avec une
+couleur en dur — sinon le schéma resterait terre cuite en thème Klint.
 
 # Ajouter une leçon
 
@@ -123,12 +139,19 @@ navigateur réduite à 390 px que rien ne sort du `viewBox`.
 - **4 à 5 étapes par scène** : au-delà, couper en deux scènes.
 - Terminer par un « À retenir » de trois ou quatre puces.
 
+## Publier
+
+Poussez votre travail sur une branche nommée `claude/...` et ouvrez une pull request :
+les contrôles ci-dessous sont rejoués automatiquement, et la fusion se fait toute
+seule s'ils passent. Une proposition qui échoue reste ouverte, avec le détail du
+problème dans l'onglet Actions.
+
 ## Vérifier — obligatoire avant de publier
 
 Deux contrôles automatiques, à lancer depuis la racine du dépôt :
 
 ```bash
-python3 .outils/verifier.py          # structure, liens, catalogue, règle des 4 étapes
+python3 .outils/verifier.py          # structure, liens, catalogue, règle des 4 étapes, thème
 
 python3 -m http.server 8766 &        # puis, pour le contrôle mobile :
 node .outils/audit-mobile.js         # aucun texte ne doit sortir du cadre à 390 px

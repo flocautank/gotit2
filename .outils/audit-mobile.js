@@ -31,10 +31,11 @@ function trouverChromium() {
 
 (async () => {
   let chromium;
-  try {
-    ({ chromium } = require('playwright-core'));
-  } catch (e) {
-    console.error('playwright-core est absent. Installez-le dans un dossier temporaire :');
+  for (const paquet of ['playwright', 'playwright-core']) {
+    try { ({ chromium } = require(paquet)); break; } catch (e) { /* on essaie le suivant */ }
+  }
+  if (!chromium) {
+    console.error('Ni playwright ni playwright-core ne sont installés. Par exemple :');
     console.error('  cd /tmp && npm init -y >/dev/null && npm i playwright-core');
     console.error('  NODE_PATH=/tmp/node_modules node .outils/audit-mobile.js');
     process.exit(2);
@@ -42,6 +43,7 @@ function trouverChromium() {
 
   const lecons = fs.readdirSync('lecons').filter(f => f.endsWith('.html')).map(f => f.replace('.html', ''));
   const exe = trouverChromium();
+  // Sans navigateur local repéré, on laisse playwright utiliser le sien.
   const navigateur = await chromium.launch(exe ? { executablePath: exe, args: ['--no-sandbox'] }
                                                : { args: ['--no-sandbox'] });
   const page = await navigateur.newPage({ viewport: { width: 390, height: 800 } });

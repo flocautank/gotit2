@@ -1,0 +1,234 @@
+TITRE: Comment se déroule un projet SI
+DESC: Cadrage, construction, recette, déploiement : les quatre temps d’un projet informatique en entreprise, en schémas animés.
+FIL: <a href="../index.html#/si">Système d’information</a><span>/</span>Faire vivre le SI<span>/</span>Les projets
+LEAD: Un projet SI n’est pas d’abord une affaire de technique. C’est un parcours en quatre temps qui part d’un problème vécu par une équipe, et qui ne se termine que lorsque ce problème a disparu du quotidien&nbsp;: pas avant.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">7 min</span><span class="tag">4 animations</span>
+
+      <p>
+        La leçon sur les briques d’un système d’information montrait la carte des outils d’une
+        entreprise. Celle-ci raconte comment cette carte change&nbsp;: comment un besoin devient,
+        étape par étape, un outil que tout le monde utilise sans plus y penser.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : du besoin métier au cahier des charges">
+        <div class="scene-title">Scène 1 — Le cadrage</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un problème métier devient, après cadrage, un cahier des charges validé">
+            <g data-show="1-4" class="m-rise">
+              <rect x="30" y="100" width="210" height="100" rx="12" class="s-box-teal"/>
+              <text x="135" y="142" text-anchor="middle" class="s-label">Un problème</text>
+              <text x="135" y="166" text-anchor="middle" class="s-label-xs">vécu par une équipe</text>
+            </g>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="295" y="100" width="210" height="100" rx="12" class="s-box"/>
+              <text x="400" y="142" text-anchor="middle" class="s-label">Le cadrage</text>
+              <text x="400" y="166" text-anchor="middle" class="s-label-xs">qui, quoi, budget, délai</text>
+            </g>
+
+            <g data-show="3-4" class="m-pop">
+              <rect x="560" y="100" width="210" height="100" rx="12" class="s-box-accent"/>
+              <text x="665" y="142" text-anchor="middle" class="s-label">Cahier des charges</text>
+              <text x="665" y="166" text-anchor="middle" class="s-label-xs">le document de référence</text>
+            </g>
+
+            <path d="M242 150 H 293" class="s-line m-draw" data-show="2-4"/>
+            <path d="M507 150 H 558" class="s-line m-draw" data-show="3-4"/>
+
+            <g data-show="4" class="m-rise">
+              <rect x="150" y="230" width="500" height="46" rx="23" class="s-box"/>
+              <text x="400" y="258" text-anchor="middle" class="s-label-sm">validé avant la moindre ligne de code</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Tout projet part d’un problème concret.</b><span>Une commande ressaisie deux fois, un rapport qui prend trois jours à produire à la main.</span></p>
+          <p class="step" data-duration="4600"><b>Le cadrage transforme ce problème en besoin précis.</b><span>Qui est concerné, ce qu’on veut vraiment obtenir, avec quel budget et pour quelle échéance.</span></p>
+          <p class="step" data-duration="4600"><b>Tout est écrit noir sur blanc dans un cahier des charges.</b><span>Le document que le métier, la technique et la direction ont lu — et approuvé.</span></p>
+          <p class="step" data-duration="5000"><b>Rien ne se construit avant qu’il soit validé.</b><span>Revenir dessus une fois le projet lancé coûte toujours plus cher qu’une semaine de plus passée à le préciser.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Rénover un appartement. On n’appelle pas un maçon avant d’avoir décrit à l’architecte
+          ce qu’on veut vraiment&nbsp;: combien de pièces, quel budget, pour quelle date. Ce plan
+          écrit, c’est le cahier des charges&nbsp;; les travaux viennent après, jamais avant.
+        </p>
+      </div>
+
+      <h2>Concevoir, puis construire</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : de la conception à une première version">
+        <div class="scene-title">Scène 2 — La construction</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="La solution est conçue, construite par petits lots avec des points réguliers, jusqu’à une première version">
+            <g data-show="1-4" class="m-rise">
+              <rect x="30" y="90" width="200" height="110" rx="12" class="s-box-violet"/>
+              <text x="130" y="132" text-anchor="middle" class="s-label">Concevoir</text>
+              <text x="130" y="156" text-anchor="middle" class="s-label-xs">écrans, données,</text>
+              <text x="130" y="176" text-anchor="middle" class="s-label-xs">échanges</text>
+            </g>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="280" y="90" width="230" height="110" rx="12" class="s-box-teal"/>
+              <text x="395" y="132" text-anchor="middle" class="s-label">Construire, par lots</text>
+              <text x="395" y="156" text-anchor="middle" class="s-label-xs">quelques semaines</text>
+              <text x="395" y="176" text-anchor="middle" class="s-label-xs">à la fois</text>
+            </g>
+
+            <g data-show="3">
+              <path d="M395 84 C 340 40, 450 40, 395 84" class="s-line m-draw" data-show="3"/>
+              <text x="395" y="30" text-anchor="middle" class="s-label-xs">point avec le métier</text>
+            </g>
+
+            <path d="M234 145 H 278" class="s-line m-draw" data-show="2-4"/>
+
+            <g data-show="4" class="m-pop">
+              <rect x="560" y="90" width="210" height="110" rx="12" class="s-box-accent"/>
+              <text x="665" y="132" text-anchor="middle" class="s-label">Une version</text>
+              <text x="665" y="156" text-anchor="middle" class="s-label-xs">qui tourne</text>
+              <text x="665" y="176" text-anchor="middle" class="s-label-xs">pas encore éprouvée</text>
+            </g>
+            <path d="M512 145 H 558" class="s-line m-draw" data-show="4"/>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>On conçoit d’abord la solution.</b><span>Un outil du marché à adapter, ou un développement sur mesure&nbsp;: écrans, données, échanges avec les autres logiciels.</span></p>
+          <p class="step" data-duration="4600"><b>Puis on construit, par petits morceaux.</b><span>Le projet avance par lots de quelques semaines, plutôt qu’en un seul bloc de plusieurs mois.</span></p>
+          <p class="step" data-duration="4400"><b>À chaque lot, un point avec le métier.</b><span>Montrer tôt évite de découvrir un désaccord six mois plus tard, une fois tout construit.</span></p>
+          <p class="step" data-duration="5000"><b>Le résultat est une version qui tourne — pas encore une version fiable.</b><span>Elle n’a été testée que par ceux qui l’ont construite. C’est justement l’objet de l’étape suivante.</span></p>
+        </div>
+      </section>
+
+      <h2>La recette&nbsp;: le passage obligé</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : la recette, tests par les utilisateurs avant le feu vert">
+        <div class="scene-title">Scène 3 — La recette</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Les utilisateurs rejouent les scénarios réels, les anomalies sont corrigées et rejouées, jusqu’au feu vert">
+            <g data-show="1-4" class="m-rise">
+              <rect x="30" y="90" width="210" height="100" rx="12" class="s-box-teal"/>
+              <text x="135" y="132" text-anchor="middle" class="s-label">Scénarios réels</text>
+              <text x="135" y="156" text-anchor="middle" class="s-label-xs">rejoués par les futurs</text>
+              <text x="135" y="174" text-anchor="middle" class="s-label-xs">utilisateurs</text>
+            </g>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="295" y="90" width="210" height="100" rx="12" class="s-box"/>
+              <text x="400" y="132" text-anchor="middle" class="s-label">Anomalies</text>
+              <text x="400" y="156" text-anchor="middle" class="s-label-xs">notées, classées,</text>
+              <text x="400" y="174" text-anchor="middle" class="s-label-xs">corrigées</text>
+            </g>
+
+            <g data-show="3">
+              <path d="M400 84 C 340 40, 460 40, 400 84" class="s-line m-draw" data-show="3"/>
+              <text x="400" y="30" text-anchor="middle" class="s-label-xs">on rejoue tout</text>
+            </g>
+
+            <path d="M242 140 H 293" class="s-line m-draw" data-show="2-4"/>
+
+            <g data-show="4" class="m-pop">
+              <rect x="560" y="90" width="210" height="100" rx="12" class="s-box-accent"/>
+              <text x="665" y="132" text-anchor="middle" class="s-label">Le feu vert</text>
+              <text x="665" y="156" text-anchor="middle" class="s-label-xs">aucune anomalie</text>
+              <text x="665" y="174" text-anchor="middle" class="s-label-xs">bloquante</text>
+            </g>
+            <path d="M507 140 H 558" class="s-line m-draw" data-show="4"/>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>On ne teste plus dans un coin de développeur.</b><span>Ce sont les futurs utilisateurs qui rejouent les vrais cas d’usage, avec leurs propres dossiers.</span></p>
+          <p class="step" data-duration="4400"><b>Chaque écart devient une anomalie.</b><span>Notée, classée par gravité — bloquante ou mineure — puis corrigée par l’équipe technique.</span></p>
+          <p class="step" data-duration="4600"><b>Et on rejoue, autant de fois qu’il le faut.</b><span>Une correction peut en casser une autre&nbsp;: chaque cycle de recette se termine par un nouveau passage complet.</span></p>
+          <p class="step" data-duration="5200"><b>Le feu vert n’arrive que si plus rien de bloquant ne subsiste.</b><span>Raccourcir cette étape pour tenir un délai ne fait pas disparaître les bugs&nbsp;: ça les déplace chez l’utilisateur, au pire moment.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Le raccourci qui coûte cher</div>
+        <p>
+          « On rattrapera en production. » Une anomalie découverte pendant la recette coûte une
+          correction. La même anomalie découverte après le déploiement coûte la correction, la
+          confiance perdue des utilisateurs, et souvent une intervention en urgence.
+        </p>
+      </div>
+
+      <h2>Déployer, puis faire vivre</h2>
+
+      <!-- ============ SCÈNE 4 ============ -->
+      <section class="scene" aria-label="Animation : le déploiement progressif puis la prise en charge par une équipe run">
+        <div class="scene-title">Scène 4 — Le déploiement</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="La bascule, un groupe pilote, puis tout le monde, avant qu’une équipe run prenne le relais">
+            <g data-show="1-4" class="m-rise">
+              <rect x="30" y="100" width="190" height="100" rx="12" class="s-box-violet"/>
+              <text x="125" y="142" text-anchor="middle" class="s-label">La bascule</text>
+              <text x="125" y="166" text-anchor="middle" class="s-label-xs">données, formation</text>
+            </g>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="270" y="100" width="200" height="100" rx="12" class="s-box-teal"/>
+              <text x="370" y="142" text-anchor="middle" class="s-label">Un groupe pilote</text>
+              <text x="370" y="166" text-anchor="middle" class="s-label-xs">d’abord, en petit comité</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="520" y="100" width="200" height="100" rx="12" class="s-box"/>
+              <text x="620" y="142" text-anchor="middle" class="s-label">Tout le monde</text>
+              <text x="620" y="166" text-anchor="middle" class="s-label-xs">ensuite</text>
+            </g>
+
+            <path d="M222 150 H 268" class="s-line m-draw" data-show="2-4"/>
+            <path d="M472 150 H 518" class="s-line m-draw" data-show="3-4"/>
+
+            <g data-show="4" class="m-rise">
+              <rect x="150" y="230" width="500" height="46" rx="23" class="s-box-accent"/>
+              <text x="400" y="258" text-anchor="middle" class="s-label-sm">une équipe « run » prend le relais du projet</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>Le jour de la bascule, les données existantes sont reprises et les utilisateurs formés.</b><span>Ce basculement se prépare autant que la construction elle-même.</span></p>
+          <p class="step" data-duration="4600"><b>Il est rarement immédiat pour tout le monde.</b><span>Un service ou un site pilote reçoit l’outil en premier, pour absorber les derniers imprévus en petit comité.</span></p>
+          <p class="step" data-duration="4600"><b>Puis le reste de l’entreprise suit.</b><span>Sur la base de ce que le pilote a montré, avec les ajustements que ce test grandeur réelle a permis de faire.</span></p>
+          <p class="step" data-duration="5400"><b>Et le projet ne s’arrête pas là.</b><span>Une équipe « run », souvent différente de l’équipe projet, prend le relais&nbsp;: support, correctifs, petites évolutions. Le projet est terminé quand plus personne n’y pense.</span></p>
+        </div>
+      </section>
+
+      <h2>Le vocabulaire, en une ligne chacun</h2>
+      <div class="compare">
+        <div>
+          <h4>Les mots du cadrage</h4>
+          <ul>
+            <li><strong>MOA</strong> — la maîtrise d’ouvrage&nbsp;: le métier qui exprime et valide le besoin.</li>
+            <li><strong>MOE</strong> — la maîtrise d’œuvre&nbsp;: l’équipe qui conçoit et construit la solution.</li>
+            <li><strong>Cahier des charges</strong> — le besoin, écrit noir sur blanc.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Les mots de la fin de projet</h4>
+          <ul>
+            <li><strong>Recette</strong> — les tests menés par les utilisateurs eux-mêmes.</li>
+            <li><strong>Go / no-go</strong> — la décision de déployer, ou d’attendre.</li>
+            <li><strong>Run</strong> — l’équipe qui fait vivre l’outil une fois le projet terminé.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un projet SI passe toujours par <strong>quatre temps</strong>&nbsp;: cadrage, construction, recette, déploiement.</li>
+        <li>Le cahier des charges part du <strong>besoin métier</strong>, jamais de la technique.</li>
+        <li>La <strong>recette</strong> n’est pas une formalité&nbsp;: sans elle, les anomalies se découvrent chez l’utilisateur.</li>
+        <li>Le projet ne s’arrête pas au déploiement&nbsp;: une équipe <strong>« run »</strong> prend le relais.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="api.html">← C’est quoi une API&nbsp;?</a>
+        <a class="btn btn-primary" href="../index.html#/si">Système d’information →</a>
+      </nav>

@@ -208,6 +208,118 @@ CARTES = [
    "On borne en aval : validation humaine sur ce qui engage — envoyer, payer, supprimer, publier.",
    "Et on garde une trace de ce qui a été fait et pourquoi, seul moyen de comprendre après coup."]),
 
+ dict(id='cahier-des-charges', terme='Cahier des charges', aka=['cahier des charges','spécifications','expression de besoin','cdc'], dom='SI',
+  une="Le document qui décrit noir sur blanc ce qu’un projet doit produire, avant qu’on commence à le construire.",
+  etapes=[
+   "Un projet part toujours d’un besoin, souvent flou au départ : « on voudrait que ce soit plus simple ».",
+   "Le cadrage le transforme en exigences précises : qui l’utilisera, ce qu’il doit permettre de faire, sous quelles contraintes.",
+   "Le tout est rassemblé dans le cahier des charges, lu et approuvé par le métier qui demande et l’équipe qui va construire.",
+   "C’est la référence commune : en cas de désaccord plus tard, c’est ce document qui tranche, pas le souvenir de chacun."],
+  voir='projet-si'),
+
+ dict(id='recette', terme='Recette (informatique)', aka=['recette','tests utilisateurs','uat','recette fonctionnelle'], dom='SI',
+  une="L’étape où les futurs utilisateurs testent l’outil avec de vrais cas, avant qu’il ne soit mis en service.",
+  etapes=[
+   "Une fois construit, un outil n’a été essayé que par ceux qui l’ont développé — un angle de vue partiel.",
+   "La recette fait rejouer les scénarios réels par les futurs utilisateurs eux-mêmes, avec leurs propres dossiers.",
+   "Chaque écart devient une anomalie, classée par gravité, corrigée, puis retestée jusqu’à disparition.",
+   "Le déploiement n’est autorisé — le « go » — que lorsque plus aucune anomalie bloquante ne subsiste."],
+  voir='projet-si',
+  pas="les tests techniques menés par les développeurs pendant la construction : la recette, elle, vient après, et se fait par les utilisateurs."),
+
+ dict(id='moa-moe', terme='MOA / MOE', aka=['moa','moe','maîtrise d’ouvrage','maîtrise d’œuvre'], dom='SI',
+  une="Qui demande, et qui construit : les deux rôles qui doivent se parler tout au long d’un projet.",
+  etapes=[
+   "Un projet informatique réunit toujours deux points de vue : celui qui a le besoin, celui qui sait construire.",
+   "La MOA — maîtrise d’ouvrage — c’est le métier : il exprime le besoin, valide les choix, réceptionne le résultat.",
+   "La MOE — maîtrise d’œuvre — c’est l’équipe technique : elle conçoit, développe et teste la solution.",
+   "Un projet qui échoue a presque toujours laissé ces deux rôles se parler trop peu, trop tard."],
+  voir='projet-si'),
+
+ dict(id='tor', terme='Tor (réseau)', aka=['tor','the onion router','réseau tor','navigateur tor','dark web'], dom='Réseau',
+  une="Un réseau qui ne cache pas ce que vous dites, mais à qui vous parlez.",
+  etapes=[
+   "Le chiffrement protège le contenu d’un échange, pas le fait que vous parliez à tel site : votre adresse et sa destination restent visibles.",
+   "Tor fait passer la connexion par trois relais tirés au hasard, chacun enveloppé d’une couche de chiffrement — comme un oignon (« The Onion Router »).",
+   "Aucun des trois relais ne connaît à la fois qui vous êtes et où vous allez : le premier voit votre adresse, le dernier voit le site, celui du milieu ne voit ni l’un ni l’autre.",
+   "Il est développé par une association à but non lucratif, le Tor Project, et fait tourner par des milliers de bénévoles — un tuyau neutre, pas un camp."],
+  voir='tor',
+  pas="un VPN, qui masque votre adresse auprès d’un seul intermédiaire — le VPN lui-même. Tor la répartit entre trois relais indépendants, sans aucun point unique de confiance."),
+
+ dict(id='octet', terme='Octet (byte)', aka=['octet','byte','bit','ko','mo','go'], dom='Informatique',
+  une="Le paquet de huit bits qui sert d’unité pour compter toute information numérique.",
+  etapes=[
+   "Un bit est la plus petite unité possible : un 0 ou un 1, un interrupteur allumé ou éteint.",
+   "Un seul bit ne dit presque rien. On les regroupe donc par huit — un octet — pour représenter quelque chose d’utile, comme une lettre.",
+   "Au-delà, on compte en multiples : environ mille octets font un kilooctet (Ko), un million un mégaoctet (Mo), un milliard un gigaoctet (Go).",
+   "Une page de texte pèse quelques Ko, une photo quelques Mo, un film plusieurs Go : l’unité ne change pas, seule l’échelle grandit."],
+  voir='ordinateur'),
+
+ dict(id='cache', terme='Cache (navigateur)', aka=['cache','cache navigateur','vider le cache','mise en cache'], dom='Informatique',
+  une="Une copie locale gardée sous la main pour ne pas retélécharger ce qui n’a pas changé.",
+  etapes=[
+   "Un site est fait de dizaines de fichiers : images, styles, scripts. Les retélécharger à chaque page serait lent.",
+   "Le navigateur garde donc une copie de ces fichiers sur votre machine, avec une date de validité indiquée par le site.",
+   "À la visite suivante, il compare : rien n’a changé, il réutilise la copie ; sinon, il retélécharge seulement ce qui a bougé.",
+   "D’où le vieux réflexe « vider le cache » quand une page affiche une version ancienne : on force le navigateur à tout retélécharger."],
+  voir='navigateur'),
+
+ dict(id='etl', terme='ETL / ELT', aka=['etl','elt','extract transform load','pipeline de données'], dom='Data',
+  une="La chaîne qui déplace des données d’un outil vers un autre, en les nettoyant au passage.",
+  etapes=[
+   "Extract : on va chercher les données à la source — un logiciel de vente, un fichier, une base.",
+   "Transform : on les nettoie et on les met en forme — mêmes unités, mêmes noms de colonnes, doublons retirés.",
+   "Load : on les dépose dans leur destination, le plus souvent un entrepôt de données.",
+   "L’ETL transforme avant de charger ; l’ELT, plus courant aujourd’hui, charge d’abord et transforme ensuite, une fois les données déjà en place."],
+  voir='entrepots-data'),
+
+ dict(id='kpi', terme='KPI (indicateur clé)', aka=['kpi','indicateur clé','indicateur de performance','key performance indicator'], dom='Data',
+  une="Un chiffre choisi à l’avance pour suivre si les choses vont dans le bon sens.",
+  etapes=[
+   "Une activité produit des centaines de chiffres possibles. Un KPI est celui qu’on a décidé de regarder en premier, régulièrement.",
+   "Il n’a de valeur que défini une fois pour toutes : ce qu’il compte, ce qu’il exclut, sur quelle période.",
+   "Suivi dans le temps — semaine après semaine, mois après mois — il révèle une tendance qu’un chiffre isolé ne montre jamais.",
+   "Un tableau de bord surchargé de vingt indicateurs n’aide personne : mieux vaut trois KPI suivis vraiment que vingt regardés une fois."],
+  voir='gouvernance-data'),
+
+ dict(id='crm', terme='CRM (gestion de la relation client)', aka=['crm','gestion de la relation client','customer relationship management'], dom='SI',
+  une="Le logiciel qui garde la mémoire de chaque client, partagée par toute l’entreprise.",
+  etapes=[
+   "Sans lui, chaque service — commercial, support, marketing — garde sa propre trace du même client, sans se parler.",
+   "Le CRM regroupe tout sur une fiche unique : appels, e-mails, achats, tickets, consultable par tous les services.",
+   "Il suit aussi les ventes en cours, appelées opportunités, par étapes : prospect, qualifié, proposition, gagné ou perdu.",
+   "Résultat : plus personne ne raconte deux fois la même histoire, et l’entreprise sait où en est chaque vente."],
+  voir='crm',
+  pas="l’ERP, qui gère l’activité interne (stocks, factures) ; le CRM gère la relation avec l’extérieur : prospects et clients."),
+
+ dict(id='erp', terme='ERP (progiciel de gestion)', aka=['erp','progiciel de gestion intégré','enterprise resource planning'], dom='SI',
+  une="Le grand registre qui fait tourner l’activité interne d’une entreprise : commandes, stocks, factures.",
+  etapes=[
+   "Avant l’ERP, chaque service — achats, stocks, facturation — tenait son propre registre, parfois sur un tableur séparé.",
+   "L’ERP regroupe ces registres dans un seul outil : une commande y déclenche automatiquement la sortie de stock et la facture.",
+   "Un seul chiffre pour chaque donnée — un stock, un prix — au lieu de trois versions qui finissent par diverger.",
+   "Quand on dit « c’est dans le système » dans une entreprise, c’est presque toujours de l’ERP qu’il s’agit."],
+  voir='erp',
+  pas="le CRM, qui garde la mémoire de la relation avec les clients et prospects — l’ERP, lui, ne regarde que l’intérieur."),
+
+ dict(id='adresse-ip', terme='Adresse IP', aka=['adresse ip','ip','adresse réseau'], dom='Réseau',
+  une="Le numéro qui désigne une machine précise sur un réseau, comme une adresse postale désigne un bâtiment.",
+  etapes=[
+   "Pour qu’un message arrive au bon endroit sur Internet, chaque machine a besoin d’un numéro qui la distingue de toutes les autres.",
+   "Ce numéro, l’adresse IP, ressemble à quatre nombres séparés de points, par exemple 192.168.1.12.",
+   "Retenir des numéros serait pénible : on tape donc un nom de site, traduit en adresse IP par un annuaire, le DNS.",
+   "Deux familles coexistent : les adresses IPv4, plus anciennes et en nombre limité, et les IPv6, plus récentes et bien plus nombreuses."],
+  voir='internet',
+  pas="le DNS, qui traduit un nom en adresse IP — l’adresse, elle, est le numéro final utilisé pour acheminer les données."),
+
+ dict(id='sql', terme='SQL', aka=['sql','requête sql','structured query language'], dom='Data',
+  une="Le langage universel pour interroger une base de données : trier, filtrer, croiser des tables.",
+  etapes=[
+   "Une base de données range l’information dans des tables, comme des feuilles de tableur reliées entre elles.",
+   "SQL est le langage qui permet de leur poser des questions : quels clients, sur quelle période, triés comment.",
+   "Trois mots suffisent à lire l’essentiel d’une requête : SELECT (quoi), FROM (où), WHERE (à quelle condition).",
+   "Conçu dans les années 1970, il reste aujourd’hui le langage le plus utilisé pour parler aux bases de données, quel que soit l’outil."],
+  voir='langages-data'),
  dict(id='vpn', terme='VPN (réseau privé virtuel)', aka=['vpn','réseau privé virtuel','virtual private network'], dom='Réseau',
   une="Un tunnel chiffré qui fait croire aux sites visités que vous naviguez depuis un autre endroit.",
   etapes=[

@@ -1,0 +1,71 @@
+# Contrôle chaque proposition de contenu, puis la fusionne si elle est saine.
+#
+# Le site est alimenté automatiquement par une routine quotidienne, qui pousse
+# son travail sur une branche `claude/...`. Ce workflow est le garde-fou :
+# il rejoue les contrôles du dépôt et ne fusionne que s'ils passent.
+name: Contrôles et fusion automatique
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  controles:
+    name: Contrôles
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cohérence du site
+        run: python3 .outils/verifier.py
+
+      - name: Installer le navigateur de contrôle
+        run: |
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund playwright > /dev/null
+          npx playwright install --with-deps chromium
+
+      - name: Lisibilité des schémas sur mobile
+        run: |
+          python3 -m http.server 8766 &
+          sleep 2
+          node .outils/audit-mobile.js
+
+  fusion:
+    name: Fusion automatique
+    needs: controles
+    if: github.event_name == 'pull_request' && startsWith(github.head_ref, 'claude/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fusionner la pull request
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            core.info(`Fusion de #${pr.number} — ${pr.title}`);
+            await github.rest.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              merge_method: 'squash',
+            });
+            core.info('Fusionnée.');
+
+      # Un push effectué avec le jeton d'Actions ne déclenche pas les autres
+      # workflows : le déploiement doit donc se faire ici, dans la foulée de la
+      # fusion, sinon le contenu fusionné ne serait jamais mis en ligne.
+      - name: Récupérer main après fusion
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Publier sur gh-pages
+        run: git push --force origin HEAD:gh-pages

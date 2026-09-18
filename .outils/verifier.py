@@ -40,7 +40,7 @@ class Structure(HTMLParser):
 
 
 def verifier_pages():
-    pages = ['index.html', 'cartes.html'] + sorted(glob.glob('lecons/*.html'))
+    pages = ['index.html', 'cartes.html', 'idees.html'] + sorted(glob.glob('lecons/*.html'))
     for fichier in pages:
         source = open(fichier, encoding='utf-8').read()
 
@@ -60,6 +60,14 @@ def verifier_pages():
                 nombres = [int(n) for n in re.findall(r'\d+', spec)]
                 if nombres and max(nombres) > etapes:
                     erreurs.append(f'{fichier} : scène « {titre} » ({etapes} étapes) référence data-show="{spec}"')
+
+        # Le thème doit être branché partout : une page qui l'oublie garderait
+        # l'ancienne charte et le visiteur perdrait le sélecteur en chemin.
+        prefixe = '../' if fichier.startswith('lecons/') else ''
+        for attendu in (f'href="{prefixe}assets/css/theme-klint.css"',
+                        f'src="{prefixe}assets/js/theme.js"'):
+            if attendu not in source:
+                erreurs.append(f'{fichier} : thème absent ({attendu})')
 
         for href in re.findall(r'href="([^"#]+\.html)[^"]*"', source):
             cible = os.path.normpath(os.path.join(os.path.dirname(fichier), href))

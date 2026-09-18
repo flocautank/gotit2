@@ -29,6 +29,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [C'est quoi un serveur ?](lecons/serveur.html) | Informatique | Découverte |
 | [Logiciel, système, application](lecons/logiciel.html) | Informatique | Découverte |
 | [Fichiers, formats et dossiers](lecons/fichiers.html) | Informatique | Découverte |
+| [C’est quoi un algorithme ?](lecons/algorithme.html) | Informatique | Découverte |
 | [Local ou cloud : quelle différence ?](lecons/local-vs-cloud.html) | Informatique | Découverte |
 | [SaaS, PaaS, IaaS](lecons/cloud-saas.html) | Informatique | Intermédiaire |
 | [Comment voyage une page web](lecons/internet.html) | Réseau | Découverte |
@@ -37,6 +38,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Les bases de la cybersécurité](lecons/cybersecurite.html) | Réseau | Découverte |
 | [Sauvegarder pour de vrai](lecons/sauvegarde.html) | Réseau | Découverte |
 | [Le chiffrement expliqué simplement](lecons/chiffrement.html) | Réseau | Intermédiaire |
+| [Le réseau Tor, comment ça marche](lecons/tor.html) | Réseau | Intermédiaire |
 | [C'est quoi une base de données ?](lecons/base-de-donnees.html) | Data | Découverte |
 | [Lac, entrepôt, magasin de données](lecons/entrepots-data.html) | Data | Intermédiaire |
 | [Les langages de la data, situés](lecons/langages-data.html) | Data | Intermédiaire |
@@ -45,7 +47,9 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Le RGPD en clair](lecons/rgpd.html) | Data | Découverte |
 | [C'est quoi un système d'information ?](lecons/si-briques.html) | Système d'information | Découverte |
 | [C'est quoi un ERP ?](lecons/erp.html) | Système d'information | Découverte |
+| [C'est quoi un CRM ?](lecons/crm.html) | Système d'information | Découverte |
 | [C'est quoi une API ?](lecons/api.html) | Système d'information | Découverte |
+| [Comment se déroule un projet SI](lecons/projet-si.html) | Système d'information | Intermédiaire |
 | [Comment un modèle de langage écrit](lecons/llm.html) | IA | Découverte |
 | [Pourquoi l'IA a besoin de cartes graphiques](lecons/gpu.html) | IA | Découverte |
 | [Pourquoi une IA invente parfois](lecons/hallucination.html) | IA | Intermédiaire |
@@ -58,13 +62,12 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 
-**27 cartes de concept** couvrent le jargon de l'IA : jeton, fenêtre de contexte, prompt,
+**39 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
-ouvert, benchmark, garde-fous — et trois mots hors IA : deux de réseau (VPN, pare-feu) et
-un de data (Big Data).
-
-Un sujet reste déclaré en « Bientôt » : le déroulé d'un projet SI.
+ouvert, benchmark, garde-fous —, celui des projets SI : cahier des charges, recette, MOA/MOE,
+CRM, ERP, quatre mots de réseau (Tor, adresse IP, VPN, pare-feu), deux d'informatique générale
+(octet, cache) et quatre de la data (ETL/ELT, KPI, SQL, Big Data).
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours
@@ -91,12 +94,53 @@ assets/js/home.js       Navigation du catalogue (domaine > catégorie) et recher
 assets/js/scene.js      Moteur d'animation des scènes (étapes, lecture, clavier)
 assets/css/main.css     Styles généraux
 assets/css/lesson.css   Styles des leçons et utilitaires d'animation
+assets/css/theme-klint.css  Thème Klint (surcouche de variables)
+assets/js/theme.js      Sélecteur de thème GotIt / Klint
 assets/img/             Logo, marque seule et image de partage
+assets/img/klint/       Logos Klint (signature et pied de page)
 .outils/gabarit.py      Assemble une page de leçon à partir d'un fragment
 .outils/verifier.py     Contrôles de cohérence (à lancer avant de publier)
 .outils/audit-mobile.js Contrôle des débordements sur petit écran
 CONTRIBUER.md           Comment ajouter une leçon
 ```
+
+## Retours des visiteurs
+
+La page `idees.html` recueille trois choses : un **concept à expliquer**, une **suggestion**
+sur le site, un **bug**. L'envoi se fait **sans quitter le site** : le formulaire s'adresse à un petit relais
+hébergé (`relais/worker.js`), qui détient la clé GitHub à la place de la page — une clé
+dans une page publique serait une clé perdue — et crée l'issue. Le visiteur ne voit jamais
+GitHub, et aucun compte ne lui est demandé.
+
+Le déploiement du relais est décrit dans `relais/LISEZMOI.md` : une dizaine de minutes,
+une seule fois. Tant que son adresse n'est pas renseignée dans `assets/js/config.js`, le
+formulaire bascule sur un envoi par GitHub pré-rempli, moins confortable mais fonctionnel.
+
+Le tri se fait sur le préfixe du titre, `[Contenu]`, `[Suggestion]` ou `[Bug]` : c'est ce qui
+permet aux routines de travailler sans dépendre des étiquettes GitHub.
+
+| Type | Qui le traite | Quand |
+|---|---|---|
+| `[Contenu]` | routine d'enrichissement | la nuit suivante, en priorité |
+| `[Suggestion]` et `[Bug]` | routine de rapport | rapport hebdomadaire dans `rapports/` |
+
+Une demande de contenu traitée est fermée automatiquement : la pull request porte un
+`Closes #N`, et la fusion ferme l'issue.
+
+## Alimentation automatique
+
+Une routine quotidienne traite les demandes de contenu reçues, ou décide elle-même
+de ce qui manque, l'écrit, et pousse son travail sur une branche `claude/...`. Le workflow `.github/workflows/controles.yml`
+rejoue alors les contrôles ci-dessous, **fusionne la pull request si, et seulement si,
+ils passent**, puis publie dans la foulée sur `gh-pages`.
+
+Ce dernier point n'est pas un détail : un push effectué avec le jeton d'Actions ne
+déclenche pas les autres workflows. Si la publication n'était pas faite dans le même
+job que la fusion, le contenu fusionné automatiquement ne serait jamais mis en ligne.
+
+Aucune intervention manuelle n'est nécessaire. Pour reprendre la main, il suffit de
+désactiver la routine, ou de retirer le job `fusion` du workflow pour repasser en
+validation manuelle. L'historique Git permet de revenir sur tout contenu indésirable.
 
 ## Contrôles
 
@@ -128,6 +172,24 @@ Palette chaude et claire — fond ivoire, texte brun sombre, accent terre cuite,
 et ardoise en secondaires — avec une serif pour les titres et une sans-serif système
 pour le texte. Tout est défini en variables CSS en haut de `assets/css/main.css` :
 changer la charte, c'est changer ce bloc.
+
+### Le thème Klint
+
+Un second thème reprend la charte Klint : bleu nuit, cyan, vert menthe, Raleway,
+coins arrondis. Il ne duplique rien — `assets/css/theme-klint.css` se contente de
+redéfinir les mêmes variables sous `html[data-theme="klint"]`. Les schémas animés
+suivent tout seuls, puisqu'ils sont peints avec `var(--accent)`, `var(--sage)` et
+`var(--slate)`.
+
+`assets/js/theme.js` pose le sélecteur « GotIt / Klint » dans la barre de navigation
+et mémorise le choix du visiteur dans son navigateur. Le thème GotIt reste celui par
+défaut. En thème Klint s'ajoutent la signature « Une initiative Klint » à côté de la
+marque et le pied de page Klint (agences et contact).
+
+**Toute nouvelle page doit charger les deux fichiers** — `theme-klint.css` après les
+autres feuilles de style, `theme.js` avant `</body>`, préfixés de `../` depuis
+`lecons/`. `.outils/gabarit.py` le fait déjà, et `.outils/verifier.py` refuse une
+page qui les oublierait.
 
 ## Accessibilité
 
