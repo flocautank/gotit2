@@ -62,6 +62,13 @@ window.GOTIT = (function () {
 
     /* ---------- Data ---------- */
 
+    'donnees-structurees': {
+      title: 'Donnée structurée ou pas : le grand tri',
+      summary: 'Tableau, formulaire souple, ou vrac total : trois familles de données, qui ne se rangent pas avec les mêmes outils.',
+      path: 'lecons/donnees-structurees.html',
+      duration: '6 min', level: 1,
+      keywords: ['structurée', 'non structurée', 'semi-structurée', 'json', 'xml', 'donnée', 'schéma', 'tableur']
+    },
     'base-de-donnees': {
       title: 'C’est quoi une base de données ?',
       summary: 'Le tableur qui a grandi — et pourquoi certaines bases n’ont pas de colonnes.',
@@ -113,6 +120,13 @@ window.GOTIT = (function () {
       path: 'lecons/erp.html',
       duration: '6 min', level: 1,
       keywords: ['erp', 'progiciel de gestion', 'stock', 'facture', 'commande', 'intégré', 'enterprise resource planning', 'sap']
+    },
+    'support': {
+      title: 'Le support informatique, du ticket à la résolution',
+      summary: 'Un problème signalé, trié par urgence, puis résolu et clos : la mécanique derrière « j’ai ouvert un ticket ».',
+      path: 'lecons/support.html',
+      duration: '6 min', level: 1,
+      keywords: ['support', 'ticket', 'helpdesk', 'itsm', 'sla', 'assistance', 'incident', 'priorité']
     },
 
     /* ---------- Intelligence artificielle ---------- */
@@ -332,6 +346,7 @@ window.GOTIT = (function () {
         {
           id: 'stocker', title: 'Stocker les données',
           subcategories: [
+            { id: 'nature', title: 'La nature des données', lessons: ['donnees-structurees'] },
             { id: 'bdd', title: 'Les bases de données', lessons: ['base-de-donnees'] },
             { id: 'entrepots', title: 'Lacs, entrepôts et magasins', lessons: ['entrepots-data'] }
           ]
@@ -362,7 +377,8 @@ window.GOTIT = (function () {
         {
           id: 'conduite', title: 'Faire vivre le SI',
           subcategories: [
-            { id: 'projets', title: 'Les projets', lessons: ['projet-si'] }
+            { id: 'projets', title: 'Les projets', lessons: ['projet-si'] },
+            { id: 'support', title: 'Le support', lessons: ['support'] }
           ]
         }
       ]
@@ -866,6 +882,43 @@ window.GOTIT = (function () {
         "Le mot a surtout servi d’étendard il y a une quinzaine d’années ; aujourd’hui, on parle plus volontiers de data lake, d’entrepôt, ou tout simplement de données."
       ],
       voir: "entrepots-data"
+    },
+    {
+      id: "dns", terme: "DNS (nom de domaine)", domaine: "Réseau",
+      aka: ["dns", "nom de domaine", "domain name system", "annuaire internet"],
+      une: "L’annuaire d’Internet qui traduit un nom de site en l’adresse numérique qui permet d’y accéder.",
+      etapes: [
+        "Une adresse IP suffit à joindre une machine, mais personne ne retient des suites de chiffres.",
+        "Le DNS est un annuaire réparti sur des milliers de serveurs dans le monde, qui associe chaque nom de domaine à son adresse IP.",
+        "Taper un nom de site déclenche une question à cet annuaire avant même le premier octet de la page : « quelle est l’adresse de ce nom ? ».",
+        "La réponse est gardée en mémoire un moment — mise en cache — pour ne pas reposer la question à chaque clic."
+      ],
+      voir: "internet",
+      pas: "l’adresse IP elle-même, qui est le numéro final utilisé pour transporter les données — le DNS ne fait que la retrouver."
+    },
+    {
+      id: "sla", terme: "SLA (engagement de service)", domaine: "SI",
+      aka: ["sla", "service level agreement", "engagement de service", "niveau de service"],
+      une: "La promesse écrite d’un délai maximal, au-delà duquel un incident est considéré comme mal traité.",
+      etapes: [
+        "Sans engagement, chacun a sa propre idée de ce qu’est « vite » : deux heures pour l’un, deux jours pour l’autre.",
+        "Le SLA fixe un chiffre par type de problème : un incident bloquant pris en charge sous une heure, un mineur sous 48 heures.",
+        "Il est souvent inscrit dans le contrat qui lie une entreprise à son prestataire informatique, avec des pénalités s’il n’est pas tenu.",
+        "Ce n’est pas une promesse de résoudre vite, seulement de commencer à s’en occuper vite — la nuance compte."
+      ],
+      voir: "support"
+    },
+    {
+      id: "open-source", terme: "Open source (logiciel libre)", domaine: "Informatique",
+      aka: ["open source", "logiciel libre", "code ouvert", "licence libre"],
+      une: "Un logiciel dont le code est publié et réutilisable par tous, plutôt que gardé secret par son éditeur.",
+      etapes: [
+        "Un logiciel propriétaire cache son code : on l’utilise sans savoir comment il fonctionne à l’intérieur, ni pouvoir le modifier.",
+        "Un logiciel open source publie ce code sous une licence qui autorise à le lire, le corriger, et souvent le redistribuer.",
+        "N’importe qui peut alors vérifier ce qu’il fait vraiment, y ajouter une fonction manquante, ou l’adapter à un besoin précis.",
+        "Gratuit ne veut pas dire sans coût : l’installer, le maintenir et le sécuriser demande quand même des compétences ou un prestataire."
+      ],
+      pas: "le modèle ouvert (open weights) d’une IA, qui publie les réglages d’un modèle entraîné — l’open source, lui, concerne le code d’un programme classique."
     },
   ];
 

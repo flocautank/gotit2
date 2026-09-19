@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donnée structurée ou pas : le grand tri — GotIt</title>
+<meta name="description" content="Tableau, formulaire flexible, ou vrac total : trois familles de données, et pourquoi elles ne se rangent pas pareil — en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/data">Data</a><span>/</span>Stocker les données<span>/</span>La nature des données
+      </div>
+      <h1>Donnée structurée ou pas&nbsp;: le grand tri</h1>
+      <p class="lead">
+        Un tableau, un formulaire souple, ou un vrac total&nbsp;: la forme d’une
+        donnée décide où elle vit et avec quoi on peut la lire.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-1">Découverte</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Une fiche client, un e-mail, une photo de facture&nbsp;: trois données, trois
+        formes complètement différentes. Avant de parler d’outil ou de base de
+        données, il faut d’abord répondre à une question plus simple&nbsp;: cette
+        donnée a-t-elle une forme fixe, une forme souple, ou aucune forme du tout&nbsp;?
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : une donnée structurée range chaque information dans une case fixe, comme les colonnes d’un tableau">
+        <div class="scene-title">Scène 1 — Le tableau, cas le plus simple</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un tableau à trois colonnes fixes — nom, date, montant — rempli sur plusieurs lignes identiques">
+            <g data-show="1-4">
+              <rect x="120" y="40" width="560" height="46" class="s-box-accent"/>
+              <text x="230" y="68" text-anchor="middle" class="s-label-sm">nom</text>
+              <text x="400" y="68" text-anchor="middle" class="s-label-sm">date</text>
+              <text x="570" y="68" text-anchor="middle" class="s-label-sm">montant</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="120" y="86" width="560" height="40" class="s-box"/>
+              <text x="230" y="112" text-anchor="middle" class="s-label-xs">Dupont</text>
+              <text x="400" y="112" text-anchor="middle" class="s-label-xs">02/09</text>
+              <text x="570" y="112" text-anchor="middle" class="s-label-xs">120 €</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="120" y="126" width="560" height="40" class="s-box"/>
+              <text x="230" y="152" text-anchor="middle" class="s-label-xs">Martin</text>
+              <text x="400" y="152" text-anchor="middle" class="s-label-xs">03/09</text>
+              <text x="570" y="152" text-anchor="middle" class="s-label-xs">75 €</text>
+            </g>
+            <g data-show="4" class="m-rise">
+              <rect x="220" y="210" width="360" height="60" rx="14" class="s-box-teal"/>
+              <text x="400" y="238" text-anchor="middle" class="s-label-sm">même case, même sens</text>
+              <text x="400" y="256" text-anchor="middle" class="s-label-xs">trier, filtrer, additionner sans effort</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Beaucoup de données ressemblent à un tableau.</b><span>Des colonnes fixes — nom, date, montant — et une ligne par cas.</span></p>
+          <p class="step" data-duration="4400"><b>C’est une donnée structurée.</b><span>Elle suit un schéma connu à l’avance : chaque colonne a toujours le même sens.</span></p>
+          <p class="step" data-duration="4400"><b>Facile à interroger.</b><span>Trier, filtrer, additionner : c’est le terrain naturel d’une base de données classique.</span></p>
+          <p class="step" data-duration="4800"><b>Mais tout ne rentre pas dans ce moule.</b><span>Une bonne partie de l’information d’une entreprise n’a pas cette forme régulière.</span></p>
+        </div>
+      </section>
+
+      <h2>Le formulaire à géométrie variable</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : deux commandes semi-structurées, avec les mêmes clés mais un nombre d’articles différent">
+        <div class="scene-title">Scène 2 — Une forme souple</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Deux commandes en forme de fiche : la première avec un article, la seconde avec trois, sous les mêmes clés client et articles">
+            <g data-show="1-4" class="m-pop">
+              <rect x="80" y="30" width="260" height="130" rx="12" class="s-box"/>
+              <text x="210" y="56" text-anchor="middle" class="s-label-sm">commande A</text>
+              <text x="210" y="84" text-anchor="middle" class="s-label-xs">client : Dupont</text>
+              <text x="210" y="106" text-anchor="middle" class="s-label-xs">articles : 1</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="460" y="30" width="260" height="130" rx="12" class="s-box"/>
+              <text x="590" y="56" text-anchor="middle" class="s-label-sm">commande B</text>
+              <text x="590" y="84" text-anchor="middle" class="s-label-xs">client : Martin</text>
+              <text x="590" y="106" text-anchor="middle" class="s-label-xs">articles : 3</text>
+              <text x="590" y="128" text-anchor="middle" class="s-label-xs">code promo : oui</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="220" y="190" width="360" height="60" rx="14" class="s-box-accent"/>
+              <text x="400" y="218" text-anchor="middle" class="s-label-sm">mêmes clés, contenu variable</text>
+              <text x="400" y="236" text-anchor="middle" class="s-label-xs">JSON, XML : semi-structuré</text>
+            </g>
+            <g data-show="4" class="m-fall">
+              <rect x="140" y="264" width="520" height="36" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/>
+              <text x="400" y="287" text-anchor="middle" class="s-label-xs">un tableur classique s’en sort mal</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Un e-mail, une commande, une réponse d’API.</b><span>D’un cas à l’autre, le nombre de champs remplis n’est pas le même.</span></p>
+          <p class="step" data-duration="4600"><b>C’est une donnée semi-structurée.</b><span>Il y a bien des clés repérables — comme dans un fichier JSON ou XML — mais la forme varie.</span></p>
+          <p class="step" data-duration="4600"><b>Une commande peut avoir un article, ou douze.</b><span>Le schéma existe, mais il est souple : rien n’oblige à remplir toutes les mêmes cases.</span></p>
+          <p class="step" data-duration="4800"><b>Un tableur classique s’en sort mal.</b><span>Ces données ont besoin d’outils plus souples que des colonnes figées.</span></p>
+        </div>
+      </section>
+
+      <h2>Le reste&nbsp;: texte, image, son</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : un contrat, une photo et un avis client, trois données non structurées, doivent être lues avant d’être exploitées">
+        <div class="scene-title">Scène 3 — Aucune case prévue</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un contrat PDF, une photo et un avis client rejoignent un même tas, puis une étape de lecture en extrait du sens">
+            <g data-show="1-4" class="m-pop">
+              <rect x="40" y="50" width="150" height="80" rx="10" class="s-box"/>
+              <text x="115" y="94" text-anchor="middle" class="s-label-xs">contrat (PDF)</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="220" y="50" width="150" height="80" rx="10" class="s-box"/>
+              <text x="295" y="94" text-anchor="middle" class="s-label-xs">photo</text>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <rect x="400" y="50" width="150" height="80" rx="10" class="s-box"/>
+              <text x="475" y="86" text-anchor="middle" class="s-label-xs">avis client</text>
+              <text x="475" y="106" text-anchor="middle" class="s-label-xs">texte libre</text>
+            </g>
+            <g data-show="4" class="m-rise">
+              <rect x="140" y="180" width="420" height="50" rx="12" fill="var(--slate-soft)" stroke="var(--slate)"/>
+              <text x="350" y="210" text-anchor="middle" class="s-label-sm">aucune case, aucun champ prévu</text>
+            </g>
+            <path d="M560 205 C 580 205, 580 225, 598 225" class="s-line-accent m-draw" data-show="4"/>
+            <g data-show="4" class="m-rise">
+              <rect x="600" y="180" width="160" height="90" rx="12" class="s-box-accent"/>
+              <text x="680" y="216" text-anchor="middle" class="s-label-sm">lire d’abord</text>
+              <text x="680" y="238" text-anchor="middle" class="s-label-xs">texte, image,</text>
+              <text x="680" y="256" text-anchor="middle" class="s-label-xs">son analysés</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Un contrat scanné, une photo, un appel enregistré.</b><span>Un avis client écrit librement : aucune case, aucun champ prévu à l’avance.</span></p>
+          <p class="step" data-duration="4400"><b>C’est une donnée non structurée.</b><span>Et elle représente la grande majorité de ce que produit vraiment une entreprise.</span></p>
+          <p class="step" data-duration="4800"><b>Il faut d’abord en extraire du sens.</b><span>Reconnaître un texte dans une image, repérer un ton positif ou négatif dans un avis.</span></p>
+          <p class="step" data-duration="5000"><b>C’est là que l’IA change la donne.</b><span>Elle sait lire ce qu’un tableur ne sait même pas ranger.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Structurée, c’est le classeur à intercalaires imprimés&nbsp;: chaque feuille a
+          sa case. Semi-structurée, c’est le dossier à pochettes&nbsp;: une pochette par
+          client, mais chacune contient plus ou moins de papiers. Non structurée, c’est
+          le carton de déménagement&nbsp;: tout est dedans, rien n’est trié.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li><strong>Structurée</strong>&nbsp;: un tableau à colonnes fixes — le terrain des bases de données classiques et de SQL.</li>
+        <li><strong>Semi-structurée</strong>&nbsp;: une forme souple (JSON, XML), avec des clés mais un contenu qui varie d’un cas à l’autre.</li>
+        <li><strong>Non structurée</strong>&nbsp;: texte libre, image, son — sans aucun champ prévu, et pourtant la majorité des données produites.</li>
+        <li>Ce tri décide où la donnée est rangée, et si un tableur suffit ou s’il faut un outil plus souple.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="../index.html#/data">← Data</a>
+        <a class="btn btn-primary" href="base-de-donnees.html">C’est quoi une base de données&nbsp;? →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
