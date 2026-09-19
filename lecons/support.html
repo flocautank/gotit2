@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le support informatique, du ticket à la résolution — GotIt</title>
+<meta name="description" content="Un problème, un ticket, une file triée par urgence, une clôture : la mécanique du support informatique, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="../index.html#/si">Système d’information</a><span>/</span>Faire vivre le SI<span>/</span>Le support
+      </div>
+      <h1>Le support informatique, du ticket à la résolution</h1>
+      <p class="lead">
+        « J’ai ouvert un ticket » : une phrase banale, qui cache un vrai tri — par
+        urgence, pas par ordre d’arrivée.
+      </p>
+      <div class="lesson-meta">
+        <span class="tag tag-level-1">Découverte</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Un mot de passe oublié, un écran bloqué, un serveur injoignable pour toute
+        l’équipe&nbsp;: trois problèmes, trois urgences très différentes, qui arrivent
+        pourtant par le même canal. Le support informatique est l’organisation qui les
+        reçoit, les trie, et les fait avancer jusqu’à la solution.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un problème signalé devient un ticket numéroté, placé dans une file commune">
+        <div class="scene-title">Scène 1 — Un problème devient un ticket</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une personne signale un problème, qui devient un ticket numéroté rejoignant une file d’attente commune">
+            <g data-show="1-4" class="m-pop">
+              <rect x="40" y="90" width="180" height="90" rx="12" class="s-box"/>
+              <text x="130" y="130" text-anchor="middle" class="s-label-sm">Un problème</text>
+              <text x="130" y="152" text-anchor="middle" class="s-label-xs">écran bloqué</text>
+            </g>
+            <path d="M220 135 H 300" class="s-line m-draw" data-show="2-4"/>
+            <g data-show="2-4" class="m-pop">
+              <rect x="300" y="90" width="200" height="90" rx="12" class="s-box-accent"/>
+              <text x="400" y="124" text-anchor="middle" class="s-label-sm">Signalé</text>
+              <text x="400" y="146" text-anchor="middle" class="s-label-xs">formulaire ou mail</text>
+              <text x="400" y="166" text-anchor="middle" class="s-label-xs">au support</text>
+            </g>
+            <path d="M500 135 H 560" class="s-line m-draw" data-show="3-4"/>
+            <g data-show="3-4" class="m-pop">
+              <rect x="560" y="90" width="200" height="90" rx="12" class="s-box-teal"/>
+              <text x="660" y="124" text-anchor="middle" class="s-label-sm">Ticket n°482</text>
+              <text x="660" y="146" text-anchor="middle" class="s-label-xs">qui, quoi, quand</text>
+            </g>
+            <g data-show="4" class="m-rise">
+              <rect x="220" y="220" width="440" height="60" rx="14" class="s-box"/>
+              <text x="440" y="248" text-anchor="middle" class="s-label-sm">rejoint une file commune</text>
+              <text x="440" y="268" text-anchor="middle" class="s-label-xs">visible par toute l’équipe, pas une boîte mail perso</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Un problème survient.</b><span>Petit ou grand, il empêche quelqu’un de travailler normalement.</span></p>
+          <p class="step" data-duration="4400"><b>Il est signalé.</b><span>Un formulaire, un mail, parfois un appel — la personne décrit ce qui ne va pas.</span></p>
+          <p class="step" data-duration="4600"><b>Un ticket est créé.</b><span>Numéroté, daté, avec la description — une fiche qu’on pourra suivre.</span></p>
+          <p class="step" data-duration="4800"><b>Il rejoint une file partagée.</b><span>N’importe quel technicien de l’équipe peut le voir et le reprendre, pas seulement celui qui l’a reçu.</span></p>
+        </div>
+      </section>
+
+      <h2>Trier avant de traiter</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : les tickets sont classés par priorité et affectés à la bonne équipe, indépendamment de leur ordre d’arrivée">
+        <div class="scene-title">Scène 2 — Priorité, pas ordre d’arrivée</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Trois tickets de priorités différentes sont réordonnés, le plus urgent passant en tête, puis affectés à la bonne équipe">
+            <g data-show="1-4" class="m-pop">
+              <rect x="40" y="30" width="220" height="60" rx="10" class="s-box"/>
+              <text x="150" y="65" text-anchor="middle" class="s-label-xs">mot de passe oublié — mineur</text>
+            </g>
+            <g data-show="1-4" class="m-pop">
+              <rect x="40" y="110" width="220" height="60" rx="10" class="s-box"/>
+              <text x="150" y="145" text-anchor="middle" class="s-label-xs">imprimante en panne — majeur</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="40" y="190" width="220" height="60" rx="10" class="s-box-accent"/>
+              <text x="150" y="218" text-anchor="middle" class="s-label-xs">serveur injoignable</text>
+              <text x="150" y="236" text-anchor="middle" class="s-label-xs">pour tous — bloquant</text>
+            </g>
+
+            <path d="M260 220 C 340 220, 340 80, 420 65" class="s-line-accent m-draw" data-show="3-4"/>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="420 " y="30" width="200" height="60" rx="10" class="s-box-accent"/>
+              <text x="520" y="58" text-anchor="middle" class="s-label-sm">traité en premier</text>
+              <text x="520" y="76" text-anchor="middle" class="s-label-xs">bloquant</text>
+            </g>
+
+            <g data-show="4" class="m-right">
+              <rect x="640" y="140" width="140" height="90" rx="12" class="s-box-teal"/>
+              <text x="710" y="176" text-anchor="middle" class="s-label-sm">équipe réseau</text>
+              <text x="710" y="196" text-anchor="middle" class="s-label-xs">affecté</text>
+            </g>
+            <path d="M520 90 C 560 130, 600 140, 638 170" class="s-line m-draw" data-show="4"/>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Tous les tickets n’ont pas la même urgence.</b><span>Un mot de passe oublié n’a rien à voir avec un serveur en panne pour toute l’équipe.</span></p>
+          <p class="step" data-duration="4400"><b>On leur donne une priorité.</b><span>Mineur, majeur, bloquant : trois niveaux qui décident de l’ordre réel de traitement.</span></p>
+          <p class="step" data-duration="4800"><b>Le plus urgent passe devant.</b><span>Même arrivé après les autres, un ticket bloquant remonte en tête de file.</span></p>
+          <p class="step" data-duration="4600"><b>Chaque ticket va à la bonne équipe.</b><span>Réseau, logiciel, matériel : il est affecté à qui sait vraiment le résoudre.</span></p>
+        </div>
+      </section>
+
+      <div class="callout">
+        <div class="callout-title">Le sigle</div>
+        <p>
+          Cette organisation porte un nom&nbsp;: l’<strong>ITSM</strong> (<em>IT Service
+          Management</em>, gestion des services informatiques). Elle fixe aussi des
+          engagements de délai, les <strong>SLA</strong> — combien de temps, au maximum,
+          avant qu’un ticket bloquant soit pris en charge.
+        </p>
+      </div>
+
+      <h2>Résoudre, puis clore</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : le technicien diagnostique, corrige, fait confirmer par le demandeur, puis clôture le ticket en gardant la solution">
+        <div class="scene-title">Scène 3 — Jusqu’à la clôture</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Quatre étapes : diagnostic, correction, confirmation du demandeur, clôture avec solution enregistrée">
+            <g data-show="1-4" class="m-rise">
+              <rect x="20" y="70" width="170" height="90" rx="10" class="s-box"/>
+              <text x="105" y="108" text-anchor="middle" class="s-label-sm">Diagnostic</text>
+              <text x="105" y="128" text-anchor="middle" class="s-label-xs">la vraie cause</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="220" y="70" width="170" height="90" rx="10" class="s-box-teal"/>
+              <text x="305" y="108" text-anchor="middle" class="s-label-sm">Correction</text>
+              <text x="305" y="128" text-anchor="middle" class="s-label-xs">appliquée, testée</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="420" y="70" width="170" height="90" rx="10" class="s-box-violet"/>
+              <text x="505" y="108" text-anchor="middle" class="s-label-sm">Confirmation</text>
+              <text x="505" y="128" text-anchor="middle" class="s-label-xs">le demandeur valide</text>
+            </g>
+            <g data-show="4" class="m-rise">
+              <rect x="620" y="70" width="160" height="90" rx="10" class="s-box-accent"/>
+              <text x="700" y="108" text-anchor="middle" class="s-label-sm">Clôture</text>
+              <text x="700" y="128" text-anchor="middle" class="s-label-xs">solution notée</text>
+            </g>
+            <g class="s-line">
+              <path d="M190 115 H 218" class="m-draw" data-show="2-4"/>
+              <path d="M390 115 H 418" class="m-draw" data-show="3-4"/>
+              <path d="M590 115 H 618" class="m-draw" data-show="4"/>
+            </g>
+            <g data-show="4" class="m-rise">
+              <rect x="120" y="210" width="560" height="60" rx="14" class="s-box"/>
+              <text x="400" y="238" text-anchor="middle" class="s-label-sm">la solution rejoint une base de connaissance</text>
+              <text x="400" y="256" text-anchor="middle" class="s-label-xs">le prochain cas semblable ira plus vite</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Le technicien cherche la vraie cause.</b><span>Pas seulement le symptôme décrit : un écran figé peut cacher un tout autre problème.</span></p>
+          <p class="step" data-duration="4400"><b>Il applique une correction, et la teste.</b><span>Avant de refermer quoi que ce soit, il vérifie que ça fonctionne vraiment.</span></p>
+          <p class="step" data-duration="4600"><b>Le demandeur confirme.</b><span>C’est lui qui dit si son problème a bien disparu — pas le technicien seul.</span></p>
+          <p class="step" data-duration="5000"><b>Le ticket se clôture, mémoire gardée.</b><span>La solution est enregistrée : le prochain cas identique se règle plus vite, parfois tout seul.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          C’est la salle d’attente d’un service d’urgences. On n’y est pas vu dans
+          l’ordre d’arrivée&nbsp;: une infirmière évalue chaque cas à l’entrée, et une
+          entorse attend pendant qu’une urgence vitale passe devant.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un ticket n’est pas un simple mail&nbsp;: c’est une fiche numérotée, suivie, visible par toute l’équipe.</li>
+        <li>La <strong>priorité</strong> décide l’ordre réel de traitement — pas la date d’arrivée.</li>
+        <li>Résoudre ne suffit pas&nbsp;: la <strong>clôture</strong> demande la confirmation du demandeur, et garde la solution en mémoire.</li>
+        <li>Cette organisation a un nom, l’<strong>ITSM</strong>, avec des délais promis, les <strong>SLA</strong>.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="projet-si.html">← Comment se déroule un projet SI</a>
+        <a class="btn btn-primary" href="../index.html#/si">Système d’information →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

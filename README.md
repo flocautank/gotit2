@@ -39,6 +39,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Sauvegarder pour de vrai](lecons/sauvegarde.html) | Réseau | Découverte |
 | [Le chiffrement expliqué simplement](lecons/chiffrement.html) | Réseau | Intermédiaire |
 | [Le réseau Tor, comment ça marche](lecons/tor.html) | Réseau | Intermédiaire |
+| [Donnée structurée ou pas : le grand tri](lecons/donnees-structurees.html) | Data | Découverte |
 | [C'est quoi une base de données ?](lecons/base-de-donnees.html) | Data | Découverte |
 | [Lac, entrepôt, magasin de données](lecons/entrepots-data.html) | Data | Intermédiaire |
 | [Les langages de la data, situés](lecons/langages-data.html) | Data | Intermédiaire |
@@ -50,6 +51,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [C'est quoi un CRM ?](lecons/crm.html) | Système d'information | Découverte |
 | [C'est quoi une API ?](lecons/api.html) | Système d'information | Découverte |
 | [Comment se déroule un projet SI](lecons/projet-si.html) | Système d'information | Intermédiaire |
+| [Le support informatique, du ticket à la résolution](lecons/support.html) | Système d'information | Découverte |
 | [Comment un modèle de langage écrit](lecons/llm.html) | IA | Découverte |
 | [Pourquoi l'IA a besoin de cartes graphiques](lecons/gpu.html) | IA | Découverte |
 | [Pourquoi une IA invente parfois](lecons/hallucination.html) | IA | Intermédiaire |
@@ -62,12 +64,12 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 
-**39 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**42 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
 ouvert, benchmark, garde-fous —, celui des projets SI : cahier des charges, recette, MOA/MOE,
-CRM, ERP, quatre mots de réseau (Tor, adresse IP, VPN, pare-feu), deux d'informatique générale
-(octet, cache) et quatre de la data (ETL/ELT, KPI, SQL, Big Data).
+CRM, ERP, SLA, cinq mots de réseau (Tor, adresse IP, VPN, pare-feu, DNS), trois d'informatique
+générale (octet, cache, open source) et quatre de la data (ETL/ELT, KPI, SQL, Big Data).
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours
