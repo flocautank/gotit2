@@ -33,7 +33,7 @@ PAGE = """<!doctype html>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="../index.html">{mark} <span class="brand-word">GotIt<span class="bang">!</span></span></a>
-    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../idees.html">Idées</a></nav>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
   </div>
 </header>
 

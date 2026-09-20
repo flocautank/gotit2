@@ -29,6 +29,18 @@ un contrôle échoue si une carte en compte un autre nombre.
 
 `aka` est important : ce sont les mots que les gens tapent réellement dans la recherche.
 
+# La carte du site
+
+`explorer.html` se construit toute seule à partir du catalogue : rien à y déclarer.
+Deux gestes l'enrichissent au passage, et ils ne coûtent rien :
+
+- **le champ `voir` d'une carte** devient un trait vers la leçon correspondante ;
+- **nommer une notion voisine** dans le `une` ou le `pas` d'une carte (« à ne pas
+  confondre avec le fine-tuning ») crée un lien entre les deux cartes.
+
+Les mots-clés d'une leçon servent aussi : deux leçons qui en partagent au moins
+deux sont reliées. Des mots-clés justes valent donc mieux que nombreux.
+
 # Les deux thèmes
 
 Le site se porte en deux charte : GotIt (par défaut) et Klint. Il n'y a rien à faire

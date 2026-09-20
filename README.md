@@ -98,6 +98,9 @@ assets/js/home.js       Navigation du catalogue (domaine > catégorie) et recher
 assets/js/scene.js      Moteur d'animation des scènes (étapes, lecture, clavier)
 assets/css/main.css     Styles généraux
 assets/css/lesson.css   Styles des leçons et utilitaires d'animation
+explorer.html           La carte du site : domaines, leçons, cartes et leurs liens
+assets/js/explorer.js   Construction du graphe et tracé de la carte
+assets/css/explorer.css Styles de la carte
 assets/css/theme-klint.css  Thème Klint (surcouche de variables)
 assets/js/theme.js      Sélecteur de thème GotIt / Klint
 assets/img/             Logo, marque seule et image de partage
@@ -176,6 +179,33 @@ Palette chaude et claire — fond ivoire, texte brun sombre, accent terre cuite,
 et ardoise en secondaires — avec une serif pour les titres et une sans-serif système
 pour le texte. Tout est défini en variables CSS en haut de `assets/css/main.css` :
 changer la charte, c'est changer ce bloc.
+
+### La carte du site
+
+`explorer.html` montre le contenu comme un graphe : chaque point est une leçon ou
+une carte, chaque trait un lien **réel**, jamais décoratif. Quatre sources, toutes
+déduites du catalogue — rien n'est décrit une seconde fois :
+
+| Lien | D'où il vient |
+|---|---|
+| Domaine → contenu | la taxonomie de `FAMILIES` |
+| Carte → leçon | le champ `voir` d'une carte |
+| Carte → carte | une carte qui en nomme une autre dans sa phrase ou son « à ne pas confondre » |
+| Leçon ↔ leçon | au moins deux mots-clés communs (un seul entre une carte et une leçon) |
+
+Conséquence directe : une leçon publiée cette nuit apparaît sur la carte le
+lendemain sans que personne n'y touche. Soigner le champ `voir` d'une carte et ses
+mots-clés, c'est enrichir la carte.
+
+Le tracé est déterministe — aucune simulation physique : la carte est la même à
+chaque visite et ne coûte rien à un téléphone. Les positions sont calculées en
+pixels réels, jamais dans un `viewBox` mis à l'échelle, sans quoi les libellés
+deviendraient minuscules sur mobile.
+
+Au-delà de 46 contenus affichés, ou sur un écran étroit, la vue d'ensemble ne
+montre plus que les domaines et leur nombre de contenus : on ouvre d'un clic.
+C'est ce qui l'empêche de virer au plat de spaghettis à mesure que le catalogue
+grossit.
 
 ### Le thème Klint
 
