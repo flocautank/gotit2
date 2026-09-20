@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explorer — GotIt</title>
+<meta name="description" content="La carte du site : les domaines, les leçons et les cartes de concept, et les liens qui les relient.">
+<meta property="og:title" content="Explorer — GotIt">
+<meta property="og:description" content="La carte du site : ce qui existe, et ce qui se tient.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://flocautank.github.io/gotit2/assets/img/og.png">
+<meta property="og:url" content="https://flocautank.github.io/gotit2/explorer.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/explorer.css">
+<link rel="stylesheet" href="assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#liste">Aller à la liste du contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="brand-word">GotIt<span class="bang">!</span></span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html#catalogue">Leçons</a>
+      <a href="cartes.html">Cartes</a>
+      <a href="explorer.html" aria-current="page">Explorer</a>
+      <a href="idees.html">Idées</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap explo-intro">
+    <h1>La carte du site</h1>
+    <p class="explo-lead">
+      Tout ce qui existe ici, et surtout ce qui se tient. Chaque point est une leçon
+      ou une carte&nbsp;; chaque trait, un lien réel — un renvoi, ou des notions
+      voisines. Cliquez sur un point pour vous placer dessus et voir ce qui l’entoure.
+    </p>
+  </section>
+
+  <section class="wrap explo-barre">
+    <div class="explo-fil" id="fil" aria-live="polite">
+      <button type="button" class="explo-retour" id="retour" hidden>← Vue d’ensemble</button>
+      <span class="explo-position" id="position">Les cinq domaines</span>
+    </div>
+
+    <div class="explo-outils">
+      <label class="visually-hidden" for="recherche">Chercher un point sur la carte</label>
+      <input id="recherche" type="search" placeholder="Chercher : RAG, serveur, datalake…" autocomplete="off" list="suggestions">
+      <datalist id="suggestions"></datalist>
+
+      <span class="explo-bascule" role="group" aria-label="Ce qu’on affiche">
+        <button type="button" data-filtre="lecons">Leçons</button>
+        <button type="button" data-filtre="cartes">Cartes</button>
+        <button type="button" data-filtre="tout">Tout</button>
+      </span>
+    </div>
+  </section>
+
+  <section class="wrap explo-scene">
+    <div class="explo-toile">
+      <svg id="toile" role="img" aria-labelledby="toile-titre"><title id="toile-titre">Carte des contenus du site</title></svg>
+      <p class="explo-vide" id="vide" hidden>Aucun point ne correspond.</p>
+    </div>
+
+    <aside class="explo-panneau" id="panneau" aria-live="polite">
+      <p class="explo-invite" id="invite">Survolez un point, ou cliquez pour vous y placer.</p>
+      <div id="detail" hidden>
+        <span class="explo-etiquette" id="d-type"></span>
+        <h2 id="d-titre"></h2>
+        <p id="d-resume"></p>
+        <a class="btn btn-primary" id="d-lien" href="#">Ouvrir</a>
+        <div class="explo-voisins" id="d-voisins"></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="wrap explo-legende">
+    <h2 class="visually-hidden">Légende</h2>
+    <ul>
+      <li><span class="pastille pastille-domaine"></span> Domaine</li>
+      <li><span class="pastille pastille-lecon"></span> Leçon — un schéma animé, étape par étape</li>
+      <li><span class="pastille pastille-carte"></span> Carte — une phrase et quatre étapes</li>
+      <li><span class="trait trait-renvoi"></span> Renvoi explicite</li>
+      <li><span class="trait trait-parente"></span> Notions voisines</li>
+    </ul>
+  </section>
+
+  <section class="wrap explo-liste" id="liste">
+    <h2>Le contenu, en liste</h2>
+    <p class="explo-lead">Même chose sans la carte, si vous préférez lire.</p>
+    <div id="liste-contenu"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>GotIt — vulgarisation visuelle.</span>
+    <span><a href="index.html">Retour à l’accueil</a></span>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/explorer.js"></script>
+<script src="assets/js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+/* GotIt — la carte du site.
+ *
+ * Tout est peint avec les variables de main.css : la carte suit le thème,
+ * GotIt comme Klint, sans une seule couleur écrite en dur.
+ *
+ * Le tracé est calculé en pixels réels par explorer.js, jamais dans un viewBox
+ * mis à l'échelle : sinon les libellés deviendraient illisibles sur mobile.
+ */
+
+.explo-intro { padding: 44px 0 10px; }
+.explo-intro h1 { font-size: clamp(1.9rem, 4.6vw, 2.7rem); margin: 0 0 12px; font-weight: 500; letter-spacing: -.02em; }
+.explo-lead { color: var(--text-dim); max-width: 62ch; margin: 0; line-height: 1.6; }
+
+/* ---------- La barre de pilotage ---------- */
+
+.explo-barre {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px;
+  padding: 18px 20px 14px;
+}
+.explo-fil { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.explo-position { color: var(--text-dim); font-size: .95rem; }
+
+.explo-retour {
+  font: inherit; font-size: .9rem;
+  padding: 6px 13px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--surface);
+  color: var(--text-dim); cursor: pointer;
+  transition: border-color .18s, color .18s;
+}
+.explo-retour:hover { border-color: var(--accent); color: var(--accent); }
+
+.explo-outils { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-left: auto; }
+
+#recherche {
+  font: inherit; font-size: .94rem;
+  padding: 8px 14px; min-width: 210px;
+  border: 1px solid var(--line-strong); border-radius: 999px;
+  background: var(--surface); color: var(--text);
+}
+#recherche:focus { outline: none; border-color: var(--accent); }
+
+.explo-bascule {
+  display: inline-flex; gap: 2px; padding: 3px;
+  border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface);
+}
+.explo-bascule button {
+  font: inherit; font-size: .84rem; font-weight: 500;
+  padding: 5px 13px; border: none; border-radius: 999px;
+  background: transparent; color: var(--text-faint); cursor: pointer;
+  transition: background .18s, color .18s;
+}
+.explo-bascule button[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
+
+/* ---------- La scène : la toile et le panneau ---------- */
+
+.explo-scene {
+  display: grid; gap: 18px;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  align-items: start;
+}
+
+.explo-toile {
+  position: relative;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+#toile { display: block; width: 100%; height: clamp(420px, 62vh, 640px); touch-action: manipulation; }
+
+.explo-vide {
+  position: absolute; inset: 0; margin: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-faint); font-size: .95rem;
+}
+/* Sans cela, le display:flex ci-dessus l'emporterait sur l'attribut hidden. */
+.explo-vide[hidden] { display: none; }
+
+/* Les traits. Ils se lisent derrière les points, jamais devant. */
+.lien { fill: none; stroke: var(--line-strong); stroke-width: 1.2; transition: stroke .2s, stroke-width .2s, opacity .2s; }
+.lien-renvoi { stroke: var(--accent); stroke-width: 1.5; opacity: .5; }
+.lien-parente { stroke: var(--sage); stroke-width: 1.4; stroke-dasharray: 4 4; opacity: .65; }
+.lien-second { opacity: .28; }
+.lien.est-eteint { opacity: .12; }
+.lien.est-vif { stroke-width: 2.4; opacity: 1; }
+
+/* Les points. */
+.noeud { cursor: pointer; }
+.noeud circle { transition: r .2s var(--ease), fill .2s, stroke .2s, stroke-width .2s; }
+.noeud text {
+  font-family: var(--sans); text-anchor: middle; pointer-events: none;
+  fill: var(--text-dim); transition: fill .2s;
+  /* Un halo de la couleur du fond : le libellé reste lisible même quand un
+     trait ou un point voisin passe derrière lui. */
+  stroke: var(--surface); stroke-width: 3.5; paint-order: stroke fill;
+}
+.noeud:focus { outline: none; }
+.noeud:focus-visible circle { stroke: var(--accent); stroke-width: 3; }
+
+.n-domaine circle { fill: var(--slate-soft); stroke: var(--slate); stroke-width: 2; }
+.n-domaine text { fill: var(--text); font-weight: 600; }
+.n-lecon circle  { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.6; }
+.n-carte circle  { fill: var(--sage-soft); stroke: var(--sage); stroke-width: 1.6; }
+
+.noeud.est-vif circle { stroke-width: 3; }
+.noeud.est-vif text { fill: var(--text); font-weight: 600; }
+.noeud.est-eteint { opacity: .22; }
+.noeud.est-centre circle { stroke-width: 3.4; }
+.noeud.est-centre text { fill: var(--text); font-weight: 700; }
+
+/* Apparition douce, et rien du tout si le visiteur l'a demandé. */
+.noeud, .lien { animation: explo-entree .34s var(--ease) both; }
+@keyframes explo-entree { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .noeud, .lien { animation: none; }
+  .noeud circle, .lien { transition: none; }
+}
+
+/* ---------- Le panneau de droite ---------- */
+
+.explo-panneau {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); padding: 18px 18px 20px;
+  min-height: 190px;
+}
+.explo-invite { color: var(--text-faint); font-size: .92rem; margin: 0; line-height: 1.6; }
+.explo-panneau h2 { font-size: 1.14rem; margin: 8px 0 8px; line-height: 1.3; }
+.explo-panneau p { color: var(--text-dim); font-size: .94rem; line-height: 1.6; margin: 0 0 16px; }
+
+.explo-etiquette {
+  display: inline-block; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 999px;
+  background: var(--surface-2); color: var(--text-faint);
+}
+.explo-panneau .btn { width: 100%; justify-content: center; }
+
+.explo-voisins { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 14px; }
+.explo-voisins h3 { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-faint); margin: 0 0 9px; font-weight: 600; }
+.explo-voisins ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.explo-voisins button {
+  font: inherit; font-size: .84rem;
+  padding: 4px 11px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: transparent;
+  color: var(--text-dim); cursor: pointer;
+  transition: border-color .18s, color .18s;
+}
+.explo-voisins button:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Légende et liste ---------- */
+
+.explo-legende { padding: 16px 20px 6px; }
+.explo-legende ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.explo-legende li { display: flex; align-items: center; gap: 8px; color: var(--text-faint); font-size: .85rem; }
+.pastille { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.pastille-domaine { background: var(--slate-soft); border: 2px solid var(--slate); }
+.pastille-lecon { background: var(--accent-soft); border: 2px solid var(--accent); }
+.pastille-carte { background: var(--sage-soft); border: 2px solid var(--sage); }
+.trait { width: 22px; height: 0; border-top-width: 2px; flex: none; }
+.trait-renvoi { border-top: 2px solid var(--accent); }
+.trait-parente { border-top: 2px dashed var(--sage); }
+
+.explo-liste { padding: 30px 20px 60px; }
+.explo-liste h2 { font-size: 1.4rem; margin: 0 0 8px; }
+.explo-liste .explo-lead { margin-bottom: 22px; }
+.liste-domaine { margin-bottom: 26px; }
+.liste-domaine h3 { font-size: 1.05rem; margin: 0 0 10px; }
+.liste-domaine ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 7px; }
+.liste-domaine a {
+  display: inline-block; font-size: .88rem;
+  padding: 5px 12px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--text-dim);
+}
+.liste-domaine a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+/* ---------- Petits écrans ---------- */
+
+@media (max-width: 900px) {
+  .explo-scene { grid-template-columns: minmax(0, 1fr); }
+  .explo-panneau { min-height: 0; }
+}
+
+@media (max-width: 640px) {
+  .explo-intro { padding: 30px 0 6px; }
+  .explo-outils { margin-left: 0; width: 100%; }
+  #recherche { flex: 1; min-width: 0; }
+  #toile { height: clamp(360px, 56vh, 460px); }
+  .explo-legende ul { gap: 7px 16px; }
+}

@@ -286,5 +286,12 @@
     search.addEventListener('search', render);
   }
 
+  /* Le nombre de cartes grandit à chaque nuit : il se lit dans le catalogue,
+     jamais écrit en dur dans la page. */
+  var compteur = document.getElementById('nb-cartes');
+  if (compteur && data.CARDS && data.CARDS.length) {
+    compteur.textContent = data.CARDS.length + ' cartes';
+  }
+
   render();
 })();
