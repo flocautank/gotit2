@@ -32,6 +32,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [C’est quoi un algorithme ?](lecons/algorithme.html) | Informatique | Découverte |
 | [Local ou cloud : quelle différence ?](lecons/local-vs-cloud.html) | Informatique | Découverte |
 | [SaaS, PaaS, IaaS](lecons/cloud-saas.html) | Informatique | Intermédiaire |
+| [La virtualisation, un ordinateur dans l'ordinateur](lecons/virtualisation.html) | Informatique | Intermédiaire |
 | [Comment voyage une page web](lecons/internet.html) | Réseau | Découverte |
 | [Wifi, box et débit](lecons/wifi-box.html) | Réseau | Découverte |
 | [Ce que sait votre navigateur](lecons/navigateur.html) | Réseau | Découverte |
@@ -64,12 +65,13 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 
-**42 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**46 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
 ouvert, benchmark, garde-fous —, celui des projets SI : cahier des charges, recette, MOA/MOE,
-CRM, ERP, SLA, cinq mots de réseau (Tor, adresse IP, VPN, pare-feu, DNS), trois d'informatique
-générale (octet, cache, open source) et quatre de la data (ETL/ELT, KPI, SQL, Big Data).
+CRM, ERP, SLA, RACI, six mots de réseau (Tor, adresse IP, VPN, pare-feu, DNS, cookie), quatre
+d'informatique générale (octet, cache, open source, conteneur) et cinq de la data (ETL/ELT,
+KPI, SQL, Big Data, index).
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours

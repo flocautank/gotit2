@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La virtualisation, un ordinateur dans l’ordinateur — GotIt !</title>
+<meta name="description" content="Comment une seule machine physique se découpe en plusieurs machines virtuelles, chacune persuadée d’être seule au monde, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/informatique">Informatique</a><span>/</span>Le matériel<span>/</span>Où tournent les programmes</div>
+      <h1>La virtualisation, un ordinateur dans l’ordinateur</h1>
+      <p class="lead">Une seule machine peut en devenir plusieurs, chacune persuadée d’être seule au monde&nbsp;: c’est ce tour de passe-passe qui rend le cloud possible.</p>
+      <div class="lesson-meta"><span class="tag tag-level-2">Intermédiaire</span><span class="tag">7 min</span><span class="tag">3 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Une machine physique achetée pour son pic d’activité passe le plus clair de son
+        temps à moitié vide. La virtualisation part de ce gâchis, et le résout d’une
+        façon un peu vertigineuse&nbsp;: faire croire à plusieurs ordinateurs qu’ils
+        possèdent chacun la machine entière.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : le problème d’une machine par besoin">
+        <div class="scene-title">Scène 1 — Une machine, un seul usage&nbsp;?</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un serveur sous-utilisé, puis trois besoins qui réclament chacun leur propre machine">
+            <g data-show="1-4" class="m-rise">
+              <rect x="300" y="40" width="200" height="90" rx="12" class="s-box-teal"/>
+              <text x="400" y="78" text-anchor="middle" class="s-label">Serveur physique</text>
+              <text x="400" y="102" text-anchor="middle" class="s-label-xs">utilisé à peine à moitié</text>
+            </g>
+            <g data-show="2-4" class="m-fall">
+              <rect x="60" y="180" width="180" height="70" rx="10" class="s-box"/>
+              <text x="150" y="212" text-anchor="middle" class="s-label-sm">Site web</text>
+              <text x="150" y="234" text-anchor="middle" class="s-label-xs">« sa » machine&nbsp;?</text>
+              <rect x="310" y="180" width="180" height="70" rx="10" class="s-box"/>
+              <text x="400" y="212" text-anchor="middle" class="s-label-sm">Messagerie</text>
+              <text x="400" y="234" text-anchor="middle" class="s-label-xs">« sa » machine&nbsp;?</text>
+              <rect x="560" y="180" width="180" height="70" rx="10" class="s-box"/>
+              <text x="650" y="212" text-anchor="middle" class="s-label-sm">Base de données</text>
+              <text x="650" y="234" text-anchor="middle" class="s-label-xs">« sa » machine&nbsp;?</text>
+            </g>
+            <g data-show="3-4">
+              <path d="M400 130 V170" class="s-line m-draw" data-show="3-4"/>
+            </g>
+            <g data-show="4">
+              <text x="400" y="280" text-anchor="middle" class="s-label-sm" fill="var(--accent)">trois machines, trois factures, trois fois la place en salle serveur</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Une machine physique tourne rarement à pleine charge.</b><span>Achetée pour encaisser son pic d’activité, elle passe le plus clair de son temps à moitié vide.</span></p>
+          <p class="step" data-duration="4400"><b>Pourtant chaque nouveau besoin semble réclamer sa propre machine.</b><span>Un site, une messagerie, une base de données&nbsp;: la tentation est d’installer chacun sur du matériel séparé.</span></p>
+          <p class="step" data-duration="4600"><b>Multiplier les machines physiques coûte cher et prend de la place.</b><span>Autant de factures, de salles climatisées et de pannes à surveiller — pour des machines aux trois quarts inactives.</span></p>
+          <p class="step" data-duration="4800"><b>Et si une seule machine suffisait pour les trois&nbsp;?</b><span>C’est exactement le problème que la virtualisation résout.</span></p>
+        </div>
+      </section>
+
+      <h2>Un chef d’orchestre invisible</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : l’hyperviseur découpe une machine en plusieurs machines virtuelles">
+        <div class="scene-title">Scène 2 — L’hyperviseur</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 330" role="img" aria-label="Une machine physique, un hyperviseur, et trois machines virtuelles isolées les unes des autres">
+            <g data-show="1-4" class="m-rise">
+              <rect x="150" y="230" width="500" height="60" rx="10" class="s-box-teal"/>
+              <text x="400" y="266" text-anchor="middle" class="s-label">Serveur physique</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="150" y="170" width="500" height="50" rx="10" class="s-box-violet"/>
+              <text x="400" y="200" text-anchor="middle" class="s-label-sm">L’hyperviseur</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="150" y="50" width="150" height="100" rx="10" class="s-box-accent"/>
+              <text x="225" y="90" text-anchor="middle" class="s-label-sm">Machine virtuelle A</text>
+              <text x="225" y="112" text-anchor="middle" class="s-label-xs">son propre système</text>
+              <rect x="325" y="50" width="150" height="100" rx="10" class="s-box-accent"/>
+              <text x="400" y="90" text-anchor="middle" class="s-label-sm">Machine virtuelle B</text>
+              <text x="400" y="112" text-anchor="middle" class="s-label-xs">son propre système</text>
+              <rect x="500" y="50" width="150" height="100" rx="10" class="s-box-accent"/>
+              <text x="575" y="90" text-anchor="middle" class="s-label-sm">Machine virtuelle C</text>
+              <text x="575" y="112" text-anchor="middle" class="s-label-xs">son propre système</text>
+              <path d="M225 150 V166" class="s-line m-draw" data-show="3-4"/>
+              <path d="M400 150 V166" class="s-line m-draw" data-show="3-4"/>
+              <path d="M575 150 V166" class="s-line m-draw" data-show="3-4"/>
+            </g>
+            <g data-show="4">
+              <text x="400" y="316" text-anchor="middle" class="s-label-sm" fill="var(--accent)">chacune ignore l’existence des deux autres</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Tout part d’une seule machine physique.</b><span>Son processeur, sa mémoire, son disque&nbsp;: un seul jeu de composants, bien réel.</span></p>
+          <p class="step" data-duration="4600"><b>Un logiciel spécial, l’hyperviseur, s’installe dessus et prend le contrôle du matériel.</b><span>Lui seul parle désormais directement au processeur et à la mémoire.</span></p>
+          <p class="step" data-duration="5000"><b>Il découpe cette puissance en plusieurs tranches, une par machine virtuelle.</b><span>Chacune reçoit sa part de processeur, de mémoire et de disque, et y installe son propre système d’exploitation complet.</span></p>
+          <p class="step" data-duration="4800"><b>Chaque machine virtuelle ignore l’existence des deux autres.</b><span>Elle se comporte comme si elle possédait la machine entière, alors qu’elle n’en occupe qu’une tranche.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un immeuble découpé en appartements. Le syndic — l’hyperviseur — répartit
+          l’eau, l’électricité et l’espace entre les logements. Chaque locataire a sa
+          propre porte, ses propres clés, et vit comme s’il était seul dans les murs.
+          Tous partagent pourtant la même structure, le même toit, les mêmes fondations.
+        </p>
+      </div>
+
+      <h2>D’où vient le cloud</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : un centre de données loue ses machines virtuelles à plusieurs clients">
+        <div class="scene-title">Scène 3 — Louer des tranches</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un centre de données découpé en tranches virtuelles, chacune louée à un client différent">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="40" width="680" height="90" rx="12" class="s-box-teal"/>
+              <text x="400" y="78" text-anchor="middle" class="s-label">Un centre de données</text>
+              <text x="400" y="102" text-anchor="middle" class="s-label-xs">des machines bien plus puissantes qu’il n’en faut à un seul client</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="80" y="160" width="150" height="80" rx="10" class="s-box-accent"/>
+              <text x="155" y="196" text-anchor="middle" class="s-label-sm">Client A</text>
+              <text x="155" y="216" text-anchor="middle" class="s-label-xs">sa tranche</text>
+              <rect x="255" y="160" width="150" height="80" rx="10" class="s-box-accent"/>
+              <text x="330" y="196" text-anchor="middle" class="s-label-sm">Client B</text>
+              <text x="330" y="216" text-anchor="middle" class="s-label-xs">sa tranche</text>
+              <rect x="430" y="160" width="150" height="80" rx="10" class="s-box-accent"/>
+              <text x="505" y="196" text-anchor="middle" class="s-label-sm">Client C</text>
+              <text x="505" y="216" text-anchor="middle" class="s-label-xs">sa tranche</text>
+              <rect x="605" y="160" width="135" height="80" rx="10" class="s-box"/>
+              <text x="672" y="196" text-anchor="middle" class="s-label-xs">et bien d’autres…</text>
+            </g>
+            <g data-show="3-4">
+              <path d="M155 130 V156" class="s-line m-draw" data-show="3-4"/>
+              <path d="M330 130 V156" class="s-line m-draw" data-show="3-4"/>
+              <path d="M505 130 V156" class="s-line m-draw" data-show="3-4"/>
+            </g>
+            <g data-show="4">
+              <text x="400" y="276" text-anchor="middle" class="s-label-sm" fill="var(--accent)">chacun paie sa tranche, l’agrandit ou la réduit en quelques clics</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Un hébergeur cloud possède d’immenses machines physiques.</b><span>Bien plus puissantes qu’il n’en faut pour un seul client.</span></p>
+          <p class="step" data-duration="4600"><b>Grâce à la virtualisation, il les découpe en tranches, une machine virtuelle par client.</b><span>Chacun croit disposer de sa propre machine, dédiée rien qu’à lui.</span></p>
+          <p class="step" data-duration="4800"><b>Ajouter un client, c’est créer une nouvelle tranche — pas acheter une nouvelle machine.</b><span>Le lien entre le matériel et chaque client se fait uniquement à travers ce découpage.</span></p>
+          <p class="step" data-duration="5000"><b>C’est ce découpage, invisible, qui rend le cloud économiquement possible.</b><span>Chacun paie pour la part qu’il utilise, l’agrandit ou la réduit en quelques clics, sans jamais toucher au matériel.</span></p>
+        </div>
+      </section>
+
+      <div class="callout">
+        <div class="callout-title">Les mots qu’on entend</div>
+        <p>
+          <strong>Hyperviseur</strong> — le logiciel qui découpe la machine physique en plusieurs machines virtuelles.
+          <strong>VM</strong> — l’abréviation de « machine virtuelle ».
+          <strong>Instance</strong> — le nom que les hébergeurs cloud donnent souvent à une machine virtuelle louée.
+          <strong>Conteneur</strong> — une version plus légère de la même idée, qui partage le système d’exploitation de la machine hôte au lieu d’en simuler un.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Une <strong>machine virtuelle</strong> est un ordinateur complet, simulé à l’intérieur d’un autre.</li>
+        <li>L’<strong>hyperviseur</strong> découpe une machine physique en plusieurs virtuelles, chacune isolée des autres.</li>
+        <li>C’est ce principe qui rend le <strong>cloud</strong> économiquement possible&nbsp;: une machine physique, louée en tranches.</li>
+        <li>Le <strong>conteneur</strong> va plus loin en partageant le système d’exploitation&nbsp;: plus léger, mais moins isolé qu’une machine virtuelle.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="cloud-saas.html">← SaaS, PaaS, IaaS</a>
+        <a class="btn btn-primary" href="../index.html#/informatique">Informatique →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
