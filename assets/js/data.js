@@ -49,6 +49,13 @@ window.GOTIT = (function () {
       duration: '6 min', level: 1,
       keywords: ['local', 'cloud', 'nuage', 'hébergement', 'sauvegarde', 'données', 'internet']
     },
+    'virtualisation': {
+      title: 'La virtualisation, un ordinateur dans l’ordinateur',
+      summary: 'Comment une seule machine physique se découpe en plusieurs, chacune persuadée d’être seule au monde.',
+      path: 'lecons/virtualisation.html',
+      duration: '7 min', level: 2,
+      keywords: ['virtualisation', 'machine virtuelle', 'vm', 'hyperviseur', 'serveur', 'cloud', 'conteneur', 'docker']
+    },
 
     /* ---------- Réseau ---------- */
 
@@ -304,7 +311,7 @@ window.GOTIT = (function () {
           id: 'materiel', title: 'Le matériel',
           subcategories: [
             { id: 'dans-la-machine', title: 'Dans la machine', lessons: ['ordinateur', 'serveur'] },
-            { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas'] },
+            { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas', 'virtualisation'] },
             { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['fichiers'] }
           ]
         },
@@ -919,6 +926,55 @@ window.GOTIT = (function () {
         "Gratuit ne veut pas dire sans coût : l’installer, le maintenir et le sécuriser demande quand même des compétences ou un prestataire."
       ],
       pas: "le modèle ouvert (open weights) d’une IA, qui publie les réglages d’un modèle entraîné — l’open source, lui, concerne le code d’un programme classique."
+    },
+    {
+      id: "conteneur", terme: "Conteneur (Docker)", domaine: "Informatique",
+      aka: ["conteneur", "container", "docker", "dockerisé"],
+      une: "Une boîte légère qui embarque un programme et tout ce qu’il lui faut pour tourner pareil partout.",
+      etapes: [
+        "Un programme qui marche sur l’ordinateur de son développeur plante parfois ailleurs : une bibliothèque absente, un réglage différent.",
+        "Un conteneur embarque le programme avec exactement ses dépendances, dans un paquet unique et transportable.",
+        "Contrairement à une machine virtuelle, il ne simule pas un ordinateur entier : il partage le système d’exploitation de la machine qui l’accueille, ce qui le rend bien plus léger et rapide à démarrer.",
+        "Docker en a popularisé l’usage : on lance, duplique ou détruit un conteneur en quelques secondes, sans jamais rien réinstaller."
+      ],
+      voir: "virtualisation",
+      pas: "la machine virtuelle, qui simule un ordinateur complet avec son propre système d’exploitation — le conteneur, lui, emprunte celui de la machine hôte."
+    },
+    {
+      id: "cookie", terme: "Cookie (web)", domaine: "Réseau",
+      aka: ["cookie", "cookies", "traceur", "bandeau cookies"],
+      une: "Un petit fichier qu’un site dépose dans le navigateur pour se souvenir de vous d’une visite à l’autre.",
+      etapes: [
+        "Le web ne retient rien par défaut : à chaque page chargée, le serveur voit un inconnu qui arrive pour la première fois.",
+        "Un cookie est un petit texte que le site dépose dans le navigateur, puis se fait redonner automatiquement à chaque page suivante.",
+        "Certains sont utiles : rester connecté, garder un panier rempli. D’autres suivent la navigation d’un site à l’autre pour cibler la publicité.",
+        "Le bandeau qui demande un accord au premier clic sépare les deux : cookies nécessaires acceptés d’office, cookies publicitaires soumis au choix du visiteur."
+      ],
+      voir: "navigateur"
+    },
+    {
+      id: "index-bdd", terme: "Index (base de données)", domaine: "Data",
+      aka: ["index", "indexation", "index de base de données"],
+      une: "Un raccourci qui évite à la base de données de relire toute une table pour répondre à une question.",
+      etapes: [
+        "Sans aide, trouver une ligne dans une table d’un million de lignes oblige la base à toutes les parcourir, une par une.",
+        "Un index range à l’avance les valeurs d’une colonne dans un ordre qui permet de sauter directement à la bonne zone, comme l’index d’un livre renvoie à une page.",
+        "La recherche sur cette colonne devient alors quasi instantanée, même sur des millions de lignes.",
+        "Le prix à payer : chaque ajout ou modification doit aussi mettre à jour l’index, ce qui ralentit un peu l’écriture. On indexe les colonnes qu’on interroge souvent, pas toutes."
+      ],
+      voir: "base-de-donnees"
+    },
+    {
+      id: "raci", terme: "RACI (matrice)", domaine: "SI",
+      aka: ["raci", "matrice raci"],
+      une: "Un tableau qui fixe, pour chaque tâche d’un projet, qui fait, qui décide, qui est consulté, qui est juste informé.",
+      etapes: [
+        "Sur un projet à plusieurs services, une tâche sans responsable clair finit par n’être faite par personne — chacun pensant que c’est à un autre.",
+        "La matrice RACI liste les tâches en lignes, les personnes ou rôles en colonnes, et croise chaque case avec une lettre.",
+        "R (réalise la tâche), A (rend des comptes dessus et tranche en cas de désaccord), C (consulté avant), I (informé une fois fait).",
+        "Une seule case A par ligne est la règle d’or : plusieurs décideurs sur une même tâche, et le blocage n’est jamais loin."
+      ],
+      voir: "projet-si"
     },
   ];
 
