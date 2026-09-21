@@ -40,6 +40,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Sauvegarder pour de vrai](lecons/sauvegarde.html) | Réseau | Découverte |
 | [Le chiffrement expliqué simplement](lecons/chiffrement.html) | Réseau | Intermédiaire |
 | [Le réseau Tor, comment ça marche](lecons/tor.html) | Réseau | Intermédiaire |
+| [Comment voyage un e-mail](lecons/email.html) | Réseau | Découverte |
 | [Donnée structurée ou pas : le grand tri](lecons/donnees-structurees.html) | Data | Découverte |
 | [C'est quoi une base de données ?](lecons/base-de-donnees.html) | Data | Découverte |
 | [Lac, entrepôt, magasin de données](lecons/entrepots-data.html) | Data | Intermédiaire |
@@ -65,13 +66,13 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Les « skills » d'une IA](lecons/ia-skills.html) | IA | Intermédiaire |
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 
-**46 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**50 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
 ouvert, benchmark, garde-fous —, celui des projets SI : cahier des charges, recette, MOA/MOE,
-CRM, ERP, SLA, RACI, six mots de réseau (Tor, adresse IP, VPN, pare-feu, DNS, cookie), quatre
-d'informatique générale (octet, cache, open source, conteneur) et cinq de la data (ETL/ELT,
-KPI, SQL, Big Data, index).
+CRM, ERP, SLA, RACI, API, sept mots de réseau (Tor, adresse IP, VPN, pare-feu, DNS, cookie,
+hameçonnage), cinq d'informatique générale (octet, cache, open source, conteneur, cloud) et
+six de la data (ETL/ELT, KPI, SQL, Big Data, index, tableau de bord).
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours

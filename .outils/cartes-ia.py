@@ -411,4 +411,41 @@ CARTES = [
    "R (réalise la tâche), A (rend des comptes dessus et tranche en cas de désaccord), C (consulté avant), I (informé une fois fait).",
    "Une seule case A par ligne est la règle d’or : plusieurs décideurs sur une même tâche, et le blocage n’est jamais loin."],
   voir='projet-si'),
+
+ dict(id='api', terme='API', aka=['api','interface de programmation','application programming interface','interface'], dom='SI',
+  une="Le menu de ce qu’un logiciel accepte de vous laisser faire — rien d’autre.",
+  etapes=[
+   "Deux logiciels qui doivent se parler ne peuvent pas fouiller librement dans les entrailles l’un de l’autre : il leur faut une porte définie.",
+   "Une API est ce menu de portes : une liste de demandes précises qu’un logiciel accepte de recevoir, avec ce qu’il faut lui donner et ce qu’il renverra.",
+   "Elle cache tout le reste : la base de données, le code interne, la façon dont c’est construit — seul le menu compte pour qui l’utilise.",
+   "C’est ce qui permet à une appli météo d’afficher la pluie sans avoir de satellite : elle appelle l’API d’un service qui en a un."],
+  voir='api'),
+
+ dict(id='cloud', terme='Cloud (informatique en nuage)', aka=['cloud','nuage','informatique en nuage','hébergement cloud'], dom='Informatique',
+  une="Utiliser la machine de quelqu’un d’autre, à la demande, plutôt que la sienne.",
+  etapes=[
+   "Faire tourner un site ou un logiciel demande une machine allumée en permanence — l’acheter, l’installer, l’entretenir coûte cher pour un usage qui varie.",
+   "Le cloud loue cette machine chez un hébergeur qui en possède des milliers, dans un centre de données quelque part.",
+   "On l’augmente ou on la réduit en quelques clics selon le besoin du moment — impossible avec du matériel acheté.",
+   "En échange : vos données vivent chez un tiers, sur du matériel que vous ne voyez jamais et ne contrôlez pas directement."],
+  voir='local-vs-cloud',
+  pas="le SaaS, le PaaS et l’IaaS, qui précisent quel niveau de ce nuage on loue — le cloud est le principe général, ces trois lettres en sont les formules."),
+
+ dict(id='tableau-de-bord', terme='Tableau de bord (BI)', aka=['tableau de bord','dashboard','reporting','business intelligence'], dom='Data',
+  une="Les chiffres qui comptent, rassemblés sur un seul écran, mis à jour tout seuls.",
+  etapes=[
+   "Sans lui, suivre l’activité veut dire ouvrir plusieurs outils, exporter des tableurs, et recopier des chiffres à la main chaque lundi.",
+   "Un outil de BI va chercher les données à la source, les assemble, et les affiche sous forme de graphiques et de compteurs.",
+   "Chaque chiffre affiché reste cliquable : on peut redescendre du total jusqu’à la ligne qui l’explique.",
+   "Bien cadré, il se met à jour seul ; mal cadré, il affiche des chiffres que plus personne ne sait expliquer."],
+  voir='bi-tableau-de-bord'),
+
+ dict(id='hameconnage', terme='Hameçonnage (phishing)', aka=['hameçonnage','phishing','hameconnage','faux mail'], dom='Réseau',
+  une="Un message qui imite une source de confiance pour vous faire cliquer, payer, ou donner un mot de passe.",
+  etapes=[
+   "Le piège ne force rien : il imite une banque, un fournisseur ou un collègue, assez bien pour ne pas éveiller le doute.",
+   "Le message pousse à agir vite — un compte bloqué, une facture impayée — pour couper court à la réflexion.",
+   "Le lien mène à une page qui ressemble à s’y méprendre à l’originale, où le mot de passe tapé part directement à l’attaquant.",
+   "Le réflexe qui protège : vérifier l’adresse réelle de l’expéditeur, et ne jamais cliquer un lien quand on peut taper l’adresse soi-même."],
+  voir='cybersecurite'),
 ]
