@@ -1,0 +1,183 @@
+TITRE: Comment voyage un e-mail
+DESC: Un e-mail ne part jamais directement chez son destinataire : le trajet réel, en schémas animés, du clic sur Envoyer au tri anti-spam.
+FIL: <a href="../index.html#/reseau">Réseau</a><span>/</span>Comment ça circule<span>/</span>La messagerie
+LEAD: « Envoyé » n’a jamais voulu dire « arrivé directement chez lui ». Un e-mail suit un trajet précis, par des relais qu’on ne voit jamais&nbsp;: le voici.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+
+      <p>
+        Cliquer sur « Envoyer » donne l’impression d’un geste instantané, direct, entre vous
+        et le destinataire. En réalité, le message fait un détour&nbsp;: il passe par des
+        bureaux de tri numériques avant d’arriver où que ce soit.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : le trajet d’un e-mail entre deux serveurs relais">
+        <div class="scene-title">Scène 1 — Deux serveurs, jamais un envoi direct</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un e-mail part de l’expéditeur, passe par le serveur sortant de son fournisseur, puis par le serveur du destinataire">
+            <g data-show="1-4">
+              <rect x="40" y="110" width="140" height="90" rx="10" class="s-box"/>
+              <text x="110" y="162" text-anchor="middle" class="s-label">Vous</text>
+            </g>
+
+            <path id="mail-s1-a" d="M180 155 H320" class="s-line m-draw" data-show="1-4"/>
+            <circle r="7" class="packet" data-show="1" style="offset-path:path('M180 155 H320')"/>
+            <text x="250" y="139" text-anchor="middle" class="s-label-xs" data-show="1">Envoyer</text>
+
+            <g data-show="2-4" class="m-pop">
+              <rect x="330" y="100" width="160" height="110" rx="10" class="s-box-accent"/>
+              <text x="410" y="148" text-anchor="middle" class="s-label-sm">Serveur sortant</text>
+              <text x="410" y="168" text-anchor="middle" class="s-label-xs">votre fournisseur</text>
+            </g>
+
+            <path id="mail-s1-b" d="M490 155 H620" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet packet-teal" data-show="3-4" style="offset-path:path('M490 155 H620')"/>
+            <text x="555" y="139" text-anchor="middle" class="s-label-xs" data-show="3-4">lit l’adresse</text>
+            <g data-show="3-4">
+              <rect x="522" y="215" width="66" height="26" rx="13" fill="var(--sage-soft)" stroke="var(--sage)"/>
+              <text x="555" y="233" text-anchor="middle" class="s-label-xs" fill="var(--sage)">après le @</text>
+            </g>
+
+            <g data-show="4" class="m-pop">
+              <rect x="630" y="100" width="150" height="110" rx="10" class="s-box-teal"/>
+              <text x="705" y="148" text-anchor="middle" class="s-label-sm">Serveur du</text>
+              <text x="705" y="168" text-anchor="middle" class="s-label-sm">destinataire</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Vous cliquez sur « Envoyer ».</b><span>Le message quitte votre appareil — mais pas vers le destinataire.</span></p>
+          <p class="step" data-duration="4200"><b>Il part d’abord vers le serveur sortant de votre fournisseur.</b><span>Gmail, Outlook, ou l’adresse de votre entreprise&nbsp;: chacun a son propre bureau de tri.</span></p>
+          <p class="step" data-duration="4400"><b>Ce serveur lit l’adresse après le « @ ».</b><span>C’est le nom du fournisseur destinataire — un code postal numérique.</span></p>
+          <p class="step" data-duration="4400"><b>Il relaie le message jusqu’au serveur qui gère la boîte du destinataire.</b><span>De serveur en serveur, jamais d’un appareil à l’autre directement.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          C’est le même principe qu’une lettre papier avant l’ère du tri automatisé&nbsp;: elle
+          ne va pas de votre boîte à celle du destinataire. Elle passe par le bureau de poste de
+          votre quartier, qui la fait suivre au bureau de poste du destinataire — où elle
+          patiente jusqu’à ce qu’il vienne la relever.
+        </p>
+      </div>
+
+      <h2>Envoyé ne veut pas dire lu</h2>
+      <p>
+        Le message arrivé au serveur du destinataire ne va pas plus loin tout seul&nbsp;: il
+        patiente, exactement comme une lettre dans une boîte aux lettres.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un e-mail qui patiente sur le serveur jusqu’à ce que le destinataire relève sa boîte">
+        <div class="scene-title">Scène 2 — Il patiente, jusqu’à la relève</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un e-mail attend dans la boîte du serveur ; le téléphone du destinataire interroge régulièrement le serveur pour savoir s’il y a du nouveau">
+            <g data-show="1-4">
+              <rect x="300" y="70" width="200" height="160" rx="10" class="s-box-teal"/>
+              <text x="400" y="96" text-anchor="middle" class="s-label-sm">Serveur</text>
+              <g fill="#F1EBDF" stroke="var(--line-strong)">
+                <rect x="316" y="110" width="168" height="26" rx="5"/>
+                <rect x="316" y="144" width="168" height="26" rx="5"/>
+              </g>
+              <text x="400" y="200" text-anchor="middle" class="s-label-xs" data-show="1-4">votre message attend ici</text>
+            </g>
+            <g data-show="1" class="blink">
+              <circle cx="330" cy="123" r="4" fill="var(--accent)"/>
+            </g>
+
+            <g data-show="2-4">
+              <rect x="600" y="110" width="90" height="140" rx="14" class="s-box"/>
+              <rect x="612" y="126" width="66" height="96" rx="4" fill="#F1EBDF" stroke="var(--line-strong)"/>
+              <text x="645" y="270" text-anchor="middle" class="s-label-sm">Son téléphone</text>
+            </g>
+
+            <path d="M598 150 C 560 150, 540 150, 502 150" class="s-line m-draw" data-show="2-4"/>
+            <text x="550" y="134" text-anchor="middle" class="s-label-xs" data-show="2-4">« du nouveau&nbsp;? »</text>
+            <circle r="6" class="packet pulse" data-show="2-4" style="offset-path:path('M598 150 C 560 150, 540 150, 502 150')"/>
+
+            <g data-show="4" class="m-fall">
+              <rect x="486" y="248" width="180" height="30" rx="15" fill="var(--sage-soft)" stroke="var(--sage)"/>
+              <text x="576" y="268" text-anchor="middle" class="s-label-xs" fill="var(--sage)">plusieurs copies à la fois</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Le message n’arrive pas « chez » le destinataire.</b><span>Il patiente sur le serveur, dans l’espace qui lui est réservé.</span></p>
+          <p class="step" data-duration="4400"><b>Son appareil n’est pas branché en direct sur votre message.</b><span>Il interroge le serveur à intervalles réguliers&nbsp;: « y a-t-il du nouveau&nbsp;? »</span></p>
+          <p class="step" data-duration="4400"><b>« Envoyé » et « lu » sont donc deux instants distincts.</b><span>Parfois séparés de plusieurs heures — le temps que quelqu’un consulte sa boîte.</span></p>
+          <p class="step" data-duration="4600"><b>Le message existe en plusieurs copies à la fois.</b><span>Chez vous, sur le serveur, chez lui — d’où la difficulté à l’effacer vraiment partout.</span></p>
+        </div>
+      </section>
+
+      <h2>Un tri avant d’arriver dans la boîte</h2>
+      <p>
+        Avant d’atterrir dans la boîte de réception, chaque message est d’abord examiné par un
+        filtre automatique — le même qui bloque le pourriel, et qui rate parfois un piège.
+      </p>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : le filtre anti-spam trie les messages vers la boîte de réception ou les indésirables">
+        <div class="scene-title">Scène 3 — Le filtre, imparfait par nature</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un message passe par un filtre qui l’envoie soit en boîte de réception, soit en indésirables">
+            <g data-show="1-4">
+              <rect x="60" y="118" width="130" height="80" rx="10" class="s-box"/>
+              <text x="125" y="164" text-anchor="middle" class="s-label-sm">Message</text>
+            </g>
+
+            <g data-show="1-4">
+              <rect x="290" y="100" width="150" height="116" rx="10" class="s-box-accent pulse" data-show="1-4"/>
+              <text x="365" y="150" text-anchor="middle" class="s-label-sm">Filtre</text>
+              <text x="365" y="170" text-anchor="middle" class="s-label-xs">expéditeur, score,</text>
+              <text x="365" y="186" text-anchor="middle" class="s-label-xs">mots du message</text>
+            </g>
+            <path d="M190 158 H290" class="s-line m-draw" data-show="1-4"/>
+
+            <g data-show="2-4">
+              <rect x="590" y="40" width="170" height="70" rx="10" class="s-box-teal"/>
+              <text x="675" y="80" text-anchor="middle" class="s-label-sm">Boîte de réception</text>
+            </g>
+            <path d="M440 130 C 520 100, 540 80, 588 75" class="s-line m-draw" data-show="2"/>
+            <circle r="7" class="packet packet-teal" data-show="2" style="offset-path:path('M440 130 C 520 100, 540 80, 588 75')"/>
+
+            <g data-show="3-4">
+              <rect x="590" y="190" width="170" height="70" rx="10" fill="#F6E2DD" stroke="var(--danger)"/>
+              <text x="675" y="222" text-anchor="middle" class="s-label-sm" fill="var(--danger)">Indésirables</text>
+              <text x="675" y="242" text-anchor="middle" class="s-label-xs" fill="var(--danger)">(spam)</text>
+            </g>
+            <path d="M440 186 C 520 216, 540 236, 588 244" class="s-line m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M440 186 C 520 216, 540 236, 588 244')"/>
+
+            <g data-show="4" class="m-pop">
+              <rect x="260" y="230" width="210" height="40" rx="8" fill="#F6E2DD" stroke="var(--danger)"/>
+              <text x="365" y="255" text-anchor="middle" class="s-label-xs" fill="var(--danger)">un piège imité peut passer</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Chaque message est d’abord noté.</b><span>Qui l’envoie, quelle réputation a son serveur, quels mots il contient.</span></p>
+          <p class="step" data-duration="4200"><b>En dessous d’un certain score, direction la boîte de réception.</b><span>Le message est jugé légitime — il arrive normalement.</span></p>
+          <p class="step" data-duration="4400"><b>Au-dessus, direction les indésirables.</b><span>Le filtre préfère parfois se tromper sur un message honnête que d’en laisser passer un malveillant.</span></p>
+          <p class="step" data-duration="4600"><b>Le filtre n’est pas infaillible.</b><span>Un piège bien imité — l’hameçonnage — peut passer au travers, même signé d’un nom familier.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un e-mail ne part <strong>jamais directement</strong> chez le destinataire&nbsp;: il passe par au moins deux serveurs relais.</li>
+        <li><strong>« Envoyé » et « lu »</strong> sont deux instants distincts&nbsp;: le message patiente sur un serveur jusqu’à ce que l’appareil du destinataire vienne le chercher.</li>
+        <li>Chaque message est <strong>noté avant d’arriver</strong> dans une boîte&nbsp;: un tri automatique décide de la boîte de réception ou des indésirables.</li>
+        <li>Aucun filtre n’est parfait&nbsp;: la prudence sur les <strong>pièces jointes et les liens</strong> inattendus reste le dernier rempart.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Le piège qui passe malgré le filtre a un nom&nbsp;: l’hameçonnage. Il est détaillé dans la leçon sur la cybersécurité.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="../index.html">← Tous les contenus</a>
+        <a class="btn btn-primary" href="cybersecurite.html">Les bases de la cybersécurité →</a>
+      </nav>
