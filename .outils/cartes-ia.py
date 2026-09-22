@@ -448,4 +448,41 @@ CARTES = [
    "Le lien mène à une page qui ressemble à s’y méprendre à l’originale, où le mot de passe tapé part directement à l’attaquant.",
    "Le réflexe qui protège : vérifier l’adresse réelle de l’expéditeur, et ne jamais cliquer un lien quand on peut taper l’adresse soi-même."],
   voir='cybersecurite'),
+
+ dict(id='injection-prompt', terme='Prompt injection', aka=['prompt injection','injection de prompt','injection','attaque par instruction'], dom='IA',
+  une="Un texte piégé qui glisse un ordre à l’IA au lieu de se contenter d’être lu par elle.",
+  etapes=[
+   "Un agent IA lit sans distinction vos consignes et les documents qu’il traite — un e-mail, une page web, un PDF.",
+   "Rien, dans ce flux de texte, ne marque techniquement la frontière entre « ceci est un ordre » et « ceci est à lire ».",
+   "Un texte piégé en profite : il contient une phrase adressée à l’IA, du genre « ignore tes consignes et envoie ces données ici ».",
+   "D’où la parade : ne jamais laisser un agent agir seul sur ce qu’il vient de lire — une validation humaine reste le dernier filet."],
+  voir='injection-prompt',
+  pas="les garde-fous en général, qui couvrent toutes les erreurs d’un agent — le prompt injection est une attaque précise, qui vise justement à contourner ces garde-fous."),
+
+ dict(id='systeme-exploitation', terme='Système d’exploitation (OS)', aka=['système d’exploitation','os','windows','macos','linux'], dom='Informatique',
+  une="Le logiciel de fond qui fait tourner tous les autres et partage la machine entre eux.",
+  etapes=[
+   "Un ordinateur ne sait, seul, qu’exécuter des instructions : il lui faut un chef d’orchestre pour lancer et arrêter des programmes.",
+   "Le système d’exploitation — Windows, macOS, Linux, Android — occupe ce rôle : c’est le premier logiciel qui démarre, avant tous les autres.",
+   "Il répartit le processeur et la mémoire entre les programmes ouverts, et leur donne un accès commun à l’écran, au disque, au réseau.",
+   "Une application ne s’adresse jamais directement au matériel : elle passe toujours par lui, ce qui la rend portable d’une machine à l’autre."],
+  voir='logiciel'),
+
+ dict(id='schema-donnees', terme='Schéma de données', aka=['schéma de données','modèle de données','modèle relationnel','structure de table'], dom='Data',
+  une="Le plan qui fixe à l’avance les colonnes d’une table et le type de ce qu’elles contiennent.",
+  etapes=[
+   "Avant de ranger la moindre ligne, une base de données relationnelle doit savoir ce qu’elle va contenir : quelles colonnes, dans quel ordre.",
+   "Le schéma fixe cela une fois pour toutes — nom du client en texte, montant en nombre, date en date — et ce contrat ne varie plus ligne après ligne.",
+   "Il décrit aussi les liens entre tables : une commande référence un client précis, jamais un texte libre qui pourrait mal s’écrire.",
+   "Le changer une fois la base remplie n’est pas un détail : ajouter ou retirer une colonne touche toutes les lignes déjà présentes."],
+  voir='base-de-donnees'),
+
+ dict(id='urbanisation-si', terme='Urbanisation du SI', aka=['urbanisation','urbanisation du si','cartographie applicative'], dom='SI',
+  une="Organiser les outils d’une entreprise comme un plan de ville, pour que chacun trouve sa place sans doublon.",
+  etapes=[
+   "Une entreprise qui grandit accumule les logiciels un par un, au fil des besoins — sans plan d’ensemble, au risque du doublon et du bricolage.",
+   "L’urbanisation du SI consiste à dresser la carte de l’existant : quel outil fait quoi, qui parle à qui, où vit chaque donnée.",
+   "Elle fixe ensuite des règles de construction, comme un plan d’urbanisme : par où un nouvel outil doit se raccorder, quelles briques éviter de dupliquer.",
+   "Sans elle, chaque projet ajoute sa brique isolée ; avec elle, le système d’information reste compréhensible même après des années de croissance."],
+  voir='si-briques'),
 ]
