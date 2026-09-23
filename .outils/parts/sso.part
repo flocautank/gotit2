@@ -1,0 +1,167 @@
+TITRE: Le SSO, une seule connexion pour tous vos outils
+DESC: ERP, CRM, messagerie, RH : une entreprise fait tourner des dizaines d’outils. Le SSO (Single Sign-On) évite un mot de passe par outil, expliqué en schémas animés.
+FIL: <a href="../index.html#/si">Système d’information</a><span>/</span>La carte du SI<span>/</span>Faire dialoguer les outils
+LEAD: ERP, CRM, messagerie, outil RH&nbsp;: une entreprise fait tourner des dizaines d’applications. Le SSO évite d’avoir un mot de passe différent pour chacune.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+
+      <p>
+        Single Sign-On, littéralement « connexion unique ». L’idée tient en une phrase&nbsp;:
+        confier son identité à un seul endroit, et laisser tous les autres outils lui faire
+        confiance plutôt que de redemander un mot de passe.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : une entreprise avec un mot de passe différent par outil">
+        <div class="scene-title">Scène 1 — Un mot de passe par outil</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Quatre outils d’entreprise, chacun avec son propre mot de passe, puis l’idée d’une connexion unique">
+            <g data-show="1-4" class="m-pop">
+              <rect x="40" y="90" width="150" height="90" rx="10" class="s-box"/>
+              <text x="115" y="128" text-anchor="middle" class="s-label-sm">ERP</text>
+              <text x="115" y="148" text-anchor="middle" class="s-label-xs" data-show="2-4">son mot de passe</text>
+            </g>
+            <g data-show="1-4" class="m-pop">
+              <rect x="220" y="90" width="150" height="90" rx="10" class="s-box"/>
+              <text x="295" y="128" text-anchor="middle" class="s-label-sm">CRM</text>
+              <text x="295" y="148" text-anchor="middle" class="s-label-xs" data-show="2-4">son mot de passe</text>
+            </g>
+            <g data-show="1-4" class="m-pop">
+              <rect x="400" y="90" width="150" height="90" rx="10" class="s-box"/>
+              <text x="475" y="128" text-anchor="middle" class="s-label-sm">Messagerie</text>
+              <text x="475" y="148" text-anchor="middle" class="s-label-xs" data-show="2-4">son mot de passe</text>
+            </g>
+            <g data-show="1-4" class="m-pop">
+              <rect x="580" y="90" width="150" height="90" rx="10" class="s-box"/>
+              <text x="655" y="128" text-anchor="middle" class="s-label-sm">Outil RH</text>
+              <text x="655" y="148" text-anchor="middle" class="s-label-xs" data-show="2-4">son mot de passe</text>
+            </g>
+
+            <text x="400" y="60" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3-4">oublié, réutilisé partout, noté sur un post-it</text>
+
+            <g data-show="4" class="m-fall">
+              <rect x="290" y="210" width="220" height="50" rx="25" class="s-box-accent pulse" data-show="4"/>
+              <text x="400" y="240" text-anchor="middle" class="s-label-sm">Une seule connexion ?</text>
+              <path d="M115 180 C 200 210, 350 214, 380 216" class="s-line-accent m-draw" data-show="4"/>
+              <path d="M655 180 C 570 210, 460 214, 430 216" class="s-line-accent m-draw" data-show="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Une entreprise fait tourner des dizaines d’outils.</b><span>Un ERP, un CRM, une messagerie, un outil RH — chacun avec sa propre interface.</span></p>
+          <p class="step" data-duration="4200"><b>Sans rien, chacun demande son propre compte.</b><span>Et donc son propre mot de passe, différent des autres.</span></p>
+          <p class="step" data-duration="4400"><b>Résultat&nbsp;: des mots de passe oubliés, réutilisés partout, notés quelque part.</b><span>Plus il y en a, plus la tentation de la facilité l’emporte sur la sécurité.</span></p>
+          <p class="step" data-duration="4600"><b>Et si une seule connexion suffisait pour tout ouvrir&nbsp;?</b><span>C’est exactement ce que propose le SSO — Single Sign-On.</span></p>
+        </div>
+      </section>
+
+      <h2>Un fournisseur d’identité, et des tickets</h2>
+      <p>
+        Le SSO ne supprime pas les mots de passe&nbsp;: il en réduit le nombre à un seul,
+        tenu par un intermédiaire de confiance.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : le fournisseur d’identité délivre un ticket accepté par chaque outil">
+        <div class="scene-title">Scène 2 — Se connecter une fois, circuler partout</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Vous vous connectez une fois auprès d’un fournisseur d’identité, qui vous remet un ticket accepté ensuite par chaque outil">
+            <g data-show="1-4">
+              <rect x="40" y="110" width="140" height="80" rx="10" class="s-box"/>
+              <text x="110" y="155" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+            <g data-show="1-4" class="m-pop">
+              <rect x="320" y="90" width="190" height="120" rx="10" class="s-box-accent"/>
+              <text x="415" y="140" text-anchor="middle" class="s-label-sm">Fournisseur</text>
+              <text x="415" y="160" text-anchor="middle" class="s-label-sm">d’identité</text>
+              <text x="415" y="182" text-anchor="middle" class="s-label-xs">(le seul mot de passe)</text>
+            </g>
+
+            <path d="M180 140 H320" class="s-line m-draw" data-show="2-4"/>
+            <text x="250" y="124" text-anchor="middle" class="s-label-xs" data-show="2">connexion, une fois</text>
+
+            <path d="M320 176 C 260 200, 200 200, 180 178" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet packet-teal" data-show="3" style="offset-path:path('M320 176 C 260 200, 200 200, 180 178')"/>
+            <text x="250" y="218" text-anchor="middle" class="s-label-xs" data-show="3">un ticket signé, valable un temps</text>
+
+            <g data-show="4">
+              <rect x="620" y="40" width="140" height="56" rx="10" class="s-box-teal"/>
+              <text x="690" y="72" text-anchor="middle" class="s-label-sm">ERP</text>
+              <rect x="620" y="122" width="140" height="56" rx="10" class="s-box-teal"/>
+              <text x="690" y="154" text-anchor="middle" class="s-label-sm">CRM</text>
+              <rect x="620" y="204" width="140" height="56" rx="10" class="s-box-teal"/>
+              <text x="690" y="236" text-anchor="middle" class="s-label-sm">Outil RH</text>
+              <path d="M510 120 C 560 90, 580 68, 618 68" class="s-line m-draw" data-show="4"/>
+              <path d="M510 150 H618" class="s-line m-draw" data-show="4"/>
+              <path d="M510 180 C 560 210, 580 232, 618 232" class="s-line m-draw" data-show="4"/>
+              <text x="400" y="278" text-anchor="middle" class="s-label-xs" fill="var(--sage)">le ticket est accepté partout, sans nouveau mot de passe</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Un fournisseur d’identité devient le seul endroit où taper un mot de passe.</b><span>Souvent le même que celui de la messagerie professionnelle — Microsoft, Google, ou un service dédié.</span></p>
+          <p class="step" data-duration="4200"><b>Vous vous connectez une seule fois auprès de lui.</b><span>En général le matin, en arrivant.</span></p>
+          <p class="step" data-duration="4600"><b>Il vous remet un ticket signé, valable un temps limité.</b><span>Une preuve numérique de qui vous êtes — sans redonner votre mot de passe.</span></p>
+          <p class="step" data-duration="4800"><b>Chaque outil visité ensuite accepte ce ticket.</b><span>Il fait confiance au fournisseur plutôt que de vérifier lui-même un mot de passe.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le badge unique d’un immeuble de bureaux. Un seul passage à l’accueil le matin,
+          et le badge ouvre ensuite toutes les portes intérieures sans repasser un contrôle
+          à chaque étage. Mais perdre ce badge, c’est perdre l’accès à l’immeuble entier.
+        </p>
+      </div>
+
+      <h2>Une clé pratique, à protéger davantage</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : les bénéfices du SSO et le risque qu’il concentre">
+        <div class="scene-title">Scène 3 — Le revers de la simplicité</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="Le SSO simplifie l’accès et centralise la sécurité, mais concentre le risque sur un seul compte, d’où l’ajout systématique du MFA">
+            <g data-show="1-4" class="m-left">
+              <rect x="50" y="40" width="280" height="60" rx="10" class="s-box-teal"/>
+              <text x="190" y="76" text-anchor="middle" class="s-label-sm">Une politique appliquée partout</text>
+              <rect x="50" y="120" width="280" height="60" rx="10" class="s-box-teal"/>
+              <text x="190" y="156" text-anchor="middle" class="s-label-sm">Départ = un seul compte à couper</text>
+            </g>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="470" y="40" width="280" height="60" rx="10" fill="none" stroke="var(--danger)" stroke-width="2.4" stroke-dasharray="6 5"/>
+              <text x="610" y="76" text-anchor="middle" class="s-label-sm" fill="var(--danger)">Un seul compte à protéger</text>
+            </g>
+            <g data-show="4" class="m-pop">
+              <rect x="470" y="120" width="280" height="60" rx="10" class="s-box-accent"/>
+              <text x="610" y="150" text-anchor="middle" class="s-label-sm">+ double authentification</text>
+              <text x="610" y="168" text-anchor="middle" class="s-label-xs">(MFA), presque systématique</text>
+              <path d="M610 100 V120" class="s-line-accent m-draw" data-show="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Le bénéfice est double.</b><span>Une seule politique de sécurité — mot de passe fort, expiration — s’applique désormais partout à la fois.</span></p>
+          <p class="step" data-duration="4400"><b>Et côté entreprise, un départ se traite en un geste.</b><span>Couper un seul compte suffit à retirer l’accès à tous les outils d’un coup.</span></p>
+          <p class="step" data-duration="4600"><b>Mais la même clé ouvre tout.</b><span>Si ce compte unique est compromis, l’attaquant hérite de l’accès à chaque outil connecté.</span></p>
+          <p class="step" data-duration="4800"><b>D’où l’association presque systématique avec le MFA.</b><span>La clé unique doit elle-même être doublement gardée — c’est le prix de la simplicité.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le <strong>SSO</strong> (Single Sign-On) confie l’identité à un seul fournisseur, que tous les outils reconnaissent ensuite.</li>
+        <li>Concrètement&nbsp;: une connexion, un <strong>ticket</strong> temporaire, accepté partout sans nouveau mot de passe.</li>
+        <li>Il simplifie l’accès et centralise la sécurité — jusqu’à la <strong>coupure d’accès</strong> en un geste au départ de quelqu’un.</li>
+        <li>Il concentre aussi le risque sur un seul compte, d’où son association presque systématique au <strong>MFA</strong>.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Le MFA fait partie des trois gestes détaillés dans la leçon sur les bases de la cybersécurité.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="api.html">← C’est quoi une API ?</a>
+        <a class="btn btn-primary" href="cybersecurite.html">Les bases de la cybersécurité →</a>
+      </nav>
