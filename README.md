@@ -52,8 +52,10 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [C'est quoi un ERP ?](lecons/erp.html) | Système d'information | Découverte |
 | [C'est quoi un CRM ?](lecons/crm.html) | Système d'information | Découverte |
 | [C'est quoi une API ?](lecons/api.html) | Système d'information | Découverte |
+| [Le SSO, une seule connexion pour tous vos outils](lecons/sso.html) | Système d'information | Intermédiaire |
 | [Comment se déroule un projet SI](lecons/projet-si.html) | Système d'information | Intermédiaire |
 | [Le support informatique, du ticket à la résolution](lecons/support.html) | Système d'information | Découverte |
+| [Qu'est-ce que le Machine Learning ?](lecons/machine-learning.html) | IA | Découverte |
 | [Comment un modèle de langage écrit](lecons/llm.html) | IA | Découverte |
 | [Pourquoi l'IA a besoin de cartes graphiques](lecons/gpu.html) | IA | Découverte |
 | [Pourquoi une IA invente parfois](lecons/hallucination.html) | IA | Intermédiaire |
@@ -67,14 +69,14 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 | [Le prompt injection, le risque caché des agents IA](lecons/injection-prompt.html) | IA | Intermédiaire |
 
-**54 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**57 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
-ouvert, benchmark, garde-fous, prompt injection —, celui des projets SI : cahier des charges,
-recette, MOA/MOE, CRM, ERP, SLA, RACI, API, urbanisation, sept mots de réseau (Tor, adresse IP,
-VPN, pare-feu, DNS, cookie, hameçonnage), six d'informatique générale (octet, cache, open source,
-conteneur, cloud, système d'exploitation) et sept de la data (ETL/ELT, KPI, SQL, Big Data, index,
-tableau de bord, schéma de données).
+ouvert, benchmark, garde-fous, prompt injection, Machine Learning —, celui des projets SI :
+cahier des charges, recette, MOA/MOE, CRM, ERP, SLA, RACI, API, urbanisation, SSO, sept mots
+de réseau (Tor, adresse IP, VPN, pare-feu, DNS, cookie, hameçonnage), six d'informatique
+générale (octet, cache, open source, conteneur, cloud, système d'exploitation) et huit de la
+data (ETL/ELT, KPI, SQL, Big Data, index, tableau de bord, schéma de données, silo de données).
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours

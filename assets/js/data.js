@@ -135,9 +135,23 @@ window.GOTIT = (function () {
       duration: '6 min', level: 1,
       keywords: ['support', 'ticket', 'helpdesk', 'itsm', 'sla', 'assistance', 'incident', 'priorité']
     },
+    'sso': {
+      title: 'Le SSO, une seule connexion pour tous vos outils',
+      summary: 'ERP, CRM, messagerie, RH : comment une seule connexion suffit à ouvrir tous les outils de l’entreprise.',
+      path: 'lecons/sso.html',
+      duration: '6 min', level: 2,
+      keywords: ['sso', 'single sign-on', 'connexion unique', 'identité', 'mot de passe', 'mfa', 'authentification']
+    },
 
     /* ---------- Intelligence artificielle ---------- */
 
+    'machine-learning': {
+      title: 'Qu’est-ce que le Machine Learning ?',
+      summary: 'Avant l’IA générative, il y avait déjà l’apprentissage à partir d’exemples, sans écrire la moindre règle.',
+      path: 'lecons/machine-learning.html',
+      duration: '6 min', level: 1,
+      keywords: ['machine learning', 'apprentissage automatique', 'modèle', 'entraînement', 'classification', 'prédiction']
+    },
     'ia-skills': {
       title: 'Les « skills » d’une IA',
       summary: 'Comment on apprend une méthode de travail à un assistant, sans le réentraîner.',
@@ -391,7 +405,7 @@ window.GOTIT = (function () {
           id: 'cartographie', title: 'La carte du SI',
           subcategories: [
             { id: 'briques', title: 'Les grandes briques', lessons: ['si-briques', 'erp'] },
-            { id: 'dialogue', title: 'Faire dialoguer les outils', lessons: ['api'] },
+            { id: 'dialogue', title: 'Faire dialoguer les outils', lessons: ['api', 'sso'] },
             { id: 'relation-client', title: 'La relation client', lessons: ['crm'] }
           ]
         },
@@ -412,6 +426,7 @@ window.GOTIT = (function () {
         {
           id: 'fondamentaux-ia', title: 'Fondamentaux',
           subcategories: [
+            { id: 'apprentissage', title: 'Apprendre par l’exemple', lessons: ['machine-learning'] },
             { id: 'modeles', title: 'Les modèles de langage', lessons: ['llm', 'hallucination'] },
             { id: 'machinerie', title: 'La machinerie', lessons: ['gpu'] }
           ]
@@ -1088,6 +1103,44 @@ window.GOTIT = (function () {
         "Sans elle, chaque projet ajoute sa brique isolée ; avec elle, le système d’information reste compréhensible même après des années de croissance."
       ],
       voir: "si-briques"
+    },
+    {
+      id: "machine-learning", terme: "Machine Learning", domaine: "IA",
+      aka: ["machine learning", "apprentissage automatique", "ml"],
+      une: "Apprendre une tâche à partir d’exemples, plutôt que suivre une règle écrite à la main.",
+      etapes: [
+        "Programmer, d’ordinaire, c’est écrire la règle à l’avance — mais personne ne sait écrire la règle qui reconnaît un chat sur une photo.",
+        "Le Machine Learning montre à un modèle des milliers d’exemples déjà classés, et le laisse en déduire lui-même sa propre règle.",
+        "L’entraînement ajuste ses réglages par petites touches, à chaque erreur corrigée, des millions de fois de suite.",
+        "Il classe ou prédit parmi des réponses connues d’avance — c’est le socle sur lequel s’est construite l’IA générative."
+      ],
+      voir: "machine-learning",
+      pas: "l’IA générative, qui ne choisit pas parmi des catégories connues mais rédige un contenu qui n’existait pas."
+    },
+    {
+      id: "sso", terme: "SSO (Single Sign-On)", domaine: "SI",
+      aka: ["sso", "single sign-on", "connexion unique", "authentification unique"],
+      une: "Une seule connexion qui ouvre ensuite tous les outils de l’entreprise, sans redemander de mot de passe.",
+      etapes: [
+        "Sans lui, chaque outil — ERP, CRM, messagerie — demande son propre compte : autant de mots de passe à retenir, donc à réutiliser ou oublier.",
+        "Un fournisseur d’identité devient le seul endroit où taper un mot de passe ; on s’y connecte une fois, en général le matin.",
+        "Il remet alors un ticket signé, valable un temps limité, que chaque outil accepte ensuite sans redemander de mot de passe.",
+        "Cela centralise la sécurité et simplifie un départ — mais concentre aussi le risque sur un seul compte, d’où son association quasi systématique au MFA."
+      ],
+      voir: "sso"
+    },
+    {
+      id: "silo-donnees", terme: "Silo de données", domaine: "Data",
+      aka: ["silo", "silo de données", "données cloisonnées"],
+      une: "Des données enfermées dans un outil, invisibles et inutilisables par le reste de l’entreprise.",
+      etapes: [
+        "Chaque service — ventes, support, RH — accumule ses propres données dans son propre outil, sans y penser.",
+        "Personne d’autre n’y a accès facilement : ni pour les croiser, ni même pour savoir qu’elles existent. C’est le silo.",
+        "Deux services finissent par tenir chacun leur propre version du même chiffre, sans jamais le savoir — et sans jamais se mettre d’accord.",
+        "On le décloisonne en centralisant une copie des données dans un entrepôt commun, accessible à qui en a besoin, pas seulement à qui l’a créée."
+      ],
+      voir: "gouvernance-data",
+      pas: "un doublon, qui est une donnée dupliquée par erreur ; le silo, lui, est une donnée intacte mais simplement inaccessible aux autres."
     },
   ];
 

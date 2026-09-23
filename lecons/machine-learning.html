@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qu’est-ce que le Machine Learning ? — GotIt !</title>
+<meta name="description" content="Avant l’IA générative, il y avait le Machine Learning : apprendre une tâche à partir d’exemples plutôt que suivre des règles écrites à la main. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/ia">Intelligence artificielle</a><span>/</span>Fondamentaux<span>/</span>Apprendre par l’exemple</div>
+      <h1>Qu’est-ce que le Machine Learning ?</h1>
+      <p class="lead">Bien avant qu’une IA sache écrire un texte, on lui apprenait à trier un e-mail ou reconnaître un visage. Ce premier tour de passe-passe a un nom&nbsp;: le Machine Learning.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">6 min</span><span class="tag">3 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Programmer un ordinateur, d’ordinaire, c’est écrire une règle précise&nbsp;: si telle
+        condition, alors telle action. Mais pour certaines tâches, personne ne sait écrire
+        cette règle. Le Machine Learning — l’apprentissage automatique — les résout autrement.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : deux façons de faire faire une tâche à un ordinateur">
+        <div class="scene-title">Scène 1 — Deux façons de programmer</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Programmation classique avec une règle écrite à la main, puis Machine Learning avec des exemples et un modèle qui en déduit sa propre règle">
+            <g data-show="1-4" class="m-rise">
+              <rect x="70" y="70" width="230" height="70" rx="10" class="s-box"/>
+              <text x="185" y="100" text-anchor="middle" class="s-label-sm">La règle</text>
+              <text x="185" y="120" text-anchor="middle" class="s-label-xs">« si montant &gt; 1000€ »</text>
+              <path d="M185 140 V180" class="s-line m-draw" data-show="1-4"/>
+              <rect x="70" y="182" width="230" height="60" rx="10" class="s-box-accent"/>
+              <text x="185" y="217" text-anchor="middle" class="s-label-sm">Refuser</text>
+              <text x="185" y="266" text-anchor="middle" class="s-label-xs">Programmation classique</text>
+            </g>
+
+            <g data-show="2" class="m-pop">
+              <rect x="330" y="70" width="200" height="172" rx="10" fill="none" stroke="var(--warn)" stroke-width="2.4" stroke-dasharray="6 5"/>
+              <text x="430" y="150" text-anchor="middle" class="s-label-sm" fill="var(--warn)">« reconnaître</text>
+              <text x="430" y="170" text-anchor="middle" class="s-label-sm" fill="var(--warn)">un chat » ?</text>
+              <text x="430" y="195" text-anchor="middle" class="s-label-xs" fill="var(--warn)">aucune règle simple</text>
+            </g>
+
+            <g data-show="3-4" class="m-left">
+              <rect x="560" y="70" width="110" height="64" rx="10" class="s-box-teal"/>
+              <text x="615" y="98" text-anchor="middle" class="s-label-sm">Exemples</text>
+              <text x="615" y="117" text-anchor="middle" class="s-label-xs">déjà étiquetés</text>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <rect x="560" y="150" width="110" height="64" rx="10" class="s-box-accent pulse" data-show="3-4"/>
+              <text x="615" y="178" text-anchor="middle" class="s-label-sm">Modèle</text>
+              <text x="615" y="197" text-anchor="middle" class="s-label-xs">s’ajuste</text>
+              <path d="M615 134 V150" class="s-line-accent m-draw" data-show="3-4"/>
+            </g>
+            <g data-show="4" class="m-fall">
+              <rect x="560" y="232" width="180" height="46" rx="10" class="s-box"/>
+              <text x="650" y="260" text-anchor="middle" class="s-label-sm">Règle apprise</text>
+              <path d="M615 214 V232" class="s-line m-draw" data-show="4"/>
+              <text x="650" y="298" text-anchor="middle" class="s-label-xs">Machine Learning</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Programmer, d’ordinaire, c’est écrire la règle à l’avance.</b><span>Un humain décrit précisément la condition et l’action qui doit suivre.</span></p>
+          <p class="step" data-duration="4400"><b>Mais certaines tâches n’ont pas de règle simple.</b><span>Personne ne sait écrire, pixel par pixel, ce qui fait qu’une photo montre un chat.</span></p>
+          <p class="step" data-duration="4600"><b>Le Machine Learning renverse le problème.</b><span>Au lieu d’écrire la règle, on montre au modèle des milliers d’exemples déjà classés « chat » ou « pas chat ».</span></p>
+          <p class="step" data-duration="4800"><b>Le modèle en déduit lui-même sa propre règle.</b><span>Une règle qu’aucun humain n’a écrite à la main — et qui marche, même sur une photo jamais vue.</span></p>
+        </div>
+      </section>
+
+      <h2>Comment un modèle apprend vraiment</h2>
+      <p>
+        Ce mot, « apprendre », cache une mécanique très concrète&nbsp;: un aller-retour répété
+        entre une réponse essayée et une réponse correcte, des millions de fois de suite.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : la boucle d’entraînement d’un modèle">
+        <div class="scene-title">Scène 2 — La boucle d’entraînement</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Un exemple étiqueté, une réponse proposée par le modèle, une comparaison avec la bonne réponse, puis un ajustement des réglages, en boucle">
+            <g data-show="1-4" class="m-rise">
+              <rect x="100" y="40" width="180" height="70" rx="10" class="s-box"/>
+              <text x="190" y="70" text-anchor="middle" class="s-label-sm">Exemple étiqueté</text>
+              <text x="190" y="90" text-anchor="middle" class="s-label-xs">« ceci est un chat »</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="520" y="40" width="180" height="70" rx="10" class="s-box-accent pulse" data-show="2-4"/>
+              <text x="610" y="70" text-anchor="middle" class="s-label-sm">Le modèle répond</text>
+              <text x="610" y="90" text-anchor="middle" class="s-label-xs">avec ses réglages actuels</text>
+            </g>
+            <g data-show="3-4" class="m-right">
+              <rect x="520" y="210" width="180" height="70" rx="10" class="s-box-teal"/>
+              <text x="610" y="240" text-anchor="middle" class="s-label-sm">Comparaison</text>
+              <text x="610" y="260" text-anchor="middle" class="s-label-xs">l’écart, c’est l’erreur</text>
+            </g>
+            <g data-show="4" class="m-left">
+              <rect x="100" y="210" width="180" height="70" rx="10" class="s-box"/>
+              <text x="190" y="240" text-anchor="middle" class="s-label-sm">Réglages ajustés</text>
+              <text x="190" y="260" text-anchor="middle" class="s-label-xs">d’un cheveu</text>
+            </g>
+
+            <path d="M280 75 H520" class="s-line m-draw" data-show="1-4"/>
+            <circle r="7" class="packet" data-show="1-2" style="offset-path:path('M280 75 H520')"/>
+            <path d="M610 110 V210" class="s-line m-draw" data-show="2-4"/>
+            <path d="M520 245 H280" class="s-line m-draw" data-show="3-4"/>
+            <path d="M190 210 V110" class="s-line m-draw" data-show="4"/>
+            <text x="400" y="300" text-anchor="middle" class="s-label-xs" data-show="4">recommencé des millions de fois</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On montre un exemple déjà étiqueté.</b><span>Une photo, associée à sa bonne réponse&nbsp;: « ceci est un chat ».</span></p>
+          <p class="step" data-duration="4200"><b>Le modèle propose une réponse.</b><span>Avec les réglages qu’il a pour l’instant — au début, presque au hasard.</span></p>
+          <p class="step" data-duration="4400"><b>On compare à la bonne réponse.</b><span>L’écart entre les deux se mesure&nbsp;: c’est l’erreur du modèle.</span></p>
+          <p class="step" data-duration="4600"><b>Ses réglages internes bougent d’un cheveu pour réduire cette erreur.</b><span>Puis on recommence, avec un autre exemple — des millions de fois.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          C’est apprendre à un enfant à reconnaître les chiens en lui montrant mille photos,
+          plutôt qu’en lui lisant un manuel de zoologie. Il finit par reconnaître un chien
+          qu’il n’a jamais vu — sans savoir énoncer la règle qu’il s’est lui-même construite.
+        </p>
+      </div>
+
+      <h2>Le socle de l’IA d’aujourd’hui</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : le Machine Learning dans des usages discrets, et son lien avec l’IA générative">
+        <div class="scene-title">Scène 3 — Déjà là, discrètement</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Trois usages courants du Machine Learning qui classent ou prédisent, reliés par un même socle à l’IA générative qui rédige un texte nouveau">
+            <g data-show="1-4" class="m-rise">
+              <rect x="50" y="30" width="230" height="50" rx="10" class="s-box"/>
+              <text x="165" y="60" text-anchor="middle" class="s-label-sm">Trier un e-mail (spam ?)</text>
+              <rect x="50" y="94" width="230" height="50" rx="10" class="s-box"/>
+              <text x="165" y="124" text-anchor="middle" class="s-label-sm">Détecter une fraude</text>
+              <rect x="50" y="158" width="230" height="50" rx="10" class="s-box"/>
+              <text x="165" y="188" text-anchor="middle" class="s-label-sm">Recommander une série</text>
+              <text x="165" y="228" text-anchor="middle" class="s-label-xs">Machine Learning</text>
+              <text x="165" y="246" text-anchor="middle" class="s-label-xs">classer, prédire</text>
+            </g>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="520" y="94" width="230" height="80" rx="10" class="s-box-accent"/>
+              <text x="635" y="130" text-anchor="middle" class="s-label-sm">Rédiger un texte</text>
+              <text x="635" y="150" text-anchor="middle" class="s-label-xs">qui n’existait pas</text>
+              <text x="635" y="196" text-anchor="middle" class="s-label-xs">IA générative (LLM)</text>
+            </g>
+
+            <g data-show="4" class="m-draw">
+              <path d="M280 240 H520" class="s-line-accent" data-show="4"/>
+              <text x="400" y="264" text-anchor="middle" class="s-label-xs" fill="var(--accent)">même principe, poussé plus loin</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Le Machine Learning travaille déjà, discrètement, depuis longtemps.</b><span>Trier un mail, détecter une fraude bancaire, recommander une série&nbsp;: toujours en coulisses.</span></p>
+          <p class="step" data-duration="4200"><b>Dans chaque cas, la même tâche&nbsp;: classer, ou prédire un chiffre.</b><span>Toujours parmi des réponses connues d’avance&nbsp;: jamais rien de nouveau n’est créé.</span></p>
+          <p class="step" data-duration="4400"><b>C’est là toute la différence avec l’IA générative.</b><span>Les LLM comme ceux qui font parler ChatGPT ou Claude ne choisissent pas&nbsp;: ils rédigent un texte qui n’existait pas.</span></p>
+          <p class="step" data-duration="4600"><b>Même socle, poussé plus loin.</b><span>Apprendre par l’exemple reste le principe commun — l’IA générative l’a simplement porté jusqu’à l’écriture.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le Machine Learning apprend une tâche <strong>à partir d’exemples</strong>, plutôt que suivre une règle écrite à la main.</li>
+        <li>L’<strong>entraînement</strong> ajuste les réglages du modèle à coups d’erreurs corrigées, des millions de fois.</li>
+        <li>Il <strong>classe ou prédit</strong> parmi des réponses connues d’avance — contrairement à l’IA générative, qui crée du contenu.</li>
+        <li>C’est le <strong>socle</strong> sur lequel reposent les LLM et l’IA générative d’aujourd’hui.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Ce même principe, poussé jusqu’à prédire un mot après l’autre, c’est exactement ce que fait un LLM. C’est le sujet de la leçon suivante.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="../index.html">← Tous les contenus</a>
+        <a class="btn btn-primary" href="llm.html">Comment un modèle de langage écrit →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
