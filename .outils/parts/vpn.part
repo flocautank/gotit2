@@ -1,0 +1,159 @@
+TITRE: Le VPN, un tunnel privé sur un réseau public
+DESC: Un VPN ne rend pas invisible : il déplace la confiance. Ce que voit un fournisseur d’accès, ce que voit un site, et ce qui change avec un tunnel chiffré, en schémas animés.
+FIL: <a href="../index.html#/reseau">Réseau</a><span>/</span>Se protéger<span>/</span>Ce qui protège les données
+LEAD: « Avec un VPN, plus personne ne peut vous voir. » Presque&nbsp;: un VPN ne fait pas disparaître votre trafic, il le déplace vers quelqu’un d’autre.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+
+      <p>
+        VPN, pour <strong>Virtual Private Network</strong> — réseau privé virtuel. L’idée&nbsp;:
+        faire passer votre connexion par un tunnel chiffré jusqu’à un serveur intermédiaire,
+        avant qu’elle ne reparte vers sa vraie destination.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : ce que voit le fournisseur d’accès et le site visité sans VPN">
+        <div class="scene-title">Scène 1 — Sans rien, tout est visible</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Votre ordinateur se connecte à un site via votre fournisseur d’accès, qui voit la destination, et le site voit votre adresse IP">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="110" width="140" height="80" rx="10" class="s-box"/>
+              <text x="110" y="155" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+
+            <g data-show="1-4" class="m-pop">
+              <rect x="320" y="100" width="170" height="100" rx="10" class="s-box-violet"/>
+              <text x="405" y="140" text-anchor="middle" class="s-label-sm">Fournisseur</text>
+              <text x="405" y="160" text-anchor="middle" class="s-label-sm">d’accès</text>
+            </g>
+
+            <g data-show="1-4" class="m-right">
+              <rect x="600" y="110" width="160" height="80" rx="10" class="s-box-accent"/>
+              <text x="680" y="155" text-anchor="middle" class="s-label-sm">Le site visité</text>
+            </g>
+
+            <path d="M180 148 H320" class="s-line m-draw" data-show="2-4"/>
+            <path d="M490 148 H600" class="s-line m-draw" data-show="2-4"/>
+            <circle r="7" class="packet" data-show="2-4" style="offset-path:path('M180 148 H600')"/>
+
+            <text x="250" y="130" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3-4">voit chaque site contacté</text>
+            <text x="680" y="90" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="4">voit votre adresse IP</text>
+
+            <g data-show="4">
+              <rect x="120" y="230" width="560" height="46" rx="8" class="s-box" fill="none" stroke="var(--danger)" stroke-dasharray="6 5"/>
+              <text x="400" y="258" text-anchor="middle" class="s-label-xs">sur un wifi public, d’autres appareils du même réseau peuvent aussi observer</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Chaque connexion passe par votre fournisseur d’accès.</b><span>Chez vous ou sur un forfait mobile, c’est lui qui achemine vos requêtes vers Internet.</span></p>
+          <p class="step" data-duration="4400"><b>Il voit quel site vous contactez, même en HTTPS.</b><span>Le contenu échangé est chiffré, mais pas la destination&nbsp;: cette information-là circule en clair.</span></p>
+          <p class="step" data-duration="4400"><b>Le site, lui, voit votre adresse IP réelle.</b><span>De quoi déduire votre pays, souvent votre ville — et vous appliquer un contenu ou un prix différent selon la région.</span></p>
+          <p class="step" data-duration="4800"><b>Sur un wifi public, la vigilance redouble.</b><span>Café, aéroport, hôtel&nbsp;: d’autres appareils connectés au même réseau peuvent parfois observer ce qui y circule.</span></p>
+        </div>
+      </section>
+
+      <h2>Le tunnel chiffré</h2>
+      <p>
+        Un VPN insère un détour avant même que votre connexion ne parte vers le site visé.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : la connexion passe par un tunnel chiffré vers un serveur VPN avant de rejoindre le site">
+        <div class="scene-title">Scène 2 — Un détour chiffré</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Votre ordinateur ouvre un tunnel chiffré vers un serveur VPN, qui contacte le site visité à votre place">
+            <g data-show="1-4" class="m-rise">
+              <rect x="30" y="120" width="130" height="70" rx="10" class="s-box"/>
+              <text x="95" y="160" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+
+            <g data-show="1-4">
+              <rect x="220" y="90" width="230" height="130" rx="14" class="s-box-teal" data-show="1-4"/>
+              <text x="335" y="120" text-anchor="middle" class="s-label-xs">TUNNEL CHIFFRÉ</text>
+              <path d="M160 155 H620" class="s-line m-draw" data-show="1-4" stroke-dasharray="8 6"/>
+            </g>
+
+            <g data-show="2-4" class="m-pop">
+              <rect x="470" y="120" width="150" height="70" rx="10" class="s-box-teal"/>
+              <text x="545" y="150" text-anchor="middle" class="s-label-sm">Serveur VPN</text>
+              <text x="545" y="168" text-anchor="middle" class="s-label-xs">déchiffre ici</text>
+            </g>
+
+            <g data-show="3-4" class="m-right">
+              <path d="M620 155 H720" class="s-line m-draw" data-show="3-4"/>
+              <circle r="7" class="packet packet-teal" data-show="3-4" style="offset-path:path('M620 155 H720')"/>
+              <rect x="640" y="200" width="120" height="60" rx="10" class="s-box-accent"/>
+              <text x="700" y="235" text-anchor="middle" class="s-label-sm">Le site</text>
+            </g>
+
+            <text x="335" y="250" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="2-4">le fournisseur d’accès ne voit qu’un tunnel, pas la destination</text>
+            <text x="700" y="284" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="4">IP du serveur VPN</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Une application VPN ouvre un tunnel chiffré.</b><span>Avant même de contacter le site visé, votre appareil établit une connexion sécurisée vers un serveur VPN.</span></p>
+          <p class="step" data-duration="4600"><b>Tout ce qui sort de chez vous passe par ce tunnel.</b><span>Votre fournisseur d’accès voit une connexion chiffrée vers le serveur VPN — pas ce qu’elle contient, ni où elle va ensuite.</span></p>
+          <p class="step" data-duration="4600"><b>C’est le serveur VPN qui contacte le site à votre place.</b><span>Il déchiffre votre requête à l’arrivée du tunnel, puis la transmet avec sa propre adresse.</span></p>
+          <p class="step" data-duration="4800"><b>Le site visité ne voit plus que le serveur VPN.</b><span>Son adresse IP, souvent dans un autre pays — d’où l’usage du VPN pour changer de localisation apparente.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Une lettre confiée sous enveloppe scellée à un ami, qui la réexpédie ensuite en son
+          propre nom. Le facteur qui passe chez vous ne voit plus à qui vous écrivez réellement —
+          mais votre ami, lui, voit tout ce qui transite par ses mains.
+        </p>
+      </div>
+
+      <h2>Ce que ça change, ce que ça ne change pas</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : le VPN déplace la confiance vers son propre fournisseur">
+        <div class="scene-title">Scène 3 — Un nouveau point de confiance</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="Le VPN cache votre trafic au fournisseur d’accès et au wifi public, mais le fournisseur du VPN voit désormais tout passer">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="30" width="330" height="58" rx="10" class="s-box-teal"/>
+              <text x="205" y="64" text-anchor="middle" class="s-label-sm">Fournisseur d’accès &amp; wifi public</text>
+              <rect x="40" y="102" width="330" height="58" rx="10" fill="none" stroke="var(--sage)" stroke-width="2" stroke-dasharray="6 5"/>
+              <text x="205" y="136" text-anchor="middle" class="s-label-xs">ne voient plus la destination</text>
+            </g>
+
+            <g data-show="2-4" class="m-right">
+              <rect x="430" y="30" width="330" height="58" rx="10" class="s-box-accent"/>
+              <text x="595" y="64" text-anchor="middle" class="s-label-sm">Le fournisseur du VPN</text>
+              <rect x="430" y="102" width="330" height="58" rx="10" fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="6 5"/>
+              <text x="595" y="136" text-anchor="middle" class="s-label-xs">voit désormais tout ce qui transite</text>
+            </g>
+
+            <g data-show="3-4" class="m-pop">
+              <rect x="150" y="188" width="500" height="60" rx="10" class="s-box"/>
+              <text x="400" y="212" text-anchor="middle" class="s-label-sm">Changer de masque</text>
+              <text x="400" y="232" text-anchor="middle" class="s-label-xs">ne supprime pas la confiance — il la déplace</text>
+            </g>
+
+            <text x="400" y="270" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="4">d’où l’importance de savoir qui héberge le VPN, et sa politique de journaux</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Le fournisseur d’accès et le wifi public perdent la vue.</b><span>Ils voient un tunnel chiffré vers un serveur, pas ce qui circule dedans ni sa destination finale.</span></p>
+          <p class="step" data-duration="4600"><b>Mais le fournisseur du VPN, lui, voit tout.</b><span>Le déchiffrement se fait sur son serveur&nbsp;: il connaît chaque site que vous visitez, exactement comme le faisait avant votre fournisseur d’accès.</span></p>
+          <p class="step" data-duration="4800"><b>Changer de masque, ce n’est pas disparaître.</b><span>C’est déplacer sa confiance d’un intermédiaire vers un autre — d’où l’intérêt de choisir un fournisseur VPN sérieux, avec une politique claire sur la conservation des journaux.</span></p>
+          <p class="step" data-duration="4600"><b>En entreprise, l’usage est différent.</b><span>Le VPN professionnel sert surtout à rejoindre le réseau interne à distance — accéder aux mêmes outils que depuis le bureau, pas à masquer une adresse IP.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un VPN fait passer votre trafic par un <strong>tunnel chiffré</strong> jusqu’à un serveur intermédiaire.</li>
+        <li>Votre fournisseur d’accès et un wifi public ne voient plus votre destination ; le site visité ne voit plus votre adresse réelle.</li>
+        <li>Le fournisseur du VPN, lui, voit tout passer&nbsp;: c’est un <strong>nouveau point de confiance</strong>, pas une disparition.</li>
+        <li>En entreprise, le VPN sert d’abord à <strong>rejoindre le réseau interne</strong> à distance, pas à l’anonymat.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="chiffrement.html">← Le chiffrement expliqué simplement</a>
+        <a class="btn btn-primary" href="tor.html">Le réseau Tor, comment ça marche →</a>
+      </nav>

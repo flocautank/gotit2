@@ -327,7 +327,7 @@ CARTES = [
    "Un VPN fait passer votre connexion par un serveur intermédiaire, à travers un tunnel chiffré : personne entre vous et lui ne peut lire ce qui circule.",
    "Les sites visités ne voient plus que l’adresse du serveur VPN, souvent dans un autre pays — d’où son usage pour contourner un blocage géographique.",
    "Le fournisseur du VPN, lui, voit tout passer : changer de masque ne sert à rien si l’on ne fait que déplacer sa confiance vers un nouvel intermédiaire."],
-  voir='chiffrement'),
+  voir='vpn'),
 
  dict(id='pare-feu', terme='Pare-feu (firewall)', aka=['pare-feu','firewall','coupe-feu'], dom='Réseau',
   une="Le poste de contrôle qui filtre ce qui entre et sort d’un réseau.",
@@ -514,4 +514,31 @@ CARTES = [
    "On le décloisonne en centralisant une copie des données dans un entrepôt commun, accessible à qui en a besoin, pas seulement à qui l’a créée."],
   voir='gouvernance-data',
   pas="un doublon, qui est une donnée dupliquée par erreur ; le silo, lui, est une donnée intacte mais simplement inaccessible aux autres."),
+
+ dict(id='mfa', terme='MFA / 2FA (authentification multifacteur)', aka=['mfa','2fa','authentification multifacteur','double authentification','authentification à deux facteurs'], dom='Réseau',
+  une="Un deuxième verrou après le mot de passe, pour qu’un mot de passe volé ne suffise plus.",
+  etapes=[
+   "Un mot de passe seul ne prouve qu’une chose : que quelqu’un le connaît — pas que c’est vous. Il peut avoir été deviné, réutilisé ailleurs, ou volé par hameçonnage.",
+   "Le MFA ajoute une preuve d’une autre nature : un code envoyé sur votre téléphone, une application dédiée, ou une clé physique.",
+   "À la connexion, les deux preuves sont demandées l’une après l’autre — le mot de passe, puis ce second facteur — jamais deux fois le même type de preuve.",
+   "Un mot de passe volé ne suffit alors plus : sans le téléphone ou la clé, la connexion reste bloquée. C’est le geste de sécurité le plus rentable qui existe."],
+  voir='cybersecurite'),
+
+ dict(id='environnement-test', terme='Environnement de test (bac à sable)', aka=['bac à sable','sandbox','environnement de test','environnement de recette','environnement de dev'], dom='SI',
+  une="Une copie sans conséquence de l’outil réel, où l’on peut tout casser sans rien risquer.",
+  etapes=[
+   "Un ERP ou un CRM en production fait tourner l’activité réelle : une erreur testée dessus touche de vraies commandes, de vrais clients.",
+   "Un environnement de test — ou bac à sable — est une copie du même outil, chargée de fausses données ou de données anonymisées, isolée de la production.",
+   "On y installe une nouvelle version, on y règle une configuration, on y forme les utilisateurs : tout ce qui casse là-bas reste là-bas.",
+   "Un projet en compte souvent plusieurs — développement, puis recette — avant la mise en production, chacune plus proche du réel que la précédente."],
+  voir='projet-si'),
+
+ dict(id='anonymisation', terme='Anonymisation et pseudonymisation', aka=['anonymisation','pseudonymisation','données anonymes','données pseudonymisées'], dom='Data',
+  une="Deux façons de rendre une donnée moins parlante, mais une seule est vraiment sans retour possible.",
+  etapes=[
+   "Une donnée personnelle identifie quelqu’un : un nom, un e-mail, parfois une simple combinaison de date de naissance et de code postal.",
+   "La pseudonymisation remplace ce qui identifie par un code, mais garde ailleurs une table de correspondance qui permet de revenir en arrière.",
+   "L’anonymisation, elle, supprime ce lien pour de bon : aucune table, nulle part, ne permet de retrouver la personne d’origine.",
+   "La nuance compte légalement : une donnée pseudonymisée reste une donnée personnelle soumise au RGPD ; une donnée vraiment anonyme n’en est plus une."],
+  voir='rgpd'),
 ]

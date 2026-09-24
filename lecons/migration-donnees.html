@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Migrer ses données, le grand déménagement — GotIt !</title>
+<meta name="description" content="Changer d’ERP ou de CRM, c’est aussi faire suivre les données de l’ancien système. Extraire, nettoyer, charger, vérifier : les quatre temps d’une migration, en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/data">Data</a><span>/</span>Exploiter les données<span>/</span>Mener un projet data</div>
+      <h1>Migrer ses données, le grand déménagement</h1>
+      <p class="lead">Changer d’outil ne suffit pas à changer de données. Il faut les faire suivre — sans les perdre, ni les déformer en chemin.</p>
+      <div class="lesson-meta"><span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Nouveau CRM, nouvel ERP, changement d’hébergeur&nbsp;: rien ne repart jamais de zéro.
+        Les données de l’ancien système doivent rejoindre le nouveau — c’est une
+        <strong>migration</strong>, et elle se prépare avant d’écrire la moindre ligne de code.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : deux systèmes qui ne rangent pas les données de la même façon">
+        <div class="scene-title">Scène 1 — Deux systèmes, deux façons de ranger</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="L’ancien système et le nouveau système rangent les mêmes informations sous des noms et des formats différents">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="60" width="300" height="170" rx="12" class="s-box"/>
+              <text x="190" y="90" text-anchor="middle" class="s-label">Ancien système</text>
+              <text x="70" y="122" class="s-label-xs">NOM_CLI : « DUPONT J »</text>
+              <text x="70" y="148" class="s-label-xs">DT_NAIS : 15/03/1980</text>
+              <text x="70" y="174" class="s-label-xs">TEL : 0612345678</text>
+              <text x="70" y="200" class="s-label-xs">2 lignes en double</text>
+            </g>
+
+            <g data-show="2-4" class="m-right">
+              <rect x="460" y="60" width="300" height="170" rx="12" class="s-box-accent"/>
+              <text x="610" y="90" text-anchor="middle" class="s-label">Nouveau système</text>
+              <text x="490" y="122" class="s-label-xs">client.nom_complet</text>
+              <text x="490" y="148" class="s-label-xs">client.date_naissance</text>
+              <text x="490" y="174" class="s-label-xs">client.telephone_mobile</text>
+              <text x="490" y="200" class="s-label-xs">une seule ligne par client</text>
+            </g>
+
+            <path d="M340 145 H460" class="s-line m-draw" data-show="3-4"/>
+            <text x="400" y="128" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="3-4">?</text>
+
+            <text x="400" y="266" text-anchor="middle" class="s-label-sm" fill="var(--accent)" data-show="4">même information, noms et formats différents</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Changer d’outil, c’est courant.</b><span>Un nouveau CRM, un nouvel ERP, un changement d’hébergeur&nbsp;: les entreprises en changent régulièrement.</span></p>
+          <p class="step" data-duration="4600"><b>Mais les données de l’ancien doivent suivre.</b><span>Des années de fiches clients, de commandes, d’historiques&nbsp;: personne ne repart de zéro.</span></p>
+          <p class="step" data-duration="4800"><b>Le problème&nbsp;: les deux systèmes rangent rarement pareil.</b><span>Un nom de colonne différent, une date au mauvais format, un doublon jamais nettoyé — la correspondance ne va pas de soi.</span></p>
+          <p class="step" data-duration="4800"><b>D’où une règle&nbsp;: la migration se prépare avant de coder.</b><span>Une migration improvisée reprend les défauts de l’ancien système, et en ajoute de nouveaux.</span></p>
+        </div>
+      </section>
+
+      <h2>Les quatre temps d’une migration</h2>
+      <p>
+        La même logique que l’ETL, appliquée une fois, à grande échelle&nbsp;: extraire, nettoyer,
+        charger, vérifier.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : les quatre temps d’une migration de données">
+        <div class="scene-title">Scène 2 — Extraire, nettoyer, charger, vérifier</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 260" role="img" aria-label="Quatre étapes en chaîne : extraction, nettoyage et correspondance, chargement, vérification">
+            <g data-show="1-4" class="m-pop">
+              <rect x="20" y="90" width="170" height="80" rx="10" class="s-box"/>
+              <text x="105" y="126" text-anchor="middle" class="s-label-sm">Extraire</text>
+              <text x="105" y="146" text-anchor="middle" class="s-label-xs">export brut</text>
+            </g>
+            <path d="M190 130 H220" class="s-line m-draw" data-show="2-4"/>
+            <g data-show="2-4" class="m-pop">
+              <rect x="220" y="90" width="170" height="80" rx="10" class="s-box-teal"/>
+              <text x="305" y="120" text-anchor="middle" class="s-label-sm">Nettoyer</text>
+              <text x="305" y="140" text-anchor="middle" class="s-label-xs">doublons, formats,</text>
+              <text x="305" y="156" text-anchor="middle" class="s-label-xs">correspondance des champs</text>
+            </g>
+            <path d="M390 130 H420" class="s-line m-draw" data-show="3-4"/>
+            <g data-show="3-4" class="m-pop">
+              <rect x="420" y="90" width="170" height="80" rx="10" class="s-box-violet"/>
+              <text x="505" y="126" text-anchor="middle" class="s-label-sm">Charger</text>
+              <text x="505" y="146" text-anchor="middle" class="s-label-xs">par lots, jamais d’un bloc</text>
+            </g>
+            <path d="M590 130 H620" class="s-line m-draw" data-show="4"/>
+            <g data-show="4" class="m-pop">
+              <rect x="620" y="90" width="160" height="80" rx="10" class="s-box-accent"/>
+              <text x="700" y="120" text-anchor="middle" class="s-label-sm">Vérifier</text>
+              <text x="700" y="140" text-anchor="middle" class="s-label-xs">compter, recouper,</text>
+              <text x="700" y="156" text-anchor="middle" class="s-label-xs">faire signer</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>1. Extraire.</b><span>On sort les données de l’ancien système telles quelles, en général par un export brut — sans encore chercher à les corriger.</span></p>
+          <p class="step" data-duration="4800"><b>2. Nettoyer et faire correspondre.</b><span>Doublons retirés, dates et unités harmonisées, chaque champ de l’ancien système associé à sa colonne dans le nouveau. L’étape la plus longue, presque toujours.</span></p>
+          <p class="step" data-duration="4400"><b>3. Charger.</b><span>Les données nettoyées sont injectées dans le nouveau système, par lots successifs — jamais toutes en une fois dès le premier essai.</span></p>
+          <p class="step" data-duration="4800"><b>4. Vérifier.</b><span>On compte les lignes, on recoupe des totaux connus, et on fait rejouer le contrôle par les utilisateurs eux-mêmes avant de couper l’ancien système.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un déménagement. On trie ce qu’on emporte, on étiquette chaque carton avec son
+          contenu et sa pièce de destination, on les dépose au bon endroit dans le nouvel
+          appartement — puis on vérifie qu’aucun carton n’est resté oublié dans le camion.
+        </p>
+      </div>
+
+      <h2>Le vrai risque n’est presque jamais technique</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : la donnée sale découverte trop tard, et comment s’en prémunir">
+        <div class="scene-title">Scène 3 — La donnée sale, découverte trop tard</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="Une migration blanche sur un échantillon révèle les surprises avant la bascule complète, qui se fait progressivement avec un filet de sécurité">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="30" width="720" height="56" rx="10" class="s-box" fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="6 5"/>
+              <text x="400" y="64" text-anchor="middle" class="s-label-sm" fill="var(--danger)">adresses mortes, doublons, champs vides — jamais vus avant la migration</text>
+            </g>
+
+            <g data-show="2-4" class="m-pop">
+              <rect x="140" y="120" width="220" height="70" rx="10" class="s-box-teal"/>
+              <text x="250" y="150" text-anchor="middle" class="s-label-sm">Migration blanche</text>
+              <text x="250" y="170" text-anchor="middle" class="s-label-xs">sur un échantillon, d’abord</text>
+            </g>
+
+            <path d="M360 155 H440" class="s-line m-draw" data-show="3-4"/>
+
+            <g data-show="3-4" class="m-pop">
+              <rect x="440" y="120" width="220" height="70" rx="10" class="s-box-accent"/>
+              <text x="550" y="150" text-anchor="middle" class="s-label-sm">Bascule progressive</text>
+              <text x="550" y="170" text-anchor="middle" class="s-label-xs">jamais un interrupteur du jour au lendemain</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="200" y="220" width="400" height="46" rx="8" class="s-box-violet"/>
+              <text x="400" y="248" text-anchor="middle" class="s-label-sm">ancien système gardé en lecture, un temps</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4800"><b>Le risque n’est presque jamais technique.</b><span>C’est la donnée sale qu’on n’avait jamais vraiment regardée&nbsp;: adresses mortes, doublons, champs vides — invisibles tant que personne n’a essayé de les migrer.</span></p>
+          <p class="step" data-duration="4800"><b>D’où l’intérêt d’une migration blanche.</b><span>Migrer un échantillon d’abord, pour découvrir les surprises avant le grand saut — plutôt que le jour de la bascule réelle.</span></p>
+          <p class="step" data-duration="4600"><b>La bascule se fait par paliers.</b><span>Un service pilote, puis les autres — jamais tout le monde d’un coup, un simple interrupteur qu’on actionne le vendredi soir.</span></p>
+          <p class="step" data-duration="4800"><b>Et on garde un filet de sécurité.</b><span>L’ancien système reste accessible en lecture un temps, le temps de vérifier que rien ne manque au nouveau.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Migrer, c’est faire passer des données d’un système à un autre <strong>sans les perdre ni les déformer</strong>.</li>
+        <li>Quatre temps, dans l’ordre&nbsp;: <strong>extraire, nettoyer/mapper, charger, vérifier</strong> — la logique de l’ETL, appliquée à grande échelle.</li>
+        <li>Le vrai risque est rarement technique&nbsp;: c’est la <strong>donnée sale</strong> découverte trop tard.</li>
+        <li>Une migration réussie se <strong>teste avant de basculer</strong>, et garde un filet de sécurité après.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="gouvernance-data.html">← Pourquoi deux tableaux ne disent jamais pareil</a>
+        <a class="btn btn-primary" href="rgpd.html">Le RGPD en clair →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
