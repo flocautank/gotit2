@@ -266,6 +266,13 @@ window.GOTIT = (function () {
       duration: '7 min', level: 2,
       keywords: ['chiffrement', 'clé', 'https', 'bout en bout', 'whatsapp', 'sécurité', 'déchiffrer', 'cadenas']
     },
+    'vpn': {
+      title: 'Le VPN, un tunnel privé sur un réseau public',
+      summary: 'Un VPN ne rend pas invisible : il déplace la confiance vers un autre intermédiaire.',
+      path: 'lecons/vpn.html',
+      duration: '6 min', level: 2,
+      keywords: ['vpn', 'tunnel', 'chiffrement', 'adresse ip', 'confidentialité', 'réseau privé virtuel', 'wifi public']
+    },
     'cloud-saas': {
       title: 'SaaS, PaaS, IaaS',
       summary: 'Trois niveaux de location, de la machine nue au logiciel clé en main.',
@@ -279,6 +286,13 @@ window.GOTIT = (function () {
       path: 'lecons/gouvernance-data.html',
       duration: '7 min', level: 2,
       keywords: ['qualité', 'gouvernance', 'définition', 'référentiel', 'doublon', 'propriétaire', 'indicateur', 'kpi']
+    },
+    'migration-donnees': {
+      title: 'Migrer ses données, le grand déménagement',
+      summary: 'Changer d’ERP ou de CRM, c’est aussi faire suivre les données de l’ancien système, sans les perdre ni les déformer.',
+      path: 'lecons/migration-donnees.html',
+      duration: '6 min', level: 2,
+      keywords: ['migration', 'données', 'etl', 'mapping', 'nettoyage', 'bascule', 'crm', 'erp', 'projet data']
     },
 
     'fichiers': {
@@ -367,7 +381,7 @@ window.GOTIT = (function () {
           id: 'securite', title: 'Se protéger',
           subcategories: [
             { id: 'gestes', title: 'Les gestes du quotidien', lessons: ['cybersecurite'] },
-            { id: 'protection', title: 'Ce qui protège les données', lessons: ['chiffrement', 'sauvegarde'] },
+            { id: 'protection', title: 'Ce qui protège les données', lessons: ['chiffrement', 'sauvegarde', 'vpn'] },
             { id: 'anonymat', title: 'Rester anonyme', lessons: ['tor'] }
           ]
         }
@@ -391,7 +405,8 @@ window.GOTIT = (function () {
           subcategories: [
             { id: 'langages', title: 'Les langages', lessons: ['langages-data'] },
             { id: 'piloter', title: 'Piloter par les chiffres', lessons: ['bi-tableau-de-bord'] },
-            { id: 'qualite', title: 'Qualité & cadre légal', lessons: ['gouvernance-data', 'rgpd'] }
+            { id: 'qualite', title: 'Qualité & cadre légal', lessons: ['gouvernance-data', 'rgpd'] },
+            { id: 'projets-data', title: 'Mener un projet data', lessons: ['migration-donnees'] }
           ]
         }
       ]
@@ -1141,6 +1156,42 @@ window.GOTIT = (function () {
       ],
       voir: "gouvernance-data",
       pas: "un doublon, qui est une donnée dupliquée par erreur ; le silo, lui, est une donnée intacte mais simplement inaccessible aux autres."
+    },
+    {
+      id: "mfa", terme: "MFA / 2FA (authentification multifacteur)", domaine: "Réseau",
+      aka: ["mfa", "2fa", "authentification multifacteur", "double authentification", "authentification à deux facteurs"],
+      une: "Un deuxième verrou après le mot de passe, pour qu’un mot de passe volé ne suffise plus.",
+      etapes: [
+        "Un mot de passe seul ne prouve qu’une chose : que quelqu’un le connaît — pas que c’est vous. Il peut avoir été deviné, réutilisé ailleurs, ou volé par hameçonnage.",
+        "Le MFA ajoute une preuve d’une autre nature : un code envoyé sur votre téléphone, une application dédiée, ou une clé physique.",
+        "À la connexion, les deux preuves sont demandées l’une après l’autre — le mot de passe, puis ce second facteur — jamais deux fois le même type de preuve.",
+        "Un mot de passe volé ne suffit alors plus : sans le téléphone ou la clé, la connexion reste bloquée. C’est le geste de sécurité le plus rentable qui existe."
+      ],
+      voir: "cybersecurite"
+    },
+    {
+      id: "environnement-test", terme: "Environnement de test (bac à sable)", domaine: "SI",
+      aka: ["bac à sable", "sandbox", "environnement de test", "environnement de recette", "environnement de dev"],
+      une: "Une copie sans conséquence de l’outil réel, où l’on peut tout casser sans rien risquer.",
+      etapes: [
+        "Un ERP ou un CRM en production fait tourner l’activité réelle : une erreur testée dessus touche de vraies commandes, de vrais clients.",
+        "Un environnement de test — ou bac à sable — est une copie du même outil, chargée de fausses données ou de données anonymisées, isolée de la production.",
+        "On y installe une nouvelle version, on y règle une configuration, on y forme les utilisateurs : tout ce qui casse là-bas reste là-bas.",
+        "Un projet en compte souvent plusieurs — développement, puis recette — avant la mise en production, chacune plus proche du réel que la précédente."
+      ],
+      voir: "projet-si"
+    },
+    {
+      id: "anonymisation", terme: "Anonymisation et pseudonymisation", domaine: "Data",
+      aka: ["anonymisation", "pseudonymisation", "données anonymes", "données pseudonymisées"],
+      une: "Deux façons de rendre une donnée moins parlante, mais une seule est vraiment sans retour possible.",
+      etapes: [
+        "Une donnée personnelle identifie quelqu’un : un nom, un e-mail, parfois une simple combinaison de date de naissance et de code postal.",
+        "La pseudonymisation remplace ce qui identifie par un code, mais garde ailleurs une table de correspondance qui permet de revenir en arrière.",
+        "L’anonymisation, elle, supprime ce lien pour de bon : aucune table, nulle part, ne permet de retrouver la personne d’origine.",
+        "La nuance compte légalement : une donnée pseudonymisée reste une donnée personnelle soumise au RGPD ; une donnée vraiment anonyme n’en est plus une."
+      ],
+      voir: "rgpd"
     },
   ];
 
