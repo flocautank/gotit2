@@ -338,6 +338,13 @@ window.GOTIT = (function () {
       path: 'lecons/email.html', duration: '6 min', level: 1,
       keywords: ['e-mail', 'email', 'courriel', 'smtp', 'spam', 'pourriel', 'bo\u00eete mail', 'pi\u00e8ce jointe', 'hame\u00e7onnage']
     },
+    'no-code': {
+      title: 'No-code, low-code : construire sans développeur',
+      summary: 'Assembler une application métier avec des briques visuelles — et savoir où ça s’arrête.',
+      path: 'lecons/no-code.html',
+      duration: '6 min', level: 2,
+      keywords: ['no-code', 'low-code', 'sans code', 'plateforme', 'automatisation', 'application métier', 'glisser-déposer', 'lock-in']
+    },
     /* ---------- Leçons prévues (affichées en grisé) ---------- */
 
   };
@@ -428,7 +435,8 @@ window.GOTIT = (function () {
           id: 'conduite', title: 'Faire vivre le SI',
           subcategories: [
             { id: 'projets', title: 'Les projets', lessons: ['projet-si'] },
-            { id: 'support', title: 'Le support', lessons: ['support'] }
+            { id: 'support', title: 'Le support', lessons: ['support'] },
+            { id: 'construire', title: 'Construire sans développeur', lessons: ['no-code'] }
           ]
         }
       ]
@@ -1192,6 +1200,55 @@ window.GOTIT = (function () {
         "La nuance compte légalement : une donnée pseudonymisée reste une donnée personnelle soumise au RGPD ; une donnée vraiment anonyme n’en est plus une."
       ],
       voir: "rgpd"
+    },
+    {
+      id: "protocole", terme: "Protocole (réseau)", domaine: "Réseau",
+      aka: ["protocole", "http", "tcp/ip", "norme réseau"],
+      une: "La règle du jeu commune qui permet à deux machines de se comprendre, quel que soit leur fabricant.",
+      etapes: [
+        "Deux ordinateurs différents, deux systèmes différents : rien ne garantit qu’ils se comprennent, sauf s’ils suivent la même règle du jeu.",
+        "Un protocole fixe cette règle à l’avance : quel format de message envoyer, dans quel ordre, comment dire « bien reçu ».",
+        "HTTP pour une page web, SMTP pour un e-mail, Wifi pour l’air entre la box et le téléphone : chaque usage a le sien, empilés les uns sur les autres.",
+        "Tant que les deux bouts parlent le même protocole, peu importe la marque de la machine ou le système derrière : c’est ce qui a rendu Internet possible."
+      ],
+      voir: "internet"
+    },
+    {
+      id: "nosql", terme: "NoSQL", domaine: "Data",
+      aka: ["nosql", "base nosql", "base non relationnelle", "base document"],
+      une: "Une famille de bases de données qui range l’information autrement que dans des tableaux figés.",
+      etapes: [
+        "Une base SQL classique range tout dans des tableaux à colonnes fixes : pratique tant que la donnée est régulière — un client, une commande.",
+        "Certaines données ne rentrent pas bien dans ce moule : un document au contenu variable, un réseau de relations, un flux de mesures à haute fréquence.",
+        "Le NoSQL regroupe plusieurs familles de bases pensées pour ces cas — document, clé-valeur, graphe — chacune avec sa propre forme de rangement.",
+        "Le choix se fait sur la forme de la donnée, pas sur la mode : une base SQL bien pensée reste souvent le bon outil pour des données structurées."
+      ],
+      voir: "base-de-donnees",
+      pas: "le SQL, qui désigne le langage de requête des bases relationnelles ; le NoSQL, lui, désigne des bases qui souvent n’utilisent pas ce langage."
+    },
+    {
+      id: "appel-outils", terme: "Appel d’outils (function calling)", domaine: "IA",
+      aka: ["function calling", "appel d’outils", "tool use", "outils"],
+      une: "La capacité d’un modèle à demander l’exécution d’une action précise, plutôt que de se contenter d’écrire du texte.",
+      etapes: [
+        "Un modèle de langage ne sait faire qu’une chose : écrire du texte, un mot après l’autre.",
+        "On lui décrit à l’avance une liste d’outils disponibles — envoyer un e-mail, chercher un prix, lire un fichier — chacun avec son nom et ses paramètres.",
+        "Face à une demande qui l’exige, il n’exécute rien lui-même : il écrit une demande structurée — « utilise cet outil, avec ces paramètres » — que le programme autour lui exécute à sa place.",
+        "Le résultat de cet outil lui est rendu, et il poursuit sa réponse avec cette information neuve. C’est ce mécanisme qui transforme un assistant en agent."
+      ],
+      voir: "agent"
+    },
+    {
+      id: "bug", terme: "Bug (bogue)", domaine: "Informatique",
+      aka: ["bug", "bogue", "plantage", "anomalie"],
+      une: "Un comportement du programme qui s’écarte de ce qu’il devait faire — jamais un caprice de la machine.",
+      etapes: [
+        "Un ordinateur ne fait qu’exécuter des instructions, sans les comprendre : il ne « décide » jamais de mal se comporter.",
+        "Un bug est un défaut dans ces instructions elles-mêmes — une condition oubliée, un cas particulier non prévu par la personne qui a écrit le code.",
+        "Il peut rester invisible des années si le cas qui le déclenche ne se présente jamais, puis apparaître brutalement le jour où il se produit.",
+        "Le corriger, c’est rouvrir le texte du programme et réécrire la ligne fautive — pas redémarrer la machine, même si ça arrange parfois les choses en attendant."
+      ],
+      voir: "algorithme"
     },
   ];
 
