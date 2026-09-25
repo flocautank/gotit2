@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No-code, low-code : construire sans développeur — GotIt !</title>
+<meta name="description" content="Assembler une application métier avec des briques visuelles, sans éditeur de code — et savoir précisément où cette promesse s’arrête. En schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/si">Système d’information</a><span>/</span>Faire vivre le SI<span>/</span>Construire sans développeur</div>
+      <h1>No-code, low-code : construire sans développeur</h1>
+      <p class="lead">Assembler une application métier en quelques jours, sans écrire de code&nbsp;— et savoir précisément où cette promesse s’arrête.</p>
+      <div class="lesson-meta"><span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Un formulaire de suivi, un petit outil pour une équipe, un processus qu’on
+        aimerait automatiser&nbsp;: pendant longtemps, la réponse commençait presque
+        toujours par « il faut un développeur ». Le no-code et le low-code proposent
+        un autre chemin — à condition de savoir ce qu’ils changent vraiment.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : le chemin classique d’une idée d’application, de l’idée au développeur">
+        <div class="scene-title">Scène 1 — Le chemin classique</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une idée passe par un cahier des charges puis par un développeur, avant d’aboutir des semaines plus tard">
+            <g data-show="1-4" class="m-pop">
+              <rect x="40" y="60" width="220" height="100" rx="12" class="s-box-accent"/>
+              <text x="150" y="102" text-anchor="middle" class="s-label">Une idée</text>
+              <text x="150" y="126" text-anchor="middle" class="s-label-xs">un besoin métier</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="290" y="60" width="220" height="100" rx="12" class="s-box-teal"/>
+              <text x="400" y="102" text-anchor="middle" class="s-label">Cahier des charges</text>
+              <text x="400" y="126" text-anchor="middle" class="s-label-xs">ce qu’il faut construire</text>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <rect x="540" y="60" width="220" height="100" rx="12" class="s-box-violet"/>
+              <text x="650" y="102" text-anchor="middle" class="s-label">Développeur</text>
+              <text x="650" y="126" text-anchor="middle" class="s-label-xs">le code, ligne à ligne</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="170" y="204" width="460" height="66" rx="14" fill="var(--danger)" opacity="0.12" stroke="var(--danger)"/>
+              <text x="400" y="232" text-anchor="middle" class="s-label-sm" fill="var(--danger)">des semaines, parfois des mois</text>
+              <text x="400" y="254" text-anchor="middle" class="s-label-xs" fill="var(--danger)">pour un besoin souvent simple</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Tout part d’une idée.</b><span>Un besoin simple&nbsp;: un formulaire, un suivi, un petit outil du quotidien.</span></p>
+          <p class="step" data-duration="4600"><b>Elle passe par un cahier des charges.</b><span>On écrit ce qu’il faut construire, avant que quiconque n’écrive une ligne de code.</span></p>
+          <p class="step" data-duration="4400"><b>Puis par un développeur.</b><span>Il traduit ce texte en code, ligne après ligne — un métier à part entière.</span></p>
+          <p class="step" data-duration="4800"><b>Résultat&nbsp;: des semaines, parfois des mois.</b><span>Pour un besoin qui, souvent, n’en demandait pas tant.</span></p>
+        </div>
+      </section>
+
+      <h2>Assembler, plutôt qu’écrire</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : une application construite par blocs visuels, reliée à l’existant, avec une porte de sortie vers du code">
+        <div class="scene-title">Scène 2 — Comment ça marche</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Une application assemblée par blocs, construite en glissant des champs, reliée au CRM et à la messagerie, avec un recours possible au code">
+            <g data-show="1-4" class="m-pop">
+              <rect x="300" y="120" width="200" height="90" rx="12" class="s-box-accent"/>
+              <text x="400" y="158" text-anchor="middle" class="s-label">Appli visuelle</text>
+              <text x="400" y="180" text-anchor="middle" class="s-label-xs">assemblée par blocs</text>
+            </g>
+
+            <g data-show="2-4" class="m-left">
+              <rect x="40" y="20" width="200" height="76" rx="12" class="s-box"/>
+              <text x="140" y="56" text-anchor="middle" class="s-label-sm">Glisser-déposer</text>
+              <text x="140" y="76" text-anchor="middle" class="s-label-xs">champs, boutons, règles</text>
+            </g>
+            <path d="M140 96 C 140 130, 260 150, 300 158" class="s-line m-draw" data-show="2-4"/>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="560" y="20" width="200" height="76" rx="12" class="s-box-teal"/>
+              <text x="660" y="56" text-anchor="middle" class="s-label-sm">Connecteurs</text>
+              <text x="660" y="76" text-anchor="middle" class="s-label-xs">CRM, messagerie, tableur</text>
+            </g>
+            <path d="M660 96 C 660 130, 540 150, 500 158" class="s-line m-draw" data-show="3-4"/>
+
+            <g data-show="4" class="m-rise">
+              <rect x="300" y="234" width="200" height="70" rx="12" class="s-box-violet"/>
+              <text x="400" y="264" text-anchor="middle" class="s-label-sm">Low-code</text>
+              <text x="400" y="284" text-anchor="middle" class="s-label-xs">du code pour les cas rares</text>
+            </g>
+            <path d="M400 234 V 210" class="s-line m-draw" data-show="4"/>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>La plateforme fait apparaître une application.</b><span>Assemblée par blocs — formulaires, tableaux, règles — sans éditeur de code.</span></p>
+          <p class="step" data-duration="4600"><b>On la construit en glissant des blocs.</b><span>Des champs, des boutons, des conditions « si… alors… » remplacent l’écriture de code.</span></p>
+          <p class="step" data-duration="4600"><b>Elle se branche sur l’existant.</b><span>Des connecteurs prêts à l’emploi la relient au CRM, à la messagerie, au tableur.</span></p>
+          <p class="step" data-duration="5000"><b>Le low-code garde une porte de sortie.</b><span>Quelques lignes de code, réservées aux cas que les blocs ne couvrent pas.</span></p>
+        </div>
+      </section>
+
+      <div class="callout">
+        <div class="callout-title">Les deux mots</div>
+        <p>
+          <strong>No-code</strong>&nbsp;: tout se construit par blocs visuels, sans une seule
+          ligne de code. <strong>Low-code</strong>&nbsp;: la même logique, avec une porte de
+          sortie vers du code pour les cas que les blocs ne couvrent pas. Dans les deux cas,
+          la plateforme génère et héberge le vrai code — invisible pour vous.
+        </p>
+      </div>
+
+      <h2>Ce que ça ne remplace pas</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : les limites du no-code — cas complexes, verrouillage chez l’éditeur, cadrage toujours nécessaire, l’IT dans la boucle">
+        <div class="scene-title">Scène 3 — Les limites</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 220" role="img" aria-label="Quatre limites du no-code : cas très spécifiques, verrouillage chez l’éditeur, cadrage nécessaire, et l’IT qui reste dans la boucle">
+            <g data-show="1-4" class="m-pop">
+              <rect x="60" y="30" width="320" height="72" rx="10" class="s-box-accent"/>
+              <text x="220" y="62" text-anchor="middle" class="s-label-sm">Cas très spécifiques</text>
+              <text x="220" y="84" text-anchor="middle" class="s-label-xs">bute sur les gros volumes</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="420" y="30" width="320" height="72" rx="10" class="s-box-teal"/>
+              <text x="580" y="62" text-anchor="middle" class="s-label-sm">Verrouillage</text>
+              <text x="580" y="84" text-anchor="middle" class="s-label-xs">changer de plateforme coûte cher</text>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <rect x="60" y="118" width="320" height="72" rx="10" class="s-box-violet"/>
+              <text x="220" y="150" text-anchor="middle" class="s-label-sm">Le cadrage reste</text>
+              <text x="220" y="172" text-anchor="middle" class="s-label-xs">à qui, quelles données, qui y accède</text>
+            </g>
+            <g data-show="4" class="m-pop">
+              <rect x="420" y="118" width="320" height="72" rx="10" fill="var(--danger)" opacity="0.12" stroke="var(--danger)"/>
+              <text x="580" y="150" text-anchor="middle" class="s-label-sm" fill="var(--danger)">L’IT reste dans la boucle</text>
+              <text x="580" y="172" text-anchor="middle" class="s-label-xs" fill="var(--danger)">sécurité, sauvegardes, cohérence</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Ça va vite pour un besoin courant.</b><span>Mais ça bute sur des règles très spécifiques ou de gros volumes de données.</span></p>
+          <p class="step" data-duration="4600"><b>Changer de plateforme coûte cher.</b><span>Chaque éditeur a son format à lui&nbsp;: c’est le verrouillage, ou « lock-in ».</span></p>
+          <p class="step" data-duration="4800"><b>Construire sans coder n’élimine pas le cadrage.</b><span>À qui sert l’appli, quelles données elle touche, qui peut y accéder&nbsp;: ces questions restent entières.</span></p>
+          <p class="step" data-duration="5000"><b>Dans une entreprise, l’IT reste dans la boucle.</b><span>Sécurité, sauvegardes, cohérence avec le reste du système d’information&nbsp;: ça ne s’improvise pas.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le no-code, c’est le meuble en kit&nbsp;: vous l’assemblez vous-même, sans être
+          menuisier, en suivant une notice déjà pensée par quelqu’un d’autre. Ça convient à
+          la plupart des besoins&nbsp;; un meuble sur mesure, pour un coin de pièce
+          improbable, demandera quand même l’artisan.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li><strong>No-code</strong>&nbsp;: construire une application en assemblant des briques visuelles, sans écrire de code.</li>
+        <li><strong>Low-code</strong>&nbsp;: la même logique, avec une porte de sortie vers du code pour les cas particuliers.</li>
+        <li>Rapide et accessible pour les besoins courants&nbsp;; moins adapté aux règles complexes ou aux gros volumes.</li>
+        <li>Le vrai gain&nbsp;: mettre le métier au clavier — <strong>pas remplacer les développeurs</strong>, toujours nécessaires ailleurs.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="support.html">← Le support informatique</a>
+        <a class="btn btn-primary" href="../index.html#/si">Système d’information →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
