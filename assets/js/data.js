@@ -294,12 +294,25 @@ window.GOTIT = (function () {
       duration: '6 min', level: 2,
       keywords: ['migration', 'données', 'etl', 'mapping', 'nettoyage', 'bascule', 'crm', 'erp', 'projet data']
     },
+    'dedoublonnage': {
+      title: 'Le dédoublonnage : reconnaître qu’un client n’est pas deux',
+      summary: 'Deux fiches, une même personne : comment un système les rapproche sans clé identique, sans perdre leur historique.',
+      path: 'lecons/dedoublonnage.html',
+      duration: '6 min', level: 2,
+      keywords: ['dédoublonnage', 'doublon', 'déduplication', 'golden record', 'fiche client', 'crm', 'qualité de données', 'rapprochement']
+    },
 
     'fichiers': {
       title: 'Fichiers, formats et dossiers',
       summary: 'Pourquoi un fichier ne s\u2019ouvre pas, et pourquoi le PDF existe.',
       path: 'lecons/fichiers.html', duration: '6 min', level: 1,
       keywords: ['fichier', 'format', 'extension', 'dossier', 'pdf', 'jpg', 'csv', 'zip', 'convertir']
+    },
+    'compression': {
+      title: 'Compression : pourquoi un fichier zipp\u00e9 prend moins de place',
+      summary: 'Le m\u00eame contenu, en moins d\u2019octets \u2014 et pourquoi zipper une vid\u00e9o ne sert presque \u00e0 rien.',
+      path: 'lecons/compression.html', duration: '6 min', level: 1,
+      keywords: ['compression', 'zip', 'jpg', 'mp3', 'sans perte', 'avec perte', 'algorithme', 'fichier', 'd\u00e9compresser']
     },
     'navigateur': {
       title: 'Ce que sait votre navigateur',
@@ -360,7 +373,7 @@ window.GOTIT = (function () {
           subcategories: [
             { id: 'dans-la-machine', title: 'Dans la machine', lessons: ['ordinateur', 'serveur'] },
             { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas', 'virtualisation'] },
-            { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['fichiers'] }
+            { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['fichiers', 'compression'] }
           ]
         },
         {
@@ -412,7 +425,7 @@ window.GOTIT = (function () {
           subcategories: [
             { id: 'langages', title: 'Les langages', lessons: ['langages-data'] },
             { id: 'piloter', title: 'Piloter par les chiffres', lessons: ['bi-tableau-de-bord'] },
-            { id: 'qualite', title: 'Qualité & cadre légal', lessons: ['gouvernance-data', 'rgpd'] },
+            { id: 'qualite', title: 'Qualité & cadre légal', lessons: ['gouvernance-data', 'dedoublonnage', 'rgpd'] },
             { id: 'projets-data', title: 'Mener un projet data', lessons: ['migration-donnees'] }
           ]
         }
@@ -1249,6 +1262,44 @@ window.GOTIT = (function () {
         "Le corriger, c’est rouvrir le texte du programme et réécrire la ligne fautive — pas redémarrer la machine, même si ça arrange parfois les choses en attendant."
       ],
       voir: "algorithme"
+    },
+    {
+      id: "dette-technique", terme: "Dette technique", domaine: "SI",
+      aka: ["dette technique", "technical debt", "code à refaire"],
+      une: "Le coût caché des raccourcis pris hier, à rembourser un jour avec les intérêts.",
+      etapes: [
+        "Sous la pression d’un délai, on choisit parfois la solution rapide plutôt que la solution propre : un correctif au lieu d’une vraie refonte.",
+        "Ce choix fonctionne dans l’instant, mais laisse une base plus fragile — plus difficile à comprendre, à modifier, à faire évoluer sans casser autre chose.",
+        "Comme un emprunt, elle s’accumule en silence, jusqu’au jour où chaque nouvelle demande, même petite, devient lente et risquée.",
+        "La rembourser, c’est réserver du temps pour nettoyer plutôt que d’empiler une fonctionnalité de plus : un choix d’équipe, pas un luxe."
+      ],
+      voir: "projet-si"
+    },
+    {
+      id: "mvp", terme: "MVP (produit minimum viable)", domaine: "SI",
+      aka: ["mvp", "minimum viable product", "produit minimum viable", "version minimale"],
+      une: "La plus petite version d’un produit qui permet déjà d’apprendre quelque chose de vrais utilisateurs.",
+      etapes: [
+        "Construire un outil complet avant de savoir s’il répond à un vrai besoin, c’est risquer des mois de travail sur une hypothèse jamais testée.",
+        "Le MVP inverse l’ordre : on livre la version la plus réduite possible, mais qui rend déjà un service réel à un petit groupe d’utilisateurs.",
+        "Leur usage réel — ce qu’ils utilisent, ce qu’ils ignorent, ce qu’ils demandent en plus — vaut plus que n’importe quelle réunion de cadrage.",
+        "Chaque version suivante s’appuie sur ces retours, pas sur des suppositions : on construit ce qui manque vraiment, pas ce qu’on avait imaginé."
+      ],
+      voir: "projet-si",
+      pas: "un produit bâclé : le MVP doit rester fiable et utilisable, seulement plus étroit dans ce qu’il couvre."
+    },
+    {
+      id: "framework", terme: "Framework (cadre de développement)", domaine: "Informatique",
+      aka: ["framework", "cadre de développement", "bibliothèque", "librairie"],
+      une: "Un squelette de code déjà écrit, sur lequel un développeur construit plutôt que de repartir de zéro.",
+      etapes: [
+        "Beaucoup de programmes ont besoin des mêmes briques de base : afficher une page, gérer une connexion, sécuriser un mot de passe.",
+        "Un framework fournit ces briques toutes faites, organisées selon des règles précises — au développeur de remplir les cases propres à son projet.",
+        "Cela évite de réinventer et de retester ce que des milliers d’autres projets utilisent déjà, avec les mêmes bugs déjà corrigés une fois pour toutes.",
+        "La contrepartie : on adopte aussi ses règles et ses limites — en sortir demande souvent de réécrire une bonne partie du projet."
+      ],
+      voir: "logiciel",
+      pas: "une bibliothèque, plus petite et plus ponctuelle : on l’appelle depuis son propre code, alors qu’avec un framework, c’est lui qui appelle le vôtre."
     },
   ];
 

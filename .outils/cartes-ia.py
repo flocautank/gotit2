@@ -578,4 +578,33 @@ CARTES = [
    "Il peut rester invisible des années si le cas qui le déclenche ne se présente jamais, puis apparaître brutalement le jour où il se produit.",
    "Le corriger, c’est rouvrir le texte du programme et réécrire la ligne fautive — pas redémarrer la machine, même si ça arrange parfois les choses en attendant."],
   voir='algorithme'),
+
+ dict(id='dette-technique', terme='Dette technique', aka=['dette technique','technical debt','code à refaire'], dom='SI',
+  une="Le coût caché des raccourcis pris hier, à rembourser un jour avec les intérêts.",
+  etapes=[
+   "Sous la pression d’un délai, on choisit parfois la solution rapide plutôt que la solution propre : un correctif au lieu d’une vraie refonte.",
+   "Ce choix fonctionne dans l’instant, mais laisse une base plus fragile — plus difficile à comprendre, à modifier, à faire évoluer sans casser autre chose.",
+   "Comme un emprunt, elle s’accumule en silence, jusqu’au jour où chaque nouvelle demande, même petite, devient lente et risquée.",
+   "La rembourser, c’est réserver du temps pour nettoyer plutôt que d’empiler une fonctionnalité de plus : un choix d’équipe, pas un luxe."],
+  voir='projet-si'),
+
+ dict(id='mvp', terme='MVP (produit minimum viable)', aka=['mvp','minimum viable product','produit minimum viable','version minimale'], dom='SI',
+  une="La plus petite version d’un produit qui permet déjà d’apprendre quelque chose de vrais utilisateurs.",
+  etapes=[
+   "Construire un outil complet avant de savoir s’il répond à un vrai besoin, c’est risquer des mois de travail sur une hypothèse jamais testée.",
+   "Le MVP inverse l’ordre : on livre la version la plus réduite possible, mais qui rend déjà un service réel à un petit groupe d’utilisateurs.",
+   "Leur usage réel — ce qu’ils utilisent, ce qu’ils ignorent, ce qu’ils demandent en plus — vaut plus que n’importe quelle réunion de cadrage.",
+   "Chaque version suivante s’appuie sur ces retours, pas sur des suppositions : on construit ce qui manque vraiment, pas ce qu’on avait imaginé."],
+  voir='projet-si',
+  pas="un produit bâclé : le MVP doit rester fiable et utilisable, seulement plus étroit dans ce qu’il couvre."),
+
+ dict(id='framework', terme='Framework (cadre de développement)', aka=['framework','cadre de développement','bibliothèque','librairie'], dom='Informatique',
+  une="Un squelette de code déjà écrit, sur lequel un développeur construit plutôt que de repartir de zéro.",
+  etapes=[
+   "Beaucoup de programmes ont besoin des mêmes briques de base : afficher une page, gérer une connexion, sécuriser un mot de passe.",
+   "Un framework fournit ces briques toutes faites, organisées selon des règles précises — au développeur de remplir les cases propres à son projet.",
+   "Cela évite de réinventer et de retester ce que des milliers d’autres projets utilisent déjà, avec les mêmes bugs déjà corrigés une fois pour toutes.",
+   "La contrepartie : on adopte aussi ses règles et ses limites — en sortir demande souvent de réécrire une bonne partie du projet."],
+  voir='logiciel',
+  pas="une bibliothèque, plus petite et plus ponctuelle : on l’appelle depuis son propre code, alors qu’avec un framework, c’est lui qui appelle le vôtre."),
 ]

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le dédoublonnage : reconnaître qu’un client n’est pas deux — GotIt !</title>
+<meta name="description" content="Comment un système reconnaît que deux fiches désignent la même personne, sans clé identique, et fusionne leur historique sans en perdre une miette. En schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/data">Data</a><span>/</span>Exploiter les données<span>/</span>Qualité &amp; cadre légal</div>
+      <h1>Le dédoublonnage : reconnaître qu’un client n’est pas deux</h1>
+      <p class="lead">Un même client, saisi trois fois sous trois formes différentes&nbsp;: comment un système apprend à le reconnaître, sans qu’aucune clé ne le prouve formellement.</p>
+      <div class="lesson-meta"><span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Un CRM ne connaît que ce qu’on lui a saisi. Si la même personne est entrée deux fois,
+        sous deux formes différentes, rien ne dit spontanément au système qu’il s’agit du même client.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : d’où viennent les doublons dans une base client">
+        <div class="scene-title">Scène 1 — Une personne, plusieurs fiches</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un même client, saisi via trois canaux différents, devient trois fiches distinctes">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="40" width="200" height="66" rx="12" class="s-box"/>
+              <text x="160" y="68" text-anchor="middle" class="s-label-sm">formulaire web</text>
+              <text x="160" y="90" text-anchor="middle" class="s-label-xs">Jean Dupont</text>
+            </g>
+            <g data-show="1-4" class="m-rise">
+              <rect x="300" y="40" width="200" height="66" rx="12" class="s-box"/>
+              <text x="400" y="68" text-anchor="middle" class="s-label-sm">appel du centre</text>
+              <text x="400" y="90" text-anchor="middle" class="s-label-xs">J. DUPONT</text>
+            </g>
+            <g data-show="1-4" class="m-rise">
+              <rect x="540" y="40" width="200" height="66" rx="12" class="s-box"/>
+              <text x="640" y="68" text-anchor="middle" class="s-label-sm">salon professionnel</text>
+              <text x="640" y="90" text-anchor="middle" class="s-label-xs">Jean DUPONT</text>
+            </g>
+
+            <path d="M160 106 V 150" class="s-line m-draw" data-show="2-4"/>
+            <path d="M400 106 V 150" class="s-line m-draw" data-show="2-4"/>
+            <path d="M640 106 V 150" class="s-line m-draw" data-show="2-4"/>
+
+            <g data-show="2-4" class="m-rise">
+              <rect x="60" y="150" width="200" height="60" rx="12" class="s-box-accent"/>
+              <text x="160" y="184" text-anchor="middle" class="s-label-xs">email pro, ancien</text>
+              <rect x="300" y="150" width="200" height="60" rx="12" class="s-box-accent"/>
+              <text x="400" y="184" text-anchor="middle" class="s-label-xs">téléphone seul</text>
+              <rect x="540" y="150" width="200" height="60" rx="12" class="s-box-accent"/>
+              <text x="640" y="184" text-anchor="middle" class="s-label-xs">email perso, faute de frappe</text>
+            </g>
+
+            <g data-show="3-4">
+              <text x="400" y="240" text-anchor="middle" class="s-label-sm" data-show="3-4">aucune clé commune évidente entre les trois</text>
+            </g>
+
+            <g data-show="4" class="m-pop">
+              <text x="400" y="278" text-anchor="middle" class="s-label" fill="var(--warn)">3 fiches, 3 historiques séparés, 1 seul client</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Un client contacte l’entreprise par plusieurs canaux.</b><span>Un formulaire web, un appel, un salon professionnel : à chaque fois, quelqu’un ressaisit ses informations.</span></p>
+          <p class="step" data-duration="4600"><b>Chaque saisie diffère un peu de la précédente.</b><span>Une abréviation, une majuscule en trop, un e-mail personnel plutôt que professionnel, une faute de frappe.</span></p>
+          <p class="step" data-duration="4400"><b>Rien ne relie ces fiches de façon certaine.</b><span>Pas d’identifiant client saisi trois fois à l’identique : pour le système, ce sont trois personnes différentes.</span></p>
+          <p class="step" data-duration="5000"><b>Conséquence directe.</b><span>L’historique d’achat se retrouve fractionné, une offre de fidélité ne se déclenche pas, et le client reçoit la même newsletter deux fois.</span></p>
+        </div>
+      </section>
+
+      <h2>Comment le système les rapproche</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : le rapprochement de fiches par ressemblance plutôt que par égalité stricte">
+        <div class="scene-title">Scène 2 — Comparer par ressemblance, pas par égalité</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Plusieurs indices de ressemblance sont combinés en un score, qui décide de la fusion ou de la vérification humaine">
+            <g data-show="1-4" class="m-rise">
+              <rect x="40" y="46" width="150" height="56" rx="10" class="s-box-teal"/>
+              <text x="115" y="79" text-anchor="middle" class="s-label-sm">nom proche</text>
+              <rect x="210" y="46" width="150" height="56" rx="10" class="s-box-teal"/>
+              <text x="285" y="79" text-anchor="middle" class="s-label-sm">email proche</text>
+              <rect x="380" y="46" width="150" height="56" rx="10" class="s-box-teal"/>
+              <text x="455" y="79" text-anchor="middle" class="s-label-sm">même téléphone</text>
+              <rect x="550" y="46" width="150" height="56" rx="10" class="s-box-teal"/>
+              <text x="625" y="79" text-anchor="middle" class="s-label-sm">adresse proche</text>
+            </g>
+
+            <path d="M115 102 L 370 150" class="s-line m-draw" data-show="2-4"/>
+            <path d="M285 102 L 370 150" class="s-line m-draw" data-show="2-4"/>
+            <path d="M455 102 L 400 150" class="s-line m-draw" data-show="2-4"/>
+            <path d="M625 102 L 420 150" class="s-line m-draw" data-show="2-4"/>
+
+            <g data-show="2-4" class="m-pop">
+              <rect x="310" y="150" width="180" height="60" rx="12" class="s-box-accent"/>
+              <text x="400" y="184" text-anchor="middle" class="s-label-sm">score de ressemblance</text>
+            </g>
+
+            <path d="M340 210 C 300 230, 250 236, 200 244" class="s-line m-draw" data-show="3-4"/>
+            <path d="M460 210 C 500 230, 550 236, 600 244" class="s-line m-draw" data-show="3-4"/>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="60" y="244" width="240" height="46" rx="10" class="s-box-teal"/>
+              <text x="180" y="273" text-anchor="middle" class="s-label-sm">score élevé → fusion</text>
+              <rect x="500" y="244" width="240" height="46" rx="10" class="s-box-violet"/>
+              <text x="620" y="273" text-anchor="middle" class="s-label-sm">score moyen → à vérifier</text>
+            </g>
+
+            <g data-show="4">
+              <text x="400" y="26" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">jamais une égalité parfaite exigée</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Exiger une correspondance parfaite ne fonctionnerait presque jamais.</b><span>Un nom, un email et un téléphone diffèrent presque toujours un peu d’une saisie à l’autre.</span></p>
+          <p class="step" data-duration="4800"><b>Le système compare donc plusieurs indices à la fois.</b><span>Il tolère les fautes de frappe, les accents, les abréviations, et combine ce que chaque indice lui apprend.</span></p>
+          <p class="step" data-duration="5000"><b>Ces indices donnent un score de ressemblance.</b><span>Au-delà d’un certain seuil, la fusion se fait automatiquement ; en dessous, la fiche est mise de côté pour une vérification humaine.</span></p>
+          <p class="step" data-duration="4400"><b>C’est un réglage, pas une certitude absolue.</b><span>Un seuil trop bas fusionne deux personnes différentes ; un seuil trop haut laisse trop de doublons non détectés.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          C’est le plan de table d’un mariage construit à partir des réponses de plusieurs
+          invités&nbsp;: « Catherine Martin », « C. Martin » et « Cathy Martin » finissent par
+          être reconnues comme la même personne, et rassemblées à la même table — sans qu’aucune
+          des trois réponses ne l’ait écrit noir sur blanc.
+        </p>
+      </div>
+
+      <h2>La fusion, et ce qu’elle doit garder</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : la fusion de fiches en une fiche de référence, sans perte d’historique">
+        <div class="scene-title">Scène 3 — Une seule fiche, tout l’historique</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 290" role="img" aria-label="Trois fiches fusionnent en une fiche de référence qui conserve tout l’historique des trois">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="40" width="180" height="56" rx="10" class="s-box"/>
+              <text x="150" y="73" text-anchor="middle" class="s-label-sm">fiche web</text>
+              <rect x="310" y="40" width="180" height="56" rx="10" class="s-box"/>
+              <text x="400" y="73" text-anchor="middle" class="s-label-sm">fiche téléphone</text>
+              <rect x="560" y="40" width="180" height="56" rx="10" class="s-box"/>
+              <text x="650" y="73" text-anchor="middle" class="s-label-sm">fiche salon</text>
+            </g>
+
+            <path d="M150 96 C 200 130, 320 150, 400 158" class="s-line m-draw" data-show="2-4"/>
+            <path d="M400 96 V 158" class="s-line m-draw" data-show="2-4"/>
+            <path d="M650 96 C 600 130, 480 150, 400 158" class="s-line m-draw" data-show="2-4"/>
+
+            <g data-show="2-4" class="m-pop">
+              <rect x="270" y="158" width="260" height="62" rx="12" class="s-box-accent"/>
+              <text x="400" y="192" text-anchor="middle" class="s-label">fiche de référence</text>
+            </g>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="230" y="230" width="340" height="40" rx="10" class="s-box-teal"/>
+              <text x="400" y="255" text-anchor="middle" class="s-label-sm">tout l’historique des trois, conservé</text>
+            </g>
+
+            <g data-show="4">
+              <text x="400" y="20" text-anchor="middle" class="s-label-xs" data-show="4">de nouvelles fiches arrivent en continu</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Une fois le rapprochement confirmé, les fiches fusionnent.</b><span>Une seule fiche subsiste, considérée comme la version de référence — parfois appelée « golden record ».</span></p>
+          <p class="step" data-duration="4600"><b>Elle prend le meilleur de chacune.</b><span>L’adresse la plus récente, l’email le plus utilisé, le téléphone confirmé le plus souvent — jamais un choix au hasard.</span></p>
+          <p class="step" data-duration="4800"><b>Rien de l’historique n’est perdu au passage.</b><span>Commandes, tickets, e-mails envoyés depuis les trois fiches d’origine restent tous attachés à la fiche unique.</span></p>
+          <p class="step" data-duration="4800"><b>Le travail ne s’arrête jamais vraiment.</b><span>De nouvelles fiches arrivent chaque jour : le dédoublonnage se rejoue régulièrement, pas une seule fois pour toutes.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un même client peut exister sous <strong>plusieurs fiches</strong>, sans qu’aucune clé ne le prouve formellement.</li>
+        <li>Le rapprochement compare <strong>plusieurs indices à la fois</strong> et tolère les petites différences de saisie.</li>
+        <li>Un <strong>score de ressemblance</strong> décide : fusion automatique au-dessus d’un seuil, vérification humaine en dessous.</li>
+        <li>La fiche fusionnée doit garder <strong>tout l’historique</strong> des fiches d’origine — jamais en perdre une miette.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="gouvernance-data.html">← Pourquoi deux tableaux ne disent jamais pareil</a>
+        <a class="btn btn-primary" href="migration-donnees.html">Migrer ses données, le grand déménagement →</a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

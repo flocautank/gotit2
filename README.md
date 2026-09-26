@@ -29,6 +29,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [C'est quoi un serveur ?](lecons/serveur.html) | Informatique | Découverte |
 | [Logiciel, système, application](lecons/logiciel.html) | Informatique | Découverte |
 | [Fichiers, formats et dossiers](lecons/fichiers.html) | Informatique | Découverte |
+| [Compression : pourquoi un fichier zippé prend moins de place](lecons/compression.html) | Informatique | Découverte |
 | [C’est quoi un algorithme ?](lecons/algorithme.html) | Informatique | Découverte |
 | [Local ou cloud : quelle différence ?](lecons/local-vs-cloud.html) | Informatique | Découverte |
 | [SaaS, PaaS, IaaS](lecons/cloud-saas.html) | Informatique | Intermédiaire |
@@ -49,6 +50,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Ce qu'il y a derrière un tableau de bord](lecons/bi-tableau-de-bord.html) | Data | Intermédiaire |
 | [Pourquoi deux tableaux ne disent jamais pareil](lecons/gouvernance-data.html) | Data | Intermédiaire |
 | [Migrer ses données, le grand déménagement](lecons/migration-donnees.html) | Data | Intermédiaire |
+| [Le dédoublonnage : reconnaître qu'un client n'est pas deux](lecons/dedoublonnage.html) | Data | Intermédiaire |
 | [Le RGPD en clair](lecons/rgpd.html) | Data | Découverte |
 | [C'est quoi un système d'information ?](lecons/si-briques.html) | Système d'information | Découverte |
 | [C'est quoi un ERP ?](lecons/erp.html) | Système d'information | Découverte |
@@ -72,15 +74,16 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 | [Le prompt injection, le risque caché des agents IA](lecons/injection-prompt.html) | IA | Intermédiaire |
 
-**64 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**67 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
 ouvert, benchmark, garde-fous, prompt injection, Machine Learning, appel d'outils —, celui des
 projets SI : cahier des charges, recette, MOA/MOE, CRM, ERP, SLA, RACI, API, urbanisation, SSO,
-environnement de test, neuf mots de réseau (Tor, adresse IP, VPN, pare-feu, DNS, cookie,
-hameçonnage, MFA/2FA, protocole), sept d'informatique générale (octet, cache, open source,
-conteneur, cloud, système d'exploitation, bug) et dix de la data (ETL/ELT, KPI, SQL, Big Data,
-index, tableau de bord, schéma de données, silo de données, anonymisation/pseudonymisation, NoSQL).
+environnement de test, dette technique, MVP, neuf mots de réseau (Tor, adresse IP, VPN,
+pare-feu, DNS, cookie, hameçonnage, MFA/2FA, protocole), huit d'informatique générale (octet,
+cache, open source, conteneur, cloud, système d'exploitation, framework, bug) et dix de la data
+(ETL/ELT, KPI, SQL, Big Data, index, tableau de bord, schéma de données, silo de données,
+anonymisation/pseudonymisation, NoSQL).
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours
