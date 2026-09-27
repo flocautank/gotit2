@@ -60,6 +60,8 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Comment se déroule un projet SI](lecons/projet-si.html) | Système d'information | Intermédiaire |
 | [Le support informatique, du ticket à la résolution](lecons/support.html) | Système d'information | Découverte |
 | [No-code, low-code : construire sans développeur](lecons/no-code.html) | Système d'information | Intermédiaire |
+| [La conduite du changement](lecons/conduite-changement.html) | Système d'information | Intermédiaire |
+| [Le répartiteur de charge, un site qui ne tombe jamais tout seul](lecons/load-balancer.html) | Informatique | Intermédiaire |
 | [Qu'est-ce que le Machine Learning ?](lecons/machine-learning.html) | IA | Découverte |
 | [Comment un modèle de langage écrit](lecons/llm.html) | IA | Découverte |
 | [Pourquoi l'IA a besoin de cartes graphiques](lecons/gpu.html) | IA | Découverte |
@@ -74,16 +76,16 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 | [Le prompt injection, le risque caché des agents IA](lecons/injection-prompt.html) | IA | Intermédiaire |
 
-**67 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**70 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
 ouvert, benchmark, garde-fous, prompt injection, Machine Learning, appel d'outils —, celui des
 projets SI : cahier des charges, recette, MOA/MOE, CRM, ERP, SLA, RACI, API, urbanisation, SSO,
-environnement de test, dette technique, MVP, neuf mots de réseau (Tor, adresse IP, VPN,
-pare-feu, DNS, cookie, hameçonnage, MFA/2FA, protocole), huit d'informatique générale (octet,
-cache, open source, conteneur, cloud, système d'exploitation, framework, bug) et dix de la data
-(ETL/ELT, KPI, SQL, Big Data, index, tableau de bord, schéma de données, silo de données,
-anonymisation/pseudonymisation, NoSQL).
+environnement de test, dette technique, MVP, dix mots de réseau (Tor, adresse IP, VPN,
+pare-feu, DNS, cookie, hameçonnage, MFA/2FA, protocole, rançongiciel), neuf d'informatique
+générale (octet, cache, open source, conteneur, cloud, système d'exploitation, framework, bug,
+scalabilité) et onze de la data (ETL/ELT, KPI, SQL, Big Data, index, tableau de bord, schéma de
+données, silo de données, anonymisation/pseudonymisation, NoSQL, catalogue de données).
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours

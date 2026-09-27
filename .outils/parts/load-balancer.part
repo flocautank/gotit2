@@ -1,0 +1,186 @@
+TITRE: Le répartiteur de charge, un site qui ne tombe jamais tout seul
+DESC: Comment un site très fréquenté encaisse un pic de visiteurs sans jamais reposer sur une seule machine — le rôle du répartiteur de charge (load balancer). En schémas animés.
+FIL: <a href="../index.html#/informatique">Informatique</a><span>/</span>Le matériel<span>/</span>Quand un site attire trop de monde
+LEAD: Un seul serveur, aussi puissant soit-il, finit toujours par ne plus suffire&nbsp;: voici comment plusieurs machines se relaient sans que le visiteur ne s’en aperçoive jamais.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+
+      <p>
+        Un site tient très bien avec un seul serveur — jusqu’au jour où un pic de
+        visiteurs arrive&nbsp;: soldes, actualité virale, campagne publicitaire. Ce qui
+        se passe alors, et comment on l’évite, tient en un mot&nbsp;: le répartiteur
+        de charge.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un seul serveur qui reçoit un afflux de visiteurs, sature, puis ne répond plus">
+        <div class="scene-title">Scène 1 — Le problème</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="Un seul serveur reçoit toutes les demandes ; lors d’un pic de trafic, il sature puis cesse de répondre">
+            <g data-show="1-4" class="m-pop">
+              <rect x="320" y="150" width="160" height="90" rx="12" class="s-box-teal"/>
+              <text x="400" y="192" text-anchor="middle" class="s-label">Un serveur</text>
+              <text x="400" y="214" text-anchor="middle" class="s-label-xs">répond à tout, seul</text>
+            </g>
+            <g data-show="1-4">
+              <circle cx="120" cy="60" r="16" class="s-box-accent"/>
+              <circle cx="220" cy="40" r="16" class="s-box-accent"/>
+              <circle cx="320" cy="60" r="16" class="s-box-accent"/>
+            </g>
+            <path d="M130 72 L 370 155" class="s-line m-draw" data-show="1-4"/>
+            <path d="M220 56 L 390 150" class="s-line m-draw" data-show="1-4"/>
+            <path d="M320 76 L 400 150" class="s-line m-draw" data-show="1-4"/>
+
+            <g data-show="2-4">
+              <circle cx="480" cy="40" r="14" class="s-box-accent"/>
+              <circle cx="560" cy="55" r="14" class="s-box-accent"/>
+              <circle cx="640" cy="40" r="14" class="s-box-accent"/>
+              <circle cx="700" cy="65" r="14" class="s-box-accent"/>
+            </g>
+            <g data-show="2-4">
+              <path d="M470 52 L 420 155" class="s-line m-draw"/>
+              <path d="M555 68 L 430 155" class="s-line m-draw"/>
+              <path d="M635 52 L 440 155" class="s-line m-draw"/>
+              <path d="M695 76 L 450 155" class="s-line m-draw"/>
+            </g>
+
+            <g data-show="3-4" class="m-pop">
+              <rect x="330" y="150" width="140" height="90" rx="12" fill="var(--danger)" opacity="0.18" stroke="var(--danger)"/>
+              <text x="400" y="192" text-anchor="middle" class="s-label-sm" fill="var(--danger)">Ça sature</text>
+              <text x="400" y="212" text-anchor="middle" class="s-label-xs" fill="var(--danger)">pages lentes</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="230" y="252" width="340" height="20" rx="10" fill="var(--danger)" opacity="0.15" stroke="var(--danger)"/>
+              <text x="400" y="266" text-anchor="middle" class="s-label-xs" fill="var(--danger)">puis un site qui ne répond plus du tout</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Un seul serveur répond à toutes les demandes.</b><span>Tant que le trafic reste raisonnable, il s’en sort très bien.</span></p>
+          <p class="step" data-duration="4600"><b>Puis un pic de visites arrive.</b><span>Des soldes, une actualité virale&nbsp;: dix fois plus de demandes, d’un coup.</span></p>
+          <p class="step" data-duration="4600"><b>Le serveur sature.</b><span>Les pages mettent de plus en plus longtemps à s’afficher.</span></p>
+          <p class="step" data-duration="4800"><b>Puis il ne répond plus du tout.</b><span>Une machine plus puissante recule la limite&nbsp;: elle ne la supprime jamais.</span></p>
+        </div>
+      </section>
+
+      <h2>Plusieurs serveurs, et un aiguilleur devant</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un répartiteur de charge placé devant plusieurs serveurs identiques, qui oriente chaque demande vers celui le moins occupé">
+        <div class="scene-title">Scène 2 — La solution</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Les visiteurs s’adressent à une seule adresse, celle du répartiteur, qui envoie chaque demande vers l’un des trois serveurs identiques placés derrière lui">
+            <g data-show="1-4">
+              <circle cx="80" cy="60" r="14" class="s-box-accent"/>
+              <circle cx="80" cy="120" r="14" class="s-box-accent"/>
+              <circle cx="80" cy="180" r="14" class="s-box-accent"/>
+            </g>
+
+            <g data-show="1-4" class="m-pop">
+              <rect x="220" y="100" width="180" height="90" rx="12" class="s-box-violet"/>
+              <text x="310" y="140" text-anchor="middle" class="s-label">Répartiteur</text>
+              <text x="310" y="162" text-anchor="middle" class="s-label-xs">de charge</text>
+            </g>
+            <path d="M94 60 L 220 115" class="s-line m-draw" data-show="1-4"/>
+            <path d="M94 120 L 220 140" class="s-line m-draw" data-show="1-4"/>
+            <path d="M94 180 L 220 165" class="s-line m-draw" data-show="1-4"/>
+
+            <g data-show="2-4" class="m-right">
+              <rect x="500" y="30" width="220" height="66" rx="10" class="s-box-teal"/>
+              <text x="610" y="66" text-anchor="middle" class="s-label-sm">Serveur A</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="500" y="112" width="220" height="66" rx="10" class="s-box-teal"/>
+              <text x="610" y="148" text-anchor="middle" class="s-label-sm">Serveur B</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="500" y="194" width="220" height="66" rx="10" class="s-box-teal"/>
+              <text x="610" y="230" text-anchor="middle" class="s-label-sm">Serveur C</text>
+            </g>
+
+            <path d="M400 130 C 460 90, 470 63, 500 63" class="s-line m-draw" data-show="3-4"/>
+            <circle r="6" class="packet" data-show="3" style="offset-path:path('M400 130 C 460 90, 470 63, 500 63')"/>
+
+            <g data-show="4" class="m-rise">
+              <rect x="180" y="252" width="440" height="34" rx="12" class="s-box-accent"/>
+              <text x="400" y="274" text-anchor="middle" class="s-label-sm">Une seule adresse, plusieurs machines invisibles</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>On installe plusieurs serveurs identiques.</b><span>Chacun est capable de répondre à la même demande, tout seul.</span></p>
+          <p class="step" data-duration="4600"><b>Le répartiteur de charge se place devant.</b><span>Toutes les demandes lui arrivent en premier, à une seule et même adresse.</span></p>
+          <p class="step" data-duration="4800"><b>Il envoie chaque demande vers le serveur le moins occupé.</b><span>Selon une règle simple&nbsp;: tour de rôle, ou disponibilité du moment.</span></p>
+          <p class="step" data-duration="5000"><b>Le visiteur ne voit qu’une seule adresse.</b><span>Il ignore combien de serveurs travaillent derrière — et lequel vient de lui répondre.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          C’est le supermarché à l’heure de pointe&nbsp;: un employé posté devant les
+          caisses oriente chaque client vers celle qui est libre, sans que personne
+          n’ait à deviner laquelle choisir. Une caisse qui ferme ne bloque personne&nbsp;:
+          on est simplement redirigé vers une autre, sans même s’en rendre compte.
+        </p>
+      </div>
+
+      <h2>Un bénéfice de plus&nbsp;: la panne invisible</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : le répartiteur surveille l’état de chaque serveur, retire celui qui tombe en panne, et permet d’ajouter des serveurs selon l’affluence">
+        <div class="scene-title">Scène 3 — Haute disponibilité et scalabilité</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 260" role="img" aria-label="Le répartiteur surveille chaque serveur en continu ; un serveur en panne est retiré sans interruption visible ; on peut aussi en ajouter selon l’affluence">
+            <g data-show="1-4" class="m-pop">
+              <rect x="60" y="90" width="180" height="80" rx="12" class="s-box-violet"/>
+              <text x="150" y="126" text-anchor="middle" class="s-label">Répartiteur</text>
+              <text x="150" y="148" text-anchor="middle" class="s-label-xs">surveille en continu</text>
+            </g>
+
+            <g data-show="1-4">
+              <rect x="330" y="30" width="180" height="60" rx="10" class="s-box-teal"/>
+              <text x="420" y="65" text-anchor="middle" class="s-label-sm">Serveur A</text>
+            </g>
+            <g data-show="1-3">
+              <rect x="330" y="106" width="180" height="60" rx="10" class="s-box-teal"/>
+              <text x="420" y="141" text-anchor="middle" class="s-label-sm">Serveur B</text>
+            </g>
+            <g data-show="3-4">
+              <rect x="330" y="106" width="180" height="60" rx="10" fill="var(--danger)" opacity="0.18" stroke="var(--danger)"/>
+              <text x="420" y="141" text-anchor="middle" class="s-label-sm" fill="var(--danger)">En panne</text>
+            </g>
+            <g data-show="1-4">
+              <rect x="330" y="182" width="180" height="60" rx="10" class="s-box-teal"/>
+              <text x="420" y="217" text-anchor="middle" class="s-label-sm">Serveur C</text>
+            </g>
+
+            <path d="M240 130 H 330" class="s-line m-draw" data-show="1-4"/>
+
+            <g data-show="4" class="m-right">
+              <rect x="570" y="30" width="170" height="60" rx="10" class="s-box-accent"/>
+              <text x="655" y="65" text-anchor="middle" class="s-label-sm">Serveur D, ajouté</text>
+            </g>
+            <path d="M510 60 H 570" class="s-line m-draw" data-show="4"/>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>Le répartiteur surveille chaque serveur en continu.</b><span>Un signal régulier lui demande&nbsp;: « es-tu toujours là ? ».</span></p>
+          <p class="step" data-duration="4400"><b>Tout va bien, tant que chacun répond.</b><span>Les demandes continuent de se répartir entre les trois.</span></p>
+          <p class="step" data-duration="4800"><b>Un serveur tombe en panne&nbsp;? Il est retiré à l’instant.</b><span>Aucun visiteur ne s’en aperçoit&nbsp;: ses demandes vont ailleurs.</span></p>
+          <p class="step" data-duration="5000"><b>On peut aussi en ajouter, selon l’affluence.</b><span>C’est ce qu’on appelle la scalabilité&nbsp;: encaisser un pic sans tout reconstruire.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un seul serveur a toujours une limite&nbsp;; au-delà, on ajoute des serveurs identiques plutôt que de rendre le seul plus puissant.</li>
+        <li>Le <strong>répartiteur de charge</strong> se place devant et distribue chaque demande vers le serveur le moins occupé.</li>
+        <li>Un serveur en panne est retiré automatiquement, sans interruption visible pour le visiteur.</li>
+        <li>C’est le socle de ce qu’on appelle la <strong>haute disponibilité</strong> et la <strong>scalabilité</strong>.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="serveur.html">← C’est quoi un serveur&nbsp;?</a>
+        <a class="btn btn-primary" href="local-vs-cloud.html">Local ou cloud&nbsp;? →</a>
+      </nav>
