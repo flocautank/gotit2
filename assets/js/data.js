@@ -56,6 +56,13 @@ window.GOTIT = (function () {
       duration: '7 min', level: 2,
       keywords: ['virtualisation', 'machine virtuelle', 'vm', 'hyperviseur', 'serveur', 'cloud', 'conteneur', 'docker']
     },
+    'load-balancer': {
+      title: 'Le répartiteur de charge, un site qui ne tombe jamais tout seul',
+      summary: 'Comment plusieurs serveurs se relaient devant un pic de trafic, sans que le visiteur ne s’en aperçoive.',
+      path: 'lecons/load-balancer.html',
+      duration: '6 min', level: 2,
+      keywords: ['load balancer', 'répartiteur de charge', 'serveur', 'scalabilité', 'montée en charge', 'haute disponibilité', 'cloud']
+    },
 
     /* ---------- Réseau ---------- */
 
@@ -358,6 +365,13 @@ window.GOTIT = (function () {
       duration: '6 min', level: 2,
       keywords: ['no-code', 'low-code', 'sans code', 'plateforme', 'automatisation', 'application métier', 'glisser-déposer', 'lock-in']
     },
+    'conduite-changement': {
+      title: 'La conduite du changement, ou pourquoi un bon outil ne suffit pas',
+      summary: 'Un CRM ou un ERP livré sans accroc, techniquement — et pourtant boudé par ceux qui devaient s’en servir.',
+      path: 'lecons/conduite-changement.html',
+      duration: '6 min', level: 2,
+      keywords: ['conduite du changement', 'adoption', 'résistance au changement', 'formation', 'accompagnement', 'projet si', 'crm', 'erp']
+    },
     /* ---------- Leçons prévues (affichées en grisé) ---------- */
 
   };
@@ -372,6 +386,7 @@ window.GOTIT = (function () {
           id: 'materiel', title: 'Le matériel',
           subcategories: [
             { id: 'dans-la-machine', title: 'Dans la machine', lessons: ['ordinateur', 'serveur'] },
+            { id: 'trop-de-monde', title: 'Quand un site attire trop de monde', lessons: ['load-balancer'] },
             { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas', 'virtualisation'] },
             { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['fichiers', 'compression'] }
           ]
@@ -449,7 +464,8 @@ window.GOTIT = (function () {
           subcategories: [
             { id: 'projets', title: 'Les projets', lessons: ['projet-si'] },
             { id: 'support', title: 'Le support', lessons: ['support'] },
-            { id: 'construire', title: 'Construire sans développeur', lessons: ['no-code'] }
+            { id: 'construire', title: 'Construire sans développeur', lessons: ['no-code'] },
+            { id: 'adoption', title: 'Faire adopter l’outil', lessons: ['conduite-changement'] }
           ]
         }
       ]
@@ -1300,6 +1316,43 @@ window.GOTIT = (function () {
       ],
       voir: "logiciel",
       pas: "une bibliothèque, plus petite et plus ponctuelle : on l’appelle depuis son propre code, alors qu’avec un framework, c’est lui qui appelle le vôtre."
+    },
+    {
+      id: "scalabilite", terme: "Scalabilité (montée en charge)", domaine: "Informatique",
+      aka: ["scalabilité", "montée en charge", "scalability", "passage à l’échelle"],
+      une: "La capacité d’un système à absorber plus de demandes en ajoutant des ressources, sans tout reconstruire.",
+      etapes: [
+        "Un outil pensé pour cent utilisateurs craque souvent bien avant d’en accueillir dix mille.",
+        "Scalable, il encaisse la croissance en ajoutant des ressources — plus de serveurs, plus de mémoire — sans changer son fonctionnement interne.",
+        "Deux façons d’ajouter des ressources : une machine plus puissante (verticale), ou plusieurs machines identiques réparties (horizontale, la plus courante aujourd’hui).",
+        "Le cloud a rendu la scalabilité horizontale presque triviale : ajouter un serveur prend des minutes, pas des semaines de commande de matériel."
+      ],
+      voir: "load-balancer"
+    },
+    {
+      id: "ransomware", terme: "Rançongiciel (ransomware)", domaine: "Réseau",
+      aka: ["rançongiciel", "ransomware", "rançon", "chiffrement malveillant"],
+      une: "Un logiciel malveillant qui chiffre vos fichiers et exige une rançon pour la clé qui les débloque.",
+      etapes: [
+        "Le piège arrive souvent par un e-mail piégé ou une pièce jointe ouverte sans méfiance — le même chemin que le hameçonnage.",
+        "Une fois lancé, le programme chiffre silencieusement les fichiers de la machine, puis ceux du réseau accessible, en quelques minutes.",
+        "Un message apparaît alors : la clé de déchiffrement s’échange contre une rançon, payable en cryptomonnaie, sous un délai compté.",
+        "La payer ne garantit rien ; la seule parade fiable est en amont : une sauvegarde récente, gardée hors d’atteinte du réseau infecté."
+      ],
+      voir: "sauvegarde",
+      pas: "le hameçonnage, souvent la porte d’entrée du rançongiciel — celui-ci est le logiciel qui agit une fois entré."
+    },
+    {
+      id: "catalogue-donnees", terme: "Catalogue de données", domaine: "Data",
+      aka: ["catalogue de données", "data catalog", "inventaire des données"],
+      une: "L’annuaire qui recense où vit chaque donnée de l’entreprise, ce qu’elle veut dire, et qui peut s’en servir.",
+      etapes: [
+        "Une entreprise qui grandit accumule les tables, les tableurs, les entrepôts — sans que personne n’ait la vue d’ensemble de ce qui existe où.",
+        "Le catalogue de données recense chaque source : son emplacement, sa définition, sa fraîcheur, son propriétaire.",
+        "Il devient le point de passage avant de chercher une donnée : on y vérifie d’abord si elle existe déjà, avant d’en redemander une copie.",
+        "Sans lui, deux équipes reconstruisent souvent la même donnée chacune de leur côté, avec deux définitions qui finissent par diverger."
+      ],
+      voir: "gouvernance-data"
     },
   ];
 

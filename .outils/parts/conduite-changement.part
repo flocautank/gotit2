@@ -1,0 +1,164 @@
+TITRE: La conduite du changement, ou pourquoi un bon outil ne suffit pas
+DESC: Un CRM ou un ERP livré, fonctionnel, techniquement irréprochable — et pourtant boudé par ceux qui devaient s’en servir. Ce qui se joue entre la livraison d’un outil et son adoption réelle. En schémas animés.
+FIL: <a href="../index.html#/si">Système d’information</a><span>/</span>Faire vivre le SI<span>/</span>Faire adopter l’outil
+LEAD: Un outil peut être livré à l’heure, sans bug, et rester pourtant à moitié vide six mois plus tard&nbsp;: la réussite d’un projet ne se joue pas qu’au moment de sa livraison.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">3 animations</span>
+
+      <p>
+        Un projet informatique peut cocher toutes les cases techniques — cahier des
+        charges respecté, recette passée, mise en production réussie — et rater son
+        objectif malgré tout&nbsp;: personne, ou presque, ne s’en sert vraiment.
+        La conduite du changement est le nom donné à ce qu’il faut faire, à côté du
+        chantier technique, pour que cela n’arrive pas.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un outil livré avec succès techniquement, mais délaissé six mois plus tard au profit des anciennes habitudes">
+        <div class="scene-title">Scène 1 — Une réussite technique, un échec d’usage</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un nouvel outil est livré, fonctionnel ; six mois après, les équipes sont revenues au tableur et à l’e-mail">
+            <g data-show="1-4" class="m-pop">
+              <rect x="60" y="40" width="300" height="90" rx="12" class="s-box-teal"/>
+              <text x="210" y="78" text-anchor="middle" class="s-label">Nouvel outil livré</text>
+              <text x="210" y="100" text-anchor="middle" class="s-label-xs">testé, fonctionnel, en production</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="440" y="40" width="300" height="90" rx="12" class="s-box-accent"/>
+              <text x="590" y="78" text-anchor="middle" class="s-label">Jour du lancement</text>
+              <text x="590" y="100" text-anchor="middle" class="s-label-xs">« utilisez le nouvel outil »</text>
+            </g>
+            <path d="M360 85 H 440" class="s-line m-draw" data-show="2-4"/>
+
+            <g data-show="3-4" class="m-rise">
+              <rect x="60" y="180" width="300" height="90" rx="12" class="s-box"/>
+              <text x="210" y="218" text-anchor="middle" class="s-label-sm">Le tableur</text>
+              <text x="210" y="240" text-anchor="middle" class="s-label-xs">et l’e-mail, comme avant</text>
+            </g>
+            <g data-show="4" class="m-rise">
+              <rect x="440" y="180" width="300" height="90" rx="12" fill="var(--danger)" opacity="0.12" stroke="var(--danger)"/>
+              <text x="590" y="212" text-anchor="middle" class="s-label-sm" fill="var(--danger)">Six mois après</text>
+              <text x="590" y="234" text-anchor="middle" class="s-label-xs" fill="var(--danger)">sous-utilisé, mal renseigné</text>
+              <text x="590" y="252" text-anchor="middle" class="s-label-xs" fill="var(--danger)">contourné dès que possible</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4400"><b>Un nouvel outil est livré.</b><span>Il a été testé, il fonctionne, et il remplace officiellement l’ancien.</span></p>
+          <p class="step" data-duration="4400"><b>Le jour du lancement, une consigne&nbsp;: « utilisez-le ».</b><span>Souvent sans plus d’explication que ça.</span></p>
+          <p class="step" data-duration="4600"><b>Les habitudes, elles, ne changent pas d’un coup.</b><span>Le tableur et l’e-mail continuent, en parallèle ou en secret.</span></p>
+          <p class="step" data-duration="4800"><b>Six mois après, le constat est amer.</b><span>L’outil est sous-utilisé, mal renseigné, contourné dès que possible.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce qui bloque, en réalité</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : les quatre freins réels à l’adoption d’un nouvel outil — l’habitude, la peur, l’absence de pourquoi, une formation expédiée">
+        <div class="scene-title">Scène 2 — Ce qui bloque vraiment</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 220" role="img" aria-label="Quatre freins à l’adoption : le coût de changer une habitude, la peur de mal faire, l’absence de pourquoi expliqué, une formation expédiée">
+            <g data-show="1-4" class="m-pop">
+              <rect x="60" y="30" width="320" height="72" rx="10" class="s-box-accent"/>
+              <text x="220" y="62" text-anchor="middle" class="s-label-sm">Changer une habitude coûte</text>
+              <text x="220" y="84" text-anchor="middle" class="s-label-xs">même quand le nouvel outil est meilleur</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="420" y="30" width="320" height="72" rx="10" class="s-box-teal"/>
+              <text x="580" y="62" text-anchor="middle" class="s-label-sm">La peur de mal faire</text>
+              <text x="580" y="84" text-anchor="middle" class="s-label-xs">de perdre en aisance, en autonomie</text>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <rect x="60" y="118" width="320" height="72" rx="10" class="s-box-violet"/>
+              <text x="220" y="150" text-anchor="middle" class="s-label-sm">Le « pourquoi » jamais dit</text>
+              <text x="220" y="172" text-anchor="middle" class="s-label-xs">juste un « comment », sans le sens</text>
+            </g>
+            <g data-show="4" class="m-pop">
+              <rect x="420" y="118" width="320" height="72" rx="10" fill="var(--danger)" opacity="0.12" stroke="var(--danger)"/>
+              <text x="580" y="150" text-anchor="middle" class="s-label-sm" fill="var(--danger)">Une formation expédiée</text>
+              <text x="580" y="172" text-anchor="middle" class="s-label-xs" fill="var(--danger)">une heure, le jour même du lancement</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>Changer une habitude a un coût.</b><span>Même quand le nouvel outil est objectivement meilleur, l’ancien réflexe reste plus rapide au début.</span></p>
+          <p class="step" data-duration="4600"><b>S’y ajoute la peur de mal faire.</b><span>Perdre l’aisance qu’on avait sur l’ancien outil, ou une part d’autonomie dans son travail.</span></p>
+          <p class="step" data-duration="4800"><b>Le « pourquoi » n’a souvent jamais été dit.</b><span>On a expliqué comment cliquer, jamais ce que ça change concrètement pour la personne.</span></p>
+          <p class="step" data-duration="4800"><b>Et la formation a été expédiée.</b><span>Une heure de démonstration générique, le jour même du lancement — pas plus.</span></p>
+        </div>
+      </section>
+
+      <div class="callout">
+        <div class="callout-title">Un chantier à part entière</div>
+        <p>
+          Ce qui précède n’est pas de la mauvaise volonté&nbsp;: c’est une réaction humaine
+          prévisible à un changement mal préparé. La conduite du changement traite ce
+          problème comme un chantier en soi, mené <strong>en parallèle</strong> du chantier
+          technique — pas comme une réunion d’annonce le jour J.
+        </p>
+      </div>
+
+      <h2>Ce qui fait vraiment la différence</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : les quatre leviers de la conduite du changement — impliquer tôt, expliquer le pourquoi, former sur des cas réels, accompagner après le lancement">
+        <div class="scene-title">Scène 3 — Les quatre leviers</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Quatre leviers : impliquer les utilisateurs dès la conception, expliquer le pourquoi, former sur leurs propres dossiers, garder des relais après le lancement">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="30" width="340" height="80" rx="12" class="s-box-teal"/>
+              <text x="210" y="66" text-anchor="middle" class="s-label-sm">Impliquer dès la conception</text>
+              <text x="210" y="88" text-anchor="middle" class="s-label-xs">pas seulement à la livraison</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="420" y="30" width="340" height="80" rx="12" class="s-box-accent"/>
+              <text x="590" y="66" text-anchor="middle" class="s-label-sm">Expliquer le pourquoi</text>
+              <text x="590" y="88" text-anchor="middle" class="s-label-xs">avant le comment</text>
+            </g>
+            <g data-show="3-4" class="m-left">
+              <rect x="40" y="140" width="340" height="80" rx="12" class="s-box-violet"/>
+              <text x="210" y="176" text-anchor="middle" class="s-label-sm">Former sur de vrais dossiers</text>
+              <text x="210" y="198" text-anchor="middle" class="s-label-xs">pas une démo générique</text>
+            </g>
+            <g data-show="4" class="m-right">
+              <rect x="420" y="140" width="340" height="80" rx="12" class="s-box"/>
+              <text x="590" y="176" text-anchor="middle" class="s-label-sm">Des relais dans chaque équipe</text>
+              <text x="590" y="198" text-anchor="middle" class="s-label-xs">un accompagnement qui continue</text>
+            </g>
+
+            <g data-show="4" class="m-rise">
+              <rect x="170" y="252" width="460" height="56" rx="14" class="s-box-teal"/>
+              <text x="400" y="286" text-anchor="middle" class="s-label-sm">L’usage réel, pas la livraison, mesure le succès</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>Impliquer les futurs utilisateurs dès la conception.</b><span>Pas seulement les consulter une fois l’outil déjà bâti.</span></p>
+          <p class="step" data-duration="4600"><b>Expliquer le pourquoi avant le comment.</b><span>Ce que ça change concrètement dans leur journée, pas juste où cliquer.</span></p>
+          <p class="step" data-duration="4800"><b>Former sur leurs propres dossiers.</b><span>Une formation sur des cas réels convainc bien plus qu’une démonstration générique.</span></p>
+          <p class="step" data-duration="5000"><b>Garder des relais après le lancement.</b><span>Une personne identifiée dans chaque équipe, et un accompagnement qui ne s’arrête pas le jour J.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          C’est l’histoire du déménagement dans un logement mieux agencé&nbsp;: sur le
+          papier, tout est meilleur. Mais les premiers jours, on cherche encore
+          l’interrupteur à tâtons, on range les affaires n’importe où, et on regrette
+          presque l’ancien appartement — jusqu’à ce que quelqu’un montre où est rangé
+          quoi, et pourquoi c’est mieux ainsi.
+        </p>
+      </div>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>La réussite d’un projet SI ne se mesure pas à sa livraison technique, mais à son <strong>usage réel</strong> ensuite.</li>
+        <li>Les freins à l’adoption sont humains&nbsp;: l’habitude, la peur de mal faire, un pourquoi jamais expliqué.</li>
+        <li>Impliquer tôt, expliquer le sens, former sur de vrais cas, accompagner après le lancement.</li>
+        <li>Ce n’est pas une option du projet&nbsp;: c’est un chantier mené <strong>en parallèle</strong> du chantier technique, pas après lui.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="no-code.html">← No-code, low-code</a>
+        <a class="btn btn-primary" href="../index.html#/si">Système d’information →</a>
+      </nav>
