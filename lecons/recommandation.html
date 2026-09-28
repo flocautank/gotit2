@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment une IA vous recommande quelque chose — GotIt !</title>
+<meta name="description" content="Netflix, Amazon, Spotify : comment un algorithme devine ce qui vous plaira, sans jamais vous poser la question. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/ia">Intelligence artificielle</a><span>/</span>Fondamentaux<span>/</span>Apprendre par l’exemple</div>
+      <h1>Comment une IA vous recommande quelque chose</h1>
+      <p class="lead">« Parce que vous avez regardé... » — la phrase revient sur chaque plateforme. Derrière elle, un principe simple&nbsp;: deviner vos goûts en regardant ceux des autres.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">6 min</span><span class="tag">3 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Un catalogue de streaming, de musique ou de vente en ligne compte des milliers de
+        titres ou de produits — bien trop pour les parcourir un par un. Pour ne pas laisser
+        le visiteur seul devant cette vitrine, le site doit deviner ce qui a une chance de
+        lui plaire. C’est le travail d’un algorithme de recommandation.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un visiteur perdu devant un catalogue trop large, puis un algorithme qui lui propose une sélection">
+        <div class="scene-title">Scène 1 — Trop de choix pour chercher seul</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un mur de dizaines de vignettes, un visiteur qui hésite, puis un algorithme qui isole une petite sélection pour lui">
+            <g data-show="1-4" class="m-rise">
+              <text x="185" y="36" text-anchor="middle" class="s-label-sm">Le catalogue</text>
+              <rect x="70" y="50" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="105" y="50" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="140" y="50" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="175" y="50" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="210" y="50" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="245" y="50" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="70" y="85" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="105" y="85" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="140" y="85" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="175" y="85" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="210" y="85" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="245" y="85" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="70" y="120" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="105" y="120" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="140" y="120" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="175" y="120" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="210" y="120" width="30" height="30" rx="4" class="s-box"/>
+              <rect x="245" y="120" width="30" height="30" rx="4" class="s-box"/>
+              <text x="185" y="175" text-anchor="middle" class="s-label-xs">des milliers de titres</text>
+            </g>
+
+            <g data-show="2" class="m-pop">
+              <circle cx="400" cy="100" r="26" fill="none" stroke="var(--warn)" stroke-width="2.4"/>
+              <text x="400" y="107" text-anchor="middle" class="s-label-sm" fill="var(--warn)">?</text>
+              <text x="400" y="150" text-anchor="middle" class="s-label-xs" fill="var(--warn)">un visiteur, seul</text>
+            </g>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="560" y="60" width="180" height="46" rx="10" class="s-box-teal pulse" data-show="3-4"/>
+              <text x="650" y="88" text-anchor="middle" class="s-label-sm">Algorithme de</text>
+              <text x="650" y="200" text-anchor="middle" class="s-label-xs">recommandation</text>
+            </g>
+            <g data-show="4" class="m-fall">
+              <rect x="580" y="130" width="35" height="35" rx="5" class="s-box-accent"/>
+              <rect x="625" y="130" width="35" height="35" rx="5" class="s-box-accent"/>
+              <rect x="670" y="130" width="35" height="35" rx="5" class="s-box-accent"/>
+              <text x="650" y="185" text-anchor="middle" class="s-label-xs">une sélection, pour vous</text>
+            </g>
+            <path d="M310 100 H370" class="s-line m-draw" data-show="3-4"/>
+            <path d="M650 106 V130" class="s-line-accent m-draw" data-show="4"/>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Un catalogue de streaming propose des milliers de titres.</b><span>Bien trop pour tous les voir passer, ou même les faire tous défiler.</span></p>
+          <p class="step" data-duration="4200"><b>Livré à lui-même, un visiteur hésite.</b><span>Il abandonne devant la vitrine, ou revoit toujours les mêmes titres déjà connus.</span></p>
+          <p class="step" data-duration="4400"><b>Le site doit deviner ce qui a une chance de lui plaire.</b><span>Pour chaque visiteur, sans jamais le lui demander directement.</span></p>
+          <p class="step" data-duration="4400"><b>C’est le travail d’un algorithme de recommandation.</b><span>Entraîné sur les habitudes de tous les visiteurs précédents.</span></p>
+        </div>
+      </section>
+
+      <h2>Le principe : des goûts qui se ressemblent</h2>
+      <p>
+        La méthode la plus répandue porte un nom un peu sec — le filtrage collaboratif —
+        pour une idée finalement très simple.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : deux visiteurs aux goûts proches, et un titre aimé par l’un proposé à l’autre">
+        <div class="scene-title">Scène 2 — Le filtrage collaboratif</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Vous et un visiteur aux goûts proches avez aimé les mêmes titres ; un titre que lui seul a aimé vous est alors proposé">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="40" width="150" height="50" rx="10" class="s-box"/>
+              <text x="135" y="70" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+            <g data-show="2-4" class="m-left">
+              <rect x="60" y="180" width="150" height="50" rx="10" class="s-box-teal"/>
+              <text x="135" y="210" text-anchor="middle" class="s-label-sm">Visiteur proche</text>
+            </g>
+
+            <g data-show="2-4" class="m-pop">
+              <rect x="330" y="40" width="120" height="34" rx="6" class="s-box-accent"/>
+              <text x="390" y="62" text-anchor="middle" class="s-label-xs">Titre A — aimé</text>
+              <rect x="330" y="90" width="120" height="34" rx="6" class="s-box-accent"/>
+              <text x="390" y="112" text-anchor="middle" class="s-label-xs">Titre B — aimé</text>
+            </g>
+            <path d="M210 65 H330" class="s-line m-draw" data-show="2-4"/>
+            <path d="M210 205 H270 V107 H330" class="s-line m-draw" data-show="2-4"/>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="560" y="90" width="150" height="34" rx="6" fill="none" stroke="var(--sage)" stroke-width="2.4"/>
+              <text x="635" y="112" text-anchor="middle" class="s-label-xs" fill="var(--sage)">Titre C — pas vu</text>
+            </g>
+            <path d="M210 205 H500" class="s-line-accent m-draw" data-show="3-4"/>
+            <path d="M500 205 V107 H560" class="s-line-accent m-draw" data-show="3-4"/>
+
+            <g data-show="4" class="m-pop">
+              <path d="M550 107 L580 90 L580 124 Z" fill="var(--accent)"/>
+              <text x="635" y="150" text-anchor="middle" class="s-label-xs" fill="var(--accent)">proposé à vous</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>La méthode la plus courante ne regarde pas le contenu du titre.</b><span>Elle regarde qui a aimé quoi, sans se soucier du sujet du film ou de la chanson.</span></p>
+          <p class="step" data-duration="4400"><b>Elle repère des visiteurs aux goûts proches des vôtres.</b><span>Mêmes titres regardés, mêmes notes données, mêmes achats passés.</span></p>
+          <p class="step" data-duration="4400"><b>Ce que ce visiteur a aimé, et que vous n’avez pas vu, devient une piste sérieuse.</b><span>C’est ce titre-là qui vous est alors proposé en priorité.</span></p>
+          <p class="step" data-duration="4400"><b>Chaque clic, chaque note, chaque minute regardée affine la comparaison.</b><span>Plus vous interagissez, plus le rapprochement entre visiteurs devient précis.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          C’est le vendeur d’un disquaire qui vous connaît depuis dix ans&nbsp;: il ne
+          sait pas jouer une note de musique, mais il sait que les clients qui ont aimé
+          le même album que vous repartent souvent avec celui-là aussi.
+        </p>
+      </div>
+
+      <h2>Les limites : la bulle et le grand inconnu</h2>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : un titre neuf sans historique ignoré par l’algorithme, et une boucle qui ne propose plus que le même genre">
+        <div class="scene-title">Scène 3 — Deux pièges à connaître</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un titre tout juste sorti, sans aucun historique, que l’algorithme ne sait pas proposer ; et une boucle qui enferme un visiteur dans un seul genre">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="50" width="180" height="50" rx="10" fill="none" stroke="var(--line)" stroke-width="2" stroke-dasharray="5 4"/>
+              <text x="150" y="80" text-anchor="middle" class="s-label-sm">Titre tout juste sorti</text>
+              <text x="150" y="122" text-anchor="middle" class="s-label-xs">aucun historique</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <text x="150" y="170" text-anchor="middle" class="s-label-sm" fill="var(--warn)">« démarrage à froid »</text>
+            </g>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="480" y="40" width="130" height="40" rx="8" class="s-box-accent"/>
+              <text x="545" y="65" text-anchor="middle" class="s-label-xs">Genre A</text>
+              <rect x="480" y="100" width="130" height="40" rx="8" class="s-box-accent"/>
+              <text x="545" y="125" text-anchor="middle" class="s-label-xs">Genre A</text>
+              <rect x="480" y="160" width="130" height="40" rx="8" class="s-box-accent"/>
+              <text x="545" y="185" text-anchor="middle" class="s-label-xs">Genre A</text>
+              <path d="M610 60 C 680 60, 680 180, 610 180" class="s-line-accent m-draw" data-show="3-4" fill="none"/>
+              <text x="545" y="230" text-anchor="middle" class="s-label-xs" fill="var(--warn)">toujours le même genre</text>
+            </g>
+
+            <g data-show="4" class="m-pop">
+              <rect x="480" y="250" width="130" height="34" rx="6" class="s-box-teal"/>
+              <text x="545" y="272" text-anchor="middle" class="s-label-xs">Genre B, ajouté exprès</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>L’algorithme ne comprend rien au titre lui-même.</b><span>Il ne fait que rapprocher des comportements passés — jamais le sujet ou la qualité d’une œuvre.</span></p>
+          <p class="step" data-duration="4400"><b>Un titre sans historique ne bénéficie de rien.</b><span>Ni un contenu tout juste sorti, ni un visiteur tout juste inscrit : c’est le « démarrage à froid ».</span></p>
+          <p class="step" data-duration="4400"><b>Poussé trop loin, le principe enferme aussi dans une bulle.</b><span>Toujours plus du même genre, jamais un pas de côté — puisque c’est ce qui a le mieux marché jusque-là.</span></p>
+          <p class="step" data-duration="4400"><b>D’où un mélange volontaire de valeurs sûres et de propositions plus risquées.</b><span>Pour casser la boucle, et laisser une chance à ce que vous n’auriez jamais cherché seul.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un algorithme de recommandation <strong>ne comprend pas le contenu</strong> : il rapproche des comportements semblables.</li>
+        <li>Le <strong>filtrage collaboratif</strong> compare vos goûts à ceux de visiteurs proches des vôtres.</li>
+        <li>Il bute sur le <strong>démarrage à froid</strong> : rien à proposer sans historique, ni pour un titre neuf, ni pour un visiteur neuf.</li>
+        <li>Bien réglé, il <strong>mélange valeurs sûres et découvertes</strong>, pour éviter d’enfermer dans une bulle.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="machine-learning.html">← Qu’est-ce que le Machine Learning ?</a>
+        <a class="btn btn-primary" href="llm.html">Comment un modèle de langage écrit →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

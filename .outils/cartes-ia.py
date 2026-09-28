@@ -635,4 +635,43 @@ CARTES = [
    "Il devient le point de passage avant de chercher une donnée : on y vérifie d’abord si elle existe déjà, avant d’en redemander une copie.",
    "Sans lui, deux équipes reconstruisent souvent la même donnée chacune de leur côté, avec deux définitions qui finissent par diverger."],
   voir='gouvernance-data'),
+
+ dict(id='proxy', terme='Proxy (serveur mandataire)', aka=['proxy','serveur mandataire','proxy web'], dom='Réseau',
+  une="Un intermédiaire qui relaie vos demandes à votre place, et peut au passage filtrer, accélérer ou masquer.",
+  etapes=[
+   "Normalement, votre appareil s’adresse directement au site visité : votre demande part, sa réponse revient.",
+   "Un proxy s’intercale entre les deux : c’est lui qui contacte le site, puis vous transmet la réponse reçue.",
+   "Au passage, il peut filtrer des adresses interdites, garder une copie pour accélérer la prochaine demande, ou masquer votre adresse réelle au site visité.",
+   "Une entreprise en place un en sortie de son réseau pour surveiller et filtrer ; un particulier, pour changer d’adresse apparente."],
+  voir='vpn',
+  pas="le VPN, qui chiffre aussi tout le trajet entre vous et lui — un proxy, la plupart du temps, ne fait que relayer, sans rien chiffrer de plus."),
+
+ dict(id='cdn', terme='CDN (réseau de diffusion de contenu)', aka=['cdn','content delivery network','réseau de diffusion de contenu'], dom='Réseau',
+  une="Des copies d’un même site posées un peu partout dans le monde, pour répondre depuis le serveur le plus proche du visiteur.",
+  etapes=[
+   "Un site hébergé sur un seul serveur, dans un seul pays, répond vite tout près de lui et plus lentement à l’autre bout du monde.",
+   "Un CDN dépose des copies des fichiers les plus demandés — images, vidéos, scripts — sur des serveurs répartis sur plusieurs continents.",
+   "Une visite depuis Tokyo ou depuis Paris est alors servie par la copie la plus proche, pas par le serveur d’origine.",
+   "Résultat : une page plus rapide à charger partout, et un serveur d’origine bien moins sollicité, même en cas de pic de trafic."],
+  voir='internet'),
+
+ dict(id='ci-cd', terme='CI/CD (intégration et déploiement continus)', aka=['ci/cd','intégration continue','déploiement continu','pipeline ci/cd'], dom='SI',
+  une="La chaîne automatisée qui teste puis met en ligne chaque modification de code, sans attendre une grosse livraison.",
+  etapes=[
+   "Livrer du code une fois par trimestre, en un seul bloc, rend chaque mise en production risquée : trop de changements à la fois.",
+   "L’intégration continue (CI) rassemble et teste automatiquement chaque modification dès qu’un développeur la propose, plusieurs fois par jour.",
+   "Le déploiement continu (CD) prend le relais : si les tests passent, le changement part en production sans attendre, parfois tout seul.",
+   "Des changements petits et fréquents, testés à chaque étape, sont plus faciles à corriger qu’une grosse livraison annuelle qui casse tout à la fois."],
+  voir='projet-si',
+  pas="la recette, qui fait rejouer les scénarios par de vrais utilisateurs avant mise en service — le CI/CD, lui, automatise des tests techniques, exécutés à chaque changement de code."),
+
+ dict(id='test-ab', terme='Test A/B', aka=['test a/b','a/b testing','test ab'], dom='Data',
+  une="Montrer deux versions différentes à deux groupes de visiteurs, et laisser les chiffres décider laquelle vaut mieux.",
+  etapes=[
+   "Changer un bouton, un prix ou un message repose souvent sur une intuition — sans savoir si les visiteurs préfèrent vraiment la nouveauté.",
+   "Un test A/B répartit les visiteurs au hasard en deux groupes : le groupe A voit l’ancienne version, le groupe B voit la nouvelle.",
+   "On mesure ensuite le même indicateur des deux côtés — taux de clic, d’achat — pendant une durée fixée à l’avance.",
+   "Si l’écart est net et régulier, pas un hasard d’un seul jour, la version gagnante devient la nouvelle référence pour tout le monde."],
+  voir='bi-tableau-de-bord',
+  pas="un KPI, qui est le chiffre suivi en continu — le test A/B, lui, est l’expérience ponctuelle qui compare deux versions sur ce chiffre."),
 ]
