@@ -42,6 +42,13 @@ window.GOTIT = (function () {
       duration: '6 min', level: 1,
       keywords: ['algorithme', 'instructions', 'programme', 'code', 'méthode', 'tri', 'étapes']
     },
+    'versionnage': {
+      title: 'Le versionnage, l’historique de chaque modification',
+      summary: 'Comment on garde la trace de chaque changement, pour revenir en arrière et travailler à plusieurs sans s’écraser.',
+      path: 'lecons/versionnage.html',
+      duration: '6 min', level: 2,
+      keywords: ['versionnage', 'git', 'version', 'commit', 'branche', 'fusion', 'historique', 'code', 'collaboration']
+    },
     'local-vs-cloud': {
       title: 'Local ou cloud : quelle différence ?',
       summary: 'Chez soi ou chez quelqu’un d’autre : où vivent vraiment vos fichiers et vos programmes.',
@@ -401,7 +408,8 @@ window.GOTIT = (function () {
         {
           id: 'logiciels', title: 'Le logiciel',
           subcategories: [
-            { id: 'programmes', title: 'De quoi est fait un programme', lessons: ['logiciel', 'algorithme'] }
+            { id: 'programmes', title: 'De quoi est fait un programme', lessons: ['logiciel', 'algorithme'] },
+            { id: 'versions', title: 'Garder la trace des changements', lessons: ['versionnage'] }
           ]
         }
       ]
@@ -953,7 +961,7 @@ window.GOTIT = (function () {
         "Les sites visités ne voient plus que l’adresse du serveur VPN, souvent dans un autre pays — d’où son usage pour contourner un blocage géographique.",
         "Le fournisseur du VPN, lui, voit tout passer : changer de masque ne sert à rien si l’on ne fait que déplacer sa confiance vers un nouvel intermédiaire."
       ],
-      voir: "chiffrement"
+      voir: "vpn"
     },
     {
       id: "pare-feu", terme: "Pare-feu (firewall)", domaine: "Réseau",
@@ -1411,6 +1419,58 @@ window.GOTIT = (function () {
       ],
       voir: "bi-tableau-de-bord",
       pas: "un KPI, qui est le chiffre suivi en continu — le test A/B, lui, est l’expérience ponctuelle qui compare deux versions sur ce chiffre."
+    },
+    {
+      id: "chiffrement-bout-en-bout", terme: "Chiffrement de bout en bout", domaine: "Réseau",
+      aka: ["e2e", "bout en bout", "end-to-end", "messagerie chiffrée"],
+      une: "Un message chiffré dès l’envoi et lisible seulement par son destinataire — pas même par le service qui le transporte.",
+      etapes: [
+        "Un message qui passe par un service (messagerie, appel) traverse ses serveurs : sans protection, le service pourrait le lire.",
+        "Avec le chiffrement de bout en bout, votre appareil verrouille le message avant l’envoi, avec une clé que seul le destinataire possède.",
+        "Le service ne fait alors que transporter une suite illisible : il ne peut ni la lire, ni la montrer à quelqu’un qui la lui demanderait.",
+        "La contrepartie : si vous perdez vos clés, personne ne peut vous aider à récupérer le contenu. Le verrou n’a pas de double."
+      ],
+      voir: "chiffrement",
+      pas: "le simple cadenas du navigateur, qui protège le trajet jusqu’au service, mais que le service peut ensuite lire — ici, il ne le peut pas."
+    },
+    {
+      id: "reseau-neurones", terme: "Réseau de neurones", domaine: "IA",
+      aka: ["réseau de neurones", "neural network", "neurone artificiel", "deep learning", "apprentissage profond"],
+      une: "Un empilement de petites unités de calcul qui, ensemble, apprennent à reconnaître des motifs à partir d’exemples.",
+      etapes: [
+        "Certaines tâches, comme reconnaître un visage, sont impossibles à décrire par des règles écrites à la main.",
+        "Un réseau de neurones est fait de nombreuses unités simples, rangées en couches : chacune reçoit des nombres, les pondère, et transmet le résultat à la couche suivante.",
+        "À l’entraînement, on lui montre des exemples ; à chaque erreur, on ajuste très légèrement les pondérations, des millions de fois.",
+        "On parle d’apprentissage profond (deep learning) quand il y a beaucoup de couches. Le nom vient d’une image du cerveau, mais le fonctionnement reste du calcul."
+      ],
+      voir: "machine-learning",
+      pas: "un cerveau : l’analogie est une inspiration de départ, pas une copie de la biologie."
+    },
+    {
+      id: "qualite-donnees", terme: "Qualité des données", domaine: "Data",
+      aka: ["qualité des données", "data quality", "données propres", "nettoyage"],
+      une: "Le degré de confiance qu’on peut accorder à une donnée : est-elle juste, complète, à jour, sans doublon ?",
+      etapes: [
+        "Un tableau de bord peut être parfaitement construit et afficher pourtant des chiffres faux, si les données de départ le sont.",
+        "On juge une donnée sur quelques critères simples : exacte, complète, à jour, sans doublon, écrite toujours de la même façon.",
+        "On les contrôle par des règles automatiques (un code postal a cinq chiffres, une date n’est pas dans le futur) et on corrige à la source.",
+        "Corriger en aval ne suffit pas : mieux vaut empêcher l’erreur à la saisie que la réparer chaque semaine dans les rapports."
+      ],
+      voir: "gouvernance-data",
+      pas: "le dédoublonnage, qui n’est qu’un des contrôles : la qualité couvre aussi l’exactitude, la complétude et la fraîcheur."
+    },
+    {
+      id: "shadow-it", terme: "Shadow IT (informatique fantôme)", domaine: "SI",
+      aka: ["shadow it", "informatique fantôme", "outils non validés", "sauvage"],
+      une: "Les outils utilisés dans une entreprise à l’insu du service informatique, souvent parce qu’ils dépannent vite.",
+      etapes: [
+        "Une équipe a un besoin urgent, l’outil officiel est trop lent ou n’existe pas : elle s’inscrit à un service en ligne avec sa propre carte ou son adresse pro.",
+        "L’outil marche, l’équipe est contente, et personne d’autre dans l’entreprise ne sait qu’il existe : c’est le shadow IT.",
+        "Le risque est là : des données de l’entreprise partent chez un fournisseur non examiné, sans sauvegarde, sans droits gérés, sans départ prévu quand la personne quitte.",
+        "L’interdire en bloc marche rarement. Mieux vaut comprendre le besoin qu’il révèle, et proposer une solution validée qui le couvre."
+      ],
+      voir: "no-code",
+      pas: "le no-code, qui est une façon de construire ; le shadow IT décrit seulement le fait que l’outil échappe à tout contrôle."
     },
   ];
 
