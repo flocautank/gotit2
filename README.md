@@ -37,6 +37,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [La virtualisation, un ordinateur dans l'ordinateur](lecons/virtualisation.html) | Informatique | Intermédiaire |
 | [Comment voyage une page web](lecons/internet.html) | Réseau | Découverte |
 | [Wifi, box et débit](lecons/wifi-box.html) | Réseau | Découverte |
+| [Le DNS, l’annuaire d’Internet](lecons/dns.html) | Réseau | Découverte |
 | [Ce que sait votre navigateur](lecons/navigateur.html) | Réseau | Découverte |
 | [Les bases de la cybersécurité](lecons/cybersecurite.html) | Réseau | Découverte |
 | [Sauvegarder pour de vrai](lecons/sauvegarde.html) | Réseau | Découverte |
@@ -78,15 +79,15 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 | [Le prompt injection, le risque caché des agents IA](lecons/injection-prompt.html) | IA | Intermédiaire |
 
-**78 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**82 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
-ouvert, benchmark, garde-fous, prompt injection, Machine Learning, appel d'outils, réseau de neurones —, celui des
+ouvert, benchmark, garde-fous, prompt injection, Machine Learning, appel d'outils, réseau de neurones, biais —, celui des
 projets SI : cahier des charges, recette, MOA/MOE, CRM, ERP, SLA, RACI, API, urbanisation, SSO,
-environnement de test, dette technique, MVP, CI/CD, shadow IT, douze mots de réseau (Tor, adresse IP, VPN,
-pare-feu, DNS, cookie, hameçonnage, MFA/2FA, protocole, rançongiciel, proxy, CDN, chiffrement de bout en bout), neuf
-d'informatique générale (octet, cache, open source, conteneur, cloud, système d'exploitation,
-framework, bug, scalabilité) et douze de la data (ETL/ELT, KPI, SQL, Big Data, index, tableau de
+environnement de test, dette technique, MVP, CI/CD, shadow IT, agile, douze mots de réseau (Tor, adresse IP, VPN,
+pare-feu, DNS, cookie, hameçonnage, MFA/2FA, protocole, rançongiciel, proxy, CDN, chiffrement de bout en bout), dix
+d'informatique générale (Git, octet, cache, open source, conteneur, cloud, système d'exploitation,
+framework, bug, scalabilité) et treize de la data (jointure, ETL/ELT, KPI, SQL, Big Data, index, tableau de
 bord, schéma de données, silo de données, anonymisation/pseudonymisation, NoSQL, catalogue de
 données, test A/B, qualité des données).
 

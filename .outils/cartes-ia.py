@@ -714,4 +714,44 @@ CARTES = [
    "L’interdire en bloc marche rarement. Mieux vaut comprendre le besoin qu’il révèle, et proposer une solution validée qui le couvre."],
   voir='no-code',
   pas="le no-code, qui est une façon de construire ; le shadow IT décrit seulement le fait que l’outil échappe à tout contrôle."),
+
+ dict(id='git', terme='Git', aka=['git', 'dépôt', 'commit', 'github', 'gitlab', 'versionnage du code'], dom='Informatique',
+  une="L’outil qui garde l’historique complet d’un projet de code et permet à plusieurs personnes d’y travailler sans s’écraser.",
+  etapes=[
+   "Quand plusieurs personnes modifient les mêmes fichiers, on finit avec des copies « version finale 2 » et des changements écrasés.",
+   "Git enregistre le projet à chaque étape choisie par les développeurs : un « commit », c’est un point de sauvegarde daté, signé et commenté.",
+   "Chacun peut travailler sur sa propre branche, une ligne parallèle, puis proposer de la fusionner avec la principale une fois le travail relu.",
+   "On peut ainsi revenir à n’importe quel point passé et voir qui a changé quoi. Les sites comme GitHub ou GitLab hébergent ces projets en ligne."],
+  voir='versionnage',
+  pas="GitHub, qui est un service en ligne construit autour de Git — Git lui-même est l’outil, et fonctionne aussi sans internet."),
+
+ dict(id='jointure', terme='Jointure (JOIN)', aka=['jointure', 'join', 'relier deux tables', 'clé étrangère', 'clé primaire'], dom='Data',
+  une="L’opération qui rapproche deux tableaux de données grâce à une colonne qu’ils ont en commun.",
+  etapes=[
+   "Une base de données range chaque sujet dans son propre tableau : un pour les clients, un pour les commandes, plutôt que tout mélangé.",
+   "Pour éviter les répétitions, la commande ne contient pas le nom du client, seulement son numéro : la colonne commune aux deux tableaux.",
+   "La jointure rapproche les lignes des deux tableaux qui portent le même numéro, et reconstitue « telle commande, passée par tel client ».",
+   "Si le numéro manque ou est faux d’un côté, la ligne ne trouve pas son pendant : c’est une cause classique de chiffres qui ne collent pas."],
+  voir='base-de-donnees',
+  pas="le dédoublonnage, qui cherche les lignes en double au sein d’un tableau ; la jointure relie deux tableaux différents."),
+
+ dict(id='biais-ia', terme='Biais (en IA)', aka=['biais', 'biais algorithmique', 'discrimination', 'équité', 'données biaisées'], dom='IA',
+  une="Une déformation systématique dans les réponses d’une IA, héritée de ses exemples d’entraînement.",
+  etapes=[
+   "Une IA apprend à partir d’exemples. Elle ne connaît du monde que ce que ces exemples lui montrent.",
+   "Si certains cas y sont rares, absents ou décrits de façon déséquilibrée, elle reproduit ce déséquilibre sans le remarquer.",
+   "Cela donne, par exemple, un outil de tri de candidatures qui favorise les profils ressemblant à ceux déjà embauchés.",
+   "On le limite en examinant les exemples de départ, en testant les résultats sur différents groupes, et en gardant un humain dans la boucle."],
+  voir='machine-learning',
+  pas="une hallucination, qui est une invention isolée ; le biais est une pente régulière, présente à chaque réponse."),
+
+ dict(id='agile', terme='Agile', aka=['agile', 'scrum', 'sprint', 'méthode agile', 'itératif'], dom='SI',
+  une="Une façon de mener un projet par petites livraisons successives, plutôt qu’en une seule livraison à la fin.",
+  etapes=[
+   "Dans un projet classique, on décrit tout au début et on livre tout à la fin. Si le besoin a changé entre-temps, il est trop tard.",
+   "La démarche agile découpe le travail en cycles courts, de quelques semaines, appelés sprints dans la méthode Scrum.",
+   "À la fin de chaque cycle, l’équipe montre quelque chose qui fonctionne et recueille l’avis des utilisateurs, puis ajuste la suite.",
+   "On corrige le tir plus tôt, au prix d’une implication régulière du métier — et d’un périmètre final moins figé au départ."],
+  voir='projet-si',
+  pas="le cycle en V, la démarche classique où chaque phase se termine avant que la suivante ne commence."),
 ]

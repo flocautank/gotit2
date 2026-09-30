@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le DNS, l’annuaire d’Internet — GotIt !</title>
+<meta name="description" content="Vous tapez un nom, les machines n’ont besoin que d’un numéro. Le DNS fait la traduction entre les deux : expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/reseau">Réseau</a><span>/</span>Comment ça circule<span>/</span>Les bases</div>
+      <h1>Le DNS, l’annuaire d’Internet</h1>
+      <p class="lead">Vous tapez un nom de site, mais les machines ne se parlent qu’avec des numéros. Entre les deux, il y a un annuaire que vous consultez cent fois par jour sans le savoir.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">3 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Pour joindre quelqu’un, votre téléphone a besoin d’un numéro. Pourtant vous ne le tapez jamais&nbsp;:
+        vous choisissez un prénom dans vos contacts. Sur Internet, c’est pareil, et le carnet de contacts
+        s’appelle le <strong>DNS</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un nom facile à retenir est traduit en numéro">
+        <div class="scene-title">Scène 1 — Un nom pour vous, un numéro pour la machine</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="Une personne connaît un nom de site, la machine a besoin d’un numéro, et un annuaire fait le lien entre les deux">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="90" width="200" height="80" rx="10" class="s-box"/>
+              <text x="140" y="126" text-anchor="middle" class="s-label-sm">Un nom</text>
+              <text x="140" y="148" text-anchor="middle" class="s-label-xs">facile à retenir</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="560" y="90" width="200" height="80" rx="10" class="s-box-teal"/>
+              <text x="660" y="126" text-anchor="middle" class="s-label-sm">Un numéro</text>
+              <text x="660" y="148" text-anchor="middle" class="s-label-xs">pour la machine</text>
+            </g>
+            <text x="400" y="60" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3">personne ne retient ça par cœur</text>
+            <g data-show="4" class="m-pop">
+              <rect x="300" y="170" width="200" height="60" rx="30" class="s-box-accent pulse"/>
+              <text x="400" y="207" text-anchor="middle" class="s-label-sm">Un annuaire</text>
+              <path d="M240 130 C 270 130, 280 190, 300 200" class="s-line-accent m-draw" data-show="4"/>
+              <path d="M560 130 C 530 130, 520 190, 500 200" class="s-line-accent m-draw" data-show="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Vous, vous retenez des noms.</b><span>Celui d’un journal, d’une banque, d’une boutique.</span></p>
+          <p class="step" data-duration="4200"><b>Les machines, elles, se repèrent par des numéros.</b><span>Chaque machine connectée à Internet porte une adresse numérique, l’adresse IP.</span></p>
+          <p class="step" data-duration="4400"><b>Retenir ces numéros pour chaque site&nbsp;? Impossible.</b><span>Il y en a des centaines de millions, et ils peuvent changer.</span></p>
+          <p class="step" data-duration="4600"><b>Il faut donc un annuaire qui fait le lien.</b><span>Vous donnez le nom, il rend le numéro. Cet annuaire s’appelle le DNS — Domain Name System.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Les contacts de votre téléphone. Vous appuyez sur « Maman », jamais sur dix chiffres.
+          Le téléphone retrouve le numéro derrière le nom, puis compose. Le DNS fait exactement cela,
+          pour tous les sites du monde.
+        </p>
+      </div>
+
+      <h2>Qui répond à la question&nbsp;?</h2>
+      <p>
+        Il n’existe pas un immense fichier unique&nbsp;: l’annuaire est <strong>réparti</strong>
+        sur de nombreux serveurs, qui se renvoient la question de l’un à l’autre.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : la question voyage de serveur en serveur jusqu’à la réponse">
+        <div class="scene-title">Scène 2 — Le trajet d’une question</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Votre appareil pose la question à un serveur intermédiaire, qui interroge tour à tour l’annuaire général, celui de l’extension, puis celui du site, et rapporte l’adresse">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="120" width="130" height="80" rx="10" class="s-box"/>
+              <text x="95" y="166" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+            <g data-show="2-5" class="m-pop">
+              <rect x="250" y="120" width="150" height="80" rx="10" class="s-box-accent"/>
+              <text x="325" y="152" text-anchor="middle" class="s-label-sm">Serveur</text>
+              <text x="325" y="174" text-anchor="middle" class="s-label-sm">intermédiaire</text>
+            </g>
+            <path d="M160 160 H250" class="s-line m-draw" data-show="2-5"/>
+            <text x="205" y="142" text-anchor="middle" class="s-label-xs" data-show="2">quelle adresse&nbsp;?</text>
+
+            <g data-show="3-5" class="m-right">
+              <rect x="560" y="30" width="200" height="56" rx="10" class="s-box-teal"/>
+              <text x="660" y="65" text-anchor="middle" class="s-label-sm">Annuaire général</text>
+            </g>
+            <g data-show="4-5" class="m-right">
+              <rect x="560" y="132" width="200" height="56" rx="10" class="s-box-teal"/>
+              <text x="660" y="167" text-anchor="middle" class="s-label-sm">Annuaire du .fr</text>
+            </g>
+            <g data-show="5" class="m-right">
+              <rect x="560" y="234" width="200" height="56" rx="10" class="s-box-teal"/>
+              <text x="660" y="269" text-anchor="middle" class="s-label-sm">Annuaire du site</text>
+            </g>
+            <path d="M400 140 C 470 110, 500 60, 560 58" class="s-line m-draw" data-show="3-5"/>
+            <path d="M400 160 H560" class="s-line m-draw" data-show="4-5"/>
+            <path d="M400 180 C 470 210, 500 260, 560 262" class="s-line m-draw" data-show="5"/>
+            <text x="325" y="300" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="5">le numéro remonte jusqu’à vous</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Vous tapez un nom dans le navigateur.</b><span>Votre appareil ne connaît pas la réponse&nbsp;: il doit la demander.</span></p>
+          <p class="step" data-duration="4200"><b>Il pose la question à un serveur intermédiaire.</b><span>Celui de votre fournisseur d’accès, en général. Son métier&nbsp;: aller chercher la réponse.</span></p>
+          <p class="step" data-duration="4400"><b>Celui-ci interroge d’abord un annuaire général.</b><span>Il ne donne pas l’adresse du site, mais indique qui s’occupe de chaque fin de nom : .fr, .com, etc.</span></p>
+          <p class="step" data-duration="4400"><b>Puis l’annuaire de la fin du nom.</b><span>Lui sait quel serveur détient les informations de ce site précis.</span></p>
+          <p class="step" data-duration="4800"><b>Enfin l’annuaire du site répond avec le numéro.</b><span>Le serveur intermédiaire vous le transmet&nbsp;: votre navigateur peut maintenant contacter le site.</span></p>
+        </div>
+      </section>
+
+      <h2>La mémoire qui accélère tout</h2>
+      <p>
+        Refaire ce voyage à chaque clic serait lent. Le DNS garde donc les réponses
+        en mémoire, un temps limité.
+      </p>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : le cache évite de reposer la question, et une adresse modifiée met du temps à se savoir">
+        <div class="scene-title">Scène 3 — Se souvenir, mais pas trop longtemps</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 280" role="img" aria-label="Une première visite fait le voyage complet, la suivante répond depuis la mémoire, et quand l’adresse d’un site change, les anciennes réponses restent un moment en circulation">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="50" width="220" height="70" rx="10" class="s-box"/>
+              <text x="150" y="92" text-anchor="middle" class="s-label-sm">1re visite : le voyage</text>
+            </g>
+            <g data-show="2-4" class="m-left">
+              <rect x="40" y="150" width="220" height="70" rx="10" class="s-box-teal"/>
+              <text x="150" y="192" text-anchor="middle" class="s-label-sm">Ensuite : la mémoire</text>
+            </g>
+            <text x="150" y="250" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="2">réponse immédiate</text>
+
+            <g data-show="3-4" class="m-right">
+              <rect x="470" y="50" width="280" height="70" rx="10" fill="none" stroke="var(--danger)" stroke-width="2.4" stroke-dasharray="6 5"/>
+              <text x="610" y="92" text-anchor="middle" class="s-label-sm" fill="var(--danger)">Le site change d’adresse</text>
+            </g>
+            <g data-show="4" class="m-pop">
+              <rect x="470" y="150" width="280" height="70" rx="10" class="s-box-accent"/>
+              <text x="610" y="180" text-anchor="middle" class="s-label-sm">Les mémoires se vident</text>
+              <text x="610" y="202" text-anchor="middle" class="s-label-xs">peu à peu, pas d’un coup</text>
+              <path d="M610 120 V150" class="s-line-accent m-draw" data-show="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>La première fois, la question fait tout le voyage.</b><span>Passer par plusieurs annuaires prend un instant.</span></p>
+          <p class="step" data-duration="4400"><b>Ensuite, la réponse est gardée en mémoire.</b><span>Appareil, box, serveur intermédiaire&nbsp;: chacun peut la conserver, et répond sans rien redemander.</span></p>
+          <p class="step" data-duration="4600"><b>Mais si un site change de serveur, l’ancien numéro traîne encore.</b><span>Chaque réponse est gardée pour une durée que fixe le propriétaire du site.</span></p>
+          <p class="step" data-duration="4800"><b>Les mémoires se vident les unes après les autres.</b><span>D’où le délai parfois évoqué après un changement de site&nbsp;: le monde n’est pas prévenu en même temps.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le <strong>DNS</strong> est l’annuaire qui traduit un nom de site en <strong>adresse numérique</strong> (adresse IP).</li>
+        <li>Il est <strong>réparti</strong> : la question passe de serveur en serveur jusqu’à celui qui connaît la réponse.</li>
+        <li>Les réponses sont gardées en <strong>mémoire</strong> (cache) pour aller plus vite.</li>
+        <li>Quand ce service est en panne, les sites existent toujours — mais on ne sait plus les trouver par leur nom.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Une fois l’adresse connue, il reste à voir comment la page voyage jusqu’à vous&nbsp;: c’est la leçon sur le voyage d’une page web.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="wifi-box.html">← Wifi, box et débit</a>
+        <a class="btn btn-primary" href="email.html">Comment voyage un e-mail →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
