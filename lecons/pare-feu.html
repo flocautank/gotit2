@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le pare-feu, le poste de contrôle du réseau — GotIt !</title>
+<meta name="description" content="Un réseau reçoit en permanence des visites indésirables. Le pare-feu applique des règles à l’entrée : expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/reseau">Réseau</a><span>/</span>Se protéger<span>/</span>Ce qui protège les données</div>
+      <h1>Le pare-feu, le poste de contrôle du réseau</h1>
+      <p class="lead">Votre box reçoit chaque jour des tentatives de connexion dont vous ne saurez jamais rien. Un gardien discret les trie à l’entrée : le pare-feu.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Imaginez l’entrée d’un immeuble de bureaux. Tout le monde ne peut pas monter&nbsp;: un gardien
+        regarde qui arrive, pour quoi faire, et ouvre ou non. Un réseau a le même besoin, et son gardien
+        s’appelle le <strong>pare-feu</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un gardien à l’entrée laisse passer certaines demandes et en bloque d’autres">
+        <div class="scene-title">Scène 1 — Un gardien à l’entrée</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Des demandes arrivent d’Internet vers un réseau privé ; un gardien au milieu en laisse passer une et en bloque deux">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="100" width="150" height="100" rx="10" class="s-box"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-sm">Internet</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="620" y="100" width="150" height="100" rx="10" class="s-box-teal"/>
+              <text x="695" y="156" text-anchor="middle" class="s-label-sm">Votre réseau</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="350" y="60" width="100" height="180" rx="10" class="s-box-accent pulse"/>
+              <text x="400" y="156" text-anchor="middle" class="s-label-sm">Gardien</text>
+            </g>
+            <path d="M180 130 H350" class="s-line m-draw" data-show="3-4"/>
+            <path d="M450 130 H620" class="s-line-accent m-draw" data-show="3-4"/>
+            <text x="270" y="116" text-anchor="middle" class="s-label-xs" data-show="3-4">demande</text>
+            <text x="270" y="190" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="4">refusée</text>
+            <path d="M180 180 H340" class="s-line m-draw" data-show="4" stroke="var(--danger)"/>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>D’un côté Internet, de l’autre votre réseau.</b><span>Ordinateurs, imprimantes, téléphones&nbsp;: tout ce qui est chez vous.</span></p>
+          <p class="step" data-duration="4200"><b>Entre les deux, on place un gardien.</b><span>Tout ce qui entre ou sort passe forcément devant lui.</span></p>
+          <p class="step" data-duration="4400"><b>Il compare chaque demande à une liste de règles.</b><span>Par exemple&nbsp;: « les pages web demandées depuis l’intérieur, oui ».</span></p>
+          <p class="step" data-duration="4600"><b>Ce qui n’a pas été prévu est refusé.</b><span>Ce gardien s’appelle le pare-feu, ou firewall en anglais.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          L’accueil d’un immeuble. Le livreur attendu monte, le visiteur sans rendez-vous attend en bas,
+          et personne ne force la porte de service. Le pare-feu applique la même consigne, à la seconde,
+          à des milliers de demandes.
+        </p>
+      </div>
+
+      <h2>Les règles, comme des portes numérotées</h2>
+      <p>
+        Chaque service d’une machine écoute sur une « porte » numérotée, appelée <strong>port</strong>.
+        Les règles disent quelles portes sont ouvertes, et pour qui.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : des portes numérotées, une seule ouverte, et la réponse à une demande venue de l’intérieur">
+        <div class="scene-title">Scène 2 — Des portes, presque toutes fermées</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Quatre portes numérotées dont une seule est ouverte, puis une demande partie de l’intérieur dont la réponse est autorisée à revenir">
+            <g data-show="1-4" class="m-rise">
+              <rect x="60" y="60" width="130" height="60" rx="10" class="s-box"/>
+              <text x="125" y="97" text-anchor="middle" class="s-label-sm">Porte A</text>
+              <rect x="220" y="60" width="130" height="60" rx="10" class="s-box"/>
+              <text x="285" y="97" text-anchor="middle" class="s-label-sm">Porte B</text>
+              <rect x="380" y="60" width="130" height="60" rx="10" class="s-box"/>
+              <text x="445" y="97" text-anchor="middle" class="s-label-sm">Porte C</text>
+              <rect x="540" y="60" width="130" height="60" rx="10" class="s-box"/>
+              <text x="605" y="97" text-anchor="middle" class="s-label-sm">Porte D</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="220" y="60" width="130" height="60" rx="10" class="s-box-accent pulse"/>
+              <text x="285" y="97" text-anchor="middle" class="s-label-sm">B : ouverte</text>
+            </g>
+            <text x="400" y="160" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2">les autres restent fermées</text>
+            <g data-show="3-4" class="m-left">
+              <rect x="60" y="210" width="150" height="60" rx="10" class="s-box-teal"/>
+              <text x="135" y="247" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+            <path d="M210 240 H600" class="s-line m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M210 240 H600')"/>
+            <path d="M600 262 H210" class="s-line-accent m-draw" data-show="4"/>
+            <text x="400" y="290" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">la réponse peut revenir</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Une machine a de nombreuses portes.</b><span>Chaque service, comme le web ou la messagerie, utilise la sienne.</span></p>
+          <p class="step" data-duration="4200"><b>On n’ouvre que celles dont on a besoin.</b><span>Moins il y a de portes ouvertes, moins il y a d’endroits où tenter sa chance.</span></p>
+          <p class="step" data-duration="4400"><b>Une demande partie de chez vous est autorisée.</b><span>Vous ouvrez un site&nbsp;: le pare-feu note que c’est vous qui avez commencé.</span></p>
+          <p class="step" data-duration="4600"><b>Sa réponse peut donc revenir, sans que personne d’autre ne rentre.</b><span>Une demande venue de l’extérieur, sans que vous ayez rien demandé, est en général refusée.</span></p>
+        </div>
+      </section>
+
+      <h2>Ses limites</h2>
+      <p>
+        Le gardien contrôle les entrées, pas ce que vous ouvrez vous-même&nbsp;: une pièce jointe piégée
+        ou un faux site que vous visitez de votre propre initiative passent à travers. Le pare-feu est
+        une couche de protection parmi d’autres, jamais la seule.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le <strong>pare-feu</strong> filtre ce qui entre et sort d’un réseau, selon des <strong>règles</strong>.</li>
+        <li>Il garde fermées les <strong>portes</strong> (ports) dont on n’a pas besoin.</li>
+        <li>Une réponse à une demande que <strong>vous</strong> avez faite passe&nbsp;; une visite non sollicitée est en général bloquée.</li>
+        <li>Il ne remplace ni la <strong>prudence</strong> ni les <strong>mises à jour</strong>.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour ce qui protège le contenu lui-même, voyez la leçon sur le chiffrement.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="cybersecurite.html">← Les bases de la cybersécurité</a>
+        <a class="btn btn-primary" href="chiffrement.html">Le chiffrement →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
