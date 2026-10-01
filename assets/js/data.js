@@ -287,6 +287,13 @@ window.GOTIT = (function () {
       duration: '7 min', level: 2,
       keywords: ['chiffrement', 'clé', 'https', 'bout en bout', 'whatsapp', 'sécurité', 'déchiffrer', 'cadenas']
     },
+    'pare-feu': {
+      title: 'Le pare-feu, le poste de contrôle du réseau',
+      summary: 'Un gardien applique des règles à l’entrée du réseau : ce qui est prévu passe, le reste est refusé.',
+      path: 'lecons/pare-feu.html',
+      duration: '5 min', level: 1,
+      keywords: ['pare-feu', 'firewall', 'port', 'filtrage', 'réseau', 'sécurité', 'intrusion']
+    },
     'dns': {
       title: 'Le DNS, l’annuaire d’Internet',
       summary: 'Vous tapez un nom, les machines ont besoin d’un numéro : le DNS fait la traduction.',
@@ -438,7 +445,7 @@ window.GOTIT = (function () {
           id: 'securite', title: 'Se protéger',
           subcategories: [
             { id: 'gestes', title: 'Les gestes du quotidien', lessons: ['cybersecurite'] },
-            { id: 'protection', title: 'Ce qui protège les données', lessons: ['chiffrement', 'sauvegarde', 'vpn'] },
+            { id: 'protection', title: 'Ce qui protège les données', lessons: ['pare-feu', 'chiffrement', 'sauvegarde', 'vpn'] },
             { id: 'anonymat', title: 'Rester anonyme', lessons: ['tor'] }
           ]
         }
@@ -980,7 +987,7 @@ window.GOTIT = (function () {
         "Il bloque ainsi l’essentiel du bruit — scans automatiques, tentatives d’intrusion — avant même qu’il n’atteigne un ordinateur.",
         "Une box Internet ou un antivirus en contient déjà un, discret et déjà activé ; les entreprises en ajoutent des plus stricts en bordure de leur réseau."
       ],
-      voir: "cybersecurite"
+      voir: "pare-feu"
     },
     {
       id: "big-data", terme: "Big Data", domaine: "Data",
@@ -1530,6 +1537,58 @@ window.GOTIT = (function () {
       ],
       voir: "projet-si",
       pas: "le cycle en V, la démarche classique où chaque phase se termine avant que la suivante ne commence."
+    },
+    {
+      id: "latence", terme: "Latence", domaine: "Réseau",
+      aka: ["latence", "ping", "délai", "temps de réponse", "lag"],
+      une: "Le temps qu’un message met à faire l’aller-retour entre deux machines.",
+      etapes: [
+        "Quand vous cliquez, une demande part, atteint un serveur, et la réponse revient. Ce trajet prend un temps, même très court.",
+        "Ce temps s’appelle la latence. On la mesure en millisecondes, souvent avec l’outil « ping ».",
+        "Elle dépend surtout de la distance parcourue et du nombre d’étapes traversées, pas du tuyau lui-même.",
+        "Une latence élevée gêne les appels vidéo et les jeux en ligne, même avec une grosse connexion."
+      ],
+      voir: "wifi-box",
+      pas: "le débit, qui est la quantité de données transportée par seconde ; la latence est le temps d’un aller-retour."
+    },
+    {
+      id: "backlog", terme: "Backlog", domaine: "SI",
+      aka: ["backlog", "liste des tâches", "product backlog", "priorisation"],
+      une: "La liste ordonnée de tout ce qu’il reste à construire dans un projet.",
+      etapes: [
+        "Dans un projet, les envies ne cessent d’arriver : nouvelles fonctions, corrections, idées des utilisateurs.",
+        "On les note toutes dans une même liste, le backlog, chacune formulée de façon compréhensible par le métier.",
+        "On la classe ensuite par priorité : ce qui apporte le plus de valeur est en haut, et l’équipe pioche par le haut.",
+        "La liste vit : on la réordonne à mesure que le besoin évolue. Elle sert de support de dialogue entre le métier et l’équipe."
+      ],
+      voir: "projet-si",
+      pas: "le cahier des charges, qui fige le besoin au départ ; le backlog est une liste qu’on réordonne tout au long du projet."
+    },
+    {
+      id: "referentiel", terme: "Données de référence (référentiel)", domaine: "Data",
+      aka: ["référentiel", "données de référence", "mdm", "master data", "données maîtres"],
+      une: "La liste officielle et unique des objets de base de l’entreprise : clients, produits, sites.",
+      etapes: [
+        "Le même client existe souvent dans plusieurs outils : facturation, CRM, support. Chacun a sa version, parfois différente.",
+        "Un référentiel désigne, pour chaque objet de base, une fiche unique de référence, avec un identifiant commun.",
+        "Les autres outils s’y rattachent ou s’y synchronisent au lieu de recopier l’information à leur façon.",
+        "Cela évite les doublons et les chiffres qui divergent ; il faut en échange désigner qui a le droit de le modifier."
+      ],
+      voir: "gouvernance-data",
+      pas: "le dédoublonnage, qui nettoie des doublons existants ; le référentiel organise les choses pour qu’ils n’apparaissent pas."
+    },
+    {
+      id: "chaine-de-pensee", terme: "Chaîne de pensée", domaine: "IA",
+      aka: ["chaîne de pensée", "chain of thought", "raisonnement", "étape par étape", "réfléchir"],
+      une: "Demander à l’IA d’écrire son raisonnement étape par étape avant de donner sa réponse.",
+      etapes: [
+        "Un modèle écrit mot après mot. Sur un problème à plusieurs étapes, une réponse donnée d’emblée est plus souvent fausse.",
+        "En lui demandant de détailler d’abord les étapes, chaque ligne écrite devient un appui pour la suivante.",
+        "Le raisonnement affiché fait partie du texte que le modèle lit pour produire la suite de sa réponse.",
+        "Cela aide sur les calculs et la logique, mais coûte plus de texte, et un raisonnement bien écrit peut rester faux : il se vérifie."
+      ],
+      voir: "prompt",
+      pas: "une hallucination, qui est une invention ; la chaîne de pensée est une technique de demande qui réduit certaines erreurs."
     },
   ];
 
