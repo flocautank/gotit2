@@ -779,4 +779,34 @@ CARTES = [
   voir='prompt',
   pas='une hallucination, qui est une invention ; la chaîne de pensée est une technique de demande qui réduit certaines erreurs.'),
 
+ dict(id='https', terme='HTTPS (le cadenas)', aka=['https', 'cadenas', 'certificat', 'tls', 'ssl', 'site sécurisé'], dom='Réseau',
+  une='La version protégée du web : ce qui voyage entre vous et le site est chiffré, et le site prouve qui il est.',
+  etapes=['Sur un réseau, votre demande traverse plusieurs machines. Sans protection, chacune pourrait la lire ou la modifier.', 'Avec HTTPS, le navigateur et le site se mettent d’abord d’accord sur un secret commun, puis chiffrent tout ce qu’ils échangent.', 'Le site présente aussi un certificat, une carte d’identité délivrée par un organisme tiers, que le navigateur vérifie. Le cadenas indique que tout est en ordre.', 'Le cadenas garantit un échange privé avec le site affiché, pas que ce site soit honnête : un site frauduleux peut aussi en avoir un.'],
+  voir='chiffrement',
+  pas='le VPN, qui protège toute votre connexion ; HTTPS protège l’échange avec un site précis.'),
+
+ dict(id='data-roles', terme='Data analyst, data engineer, data scientist', aka=['data analyst', 'data engineer', 'data scientist', 'analyste de données', 'ingénieur data', 'métiers de la data'], dom='Data',
+  une='Les trois métiers de la data : celui qui amène les données, celui qui les lit, celui qui prédit.',
+  etapes=['Avant de servir à quelque chose, une donnée doit être collectée, rangée, nettoyée, puis interprétée. Ce n’est pas le travail d’une seule personne.', 'Le data engineer construit les tuyaux : il fait arriver les données propres et à jour au bon endroit.', 'Le data analyst les interroge et les met en forme, pour répondre à une question : que s’est-il passé, et où ?', 'Le data scientist construit des modèles qui prévoient ou classent. Les trois dépendent les uns des autres, et les frontières varient d’une entreprise à l’autre.'],
+  voir='bi-tableau-de-bord',
+  pas='un chef de projet data, qui coordonne le travail sans manipuler lui-même les données.'),
+
+ dict(id='rpa', terme='RPA (robot logiciel)', aka=['rpa', 'robot logiciel', 'automatisation', 'robotic process automation', 'automatiser'], dom='SI',
+  une='Un programme qui refait à votre place les clics et les saisies d’une tâche répétitive.',
+  etapes=['Beaucoup de tâches de bureau se répètent à l’identique : copier une valeur d’un écran vers un autre, remplir le même formulaire.', 'Un robot logiciel enregistre ces gestes, puis les rejoue seul : il ouvre les écrans, lit les champs, saisit les données.', 'Il travaille avec les outils existants, sans les modifier, un peu comme une personne invisible devant l’écran.', 'Il convient aux règles stables et précises. Si un écran change, le robot s’arrête ou se trompe : il demande une surveillance.'],
+  voir='no-code',
+  pas='une IA, qui sait gérer le flou ; un robot logiciel suit à la lettre des règles écrites d’avance.'),
+
+ dict(id='deploiement', terme='Mise en production', aka=['mise en production', 'déploiement', 'mep', 'production', 'déployer', 'livraison'], dom='Informatique',
+  une='Le moment où une nouveauté quitte l’atelier pour être utilisée par de vrais utilisateurs.',
+  etapes=['Un logiciel se construit et se teste dans des environnements à part, sans risque pour les utilisateurs.', 'Quand il est jugé prêt, on l’installe sur les machines que tout le monde utilise : c’est la mise en production.', 'Ce passage est délicat : une erreur touche tout de suite les vrais utilisateurs. On le prépare, souvent à une heure creuse, avec un plan pour revenir en arrière.', 'Beaucoup d’équipes l’automatisent pour le rendre plus fréquent et moins stressant, et surveillent le résultat juste après.'],
+  voir='versionnage',
+  pas='un environnement de test, où l’on essaie sans conséquence ; la production est l’endroit où cela compte.'),
+
+ dict(id='surapprentissage', terme='Surapprentissage', aka=['surapprentissage', 'overfitting', 'apprendre par cœur', 'sur-ajustement'], dom='IA',
+  une='Quand un modèle retient ses exemples par cœur au lieu d’en tirer la règle.',
+  etapes=['On entraîne un modèle sur des exemples pour qu’il réussisse ensuite sur des cas qu’il n’a jamais vus.', 'S’il s’y colle trop, il retient les détails propres à ces exemples, y compris les accidents sans importance, plutôt que la règle générale.', 'Il obtient alors d’excellents résultats sur ses exemples d’entraînement, et de mauvais sur les cas nouveaux : comme un élève qui récite son cours sans l’avoir compris.', 'On le détecte en testant sur des données mises de côté. On le limite avec plus d’exemples variés ou un modèle plus simple.'],
+  voir='machine-learning',
+  pas='une hallucination, qui est une invention d’un modèle de langage ; le surapprentissage est un défaut de l’entraînement.'),
+
 ]
