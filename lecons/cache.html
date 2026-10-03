@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le cache, garder sous la main ce qu’on réutilise — GotIt !</title>
+<meta name="description" content="Pourquoi un site se charge plus vite la deuxième fois : le cache garde une copie proche de ce qu’on redemande. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/informatique">Informatique</a><span>/</span>Le matériel<span>/</span>Dans la machine</div>
+      <h1>Le cache, garder sous la main ce qu’on réutilise</h1>
+      <p class="lead">La deuxième visite d’un site est souvent plus rapide que la première. Rien n’a changé côté site : c’est une copie rangée à portée de main qui travaille.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Vous cuisinez et vous avez besoin du sel. Vous pourriez retourner le chercher au cellier à chaque
+        fois&nbsp;; vous préférez en garder un peu sur le plan de travail. Ce petit stock près de vous
+        s’appelle, en informatique, un <strong>cache</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un petit espace rapide près de vous garde une copie de ce qui est stocké dans un grand espace lointain">
+        <div class="scene-title">Scène 1 — Près de soi, ou loin</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Vous à gauche, un petit stock proche au milieu, un grand stock lointain à droite ; une copie va du grand stock au petit">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="110" width="140" height="80" rx="10" class="s-box-teal"/>
+              <text x="100" y="156" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="590" y="70" width="180" height="160" rx="10" class="s-box"/>
+              <text x="680" y="156" text-anchor="middle" class="s-label-sm">Grand stock</text>
+            </g>
+            <path d="M170 150 H590" class="s-line m-draw" data-show="2-4"/>
+            <text x="450" y="268" text-anchor="middle" class="s-label-xs" data-show="2">loin : lent</text>
+            <g data-show="3-4" class="m-pop">
+              <rect x="230" y="120" width="100" height="60" rx="10" class="s-box-accent pulse"/>
+              <text x="280" y="156" text-anchor="middle" class="s-label-sm">Cache</text>
+            </g>
+            <path d="M590 130 H335" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M590 130 H335')"/>
+            <text x="450" y="104" text-anchor="middle" class="s-label-xs" data-show="3">une copie</text>
+            <text x="250" y="226" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">tout près : rapide</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>D’un côté vous, de l’autre un grand stock.</b><span>Une base de données, un site web, un disque&nbsp;: un endroit qui contient tout.</span></p>
+          <p class="step" data-duration="4200"><b>Aller le chercher prend du temps.</b><span>Plus c’est loin ou lent à fouiller, plus on attend.</span></p>
+          <p class="step" data-duration="4400"><b>On garde une copie de l’essentiel tout près.</b><span>C’est une petite réserve, bien plus rapide d’accès, mais qui ne contient qu’une partie du stock.</span></p>
+          <p class="step" data-duration="4600"><b>Cette réserve s’appelle le cache.</b><span>Elle ne remplace pas le grand stock&nbsp;: elle en garde seulement une copie à portée de main.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le sel sur le plan de travail et le grand cellier au sous-sol. Le sel dont vous vous servez
+          tout le temps est à portée de main&nbsp;; ce dont vous avez rarement besoin reste au cellier.
+          Mais le plan de travail est petit&nbsp;: on n’y met pas tout.
+        </p>
+      </div>
+
+      <h2>Le bon réflexe, en deux cas</h2>
+      <p>
+        À chaque demande, on regarde d’abord dans le cache. Deux issues possibles.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : une demande regarde d’abord dans le cache ; si la copie y est, réponse immédiate, sinon on va au grand stock et on garde une copie">
+        <div class="scene-title">Scène 2 — Trouvé, ou pas trouvé</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une demande va au cache ; une première fois la copie est absente et on va au grand stock, la seconde fois elle est présente et la réponse revient tout de suite">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="110" width="130" height="80" rx="10" class="s-box-teal"/>
+              <text x="95" y="156" text-anchor="middle" class="s-label-sm">Demande</text>
+            </g>
+            <g data-show="1-5" class="m-pop">
+              <rect x="320" y="110" width="130" height="80" rx="10" class="s-box-accent"/>
+              <text x="385" y="156" text-anchor="middle" class="s-label-sm">Cache</text>
+            </g>
+            <g data-show="1-5" class="m-right">
+              <rect x="620" y="110" width="150" height="80" rx="10" class="s-box"/>
+              <text x="695" y="156" text-anchor="middle" class="s-label-sm">Grand stock</text>
+            </g>
+            <path d="M160 150 H320" class="s-line m-draw" data-show="2-5"/>
+            <text x="385" y="86" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2">vide : pas de copie</text>
+            <path d="M450 150 H620" class="s-line m-draw" data-show="3"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M450 150 H620')"/>
+            <text x="535" y="130" text-anchor="middle" class="s-label-xs" data-show="3">on va chercher</text>
+            <text x="385" y="86" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4-5">copie rangée</text>
+            <path d="M320 180 H160" class="s-line-accent m-draw" data-show="5"/>
+            <circle r="7" class="packet" data-show="5" style="offset-path:path('M320 180 H160')"/>
+            <text x="240" y="226" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="5">réponse immédiate</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Une demande arrive.</b><span>Un fichier, une page, un résultat de calcul&nbsp;: on regarde d’abord dans le cache.</span></p>
+          <p class="step" data-duration="4000"><b>La première fois, il est vide.</b><span>Pas de copie&nbsp;: c’est ce qu’on appelle un cache manqué.</span></p>
+          <p class="step" data-duration="4200"><b>On va donc au grand stock.</b><span>C’est lent, mais c’est la seule solution cette fois-là.</span></p>
+          <p class="step" data-duration="4400"><b>Et on en garde une copie dans le cache.</b><span>Au passage, la prochaine demande identique est préparée.</span></p>
+          <p class="step" data-duration="4600"><b>La fois suivante, la copie est là.</b><span>La réponse est immédiate, sans déranger le grand stock&nbsp;: un cache réussi.</span></p>
+        </div>
+      </section>
+
+      <h2>Le prix à payer</h2>
+      <p>
+        Une copie peut devenir <strong>périmée</strong>&nbsp;: l’original a changé, pas elle. D’où les
+        règles de renouvellement (la copie a une durée de vie) et le geste connu «&nbsp;vider le
+        cache&nbsp;», qui jette les copies pour repartir de l’original. Et comme le cache est petit,
+        quand il est plein, il faut décider quoi retirer, en général ce qui n’a pas servi depuis le
+        plus longtemps.
+      </p>
+      <p>
+        On en trouve partout&nbsp;: dans le navigateur, dans le processeur, devant une base de données,
+        chez les fournisseurs de sites qui placent des copies près de leurs visiteurs. Le principe est
+        toujours le même.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un <strong>cache</strong> est une petite réserve <strong>rapide</strong> qui garde une copie de ce qu’on redemande souvent.</li>
+        <li>On regarde d’abord dedans&nbsp;: <strong>trouvé</strong>, c’est immédiat&nbsp;; <strong>manqué</strong>, on va à la source et on garde une copie.</li>
+        <li>Une copie peut devenir <strong>périmée</strong>&nbsp;: on la renouvelle ou on la jette.</li>
+        <li>Le cache accélère, mais ne contient jamais <strong>tout</strong>&nbsp;: il est petit par construction.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir où se trouvent mémoire et disque dans une machine, retournez à la leçon sur l’ordinateur.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="ordinateur.html">← Ce qu’il y a dans un ordinateur</a>
+        <a class="btn btn-primary" href="load-balancer.html">Le répartiteur de charge →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
