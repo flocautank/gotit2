@@ -809,4 +809,28 @@ CARTES = [
   voir='machine-learning',
   pas='une hallucination, qui est une invention d’un modèle de langage ; le surapprentissage est un défaut de l’entraînement.'),
 
+ dict(id='regle-3-2-1', terme='Règle 3-2-1 (sauvegarde)', aka=['3-2-1', 'règle 3-2-1', 'trois copies', 'sauvegarde', 'backup'], dom='Réseau',
+  une='Trois copies de vos données, sur deux supports différents, dont une hors de chez vous.',
+  etapes=['Un disque finit toujours par tomber en panne, et un incendie, un vol ou un virus peuvent emporter tout ce qui se trouve au même endroit.', 'La règle 3-2-1 répond à chaque risque : trois copies au total (l’original et deux sauvegardes), sur deux supports différents, dont une copie conservée ailleurs.', 'Deux supports évitent qu’une même panne détruise tout ; une copie hors site (autre bâtiment ou cloud) résiste au sinistre local.', 'Une copie qui se synchronise avec l’original n’est pas une sauvegarde : une suppression par erreur s’y répète aussi. Et une sauvegarde jamais testée est un pari.'],
+  voir='sauvegarde',
+  pas='la synchronisation, qui reflète vos changements partout, y compris vos erreurs ; une sauvegarde garde un état passé.'),
+
+ dict(id='entrepot-donnees', terme='Entrepôt de données (data warehouse)', aka=['entrepôt de données', 'data warehouse', 'datawarehouse', 'entrepôt'], dom='Data',
+  une='Une grande base qui rassemble les données de toute l’entreprise, rangées pour être analysées.',
+  etapes=['Chaque outil d’une entreprise garde ses propres données : ventes d’un côté, comptabilité d’un autre. Les croiser est pénible.', 'Un entrepôt de données les récupère régulièrement depuis ces sources, les nettoie et les range dans un même format.', 'Ainsi rangées, elles peuvent être interrogées ensemble, rapidement, sans ralentir les outils du quotidien.', 'Les tableaux de bord et les analyses s’appuient dessus. Sa qualité dépend de celle du rangement : des données mal alignées donnent des chiffres qui se contredisent.'],
+  voir='entrepots-data',
+  pas='un lac de données, qui garde les données brutes telles quelles ; l’entrepôt ne garde que du rangé.'),
+
+ dict(id='tma', terme='TMA (maintenance applicative)', aka=['tma', 'maintenance applicative', 'tierce maintenance applicative', 'maintenance corrective', 'maintenance évolutive', 'run'], dom='SI',
+  une='Le travail de faire vivre un logiciel après sa mise en service : corriger, adapter, améliorer.',
+  etapes=['Un logiciel livré n’est pas terminé : des erreurs apparaissent à l’usage, les règles de gestion et le monde autour évoluent.', 'La maintenance corrective répare ce qui ne marche pas ; la maintenance évolutive ajoute ou adapte des fonctions à de nouveaux besoins.', 'La TMA est ce même travail confié à une équipe extérieure, sur la durée, avec des engagements de délai, souvent à travers des tickets.', 'Elle représente en général une part importante du coût d’un logiciel sur sa durée de vie : il faut le prévoir dès le départ, pas seulement le budget de construction.'],
+  voir='support',
+  pas='le support aux utilisateurs, qui répond aux questions du quotidien ; la maintenance modifie le logiciel lui-même.'),
+
+ dict(id='deepfake', terme='Deepfake (hypertrucage)', aka=['deepfake', 'hypertrucage', 'faux vidéo', 'voix clonée', 'clonage de voix'], dom='IA',
+  une='Une image, une vidéo ou une voix fabriquée par IA qui imite une personne réelle.',
+  etapes=['Montrer quelqu’un dire ou faire ce qu’il n’a jamais dit ni fait demandait autrefois de gros moyens de retouche.', 'Un modèle entraîné sur des photos, vidéos ou enregistrements d’une personne apprend à reproduire son visage ou sa voix, puis à la faire dire autre chose.', 'Les outils sont aujourd’hui accessibles : un faux peut être convaincant, et servir à l’arnaque, à la désinformation ou au harcèlement.', 'Quelques réflexes : vérifier la source, chercher la même information ailleurs, se méfier d’une demande urgente reçue par voix ou vidéo, et convenir avec ses proches d’un mot de contrôle.'],
+  voir='hallucination',
+  pas='une hallucination, qui est une erreur involontaire d’un modèle de langage ; un deepfake est un faux fabriqué pour imiter quelqu’un.'),
+
 ]
