@@ -833,4 +833,28 @@ CARTES = [
   voir='hallucination',
   pas='une hallucination, qui est une erreur involontaire d’un modèle de langage ; un deepfake est un faux fabriqué pour imiter quelqu’un.'),
 
+ dict(id='hyperviseur', terme='Machine virtuelle (hyperviseur)', aka=['machine virtuelle', 'vm', 'hyperviseur', 'virtualisation'], dom='Informatique',
+  une='Un ordinateur simulé par logiciel, qui tourne à l’intérieur d’un vrai.',
+  etapes=['Un ordinateur ne fait tourner qu’un système à la fois, et il est souvent loin d’être utilisé à fond.', 'Un logiciel appelé hyperviseur découpe la machine réelle en plusieurs machines virtuelles, chacune avec sa part de mémoire, de processeur et de disque.', 'Chaque machine virtuelle a son propre système et se croit seule au monde : un incident dans l’une n’atteint pas les autres.', 'On utilise mieux le matériel, on crée une machine en quelques minutes et on peut la déplacer ou la copier facilement. C’est la base du cloud.'],
+  voir='virtualisation',
+  pas='un conteneur, plus léger, qui partage le système de la machine au lieu d’en embarquer un complet.'),
+
+ dict(id='dedoublonnage', terme='Dédoublonnage', aka=['dédoublonnage', 'doublon', 'doublons', 'déduplication', 'fusion de fiches'], dom='Data',
+  une='Reconnaître que deux fiches décrivent la même personne ou la même chose, et n’en garder qu’une.',
+  etapes=['Un même client peut exister plusieurs fois : une faute de frappe, un prénom abrégé, une nouvelle adresse saisie par un autre service.', 'Les doublons faussent les chiffres : on compte deux clients au lieu d’un, on envoie deux courriers, on perd l’historique.', 'Le dédoublonnage compare les fiches sur plusieurs champs à la fois (nom, e-mail, adresse) pour repérer celles qui se ressemblent assez.', 'Les fiches reconnues sont fusionnées en une seule, la plus complète. En cas de doute, une personne tranche : une fusion à tort est difficile à défaire.'],
+  voir='dedoublonnage',
+  pas='la sauvegarde, qui garde volontairement des copies ; le doublon est une copie involontaire dans les données de travail.'),
+
+ dict(id='webhook', terme='Webhook', aka=['webhook', 'crochet web', 'notification automatique', 'rappel http'], dom='SI',
+  une='Un message qu’un outil envoie tout seul à un autre dès qu’il se passe quelque chose.',
+  etapes=['Pour savoir si une commande est arrivée, un outil peut demander à l’autre toutes les minutes : « Y a-t-il du nouveau ? ». C’est lent et la plupart des réponses sont « non ».', 'Avec un webhook, on inverse : on donne d’avance à l’outil source l’adresse où prévenir.', 'Dès que l’événement se produit (paiement reçu, formulaire rempli), la source envoie un message à cette adresse, avec les détails.', 'L’autre outil réagit aussitôt, sans rien demander. Il faut seulement que son adresse reste joignable et qu’il vérifie l’origine du message.'],
+  voir='api',
+  pas='une API classique, où c’est vous qui posez la question ; avec un webhook, c’est l’outil qui vous appelle.'),
+
+ dict(id='chatbot', terme='Chatbot (agent conversationnel)', aka=['chatbot', 'agent conversationnel', 'robot de discussion', 'assistant virtuel'], dom='IA',
+  une='Un programme avec lequel on discute par écrit, pour obtenir une réponse ou une action.',
+  etapes=['Un chatbot est une fenêtre de discussion : vous écrivez, il répond, comme avec une personne.', 'Les premiers suivaient des règles écrites à la main : ils reconnaissaient quelques mots et renvoyaient une réponse prévue. Hors scénario, ils étaient perdus.', 'Les chatbots actuels s’appuient souvent sur un modèle de langage : ils comprennent des formulations libres et rédigent leurs réponses.', 'Leur qualité dépend de ce qu’on leur permet : consignes, documents à consulter, outils branchés. Sans cela, ils peuvent inventer.'],
+  voir='llm',
+  pas='un LLM, qui est le moteur de langage ; le chatbot est l’application autour, avec son interface et ses consignes.'),
+
 ]
