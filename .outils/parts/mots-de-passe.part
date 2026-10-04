@@ -1,0 +1,178 @@
+TITRE: Mots de passe : pourquoi un site sérieux ne connaît pas le vôtre
+DESC: Hachage, empreinte et sel : comment un site vérifie votre mot de passe sans jamais le conserver. Expliqué en schémas animés.
+FIL: <a href="../index.html#/reseau">Réseau</a><span>/</span>Se protéger<span>/</span>Les gestes du quotidien
+LEAD: Un site sérieux est capable de vérifier votre mot de passe sans le garder. Cela paraît impossible, et c’est pourtant le principe de base de toute connexion.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">3 animations</span>
+
+      <p>
+        Vous avez un compte sur un site. Lorsque vous vous connectez, le site doit savoir si vous avez tapé
+        le bon mot de passe. Le plus simple serait de garder la liste de tous les mots de passe et de comparer.
+        Mais si quelqu’un vole cette liste, il possède tous les comptes d’un coup. La bonne méthode est de ne
+        <strong>jamais garder le mot de passe lui-même</strong>, mais seulement une trace qui permet de le vérifier.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un mot de passe passe dans un mixeur à sens unique et ressort sous forme d’une suite de signes impossible à défaire">
+        <div class="scene-title">Scène 1 — Le mixeur à sens unique</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un mot de passe entre dans un mixeur et ressort en une suite de signes ; la flèche retour est barrée">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="100" width="150" height="80" rx="10" class="s-box-teal"/>
+              <text x="105" y="136" text-anchor="middle" class="s-label-sm">Mot de passe</text>
+              <text x="105" y="162" text-anchor="middle" class="s-label-xs">soleil42</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="320" y="100" width="150" height="80" rx="10" class="s-box-accent"/>
+              <text x="395" y="147" text-anchor="middle" class="s-label-sm">Mixeur</text>
+            </g>
+            <path d="M180 140 H320" class="s-line-accent m-draw" data-show="2-4"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M180 140 H320')"/>
+            <path d="M470 140 H600" class="s-line m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M470 140 H600')"/>
+            <g data-show="3-4" class="m-right">
+              <rect x="600" y="100" width="170" height="80" rx="10" class="s-box"/>
+              <text x="685" y="136" text-anchor="middle" class="s-label-sm">Empreinte</text>
+              <text x="685" y="162" text-anchor="middle" class="s-label-xs">a9f3c71e…</text>
+            </g>
+            <path d="M600 230 H180" class="s-line m-draw" data-show="4" stroke-dasharray="6 6"/>
+            <text x="390" y="262" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="4">retour impossible</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Vous choisissez un mot de passe.</b><span>Quelques caractères que vous êtes seul à connaître.</span></p>
+          <p class="step" data-duration="4000"><b>Le site le passe dans un mixeur.</b><span>Un calcul mathématique brouille complètement le mot de passe. On l’appelle une fonction de hachage.</span></p>
+          <p class="step" data-duration="4200"><b>Il en sort une suite de signes.</b><span>C’est l’empreinte du mot de passe : toujours la même pour le même mot de passe, mais qui ne ressemble à rien.</span></p>
+          <p class="step" data-duration="4600"><b>Le chemin ne se parcourt que dans un sens.</b><span>À partir de l’empreinte, on ne peut pas remonter au mot de passe : le calcul est conçu pour cela.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un smoothie. Avec des fruits, on fabrique un smoothie en une minute&nbsp;; avec un smoothie, on ne
+          retrouve pas les fruits. Et la même recette donne toujours le même smoothie&nbsp;: c’est ce qui permet
+          de reconnaître que quelqu’un a bien utilisé les bons fruits.
+        </p>
+      </div>
+
+      <h2>Se connecter sans que le site connaisse votre mot de passe</h2>
+      <p>
+        Le site range donc seulement l’empreinte. Reste à comprendre comment il vous reconnaît quand vous revenez.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : à la connexion, le site calcule l’empreinte de ce que vous tapez et la compare à celle qu’il a rangée">
+        <div class="scene-title">Scène 2 — On compare les empreintes</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Le site garde une empreinte ; à la connexion, ce que vous tapez passe dans le mixeur et l’empreinte obtenue est comparée à celle rangée">
+            <g data-show="1-4" class="m-right">
+              <rect x="590" y="200" width="180" height="70" rx="10" class="s-box"/>
+              <text x="680" y="230" text-anchor="middle" class="s-label-sm">Rangée</text>
+              <text x="680" y="254" text-anchor="middle" class="s-label-xs">a9f3c71e…</text>
+            </g>
+            <g data-show="2-4" class="m-left">
+              <rect x="30" y="50" width="150" height="70" rx="10" class="s-box-teal"/>
+              <text x="105" y="92" text-anchor="middle" class="s-label-sm">Votre saisie</text>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <rect x="320" y="50" width="150" height="70" rx="10" class="s-box-accent"/>
+              <text x="395" y="92" text-anchor="middle" class="s-label-sm">Mixeur</text>
+            </g>
+            <path d="M180 85 H320" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M180 85 H320')"/>
+            <path d="M470 85 H590" class="s-line m-draw" data-show="3-4"/>
+            <g data-show="3-4" class="m-right">
+              <rect x="590" y="50" width="180" height="70" rx="10" class="s-box"/>
+              <text x="680" y="80" text-anchor="middle" class="s-label-sm">Calculée</text>
+              <text x="680" y="104" text-anchor="middle" class="s-label-xs">a9f3c71e…</text>
+            </g>
+            <path d="M680 120 V200" class="s-line-accent m-draw" data-show="4"/>
+            <text x="640" y="166" text-anchor="end" class="s-label-sm" fill="var(--sage)" data-show="4">identiques</text>
+            <text x="300" y="250" text-anchor="middle" class="s-label-sm" fill="var(--sage)" data-show="4">Vous entrez</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Le site n’a gardé que l’empreinte.</b><span>Votre mot de passe, lui, n’est écrit nulle part.</span></p>
+          <p class="step" data-duration="3800"><b>Vous revenez et tapez votre mot de passe.</b><span>Comme à chaque connexion.</span></p>
+          <p class="step" data-duration="4200"><b>Le site calcule l’empreinte de ce que vous tapez.</b><span>Il utilise le même mixeur : le même mot de passe donne la même empreinte.</span></p>
+          <p class="step" data-duration="4400"><b>Il compare les deux empreintes.</b><span>Identiques&nbsp;: c’est le bon mot de passe, vous entrez. Différentes&nbsp;: la porte reste fermée.</span></p>
+        </div>
+      </section>
+
+      <h2>Le sel : éviter que deux mots de passe identiques se ressemblent</h2>
+      <p>
+        Un défaut subsiste. Deux personnes qui ont choisi le même mot de passe auraient la même empreinte, et un
+        voleur pourrait préparer à l’avance des listes d’empreintes de mots de passe courants. La parade s’appelle
+        le <strong>sel</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 3 ============ -->
+      <section class="scene" aria-label="Animation : en ajoutant un sel différent à chaque personne, deux mots de passe identiques donnent des empreintes différentes">
+        <div class="scene-title">Scène 3 — Une pincée au hasard</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Deux personnes ont le même mot de passe ; sans sel, leurs empreintes sont identiques, avec un sel propre à chacun elles diffèrent">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="30" width="150" height="70" rx="10" class="s-box-teal"/>
+              <text x="105" y="72" text-anchor="middle" class="s-label-sm">Alice</text>
+              <rect x="30" y="180" width="150" height="70" rx="10" class="s-box-teal"/>
+              <text x="105" y="222" text-anchor="middle" class="s-label-sm">Bruno</text>
+            </g>
+            <text x="105" y="145" text-anchor="middle" class="s-label-xs" data-show="1">même mot de passe</text>
+            <path d="M180 65 H590" class="s-line m-draw" data-show="2-4"/>
+            <path d="M180 215 H590" class="s-line m-draw" data-show="2-4"/>
+            <g data-show="3-4" class="m-pop">
+              <rect x="300" y="42" width="90" height="46" rx="10" class="s-box-accent"/>
+              <text x="345" y="71" text-anchor="middle" class="s-label-xs">+ sel 1</text>
+              <rect x="300" y="192" width="90" height="46" rx="10" class="s-box-accent"/>
+              <text x="345" y="221" text-anchor="middle" class="s-label-xs">+ sel 2</text>
+            </g>
+            <g data-show="2-3" class="m-right">
+              <rect x="600" y="30" width="170" height="70" rx="10" class="s-box"/>
+              <text x="685" y="72" text-anchor="middle" class="s-label-sm">a9f3c71e…</text>
+              <rect x="600" y="180" width="170" height="70" rx="10" class="s-box"/>
+              <text x="685" y="222" text-anchor="middle" class="s-label-sm">a9f3c71e…</text>
+            </g>
+            <text x="685" y="145" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2">identiques</text>
+            <g data-show="4" class="m-right">
+              <rect x="600" y="30" width="170" height="70" rx="10" class="s-box"/>
+              <text x="685" y="72" text-anchor="middle" class="s-label-sm">7c1e08b4…</text>
+              <rect x="600" y="180" width="170" height="70" rx="10" class="s-box"/>
+              <text x="685" y="222" text-anchor="middle" class="s-label-sm">d04b9f26…</text>
+            </g>
+            <text x="685" y="145" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">différentes</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Deux personnes ont le même mot de passe.</b><span>C’est très fréquent&nbsp;: beaucoup de gens choisissent les mêmes mots.</span></p>
+          <p class="step" data-duration="4200"><b>Sans précaution, leurs empreintes sont identiques.</b><span>Un voleur qui a la liste voit qui partage un mot de passe, et peut comparer avec des listes toutes prêtes.</span></p>
+          <p class="step" data-duration="4200"><b>On ajoute un sel, propre à chacun.</b><span>Une valeur tirée au hasard, mélangée au mot de passe avant le calcul.</span></p>
+          <p class="step" data-duration="4400"><b>Les empreintes deviennent différentes.</b><span>Le sel est rangé à côté de l’empreinte : le site peut vérifier, le voleur ne peut plus rien réutiliser.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que cela change pour vous</h2>
+      <p>
+        Un site qui vous <strong>renvoie votre mot de passe par e-mail</strong> quand vous l’oubliez le conserve tel quel&nbsp;:
+        c’est mauvais signe. Un site sérieux vous propose d’en choisir un nouveau, puisqu’il ne peut pas retrouver l’ancien.
+        Et même bien protégé, un mot de passe court et courant reste fragile : on peut tester les plus fréquents un par un.
+        Un mot de passe long, et <strong>différent sur chaque site</strong> (un gestionnaire de mots de passe
+        s’en souvient pour vous), limite les dégâts si un site se fait voler sa base.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un site sérieux ne garde pas votre mot de passe, mais son <strong>empreinte</strong>, issue d’un calcul à sens unique.</li>
+        <li>À la connexion, il <strong>recalcule et compare</strong> : le bon mot de passe donne la même empreinte.</li>
+        <li>Le <strong>sel</strong> rend les empreintes différentes même pour des mots de passe identiques.</li>
+        <li>Pour vous : un mot de passe <strong>long et unique par site</strong>, et méfiance envers un site qui sait vous le renvoyer.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir comment le contenu d’un message est lui aussi protégé, passez à la leçon sur le chiffrement.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="cybersecurite.html">← Les bases de la cybersécurité</a>
+        <a class="btn btn-primary" href="chiffrement.html">Le chiffrement →</a>
+      </nav>
