@@ -782,7 +782,7 @@ CARTES = [
  dict(id='https', terme='HTTPS (le cadenas)', aka=['https', 'cadenas', 'certificat', 'tls', 'ssl', 'site sécurisé'], dom='Réseau',
   une='La version protégée du web : ce qui voyage entre vous et le site est chiffré, et le site prouve qui il est.',
   etapes=['Sur un réseau, votre demande traverse plusieurs machines. Sans protection, chacune pourrait la lire ou la modifier.', 'Avec HTTPS, le navigateur et le site se mettent d’abord d’accord sur un secret commun, puis chiffrent tout ce qu’ils échangent.', 'Le site présente aussi un certificat, une carte d’identité délivrée par un organisme tiers, que le navigateur vérifie. Le cadenas indique que tout est en ordre.', 'Le cadenas garantit un échange privé avec le site affiché, pas que ce site soit honnête : un site frauduleux peut aussi en avoir un.'],
-  voir='chiffrement',
+  voir='https-cadenas',
   pas='le VPN, qui protège toute votre connexion ; HTTPS protège l’échange avec un site précis.'),
 
  dict(id='data-roles', terme='Data analyst, data engineer, data scientist', aka=['data analyst', 'data engineer', 'data scientist', 'analyste de données', 'ingénieur data', 'métiers de la data'], dom='Data',
@@ -856,5 +856,29 @@ CARTES = [
   etapes=['Un chatbot est une fenêtre de discussion : vous écrivez, il répond, comme avec une personne.', 'Les premiers suivaient des règles écrites à la main : ils reconnaissaient quelques mots et renvoyaient une réponse prévue. Hors scénario, ils étaient perdus.', 'Les chatbots actuels s’appuient souvent sur un modèle de langage : ils comprennent des formulations libres et rédigent leurs réponses.', 'Leur qualité dépend de ce qu’on leur permet : consignes, documents à consulter, outils branchés. Sans cela, ils peuvent inventer.'],
   voir='llm',
   pas='un LLM, qui est le moteur de langage ; le chatbot est l’application autour, avec son interface et ses consignes.'),
+
+ dict(id='cle-primaire', terme='Clé primaire et clé étrangère', aka=['clé primaire', 'clé étrangère', 'identifiant unique', 'primary key', 'foreign key', 'clé'], dom='Data',
+  une='Un identifiant unique par ligne d’un tableau, et le moyen de s’y référer depuis un autre tableau.',
+  etapes=['Dans une base, deux clients peuvent avoir le même nom et le même prénom. Comment les distinguer à coup sûr ?', 'On donne à chaque ligne un identifiant qui ne se répète jamais : le numéro client. C’est la clé primaire.', 'Dans le tableau des commandes, on n’écrit pas toute la fiche du client : on note seulement son numéro. Ce numéro, qui renvoie à une ligne d’un autre tableau, est une clé étrangère.', 'Cela évite de recopier les mêmes informations partout et permet de relier les tableaux entre eux, par exemple avec une jointure.'],
+  voir='base-de-donnees',
+  pas='un index, qui sert à retrouver plus vite des lignes ; la clé primaire sert à les identifier sans ambiguïté.'),
+
+ dict(id='ligne-de-commande', terme='Ligne de commande (terminal)', aka=['ligne de commande', 'terminal', 'console', 'shell', 'cli', 'invite de commandes'], dom='Informatique',
+  une='Une fenêtre où l’on pilote l’ordinateur en tapant des instructions, plutôt qu’en cliquant.',
+  etapes=['Avec la souris, on ne peut faire que ce que l’écran propose sous forme de boutons et de menus.', 'La ligne de commande est une fenêtre de texte : on y tape une instruction, on valide, l’ordinateur l’exécute et répond par du texte.', 'C’est plus austère, mais précis : une instruction peut agir sur des milliers de fichiers d’un coup, et on peut en enchaîner plusieurs dans un fichier de script.', 'Les informaticiens s’en servent pour automatiser et administrer les serveurs. Une commande tapée sans la comprendre peut tout effacer : on ne copie pas à l’aveugle.'],
+  voir='logiciel',
+  pas='une interface graphique, avec fenêtres et boutons ; la ligne de commande donne les mêmes ordres par écrit.'),
+
+ dict(id='middleware', terme='Middleware (intergiciel)', aka=['middleware', 'intergiciel', 'bus de service', 'esb', 'couche d’intégration'], dom='SI',
+  une='Le logiciel intermédiaire qui fait circuler les informations entre les applications d’une entreprise.',
+  etapes=['Dans une entreprise, chaque outil a son format et sa façon de parler. Les relier deux à deux donne vite un enchevêtrement.', 'Un middleware se place au milieu : chaque application ne parle plus qu’à lui, dans un format convenu.', 'Il reçoit, traduit si besoin, puis redistribue aux applications concernées, et garde une trace de ce qui est passé.', 'On ajoute un outil en le branchant une fois au lieu de le relier à tous les autres. En contrepartie, cette brique devient critique : si elle s’arrête, les échanges s’arrêtent.'],
+  voir='si-briques',
+  pas='une API, qui est la porte d’un outil ; le middleware est l’aiguilleur qui relie plusieurs portes.'),
+
+ dict(id='apprentissage-supervise', terme='Apprentissage supervisé', aka=['apprentissage supervisé', 'supervised learning', 'classification', 'données étiquetées', 'étiquettes'], dom='IA',
+  une='Apprendre à une machine à partir d’exemples dont la bonne réponse est déjà connue.',
+  etapes=['Pour apprendre à reconnaître un courriel indésirable, on ne peut pas décrire toutes les règles à la main.', 'On rassemble des milliers d’exemples, chacun accompagné de sa réponse : « indésirable » ou « normal ». Ces réponses s’appellent des étiquettes.', 'Le modèle ajuste ses réglages jusqu’à retrouver les bonnes réponses sur ces exemples, puis on le teste sur des exemples qu’il n’a jamais vus.', 'Il apprend ce que contiennent les exemples : étiquetés par erreur ou peu variés, il se trompera. Étiqueter coûte souvent plus cher que calculer.'],
+  voir='machine-learning',
+  pas='l’apprentissage non supervisé, où l’on ne fournit aucune réponse et où le modèle cherche seul des regroupements.'),
 
 ]

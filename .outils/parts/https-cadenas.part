@@ -1,0 +1,136 @@
+TITRE: Le cadenas du navigateur, ce que HTTPS protège vraiment
+DESC: Que veut dire le cadenas à côté de l’adresse d’un site ? Le message brouillé en route, le certificat qui prouve qui est le site, et ce que le cadenas ne garantit pas. Expliqué en schémas animés.
+FIL: <a href="../index.html#/reseau">Réseau</a><span>/</span>Se protéger<span>/</span>Ce qui protège les données
+LEAD: Un petit cadenas à côté de l’adresse, que tout le monde voit et que presque personne ne sait lire. Il dit deux choses précises, et en laisse une troisième de côté.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Une carte postale peut être lue par tous ceux par qui elle passe&nbsp;: facteur, trieur, voisin
+        curieux. Une lettre sous enveloppe scellée, non. Sur Internet, vos messages voyagent comme
+        l’un ou l’autre selon que le site est protégé ou non. Cette protection s’appelle
+        <strong>HTTPS</strong>, et son signe visible est le <strong>cadenas</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un message traverse des machines relais ; sans protection un curieux peut le lire, avec protection il est brouillé et seul le site peut le remettre en clair">
+        <div class="scene-title">Scène 1 — Lisible, ou brouillé</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Vous à gauche, le site à droite, deux relais entre eux, et un curieux qui observe le passage du message">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="140" width="140" height="80" rx="10" class="s-box-teal"/>
+              <text x="100" y="186" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="630" y="140" width="140" height="80" rx="10" class="s-box"/>
+              <text x="700" y="186" text-anchor="middle" class="s-label-sm">Le site</text>
+            </g>
+            <g data-show="1-4" class="m-pop">
+              <rect x="290" y="160" width="80" height="40" rx="8" class="s-box-violet"/>
+              <text x="330" y="186" text-anchor="middle" class="s-label-xs">Relais</text>
+              <rect x="450" y="160" width="80" height="40" rx="8" class="s-box-violet"/>
+              <text x="490" y="186" text-anchor="middle" class="s-label-xs">Relais</text>
+            </g>
+            <path d="M170 180 H630" class="s-line m-draw" data-show="1-4"/>
+            <circle r="7" class="packet" data-show="1" style="offset-path:path('M170 180 H630')"/>
+            <g data-show="2-3" class="m-fall">
+              <rect x="350" y="20" width="100" height="50" rx="10" class="s-box"/>
+              <text x="400" y="51" text-anchor="middle" class="s-label-sm">Curieux</text>
+              <path d="M400 70 V160" class="s-line"/>
+            </g>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M170 180 H630')"/>
+            <text x="400" y="250" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2">lisible par tous</text>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M170 180 H630')"/>
+            <text x="400" y="250" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="3">brouillé : illisible</text>
+            <text x="400" y="250" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">remis en clair par le site seul</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Votre demande traverse plusieurs machines.</b><span>Entre votre écran et le site, elle passe par des relais qui ne vous appartiennent pas.</span></p>
+          <p class="step" data-duration="4400"><b>Sans protection, elle est lisible en chemin.</b><span>N’importe quelle machine, ou n’importe qui qui l’écoute, peut lire ce qui passe&nbsp;: un mot de passe, un numéro de carte.</span></p>
+          <p class="step" data-duration="4400"><b>On la brouille avant de l’envoyer.</b><span>Le message part sous une forme illisible. Les relais le transmettent sans pouvoir le comprendre.</span></p>
+          <p class="step" data-duration="4600"><b>Seul le site sait la remettre en clair.</b><span>Cette protection de l’échange s’appelle le chiffrement. Le web chiffré, c’est HTTPS.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          La carte postale et la lettre sous enveloppe. Dans les deux cas le courrier passe par les
+          mêmes mains&nbsp;; seule la lettre scellée empêche ceux qui la portent de la lire.
+        </p>
+      </div>
+
+      <h2>Mais qui est au bout&nbsp;?</h2>
+      <p>
+        Brouiller ne suffit pas. Si vous chiffrez très bien un message… pour un faux site qui se fait
+        passer pour votre banque, vous venez de lui livrer vos secrets en toute sécurité. Il faut
+        aussi être sûr de <strong>qui</strong> est en face.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : le site présente une carte d’identité signée par un organisme tiers que le navigateur connaît ; si la vérification réussit, le cadenas s’affiche">
+        <div class="scene-title">Scène 2 — La carte d’identité du site</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Le navigateur à gauche, le site à droite ; le site présente un certificat signé par un organisme tiers, et le navigateur affiche un cadenas">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="110" width="150" height="80" rx="10" class="s-box-teal"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-sm">Navigateur</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="620" y="110" width="150" height="80" rx="10" class="s-box"/>
+              <text x="695" y="156" text-anchor="middle" class="s-label-sm">Le site</text>
+            </g>
+            <text x="400" y="156" text-anchor="middle" class="s-label-sm" fill="var(--danger)" data-show="1">Qui es-tu&nbsp;?</text>
+            <g data-show="2-4" class="m-pop">
+              <rect x="320" y="60" width="160" height="70" rx="10" class="s-box-accent pulse"/>
+              <text x="400" y="101" text-anchor="middle" class="s-label-sm">Certificat</text>
+            </g>
+            <path d="M620 130 H485" class="s-line-accent m-draw" data-show="2"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M620 130 H485')"/>
+            <g data-show="3-4" class="m-rise">
+              <rect x="320" y="210" width="160" height="60" rx="10" class="s-box-violet"/>
+              <text x="400" y="246" text-anchor="middle" class="s-label-sm">Organisme tiers</text>
+              <path d="M400 210 V135" class="s-line"/>
+            </g>
+            <text x="400" y="296" text-anchor="middle" class="s-label-xs" data-show="3">signature connue</text>
+            <path d="M320 100 H185" class="s-line-accent m-draw" data-show="4"/>
+            <g data-show="4" class="m-pop">
+              <rect x="70" y="40" width="70" height="50" rx="10" class="s-box-teal"/>
+              <text x="105" y="71" text-anchor="middle" class="s-label-sm" fill="var(--sage)">Cadenas</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Le navigateur demande&nbsp;: « Qui es-tu&nbsp;? »</b><span>Avant d’échanger quoi que ce soit, il veut une preuve que le site est bien celui de l’adresse.</span></p>
+          <p class="step" data-duration="4400"><b>Le site présente une carte d’identité.</b><span>Ce document numérique s’appelle un certificat&nbsp;: il porte le nom du site.</span></p>
+          <p class="step" data-duration="4600"><b>Elle est signée par un organisme tiers.</b><span>Un organisme de confiance, que votre navigateur connaît déjà, a vérifié le site avant de signer.</span></p>
+          <p class="step" data-duration="4600"><b>Tout concorde&nbsp;: le cadenas s’affiche.</b><span>Si la signature ne tient pas, le navigateur affiche à la place un avertissement en pleine page.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que le cadenas ne dit pas</h2>
+      <p>
+        Le cadenas garantit deux choses&nbsp;: <strong>personne ne lit l’échange</strong> en route, et
+        <strong>vous parlez bien au site dont le nom est affiché</strong>. Il ne garantit pas que ce
+        site soit honnête. Un site frauduleux, avec un nom proche de celui d’une vraie banque, peut
+        lui aussi obtenir un certificat. Le cadenas ne remplace donc pas un coup d’œil attentif à
+        l’adresse.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li><strong>HTTPS</strong> = le web dont l’échange est <strong>chiffré</strong>&nbsp;: les relais ne peuvent pas lire.</li>
+        <li>Le <strong>certificat</strong> est la carte d’identité du site, signée par un organisme tiers de confiance.</li>
+        <li>Le <strong>cadenas</strong> dit «&nbsp;échange privé avec ce site-là&nbsp;».</li>
+        <li>Il ne dit <strong>pas</strong> que le site est honnête&nbsp;: vérifiez toujours l’adresse.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour comprendre comment on brouille un message, voyez la leçon sur le chiffrement.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="chiffrement.html">← Le chiffrement expliqué simplement</a>
+        <a class="btn btn-primary" href="vpn.html">Le VPN →</a>
+      </nav>
