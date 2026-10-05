@@ -414,6 +414,13 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['mot de passe', 'hachage', 'empreinte', 'sel', 'connexion', 'identifiant', 'sécurité', 'gestionnaire de mots de passe']
     },
+    'https-cadenas': {
+      title: 'Le cadenas du navigateur, ce que HTTPS protège vraiment',
+      summary: 'Un échange brouillé en route, un certificat qui prouve qui est le site — et ce que le cadenas ne garantit pas.',
+      path: 'lecons/https-cadenas.html',
+      duration: '5 min', level: 1,
+      keywords: ['https', 'cadenas', 'certificat', 'tls', 'ssl', 'site sécurisé', 'chiffrement', 'navigateur', 'faux site']
+    },
     /* ---------- Leçons prévues (affichées en grisé) ---------- */
 
   };
@@ -459,7 +466,7 @@ window.GOTIT = (function () {
           id: 'securite', title: 'Se protéger',
           subcategories: [
             { id: 'gestes', title: 'Les gestes du quotidien', lessons: ['cybersecurite', 'mots-de-passe'] },
-            { id: 'protection', title: 'Ce qui protège les données', lessons: ['pare-feu', 'chiffrement', 'sauvegarde', 'vpn'] },
+            { id: 'protection', title: 'Ce qui protège les données', lessons: ['pare-feu', 'chiffrement', 'https-cadenas', 'sauvegarde', 'vpn'] },
             { id: 'anonymat', title: 'Rester anonyme', lessons: ['tor'] }
           ]
         }
@@ -1614,7 +1621,7 @@ window.GOTIT = (function () {
         "Le site présente aussi un certificat, une carte d’identité délivrée par un organisme tiers, que le navigateur vérifie. Le cadenas indique que tout est en ordre.",
         "Le cadenas garantit un échange privé avec le site affiché, pas que ce site soit honnête : un site frauduleux peut aussi en avoir un."
       ],
-      voir: "chiffrement",
+      voir: "https-cadenas",
       pas: "le VPN, qui protège toute votre connexion ; HTTPS protège l’échange avec un site précis."
     },
     {
@@ -1772,6 +1779,58 @@ window.GOTIT = (function () {
       ],
       voir: "llm",
       pas: "un LLM, qui est le moteur de langage ; le chatbot est l’application autour, avec son interface et ses consignes."
+    },
+    {
+      id: "cle-primaire", terme: "Clé primaire et clé étrangère", domaine: "Data",
+      aka: ["clé primaire", "clé étrangère", "identifiant unique", "primary key", "foreign key", "clé"],
+      une: "Un identifiant unique par ligne d’un tableau, et le moyen de s’y référer depuis un autre tableau.",
+      etapes: [
+        "Dans une base, deux clients peuvent avoir le même nom et le même prénom. Comment les distinguer à coup sûr ?",
+        "On donne à chaque ligne un identifiant qui ne se répète jamais : le numéro client. C’est la clé primaire.",
+        "Dans le tableau des commandes, on n’écrit pas toute la fiche du client : on note seulement son numéro. Ce numéro, qui renvoie à une ligne d’un autre tableau, est une clé étrangère.",
+        "Cela évite de recopier les mêmes informations partout et permet de relier les tableaux entre eux, par exemple avec une jointure."
+      ],
+      voir: "base-de-donnees",
+      pas: "un index, qui sert à retrouver plus vite des lignes ; la clé primaire sert à les identifier sans ambiguïté."
+    },
+    {
+      id: "ligne-de-commande", terme: "Ligne de commande (terminal)", domaine: "Informatique",
+      aka: ["ligne de commande", "terminal", "console", "shell", "cli", "invite de commandes"],
+      une: "Une fenêtre où l’on pilote l’ordinateur en tapant des instructions, plutôt qu’en cliquant.",
+      etapes: [
+        "Avec la souris, on ne peut faire que ce que l’écran propose sous forme de boutons et de menus.",
+        "La ligne de commande est une fenêtre de texte : on y tape une instruction, on valide, l’ordinateur l’exécute et répond par du texte.",
+        "C’est plus austère, mais précis : une instruction peut agir sur des milliers de fichiers d’un coup, et on peut en enchaîner plusieurs dans un fichier de script.",
+        "Les informaticiens s’en servent pour automatiser et administrer les serveurs. Une commande tapée sans la comprendre peut tout effacer : on ne copie pas à l’aveugle."
+      ],
+      voir: "logiciel",
+      pas: "une interface graphique, avec fenêtres et boutons ; la ligne de commande donne les mêmes ordres par écrit."
+    },
+    {
+      id: "middleware", terme: "Middleware (intergiciel)", domaine: "SI",
+      aka: ["middleware", "intergiciel", "bus de service", "esb", "couche d’intégration"],
+      une: "Le logiciel intermédiaire qui fait circuler les informations entre les applications d’une entreprise.",
+      etapes: [
+        "Dans une entreprise, chaque outil a son format et sa façon de parler. Les relier deux à deux donne vite un enchevêtrement.",
+        "Un middleware se place au milieu : chaque application ne parle plus qu’à lui, dans un format convenu.",
+        "Il reçoit, traduit si besoin, puis redistribue aux applications concernées, et garde une trace de ce qui est passé.",
+        "On ajoute un outil en le branchant une fois au lieu de le relier à tous les autres. En contrepartie, cette brique devient critique : si elle s’arrête, les échanges s’arrêtent."
+      ],
+      voir: "si-briques",
+      pas: "une API, qui est la porte d’un outil ; le middleware est l’aiguilleur qui relie plusieurs portes."
+    },
+    {
+      id: "apprentissage-supervise", terme: "Apprentissage supervisé", domaine: "IA",
+      aka: ["apprentissage supervisé", "supervised learning", "classification", "données étiquetées", "étiquettes"],
+      une: "Apprendre à une machine à partir d’exemples dont la bonne réponse est déjà connue.",
+      etapes: [
+        "Pour apprendre à reconnaître un courriel indésirable, on ne peut pas décrire toutes les règles à la main.",
+        "On rassemble des milliers d’exemples, chacun accompagné de sa réponse : « indésirable » ou « normal ». Ces réponses s’appellent des étiquettes.",
+        "Le modèle ajuste ses réglages jusqu’à retrouver les bonnes réponses sur ces exemples, puis on le teste sur des exemples qu’il n’a jamais vus.",
+        "Il apprend ce que contiennent les exemples : étiquetés par erreur ou peu variés, il se trompera. Étiqueter coûte souvent plus cher que calculer."
+      ],
+      voir: "machine-learning",
+      pas: "l’apprentissage non supervisé, où l’on ne fournit aucune réponse et où le modèle cherche seul des regroupements."
     }
   ];
 
