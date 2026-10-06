@@ -80,7 +80,7 @@ CARTES = [
    "À chaque erreur, ses milliards de réglages internes bougent d’un cheveu. Répété des milliards de fois, cela finit par produire du langage.",
    "Cela dure des mois, mobilise des milliers de cartes graphiques et coûte des dizaines de millions.",
    "Puis c’est figé. Un modèle n’apprend plus rien pendant que vous l’utilisez — d’où sa date d’arrêt des connaissances."],
-  voir='llm'),
+  voir='entrainement-inference'),
 
  dict(id='inference', terme='Inférence', aka=['inférence','inference','utilisation','appel'], dom='IA',
   une="Le moment où le modèle s’en sert, par opposition au moment où on l’a fabriqué.",
@@ -88,7 +88,8 @@ CARTES = [
    "Deux temps très différents : l’entraînement, une fois, et l’inférence, à chaque question posée.",
    "L’inférence, c’est faire passer votre texte à travers le modèle figé pour en produire un autre.",
    "C’est rapide et bien moins cher que l’entraînement — mais multiplié par des millions d’appels quotidiens.",
-   "C’est là que part l’essentiel de la facture d’une entreprise : pas dans la fabrication, dans l’usage."]),
+   "C’est là que part l’essentiel de la facture d’une entreprise : pas dans la fabrication, dans l’usage."],
+  voir='entrainement-inference'),
 
  dict(id='gpu', terme='GPU (carte graphique)', aka=['gpu','carte graphique','nvidia','puce','processeur graphique'], dom='IA',
   une="La puce qui fait des milliers de calculs simples en même temps — exactement ce dont l’IA a besoin.",
@@ -880,5 +881,29 @@ CARTES = [
   etapes=['Pour apprendre à reconnaître un courriel indésirable, on ne peut pas décrire toutes les règles à la main.', 'On rassemble des milliers d’exemples, chacun accompagné de sa réponse : « indésirable » ou « normal ». Ces réponses s’appellent des étiquettes.', 'Le modèle ajuste ses réglages jusqu’à retrouver les bonnes réponses sur ces exemples, puis on le teste sur des exemples qu’il n’a jamais vus.', 'Il apprend ce que contiennent les exemples : étiquetés par erreur ou peu variés, il se trompera. Étiqueter coûte souvent plus cher que calculer.'],
   voir='machine-learning',
   pas='l’apprentissage non supervisé, où l’on ne fournit aucune réponse et où le modèle cherche seul des regroupements.'),
+
+ dict(id='bande-passante', terme='Bande passante (débit)', aka=['bande passante', 'débit', 'mégabits', 'fibre', 'vitesse de connexion'], dom='Réseau',
+  une='La quantité de données qu’une connexion peut faire passer chaque seconde.',
+  etapes=['Imaginez un tuyau : plus il est large, plus il laisse passer d’eau en même temps.', 'Pour une connexion, c’est pareil : la bande passante, ou débit, mesure combien de données passent par seconde. On l’exprime en mégabits par seconde.', 'Un gros fichier ou une vidéo en haute qualité demandent un gros débit. Un simple message en demande très peu.', 'Un grand débit ne rend pas la réponse plus rapide à démarrer : cela dépend de la latence. Et le débit annoncé se partage entre tous les appareils connectés.'],
+  voir='wifi-box',
+  pas='la latence, qui mesure le temps d’un aller-retour ; le débit mesure le volume qui passe.'),
+
+ dict(id='memoire-vive', terme='Mémoire vive (RAM)', aka=['ram', 'mémoire vive', 'mémoire', 'mémoire de travail'], dom='Informatique',
+  une='La mémoire de travail de l’ordinateur : rapide, mais qui s’efface quand il s’éteint.',
+  etapes=['Pour travailler, un ordinateur ne lit pas tout directement sur le disque : c’est trop lent.', 'Il recopie ce dont il a besoin dans une mémoire très rapide : la mémoire vive, ou RAM. C’est son plan de travail.', 'Plus il y a de RAM, plus on peut ouvrir de programmes et de documents à la fois sans ralentir.', 'Elle se vide à l’extinction : ce qui n’est pas enregistré sur le disque est perdu. D’où l’intérêt d’enregistrer régulièrement.'],
+  voir='ordinateur',
+  pas='le disque de stockage, qui garde les données même éteint mais est plus lent ; la RAM sert à travailler, le disque à conserver.'),
+
+ dict(id='donnee-personnelle', terme='Donnée personnelle', aka=['donnée personnelle', 'données personnelles', 'rgpd', 'cnil', 'vie privée', 'donnée sensible'], dom='Data',
+  une='Toute information qui permet d’identifier une personne, directement ou en recoupant plusieurs éléments.',
+  etapes=['Un nom est évidemment une donnée personnelle. Mais aussi une adresse électronique, un numéro de téléphone ou une photo.', 'Même une information qui semble anodine en est une si, associée à d’autres, elle désigne quelqu’un : une adresse IP, un identifiant client, un lieu de travail précis.', 'Le RGPD impose alors des règles : collecter seulement ce qui est utile, dire pourquoi, protéger, et ne pas garder indéfiniment.', 'Les personnes concernées ont des droits : savoir ce qui est conservé, le corriger, demander la suppression. Certaines données, comme la santé, demandent une vigilance renforcée.'],
+  voir='rgpd',
+  pas='une donnée anonymisée, d’où l’on ne peut plus remonter à une personne ; elle sort du champ de ces règles.'),
+
+ dict(id='pra-pca', terme='PCA et PRA (continuité et reprise d’activité)', aka=['pra', 'pca', 'plan de reprise', 'plan de continuité', 'reprise d’activité', 'sinistre', 'panne majeure'], dom='SI',
+  une='Les plans qui décident à l’avance comment une entreprise continue de fonctionner, puis redémarre, après une panne grave.',
+  etapes=['Un incendie, une cyberattaque ou une panne de datacenter peuvent arrêter tous les outils d’un coup. Improviser ce jour-là coûte très cher.', 'On prépare donc deux plans. Le plan de continuité (PCA) cherche à éviter l’arrêt : outils doublés, solution de secours en veille.', 'Le plan de reprise (PRA) suppose que l’arrêt a eu lieu et décrit comment redémarrer : quoi relancer d’abord, depuis quelle sauvegarde, par qui.', 'Un plan jamais testé est une promesse sans garantie : on le répète régulièrement, en mesurant le temps de remise en route et la quantité de données perdue.'],
+  voir='sauvegarde',
+  pas='la sauvegarde, qui n’est qu’une copie des données ; le plan de reprise organise aussi les personnes, l’ordre et les délais.'),
 
 ]

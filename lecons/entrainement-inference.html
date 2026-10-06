@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entraîner, puis utiliser : les deux vies d’une IA — GotIt !</title>
+<meta name="description" content="Une IA se fabrique une fois, puis sert des millions de fois. Entraînement et inférence expliqués en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/ia">Intelligence artificielle</a><span>/</span>Fondamentaux<span>/</span>La machinerie</div>
+      <h1>Entraîner, puis utiliser : les deux vies d’une IA</h1>
+      <p class="lead">Quand vous posez une question à une IA, elle n’apprend rien de vous à ce moment-là. Son apprentissage a eu lieu avant, ailleurs, et il est terminé.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Un pâtissier passe des années à apprendre son métier. Ensuite, chaque matin, il applique ce
+        qu’il sait pour faire des gâteaux, sans réapprendre. Une IA fonctionne en deux temps
+        très semblables.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un modèle se construit en recevant des exemples et en corrigeant ses réglages, puis il est figé">
+        <div class="scene-title">Scène 1 — Apprendre, une seule fois</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Des exemples arrivent dans un modèle, l’erreur ajuste ses réglages, puis le modèle est figé">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="100" width="170" height="100" rx="10" class="s-box-teal"/>
+              <text x="115" y="156" text-anchor="middle" class="s-label-sm">Exemples</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="320" y="90" width="170" height="120" rx="10" class="s-box-accent pulse"/>
+              <text x="405" y="156" text-anchor="middle" class="s-label-sm">Le modèle</text>
+            </g>
+            <path d="M200 150 H320" class="s-line m-draw" data-show="2-4"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M200 150 H320')"/>
+            <path d="M405 90 C 405 40, 520 40, 520 90" class="s-line-accent m-draw" data-show="3"/>
+            <text x="470" y="30" text-anchor="middle" class="s-label-xs" data-show="3">il corrige ses réglages</text>
+            <g data-show="4" class="m-right">
+              <rect x="620" y="100" width="150" height="100" rx="10" class="s-box"/>
+              <text x="695" y="156" text-anchor="middle" class="s-label-sm">Figé</text>
+              <path d="M490 150 H620" class="s-line-accent m-draw"/>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On part d’une masse d’exemples.</b><span>Des textes, des images, des cas dont on connaît le résultat attendu.</span></p>
+          <p class="step" data-duration="4400"><b>Le modèle essaie de répondre.</b><span>Au début, ses réponses sont presque au hasard.</span></p>
+          <p class="step" data-duration="4600"><b>Chaque erreur l’ajuste un tout petit peu.</b><span>Répétée des milliards de fois, cette correction finit par donner un modèle utile.</span></p>
+          <p class="step" data-duration="4800"><b>Cette phase s’appelle l’entraînement.</b><span>Elle est longue et coûteuse, puis le modèle est figé : plus rien ne bouge ensuite.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Les années d’apprentissage d’un pâtissier, puis ses journées de travail. Pendant qu’il sert
+          un client, il n’est plus en formation&nbsp;: il applique ce qu’il a appris.
+        </p>
+      </div>
+
+      <h2>Puis il sert, encore et encore</h2>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : chaque question traverse le modèle figé et produit une réponse, sans modifier le modèle">
+        <div class="scene-title">Scène 2 — Utiliser, des millions de fois</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Plusieurs questions entrent dans le modèle figé, des réponses en sortent, le modèle reste identique">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="110" width="150" height="80" rx="10" class="s-box-teal"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-sm">Question</text>
+            </g>
+            <g data-show="1-4" class="m-pop">
+              <rect x="320" y="100" width="160" height="100" rx="10" class="s-box"/>
+              <text x="400" y="156" text-anchor="middle" class="s-label-sm">Modèle figé</text>
+            </g>
+            <path d="M180 150 H320" class="s-line m-draw" data-show="2-4"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M180 150 H320')"/>
+            <path d="M480 150 H620" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M480 150 H620')"/>
+            <g data-show="3-4" class="m-right">
+              <rect x="620" y="110" width="150" height="80" rx="10" class="s-box-accent"/>
+              <text x="695" y="156" text-anchor="middle" class="s-label-sm">Réponse</text>
+            </g>
+            <text x="400" y="250" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">identique après chaque appel</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Vous posez une question.</b><span>Elle est envoyée au modèle déjà entraîné.</span></p>
+          <p class="step" data-duration="4200"><b>Elle le traverse.</b><span>Le modèle calcule à partir de ce qu’il a appris, sans rien modifier.</span></p>
+          <p class="step" data-duration="4400"><b>Une réponse en sort.</b><span>Cette phase s’appelle l’inférence. Elle est bien plus rapide que l’entraînement.</span></p>
+          <p class="step" data-duration="4800"><b>Le modèle reste le même.</b><span>Il n’apprend pas de votre conversation : à la question suivante, il repart de ce qu’il savait.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que cela change pour vous</h2>
+      <p>
+        Le modèle s’est arrêté d’apprendre à une certaine date&nbsp;: il ne connaît pas ce qui est
+        arrivé depuis, sauf si on lui donne l’information dans la question. Et si vous lui donnez un
+        document, il s’en sert pendant la conversation sans l’intégrer à ses connaissances.
+        Côté coût, l’entraînement se paie une fois, mais l’inférence se paie à chaque question&nbsp;:
+        multipliée par des millions d’utilisateurs, elle pèse lourd.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>L’<strong>entraînement</strong> fabrique le modèle, une seule fois, avec beaucoup d’exemples et de calcul.</li>
+        <li>L’<strong>inférence</strong> est son utilisation&nbsp;: chaque question passe dans un modèle figé.</li>
+        <li>Une IA <strong>n’apprend pas</strong> de votre conversation&nbsp;: elle s’en sert, puis l’oublie.</li>
+        <li>Ses connaissances s’arrêtent à une <strong>date</strong>&nbsp;: au-delà, il faut les lui fournir.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="gpu.html">← Pourquoi l’IA a besoin de cartes graphiques</a>
+        <a class="btn btn-primary" href="../cartes.html">Toutes les cartes →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
