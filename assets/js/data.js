@@ -209,6 +209,13 @@ window.GOTIT = (function () {
       duration: '7 min', level: 1,
       keywords: ['llm', 'modèle de langage', 'token', 'prédiction', 'entraînement', 'chatgpt', 'claude', 'ia générative']
     },
+    'entrainement-inference': {
+      title: 'Entraîner, puis utiliser : les deux vies d\u2019une IA',
+      summary: 'Une IA se fabrique une fois, puis sert des millions de fois sans rien apprendre de vous.',
+      path: 'lecons/entrainement-inference.html',
+      duration: '5 min', level: 1,
+      keywords: ['entraînement', 'inférence', 'modèle', 'apprentissage', 'ia', 'date de connaissance', 'figé']
+    },
     'gpu': {
       title: 'Pourquoi l\u2019IA a besoin de cartes graphiques',
       summary: 'Des milliards de multiplications simples : ce que fait vraiment une IA quand elle « réfléchit ».',
@@ -530,7 +537,7 @@ window.GOTIT = (function () {
           subcategories: [
             { id: 'apprentissage', title: 'Apprendre par l’exemple', lessons: ['machine-learning', 'recommandation'] },
             { id: 'modeles', title: 'Les modèles de langage', lessons: ['llm', 'hallucination'] },
-            { id: 'machinerie', title: 'La machinerie', lessons: ['gpu'] }
+            { id: 'machinerie', title: 'La machinerie', lessons: ['gpu', 'entrainement-inference'] }
           ]
         },
         {
@@ -664,7 +671,7 @@ window.GOTIT = (function () {
         "Cela dure des mois, mobilise des milliers de cartes graphiques et coûte des dizaines de millions.",
         "Puis c’est figé. Un modèle n’apprend plus rien pendant que vous l’utilisez — d’où sa date d’arrêt des connaissances."
       ],
-      voir: "llm"
+      voir: "entrainement-inference"
     },
     {
       id: "inference", terme: "Inférence", domaine: "IA",
@@ -675,7 +682,8 @@ window.GOTIT = (function () {
         "L’inférence, c’est faire passer votre texte à travers le modèle figé pour en produire un autre.",
         "C’est rapide et bien moins cher que l’entraînement — mais multiplié par des millions d’appels quotidiens.",
         "C’est là que part l’essentiel de la facture d’une entreprise : pas dans la fabrication, dans l’usage."
-      ]
+      ],
+      voir: "entrainement-inference"
     },
     {
       id: "gpu", terme: "GPU (carte graphique)", domaine: "IA",
@@ -1831,6 +1839,58 @@ window.GOTIT = (function () {
       ],
       voir: "machine-learning",
       pas: "l’apprentissage non supervisé, où l’on ne fournit aucune réponse et où le modèle cherche seul des regroupements."
+    },
+    {
+      id: "bande-passante", terme: "Bande passante (débit)", domaine: "Réseau",
+      aka: ["bande passante", "débit", "mégabits", "fibre", "vitesse de connexion"],
+      une: "La quantité de données qu’une connexion peut faire passer chaque seconde.",
+      etapes: [
+        "Imaginez un tuyau : plus il est large, plus il laisse passer d’eau en même temps.",
+        "Pour une connexion, c’est pareil : la bande passante, ou débit, mesure combien de données passent par seconde. On l’exprime en mégabits par seconde.",
+        "Un gros fichier ou une vidéo en haute qualité demandent un gros débit. Un simple message en demande très peu.",
+        "Un grand débit ne rend pas la réponse plus rapide à démarrer : cela dépend de la latence. Et le débit annoncé se partage entre tous les appareils connectés."
+      ],
+      voir: "wifi-box",
+      pas: "la latence, qui mesure le temps d’un aller-retour ; le débit mesure le volume qui passe."
+    },
+    {
+      id: "memoire-vive", terme: "Mémoire vive (RAM)", domaine: "Informatique",
+      aka: ["ram", "mémoire vive", "mémoire", "mémoire de travail"],
+      une: "La mémoire de travail de l’ordinateur : rapide, mais qui s’efface quand il s’éteint.",
+      etapes: [
+        "Pour travailler, un ordinateur ne lit pas tout directement sur le disque : c’est trop lent.",
+        "Il recopie ce dont il a besoin dans une mémoire très rapide : la mémoire vive, ou RAM. C’est son plan de travail.",
+        "Plus il y a de RAM, plus on peut ouvrir de programmes et de documents à la fois sans ralentir.",
+        "Elle se vide à l’extinction : ce qui n’est pas enregistré sur le disque est perdu. D’où l’intérêt d’enregistrer régulièrement."
+      ],
+      voir: "ordinateur",
+      pas: "le disque de stockage, qui garde les données même éteint mais est plus lent ; la RAM sert à travailler, le disque à conserver."
+    },
+    {
+      id: "donnee-personnelle", terme: "Donnée personnelle", domaine: "Data",
+      aka: ["donnée personnelle", "données personnelles", "rgpd", "cnil", "vie privée", "donnée sensible"],
+      une: "Toute information qui permet d’identifier une personne, directement ou en recoupant plusieurs éléments.",
+      etapes: [
+        "Un nom est évidemment une donnée personnelle. Mais aussi une adresse électronique, un numéro de téléphone ou une photo.",
+        "Même une information qui semble anodine en est une si, associée à d’autres, elle désigne quelqu’un : une adresse IP, un identifiant client, un lieu de travail précis.",
+        "Le RGPD impose alors des règles : collecter seulement ce qui est utile, dire pourquoi, protéger, et ne pas garder indéfiniment.",
+        "Les personnes concernées ont des droits : savoir ce qui est conservé, le corriger, demander la suppression. Certaines données, comme la santé, demandent une vigilance renforcée."
+      ],
+      voir: "rgpd",
+      pas: "une donnée anonymisée, d’où l’on ne peut plus remonter à une personne ; elle sort du champ de ces règles."
+    },
+    {
+      id: "pra-pca", terme: "PCA et PRA (continuité et reprise d’activité)", domaine: "SI",
+      aka: ["pra", "pca", "plan de reprise", "plan de continuité", "reprise d’activité", "sinistre", "panne majeure"],
+      une: "Les plans qui décident à l’avance comment une entreprise continue de fonctionner, puis redémarre, après une panne grave.",
+      etapes: [
+        "Un incendie, une cyberattaque ou une panne de datacenter peuvent arrêter tous les outils d’un coup. Improviser ce jour-là coûte très cher.",
+        "On prépare donc deux plans. Le plan de continuité (PCA) cherche à éviter l’arrêt : outils doublés, solution de secours en veille.",
+        "Le plan de reprise (PRA) suppose que l’arrêt a eu lieu et décrit comment redémarrer : quoi relancer d’abord, depuis quelle sauvegarde, par qui.",
+        "Un plan jamais testé est une promesse sans garantie : on le répète régulièrement, en mesurant le temps de remise en route et la quantité de données perdue."
+      ],
+      voir: "sauvegarde",
+      pas: "la sauvegarde, qui n’est qu’une copie des données ; le plan de reprise organise aussi les personnes, l’ordre et les délais."
     }
   ];
 
