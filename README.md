@@ -47,6 +47,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Le cadenas du navigateur, ce que HTTPS protège vraiment](lecons/https-cadenas.html) | Réseau | Découverte |
 | [Le VPN, un tunnel privé sur un réseau public](lecons/vpn.html) | Réseau | Intermédiaire |
 | [Le réseau Tor, comment ça marche](lecons/tor.html) | Réseau | Intermédiaire |
+| [La double authentification, pourquoi un mot de passe seul ne suffit plus](lecons/mfa.html) | Réseau | Découverte |
 | [Comment voyage un e-mail](lecons/email.html) | Réseau | Découverte |
 | [Donnée structurée ou pas : le grand tri](lecons/donnees-structurees.html) | Data | Découverte |
 | [C'est quoi une base de données ?](lecons/base-de-donnees.html) | Data | Découverte |
@@ -57,6 +58,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Migrer ses données, le grand déménagement](lecons/migration-donnees.html) | Data | Intermédiaire |
 | [Le dédoublonnage : reconnaître qu'un client n'est pas deux](lecons/dedoublonnage.html) | Data | Intermédiaire |
 | [Le RGPD en clair](lecons/rgpd.html) | Data | Découverte |
+| [ETL, le convoyeur qui prépare les données avant l’analyse](lecons/etl.html) | Data | Intermédiaire |
 | [C'est quoi un système d'information ?](lecons/si-briques.html) | Système d'information | Découverte |
 | [C'est quoi un ERP ?](lecons/erp.html) | Système d'information | Découverte |
 | [C'est quoi un CRM ?](lecons/crm.html) | Système d'information | Découverte |
@@ -84,7 +86,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 | [Le prompt injection, le risque caché des agents IA](lecons/injection-prompt.html) | IA | Intermédiaire |
 
-**107 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**110 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
 ouvert, benchmark, garde-fous, prompt injection, Machine Learning, appel d'outils, réseau de neurones, biais —, celui des
@@ -94,7 +96,7 @@ pare-feu, DNS, cookie, hameçonnage, MFA/2FA, protocole, rançongiciel, proxy, C
 d'informatique générale (Git, octet, cache, open source, conteneur, cloud, système d'exploitation,
 framework, bug, scalabilité) et treize de la data (jointure, ETL/ELT, KPI, SQL, Big Data, index, tableau de
 bord, schéma de données, silo de données, anonymisation/pseudonymisation, NoSQL, catalogue de
-données, test A/B, qualité des données), plus latence, backlog, données de référence, chaîne de pensée, HTTPS, métiers de la data, RPA, mise en production, surapprentissage, règle 3-2-1, entrepôt de données, TMA, deepfake, machine virtuelle, dédoublonnage, webhook, chatbot, clé primaire, ligne de commande, middleware apprentissage supervisé, bande passante, mémoire vive, donnée personnelle et PCA/PRA).
+données, test A/B, qualité des données), plus latence, backlog, données de référence, chaîne de pensée, HTTPS, métiers de la data, RPA, mise en production, surapprentissage, règle 3-2-1, entrepôt de données, TMA, deepfake, machine virtuelle, dédoublonnage, webhook, chatbot, clé primaire, ligne de commande, middleware apprentissage supervisé, bande passante, mémoire vive, donnée personnelle, PCA/PRA, mise à jour, boîte noire de l’IA et interopérabilité).
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours

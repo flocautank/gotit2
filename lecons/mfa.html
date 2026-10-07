@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La double authentification, pourquoi un mot de passe seul ne suffit plus — GotIt !</title>
+<meta name="description" content="Un mot de passe peut être volé ; un second justificatif beaucoup plus difficilement. La double authentification expliquée en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/reseau">Réseau</a><span>/</span>Se protéger<span>/</span>Les gestes du quotidien</div>
+      <h1>La double authentification, pourquoi un mot de passe seul ne suffit plus</h1>
+      <p class="lead">Quelqu’un qui connaît votre mot de passe peut entrer chez vous, depuis l’autre bout du monde. Un second justificatif, lui, reste dans votre poche.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Pour entrer dans votre immeuble, vous avez un code d’entrée. Mais si un voisin le surprend
+        par-dessus votre épaule, il entre à son tour. Maintenant, imaginez qu’il faille en plus
+        <em>montrer votre badge</em>&nbsp;: connaître le code ne suffit plus. C’est le principe de la
+        <strong>double authentification</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un mot de passe volé suffit à entrer, alors qu’avec un second justificatif l’intrus est bloqué">
+        <div class="scene-title">Scène 1 — Un seul verrou, ou deux</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un intrus muni du mot de passe vole arrive devant un compte ; avec un seul verrou il entre, avec un second verrou il est arrêté">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="110" width="150" height="80" rx="10" class="s-box-teal"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-sm">Intrus</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="620" y="110" width="150" height="80" rx="10" class="s-box"/>
+              <text x="695" y="156" text-anchor="middle" class="s-label-sm">Votre compte</text>
+            </g>
+            <g data-show="1-4" class="m-pop">
+              <rect x="290" y="120" width="120" height="60" rx="10" class="s-box-accent"/>
+              <text x="350" y="156" text-anchor="middle" class="s-label-sm">Mot de passe</text>
+            </g>
+            <text x="350" y="96" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2">volé</text>
+            <path d="M180 150 H290" class="s-line m-draw" data-show="2-4"/>
+            <path d="M410 150 H620" class="s-line-accent m-draw" data-show="2"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M180 150 H620')"/>
+            <text x="520" y="226" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2">il entre</text>
+            <g data-show="3-4" class="m-pop">
+              <rect x="470" y="120" width="110" height="60" rx="10" class="s-box-accent pulse"/>
+              <text x="525" y="156" text-anchor="middle" class="s-label-sm">2ᵉ preuve</text>
+            </g>
+            <path d="M410 150 H470" class="s-line" data-show="3-4"/>
+            <text x="525" y="226" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">bloqué</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Un mot de passe garde votre compte.</b><span>Tant que personne d’autre ne le connaît, tout va bien.</span></p>
+          <p class="step" data-duration="4200"><b>Mais il peut être volé.</b><span>Faux message, site piégé, fuite chez un service&nbsp;: l’intrus l’a, et il entre comme vous.</span></p>
+          <p class="step" data-duration="4200"><b>On ajoute une seconde preuve.</b><span>Une chose que seul vous avez, en plus de ce que vous savez.</span></p>
+          <p class="step" data-duration="4400"><b>Le mot de passe seul ne suffit plus.</b><span>C’est la double authentification, ou MFA&nbsp;: l’intrus s’arrête à la deuxième porte.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          La carte bancaire. Avoir la carte ne suffit pas, il faut aussi le code&nbsp;; connaître le code
+          ne suffit pas, il faut aussi la carte. Un voleur qui n’a que l’un des deux repart bredouille.
+        </p>
+      </div>
+
+      <h2>Trois familles de preuves</h2>
+      <p>
+        On distingue ce que l’on <strong>sait</strong>, ce que l’on <strong>possède</strong> et ce que
+        l’on <strong>est</strong>. La double authentification combine deux familles différentes&nbsp;:
+        deux mots de passe, ce serait encore deux choses que l’on sait.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : connexion avec mot de passe, puis envoi d’un code à usage unique sur le téléphone, puis saisie du code">
+        <div class="scene-title">Scène 2 — Le code qui arrive sur le téléphone</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Vous saisissez votre mot de passe sur l’ordinateur ; le service envoie un code sur le téléphone ; vous le saisissez et l’accès est ouvert">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="110" width="140" height="80" rx="10" class="s-box-teal"/>
+              <text x="100" y="156" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+            <g data-show="1-5" class="m-pop">
+              <rect x="330" y="110" width="140" height="80" rx="10" class="s-box"/>
+              <text x="400" y="156" text-anchor="middle" class="s-label-sm">Service</text>
+            </g>
+            <path d="M170 140 H330" class="s-line m-draw" data-show="2-5"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M170 140 H330')"/>
+            <text x="250" y="116" text-anchor="middle" class="s-label-xs" data-show="2">mot de passe</text>
+            <g data-show="3-5" class="m-right">
+              <rect x="630" y="70" width="110" height="160" rx="14" class="s-box-accent"/>
+              <text x="685" y="156" text-anchor="middle" class="s-label-sm">Téléphone</text>
+            </g>
+            <path d="M470 150 H630" class="s-line-accent m-draw" data-show="3-5"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M470 150 H630')"/>
+            <text x="550" y="126" text-anchor="middle" class="s-label-xs" data-show="3">code : 4 2 7 1 9 0</text>
+            <path d="M630 190 Q400 260 170 175" class="s-line m-draw" data-show="4-5"/>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M630 190 Q400 260 170 175')"/>
+            <text x="400" y="262" text-anchor="middle" class="s-label-xs" data-show="4">vous le saisissez</text>
+            <text x="400" y="86" text-anchor="middle" class="s-label-sm" fill="var(--sage)" data-show="5">accès ouvert</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Vous vous connectez comme d’habitude.</b><span>Premier verrou&nbsp;: votre mot de passe.</span></p>
+          <p class="step" data-duration="4000"><b>Le service vérifie, mais ne vous laisse pas encore entrer.</b><span>Il demande une seconde preuve.</span></p>
+          <p class="step" data-duration="4200"><b>Un code arrive sur votre téléphone.</b><span>Il ne sert qu’une fois et expire en quelques dizaines de secondes. Une application dédiée peut aussi le produire.</span></p>
+          <p class="step" data-duration="4200"><b>Vous le saisissez.</b><span>Seul celui qui a le téléphone en main pouvait le lire.</span></p>
+          <p class="step" data-duration="4000"><b>L’accès s’ouvre.</b><span>Le mot de passe volé ne sert plus à rien sans ce téléphone.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que ça protège, et ce que ça ne protège pas</h2>
+      <p>
+        Cela bloque la grande majorité des intrusions faites avec un mot de passe volé. Ce n’est pas
+        infaillible&nbsp;: un faux site peut vous faire saisir le code en direct, et un code envoyé par
+        SMS est moins solide qu’une application ou qu’une clé physique. Ne communiquez donc
+        <strong>jamais</strong> un code reçu, même à quelqu’un qui se dit du support.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>La <strong>double authentification</strong> (MFA) demande <strong>deux preuves</strong> de familles différentes.</li>
+        <li>Les familles&nbsp;: ce que l’on <strong>sait</strong>, ce que l’on <strong>possède</strong>, ce que l’on <strong>est</strong>.</li>
+        <li>Un mot de passe volé ne suffit plus&nbsp;: l’intrus lui manque la <strong>seconde preuve</strong>.</li>
+        <li>Un code reçu ne se <strong>donne à personne</strong>.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour comprendre pourquoi les sites ne connaissent pas votre mot de passe, voyez la leçon sur les mots de passe.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="mots-de-passe.html">← Les mots de passe</a>
+        <a class="btn btn-primary" href="https-cadenas.html">Le cadenas du navigateur →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

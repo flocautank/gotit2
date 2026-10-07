@@ -216,6 +216,20 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['entraînement', 'inférence', 'modèle', 'apprentissage', 'ia', 'date de connaissance', 'figé']
     },
+    'mfa': {
+      title: 'La double authentification, pourquoi un mot de passe seul ne suffit plus',
+      summary: 'Un mot de passe peut être volé ; un second justificatif beaucoup plus difficilement.',
+      path: 'lecons/mfa.html',
+      duration: '5 min', level: 1,
+      keywords: ['mfa', '2fa', 'double authentification', 'code', 'mot de passe', 'sécurité', 'connexion']
+    },
+    'etl': {
+      title: 'ETL, le convoyeur qui prépare les données avant l\u2019analyse',
+      summary: 'Extraire, transformer, charger : comment des données dispersées arrivent propres dans un entrepôt.',
+      path: 'lecons/etl.html',
+      duration: '6 min', level: 2,
+      keywords: ['etl', 'elt', 'extraire', 'transformer', 'charger', 'nettoyage', 'pipeline', 'entrepôt']
+    },
     'gpu': {
       title: 'Pourquoi l\u2019IA a besoin de cartes graphiques',
       summary: 'Des milliards de multiplications simples : ce que fait vraiment une IA quand elle « réfléchit ».',
@@ -472,7 +486,7 @@ window.GOTIT = (function () {
         {
           id: 'securite', title: 'Se protéger',
           subcategories: [
-            { id: 'gestes', title: 'Les gestes du quotidien', lessons: ['cybersecurite', 'mots-de-passe'] },
+            { id: 'gestes', title: 'Les gestes du quotidien', lessons: ['cybersecurite', 'mots-de-passe', 'mfa'] },
             { id: 'protection', title: 'Ce qui protège les données', lessons: ['pare-feu', 'chiffrement', 'https-cadenas', 'sauvegarde', 'vpn'] },
             { id: 'anonymat', title: 'Rester anonyme', lessons: ['tor'] }
           ]
@@ -498,7 +512,7 @@ window.GOTIT = (function () {
             { id: 'langages', title: 'Les langages', lessons: ['langages-data'] },
             { id: 'piloter', title: 'Piloter par les chiffres', lessons: ['bi-tableau-de-bord'] },
             { id: 'qualite', title: 'Qualité & cadre légal', lessons: ['gouvernance-data', 'dedoublonnage', 'rgpd'] },
-            { id: 'projets-data', title: 'Mener un projet data', lessons: ['migration-donnees'] }
+            { id: 'projets-data', title: 'Mener un projet data', lessons: ['migration-donnees', 'etl'] }
           ]
         }
       ]
@@ -929,7 +943,7 @@ window.GOTIT = (function () {
         "Load : on les dépose dans leur destination, le plus souvent un entrepôt de données.",
         "L’ETL transforme avant de charger ; l’ELT, plus courant aujourd’hui, charge d’abord et transforme ensuite, une fois les données déjà en place."
       ],
-      voir: "entrepots-data"
+      voir: "etl"
     },
     {
       id: "kpi", terme: "KPI (indicateur clé)", domaine: "Data",
@@ -1262,7 +1276,7 @@ window.GOTIT = (function () {
         "À la connexion, les deux preuves sont demandées l’une après l’autre — le mot de passe, puis ce second facteur — jamais deux fois le même type de preuve.",
         "Un mot de passe volé ne suffit alors plus : sans le téléphone ou la clé, la connexion reste bloquée. C’est le geste de sécurité le plus rentable qui existe."
       ],
-      voir: "cybersecurite"
+      voir: "mfa"
     },
     {
       id: "environnement-test", terme: "Environnement de test (bac à sable)", domaine: "SI",
@@ -1891,6 +1905,45 @@ window.GOTIT = (function () {
       ],
       voir: "sauvegarde",
       pas: "la sauvegarde, qui n’est qu’une copie des données ; le plan de reprise organise aussi les personnes, l’ordre et les délais."
+    },
+    {
+      id: "mise-a-jour", terme: "Mise à jour (correctif)", domaine: "Informatique",
+      aka: ["mise à jour", "patch", "correctif", "update", "faille"],
+      une: "Une nouvelle version d’un logiciel qui corrige des défauts, dont les failles de sécurité.",
+      etapes: [
+        "Un logiciel est écrit par des humains : il contient des erreurs, dont certaines laissent entrer un intrus. Ce sont les failles.",
+        "Quand l’éditeur en trouve une, il publie un correctif, parfois appelé « patch », qui referme la porte.",
+        "Dès sa publication, le défaut est connu de tous, y compris des personnes malveillantes : elles guettent ceux qui n’ont pas encore installé la mise à jour.",
+        "Mettre à jour vite est l’un des gestes de protection les plus efficaces. Seul risque : un correctif peut changer des habitudes, d’où les tests en entreprise."
+      ],
+      voir: "cybersecurite",
+      pas: "une nouvelle version majeure, qui ajoute des fonctions ; le correctif, lui, répare l’existant."
+    },
+    {
+      id: "boite-noire", terme: "Boîte noire (IA)", domaine: "IA",
+      aka: ["boîte noire", "black box", "explicabilité", "ia explicable", "opacité"],
+      une: "Un modèle dont on voit ce qui entre et ce qui sort, mais dont on ne sait pas expliquer le raisonnement.",
+      etapes: [
+        "Un réseau de neurones contient des milliards de réglages. Aucun n’a de sens lisible pour un humain.",
+        "On voit donc la question posée et la réponse donnée, mais pas le chemin entre les deux : c’est une boîte noire.",
+        "Quand le modèle se trompe, il est difficile de dire pourquoi. Des techniques d’explicabilité en donnent un aperçu partiel, jamais complet.",
+        "Pour une décision importante, comme un crédit ou un diagnostic, on garde un humain dans la boucle et on demande à pouvoir justifier."
+      ],
+      voir: "ia-limites",
+      pas: "un programme classique : on peut relire chacune de ses règles, ce qui n’est pas le cas d’un modèle appris."
+    },
+    {
+      id: "interoperabilite", terme: "Interopérabilité", domaine: "SI",
+      aka: ["interopérabilité", "interopérable", "standard", "format ouvert", "compatibilité"],
+      une: "La capacité de deux outils différents à échanger des informations sans adaptation lourde.",
+      etapes: [
+        "Deux outils achetés séparément parlent rarement la même langue : formats de fichiers, noms de champs, façons de se connecter.",
+        "Sans effort, chaque échange demande un développement sur mesure, cher et fragile.",
+        "Des standards communs, comme des formats ouverts ou des API documentées, permettent à des outils d’origines différentes de se brancher.",
+        "Elle protège aussi d’un fournisseur unique : changer d’outil est possible si les données sortent dans un format que les autres savent lire."
+      ],
+      voir: "api",
+      pas: "l’intégration, qui est le travail de branchement lui-même ; l’interopérabilité est ce qui le rend facile ou non."
     }
   ];
 
