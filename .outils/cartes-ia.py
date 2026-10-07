@@ -272,7 +272,7 @@ CARTES = [
    "Transform : on les nettoie et on les met en forme — mêmes unités, mêmes noms de colonnes, doublons retirés.",
    "Load : on les dépose dans leur destination, le plus souvent un entrepôt de données.",
    "L’ETL transforme avant de charger ; l’ELT, plus courant aujourd’hui, charge d’abord et transforme ensuite, une fois les données déjà en place."],
-  voir='entrepots-data'),
+  voir='etl'),
 
  dict(id='kpi', terme='KPI (indicateur clé)', aka=['kpi','indicateur clé','indicateur de performance','key performance indicator'], dom='Data',
   une="Un chiffre choisi à l’avance pour suivre si les choses vont dans le bon sens.",
@@ -523,7 +523,7 @@ CARTES = [
    "Le MFA ajoute une preuve d’une autre nature : un code envoyé sur votre téléphone, une application dédiée, ou une clé physique.",
    "À la connexion, les deux preuves sont demandées l’une après l’autre — le mot de passe, puis ce second facteur — jamais deux fois le même type de preuve.",
    "Un mot de passe volé ne suffit alors plus : sans le téléphone ou la clé, la connexion reste bloquée. C’est le geste de sécurité le plus rentable qui existe."],
-  voir='cybersecurite'),
+  voir='mfa'),
 
  dict(id='environnement-test', terme='Environnement de test (bac à sable)', aka=['bac à sable','sandbox','environnement de test','environnement de recette','environnement de dev'], dom='SI',
   une="Une copie sans conséquence de l’outil réel, où l’on peut tout casser sans rien risquer.",
@@ -905,5 +905,23 @@ CARTES = [
   etapes=['Un incendie, une cyberattaque ou une panne de datacenter peuvent arrêter tous les outils d’un coup. Improviser ce jour-là coûte très cher.', 'On prépare donc deux plans. Le plan de continuité (PCA) cherche à éviter l’arrêt : outils doublés, solution de secours en veille.', 'Le plan de reprise (PRA) suppose que l’arrêt a eu lieu et décrit comment redémarrer : quoi relancer d’abord, depuis quelle sauvegarde, par qui.', 'Un plan jamais testé est une promesse sans garantie : on le répète régulièrement, en mesurant le temps de remise en route et la quantité de données perdue.'],
   voir='sauvegarde',
   pas='la sauvegarde, qui n’est qu’une copie des données ; le plan de reprise organise aussi les personnes, l’ordre et les délais.'),
+
+ dict(id='mise-a-jour', terme='Mise à jour (correctif)', aka=['mise à jour', 'patch', 'correctif', 'update', 'faille'], dom='Informatique',
+  une='Une nouvelle version d’un logiciel qui corrige des défauts, dont les failles de sécurité.',
+  etapes=['Un logiciel est écrit par des humains : il contient des erreurs, dont certaines laissent entrer un intrus. Ce sont les failles.', 'Quand l’éditeur en trouve une, il publie un correctif, parfois appelé « patch », qui referme la porte.', 'Dès sa publication, le défaut est connu de tous, y compris des personnes malveillantes : elles guettent ceux qui n’ont pas encore installé la mise à jour.', 'Mettre à jour vite est l’un des gestes de protection les plus efficaces. Seul risque : un correctif peut changer des habitudes, d’où les tests en entreprise.'],
+  voir='cybersecurite',
+  pas='une nouvelle version majeure, qui ajoute des fonctions ; le correctif, lui, répare l’existant.'),
+
+ dict(id='boite-noire', terme='Boîte noire (IA)', aka=['boîte noire', 'black box', 'explicabilité', 'ia explicable', 'opacité'], dom='IA',
+  une='Un modèle dont on voit ce qui entre et ce qui sort, mais dont on ne sait pas expliquer le raisonnement.',
+  etapes=['Un réseau de neurones contient des milliards de réglages. Aucun n’a de sens lisible pour un humain.', 'On voit donc la question posée et la réponse donnée, mais pas le chemin entre les deux : c’est une boîte noire.', 'Quand le modèle se trompe, il est difficile de dire pourquoi. Des techniques d’explicabilité en donnent un aperçu partiel, jamais complet.', 'Pour une décision importante, comme un crédit ou un diagnostic, on garde un humain dans la boucle et on demande à pouvoir justifier.'],
+  voir='ia-limites',
+  pas='un programme classique : on peut relire chacune de ses règles, ce qui n’est pas le cas d’un modèle appris.'),
+
+ dict(id='interoperabilite', terme='Interopérabilité', aka=['interopérabilité', 'interopérable', 'standard', 'format ouvert', 'compatibilité'], dom='SI',
+  une='La capacité de deux outils différents à échanger des informations sans adaptation lourde.',
+  etapes=['Deux outils achetés séparément parlent rarement la même langue : formats de fichiers, noms de champs, façons de se connecter.', 'Sans effort, chaque échange demande un développement sur mesure, cher et fragile.', 'Des standards communs, comme des formats ouverts ou des API documentées, permettent à des outils d’origines différentes de se brancher.', 'Elle protège aussi d’un fournisseur unique : changer d’outil est possible si les données sortent dans un format que les autres savent lire.'],
+  voir='api',
+  pas='l’intégration, qui est le travail de branchement lui-même ; l’interopérabilité est ce qui le rend facile ou non.'),
 
 ]

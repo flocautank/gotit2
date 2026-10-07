@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETL, le convoyeur qui prépare les données avant l’analyse — GotIt !</title>
+<meta name="description" content="Extraire, transformer, charger : comment des données dispersées et désordonnées arrivent propres dans un entrepôt. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/data">Data</a><span>/</span>Exploiter les données<span>/</span>Mener un projet data</div>
+      <h1>ETL, le convoyeur qui prépare les données avant l’analyse</h1>
+      <p class="lead">Les chiffres d’une entreprise vivent dans dix outils, écrits chacun à sa façon. Avant d’en tirer quoi que ce soit, il faut les rassembler et les mettre au propre.</p>
+      <div class="lesson-meta"><span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Une cuisine de restaurant reçoit des légumes de trois fournisseurs, en cagettes différentes,
+        parfois terreux. Avant le service, quelqu’un les récupère, les lave, les coupe, puis les range
+        au bon endroit. En données, ce travail a un nom&nbsp;: l’<strong>ETL</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : trois sources de données désordonnées sont récupérées, nettoyées, puis rangées dans un entrepôt">
+        <div class="scene-title">Scène 1 — Récupérer, nettoyer, ranger</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Trois sources à gauche, une étape de nettoyage au milieu, un entrepôt à droite ; les données circulent de gauche à droite">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="50" width="140" height="56" rx="10" class="s-box"/>
+              <text x="100" y="84" text-anchor="middle" class="s-label-sm">Caisse</text>
+              <rect x="30" y="132" width="140" height="56" rx="10" class="s-box"/>
+              <text x="100" y="166" text-anchor="middle" class="s-label-sm">CRM</text>
+              <rect x="30" y="214" width="140" height="56" rx="10" class="s-box"/>
+              <text x="100" y="248" text-anchor="middle" class="s-label-sm">Tableur</text>
+            </g>
+            <path d="M170 78 H330 M170 160 H330 M170 242 H330" class="s-line m-draw" data-show="2-5"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M170 160 H330')"/>
+            <text x="250" y="302" text-anchor="middle" class="s-label-xs" data-show="2">on récupère</text>
+            <g data-show="3-5" class="m-pop">
+              <rect x="330" y="110" width="140" height="100" rx="10" class="s-box-accent pulse"/>
+              <text x="400" y="166" text-anchor="middle" class="s-label-sm">Nettoyage</text>
+            </g>
+            <text x="400" y="86" text-anchor="middle" class="s-label-xs" data-show="3">formats unifiés</text>
+            <path d="M470 160 H620" class="s-line-accent m-draw" data-show="4-5"/>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M470 160 H620')"/>
+            <g data-show="4-5" class="m-right">
+              <rect x="620" y="90" width="150" height="140" rx="10" class="s-box-teal"/>
+              <text x="695" y="166" text-anchor="middle" class="s-label-sm">Entrepôt</text>
+            </g>
+            <text x="695" y="262" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="5">tout au même endroit</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Les données sont éparpillées.</b><span>La caisse, le CRM, un tableur&nbsp;: chacun garde sa part, à sa manière.</span></p>
+          <p class="step" data-duration="4000"><b>On commence par les récupérer.</b><span>Une copie part de chaque source, sans la modifier.</span></p>
+          <p class="step" data-duration="4400"><b>Puis on les met au propre.</b><span>Même format de date, mêmes noms, doublons et erreurs écartés.</span></p>
+          <p class="step" data-duration="4200"><b>On les range au même endroit.</b><span>Un lieu unique, organisé pour l’analyse&nbsp;: un entrepôt de données.</span></p>
+          <p class="step" data-duration="4200"><b>Les trois sources parlent enfin la même langue.</b><span>On peut les croiser et les comparer.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le travail de préparation en cuisine. Les clients ne le voient pas, mais sans lui, aucun plat
+          ne sort&nbsp;: le cuisinier ne ferait que laver des légumes toute la soirée.
+        </p>
+      </div>
+
+      <h2>Les trois lettres, une à une</h2>
+      <p>
+        ETL pour <strong>Extraire</strong> (<em>Extract</em>), <strong>Transformer</strong>
+        (<em>Transform</em>), <strong>Charger</strong> (<em>Load</em>). Ces trois gestes se répètent
+        automatiquement, souvent chaque nuit.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : les trois étapes extraire, transformer, charger, puis la variante où l’on charge avant de transformer">
+        <div class="scene-title">Scène 2 — E, T, L, et l’ordre qui change</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Trois boîtes alignées Extraire, Transformer, Charger ; en dessous, la variante où Charger passe avant Transformer">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="60" width="200" height="70" rx="10" class="s-box"/>
+              <text x="140" y="102" text-anchor="middle" class="s-label-sm">Extraire</text>
+            </g>
+            <path d="M240 95 H300" class="s-line m-draw" data-show="2-4"/>
+            <g data-show="2-4" class="m-pop">
+              <rect x="300" y="60" width="200" height="70" rx="10" class="s-box-accent"/>
+              <text x="400" y="102" text-anchor="middle" class="s-label-sm">Transformer</text>
+            </g>
+            <path d="M500 95 H560" class="s-line m-draw" data-show="3-4"/>
+            <g data-show="3-4" class="m-right">
+              <rect x="560" y="60" width="200" height="70" rx="10" class="s-box-teal"/>
+              <text x="660" y="102" text-anchor="middle" class="s-label-sm">Charger</text>
+            </g>
+            <text x="400" y="176" text-anchor="middle" class="s-label-xs" data-show="4">variante ELT : on charge d’abord</text>
+            <g data-show="4" class="m-rise">
+              <rect x="40" y="200" width="200" height="60" rx="10" class="s-box"/>
+              <text x="140" y="238" text-anchor="middle" class="s-label-sm">Extraire</text>
+              <rect x="300" y="200" width="200" height="60" rx="10" class="s-box-teal"/>
+              <text x="400" y="238" text-anchor="middle" class="s-label-sm">Charger</text>
+              <rect x="560" y="200" width="200" height="60" rx="10" class="s-box-accent"/>
+              <text x="660" y="238" text-anchor="middle" class="s-label-sm">Transformer</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Extraire.</b><span>Aller chercher les données là où elles vivent.</span></p>
+          <p class="step" data-duration="4000"><b>Transformer.</b><span>Corriger, convertir, regrouper&nbsp;: c’est la partie qui demande le plus de travail.</span></p>
+          <p class="step" data-duration="4000"><b>Charger.</b><span>Déposer le résultat dans l’entrepôt, prêt à servir aux tableaux de bord.</span></p>
+          <p class="step" data-duration="4600"><b>Parfois, l’ordre s’inverse.</b><span>Dans l’ELT, on dépose d’abord les données brutes, puis on les transforme sur place, avec la puissance de l’entrepôt.</span></p>
+        </div>
+      </section>
+
+      <h2>Pourquoi c’est le gros du travail</h2>
+      <p>
+        On dit souvent que la préparation des données prend l’essentiel du temps d’un projet data.
+        C’est normal&nbsp;: un tableau de bord n’est jamais plus fiable que les données qu’on lui donne.
+        Quand deux chiffres divergent, la cause se trouve presque toujours dans cette étape.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>L’<strong>ETL</strong> prépare les données&nbsp;: <strong>extraire</strong>, <strong>transformer</strong>, <strong>charger</strong>.</li>
+        <li>La transformation, c’est le <strong>nettoyage</strong> : formats unifiés, doublons et erreurs écartés.</li>
+        <li>L’<strong>ELT</strong> inverse l’ordre&nbsp;: on charge d’abord, on transforme ensuite.</li>
+        <li>Des données mal préparées donnent des <strong>tableaux de bord faux</strong>.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir où ces données atterrissent, lisez la leçon sur lacs, entrepôts et magasins.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="entrepots-data.html">← Lac, entrepôt, magasin</a>
+        <a class="btn btn-primary" href="bi-tableau-de-bord.html">Derrière un tableau de bord →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
