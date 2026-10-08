@@ -1,0 +1,129 @@
+TITRE: La recette, essayer avant d’accepter
+DESC: Comment une entreprise vérifie qu’un nouvel outil répond bien à son besoin avant de dire oui : scénarios, anomalies, validation. Expliqué en schémas animés.
+FIL: <a href="../index.html#/si">Système d’information</a><span>/</span>Faire vivre le SI<span>/</span>Les projets
+LEAD: Un outil livré n’est pas un outil accepté. Avant de dire oui, ceux qui s’en serviront vont l’essayer pour de vrai&nbsp;: c’est la recette.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Une équipe a commandé un outil pour gérer les demandes de congés. Les développeurs
+        affirment qu’il est prêt. Mais prêt selon qui&nbsp;? Eux l’ont testé en pensant à leur
+        code&nbsp;; personne n’a vérifié que <strong>le besoin d’origine</strong> est couvert.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : le besoin est écrit, l’équipe construit, puis les futurs utilisateurs essaient avant la mise en service">
+        <div class="scene-title">Scène 1 — Où se place la recette</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Quatre étapes en ligne : besoin, construction, recette, mise en service">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="100" width="140" height="80" rx="10" class="s-box-teal"/>
+              <text x="100" y="146" text-anchor="middle" class="s-label-sm">Besoin</text>
+            </g>
+            <path d="M170 140 H230" class="s-line m-draw" data-show="2-4"/>
+            <g data-show="2-4" class="m-pop">
+              <rect x="230" y="100" width="140" height="80" rx="10" class="s-box"/>
+              <text x="300" y="146" text-anchor="middle" class="s-label-sm">Construction</text>
+            </g>
+            <path d="M370 140 H430" class="s-line m-draw" data-show="3-4"/>
+            <g data-show="3-4" class="m-pop">
+              <rect x="430" y="100" width="140" height="80" rx="10" class="s-box-accent pulse"/>
+              <text x="500" y="146" text-anchor="middle" class="s-label-sm">Recette</text>
+            </g>
+            <text x="500" y="216" text-anchor="middle" class="s-label-xs" data-show="3">le métier teste</text>
+            <path d="M570 140 H630" class="s-line-accent m-draw" data-show="4"/>
+            <g data-show="4" class="m-pop">
+              <rect x="630" y="100" width="140" height="80" rx="10" class="s-box-violet"/>
+              <text x="700" y="146" text-anchor="middle" class="s-label-sm">En service</text>
+            </g>
+            <text x="500" y="216" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">feu vert donné</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Tout part d’un besoin écrit.</b><span>Ce que l’outil doit permettre, décrit dans le cahier des charges.</span></p>
+          <p class="step" data-duration="4000"><b>L’équipe construit.</b><span>Elle vérifie elle-même que son code tient la route.</span></p>
+          <p class="step" data-duration="4600"><b>Avant de livrer, on fait la recette.</b><span>Ceux qui utiliseront l’outil l’essaient, en se demandant seulement&nbsp;: est-ce que ça répond à ce qu’on voulait&nbsp;?</span></p>
+          <p class="step" data-duration="4400"><b>Si oui, l’outil passe en service.</b><span>Le feu vert vient de l’utilisateur, pas de celui qui a construit.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          La réception d’une maison neuve. Le constructeur a fait ses propres contrôles&nbsp;; vous
+          faites quand même le tour avec une liste, vous ouvrez chaque porte, vous essayez chaque
+          robinet. Et vous ne prenez les clés qu’une fois les défauts réglés.
+        </p>
+      </div>
+
+      <h2>Comment ça se passe, concrètement</h2>
+      <p>
+        On ne «&nbsp;regarde pas un peu&nbsp;». On écrit à l’avance des <strong>scénarios</strong>
+        tirés du besoin&nbsp;: «&nbsp;un salarié pose un congé, son responsable le reçoit et le valide&nbsp;».
+        Chaque scénario est joué, et son résultat noté.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : trois scénarios sont joués, l’un échoue, l’anomalie est renvoyée à l’équipe puis corrigée, et la recette est validée">
+        <div class="scene-title">Scène 2 — Jouer les scénarios</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une liste de trois scénarios dont un échoue ; l’échec part vers l’équipe, revient corrigé, puis la liste est entièrement validée">
+            <g data-show="1-4" class="m-left">
+              <rect x="60" y="60" width="270" height="44" rx="8" class="s-box"/>
+              <text x="80" y="88" class="s-label-sm">Scénario 1</text>
+              <rect x="60" y="120" width="270" height="44" rx="8" class="s-box"/>
+              <text x="80" y="148" class="s-label-sm">Scénario 2</text>
+              <rect x="60" y="180" width="270" height="44" rx="8" class="s-box"/>
+              <text x="80" y="208" class="s-label-sm">Scénario 3</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <text x="305" y="90" text-anchor="middle" class="s-label-sm" fill="var(--sage)">✓</text>
+              <text x="305" y="150" text-anchor="middle" class="s-label-sm" fill="var(--sage)">✓</text>
+            </g>
+            <text x="305" y="210" text-anchor="middle" class="s-label-sm" fill="var(--danger)" data-show="2-3">✗</text>
+            <text x="305" y="210" text-anchor="middle" class="s-label-sm" fill="var(--sage)" data-show="4">✓</text>
+            <g data-show="3-4" class="m-right">
+              <rect x="540" y="130" width="200" height="80" rx="10" class="s-box-violet"/>
+              <text x="640" y="176" text-anchor="middle" class="s-label-sm">Équipe</text>
+            </g>
+            <path d="M330 202 H540" class="s-line m-draw" data-show="3"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M330 202 H540')"/>
+            <text x="435" y="240" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3">anomalie</text>
+            <path d="M540 150 H330" class="s-line-accent m-draw" data-show="4"/>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M540 150 H330')"/>
+            <text x="435" y="130" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">corrigé</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Une liste de scénarios.</b><span>Chacun correspond à un usage réel que l’outil doit permettre.</span></p>
+          <p class="step" data-duration="4200"><b>On les joue un à un.</b><span>Deux fonctionnent, le troisième échoue&nbsp;: c’est une anomalie, notée avec ce qui s’est passé.</span></p>
+          <p class="step" data-duration="4400"><b>L’anomalie repart vers l’équipe.</b><span>Elle la corrige, ou explique pourquoi ce n’est pas un défaut.</span></p>
+          <p class="step" data-duration="4600"><b>On rejoue le scénario concerné.</b><span>Quand tout est validé, la recette est prononcée. Elle est souvent consignée dans un procès-verbal.</span></p>
+        </div>
+      </section>
+
+      <h2>Les pièges</h2>
+      <p>
+        Une recette bâclée reporte les problèmes en production, où ils coûtent bien plus cher.
+        Autre piège&nbsp;: découvrir à ce stade que le besoin lui-même était mal décrit&nbsp;; la recette
+        mesure la conformité à ce qui a été écrit, d’où l’importance d’un cahier des charges précis.
+        On peut aussi accepter une recette «&nbsp;avec réserves&nbsp;»&nbsp;: les défauts mineurs sont listés
+        et corrigés après la mise en service.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>La <strong>recette</strong> est l’essai de l’outil par ceux qui s’en serviront, avant de l’accepter.</li>
+        <li>Elle compare l’outil au <strong>besoin écrit</strong>, avec des scénarios préparés à l’avance.</li>
+        <li>Chaque échec devient une <strong>anomalie</strong> corrigée puis rejouée.</li>
+        <li>On peut valider <strong>avec réserves</strong> : les défauts mineurs sont traités ensuite.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour replacer la recette dans l’ensemble d’un projet, relisez la leçon sur le déroulement d’un projet SI.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="projet-si.html">← Comment se déroule un projet SI</a>
+        <a class="btn btn-primary" href="conduite-changement.html">La conduite du changement →</a>
+      </nav>
