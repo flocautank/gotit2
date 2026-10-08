@@ -1,0 +1,142 @@
+TITRE: Les conteneurs, une boîte qui marche partout
+DESC: Pourquoi un logiciel qui marche sur un ordinateur plante sur un autre, et comment un conteneur emballe tout ce qu’il lui faut. Expliqué en schémas animés.
+FIL: <a href="../index.html#/informatique">Informatique</a><span>/</span>Le matériel<span>/</span>Où tournent les programmes
+LEAD: «&nbsp;Chez moi, ça marche.&nbsp;» Cette phrase a fait perdre des milliers d’heures aux équipes informatiques. Le conteneur est la réponse&nbsp;: emballer le logiciel avec tout ce dont il a besoin.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Un logiciel ne vit jamais seul. Pour démarrer, il compte sur des réglages, des outils
+        installés à côté de lui, et des versions bien précises de ces outils. Ce décor autour du
+        programme s’appelle son <strong>environnement</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un logiciel qui marche sur l’ordinateur de son auteur plante sur un serveur dont l’environnement diffère, puis on l’emballe avec son environnement">
+        <div class="scene-title">Scène 1 — Chez moi, ça marche</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un ordinateur où le logiciel fonctionne, un serveur où il plante, puis le logiciel emballé dans une boîte avec son environnement">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="60" width="300" height="180" rx="10" class="s-box-teal"/>
+              <text x="190" y="92" text-anchor="middle" class="s-label-sm">Poste du dev</text>
+              <rect x="80" y="120" width="100" height="60" rx="8" class="s-box"/>
+              <text x="130" y="156" text-anchor="middle" class="s-label-sm">Appli</text>
+              <rect x="200" y="120" width="100" height="60" rx="8" class="s-box-violet"/>
+              <text x="250" y="156" text-anchor="middle" class="s-label-sm">Outils</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="460" y="60" width="300" height="180" rx="10" class="s-box"/>
+              <text x="610" y="92" text-anchor="middle" class="s-label-sm">Serveur</text>
+            </g>
+            <text x="190" y="226" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="2-3">ça marche</text>
+            <g data-show="3" class="m-pop">
+              <rect x="500" y="120" width="100" height="60" rx="8" class="s-box"/>
+              <text x="550" y="156" text-anchor="middle" class="s-label-sm">Appli</text>
+              <rect x="620" y="120" width="100" height="60" rx="8" class="s-box-violet"/>
+              <text x="670" y="156" text-anchor="middle" class="s-label-sm">Autres</text>
+              <text x="610" y="226" text-anchor="middle" class="s-label-xs" fill="var(--danger)">ça plante</text>
+            </g>
+            <g data-show="4" class="m-pop">
+              <rect x="500" y="110" width="220" height="90" rx="10" class="s-box-accent pulse"/>
+              <text x="610" y="150" text-anchor="middle" class="s-label-sm">Appli + outils</text>
+              <text x="610" y="226" text-anchor="middle" class="s-label-xs" fill="var(--sage)">tout dans la boîte</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Un logiciel et son décor.</b><span>L’auteur a installé les bons outils autour de son programme, dans les bonnes versions.</span></p>
+          <p class="step" data-duration="4000"><b>Sur son poste, tout fonctionne.</b><span>Normal&nbsp;: c’est l’endroit où le logiciel a été construit et essayé.</span></p>
+          <p class="step" data-duration="4400"><b>Sur le serveur, le décor est différent.</b><span>Un outil manque ou n’a pas la même version&nbsp;: le logiciel ne démarre plus, sans que son code ait changé.</span></p>
+          <p class="step" data-duration="4600"><b>Alors on emballe le logiciel avec son décor.</b><span>Au lieu de refaire l’installation sur chaque machine, on déplace la boîte entière.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le conteneur maritime. Les ports n’ont pas besoin de savoir ce qu’il y a dedans&nbsp;: la
+          caisse a toujours la même forme, un camion, un train ou un bateau la porte de la même
+          façon. Le conteneur informatique fait pareil, mais pour des logiciels.
+        </p>
+      </div>
+
+      <h2>Plusieurs boîtes sur une même machine</h2>
+      <p>
+        Cette boîte s’appelle un <strong>conteneur</strong>. Pour la faire tourner, la machine a
+        besoin d’un <strong>moteur de conteneurs</strong>, un programme qui les démarre et les
+        isole les uns des autres.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un moteur de conteneurs sur une machine fait tourner plusieurs conteneurs isolés, et un conteneur se copie tel quel sur une autre machine">
+        <div class="scene-title">Scène 2 — Légers, isolés, copiables</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une machine avec un moteur et trois conteneurs côte à côte ; un conteneur est copié sur une seconde machine">
+            <g data-show="1-5" class="m-rise">
+              <rect x="40" y="215" width="480" height="60" rx="10" class="s-box"/>
+              <text x="280" y="252" text-anchor="middle" class="s-label-sm">Machine</text>
+            </g>
+            <g data-show="2-5" class="m-rise">
+              <rect x="40" y="165" width="480" height="40" rx="8" class="s-box-violet"/>
+              <text x="280" y="192" text-anchor="middle" class="s-label-sm">Moteur de conteneurs</text>
+            </g>
+            <g data-show="3-5" class="m-pop">
+              <rect x="60" y="70" width="130" height="85" rx="10" class="s-box-accent"/>
+              <text x="125" y="119" text-anchor="middle" class="s-label-sm">Appli A</text>
+              <rect x="215" y="70" width="130" height="85" rx="10" class="s-box-accent"/>
+              <text x="280" y="119" text-anchor="middle" class="s-label-sm">Appli B</text>
+              <rect x="370" y="70" width="130" height="85" rx="10" class="s-box-accent"/>
+              <text x="435" y="119" text-anchor="middle" class="s-label-sm">Appli C</text>
+            </g>
+            <text x="280" y="50" text-anchor="middle" class="s-label-xs" data-show="3">chacune dans sa boîte</text>
+            <text x="280" y="50" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">légères : on partage le moteur</text>
+            <g data-show="5" class="m-right">
+              <rect x="600" y="215" width="160" height="60" rx="10" class="s-box"/>
+              <text x="680" y="252" text-anchor="middle" class="s-label-sm">Machine 2</text>
+              <rect x="600" y="165" width="160" height="40" rx="8" class="s-box-violet"/>
+              <text x="680" y="192" text-anchor="middle" class="s-label-sm">Moteur</text>
+              <rect x="620" y="70" width="120" height="85" rx="10" class="s-box-accent pulse"/>
+              <text x="680" y="119" text-anchor="middle" class="s-label-sm">Appli A</text>
+            </g>
+            <path d="M190 100 H 620" class="s-line-accent m-draw" data-show="5" style="stroke-dasharray:6 6"/>
+            <text x="280" y="50" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="5">même boîte, même résultat</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3600"><b>Une machine, comme un serveur.</b><span>C’est elle qui apporte la puissance de calcul et la mémoire.</span></p>
+          <p class="step" data-duration="3800"><b>Dessus, un moteur de conteneurs.</b><span>Un programme qui démarre, arrête et surveille les boîtes.</span></p>
+          <p class="step" data-duration="4400"><b>Chaque logiciel vit dans sa propre boîte.</b><span>Chaque conteneur est isolé&nbsp;: l’un peut planter ou utiliser une autre version d’un outil sans gêner les voisins.</span></p>
+          <p class="step" data-duration="4600"><b>Les boîtes partagent le moteur de la machine.</b><span>Contrairement à une machine virtuelle, un conteneur n’embarque pas un système complet&nbsp;: il est plus léger et démarre vite.</span></p>
+          <p class="step" data-duration="4600"><b>Et la boîte se copie telle quelle.</b><span>Sur une autre machine dotée d’un moteur, le même conteneur donne le même résultat.</span></p>
+        </div>
+      </section>
+
+      <h2>À quoi ça sert, concrètement</h2>
+      <p>
+        Les équipes s’en servent pour <strong>livrer</strong> un logiciel sans mauvaise surprise,
+        pour en faire tourner plusieurs copies quand l’affluence monte, et pour reproduire à
+        l’identique un environnement de test. Quand il y a beaucoup de conteneurs, un outil
+        d’<strong>orchestration</strong> prend le relais pour les placer, les relancer s’ils
+        tombent et en ajouter selon la charge.
+      </p>
+      <p>
+        Le prix à payer&nbsp;: un nouvel outil à apprendre, et une isolation moins étanche qu’une
+        machine virtuelle, puisque le noyau du système est partagé.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un <strong>conteneur</strong> emballe un logiciel avec tout son <strong>environnement</strong>.</li>
+        <li>Il règle le «&nbsp;<strong>chez moi, ça marche</strong>&nbsp;»&nbsp;: la même boîte fonctionne sur n’importe quelle machine équipée d’un moteur.</li>
+        <li>Plus <strong>léger</strong> qu’une machine virtuelle, car il ne contient pas de système complet.</li>
+        <li>Chaque conteneur est <strong>isolé</strong> de ses voisins, mais pas autant qu’une machine virtuelle.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir l’autre manière de partager une machine, retournez à la leçon sur la virtualisation.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="virtualisation.html">← La virtualisation</a>
+        <a class="btn btn-primary" href="cloud-saas.html">SaaS, PaaS, IaaS →</a>
+      </nav>

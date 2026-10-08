@@ -442,6 +442,20 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['https', 'cadenas', 'certificat', 'tls', 'ssl', 'site sécurisé', 'chiffrement', 'navigateur', 'faux site']
     },
+    'conteneurs': {
+      title: 'Les conteneurs, une boîte qui marche partout',
+      summary: 'Pourquoi « chez moi, ça marche » ne suffit pas, et comment un conteneur emballe un logiciel avec tout ce qu’il lui faut.',
+      path: 'lecons/conteneurs.html',
+      duration: '6 min', level: 2,
+      keywords: ['conteneur', 'docker', 'environnement', 'déploiement', 'orchestration', 'serveur', 'virtualisation', 'application']
+    },
+    'recette': {
+      title: 'La recette, essayer avant d’accepter',
+      summary: 'Comment on vérifie qu’un nouvel outil répond au besoin avant de le valider : scénarios, anomalies, feu vert.',
+      path: 'lecons/recette.html',
+      duration: '5 min', level: 2,
+      keywords: ['recette', 'test', 'scénario', 'anomalie', 'validation', 'réserves', 'projet', 'cahier des charges', 'mise en production']
+    },
     /* ---------- Leçons prévues (affichées en grisé) ---------- */
 
   };
@@ -457,7 +471,7 @@ window.GOTIT = (function () {
           subcategories: [
             { id: 'dans-la-machine', title: 'Dans la machine', lessons: ['ordinateur', 'serveur', 'cache'] },
             { id: 'trop-de-monde', title: 'Quand un site attire trop de monde', lessons: ['load-balancer'] },
-            { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas', 'virtualisation'] },
+            { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas', 'virtualisation', 'conteneurs'] },
             { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['fichiers', 'compression'] }
           ]
         },
@@ -533,7 +547,7 @@ window.GOTIT = (function () {
         {
           id: 'conduite', title: 'Faire vivre le SI',
           subcategories: [
-            { id: 'projets', title: 'Les projets', lessons: ['projet-si'] },
+            { id: 'projets', title: 'Les projets', lessons: ['projet-si', 'recette'] },
             { id: 'support', title: 'Le support', lessons: ['support'] },
             { id: 'construire', title: 'Construire sans développeur', lessons: ['no-code'] },
             { id: 'adoption', title: 'Faire adopter l’outil', lessons: ['conduite-changement'] }
@@ -1944,6 +1958,45 @@ window.GOTIT = (function () {
       ],
       voir: "api",
       pas: "l’intégration, qui est le travail de branchement lui-même ; l’interopérabilité est ce qui le rend facile ou non."
+    },
+    {
+      id: "pilote", terme: "Pilote (driver)", domaine: "Informatique",
+      aka: ["pilote", "driver", "imprimante", "périphérique", "pilote graphique"],
+      une: "Le petit logiciel qui apprend à l’ordinateur à parler à un matériel précis.",
+      etapes: [
+        "Une imprimante, une souris, une carte graphique : chaque matériel a sa propre façon de recevoir des ordres.",
+        "Le système de l’ordinateur ne peut pas les connaître tous à l’avance.",
+        "Le pilote, fourni par le fabricant ou déjà inclus dans le système, traduit les ordres du système en ordres que ce matériel comprend.",
+        "Un matériel branché qui ne répond pas, c’est souvent un pilote absent ou trop ancien : l’installer ou le mettre à jour règle le problème."
+      ],
+      voir: "logiciel",
+      pas: "une application, que vous utilisez directement ; le pilote travaille en coulisses, entre le système et le matériel."
+    },
+    {
+      id: "vision-ordinateur", terme: "Vision par ordinateur", domaine: "IA",
+      aka: ["vision par ordinateur", "reconnaissance d’image", "reconnaissance faciale", "computer vision", "image"],
+      une: "La capacité d’un programme à repérer et reconnaître ce qu’il y a dans une image ou une vidéo.",
+      etapes: [
+        "Pour un ordinateur, une photo n’est pas un paysage : c’est un tableau de millions de nombres, un par point de couleur.",
+        "On montre à un modèle des milliers d’images accompagnées de leur étiquette, par exemple « chat » ou « panneau stop » : il apprend les motifs qui reviennent.",
+        "Face à une nouvelle image, il dit ce qu’il y reconnaît, ou où : lire une plaque, repérer une pièce défectueuse, trier des photos.",
+        "Il ne comprend pas la scène comme nous : un éclairage inhabituel ou un angle absent de ses exemples suffisent à le tromper."
+      ],
+      voir: "machine-learning",
+      pas: "l’IA générative d’images, qui crée une image au lieu d’en analyser une."
+    },
+    {
+      id: "jeu-de-donnees", terme: "Jeu de données (dataset)", domaine: "Data",
+      aka: ["jeu de données", "dataset", "données d’entraînement", "échantillon", "fichier de données"],
+      une: "Un ensemble de données rassemblées pour un même usage, présenté en lignes et en colonnes.",
+      etapes: [
+        "Des mesures éparses ne servent à rien tant qu’elles ne sont pas rassemblées au même endroit.",
+        "On les range dans un ensemble cohérent : une ligne par cas, par exemple un client ou une vente, et une colonne par caractéristique.",
+        "Ce jeu sert à analyser, à alimenter un tableau de bord ou à entraîner une IA, auquel cas on le découpe : une partie pour apprendre, une autre pour tester.",
+        "Sa qualité décide du résultat : lignes manquantes, doublons ou échantillon biaisé faussent tout ce qu’on en tire."
+      ],
+      voir: "donnees-structurees",
+      pas: "une base de données, qui est le système qui stocke et fait vivre les données ; le jeu est un ensemble ciblé, souvent tiré de là."
     }
   ];
 
