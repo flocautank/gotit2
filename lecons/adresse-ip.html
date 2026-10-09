@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L’adresse IP, l’adresse postale d’une machine — GotIt !</title>
+<meta name="description" content="Comment un message trouve sa destination sur Internet : l’adresse IP, la box qui en partage une, et les ports. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/reseau">Réseau</a><span>/</span>Comment ça circule<span>/</span>Les bases</div>
+      <h1>L’adresse IP, l’adresse postale d’une machine</h1>
+      <p class="lead">Pour qu’un message arrive à la bonne machine parmi des milliards, chacune porte une adresse. Voici comment elle est faite, et pourquoi votre téléphone et votre ordinateur n’ont pas la même que votre box.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Pour envoyer une lettre, il faut une adresse&nbsp;: un numéro, une rue, une ville. Sans elle, le facteur ne
+        sait pas où aller. Les machines connectées fonctionnent pareil&nbsp;: chacune porte une adresse, que l’on
+        appelle une <strong>adresse IP</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un message porte l’adresse de sa destination et traverse le réseau jusqu’à la machine qui porte cette adresse">
+        <div class="scene-title">Scène 1 — Une adresse par machine</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une machine émettrice à gauche envoie un message portant une adresse à travers le réseau vers la machine de droite qui porte cette adresse">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="110" width="140" height="80" rx="10" class="s-box-teal"/>
+              <text x="100" y="156" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="630" y="110" width="140" height="80" rx="10" class="s-box"/>
+              <text x="700" y="156" text-anchor="middle" class="s-label-sm">Un site</text>
+            </g>
+            <text x="700" y="224" text-anchor="middle" class="s-label-xs" data-show="2-4">203.0.113.7</text>
+            <g data-show="3-4" class="m-pop">
+              <rect x="300" y="60" width="200" height="50" rx="8" class="s-box-accent"/>
+              <text x="400" y="91" text-anchor="middle" class="s-label-sm">Pour : 203.0.113.7</text>
+            </g>
+            <path d="M170 150 H630" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M170 150 H630')"/>
+            <text x="400" y="236" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">bien arrivé</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Deux machines veulent se parler.</b><span>Votre ordinateur d’un côté, la machine qui héberge un site de l’autre.</span></p>
+          <p class="step" data-duration="4200"><b>Chacune porte une suite de nombres.</b><span>Quatre nombres séparés par des points, comme 203.0.113.7&nbsp;: c’est son adresse.</span></p>
+          <p class="step" data-duration="4400"><b>Le message est étiqueté avec l’adresse du destinataire.</b><span>Comme une enveloppe, il porte sur lui ce qu’il faut pour arriver, sans que vous guidiez le trajet.</span></p>
+          <p class="step" data-duration="4600"><b>Cette adresse s’appelle l’adresse IP.</b><span>Les équipements du réseau lisent l’étiquette et font suivre le message de proche en proche jusqu’à la bonne machine.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un immeuble avec sa rue. L’adresse de l’immeuble, c’est l’adresse IP&nbsp;: elle suffit au facteur pour
+          arriver devant la porte d’entrée. Elle ne dit pas encore chez quel habitant déposer le courrier&nbsp;:
+          pour cela, il faut un numéro d’appartement, que nous verrons plus bas.
+        </p>
+      </div>
+
+      <h2>Chez vous : une adresse pour tous</h2>
+      <p>
+        Chaque appareil de la maison, téléphone, télévision, ordinateur, a aussi son adresse. Mais vers l’extérieur,
+        c’est la box qui se présente.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : les appareils de la maison ont chacun une adresse interne, la box se présente à Internet avec une seule adresse, et un numéro de port désigne le service visé">
+        <div class="scene-title">Scène 2 — La box et les portes</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Trois appareils à gauche reliés à une box au centre, qui est reliée à Internet à droite ; un numéro de porte précise le service visé">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="40" width="130" height="50" rx="8" class="s-box-teal"/>
+              <text x="95" y="70" text-anchor="middle" class="s-label-sm">Téléphone</text>
+              <rect x="30" y="135" width="130" height="50" rx="8" class="s-box-teal"/>
+              <text x="95" y="165" text-anchor="middle" class="s-label-sm">Ordinateur</text>
+              <rect x="30" y="230" width="130" height="50" rx="8" class="s-box-teal"/>
+              <text x="95" y="260" text-anchor="middle" class="s-label-sm">Télévision</text>
+            </g>
+            <text x="95" y="304" text-anchor="middle" class="s-label-xs" data-show="2-5">adresses internes</text>
+            <g data-show="1-5" class="m-pop">
+              <rect x="310" y="120" width="140" height="80" rx="10" class="s-box-accent"/>
+              <text x="380" y="166" text-anchor="middle" class="s-label-sm">Box</text>
+            </g>
+            <path d="M160 65 L310 145 M160 160 H310 M160 255 L310 175" class="s-line m-draw" data-show="2-5"/>
+            <g data-show="1-5" class="m-right">
+              <rect x="640" y="120" width="140" height="80" rx="10" class="s-box"/>
+              <text x="710" y="166" text-anchor="middle" class="s-label-sm">Internet</text>
+            </g>
+            <path d="M450 160 H640" class="s-line-accent m-draw" data-show="3-5"/>
+            <text x="545" y="140" text-anchor="middle" class="s-label-xs" data-show="3-5">une adresse</text>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M450 160 H640')"/>
+            <g data-show="4-5" class="m-pop">
+              <rect x="540" y="195" width="100" height="40" rx="8" class="s-box-violet"/>
+              <text x="590" y="221" text-anchor="middle" class="s-label-sm">porte 443</text>
+            </g>
+            <text x="590" y="262" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="5">le bon service</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>La maison abrite plusieurs appareils.</b><span>Chacun veut accéder à Internet en même temps.</span></p>
+          <p class="step" data-duration="4200"><b>Chacun a une adresse interne.</b><span>Elle est distribuée par la box et ne vaut que dans la maison&nbsp;: c’est une adresse privée.</span></p>
+          <p class="step" data-duration="4400"><b>Vers l’extérieur, la box parle seule.</b><span>Internet ne voit qu’une adresse, celle que votre fournisseur d’accès attribue à la box. La box se souvient qui, chez vous, attend quelle réponse.</span></p>
+          <p class="step" data-duration="4600"><b>Un numéro de porte précise le service.</b><span>Une même machine peut en offrir plusieurs&nbsp;: web, messagerie… Chacun écoute à son numéro, le port.</span></p>
+          <p class="step" data-duration="4600"><b>Adresse plus port&nbsp;: la destination exacte.</b><span>L’adresse mène à la machine, le port au bon service. Les pages web sécurisées arrivent, par convention, au port 443.</span></p>
+        </div>
+      </section>
+
+      <h2>Deux précisions utiles</h2>
+      <p>
+        Une adresse peut <strong>changer</strong>&nbsp;: beaucoup de fournisseurs en prêtent une qui peut varier
+        d’un jour à l’autre. C’est pourquoi on retient des <em>noms</em> (le rôle du DNS) plutôt que des numéros.
+        Et comme les adresses de forme «&nbsp;quatre nombres&nbsp;» commencent à manquer, une version plus longue,
+        l’IPv6, existe pour en fournir davantage.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Une <strong>adresse IP</strong> identifie une machine sur un réseau, comme une adresse postale.</li>
+        <li>Le message porte l’adresse de son destinataire&nbsp;; le réseau l’y achemine de proche en proche.</li>
+        <li>Chez vous, chaque appareil a une adresse <strong>privée</strong>&nbsp;; la box en montre une seule à l’extérieur.</li>
+        <li>Le <strong>port</strong> désigne le service visé sur la machine&nbsp;: adresse + port, c’est la destination exacte.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour savoir comment un nom comme celui d’un site devient un numéro, passez à la leçon sur le DNS.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="wifi-box.html">← Wifi, box et débit</a>
+        <a class="btn btn-primary" href="dns.html">Le DNS →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

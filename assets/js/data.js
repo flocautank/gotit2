@@ -456,6 +456,13 @@ window.GOTIT = (function () {
       duration: '5 min', level: 2,
       keywords: ['recette', 'test', 'scénario', 'anomalie', 'validation', 'réserves', 'projet', 'cahier des charges', 'mise en production']
     },
+    'adresse-ip': {
+      title: 'L’adresse IP, l’adresse postale d’une machine',
+      summary: 'Comment un message trouve sa destination : l’adresse IP, la box qui en partage une, et les ports.',
+      path: 'lecons/adresse-ip.html',
+      duration: '5 min', level: 1,
+      keywords: ['adresse ip', 'ip', 'port', 'box', 'réseau', 'ipv6', 'adresse privée', 'internet']
+    },
     /* ---------- Leçons prévues (affichées en grisé) ---------- */
 
   };
@@ -492,7 +499,7 @@ window.GOTIT = (function () {
         {
           id: 'circulation', title: 'Comment ça circule',
           subcategories: [
-            { id: 'bases-reseau', title: 'Les bases', lessons: ['internet', 'wifi-box', 'dns'] },
+            { id: 'bases-reseau', title: 'Les bases', lessons: ['internet', 'wifi-box', 'adresse-ip', 'dns'] },
             { id: 'messagerie', title: 'La messagerie', lessons: ['email'] },
             { id: 'traces', title: 'Les traces qu\u2019on laisse', lessons: ['navigateur'] }
           ]
@@ -1007,7 +1014,7 @@ window.GOTIT = (function () {
         "Retenir des numéros serait pénible : on tape donc un nom de site, traduit en adresse IP par un annuaire, le DNS.",
         "Deux familles coexistent : les adresses IPv4, plus anciennes et en nombre limité, et les IPv6, plus récentes et bien plus nombreuses."
       ],
-      voir: "internet",
+      voir: "adresse-ip",
       pas: "le DNS, qui traduit un nom en adresse IP — l’adresse, elle, est le numéro final utilisé pour acheminer les données."
     },
     {
@@ -1997,6 +2004,58 @@ window.GOTIT = (function () {
       ],
       voir: "donnees-structurees",
       pas: "une base de données, qui est le système qui stocke et fait vivre les données ; le jeu est un ensemble ciblé, souvent tiré de là."
+    },
+    {
+      id: "port-reseau", terme: "Port (réseau)", domaine: "Réseau",
+      aka: ["port", "numéro de port", "port 443", "port 80", "service"],
+      une: "Le numéro de porte, sur une machine, qui désigne le service à qui un message est destiné.",
+      etapes: [
+        "Une même machine peut offrir plusieurs services à la fois : pages web, messagerie, transfert de fichiers.",
+        "L’adresse IP seule mène à la machine, pas au bon service : il faut aussi préciser lequel.",
+        "Chaque service écoute à un numéro, le port. Par convention, les pages web sécurisées arrivent au port 443.",
+        "Un pare-feu s’appuie souvent dessus : il laisse ouvertes les portes utiles et ferme toutes les autres."
+      ],
+      voir: "adresse-ip",
+      pas: "l’adresse IP, qui désigne la machine ; le port désigne un service sur cette machine."
+    },
+    {
+      id: "metadonnees", terme: "Métadonnées", domaine: "Data",
+      aka: ["métadonnées", "metadata", "données sur les données", "propriétés du fichier"],
+      une: "Les informations qui décrivent une donnée, sans en être le contenu.",
+      etapes: [
+        "Une photo contient une image. Mais on sait aussi quand elle a été prise, avec quel appareil, et sa taille.",
+        "Ces informations qui décrivent la donnée, sans en faire partie, sont ses métadonnées.",
+        "Elles servent à ranger, chercher et retrouver : trier des fichiers par date, ou savoir qui est responsable d’une table de données.",
+        "Elles peuvent en dire long sur vous : un message dont on ne lit pas le contenu révèle déjà qui écrit à qui, et quand."
+      ],
+      voir: "donnees-structurees",
+      pas: "la donnée elle-même : le contenu de la photo ou du message, par opposition à ce qui l’entoure."
+    },
+    {
+      id: "refactoring", terme: "Refactorisation (refactoring)", domaine: "Informatique",
+      aka: ["refactoring", "refactorisation", "réécriture", "nettoyer le code", "code propre"],
+      une: "Réorganiser le code d’un logiciel pour le rendre plus clair, sans changer ce qu’il fait.",
+      etapes: [
+        "Au fil des ajouts, un programme devient confus : des morceaux répétés, des noms obscurs, des raccourcis pris dans l’urgence.",
+        "La refactorisation range tout cela sans changer le comportement : l’utilisateur ne voit aucune différence.",
+        "On vérifie par des tests que le logiciel fait toujours la même chose avant et après.",
+        "C’est le remède courant à la dette technique : on y gagne en rapidité de travail, pas en fonctions nouvelles."
+      ],
+      voir: "logiciel",
+      pas: "une nouvelle fonction ou un correctif de bug, qui changent ce que fait le logiciel."
+    },
+    {
+      id: "poc", terme: "Preuve de concept (POC)", domaine: "SI",
+      aka: ["poc", "proof of concept", "preuve de concept", "maquette", "prototype"],
+      une: "Un essai rapide, à petite échelle, pour vérifier qu’une idée est réalisable avant d’investir.",
+      etapes: [
+        "Avant de lancer un gros projet, une question demeure : est-ce que cela peut fonctionner, ici, avec nos données ?",
+        "On construit donc une version minimale, sur un cas précis et pour quelques utilisateurs, en quelques semaines.",
+        "Le but est d’apprendre vite : ce qui marche, ce qui bloque, ce que cela coûterait en grand.",
+        "À la fin, on décide : abandonner, ajuster, ou construire pour de bon. Un POC n’est pas fait pour être utilisé tel quel en production."
+      ],
+      voir: "projet-si",
+      pas: "le MVP, qui est un premier produit réel confié à de vrais utilisateurs ; le POC ne cherche qu’à prouver la faisabilité."
     }
   ];
 

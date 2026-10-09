@@ -38,6 +38,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Les conteneurs, une boîte qui marche partout](lecons/conteneurs.html) | Informatique | Intermédiaire |
 | [Comment voyage une page web](lecons/internet.html) | Réseau | Découverte |
 | [Wifi, box et débit](lecons/wifi-box.html) | Réseau | Découverte |
+| [L’adresse IP, l’adresse postale d’une machine](lecons/adresse-ip.html) | Réseau | Découverte |
 | [Le DNS, l’annuaire d’Internet](lecons/dns.html) | Réseau | Découverte |
 | [Ce que sait votre navigateur](lecons/navigateur.html) | Réseau | Découverte |
 | [Les bases de la cybersécurité](lecons/cybersecurite.html) | Réseau | Découverte |
@@ -88,7 +89,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Un serveur MCP, c'est quoi ?](lecons/mcp.html) | IA | Intermédiaire |
 | [Le prompt injection, le risque caché des agents IA](lecons/injection-prompt.html) | IA | Intermédiaire |
 
-**113 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**117 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
 ouvert, benchmark, garde-fous, prompt injection, Machine Learning, appel d'outils, réseau de neurones, biais —, celui des
@@ -98,7 +99,7 @@ pare-feu, DNS, cookie, hameçonnage, MFA/2FA, protocole, rançongiciel, proxy, C
 d'informatique générale (Git, octet, cache, open source, conteneur, cloud, système d'exploitation,
 framework, bug, scalabilité) et treize de la data (jointure, ETL/ELT, KPI, SQL, Big Data, index, tableau de
 bord, schéma de données, silo de données, anonymisation/pseudonymisation, NoSQL, catalogue de
-données, test A/B, qualité des données), plus latence, backlog, données de référence, chaîne de pensée, HTTPS, métiers de la data, RPA, mise en production, surapprentissage, règle 3-2-1, entrepôt de données, TMA, deepfake, machine virtuelle, dédoublonnage, webhook, chatbot, clé primaire, ligne de commande, middleware apprentissage supervisé, bande passante, mémoire vive, donnée personnelle, PCA/PRA, mise à jour, boîte noire de l’IA, interopérabilité, pilote, vision par ordinateur et jeu de données).
+données, test A/B, qualité des données), plus latence, backlog, données de référence, chaîne de pensée, HTTPS, métiers de la data, RPA, mise en production, surapprentissage, règle 3-2-1, entrepôt de données, TMA, deepfake, machine virtuelle, dédoublonnage, webhook, chatbot, clé primaire, ligne de commande, middleware apprentissage supervisé, bande passante, mémoire vive, donnée personnelle, PCA/PRA, mise à jour, boîte noire de l’IA, interopérabilité, pilote, vision par ordinateur, jeu de données, port, métadonnées, refactorisation et preuve de concept).
 
 Le public visé : quelqu'un d'intelligent à qui personne n'a jamais montré les objets.
 Aucun prérequis, une analogie du quotidien par leçon, et le mot technique toujours
