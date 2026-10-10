@@ -125,6 +125,8 @@ lecons/*.html           Une page par leçon
 assets/js/data.js       Le catalogue (taxonomie + fiches des leçons)
 assets/js/home.js       Navigation du catalogue (domaine > catégorie) et recherche
 assets/js/scene.js      Moteur d'animation des scènes (étapes, lecture, clavier)
+assets/js/motion.js     Chorégraphies : des objets qui voyagent d'une étape à l'autre
+assets/js/motion/       Une chorégraphie par scène concernée (rag, serveur)
 assets/css/main.css     Styles généraux
 assets/css/lesson.css   Styles des leçons et utilitaires d'animation
 explorer.html           La carte du site : domaines, leçons, cartes et leurs liens
