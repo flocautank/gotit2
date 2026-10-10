@@ -140,7 +140,14 @@
   Scene.prototype.go = function (step, silent) {
     if (step < 1) step = 1;
     if (step > this.total) step = this.total;
+    var previous = this.current;
     this.current = step;
+    this.root.dataset.step = step;
+
+    /* Une scène chorégraphiée (motion.js) écoute ce signal. « live » : on vient
+       de l'étape précédente, la transition mérite d'être jouée en entier ; sinon
+       (saut, retour arrière, chargement) on pose directement l'état final. */
+    this.signal(step, previous, !silent && step === previous + 1);
 
     this.targets.forEach(function (target) {
       target.el.classList.toggle('is-on', target.match(step));
@@ -161,6 +168,14 @@
     this.label.textContent = step + ' / ' + this.total;
 
     if (!silent && this.playing) this.schedule();
+  };
+
+  Scene.prototype.signal = function (step, previous, live) {
+    var event;
+    try {
+      event = new CustomEvent('scene:step', { detail: { step: step, previous: previous, live: live } });
+    } catch (e) { return; }
+    this.root.dispatchEvent(event);
   };
 
   Scene.prototype.schedule = function () {
@@ -200,6 +215,8 @@
         if (entry.isIntersecting) {
           if (!self.autoPlayed) {
             self.autoPlayed = true;
+            // L'entrée de la première étape s'est jouée hors écran : on la rejoue.
+            self.signal(self.current, self.current - 1, true);
             self.play();
           }
         } else if (self.playing) {

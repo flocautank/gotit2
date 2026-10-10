@@ -47,66 +47,116 @@
         Ce qui le distingue de celui posé sur votre bureau, c’est son emploi du temps.
       </p>
 
-      <!-- ============ SCÈNE 1 ============ -->
-      <section class="scene" aria-label="Animation : un ordinateur qui ne s’éteint jamais">
+      <!-- ============ SCÈNE 1 — chorégraphiée (assets/js/motion/serveur.js) ============ -->
+      <section class="scene" data-motion="serveur-metamorphose" aria-label="Animation : un serveur est un ordinateur qui a changé de métier">
         <div class="scene-title">Scène 1 — La même machine, un autre métier</div>
         <div class="stage">
-          <svg viewBox="0 0 800 330" role="img" aria-label="Comparaison entre un ordinateur personnel éteint la nuit et un serveur allumé en permanence">
-            <!-- Ordinateur personnel -->
-            <g data-show="1-3" class="m-rise">
-              <rect x="90" y="90" width="180" height="118" rx="10" class="s-box"/>
-              <rect x="104" y="104" width="152" height="90" rx="6" fill="#F1EBDF" stroke="var(--line-strong)"/>
-              <path d="M60 208 H300 l-18 26 H78 Z" class="s-box"/>
-              <text x="180" y="272" text-anchor="middle" class="s-label">Votre ordinateur</text>
-              <text x="180" y="292" text-anchor="middle" class="s-label-sm">un outil que vous utilisez</text>
+          <svg viewBox="0 0 800 340" role="img" aria-label="Un ordinateur portable vit une journée puis s’éteint la nuit ; démonté, il révèle de quoi calculer, retenir et ranger ; ce cœur, mis à plat, prend place dans une armoire avec d’autres : c’est un serveur, qui reste allumé jour et nuit et répond aux demandes.">
+
+            <!-- Le ciel : derrière tout le reste -->
+            <g id="sv-soleil" style="transform:translate(70px,160px);opacity:0">
+              <circle r="15" class="mo-soleil"/>
+              <path d="M0 -21 V-28 M0 21 V28 M-21 0 H-28 M21 0 H28 M15 -15 L20 -20 M-15 15 L-20 20 M15 15 L20 20 M-15 -15 L-20 -20" class="mo-rayon"/>
             </g>
-            <g data-show="1" class="m-pop">
-              <circle cx="180" cy="149" r="26" fill="#F6EBD8" stroke="var(--warn)"/>
-              <path d="M180 136 v16" stroke="var(--warn)" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M169 140 a15 15 0 1 0 22 0" stroke="var(--warn)" stroke-width="2.5" fill="none"/>
-              <text x="180" y="60" text-anchor="middle" class="s-label-sm">allumé quand vous en avez besoin</text>
+            <g id="sv-lune" style="transform:translate(70px,160px);opacity:0">
+              <path d="M5 -14 A14 14 0 1 0 5 14 A18 18 0 0 1 5 -14 Z" class="mo-lune"/>
             </g>
 
-            <!-- Serveur -->
-            <g data-show="2-3" class="m-right">
-              <rect x="530" y="66" width="150" height="176" rx="10" class="s-box-accent"/>
-              <g fill="#F1EBDF" stroke="var(--line-strong)">
-                <rect x="544" y="82" width="122" height="30" rx="5"/>
-                <rect x="544" y="120" width="122" height="30" rx="5"/>
-                <rect x="544" y="158" width="122" height="30" rx="5"/>
-                <rect x="544" y="196" width="122" height="30" rx="5"/>
+            <!-- L'ordinateur portable : l'écran pivote sur sa charnière -->
+            <g id="sv-ecran" style="transform:translate(220px,222px) scale(1,.06);opacity:0">
+              <rect x="-88" y="-118" width="176" height="118" rx="10" class="s-box"/>
+              <rect x="-76" y="-106" width="152" height="94" rx="5" class="mo-eteint"/>
+              <rect x="-76" y="-106" width="152" height="94" rx="5" class="mo-allume"/>
+            </g>
+            <g id="sv-socle" style="transform:translate(220px,222px);opacity:0">
+              <path d="M-104 0 H104 L90 22 H-90 Z" class="s-box"/>
+              <path d="M-70 8 H70 M-60 15 H60" class="mo-trait"/>
+            </g>
+            <text id="sv-txt-pc" x="220" y="284" text-anchor="middle" class="s-label" style="opacity:0">votre ordinateur</text>
+
+            <!-- L'armoire : dessinée avant le cœur, qui doit passer devant elle pour s'y glisser -->
+            <g id="sv-baie" style="transform:translate(650px,175px);opacity:0">
+              <rect x="-84" y="-126" width="168" height="252" rx="10" class="s-box"/>
+              <path d="M-74 -112 V112 M74 -112 V112" class="mo-trait"/>
+              <path d="M-46 96 H46 M-46 106 H46" class="mo-trait"/>
+            </g>
+            <!-- Ce qu'il y a dedans -->
+            <g id="sv-coeur" style="transform:translate(220px,200px) scale(.35);opacity:0">
+              <rect x="-130" y="-60" width="260" height="120" rx="12" class="s-box-teal"/>
+              <g class="sv-puce" style="opacity:0">
+                <rect x="-106" y="-38" width="52" height="52" rx="6" class="s-box-violet"/>
+                <rect x="-94" y="-26" width="28" height="28" rx="4" class="s-box"/>
               </g>
-              <g class="blink" data-show="2-3" fill="var(--sage)">
-                <circle cx="558" cy="97" r="4"/><circle cx="558" cy="135" r="4"/>
-                <circle cx="558" cy="173" r="4"/><circle cx="558" cy="211" r="4"/>
+              <g class="sv-puce" style="opacity:0">
+                <rect x="-38" y="-30" width="76" height="22" rx="4" class="s-box-accent"/>
+                <path d="M-24 -24 V-14 M-8 -24 V-14 M8 -24 V-14 M24 -24 V-14" class="mo-trait"/>
               </g>
-              <text x="605" y="272" text-anchor="middle" class="s-label">Un serveur</text>
-              <text x="605" y="292" text-anchor="middle" class="s-label-sm">la même informatique, en continu</text>
-            </g>
-            <g data-show="2-3" class="m-fall">
-              <rect x="548" y="24" width="114" height="28" rx="14" fill="var(--sage-soft)" stroke="var(--sage)"/>
-              <text x="605" y="43" text-anchor="middle" class="s-label-sm" fill="var(--sage)">allumé 24 h / 24</text>
-            </g>
-
-            <!-- Demande -->
-            <g data-show="3">
-              <path id="srv-s1-path" d="M310 150 H520" class="s-line-accent m-draw" data-show="3"
-                    marker-end="url(#srv-arrow)"/>
-              <text x="415" y="134" text-anchor="middle" class="s-label-sm" data-show="3">« tu peux me donner… ? »</text>
-              <text x="415" y="182" text-anchor="middle" class="s-label-xs" data-show="3">il attend, il répond, il recommence</text>
+              <g class="sv-puce" style="opacity:0">
+                <rect x="50" y="-32" width="60" height="40" rx="5" class="s-box"/>
+                <circle cx="80" cy="-12" r="11" class="mo-eteint"/>
+              </g>
+              <text class="sv-etiq s-label-xs" x="-80" y="44" text-anchor="middle" style="opacity:0">calcul</text>
+              <text class="sv-etiq s-label-xs" x="0" y="44" text-anchor="middle" style="opacity:0">mémoire</text>
+              <text class="sv-etiq s-label-xs" x="80" y="44" text-anchor="middle" style="opacity:0">disque</text>
             </g>
 
-            <defs>
-              <marker id="srv-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-                <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/>
-              </marker>
-            </defs>
+            <g class="sv-u" style="transform:translate(610px,95px);opacity:0">
+              <rect x="-70" y="-17" width="140" height="34" rx="6" class="s-box-accent"/>
+              <circle cx="-52" cy="0" r="4.5" class="mo-led"/>
+              <path d="M-26 -8 H56 M-26 0 H56 M-26 8 H56" class="mo-trait"/>
+            </g>
+            <g class="sv-u" style="transform:translate(780px,141px);opacity:0">
+              <rect x="-70" y="-17" width="140" height="34" rx="6" class="s-box-accent"/>
+              <circle cx="-52" cy="0" r="4.5" class="mo-led"/>
+              <path d="M-26 -8 H56 M-26 0 H56 M-26 8 H56" class="mo-trait"/>
+            </g>
+            <g class="sv-u" style="transform:translate(780px,187px);opacity:0">
+              <rect x="-70" y="-17" width="140" height="34" rx="6" class="s-box-accent"/>
+              <circle cx="-52" cy="0" r="4.5" class="mo-led"/>
+              <path d="M-26 -8 H56 M-26 0 H56 M-26 8 H56" class="mo-trait"/>
+            </g>
+            <g class="sv-u" style="transform:translate(780px,233px);opacity:0">
+              <rect x="-70" y="-17" width="140" height="34" rx="6" class="s-box-accent"/>
+              <circle cx="-52" cy="0" r="4.5" class="mo-led"/>
+              <path d="M-26 -8 H56 M-26 0 H56 M-26 8 H56" class="mo-trait"/>
+            </g>
+            <text id="sv-txt-srv" x="610" y="330" text-anchor="middle" class="s-label" style="opacity:0">un serveur</text>
+
+            <!-- Ceux qui lui demandent quelque chose -->
+            <g id="sv-tel" style="transform:translate(90px,112px);opacity:0">
+              <rect x="-15" y="-26" width="30" height="52" rx="6" class="s-box"/>
+              <rect x="-10" y="-19" width="20" height="34" rx="2" class="mo-eteint"/>
+            </g>
+            <g id="sv-pc2" style="transform:translate(90px,246px);opacity:0">
+              <rect x="-26" y="-30" width="52" height="34" rx="4" class="s-box"/>
+              <rect x="-21" y="-25" width="42" height="24" rx="2" class="mo-eteint"/>
+              <path d="M-32 4 H32 L27 12 H-27 Z" class="s-box"/>
+            </g>
+            <circle class="mo-req sv-req" r="6" style="transform:translate(110px,112px);opacity:0"/>
+            <circle class="mo-rep sv-rep" r="6" style="transform:translate(520px,122px);opacity:0"/>
+            <circle class="mo-req sv-req" r="6" style="transform:translate(116px,236px);opacity:0"/>
+            <circle class="mo-rep sv-rep" r="6" style="transform:translate(520px,222px);opacity:0"/>
+
+            <g id="sv-badge" style="transform:translate(610px,0px);opacity:0">
+              <rect x="-62" y="-15" width="124" height="30" rx="15" class="mo-badge"/>
+              <text x="0" y="5" text-anchor="middle" class="s-label-sm mo-badge-txt">24 h / 24</text>
+            </g>
+
+            <!-- La nuit : un voile sur toute la scène, et quelques étoiles -->
+            <g id="sv-nuit" style="opacity:1">
+              <rect class="mo-nuit" x="0" y="0" width="800" height="340" rx="16"/>
+              <g class="mo-etoile">
+                <circle cx="160" cy="44" r="2.2"/><circle cx="330" cy="28" r="1.8"/><circle cx="470" cy="62" r="2.4"/>
+                <circle cx="560" cy="22" r="1.8"/><circle cx="720" cy="48" r="2.2"/><circle cx="60" cy="74" r="1.8"/>
+              </g>
+            </g>
           </svg>
         </div>
         <div class="scene-caption">
-          <p class="step" data-duration="4200"><b>Votre ordinateur travaille quand vous êtes là.</b><span>Vous l’allumez, vous vous en servez, vous le refermez. Il attend votre retour.</span></p>
-          <p class="step" data-duration="4600"><b>Un serveur, c’est le même genre de machine — mais qui ne s’arrête jamais.</b><span>Pas d’écran, pas de clavier, souvent rangé à plat dans une armoire métallique. Et surtout&nbsp;: jamais éteint.</span></p>
-          <p class="step" data-duration="5200"><b>Sa mission tient en une phrase : attendre une demande, et y répondre.</b><span>« Serveur » vient de « servir ». Il sert des pages, des fichiers, des réponses — à qui les demande.</span></p>
+          <p class="step" data-duration="7400"><b>Votre ordinateur travaille quand vous êtes là.</b><span>Le matin vous l’ouvrez, le soir vous le refermez. La nuit, il dort.</span></p>
+          <p class="step" data-duration="6600"><b>Démontez-le : dedans, de quoi calculer, retenir et ranger.</b><span>Un processeur qui calcule, une mémoire qui retient ce qui est en cours, un disque qui range. L’écran et le clavier, eux, ne servent qu’à vous.</span></p>
+          <p class="step" data-duration="7000"><b>Rangez ce cœur à plat dans une armoire : c’est un serveur.</b><span>La même informatique, sans écran ni clavier, empilée avec d’autres. Rien de magique — un ordinateur qui a changé de métier.</span></p>
+          <p class="step" data-duration="9000"><b>Et celui-là ne s’éteint jamais.</b><span>Jour et nuit, il attend une demande et il y répond. « Serveur » vient de « servir » : c’est tout son métier.</span></p>
         </div>
       </section>
 
@@ -300,6 +350,8 @@
   <div class="wrap"><span>GotIt — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
 </footer>
 
+<script src="../assets/js/motion.js"></script>
+<script src="../assets/js/motion/serveur.js"></script>
 <script src="../assets/js/scene.js"></script>
 <script src="../assets/js/theme.js"></script>
 </body>

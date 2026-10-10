@@ -173,6 +173,36 @@
   .packet.is-on, .pulse.is-on, .blink.is-on { animation: none; }
 }
 
+/* ---------- Scènes chorégraphiées (motion.js) ----------
+   Ici les objets voyagent d'une étape à l'autre au lieu d'apparaître : les
+   positions sont tenues par motion.js, ces règles ne donnent que l'apparence.
+   Aucune couleur en dur — les deux thèmes suivent. */
+
+.mo-trait  { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-linecap: round; }
+.mo-lueur  { fill: none; stroke: var(--accent); stroke-width: 2.6; opacity: 0; }
+.mo-balai  { fill: var(--accent); fill-opacity: .16; }
+.mo-trace  { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-dasharray: 4 3; }
+.mo-cite   { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round;
+             stroke-dasharray: 1; stroke-dashoffset: 1; }
+.mo-pense  { fill: var(--slate); opacity: 0; }
+.mo-nuit   { fill: var(--slate); fill-opacity: .15; pointer-events: none; }
+.mo-etoile { fill: var(--slate); opacity: .55; }
+.mo-soleil { fill: var(--warn); }
+.mo-rayon  { stroke: var(--warn); stroke-width: 2.6; stroke-linecap: round; }
+.mo-lune   { fill: var(--slate); }
+.mo-allume { fill: var(--accent-soft); opacity: 0; }
+.mo-eteint { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 1.2; }
+.mo-led    { fill: var(--sage); }
+.mo-req    { fill: var(--accent); }
+.mo-rep    { fill: var(--sage); }
+.mo-badge  { fill: var(--sage-soft); stroke: var(--sage); stroke-width: 1.4; }
+.mo-badge-txt { fill: var(--sage); }
+
+@media (max-width: 760px) {
+  .mo-trait, .mo-cite { stroke-width: 2.6; }
+  .mo-lueur { stroke-width: 3.4; }
+}
+
 /* ---------- Écrans étroits ----------
    Le schéma tient toujours en largeur : jamais de défilement horizontal.
    Comme les tailles de police du SVG sont exprimées en unités du viewBox,

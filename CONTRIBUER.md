@@ -142,6 +142,52 @@ Conséquence : **un texte qui tient au large peut déborder du cadre sur mobile.
 Gardez les libellés courts (une poignée de mots), et vérifiez avec la fenêtre du
 navigateur réduite à 390 px que rien ne sort du `viewBox`.
 
+### Aller plus loin : une scène chorégraphiée
+
+`data-show` fait apparaître et disparaître. Pour qu'un objet **voyage** d'une
+étape à l'autre — un morceau de document qui sort de la pile, rejoint la
+question, entre dans le modèle —, on passe par `assets/js/motion.js`. Deux
+exemples complets : `lecons/rag.html` (scène 2) et `lecons/serveur.html`
+(scène 1), avec leurs chorégraphies dans `assets/js/motion/`.
+
+Réservez-le aux scènes où le mouvement *est* l'explication : une transformation,
+une matière qu'on suit. Pour montrer des boîtes et des flèches, `data-show` suffit.
+
+1. La scène porte `data-motion="nom"` et n'utilise pas `data-show`.
+2. Chaque objet animé est un enfant direct du `<svg>`, **dessiné autour de (0,0)**
+   et posé par `style="transform:translate(…px,…px);opacity:0"` — son état de
+   départ. Ses positions s'écrivent alors en absolu, et une mise à l'échelle se
+   fait autour de son centre.
+3. Un fichier `assets/js/motion/<nom>.js` déclare une fonction par étape :
+
+```js
+GotItMotion.scene('nom', function (q) {
+  var boite = q('#boite')[0];
+  return [
+    function (t) {                     // étape 1
+      t.to(boite, [{ opacity: 0, transform: 'translate(100px,80px)' },
+                   { opacity: 1, transform: 'translate(300px,80px)' }],
+           { at: 0, dur: 700, ease: 'out' });
+    },
+    function (t) { /* étape 2 */ }
+  ];
+});
+GotItMotion.lier();
+```
+
+   `t.to(cibles, images, { at, dur, ease, stagger, iterations })` — `ease` vaut
+   `out`, `inout`, `in`, `pose` (léger rebond) ou `lin` ; `stagger` décale une
+   cascade ; `iterations: Infinity` donne un mouvement d'ambiance (une diode qui
+   clignote). `GotItMotion.arc(de, vers, levee, echelleDepart, echelleArrivee)`
+   fait voyager un objet en arc, en le transformant en route.
+4. La page charge `motion.js`, puis la chorégraphie, **avant** `scene.js`.
+
+Ce qu'on obtient sans rien écrire de plus : un saut direct à une étape, un retour
+arrière, le réglage « réduire les animations » — l'état de l'étape *n* étant par
+définition le résultat des étapes 1 à *n* jouées jusqu'au bout, il n'existe
+qu'une seule description de chaque mouvement. Le contrôle mobile parcourt ces
+scènes étape par étape.
+
 ### Bonnes pratiques
 
 - **Une idée par étape.** Si une étape demande deux phrases d'explication, c'est deux étapes.
