@@ -966,4 +966,28 @@ CARTES = [
   voir='projet-si',
   pas='le MVP, qui est un premier produit réel confié à de vrais utilisateurs ; le POC ne cherche qu’à prouver la faisabilité.'),
 
+ dict(id='authentification-autorisation', terme='Authentification et autorisation', aka=['authentification', 'autorisation', 'droits d’accès', 'habilitation', 'permissions'], dom='Réseau',
+  une='Deux questions distinctes : qui êtes-vous, puis qu’avez-vous le droit de faire.',
+  etapes=['À l’entrée d’un immeuble, le gardien commence par vérifier qui vous êtes.', 'Cette vérification d’identité s’appelle l’authentification : mot de passe, code reçu, empreinte.', 'Une fois identifié, il reste à savoir ce que vous avez le droit de faire ou de voir : c’est l’autorisation, aussi appelée droits d’accès.', 'Les deux se confondent souvent à tort : être bien identifié ne donne pas accès à tout, et un droit mal réglé est une faille.'],
+  voir='mfa',
+  pas='le mot de passe, qui n’est qu’un moyen de s’authentifier, pas une autorisation.'),
+
+ dict(id='cle-api', terme='Clé d’API', aka=['clé api', 'api key', 'clé d’accès', 'secret', 'jeton d’accès'], dom='SI',
+  une='Un code secret qui prouve à un service que la demande vient bien d’un programme autorisé.',
+  etapes=['Une API laisse un programme demander des choses à un autre service. Encore faut-il que le service sache qui demande.', 'Il remet donc au demandeur un long code unique : la clé d’API, comme un badge d’accès.', 'À chaque demande, le programme présente cette clé ; le service vérifie qu’elle est valide et ce qu’elle permet.', 'Une clé se garde comme un mot de passe : publiée par erreur dans un code ou une page, elle permet à n’importe qui d’agir à votre place.'],
+  voir='api',
+  pas='l’API elle-même, qui est la porte de service ; la clé n’est que le badge pour la franchir.'),
+
+ dict(id='lignage-donnees', terme='Lignage des données (data lineage)', aka=['lignage', 'data lineage', 'traçabilité des données', 'origine des données', 'provenance'], dom='Data',
+  une='Le trajet d’une donnée : d’où elle vient, par où elle est passée, et ce qui l’a transformée.',
+  etapes=['Un chiffre apparaît sur un tableau de bord. Quelqu’un demande : d’où sort-il ?', 'Entre la source et l’écran, la donnée a souvent traversé plusieurs outils, filtres et calculs.', 'Le lignage consigne ce parcours étape par étape, comme l’historique d’un colis.', 'Il sert à retrouver la cause d’un chiffre faux et à mesurer ce qui sera touché si l’on modifie une source.'],
+  voir='gouvernance-data',
+  pas='le catalogue de données, qui décrit ce qui existe ; le lignage raconte le chemin parcouru.'),
+
+ dict(id='faux-positif-negatif', terme='Faux positif et faux négatif', aka=['faux positif', 'faux négatif', 'erreur de classification', 'précision', 'fausse alerte'], dom='IA',
+  une='Les deux manières de se tromper pour un système qui décide : voir un problème qui n’existe pas, ou en rater un réel.',
+  etapes=['Un filtre anti-spam doit trancher pour chaque message : indésirable ou non.', 'Un faux positif est une fausse alerte : un message normal classé comme spam.', 'Un faux négatif est une alerte manquée : un vrai spam qui arrive dans la boîte.', 'On ne peut pas supprimer les deux : durcir le filtre réduit l’un et augmente l’autre. Le bon réglage dépend de ce qui coûte le plus cher.'],
+  voir='machine-learning',
+  pas='le biais, qui est une erreur systématique dans les données ; ici, ce sont deux sortes d’erreurs de décision.'),
+
 ]
