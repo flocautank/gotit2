@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L’adresse web, ce que dit vraiment une URL — GotIt !</title>
+<meta name="description" content="Une adresse web se lit comme une adresse postale : protocole, site, chemin. Apprendre à la décortiquer, et à repérer un faux lien. Schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/reseau">Réseau</a><span>/</span>Comprendre Internet<span>/</span>L’adresse d’une page</div>
+      <h1>L’adresse web, ce que dit vraiment une URL</h1>
+      <p class="lead">Une adresse comme https://www.exemple.fr/livres/photo.html n’est pas une suite de signes au hasard : chaque morceau répond à une question précise.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Pour livrer un colis, il faut savoir <em>comment</em> le remettre, <em>à quelle</em> adresse et dans
+        <em>quelle pièce</em>. Une adresse web répond aux mêmes trois questions. On l’appelle une
+        <strong>URL</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : une adresse web se découpe en trois morceaux, la manière de parler, le site, et la page précise">
+        <div class="scene-title">Scène 1 — Trois morceaux, trois questions</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une adresse web découpée en trois blocs : manière de parler, nom du site, chemin vers la page">
+            <g data-show="1-4" class="m-pop">
+              <rect x="30" y="110" width="740" height="70" rx="12" class="s-box"/>
+            </g>
+            <g data-show="2-4" class="m-left">
+              <rect x="44" y="120" width="170" height="50" rx="8" class="s-box-teal"/>
+              <text x="129" y="152" text-anchor="middle" class="s-label-sm">https://</text>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <rect x="226" y="120" width="260" height="50" rx="8" class="s-box-accent"/>
+              <text x="356" y="152" text-anchor="middle" class="s-label-sm">www.exemple.fr</text>
+            </g>
+            <g data-show="4" class="m-right">
+              <rect x="498" y="120" width="260" height="50" rx="8" class="s-box"/>
+              <text x="628" y="152" text-anchor="middle" class="s-label-sm">/livres/photo</text>
+            </g>
+            <text x="129" y="208" text-anchor="middle" class="s-label-xs" data-show="2-4">comment ?</text>
+            <text x="356" y="208" text-anchor="middle" class="s-label-xs" data-show="3-4">où ?</text>
+            <text x="628" y="208" text-anchor="middle" class="s-label-xs" data-show="4">quelle page ?</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Une ligne, une adresse complète.</b><span>Celle qu’on lit tout en haut du navigateur.</span></p>
+          <p class="step" data-duration="4200"><b>Le début dit comment se parler.</b><span>«&nbsp;https&nbsp;» veut dire&nbsp;: échange protégé. C’est le protocole.</span></p>
+          <p class="step" data-duration="4400"><b>Le milieu dit où aller.</b><span>Le nom du site, qu’un annuaire traduira en adresse de machine&nbsp;: c’est le nom de domaine.</span></p>
+          <p class="step" data-duration="4400"><b>La fin dit quelle page précise.</b><span>Le chemin, comme l’étage et la porte une fois dans l’immeuble.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          «&nbsp;Par la poste, au 12 rue des Lilas, 3<sup>e</sup> étage, porte gauche&nbsp;». La manière de
+          livrer, l’immeuble, puis l’endroit exact dedans. Une URL, c’est la même phrase pour une page.
+        </p>
+      </div>
+
+      <h2>Repérer un faux lien</h2>
+      <p>
+        Le nom du site se lit <strong>de droite à gauche</strong>, en s’arrêtant au premier «&nbsp;/&nbsp;».
+        Le morceau juste avant la fin (ici <em>exemple.fr</em>) désigne le vrai propriétaire&nbsp;; ce qui est
+        collé devant ne fait que préciser une section de son site.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : deux adresses qui se ressemblent, la vraie dont le nom de site est celui de la banque, la fausse où le nom de la banque n’est qu’un préfixe d’un autre site">
+        <div class="scene-title">Scène 2 — Lire le nom du site</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Deux adresses l'une sous l'autre ; seul le bloc juste avant la première barre oblique compte">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="50" width="740" height="60" rx="10" class="s-box"/>
+              <text x="400" y="87" text-anchor="middle" class="s-label-sm">banque.fr/compte</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="30" y="170" width="740" height="60" rx="10" class="s-box"/>
+              <text x="400" y="207" text-anchor="middle" class="s-label-sm">banque.verif-acces.com/compte</text>
+            </g>
+            <rect x="260" y="40" width="280" height="80" rx="10" class="s-box-accent pulse" data-show="3"/>
+            <text x="400" y="30" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="3">le vrai site : banque.fr</text>
+            <rect x="380" y="160" width="300" height="80" rx="10" class="s-box-accent pulse" data-show="4"/>
+            <text x="530" y="270" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="4">autre site : verif-acces.com</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Une première adresse.</b><span>Elle mène à la page «&nbsp;compte&nbsp;» du site de la banque.</span></p>
+          <p class="step" data-duration="4000"><b>Une seconde lui ressemble.</b><span>Le mot «&nbsp;banque&nbsp;» est bien là, au tout début.</span></p>
+          <p class="step" data-duration="4400"><b>Dans la première, le nom du site est banque.fr.</b><span>C’est le morceau qui précède le premier «&nbsp;/&nbsp;».</span></p>
+          <p class="step" data-duration="4600"><b>Dans la seconde, le propriétaire est verif-acces.com.</b><span>«&nbsp;banque&nbsp;» n’est qu’un préfixe choisi pour tromper&nbsp;: c’est un autre site.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce qui peut s’ajouter</h2>
+      <p>
+        Après le chemin, un point d’interrogation introduit parfois des <strong>paramètres</strong>
+        (une recherche, une langue, une source de campagne), et un dièse mène à un endroit précis de la
+        page. Ces ajouts précisent la demande&nbsp;; ils ne changent pas le site visité.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Une <strong>URL</strong> répond à trois questions&nbsp;: <strong>comment</strong> (protocole), <strong>où</strong> (nom du site), <strong>quelle page</strong> (chemin).</li>
+        <li>Le vrai propriétaire est le nom du site, juste <strong>avant le premier «&nbsp;/&nbsp;»</strong>.</li>
+        <li>Un mot connu placé <strong>au début</strong> d’un autre nom ne prouve rien&nbsp;: lisez à partir de la fin.</li>
+        <li>Les paramètres après «&nbsp;?&nbsp;» précisent la demande, sans changer de site.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir comment le nom du site devient une adresse de machine, passez à la leçon sur le DNS.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="internet.html">← Comment voyage une page web</a>
+        <a class="btn btn-primary" href="dns.html">Le DNS →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
