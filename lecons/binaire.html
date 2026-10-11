@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le binaire, comment un ordinateur écrit tout avec des 0 et des 1 — GotIt !</title>
+<meta name="description" content="Pourquoi un ordinateur ne connaît que 0 et 1, et comment des interrupteurs suffisent à représenter nombres, lettres et images. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/informatique">Informatique</a><span>/</span>Le matériel<span>/</span>Fichiers et formats</div>
+      <h1>Le binaire, comment un ordinateur écrit tout avec des 0 et des 1</h1>
+      <p class="lead">Un texte, une photo, une chanson : pour un ordinateur, tout est une suite de 0 et de 1. Pas par goût, mais parce qu’un interrupteur n’a que deux positions.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Une lampe est allumée ou éteinte&nbsp;: il n’y a pas de position intermédiaire à
+        confondre. C’est exactement ce qui rend le monde numérique fiable. Un ordinateur est
+        fait de milliards de minuscules interrupteurs&nbsp;; chacun est <strong>ouvert</strong>
+        ou <strong>fermé</strong>. On note ces deux états <strong>0</strong> et <strong>1</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : une lampe a deux états, deux lampes quatre combinaisons, trois lampes huit combinaisons">
+        <div class="scene-title">Scène 1 — Des lampes, des combinaisons</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une rangée de lampes allumées ou éteintes : à chaque lampe ajoutée, le nombre de combinaisons double">
+            <g data-show="1-4" class="m-pop">
+              <circle cx="260" cy="110" r="34" fill="var(--accent)"/>
+              <text x="260" y="170" text-anchor="middle" class="s-label-sm">1</text>
+            </g>
+            <g data-show="1" class="m-pop">
+              <circle cx="400" cy="110" r="34" fill="none" stroke="var(--line)" stroke-width="3"/>
+              <text x="400" y="170" text-anchor="middle" class="s-label-sm">0</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <circle cx="400" cy="110" r="34" fill="none" stroke="var(--line)" stroke-width="3"/>
+              <text x="400" y="170" text-anchor="middle" class="s-label-sm">0</text>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <circle cx="540" cy="110" r="34" fill="var(--sage)"/>
+              <text x="540" y="170" text-anchor="middle" class="s-label-sm">1</text>
+            </g>
+            <text x="330" y="250" text-anchor="middle" class="s-label-xs" data-show="1">2 états</text>
+            <text x="400" y="250" text-anchor="middle" class="s-label-xs" data-show="2">4 combinaisons</text>
+            <text x="400" y="250" text-anchor="middle" class="s-label-xs" data-show="3">8 combinaisons</text>
+            <text x="400" y="250" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="4">1 → 2 → 4 → 8</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Une lampe, deux états.</b><span>Éteinte ou allumée&nbsp;: on note 0 ou 1. C’est la plus petite information possible.</span></p>
+          <p class="step" data-duration="4200"><b>Deux lampes, quatre combinaisons.</b><span>Éteinte-éteinte, éteinte-allumée, allumée-éteinte, allumée-allumée.</span></p>
+          <p class="step" data-duration="4200"><b>Trois lampes, huit combinaisons.</b><span>Chaque lampe ajoutée double le nombre de situations qu’on peut distinguer.</span></p>
+          <p class="step" data-duration="4600"><b>Cette lampe s’appelle un bit.</b><span>Avec assez de bits, on peut distinguer autant de choses qu’on veut&nbsp;: c’est là que commence le codage.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Les drapeaux d’un jeu de piste&nbsp;: chaque poste est hissé ou baissé. Avec un seul poste,
+          vous ne dites presque rien&nbsp;; avec dix postes, vous pouvez envoyer plus d’un millier de
+          messages différents, sans jamais avoir besoin d’une troisième position.
+        </p>
+      </div>
+
+      <h2>Écrire un nombre avec des lampes</h2>
+      <p>
+        On donne à chaque lampe une valeur&nbsp;: 1, puis 2, puis 4, puis 8, en doublant à chaque fois.
+        Pour écrire un nombre, on allume les lampes dont la somme donne ce nombre.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un nombre s’écrit en allumant des lampes de valeur 8, 4, 2, 1 ; une lettre est d’abord un nombre, puis une suite de bits">
+        <div class="scene-title">Scène 2 — Du nombre à la lettre</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 320" role="img" aria-label="Quatre lampes de valeurs 8, 4, 2, 1 ; allumer 4 et 1 donne 5 ; la lettre A vaut 65 soit 01000001 ; huit bits font un octet">
+            <g data-show="1-4" class="m-rise">
+              <text x="220" y="40" text-anchor="middle" class="s-label-sm">8</text>
+              <text x="340" y="40" text-anchor="middle" class="s-label-sm">4</text>
+              <text x="460" y="40" text-anchor="middle" class="s-label-sm">2</text>
+              <text x="580" y="40" text-anchor="middle" class="s-label-sm">1</text>
+              <circle cx="220" cy="90" r="28" fill="none" stroke="var(--line)" stroke-width="3"/>
+              <circle cx="460" cy="90" r="28" fill="none" stroke="var(--line)" stroke-width="3"/>
+            </g>
+            <g data-show="1">
+              <circle cx="340" cy="90" r="28" fill="none" stroke="var(--line)" stroke-width="3"/>
+              <circle cx="580" cy="90" r="28" fill="none" stroke="var(--line)" stroke-width="3"/>
+            </g>
+            <g data-show="2" class="m-pop">
+              <circle cx="340" cy="90" r="28" fill="var(--accent)"/>
+              <circle cx="580" cy="90" r="28" fill="var(--accent)"/>
+              <text x="400" y="160" text-anchor="middle" class="s-label-sm">4 + 1 = 5</text>
+            </g>
+            <g data-show="3-4">
+              <circle cx="340" cy="90" r="28" fill="var(--accent)"/>
+              <circle cx="580" cy="90" r="28" fill="var(--accent)"/>
+              <text x="400" y="160" text-anchor="middle" class="s-label-sm">0101 = 5</text>
+            </g>
+            <g data-show="3" class="m-rise">
+              <rect x="120" y="205" width="140" height="60" rx="10" class="s-box-teal"/>
+              <text x="190" y="243" text-anchor="middle" class="s-label-sm">A</text>
+              <path d="M265 235 H315" class="s-line-accent"/>
+              <rect x="320" y="205" width="140" height="60" rx="10" class="s-box"/>
+              <text x="390" y="243" text-anchor="middle" class="s-label-sm">65</text>
+              <path d="M465 235 H515" class="s-line-accent"/>
+              <rect x="520" y="205" width="180" height="60" rx="10" class="s-box-accent"/>
+              <text x="610" y="243" text-anchor="middle" class="s-label-xs">01000001</text>
+            </g>
+            <g data-show="4" class="m-pop">
+              <rect x="180" y="205" width="440" height="60" rx="10" class="s-box-accent"/>
+              <text x="400" y="243" text-anchor="middle" class="s-label-sm">8 bits = 1 octet</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Quatre lampes, quatre valeurs.</b><span>8, 4, 2, 1&nbsp;: chacune vaut le double de sa voisine de droite.</span></p>
+          <p class="step" data-duration="4400"><b>Pour écrire 5, on allume 4 et 1.</b><span>4 + 1 = 5. Les autres lampes restent éteintes.</span></p>
+          <p class="step" data-duration="4800"><b>Une lettre est d’abord un nombre.</b><span>Convention commune&nbsp;: le A vaut 65. Et 65, à son tour, s’écrit en lampes&nbsp;: 01000001.</span></p>
+          <p class="step" data-duration="4800"><b>Huit bits forment un octet.</b><span>C’est le paquet de base&nbsp;: un octet suffit pour une lettre, et les photos ou les sons en alignent des millions.</span></p>
+        </div>
+      </section>
+
+      <h2>Pourquoi pas dix positions&nbsp;?</h2>
+      <p>
+        On pourrait imaginer des interrupteurs à dix niveaux, comme nos chiffres. Mais plus il y a de
+        niveaux, plus il est facile de se tromper sur l’un d’eux quand le signal s’affaiblit ou
+        chauffe. Entre «&nbsp;éteint&nbsp;» et «&nbsp;allumé&nbsp;», l’erreur est rare&nbsp;: c’est ce qui rend les
+        copies parfaites, à l’identique, des milliers de fois.
+      </p>
+      <p>
+        Les nombres, les lettres, les couleurs d’un pixel, les notes d’un son&nbsp;: tout est ramené à
+        des nombres, puis à des bits. Ce qui change d’un type de fichier à l’autre, c’est la
+        <strong>convention</strong> utilisée pour lire ces nombres&nbsp;: c’est précisément ce qu’on appelle
+        un format.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un <strong>bit</strong> ne vaut que <strong>0 ou 1</strong>&nbsp;: un interrupteur ouvert ou fermé.</li>
+        <li>Chaque bit ajouté <strong>double</strong> le nombre de choses qu’on peut distinguer.</li>
+        <li>Un nombre s’écrit en <strong>allumant les bonnes valeurs</strong>&nbsp;: 5 = 4 + 1 = 0101.</li>
+        <li>Lettres, images et sons sont d’abord des <strong>nombres</strong>, par convention&nbsp;; huit bits font un <strong>octet</strong>.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir comment ces conventions deviennent des types de fichiers, passez à la leçon sur les fichiers et les formats.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="ordinateur.html">← Ce qu’il y a dans un ordinateur</a>
+        <a class="btn btn-primary" href="fichiers.html">Fichiers, formats et dossiers →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

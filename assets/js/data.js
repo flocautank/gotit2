@@ -315,6 +315,13 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['url', 'adresse web', 'lien', 'nom de domaine', 'https', 'faux lien', 'hameçonnage', 'navigateur']
     },
+    'binaire': {
+      title: 'Le binaire, comment un ordinateur écrit tout avec des 0 et des 1',
+      summary: 'Un interrupteur n’a que deux positions : avec des 0 et des 1, on écrit nombres, lettres, images et sons.',
+      path: 'lecons/binaire.html',
+      duration: '5 min', level: 1,
+      keywords: ['binaire', 'bit', 'octet', '0 et 1', 'codage', 'nombre', 'lettre', 'ordinateur']
+    },
     'cache': {
       title: 'Le cache, garder sous la main ce qu’on réutilise',
       summary: 'Une petite réserve rapide garde une copie de ce qu’on redemande : trouvé, c’est immédiat ; manqué, on va à la source.',
@@ -486,7 +493,7 @@ window.GOTIT = (function () {
             { id: 'dans-la-machine', title: 'Dans la machine', lessons: ['ordinateur', 'serveur', 'cache'] },
             { id: 'trop-de-monde', title: 'Quand un site attire trop de monde', lessons: ['load-balancer'] },
             { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas', 'virtualisation', 'conteneurs'] },
-            { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['fichiers', 'compression'] }
+            { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['binaire', 'fichiers', 'compression'] }
           ]
         },
         {
@@ -2115,6 +2122,58 @@ window.GOTIT = (function () {
       ],
       voir: "machine-learning",
       pas: "le biais, qui est une erreur systématique dans les données ; ici, ce sont deux sortes d’erreurs de décision."
+    },
+    {
+      id: "routeur", terme: "Routeur", domaine: "Réseau",
+      aka: ["routeur", "router", "box", "passerelle"],
+      une: "L’appareil qui aiguille chaque paquet de données vers la bonne direction, d’un réseau à l’autre.",
+      etapes: [
+        "Un réseau, comme celui de votre maison, ne communique pas tout seul avec les autres : il faut quelqu’un à la jonction.",
+        "Le routeur est cet aiguilleur : il regarde l’adresse de destination inscrite sur chaque paquet de données.",
+        "Il choisit alors la meilleure sortie parmi celles qu’il connaît, et transmet le paquet au routeur suivant, qui fait de même.",
+        "Votre box en est un : elle relie vos appareils à Internet. Sans routeur, chaque réseau resterait isolé."
+      ],
+      voir: "wifi-box",
+      pas: "le commutateur (switch), qui relie des appareils au sein d’un même réseau ; le routeur, lui, relie des réseaux entre eux."
+    },
+    {
+      id: "apprentissage-non-supervise", terme: "Apprentissage non supervisé", domaine: "IA",
+      aka: ["non supervisé", "clustering", "segmentation", "regroupement"],
+      une: "Une IA qui cherche seule des groupes dans des données, sans qu’on lui ait dit ce qu’elle doit trouver.",
+      etapes: [
+        "On donne à la machine un grand tas de données, par exemple les achats de milliers de clients, sans aucune étiquette.",
+        "Personne n’indique de bonne réponse : elle compare les cas entre eux et repère ceux qui se ressemblent.",
+        "Elle en tire des groupes, appelés clusters : par exemple des clients aux habitudes d’achat proches.",
+        "C’est à un humain de dire ce que ces groupes signifient. La machine propose des regroupements, elle ne les nomme pas."
+      ],
+      voir: "machine-learning",
+      pas: "l’apprentissage supervisé, où l’on fournit au départ des exemples avec la bonne réponse."
+    },
+    {
+      id: "cycle-en-v", terme: "Cycle en V", domaine: "SI",
+      aka: ["cycle en v", "modèle en v", "projet en cascade", "waterfall", "méthode classique"],
+      une: "Une façon de mener un projet par grandes phases enchaînées, où chaque phase de conception a sa phase de vérification.",
+      etapes: [
+        "On commence par écrire précisément ce que l’on veut : le besoin, puis la solution, puis le détail technique.",
+        "Une fois tout conçu, on construit. Les phases s’enchaînent dans l’ordre, sans retour en arrière prévu.",
+        "On remonte ensuite en vérifiant : chaque niveau de conception est contrôlé par un test qui lui correspond, jusqu’à la recette finale.",
+        "C’est rassurant quand le besoin est stable. Mais l’utilisateur ne voit le résultat qu’à la fin, ce qui coûte cher si le besoin a changé."
+      ],
+      voir: "projet-si",
+      pas: "la méthode agile, qui avance par petites livraisons successives plutôt qu’en phases longues."
+    },
+    {
+      id: "base-relationnelle", terme: "Base de données relationnelle", domaine: "Data",
+      aka: ["base relationnelle", "sgbd", "mysql", "postgresql", "tables liées"],
+      une: "Une base qui range l’information dans des tableaux reliés entre eux par des identifiants.",
+      etapes: [
+        "Un commerce a des clients et des commandes. Tout noter dans un seul grand tableau répète les mêmes informations à chaque ligne.",
+        "La base relationnelle sépare : un tableau pour les clients, un autre pour les commandes, chacun avec sa ligne par élément.",
+        "Chaque client porte un identifiant unique ; chaque commande indique l’identifiant du client concerné. C’est le lien entre les tableaux.",
+        "On interroge ensuite l’ensemble avec le langage SQL. Chaque information n’est écrite qu’une fois, donc plus facile à corriger."
+      ],
+      voir: "base-de-donnees",
+      pas: "la base NoSQL, qui range souvent l’information en documents plutôt qu’en tableaux reliés."
     }
   ];
 
