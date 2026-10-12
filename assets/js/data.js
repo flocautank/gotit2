@@ -322,6 +322,20 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['binaire', 'bit', 'octet', '0 et 1', 'codage', 'nombre', 'lettre', 'ordinateur']
     },
+    'reseau-neurones': {
+      title: 'Le réseau de neurones, des petits votes en cascade',
+      summary: 'Des unités très simples pèsent des indices et votent ; empilées en couches, elles apprennent en réglant leurs poids.',
+      path: 'lecons/reseau-neurones.html',
+      duration: '6 min', level: 1,
+      keywords: ['réseau de neurones', 'neurone', 'couches', 'poids', 'deep learning', 'apprentissage', 'ia']
+    },
+    'graphique-trompeur': {
+      title: 'Un graphique peut mentir sans fausser un seul chiffre',
+      summary: 'Axe coupé, fenêtre de temps choisie : comment un graphique exact trompe, et les deux réflexes pour s’en protéger.',
+      path: 'lecons/graphique-trompeur.html',
+      duration: '5 min', level: 1,
+      keywords: ['graphique', 'axe', 'visualisation', 'données', 'tableau de bord', 'trompeur', 'statistiques']
+    },
     'cache': {
       title: 'Le cache, garder sous la main ce qu’on réutilise',
       summary: 'Une petite réserve rapide garde une copie de ce qu’on redemande : trouvé, c’est immédiat ; manqué, on va à la source.',
@@ -545,7 +559,7 @@ window.GOTIT = (function () {
           id: 'exploiter', title: 'Exploiter les données',
           subcategories: [
             { id: 'langages', title: 'Les langages', lessons: ['langages-data'] },
-            { id: 'piloter', title: 'Piloter par les chiffres', lessons: ['bi-tableau-de-bord'] },
+            { id: 'piloter', title: 'Piloter par les chiffres', lessons: ['bi-tableau-de-bord', 'graphique-trompeur'] },
             { id: 'qualite', title: 'Qualité & cadre légal', lessons: ['gouvernance-data', 'dedoublonnage', 'rgpd'] },
             { id: 'projets-data', title: 'Mener un projet data', lessons: ['migration-donnees', 'etl'] }
           ]
@@ -584,7 +598,7 @@ window.GOTIT = (function () {
         {
           id: 'fondamentaux-ia', title: 'Fondamentaux',
           subcategories: [
-            { id: 'apprentissage', title: 'Apprendre par l’exemple', lessons: ['machine-learning', 'recommandation'] },
+            { id: 'apprentissage', title: 'Apprendre par l’exemple', lessons: ['machine-learning', 'reseau-neurones', 'recommandation'] },
             { id: 'modeles', title: 'Les modèles de langage', lessons: ['llm', 'hallucination'] },
             { id: 'machinerie', title: 'La machinerie', lessons: ['gpu', 'entrainement-inference'] }
           ]
@@ -2174,6 +2188,45 @@ window.GOTIT = (function () {
       ],
       voir: "base-de-donnees",
       pas: "la base NoSQL, qui range souvent l’information en documents plutôt qu’en tableaux reliés."
+    },
+    {
+      id: "adresse-mac", terme: "Adresse MAC", domaine: "Réseau",
+      aka: ["mac", "adresse mac", "adresse physique", "identifiant matériel"],
+      une: "Le numéro de série d’une carte réseau, qui l’identifie parmi les appareils d’un même réseau local.",
+      etapes: [
+        "Dans une maison, chaque appareil branché au wifi ou en câble doit pouvoir être reconnu par la box.",
+        "Chaque carte réseau est fabriquée avec un identifiant propre, une suite de six paires de caractères : l’adresse MAC.",
+        "Sur le réseau local, la box s’en sert pour livrer les données à l’appareil précis qui les attend.",
+        "Elle ne sort pas de votre réseau local : pour Internet, c’est l’adresse IP qui compte. Et elle peut être masquée ou changée par le système."
+      ],
+      voir: "adresse-ip",
+      pas: "l’adresse IP, qui situe l’appareil sur un réseau et peut changer ; l’adresse MAC est propre à la carte."
+    },
+    {
+      id: "scrum", terme: "Scrum", domaine: "SI",
+      aka: ["scrum", "sprint", "scrum master", "product owner"],
+      une: "Une façon d’organiser un projet en cycles courts de quelques semaines, qui livrent chacun un morceau utilisable.",
+      etapes: [
+        "Dans un gros projet, le besoin évolue vite : tout prévoir d’avance est un pari risqué.",
+        "Scrum découpe le travail en cycles courts, les sprints, d’une à quatre semaines, avec un objectif clair à chaque fois.",
+        "Chaque sprint commence par choisir ce qu’on fait dans une liste priorisée, le backlog, et finit par montrer le résultat aux utilisateurs.",
+        "Les retours alimentent le sprint suivant. C’est une méthode agile : on corrige la trajectoire souvent plutôt qu’à la fin."
+      ],
+      voir: "projet-si",
+      pas: "le cycle en V, où l’on conçoit tout avant de construire ; Scrum avance par petites livraisons."
+    },
+    {
+      id: "open-data", terme: "Données ouvertes (open data)", domaine: "Data",
+      aka: ["open data", "données ouvertes", "données publiques", "data.gouv"],
+      une: "Des données publiées par une organisation, souvent publique, que chacun peut librement consulter et réutiliser.",
+      etapes: [
+        "Administrations et collectivités produisent beaucoup de données : horaires, budgets, qualité de l’air, localisation d’équipements.",
+        "Plutôt que de les garder, elles les publient en libre accès, dans des formats que n’importe quel programme sait lire.",
+        "Chacun peut alors les télécharger, les croiser et les réutiliser, y compris pour créer une application ou un service.",
+        "Ce sont des données qui ne concernent pas des personnes identifiables : l’ouverture ne contourne pas la protection de la vie privée."
+      ],
+      voir: "donnees-structurees",
+      pas: "l’open source, qui concerne du code de logiciel ; l’open data concerne des données."
     }
   ];
 

@@ -998,4 +998,23 @@ CARTES = [
 
  dict(id='base-relationnelle', terme='Base de données relationnelle', aka=['base relationnelle', 'sgbd', 'mysql', 'postgresql', 'tables liées'], dom='Data', une='Une base qui range l’information dans des tableaux reliés entre eux par des identifiants.', etapes=['Un commerce a des clients et des commandes. Tout noter dans un seul grand tableau répète les mêmes informations à chaque ligne.', 'La base relationnelle sépare : un tableau pour les clients, un autre pour les commandes, chacun avec sa ligne par élément.', 'Chaque client porte un identifiant unique ; chaque commande indique l’identifiant du client concerné. C’est le lien entre les tableaux.', 'On interroge ensuite l’ensemble avec le langage SQL. Chaque information n’est écrite qu’une fois, donc plus facile à corriger.'], voir='base-de-donnees', pas='la base NoSQL, qui range souvent l’information en documents plutôt qu’en tableaux reliés.'),
 
+
+ dict(id='adresse-mac', terme='Adresse MAC', aka=['mac', 'adresse mac', 'adresse physique', 'identifiant matériel'], dom='Réseau',
+  une='Le numéro de série d’une carte réseau, qui l’identifie parmi les appareils d’un même réseau local.',
+  etapes=['Dans une maison, chaque appareil branché au wifi ou en câble doit pouvoir être reconnu par la box.', 'Chaque carte réseau est fabriquée avec un identifiant propre, une suite de six paires de caractères : l’adresse MAC.', 'Sur le réseau local, la box s’en sert pour livrer les données à l’appareil précis qui les attend.', 'Elle ne sort pas de votre réseau local : pour Internet, c’est l’adresse IP qui compte. Et elle peut être masquée ou changée par le système.'],
+  voir='adresse-ip',
+  pas='l’adresse IP, qui situe l’appareil sur un réseau et peut changer ; l’adresse MAC est propre à la carte.'),
+
+ dict(id='scrum', terme='Scrum', aka=['scrum', 'sprint', 'scrum master', 'product owner'], dom='SI',
+  une='Une façon d’organiser un projet en cycles courts de quelques semaines, qui livrent chacun un morceau utilisable.',
+  etapes=['Dans un gros projet, le besoin évolue vite : tout prévoir d’avance est un pari risqué.', 'Scrum découpe le travail en cycles courts, les sprints, d’une à quatre semaines, avec un objectif clair à chaque fois.', 'Chaque sprint commence par choisir ce qu’on fait dans une liste priorisée, le backlog, et finit par montrer le résultat aux utilisateurs.', 'Les retours alimentent le sprint suivant. C’est une méthode agile : on corrige la trajectoire souvent plutôt qu’à la fin.'],
+  voir='projet-si',
+  pas='le cycle en V, où l’on conçoit tout avant de construire ; Scrum avance par petites livraisons.'),
+
+ dict(id='open-data', terme='Données ouvertes (open data)', aka=['open data', 'données ouvertes', 'données publiques', 'data.gouv'], dom='Data',
+  une='Des données publiées par une organisation, souvent publique, que chacun peut librement consulter et réutiliser.',
+  etapes=['Administrations et collectivités produisent beaucoup de données : horaires, budgets, qualité de l’air, localisation d’équipements.', 'Plutôt que de les garder, elles les publient en libre accès, dans des formats que n’importe quel programme sait lire.', 'Chacun peut alors les télécharger, les croiser et les réutiliser, y compris pour créer une application ou un service.', 'Ce sont des données qui ne concernent pas des personnes identifiables : l’ouverture ne contourne pas la protection de la vie privée.'],
+  voir='donnees-structurees',
+  pas='l’open source, qui concerne du code de logiciel ; l’open data concerne des données.'),
+
 ]
