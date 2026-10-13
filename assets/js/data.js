@@ -336,6 +336,13 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['graphique', 'axe', 'visualisation', 'données', 'tableau de bord', 'trompeur', 'statistiques']
     },
+    'paquets': {
+      title: 'Les paquets, pourquoi tout est découpé avant de voyager',
+      summary: 'Un fichier est coupé en morceaux numérotés qui prennent des routes différentes, puis sont remis dans l’ordre à l’arrivée.',
+      path: 'lecons/paquets.html',
+      duration: '5 min', level: 1,
+      keywords: ['paquet', 'paquets', 'routeur', 'protocole', 'internet', 'réseau', 'découpage', 'débit']
+    },
     'cache': {
       title: 'Le cache, garder sous la main ce qu’on réutilise',
       summary: 'Une petite réserve rapide garde une copie de ce qu’on redemande : trouvé, c’est immédiat ; manqué, on va à la source.',
@@ -527,7 +534,7 @@ window.GOTIT = (function () {
         {
           id: 'circulation', title: 'Comment ça circule',
           subcategories: [
-            { id: 'bases-reseau', title: 'Les bases', lessons: ['internet', 'wifi-box', 'adresse-ip', 'dns', 'url'] },
+            { id: 'bases-reseau', title: 'Les bases', lessons: ['internet', 'paquets', 'wifi-box', 'adresse-ip', 'dns', 'url'] },
             { id: 'messagerie', title: 'La messagerie', lessons: ['email'] },
             { id: 'traces', title: 'Les traces qu\u2019on laisse', lessons: ['navigateur'] }
           ]
@@ -2227,6 +2234,58 @@ window.GOTIT = (function () {
       ],
       voir: "donnees-structurees",
       pas: "l’open source, qui concerne du code de logiciel ; l’open data concerne des données."
+    },
+    {
+      id: "rgpd", terme: "RGPD", domaine: "Data",
+      aka: ["rgpd", "gdpr", "règlement général sur la protection des données", "cnil", "protection des données"],
+      une: "Le règlement européen qui encadre ce qu’une organisation a le droit de faire avec les données personnelles.",
+      etapes: [
+        "Une entreprise collecte des noms, des e-mails, des achats : ce sont des informations sur des personnes réelles.",
+        "Le RGPD impose de dire pourquoi on les collecte, de n’en garder que le nécessaire et de les protéger.",
+        "Chaque personne conserve des droits : savoir ce qui est détenu sur elle, le faire corriger, le faire effacer.",
+        "En cas de manquement, l’autorité de contrôle peut sanctionner. Il s’applique dès qu’on traite les données de personnes en Europe."
+      ],
+      voir: "rgpd",
+      pas: "la sécurité informatique, qui protège les données des intrusions ; le RGPD encadre ce qu’on a le droit d’en faire."
+    },
+    {
+      id: "ssd", terme: "SSD et disque dur", domaine: "Informatique",
+      aka: ["ssd", "disque dur", "hdd", "stockage", "disque"],
+      une: "Les deux grandes manières de garder ses fichiers même quand l’ordinateur est éteint.",
+      etapes: [
+        "Un ordinateur éteint perd sa mémoire vive. Les fichiers, eux, doivent être rangés ailleurs : sur un disque.",
+        "Le disque dur classique enregistre sur des plateaux qui tournent, lus par une tête mobile, comme un tourne-disque.",
+        "Le SSD n’a aucune pièce en mouvement : il garde l’information dans des puces. Il est en général bien plus rapide et plus résistant aux chocs.",
+        "Le disque dur coûte souvent moins cher pour une même capacité. Dans les deux cas, un disque peut tomber en panne : il faut une sauvegarde."
+      ],
+      voir: "ordinateur",
+      pas: "la mémoire vive, qui sert à travailler et s’efface à l’extinction ; le disque, lui, conserve."
+    },
+    {
+      id: "no-code", terme: "No-code et low-code", domaine: "SI",
+      aka: ["no-code", "low-code", "nocode", "lowcode", "sans code", "développement visuel"],
+      une: "Des outils qui permettent de construire une application en assemblant des blocs, avec peu ou pas de programmation.",
+      etapes: [
+        "Pour un besoin simple, comme un formulaire ou un suivi de demandes, attendre un développeur peut prendre des mois.",
+        "Le no-code propose des blocs prêts à l’emploi : on glisse, on relie, on règle, sans écrire de code.",
+        "Le low-code fait de même mais laisse la place à un peu de programmation pour les cas particuliers.",
+        "C’est rapide pour un besoin ciblé. Mais sans cadrage, chacun crée son outil dans son coin : un risque de shadow IT."
+      ],
+      voir: "no-code",
+      pas: "le développement classique, où tout s’écrit en code ; ici on assemble des composants existants."
+    },
+    {
+      id: "ocr", terme: "OCR (reconnaissance de texte)", domaine: "IA",
+      aka: ["ocr", "reconnaissance de caractères", "reconnaissance de texte", "numérisation", "scan"],
+      une: "La technique qui lit le texte d’une image ou d’un scan et le transforme en vrai texte qu’on peut copier et chercher.",
+      etapes: [
+        "Une facture scannée est une photo : l’ordinateur y voit des pixels, pas des mots.",
+        "L’OCR repère les zones de texte, puis reconnaît chaque lettre d’après sa forme.",
+        "Il rend alors un texte réel : on peut le copier, le chercher, le ranger dans une base.",
+        "Il peut se tromper sur une écriture manuscrite ou un scan flou : un contrôle humain reste utile pour les cas importants."
+      ],
+      voir: "donnees-structurees",
+      pas: "un simple PDF de texte, qui contient déjà du texte ; l’OCR sert quand il n’y a que l’image."
     }
   ];
 
