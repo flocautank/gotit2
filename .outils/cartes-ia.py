@@ -1017,4 +1017,28 @@ CARTES = [
   voir='donnees-structurees',
   pas='l’open source, qui concerne du code de logiciel ; l’open data concerne des données.'),
 
+ dict(id='rgpd', terme='RGPD', aka=['rgpd','gdpr','règlement général sur la protection des données','cnil','protection des données'], dom='Data',
+  une='Le règlement européen qui encadre ce qu’une organisation a le droit de faire avec les données personnelles.',
+  etapes=['Une entreprise collecte des noms, des e-mails, des achats : ce sont des informations sur des personnes réelles.', 'Le RGPD impose de dire pourquoi on les collecte, de n’en garder que le nécessaire et de les protéger.', 'Chaque personne conserve des droits : savoir ce qui est détenu sur elle, le faire corriger, le faire effacer.', 'En cas de manquement, l’autorité de contrôle peut sanctionner. Il s’applique dès qu’on traite les données de personnes en Europe.'],
+  voir='rgpd',
+  pas='la sécurité informatique, qui protège les données des intrusions ; le RGPD encadre ce qu’on a le droit d’en faire.'),
+
+ dict(id='ssd', terme='SSD et disque dur', aka=['ssd','disque dur','hdd','stockage','disque'], dom='Informatique',
+  une='Les deux grandes manières de garder ses fichiers même quand l’ordinateur est éteint.',
+  etapes=['Un ordinateur éteint perd sa mémoire vive. Les fichiers, eux, doivent être rangés ailleurs : sur un disque.', 'Le disque dur classique enregistre sur des plateaux qui tournent, lus par une tête mobile, comme un tourne-disque.', 'Le SSD n’a aucune pièce en mouvement : il garde l’information dans des puces. Il est en général bien plus rapide et plus résistant aux chocs.', 'Le disque dur coûte souvent moins cher pour une même capacité. Dans les deux cas, un disque peut tomber en panne : il faut une sauvegarde.'],
+  voir='ordinateur',
+  pas='la mémoire vive, qui sert à travailler et s’efface à l’extinction ; le disque, lui, conserve.'),
+
+ dict(id='no-code', terme='No-code et low-code', aka=['no-code','low-code','nocode','lowcode','sans code','développement visuel'], dom='SI',
+  une='Des outils qui permettent de construire une application en assemblant des blocs, avec peu ou pas de programmation.',
+  etapes=['Pour un besoin simple, comme un formulaire ou un suivi de demandes, attendre un développeur peut prendre des mois.', 'Le no-code propose des blocs prêts à l’emploi : on glisse, on relie, on règle, sans écrire de code.', 'Le low-code fait de même mais laisse la place à un peu de programmation pour les cas particuliers.', 'C’est rapide pour un besoin ciblé. Mais sans cadrage, chacun crée son outil dans son coin : un risque de shadow IT.'],
+  voir='no-code',
+  pas='le développement classique, où tout s’écrit en code ; ici on assemble des composants existants.'),
+
+ dict(id='ocr', terme='OCR (reconnaissance de texte)', aka=['ocr','reconnaissance de caractères','reconnaissance de texte','numérisation','scan'], dom='IA',
+  une='La technique qui lit le texte d’une image ou d’un scan et le transforme en vrai texte qu’on peut copier et chercher.',
+  etapes=['Une facture scannée est une photo : l’ordinateur y voit des pixels, pas des mots.', 'L’OCR repère les zones de texte, puis reconnaît chaque lettre d’après sa forme.', 'Il rend alors un texte réel : on peut le copier, le chercher, le ranger dans une base.', 'Il peut se tromper sur une écriture manuscrite ou un scan flou : un contrôle humain reste utile pour les cas importants.'],
+  voir='donnees-structurees',
+  pas='un simple PDF de texte, qui contient déjà du texte ; l’OCR sert quand il n’y a que l’image.'),
+
 ]

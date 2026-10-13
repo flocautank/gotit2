@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les paquets, pourquoi tout est découpé avant de voyager — GotIt !</title>
+<meta name="description" content="Une photo, un e-mail, une vidéo : tout est coupé en petits paquets numérotés qui prennent des routes différentes, puis sont remis dans l’ordre. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/reseau">Réseau</a><span>/</span>Comment ça circule<span>/</span>Les bases</div>
+      <h1>Les paquets, pourquoi tout est découpé avant de voyager</h1>
+      <p class="lead">Quand vous envoyez une photo, elle ne part pas d’un seul bloc. Elle est coupée en centaines de morceaux qui voyagent chacun de leur côté, puis se retrouvent à l’arrivée.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Imaginez devoir envoyer un grand puzzle par la poste. Plutôt qu’un énorme colis qui bloquerait
+        tout s’il se perdait, vous le répartissez dans plusieurs petites enveloppes numérotées.
+        Sur Internet, on fait exactement cela&nbsp;: les petites enveloppes s’appellent des
+        <strong>paquets</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un fichier est découpé en paquets numérotés, qui partent chacun avec l’adresse du destinataire">
+        <div class="scene-title">Scène 1 — Couper, numéroter, adresser</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un fichier à gauche est découpé en quatre morceaux numérotés de 1 à 4, chacun portant l’adresse du destinataire">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="100" width="130" height="100" rx="10" class="s-box-teal"/>
+              <text x="95" y="156" text-anchor="middle" class="s-label-sm">Fichier</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="260" y="40" width="90" height="48" rx="8" class="s-box-accent"/>
+              <text x="305" y="71" text-anchor="middle" class="s-label-sm">1</text>
+              <rect x="260" y="104" width="90" height="48" rx="8" class="s-box-accent"/>
+              <text x="305" y="135" text-anchor="middle" class="s-label-sm">2</text>
+              <rect x="260" y="168" width="90" height="48" rx="8" class="s-box-accent"/>
+              <text x="305" y="199" text-anchor="middle" class="s-label-sm">3</text>
+              <rect x="260" y="232" width="90" height="48" rx="8" class="s-box-accent"/>
+              <text x="305" y="263" text-anchor="middle" class="s-label-sm">4</text>
+            </g>
+            <path d="M160 150 H250" class="s-line m-draw" data-show="2-4"/>
+            <text x="305" y="26" text-anchor="middle" class="s-label-xs" data-show="2">morceaux</text>
+            <g data-show="3-4" class="m-right">
+              <rect x="380" y="40" width="130" height="48" rx="8" class="s-box"/>
+              <text x="445" y="71" text-anchor="middle" class="s-label-xs">n° d’ordre</text>
+              <rect x="380" y="104" width="130" height="48" rx="8" class="s-box"/>
+              <text x="445" y="135" text-anchor="middle" class="s-label-xs">n° d’ordre</text>
+              <rect x="380" y="168" width="130" height="48" rx="8" class="s-box"/>
+              <text x="445" y="199" text-anchor="middle" class="s-label-xs">n° d’ordre</text>
+              <rect x="380" y="232" width="130" height="48" rx="8" class="s-box"/>
+              <text x="445" y="263" text-anchor="middle" class="s-label-xs">n° d’ordre</text>
+            </g>
+            <g data-show="4" class="m-right">
+              <rect x="590" y="100" width="180" height="100" rx="10" class="s-box-teal"/>
+              <text x="680" y="156" text-anchor="middle" class="s-label-sm">Destinataire</text>
+            </g>
+            <path d="M515 150 H585" class="s-line-accent m-draw" data-show="4"/>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Un fichier à envoyer.</b><span>Une photo, un document, un message&nbsp;: côté machine, ce n’est qu’une longue suite de 0 et de 1.</span></p>
+          <p class="step" data-duration="4200"><b>On le coupe en petits morceaux.</b><span>Chacun est de taille réduite, bien plus petite que le fichier entier.</span></p>
+          <p class="step" data-duration="4400"><b>Chaque morceau reçoit un numéro d’ordre.</b><span>Pour pouvoir le remettre à sa place à l’arrivée, comme les pages d’un livre.</span></p>
+          <p class="step" data-duration="4400"><b>Et l’adresse du destinataire.</b><span>Un morceau avec son numéro et son adresse, c’est un <strong>paquet</strong>.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un déménagement en petits cartons plutôt qu’en un seul bloc impossible à porter. Chaque
+          carton est numéroté («&nbsp;3 sur 12&nbsp;») et porte la nouvelle adresse. S’il s’en
+          perd un, on ne redemande que celui-là.
+        </p>
+      </div>
+
+      <h2>Chacun sa route</h2>
+      <p>
+        Une fois partis, les paquets ne suivent pas forcément le même chemin&nbsp;: à chaque carrefour,
+        un <a href="../cartes.html">routeur</a> choisit la meilleure sortie du moment. Un lien est
+        encombré&nbsp;? Le paquet passe par un autre.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : les paquets prennent deux routes, l’un se perd et est renvoyé, puis tout est remis dans l’ordre à l’arrivée">
+        <div class="scene-title">Scène 2 — Des routes différentes, un seul résultat</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Deux routes relient l’expéditeur au destinataire ; les paquets 1 et 3 passent en haut, 2 et 4 en bas ; un paquet perdu est renvoyé ; à l’arrivée l’ordre est rétabli">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="110" width="120" height="80" rx="10" class="s-box-teal"/>
+              <text x="90" y="156" text-anchor="middle" class="s-label-sm">Envoi</text>
+            </g>
+            <g data-show="1-5" class="m-right">
+              <rect x="650" y="110" width="120" height="80" rx="10" class="s-box-teal"/>
+              <text x="710" y="156" text-anchor="middle" class="s-label-sm">Arrivée</text>
+            </g>
+            <path d="M150 140 C 280 60, 520 60, 650 140" class="s-line m-draw" data-show="2-5"/>
+            <path d="M150 160 C 280 240, 520 240, 650 160" class="s-line m-draw" data-show="2-5"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M150 140 C 280 60, 520 60, 650 140')"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M150 160 C 280 240, 520 240, 650 160')"/>
+            <text x="400" y="52" text-anchor="middle" class="s-label-xs" data-show="2">route A</text>
+            <text x="400" y="266" text-anchor="middle" class="s-label-xs" data-show="2">route B</text>
+            <text x="400" y="244" text-anchor="middle" class="s-label-sm" fill="var(--danger)" data-show="3">✕ perdu</text>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M150 160 C 280 240, 520 240, 650 160')"/>
+            <text x="400" y="266" text-anchor="middle" class="s-label-xs" data-show="3-4">paquet 4</text>
+            <g data-show="5" class="m-pop">
+              <rect x="670" y="212" width="80" height="40" rx="8" class="s-box-accent"/>
+              <text x="710" y="239" text-anchor="middle" class="s-label-xs" fill="var(--sage)">1 2 3 4</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Les paquets se séparent.</b><span>Certains empruntent une route, d’autres une autre, selon l’encombrement.</span></p>
+          <p class="step" data-duration="4200"><b>Ils n’arrivent pas dans l’ordre.</b><span>Un paquet parti en retard peut arriver avant un autre.</span></p>
+          <p class="step" data-duration="4400"><b>L’un d’eux se perd en route.</b><span>Cela arrive&nbsp;: un lien saturé, une panne passagère.</span></p>
+          <p class="step" data-duration="4400"><b>Le destinataire le réclame, il est renvoyé.</b><span>Seul le paquet manquant repart, pas tout le fichier.</span></p>
+          <p class="step" data-duration="4600"><b>À l’arrivée, on remet dans l’ordre.</b><span>Grâce aux numéros, le fichier est reconstitué à l’identique.</span></p>
+        </div>
+      </section>
+
+      <h2>Pourquoi ce découpage est malin</h2>
+      <p>
+        Les mêmes câbles servent à des millions de personnes à la fois&nbsp;: les paquets de tout le
+        monde se mélangent, au lieu de faire patienter tous les autres derrière un énorme envoi. Et
+        si une panne coupe une route, les suivants passent ailleurs. Les règles qui fixent le format
+        des paquets, leur numérotation et le renvoi des manquants forment ce qu’on appelle un
+        <strong>protocole</strong>. Une page web, un e-mail ou un appel vidéo partent tous ainsi.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Tout ce qui voyage sur Internet est <strong>découpé en paquets</strong> numérotés, portant l’adresse du destinataire.</li>
+        <li>Les paquets peuvent prendre <strong>des routes différentes</strong> et arriver dans le désordre.</li>
+        <li>À l’arrivée, les numéros permettent de <strong>remettre dans l’ordre</strong> ; un paquet perdu est <strong>renvoyé</strong> seul.</li>
+        <li>Ce découpage permet de <strong>partager les câbles</strong> entre tous et de contourner les pannes.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour savoir comment chaque paquet trouve son destinataire, voyez la leçon sur l’adresse IP.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="adresse-ip.html">← L’adresse IP</a>
+        <a class="btn btn-primary" href="dns.html">Le DNS →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
