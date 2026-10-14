@@ -2286,6 +2286,71 @@ window.GOTIT = (function () {
       ],
       voir: "donnees-structurees",
       pas: "un simple PDF de texte, qui contient déjà du texte ; l’OCR sert quand il n’y a que l’image."
+    },
+    {
+      id: "compression", terme: "Compression de fichier", domaine: "Informatique",
+      aka: ["compression", "zip", "compresser", "décompresser", "rar", "jpeg", "mp3"],
+      une: "Une façon de réécrire un fichier pour qu’il prenne moins de place, sans changer ce qu’il raconte.",
+      etapes: [
+        "Un fichier contient beaucoup de répétitions : la même lettre, la même couleur de pixel, le même mot.",
+        "Plutôt que de tout recopier, on note une fois le motif et combien de fois il revient.",
+        "Sans perte (zip), le fichier se reconstitue à l’identique. Avec perte (jpeg, mp3), on abandonne des détails que l’œil ou l’oreille remarquent peu.",
+        "Un fichier déjà compressé se compresse très mal de nouveau : on ne gagne qu’une fois."
+      ],
+      voir: "compression",
+      pas: "le chiffrement, qui rend un fichier illisible sans clé ; la compression, elle, ne cache rien."
+    },
+    {
+      id: "hachage", terme: "Hachage (hash)", domaine: "Réseau",
+      aka: ["hash", "hachage", "empreinte", "haché", "sha", "md5"],
+      une: "Une fonction qui transforme n’importe quel texte en une courte empreinte, impossible à remonter vers l’original.",
+      etapes: [
+        "Pour vérifier un mot de passe, un site sérieux préfère ne pas le conserver tel quel.",
+        "Il le passe dans une fonction de hachage, qui produit une suite de caractères de taille fixe : l’empreinte.",
+        "Le même texte donne toujours la même empreinte, mais on ne sait pas refaire le chemin inverse. Un seul caractère changé, et l’empreinte devient totalement différente.",
+        "À la connexion, le site compare l’empreinte de ce que vous tapez avec celle qu’il garde. Même usage pour vérifier qu’un fichier n’a pas été altéré."
+      ],
+      voir: "mots-de-passe",
+      pas: "le chiffrement, qui se défait avec la bonne clé ; un hash, lui, ne se défait pas."
+    },
+    {
+      id: "gouvernance-donnees", terme: "Gouvernance des données", domaine: "Data",
+      aka: ["gouvernance", "data gouvernance", "gouvernance data", "responsable de donnée", "data owner"],
+      une: "Les règles du jeu qui disent qui possède une donnée, qui peut la modifier, et ce qui fait foi.",
+      etapes: [
+        "Sans règle, chaque service garde sa propre version d’un même chiffre, et deux tableaux se contredisent.",
+        "On désigne pour chaque donnée un responsable, et on écrit une définition unique : qu’appelle-t-on un « client actif » ?",
+        "On fixe aussi qui a le droit de la lire, de la corriger, et combien de temps on la garde.",
+        "Ce n’est pas un outil mais une organisation : sans personnes responsables, le meilleur logiciel n’y change rien."
+      ],
+      voir: "gouvernance-data",
+      pas: "la qualité des données, qui mesure si elles sont justes ; la gouvernance fixe qui en répond."
+    },
+    {
+      id: "conduite-changement", terme: "Conduite du changement", domaine: "SI",
+      aka: ["conduite du changement", "accompagnement du changement", "adoption", "change management", "formation"],
+      une: "Tout ce qu’on fait pour que les gens utilisent vraiment le nouvel outil, pas seulement qu’il soit installé.",
+      etapes: [
+        "Un nouvel outil livré du jour au lendemain est souvent contourné : les habitudes sont plus fortes qu’un logiciel.",
+        "On commence par expliquer pourquoi on change et ce que chacun y gagne, avant de dire comment.",
+        "On forme, on associe des utilisateurs relais, on écoute les blocages et on les corrige.",
+        "On mesure l’usage réel après la mise en service. Un projet n’est réussi que quand l’outil est adopté."
+      ],
+      voir: "conduite-changement",
+      pas: "la gestion de projet, qui livre l’outil ; la conduite du changement le fait adopter."
+    },
+    {
+      id: "parametres", terme: "Paramètres d’un modèle", domaine: "IA",
+      aka: ["paramètres", "parametres", "poids", "weights", "milliards de paramètres"],
+      une: "Les réglages internes d’un modèle, qu’il ajuste en apprenant et qui contiennent tout ce qu’il « sait ».",
+      etapes: [
+        "Un réseau de neurones est un grand nombre de petits curseurs, qui pèsent chacun un peu dans la décision finale.",
+        "Ces curseurs sont les paramètres, ou poids. Au départ, ils sont réglés au hasard et le modèle répond n’importe quoi.",
+        "Pendant l’entraînement, on les ajuste très légèrement, des millions de fois, pour réduire les erreurs.",
+        "Un modèle « à plusieurs milliards de paramètres » en a donc autant de curseurs : plus il y en a, plus il demande de calcul et de mémoire."
+      ],
+      voir: "reseau-neurones",
+      pas: "la température, que l’on règle à l’usage ; les paramètres, eux, se fixent à l’entraînement."
     }
   ];
 
