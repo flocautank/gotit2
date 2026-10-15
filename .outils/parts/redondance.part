@@ -1,0 +1,135 @@
+TITRE: La redondance, pourquoi un service ne s’arrête (presque) jamais
+DESC: Deux serveurs au lieu d’un, une bascule automatique : comment un service reste disponible quand une machine tombe en panne. Expliqué en schémas animés.
+FIL: <a href="../index.html#/informatique">Informatique</a><span>/</span>Le matériel<span>/</span>Quand un site attire trop de monde
+LEAD: Un disque lâche, un serveur grille, et pourtant le site continue de répondre. Ce n’est pas de la chance&nbsp;: tout ce qui compte existe en double.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Une machine finit toujours par tomber en panne&nbsp;: c’est une question de temps, pas
+        d’accident. Les services qui semblent ne jamais s’arrêter n’utilisent pas des machines
+        indestructibles. Ils en utilisent <strong>deux</strong>, et ont prévu qui prend le relais.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un service repose sur un seul serveur, qui tombe en panne et arrête tout ; puis on ajoute un second serveur">
+        <div class="scene-title">Scène 1 — Le point de fragilité</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Des utilisateurs passent par un seul serveur ; il tombe en panne et le service s’arrête ; un second serveur identique est ajouté">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="110" width="150" height="80" rx="10" class="s-box-teal"/>
+              <text x="105" y="157" text-anchor="middle" class="s-label-sm">Visiteurs</text>
+            </g>
+            <path d="M180 150 H 330" class="s-line m-draw" data-show="1-4"/>
+            <circle r="7" class="packet" data-show="1" style="offset-path:path('M180 150 H 330')"/>
+            <g data-show="1">
+              <rect x="330" y="110" width="150" height="80" rx="10" class="s-box-accent"/>
+              <text x="405" y="157" text-anchor="middle" class="s-label-sm">Serveur</text>
+            </g>
+            <g data-show="2-4">
+              <rect x="330" y="110" width="150" height="80" rx="10" class="s-box" opacity="0.5"/>
+              <text x="405" y="157" text-anchor="middle" class="s-label-sm">Serveur</text>
+            </g>
+            <text x="405" y="92" text-anchor="middle" class="s-label-sm" fill="var(--danger)" data-show="2">✕ en panne</text>
+            <text x="620" y="157" text-anchor="middle" class="s-label-sm" fill="var(--danger)" data-show="2-3">Service coupé</text>
+            <g data-show="4" class="m-pop">
+              <rect x="330" y="210" width="150" height="70" rx="10" class="s-box-accent"/>
+              <text x="405" y="251" text-anchor="middle" class="s-label-sm">2e serveur</text>
+            </g>
+            <text x="620" y="157" text-anchor="middle" class="s-label-sm" fill="var(--sage)" data-show="4">Service tenu</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Tout passe par une seule machine.</b><span>Tant qu’elle fonctionne, personne ne voit le problème.</span></p>
+          <p class="step" data-duration="4200"><b>Elle tombe en panne.</b><span>Pas de plan B&nbsp;: tout s’arrête, pour tout le monde, d’un coup.</span></p>
+          <p class="step" data-duration="4400"><b>C’est un point de défaillance unique.</b><span>Un seul élément dont la panne suffit à tout bloquer.</span></p>
+          <p class="step" data-duration="4400"><b>La parade&nbsp;: en avoir deux.</b><span>Un second serveur identique est prêt à travailler à la place du premier.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          La roue de secours dans le coffre. On ne roule pas dessus tous les jours, mais le jour
+          où un pneu crève, elle évite de rester au bord de la route. Un avion fait pareil avec
+          plusieurs moteurs, un hôpital avec un groupe électrogène.
+        </p>
+      </div>
+
+      <h2>La bascule</h2>
+      <p>
+        Avoir deux machines ne suffit pas&nbsp;: il faut que quelqu’un s’aperçoive de la panne et
+        envoie les visiteurs vers celle qui reste. Cette <strong>bascule</strong> doit être
+        automatique, sinon on perd le temps qu’un humain se réveille.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un surveillant vérifie deux serveurs ; l’un tombe, le trafic bascule vers l’autre, puis le serveur est réparé">
+        <div class="scene-title">Scène 2 — Surveiller et basculer</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un aiguilleur envoie les visiteurs vers le serveur A ; quand A tombe, tout passe vers le serveur B ; A est ensuite réparé et reprend sa place">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="110" width="130" height="80" rx="10" class="s-box-teal"/>
+              <text x="95" y="157" text-anchor="middle" class="s-label-sm">Visiteurs</text>
+            </g>
+            <path d="M160 150 H 300" class="s-line m-draw" data-show="1-5"/>
+            <g data-show="1-5" class="m-pop">
+              <rect x="300" y="115" width="110" height="70" rx="10" class="s-box"/>
+              <text x="355" y="156" text-anchor="middle" class="s-label-xs">Aiguilleur</text>
+            </g>
+            <path d="M410 135 L 560 70" class="s-line-accent m-draw" data-show="2,4-5"/>
+            <path d="M410 165 L 560 230" class="s-line-accent m-draw" data-show="3-5"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M410 135 L 560 70')"/>
+            <circle r="7" class="packet" data-show="3-4" style="offset-path:path('M410 165 L 560 230')"/>
+            <g data-show="1-2,5">
+              <rect x="560" y="40" width="200" height="60" rx="10" class="s-box-accent"/>
+              <text x="660" y="77" text-anchor="middle" class="s-label-sm">Serveur A</text>
+            </g>
+            <g data-show="3-4">
+              <rect x="560" y="40" width="200" height="60" rx="10" class="s-box" opacity="0.5"/>
+              <text x="660" y="77" text-anchor="middle" class="s-label-sm">Serveur A</text>
+              <text x="660" y="125" text-anchor="middle" class="s-label-sm" fill="var(--danger)">✕ panne</text>
+            </g>
+            <g data-show="1-5">
+              <rect x="560" y="200" width="200" height="60" rx="10" class="s-box-accent"/>
+              <text x="660" y="237" text-anchor="middle" class="s-label-sm">Serveur B</text>
+            </g>
+            <text x="660" y="285" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">visiteurs non coupés</text>
+            <text x="660" y="125" text-anchor="middle" class="s-label-sm" fill="var(--sage)" data-show="5">✓ réparé</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Deux serveurs, un aiguilleur.</b><span>Il envoie les visiteurs vers les machines qui fonctionnent.</span></p>
+          <p class="step" data-duration="4200"><b>Il vérifie sans cesse.</b><span>À intervalles réguliers, il demande à chaque serveur&nbsp;: «&nbsp;tu es là&nbsp;?&nbsp;»</span></p>
+          <p class="step" data-duration="4400"><b>Le serveur A ne répond plus.</b><span>L’aiguilleur le retire de la liste, sans attendre qu’un humain s’en aperçoive.</span></p>
+          <p class="step" data-duration="4400"><b>Tout passe par le serveur B.</b><span>Les visiteurs ne remarquent rien, ou presque&nbsp;: la machine de secours a pris le relais.</span></p>
+          <p class="step" data-duration="4600"><b>On répare A à tête reposée.</b><span>Une fois remis en route, il reprend sa place dans la liste.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que ça coûte, et ce que ça ne garantit pas</h2>
+      <p>
+        La <strong>redondance</strong> a un prix&nbsp;: deux machines au lieu d’une, et des
+        réglages pour qu’elles restent identiques. On ne la met donc que là où un arrêt coûterait
+        plus cher que le doublon. Et elle protège d’une <em>panne</em>, pas d’une <em>erreur</em>&nbsp;:
+        si quelqu’un supprime des données par erreur, la copie les supprime aussi. D’où la
+        <a href="sauvegarde.html">sauvegarde</a>, qui reste indispensable. Le même principe,
+        appliqué à l’échelle d’un site entier, s’appelle la <strong>haute disponibilité</strong>.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Toute machine finit par tomber en panne&nbsp;: on <strong>double</strong> ce qui est critique.</li>
+        <li>Un élément dont la panne bloque tout est un <strong>point de défaillance unique</strong>.</li>
+        <li>La <strong>bascule automatique</strong> vers la machine de secours est ce qui fait la différence.</li>
+        <li>La redondance protège des pannes, <strong>pas des erreurs</strong> : elle ne remplace pas la sauvegarde.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>L’aiguilleur de la scène 2 est expliqué en détail dans la leçon sur le répartiteur de charge.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="load-balancer.html">← Le répartiteur de charge</a>
+        <a class="btn btn-primary" href="../index.html#/informatique">Retour au domaine →</a>
+      </nav>

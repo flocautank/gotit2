@@ -343,6 +343,13 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['paquet', 'paquets', 'routeur', 'protocole', 'internet', 'réseau', 'découpage', 'débit']
     },
+    'redondance': {
+      title: 'La redondance, pourquoi un service ne s’arrête (presque) jamais',
+      summary: 'Deux serveurs au lieu d’un et une bascule automatique : une panne ne coupe plus le service.',
+      path: 'lecons/redondance.html',
+      duration: '5 min', level: 1,
+      keywords: ['redondance', 'panne', 'haute disponibilité', 'secours', 'bascule', 'serveur', 'disponibilité']
+    },
     'cache': {
       title: 'Le cache, garder sous la main ce qu’on réutilise',
       summary: 'Une petite réserve rapide garde une copie de ce qu’on redemande : trouvé, c’est immédiat ; manqué, on va à la source.',
@@ -512,7 +519,7 @@ window.GOTIT = (function () {
           id: 'materiel', title: 'Le matériel',
           subcategories: [
             { id: 'dans-la-machine', title: 'Dans la machine', lessons: ['ordinateur', 'serveur', 'cache'] },
-            { id: 'trop-de-monde', title: 'Quand un site attire trop de monde', lessons: ['load-balancer'] },
+            { id: 'trop-de-monde', title: 'Quand un site attire trop de monde', lessons: ['load-balancer', 'redondance'] },
             { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas', 'virtualisation', 'conteneurs'] },
             { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['binaire', 'fichiers', 'compression'] }
           ]
@@ -2351,6 +2358,58 @@ window.GOTIT = (function () {
       ],
       voir: "reseau-neurones",
       pas: "la température, que l’on règle à l’usage ; les paramètres, eux, se fixent à l’entraînement."
+    },
+    {
+      id: "dhcp", terme: "DHCP", domaine: "Réseau",
+      aka: ["dhcp", "attribution automatique", "bail", "adresse automatique"],
+      une: "Le service qui donne automatiquement une adresse IP à chaque appareil qui se connecte au réseau.",
+      etapes: [
+        "Pour parler sur un réseau, un appareil a besoin d’une adresse IP. En saisir une à la main sur chaque téléphone serait fastidieux et source d’erreurs.",
+        "À sa connexion, l’appareil lance un appel à la cantonade : « je viens d’arriver, quelqu’un a une adresse pour moi ? »",
+        "Le service DHCP, souvent logé dans la box, répond en lui prêtant une adresse libre, pour une durée limitée appelée bail.",
+        "Quand l’appareil part ou que le bail expire, l’adresse revient dans la réserve et peut servir à un autre. C’est pourquoi l’adresse d’un téléphone change d’un réseau à l’autre."
+      ],
+      voir: "adresse-ip",
+      pas: "le DNS, qui traduit un nom de site en adresse ; le DHCP, lui, distribue les adresses des appareils."
+    },
+    {
+      id: "few-shot", terme: "Few-shot (apprendre par l’exemple)", domaine: "IA",
+      aka: ["few-shot", "few shot", "exemples", "zero-shot", "one-shot", "prompt avec exemples"],
+      une: "Glisser quelques exemples dans sa demande pour montrer à l’IA le résultat attendu.",
+      etapes: [
+        "Décrire en mots le format voulu est parfois flou : « fais un résumé court » peut vouloir dire dix mots comme cent.",
+        "On ajoute alors, dans la demande, deux ou trois exemples complets : une entrée, et la réponse idéale correspondante.",
+        "Le modèle repère la forme commune et la reproduit pour la nouvelle entrée, sans aucun réentraînement.",
+        "Sans exemple, on parle de zero-shot. Pour un format précis ou un ton particulier, quelques exemples valent souvent mieux qu’une longue explication."
+      ],
+      voir: "prompt",
+      pas: "le fine-tuning, qui modifie le modèle ; avec des exemples dans la demande, le modèle ne change pas et l’effet disparaît à la fin de la conversation."
+    },
+    {
+      id: "valeur-aberrante", terme: "Valeur aberrante (outlier)", domaine: "Data",
+      aka: ["valeur aberrante", "outlier", "aberration", "valeur extrême", "point aberrant"],
+      une: "Une valeur très éloignée des autres, qui peut être une erreur de saisie comme un fait réel et important.",
+      etapes: [
+        "Dans une liste d’âges de clients, un « 250 » saute aux yeux : il n’a pas la même allure que les autres.",
+        "C’est une valeur aberrante. Elle fausse les calculs : une seule peut tirer une moyenne très loin de la réalité.",
+        "Avant de la supprimer, on cherche d’où elle vient : faute de frappe, capteur déréglé, ou événement réel et rare, comme une fraude.",
+        "Le piège est de l’effacer par réflexe : on perd parfois justement l’information la plus utile. On la corrige si c’est une erreur, on la garde si elle est vraie."
+      ],
+      voir: "graphique-trompeur",
+      pas: "un doublon, qui est la même ligne répétée ; la valeur aberrante est une ligne unique mais anormale."
+    },
+    {
+      id: "bac-a-sable", terme: "Bac à sable (sandbox)", domaine: "Informatique",
+      aka: ["bac à sable", "sandbox", "isolation", "environnement isolé", "sandboxing"],
+      une: "Un espace clos où l’on fait tourner un programme sans qu’il puisse toucher au reste de la machine.",
+      etapes: [
+        "Ouvrir un fichier ou lancer un programme inconnu est risqué : s’il est malveillant, il peut abîmer ou espionner tout le reste.",
+        "On le place donc dans une enceinte fermée, comme un enfant dans un bac à sable : il peut y jouer, mais pas en sortir.",
+        "À l’intérieur, il n’a accès qu’à un petit espace réservé : pas à vos fichiers, pas aux autres programmes.",
+        "Navigateurs, téléphones et outils d’analyse de virus s’en servent. Aucune enceinte n’est parfaite : c’est une couche de protection de plus, pas une garantie absolue."
+      ],
+      voir: "cybersecurite",
+      pas: "un environnement de test, fait pour essayer sans risque un projet ; le bac à sable sert surtout à contenir un programme dangereux."
     }
   ];
 
