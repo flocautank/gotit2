@@ -1095,4 +1095,34 @@ CARTES = [
   voir='cybersecurite',
   pas='un environnement de test, fait pour essayer sans risque un projet ; le bac à sable sert surtout à contenir un programme dangereux.'),
 
+ dict(id='pixel', terme='Pixel (résolution)', aka=['pixel', 'pixels', 'résolution', 'définition d’écran', 'full hd', '4k'], dom='Informatique',
+  une='Le plus petit point d’une image numérique : une image n’est qu’une mosaïque de pixels.',
+  etapes=['Une photo affichée à l’écran semble continue. Pourtant, en zoomant beaucoup, on voit apparaître de petits carrés.', 'Chaque carré est un pixel : un point qui ne porte qu’une seule couleur, codée par des nombres (le dosage de rouge, de vert et de bleu).', 'La résolution est le nombre de pixels de l’image, en largeur et en hauteur. Plus il y en a, plus les détails sont fins.', 'Plus de pixels, c’est aussi un fichier plus lourd. Agrandir une petite image ne crée aucun détail : on étire les mêmes pixels, elle devient floue.'],
+  voir='binaire',
+  pas='la taille de l’écran, qui se mesure en centimètres ; la résolution compte, elle, les points affichés.'),
+
+ dict(id='ping', terme='Ping', aka=['ping', 'test de connexion', 'temps de réponse', 'ms'], dom='Réseau',
+  une='Un petit message envoyé à une machine pour savoir si elle répond, et en combien de temps.',
+  etapes=['Un site ne s’ouvre pas. Est-ce votre connexion, ou la machine en face qui est en panne ? Il faut un moyen de tester.', 'Le ping envoie un tout petit message à l’adresse visée, comme on appelle « Allô ? » dans une pièce voisine.', 'Si la machine est joignable, elle renvoie aussitôt un accusé de réception. On mesure le temps de l’aller-retour, en millisecondes.', 'Pas de réponse ne prouve pas toujours une panne : certaines machines sont réglées pour ne pas répondre. Un temps court est un bon signe de réactivité.'],
+  voir='paquets',
+  pas='le débit, qui mesure la quantité transmise par seconde ; le ping mesure le temps de réponse.'),
+
+ dict(id='correlation-causalite', terme='Corrélation et causalité', aka=['corrélation', 'causalité', 'correlation', 'cause', 'lien statistique'], dom='Data',
+  une='Deux chiffres qui varient ensemble ne prouvent pas que l’un provoque l’autre.',
+  etapes=['Les données montrent que, quand les ventes de glaces montent, les coups de soleil montent aussi.', 'Cette façon de varier ensemble s’appelle une corrélation : un lien constaté entre deux séries de chiffres.', 'Mais manger des glaces ne brûle pas la peau. Une troisième cause, ici le beau temps, agit sur les deux à la fois.', 'Avant de conclure qu’une chose en cause une autre, on cherche la cause cachée, ou on teste en changeant un seul facteur, comme dans un test A/B.'],
+  voir='graphique-trompeur',
+  pas='le test A/B, qui sert justement à établir une cause en ne changeant qu’une seule chose.'),
+
+ dict(id='moindre-privilege', terme='Principe du moindre privilège', aka=['moindre privilège', 'droits d’accès', 'habilitations', 'accès minimal', 'least privilege'], dom='SI',
+  une='Donner à chaque personne seulement les accès dont elle a besoin pour son travail, et rien de plus.',
+  etapes=['Dans une entreprise, si tout le monde peut ouvrir tous les dossiers, une erreur ou un compte piraté touche tout à la fois.', 'Le principe est simple : chaque personne reçoit les droits strictement nécessaires à sa mission, comme une clé qui n’ouvre que votre bureau.', 'Les droits suivent la fonction. Quand quelqu’un change de poste ou quitte l’entreprise, on retire les accès devenus inutiles.', 'Un compte piraté ou une maladresse fait alors moins de dégâts. Le piège est d’accumuler des droits au fil des années sans jamais les retirer.'],
+  voir='cybersecurite',
+  pas='l’authentification, qui vérifie qui vous êtes ; le moindre privilège décide ce que vous avez le droit de faire.'),
+
+ dict(id='modele-diffusion', terme='Modèle de diffusion (images IA)', aka=['diffusion', 'modèle de diffusion', 'génération d’images', 'image par ia', 'text-to-image'], dom='IA',
+  une='Le type d’IA qui crée une image en partant d’un brouillard de points et en le nettoyant peu à peu.',
+  etapes=['Pour apprendre, on prend de vraies images et on y ajoute du bruit, comme de la neige sur un écran, jusqu’à ce qu’il ne reste plus rien de lisible.', 'Le modèle s’entraîne à faire l’inverse : deviner, à chaque niveau de bruit, ce qu’il faut retirer pour se rapprocher d’une vraie image.', 'Pour créer, on part d’un bruit pur et on le nettoie en plusieurs passes. Votre texte de demande oriente ce qui émerge.', 'Le résultat ressemble à une image, sans copier une image précise. D’où des détails parfois absurdes : des mains aux doigts en trop, par exemple.'],
+  voir='reseau-neurones',
+  pas='un modèle de langage, qui prédit le texte mot après mot ; la diffusion produit une image en la débruitant.'),
+
 ]
