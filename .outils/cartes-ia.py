@@ -1125,4 +1125,28 @@ CARTES = [
   voir='reseau-neurones',
   pas='un modèle de langage, qui prédit le texte mot après mot ; la diffusion produit une image en la débruitant.'),
 
+ dict(id='json', terme='JSON', aka=['json', 'format json', 'format d’échange', 'données api'], dom='Data',
+  une='Un format de texte simple pour écrire des données de façon que deux logiciels se comprennent.',
+  etapes=['Pour qu’un logiciel envoie des données à un autre, il faut qu’ils s’accordent sur une façon de les écrire, comme une fiche à remplir.', 'JSON est une de ces façons : du texte lisible où chaque information porte une étiquette, par exemple « prénom » suivi de « Léa ».', 'On y range des étiquettes, des valeurs, des listes, et des fiches dans des fiches. Un humain peut le lire, et un programme sait le découper.', 'C’est le format le plus courant des échanges entre applications, notamment dans les API. Une virgule oubliée suffit à le rendre illisible pour la machine.'],
+  voir='api',
+  pas='le CSV, qui range des lignes dans un tableau plat ; JSON sait imbriquer des informations les unes dans les autres.'),
+
+ dict(id='certificat-numerique', terme='Certificat numérique', aka=['certificat', 'certificat ssl', 'certificat tls', 'certificat de site', 'autorité de certification'], dom='Réseau',
+  une='Une pièce d’identité numérique qui prouve qu’un site est bien celui qu’il prétend être.',
+  etapes=['Quand vous vous connectez à un site, comment savoir que ce n’est pas un imposteur qui a recopié sa page ?', 'Le site présente un certificat : une carte d’identité numérique qui contient son nom et une clé servant à chiffrer les échanges.', 'Cette carte est délivrée par un organisme de confiance, l’autorité de certification. Votre navigateur connaît ces organismes et vérifie la signature.', 'Si tout concorde, le cadenas s’affiche. Un certificat périmé ou mal émis déclenche un avertissement : mieux vaut ne pas passer outre.'],
+  voir='https-cadenas',
+  pas='le mot de passe, qui prouve qui vous êtes au site ; le certificat prouve, lui, qui est le site.'),
+
+ dict(id='apprentissage-renforcement', terme='Apprentissage par renforcement', aka=['renforcement', 'reinforcement learning', 'récompense', 'essai erreur'], dom='IA',
+  une='Une IA qui apprend par essais et erreurs, guidée par des récompenses plutôt que par des exemples corrigés.',
+  etapes=['Pour apprendre à un chien un tour, on ne lui explique rien : on le félicite quand il fait juste.', 'Ici, l’IA agit dans un environnement, par exemple un jeu, et reçoit un score après chaque action : plus il est haut, mieux c’est.', 'Au départ elle essaie presque au hasard. Peu à peu, elle retient les actions qui rapportent et les répète plus souvent.', 'Cela fonctionne bien quand on peut mesurer la réussite. Le piège : si la récompense est mal choisie, l’IA trouve des astuces qui font monter le score sans faire ce qu’on voulait.'],
+  voir='machine-learning',
+  pas='l’apprentissage supervisé, où l’on montre des exemples avec la bonne réponse ; ici, personne ne donne la réponse, seulement une note.'),
+
+ dict(id='build-run', terme='Build et Run', aka=['build', 'run', 'projet et exploitation', 'phase de run', 'maintien en conditions opérationnelles'], dom='SI',
+  une='Les deux temps de la vie d’un outil informatique : le construire, puis le faire fonctionner au quotidien.',
+  etapes=['Un nouvel outil n’est pas fini le jour de sa livraison : quelqu’un devra aussi le faire tourner, le surveiller et le dépanner.', 'Le build, c’est la construction : on conçoit, on développe, on teste, comme un chantier avec un début et une fin.', 'Le run, c’est l’exploitation : le support, les mises à jour, les sauvegardes, la surveillance. Il dure tant que l’outil sert.', 'Le run coûte souvent plus cher que le build sur la durée. Penser à lui dès la conception évite les mauvaises surprises.'],
+  voir='projet-si',
+  pas='la TMA, qui est une façon de confier une partie du run ; build et run décrivent le cycle, pas qui s’en charge.'),
+
 ]
