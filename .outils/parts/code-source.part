@@ -1,0 +1,133 @@
+TITRE: Du code source au programme qui tourne
+DESC: Ce qu’est le code d’un logiciel, pourquoi l’ordinateur ne le lit pas tel quel, et la différence entre compilé et interprété. Expliqué en schémas animés.
+FIL: <a href="../index.html#/informatique">Informatique</a><span>/</span>Le logiciel<span>/</span>De quoi est fait un programme
+LEAD: Une application, c’est d’abord du texte écrit par des humains. Entre ce texte et l’écran qui s’anime, il y a un traducteur.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Vous écrivez une recette pour un cuisinier qui ne parle pas votre langue. Vous ne pouvez pas la lui
+        tendre telle quelle&nbsp;: il faut la faire traduire. Un logiciel suit exactement cette histoire.
+        La recette, c’est le <strong>code source</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un texte écrit par un humain est traduit en instructions que le processeur comprend">
+        <div class="scene-title">Scène 1 — Du texte à l’action</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un code source à gauche, un processeur à droite ; un traducteur au milieu transforme le texte en instructions machine">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="100" width="180" height="100" rx="10" class="s-box-teal"/>
+              <text x="120" y="156" text-anchor="middle" class="s-label-sm">Code source</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="590" y="100" width="180" height="100" rx="10" class="s-box"/>
+              <text x="680" y="156" text-anchor="middle" class="s-label-sm">Processeur</text>
+            </g>
+            <path d="M210 150 H590" class="s-line m-draw" data-show="2"/>
+            <text x="400" y="132" text-anchor="middle" class="s-label-sm" fill="var(--danger)" data-show="2">?</text>
+            <text x="680" y="238" text-anchor="middle" class="s-label-xs" data-show="2">ne lit que 0 et 1</text>
+            <g data-show="3-4" class="m-pop">
+              <rect x="320" y="120" width="160" height="60" rx="10" class="s-box-accent pulse"/>
+              <text x="400" y="156" text-anchor="middle" class="s-label-sm">Traducteur</text>
+            </g>
+            <path d="M210 150 H320" class="s-line-accent m-draw" data-show="3-4"/>
+            <path d="M480 150 H590" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M210 150 H590')"/>
+            <text x="400" y="226" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">programme prêt</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Des humains écrivent des lignes de texte.</b><span>Des mots, des chiffres, des règles&nbsp;: c’est lisible pour eux, comme une recette.</span></p>
+          <p class="step" data-duration="4400"><b>Mais la machine ne lit pas ce texte.</b><span>Le cœur de l’ordinateur, le processeur, ne comprend que de minuscules instructions écrites avec des 0 et des 1.</span></p>
+          <p class="step" data-duration="4400"><b>Il faut donc un traducteur.</b><span>Il lit le texte et le transforme en instructions que le processeur sait exécuter.</span></p>
+          <p class="step" data-duration="4600"><b>Le texte devient un programme.</b><span>Ce qu’on écrit s’appelle le code source&nbsp;; ce que la machine suit, c’est le résultat de sa traduction.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Une partition et un orchestre. Le compositeur écrit des notes sur papier&nbsp;; les musiciens
+          doivent les lire et les jouer. Le code source est la partition, le processeur est l’orchestre
+          qui exécute, et le traducteur est le chef qui rend la partition jouable.
+        </p>
+      </div>
+
+      <h2>Traduire avant, ou traduire en route</h2>
+      <p>
+        Il existe deux grandes façons de faire la traduction. Elles donnent deux familles de langages de
+        programmation, c’est-à-dire de façons d’écrire du code.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un langage compilé est traduit en entier avant d’être lancé, un langage interprété est traduit ligne après ligne pendant l’exécution">
+        <div class="scene-title">Scène 2 — Compilé ou interprété</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Deux rangées : en haut, le code passe d’abord entièrement par un compilateur et donne un fichier prêt ; en bas, un interprète lit le code ligne après ligne et agit aussitôt">
+            <text x="30" y="40" class="s-label-sm" data-show="1-4">Compilé</text>
+            <text x="30" y="190" class="s-label-sm" data-show="1-4">Interprété</text>
+            <g data-show="2-4" class="m-left">
+              <rect x="30" y="60" width="130" height="70" rx="10" class="s-box-teal"/>
+              <text x="95" y="101" text-anchor="middle" class="s-label-sm">Code</text>
+            </g>
+            <path d="M160 95 H300" class="s-line m-draw" data-show="2-4"/>
+            <g data-show="2-4" class="m-pop">
+              <rect x="300" y="60" width="180" height="70" rx="10" class="s-box-accent"/>
+              <text x="390" y="101" text-anchor="middle" class="s-label-sm">Compilateur</text>
+            </g>
+            <path d="M480 95 H600" class="s-line-accent m-draw" data-show="3-4"/>
+            <g data-show="3-4" class="m-right">
+              <rect x="600" y="60" width="170" height="70" rx="10" class="s-box"/>
+              <text x="685" y="101" text-anchor="middle" class="s-label-sm">Fichier prêt</text>
+            </g>
+            <text x="685" y="156" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="3">lancé d’un coup</text>
+            <g data-show="4" class="m-left">
+              <rect x="30" y="210" width="130" height="70" rx="10" class="s-box-teal"/>
+              <text x="95" y="251" text-anchor="middle" class="s-label-sm">Code</text>
+            </g>
+            <path d="M160 245 H300" class="s-line m-draw" data-show="4"/>
+            <g data-show="4" class="m-pop">
+              <rect x="300" y="210" width="180" height="70" rx="10" class="s-box-accent pulse"/>
+              <text x="390" y="251" text-anchor="middle" class="s-label-sm">Interprète</text>
+            </g>
+            <path d="M480 245 H600" class="s-line-accent m-draw" data-show="4"/>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M160 245 H600')"/>
+            <g data-show="4" class="m-right">
+              <rect x="600" y="210" width="170" height="70" rx="10" class="s-box"/>
+              <text x="685" y="251" text-anchor="middle" class="s-label-sm">Action</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Deux manières de traduire.</b><span>Soit on traduit tout avant, soit on traduit au fur et à mesure.</span></p>
+          <p class="step" data-duration="4400"><b>Compilé&nbsp;: tout est traduit d’un coup.</b><span>Un traducteur, le compilateur, lit l’ensemble du code une seule fois.</span></p>
+          <p class="step" data-duration="4400"><b>On obtient un fichier prêt à lancer.</b><span>Il démarre vite et n’a plus besoin du code source pour fonctionner.</span></p>
+          <p class="step" data-duration="4800"><b>Interprété&nbsp;: traduit pendant l’exécution.</b><span>Un interprète lit une ligne, la fait exécuter, puis passe à la suivante. Pratique pour essayer vite, un peu plus lent.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que ça change, et ce que ça ne change pas</h2>
+      <p>
+        Le choix du langage n’est pas une question de qualité. Certains sont proches de la machine et très
+        rapides, d’autres proches de l’humain et rapides à écrire. Et la plupart des projets mélangent
+        plusieurs langages. Quant au code source, il reste précieux&nbsp;: c’est lui qu’on relit, corrige et
+        fait évoluer. Un logiciel «&nbsp;<strong>open source</strong>&nbsp;» est un logiciel dont on peut lire ce code.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le <strong>code source</strong> est le texte qu’écrivent les développeurs&nbsp;: la recette du logiciel.</li>
+        <li>Le processeur ne comprend que des instructions en <strong>0 et 1</strong>&nbsp;: un traducteur est indispensable.</li>
+        <li><strong>Compilé</strong>&nbsp;: traduit en entier avant le lancement. <strong>Interprété</strong>&nbsp;: traduit ligne après ligne en route.</li>
+        <li>Aucun langage n’est le meilleur&nbsp;: on choisit selon l’usage.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour la méthode qui précède le code, passez à la leçon sur l’algorithme.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="algorithme.html">← C’est quoi un algorithme ?</a>
+        <a class="btn btn-primary" href="versionnage.html">Le versionnage →</a>
+      </nav>
