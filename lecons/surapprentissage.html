@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le surapprentissage, apprendre par cœur au lieu de comprendre — GotIt !</title>
+<meta name="description" content="Pourquoi une IA parfaite sur ses exemples peut se tromper sur un cas nouveau : le surapprentissage, expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/ia">Intelligence artificielle</a><span>/</span>Fondamentaux<span>/</span>Apprendre par l’exemple</div>
+      <h1>Le surapprentissage, apprendre par cœur au lieu de comprendre</h1>
+      <p class="lead">Une IA qui ne se trompe jamais sur ses exemples n’est pas forcément une bonne IA. Parfois, elle les a simplement appris par cœur.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Un élève prépare un contrôle. L’un comprend la méthode&nbsp;; l’autre mémorise les corrigés des
+        vieux sujets, mot pour mot. Si le sujet tombé est déjà connu, l’élève qui récite a 20/20. Si
+        le sujet est nouveau, il est perdu. Pour une IA, ce travers a un nom&nbsp;: le <strong>surapprentissage</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : des points d’exemple, une ligne simple qui suit la tendance, une courbe tortueuse qui passe par tous les points, puis un point nouveau qui montre laquelle se trompe">
+        <div class="scene-title">Scène 1 — Suivre la tendance, ou coller aux points</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Des points en nuage ; une droite proche de tous ; une courbe en zigzag qui touche chaque point ; un point nouveau proche de la droite et loin de la courbe">
+            <g data-show="1-5" class="m-pop">
+              <circle cx="100" cy="220" r="7" fill="var(--slate)"/>
+              <circle cx="190" cy="190" r="7" fill="var(--slate)"/>
+              <circle cx="280" cy="200" r="7" fill="var(--slate)"/>
+              <circle cx="370" cy="140" r="7" fill="var(--slate)"/>
+              <circle cx="460" cy="150" r="7" fill="var(--slate)"/>
+              <circle cx="550" cy="100" r="7" fill="var(--slate)"/>
+              <circle cx="640" cy="110" r="7" fill="var(--slate)"/>
+              <circle cx="720" cy="60" r="7" fill="var(--slate)"/>
+            </g>
+            <text x="400" y="282" text-anchor="middle" class="s-label-xs" data-show="1">les exemples</text>
+            <path d="M80 232 L740 72" class="s-line-accent m-draw" data-show="2-5" opacity="0.9"/>
+            <text x="400" y="282" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="2">une ligne simple : la tendance</text>
+            <path d="M100 220 C130 260 160 170 190 190 S250 230 280 200 S340 90 370 140 S430 215 460 150 S520 40 550 100 S610 150 640 110 S690 20 720 60" class="s-line m-draw" stroke="var(--sage)" data-show="3-5"/>
+            <text x="400" y="282" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="3">une courbe qui touche tout</text>
+            <g data-show="4-5" class="m-pop">
+              <circle cx="415" cy="152" r="9" fill="none" stroke="var(--text)" stroke-width="3"/>
+            </g>
+            <text x="415" y="34" text-anchor="middle" class="s-label-xs" data-show="4-5">cas nouveau</text>
+            <text x="400" y="282" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="5">la ligne simple l’approche, la courbe rate</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On part d’exemples.</b><span>Des cas où l’on connaît la réponse&nbsp;: ici, des points sur un graphique.</span></p>
+          <p class="step" data-duration="4400"><b>Un premier modèle suit la tendance.</b><span>Une ligne simple passe au milieu du nuage&nbsp;: elle ne touche pas chaque point, mais elle capte le sens général.</span></p>
+          <p class="step" data-duration="4600"><b>Un second modèle colle à chaque point.</b><span>Sa courbe zigzague pour toucher tous les exemples, sans aucune erreur sur eux.</span></p>
+          <p class="step" data-duration="4400"><b>Puis arrive un cas jamais vu.</b><span>C’est le vrai test&nbsp;: une IA sert à répondre sur des cas nouveaux, pas sur ceux qu’elle connaît déjà.</span></p>
+          <p class="step" data-duration="4800"><b>La courbe tortueuse se trompe.</b><span>Elle a retenu les accidents de ses exemples. La ligne simple, elle, reste proche de la réalité.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          L’élève qui récite les corrigés. Sur un sujet déjà vu, il est parfait&nbsp;; sur un sujet nouveau,
+          rien. Celui qui a compris la méthode fait peut-être une petite erreur sur les anciens sujets,
+          mais il s’en sort sur les nouveaux.
+        </p>
+      </div>
+
+      <h2>Comment s’en apercevoir</h2>
+      <p>
+        On ne peut pas juger un modèle sur les exemples qu’il a vus&nbsp;: il aura toujours l’air bon.
+        La parade tient en un geste simple&nbsp;: <strong>mettre des exemples de côté</strong> avant
+        l’entraînement, et ne les lui montrer qu’à la fin, pour le test.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : deux barres, résultat sur les exemples connus et sur des cas nouveaux, pour un modèle qui a tout appris par cœur puis pour un modèle qui a compris la règle">
+        <div class="scene-title">Scène 2 — L’écart qui trahit</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Pour le modèle par cœur, une grande barre sur les exemples connus et une petite sur les cas nouveaux ; pour le modèle qui a compris, deux barres hautes et proches">
+            <line x1="40" y1="250" x2="760" y2="250" class="s-line"/>
+            <text x="200" y="278" text-anchor="middle" class="s-label-sm" data-show="1-4">Appris par cœur</text>
+            <text x="600" y="278" text-anchor="middle" class="s-label-sm" data-show="3-4">A compris la règle</text>
+            <rect x="130" y="50" width="60" height="200" rx="6" class="s-box-accent m-rise" data-show="1-4"/>
+            <text x="160" y="40" text-anchor="middle" class="s-label-xs" data-show="1-4">connus</text>
+            <rect x="210" y="190" width="60" height="60" rx="6" class="s-box m-rise" data-show="2-4"/>
+            <text x="240" y="180" text-anchor="middle" class="s-label-xs" data-show="2-4">nouveaux</text>
+            <text x="200" y="146" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2">grand écart !</text>
+            <rect x="530" y="90" width="60" height="160" rx="6" class="s-box-accent m-rise" data-show="3-4"/>
+            <text x="560" y="80" text-anchor="middle" class="s-label-xs" data-show="3-4">connus</text>
+            <rect x="610" y="100" width="60" height="150" rx="6" class="s-box-teal m-rise" data-show="3-4"/>
+            <text x="640" y="90" text-anchor="middle" class="s-label-xs" data-show="3-4">nouveaux</text>
+            <text x="600" y="196" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="3">écart faible</text>
+            <text x="400" y="30" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="4">test sur données mises de côté</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Sur ses exemples, le modèle par cœur brille.</b><span>Il les a mémorisés, y compris les accidents&nbsp;: aucune erreur à signaler.</span></p>
+          <p class="step" data-duration="4400"><b>Sur des cas nouveaux, il s’effondre.</b><span>Entre ses deux résultats, l’écart est énorme&nbsp;: c’est la signature du surapprentissage.</span></p>
+          <p class="step" data-duration="4400"><b>Le modèle qui a compris est plus modeste.</b><span>Un peu moins parfait sur ses exemples, mais presque aussi bon sur les cas nouveaux.</span></p>
+          <p class="step" data-duration="4600"><b>Le test se fait sur des données mises de côté.</b><span>Jamais montrées pendant l’entraînement, elles disent la vérité sur ce que vaut le modèle.</span></p>
+        </div>
+      </section>
+
+      <h2>Comment l’éviter</h2>
+      <p>
+        Trois leviers reviennent&nbsp;: donner <strong>plus d’exemples, et plus variés</strong>, pour que
+        les accidents se noient dans la masse&nbsp;; choisir un <strong>modèle plus simple</strong>, qui
+        n’a pas la place de tout mémoriser&nbsp;; et <strong>arrêter l’entraînement</strong> dès que le
+        résultat sur les données mises de côté cesse de s’améliorer.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le <strong>surapprentissage</strong>, c’est retenir ses exemples par cœur au lieu d’en tirer la règle.</li>
+        <li>Le signe qui ne trompe pas&nbsp;: <strong>excellent</strong> sur les exemples connus, <strong>mauvais</strong> sur les nouveaux.</li>
+        <li>On le détecte avec des <strong>données mises de côté</strong>, jamais vues pendant l’entraînement.</li>
+        <li>On le limite avec plus d’exemples variés, un modèle plus simple, ou un entraînement arrêté à temps.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir ce qu’est un modèle qui apprend, revenez sur la leçon d’introduction au Machine Learning.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="machine-learning.html">← Qu’est-ce que le Machine Learning&nbsp;?</a>
+        <a class="btn btn-primary" href="reseau-neurones.html">Le réseau de neurones →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

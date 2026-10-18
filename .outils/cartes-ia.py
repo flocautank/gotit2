@@ -807,7 +807,7 @@ CARTES = [
  dict(id='surapprentissage', terme='Surapprentissage', aka=['surapprentissage', 'overfitting', 'apprendre par cœur', 'sur-ajustement'], dom='IA',
   une='Quand un modèle retient ses exemples par cœur au lieu d’en tirer la règle.',
   etapes=['On entraîne un modèle sur des exemples pour qu’il réussisse ensuite sur des cas qu’il n’a jamais vus.', 'S’il s’y colle trop, il retient les détails propres à ces exemples, y compris les accidents sans importance, plutôt que la règle générale.', 'Il obtient alors d’excellents résultats sur ses exemples d’entraînement, et de mauvais sur les cas nouveaux : comme un élève qui récite son cours sans l’avoir compris.', 'On le détecte en testant sur des données mises de côté. On le limite avec plus d’exemples variés ou un modèle plus simple.'],
-  voir='machine-learning',
+  voir='surapprentissage',
   pas='une hallucination, qui est une invention d’un modèle de langage ; le surapprentissage est un défaut de l’entraînement.'),
 
  dict(id='regle-3-2-1', terme='Règle 3-2-1 (sauvegarde)', aka=['3-2-1', 'règle 3-2-1', 'trois copies', 'sauvegarde', 'backup'], dom='Réseau',
@@ -1148,5 +1148,29 @@ CARTES = [
   etapes=['Un nouvel outil n’est pas fini le jour de sa livraison : quelqu’un devra aussi le faire tourner, le surveiller et le dépanner.', 'Le build, c’est la construction : on conçoit, on développe, on teste, comme un chantier avec un début et une fin.', 'Le run, c’est l’exploitation : le support, les mises à jour, les sauvegardes, la surveillance. Il dure tant que l’outil sert.', 'Le run coûte souvent plus cher que le build sur la durée. Penser à lui dès la conception évite les mauvaises surprises.'],
   voir='projet-si',
   pas='la TMA, qui est une façon de confier une partie du run ; build et run décrivent le cycle, pas qui s’en charge.'),
+
+ dict(id='url', terme='URL (adresse web)', aka=['url','adresse web','lien','adresse d’un site','https://'], dom='Réseau',
+  une='L’adresse complète d’une page web, qui dit comment, où et quoi aller chercher.',
+  etapes=['Pour trouver une page parmi des milliards, il faut une adresse précise, comme pour une maison.', 'Une URL en contient plusieurs morceaux : le protocole (« https »), le nom du site, puis le chemin de la page voulue.', 'Le navigateur lit le nom du site pour trouver le serveur, puis lui demande la page désignée par le chemin.', 'Un lien n’est qu’une URL cachée derrière un texte. Lire le nom du site dans l’URL est le meilleur réflexe contre les faux liens.'],
+  voir='url',
+  pas='l’adresse IP, qui désigne une machine par des chiffres ; l’URL désigne une page, par un nom lisible.'),
+
+ dict(id='base-de-donnees', terme='Base de données', aka=['base de donnees','bdd','database','sgbd','table','tables'], dom='Data',
+  une='Un endroit organisé où l’on range des informations pour les retrouver, les trier et les modifier vite.',
+  etapes=['Un classeur où chaque feuille est jetée au hasard devient vite inutilisable dès qu’il grossit.', 'Une base de données range les informations selon une structure fixée : des tables, des lignes, des colonnes, comme des tableurs reliés entre eux.', 'Un logiciel dédié, le système de gestion de base de données, reçoit les demandes, retrouve les informations et évite que deux personnes ne s’écrasent.', 'Presque tout outil d’entreprise en repose sur une. Sa qualité dépend de la rigueur avec laquelle on la remplit.'],
+  voir='base-de-donnees',
+  pas='un tableur, pensé pour une personne et peu de lignes ; une base gère de gros volumes et de nombreux utilisateurs en même temps.'),
+
+ dict(id='algorithme', terme='Algorithme', aka=['algorithme','algo','recette','suite d’instructions'], dom='Informatique',
+  une='Une suite d’instructions précises qui mène d’un point de départ à un résultat.',
+  etapes=['Pour qu’un ordinateur fasse quelque chose, il faut lui dire exactement quoi faire, dans quel ordre, sans rien laisser deviner.', 'Un algorithme est cette suite d’étapes, comme une recette de cuisine : des ingrédients en entrée, des gestes dans l’ordre, un plat à la sortie.', 'On l’écrit d’abord comme une idée, puis un programmeur le traduit dans un langage que la machine exécute.', 'Le même résultat peut s’obtenir par des algorithmes différents ; certains sont bien plus rapides que d’autres.'],
+  voir='algorithme',
+  pas='un programme, qui est la traduction d’un algorithme dans un langage précis ; l’algorithme est l’idée, le programme est son texte.'),
+
+ dict(id='classification-regression', terme='Classification et régression', aka=['classification','régression','regression','classer','prédire un nombre'], dom='IA',
+  une='Les deux grandes tâches d’un modèle de prédiction : choisir une catégorie, ou estimer un nombre.',
+  etapes=['Quand on demande à une IA de prédire quelque chose, on attend soit une étiquette, soit une quantité.', 'La classification répond par une catégorie : ce courriel est-il un spam, cette photo montre-t-elle un chat ou un chien ?', 'La régression répond par un nombre : le prix probable d’un logement, la durée d’un trajet, les ventes du mois prochain.', 'Le choix dépend de la question. Se tromper d’une tâche à l’autre donne des résultats peu utilisables.'],
+  voir='machine-learning',
+  pas='le clustering, qui regroupe des éléments sans catégories fixées à l’avance, donc sans réponse attendue.'),
 
 ]
