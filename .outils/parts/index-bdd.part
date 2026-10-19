@@ -1,0 +1,120 @@
+TITRE: L’index, pourquoi une recherche est rapide
+DESC: Comment une base de données retrouve une ligne parmi des millions sans tout relire : l’index. Expliqué en schémas animés.
+FIL: <a href="../index.html#/data">Data</a><span>/</span>Stocker les données<span>/</span>Les bases de données
+LEAD: Chercher un nom dans une base de millions de lignes prend une fraction de seconde. Ce n’est pas de la magie : c’est un classement fait à l’avance.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Vous cherchez le mot «&nbsp;marmite&nbsp;» dans un gros livre de cuisine. Vous pourriez lire les pages
+        une à une&nbsp;; vous préférez ouvrir l’index à la fin, qui vous donne directement le bon numéro de
+        page. Une base de données fait la même chose, et l’appelle un <strong>index</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : sans index on lit toutes les lignes une par une, avec un index on saute directement à la bonne ligne">
+        <div class="scene-title">Scène 1 — Tout lire, ou sauter</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une table de lignes ; d’abord une loupe les parcourt toutes, puis un index renvoie directement vers la bonne ligne">
+            <g data-show="1-4" class="m-rise">
+              <rect x="470" y="40" width="260" height="30" rx="6" class="s-box"/>
+              <rect x="470" y="80" width="260" height="30" rx="6" class="s-box"/>
+              <rect x="470" y="120" width="260" height="30" rx="6" class="s-box"/>
+              <rect x="470" y="160" width="260" height="30" rx="6" class="s-box"/>
+              <rect x="470" y="200" width="260" height="30" rx="6" class="s-box"/>
+              <rect x="470" y="240" width="260" height="30" rx="6" class="s-box"/>
+              <text x="600" y="22" text-anchor="middle" class="s-label-xs">La table</text>
+            </g>
+            <rect x="470" y="160" width="260" height="30" rx="6" class="s-box-accent pulse" data-show="2-4"/>
+            <path d="M440 55 V255" class="s-line-accent m-draw" data-show="2"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M440 55 V255')"/>
+            <text x="300" y="150" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2">ligne après ligne : lent</text>
+            <g data-show="3-4" class="m-left">
+              <rect x="50" y="110" width="170" height="100" rx="10" class="s-box-teal"/>
+              <text x="135" y="166" text-anchor="middle" class="s-label-sm">Index</text>
+            </g>
+            <path d="M220 175 H460" class="s-line-accent m-draw" data-show="4"/>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M220 175 H460')"/>
+            <text x="340" y="150" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">direct</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Une table, des milliers de lignes.</b><span>Vous cherchez une seule ligne dans le tas.</span></p>
+          <p class="step" data-duration="4400"><b>Sans aide, on les lit toutes.</b><span>Une par une, de la première jusqu’à tomber dessus&nbsp;: sur des millions de lignes, c’est long.</span></p>
+          <p class="step" data-duration="4200"><b>On prépare un petit répertoire.</b><span>Il note, dans l’ordre, où se trouve chaque valeur de la colonne qu’on interroge.</span></p>
+          <p class="step" data-duration="4400"><b>Ce répertoire s’appelle un index.</b><span>Il renvoie directement à la bonne ligne, sans rien parcourir d’autre.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          L’index à la fin d’un livre. Il est court, rangé par ordre alphabétique, et chaque entrée
+          donne un numéro de page. Il ne contient pas le livre&nbsp;: il sait seulement où chercher.
+        </p>
+      </div>
+
+      <h2>Pourquoi c’est si rapide</h2>
+      <p>
+        Parce que l’index est <strong>trié</strong>. Dans un annuaire, on ouvre vers le milieu, on voit
+        si le nom cherché est avant ou après, et on élimine la moitié du reste&nbsp;; on recommence.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : dans un index trié, chaque essai élimine la moitié des valeurs restantes, puis on constate que chaque nouvelle ligne oblige à mettre l’index à jour">
+        <div class="scene-title">Scène 2 — Couper en deux, et le prix</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une rangée de cases triées ; la moitié est écartée à chaque étape jusqu’à la bonne case, puis une nouvelle ligne arrive et l’index doit être mis à jour">
+            <g data-show="1-5" class="m-rise">
+              <rect x="40" y="110" width="90" height="60" rx="6" class="s-box"/>
+              <rect x="140" y="110" width="90" height="60" rx="6" class="s-box"/>
+              <rect x="240" y="110" width="90" height="60" rx="6" class="s-box"/>
+              <rect x="340" y="110" width="90" height="60" rx="6" class="s-box"/>
+              <rect x="440" y="110" width="90" height="60" rx="6" class="s-box"/>
+              <rect x="540" y="110" width="90" height="60" rx="6" class="s-box"/>
+              <rect x="640" y="110" width="90" height="60" rx="6" class="s-box"/>
+              <text x="400" y="80" text-anchor="middle" class="s-label-xs">Index trié</text>
+            </g>
+            <rect x="340" y="110" width="90" height="60" rx="6" class="s-box-accent pulse" data-show="2"/>
+            <path d="M40 215 H 330" class="s-line m-draw" data-show="3"/>
+            <text x="185" y="250" text-anchor="middle" class="s-label-xs" data-show="3">écarté</text>
+            <rect x="540" y="110" width="90" height="60" rx="6" class="s-box-accent pulse" data-show="4"/>
+            <text x="585" y="214" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">trouvé</text>
+            <g data-show="5" class="m-pop">
+              <rect x="300" y="215" width="200" height="50" rx="8" class="s-box-teal"/>
+              <text x="400" y="246" text-anchor="middle" class="s-label-sm">Mise à jour</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>L’index est rangé dans l’ordre.</b><span>Valeurs triées, de la plus petite à la plus grande.</span></p>
+          <p class="step" data-duration="4200"><b>On regarde au milieu.</b><span>La valeur cherchée est-elle avant ou après&nbsp;?</span></p>
+          <p class="step" data-duration="4200"><b>On écarte la moitié.</b><span>Tout ce qui est de l’autre côté n’a plus besoin d’être lu.</span></p>
+          <p class="step" data-duration="4200"><b>On recommence, et on trouve.</b><span>En quelques coupes, même parmi des millions de valeurs.</span></p>
+          <p class="step" data-duration="4600"><b>Le prix&nbsp;: tenir l’index à jour.</b><span>Chaque ligne ajoutée ou modifiée oblige aussi à corriger l’index&nbsp;: écrire devient un peu plus lent.</span></p>
+        </div>
+      </section>
+
+      <h2>Alors, indexer toutes les colonnes&nbsp;?</h2>
+      <p>
+        Non. Chaque index prend de la place et ralentit les écritures. On indexe les colonnes sur
+        lesquelles on cherche souvent, et on laisse les autres tranquilles. Une recherche qui reste
+        lente malgré tout est souvent le signe d’un index manquant.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un <strong>index</strong> est un répertoire trié qui dit <strong>où</strong> se trouve chaque valeur.</li>
+        <li>Il évite de <strong>relire toute la table</strong>&nbsp;: on saute à la bonne ligne.</li>
+        <li>Il est rapide parce qu’il est <strong>trié</strong> : chaque coupe écarte la moitié du reste.</li>
+        <li>Il a un <strong>prix</strong>&nbsp;: de la place et des écritures plus lentes. On n’indexe que ce qu’on cherche souvent.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir comment une base range ses informations, retournez à la leçon sur les bases de données.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="base-de-donnees.html">← C’est quoi une base de données ?</a>
+        <a class="btn btn-primary" href="entrepots-data.html">Lac, entrepôt, magasin →</a>
+      </nav>
