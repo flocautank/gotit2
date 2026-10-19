@@ -402,7 +402,7 @@ CARTES = [
    "Un index range à l’avance les valeurs d’une colonne dans un ordre qui permet de sauter directement à la bonne zone, comme l’index d’un livre renvoie à une page.",
    "La recherche sur cette colonne devient alors quasi instantanée, même sur des millions de lignes.",
    "Le prix à payer : chaque ajout ou modification doit aussi mettre à jour l’index, ce qui ralentit un peu l’écriture. On indexe les colonnes qu’on interroge souvent, pas toutes."],
-  voir='base-de-donnees'),
+  voir='index-bdd'),
 
  dict(id='raci', terme='RACI (matrice)', aka=['raci','matrice raci'], dom='SI',
   une="Un tableau qui fixe, pour chaque tâche d’un projet, qui fait, qui décide, qui est consulté, qui est juste informé.",
@@ -1172,5 +1172,28 @@ CARTES = [
   etapes=['Quand on demande à une IA de prédire quelque chose, on attend soit une étiquette, soit une quantité.', 'La classification répond par une catégorie : ce courriel est-il un spam, cette photo montre-t-elle un chat ou un chien ?', 'La régression répond par un nombre : le prix probable d’un logement, la durée d’un trajet, les ventes du mois prochain.', 'Le choix dépend de la question. Se tromper d’une tâche à l’autre donne des résultats peu utilisables.'],
   voir='machine-learning',
   pas='le clustering, qui regroupe des éléments sans catégories fixées à l’avance, donc sans réponse attendue.'),
+
+ dict(id='microservices', terme='Microservices', aka=['micro-services','architecture microservices','monolithe'], dom='Informatique',
+  une='Une façon de construire un logiciel en petits services indépendants plutôt qu’en un seul bloc.',
+  etapes=['Dans un logiciel construit d’un seul bloc, le moindre changement oblige à tout tester et à tout relivrer.', 'On le découpe alors en petits services, chacun chargé d’une seule tâche : le paiement, le catalogue, les notifications.', 'Chaque service peut être modifié, relancé ou renforcé seul, et ils se parlent entre eux par des échanges bien définis.', 'C’est souple, mais plus de pièces à surveiller et à faire dialoguer : pour un petit projet, le bloc unique reste souvent plus simple.'],
+  pas='le monolithe, qui est le logiciel d’un seul bloc ; les microservices en sont le découpage.'),
+
+ dict(id='zero-trust', terme='Zero trust', aka=['confiance zéro','zéro confiance','zero-trust'], dom='Réseau',
+  une='Un principe de sécurité : ne faire confiance à personne par défaut, même à l’intérieur du réseau, et tout vérifier à chaque accès.',
+  etapes=['Longtemps, on a protégé l’entreprise comme un château : une fois la porte franchie, on circulait librement.', 'Le zero trust renverse l’idée : être dans le réseau ne prouve rien, chaque personne et chaque appareil doivent se justifier à chaque demande.', 'On vérifie qui demande, depuis quel appareil, et pour quelle ressource précise, puis on n’ouvre que cet accès-là.', 'Un intrus qui entre n’a plus les clés de tout. Le prix : plus de contrôles à mettre en place et à entretenir.'],
+  voir='cybersecurite',
+  pas='le pare-feu, qui garde la porte d’entrée ; le zero trust contrôle aussi à l’intérieur.'),
+
+ dict(id='vendor-lock-in', terme='Verrouillage fournisseur', aka=['vendor lock-in','lock-in','dépendance fournisseur','enfermement'], dom='SI',
+  une='La situation où changer de fournisseur coûte si cher qu’on reste chez lui, même quand il ne convient plus.',
+  etapes=['On choisit un outil, on y met ses données, ses habitudes, ses liens avec d’autres outils.', 'Avec le temps, tout cela est écrit dans la forme propre à ce fournisseur : formats, fonctions, procédures.', 'Partir demande alors de tout récupérer, convertir et réapprendre : le coût du départ devient un frein, et le fournisseur peut augmenter ses prix.', 'On limite le risque en choisissant des formats ouverts, en vérifiant qu’on peut exporter ses données, et en gardant une porte de sortie prévue.'],
+  voir='cloud-saas',
+  pas='un contrat long, qui engage sur une durée ; le verrouillage vient de la difficulté technique de partir, même sans engagement.'),
+
+ dict(id='transaction-bdd', terme='Transaction (base de données)', aka=['transaction','acid','commit','rollback','annuler'], dom='Data',
+  une='Un groupe d’opérations sur une base de données qui réussissent toutes ensemble, ou sont toutes annulées.',
+  etapes=['Un virement se fait en deux gestes : retirer d’un compte, ajouter à l’autre. S’arrêter au milieu perdrait l’argent.', 'La base regroupe ces gestes en une transaction : un paquet indivisible, traité comme une seule opération.', 'Si tout se passe bien, la transaction est validée et les changements deviennent visibles. Sinon, elle est annulée et la base revient à son état d’avant.', 'C’est ce qui garantit des données cohérentes malgré les pannes et les accès simultanés ; c’est vital pour l’argent et les stocks.'],
+  voir='base-de-donnees',
+  pas='une sauvegarde, qui permet de revenir à un état ancien ; la transaction protège chaque opération en cours, à l’instant même.'),
 
 ]

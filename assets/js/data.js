@@ -364,6 +364,13 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['redondance', 'panne', 'haute disponibilité', 'secours', 'bascule', 'serveur', 'disponibilité']
     },
+    'index-bdd': {
+      title: 'L’index, pourquoi une recherche est rapide',
+      summary: 'Un répertoire trié évite à la base de relire toute la table : on saute directement à la bonne ligne.',
+      path: 'lecons/index-bdd.html',
+      duration: '5 min', level: 2,
+      keywords: ['index', 'base de données', 'recherche', 'requête', 'performance', 'table', 'tri']
+    },
     'cache': {
       title: 'Le cache, garder sous la main ce qu’on réutilise',
       summary: 'Une petite réserve rapide garde une copie de ce qu’on redemande : trouvé, c’est immédiat ; manqué, on va à la source.',
@@ -579,7 +586,7 @@ window.GOTIT = (function () {
           id: 'stocker', title: 'Stocker les données',
           subcategories: [
             { id: 'nature', title: 'La nature des données', lessons: ['donnees-structurees'] },
-            { id: 'bdd', title: 'Les bases de données', lessons: ['base-de-donnees'] },
+            { id: 'bdd', title: 'Les bases de données', lessons: ['base-de-donnees', 'index-bdd'] },
             { id: 'entrepots', title: 'Lacs, entrepôts et magasins', lessons: ['entrepots-data'] }
           ]
         },
@@ -1193,7 +1200,7 @@ window.GOTIT = (function () {
         "La recherche sur cette colonne devient alors quasi instantanée, même sur des millions de lignes.",
         "Le prix à payer : chaque ajout ou modification doit aussi mettre à jour l’index, ce qui ralentit un peu l’écriture. On indexe les colonnes qu’on interroge souvent, pas toutes."
       ],
-      voir: "base-de-donnees"
+      voir: "index-bdd"
     },
     {
       id: "raci", terme: "RACI (matrice)", domaine: "SI",
@@ -2593,6 +2600,57 @@ window.GOTIT = (function () {
       ],
       voir: "machine-learning",
       pas: "le clustering, qui regroupe des éléments sans catégories fixées à l’avance, donc sans réponse attendue."
+    },
+    {
+      id: "microservices", terme: "Microservices", domaine: "Informatique",
+      aka: ["micro-services", "architecture microservices", "monolithe"],
+      une: "Une façon de construire un logiciel en petits services indépendants plutôt qu’en un seul bloc.",
+      etapes: [
+        "Dans un logiciel construit d’un seul bloc, le moindre changement oblige à tout tester et à tout relivrer.",
+        "On le découpe alors en petits services, chacun chargé d’une seule tâche : le paiement, le catalogue, les notifications.",
+        "Chaque service peut être modifié, relancé ou renforcé seul, et ils se parlent entre eux par des échanges bien définis.",
+        "C’est souple, mais plus de pièces à surveiller et à faire dialoguer : pour un petit projet, le bloc unique reste souvent plus simple."
+      ],
+      pas: "le monolithe, qui est le logiciel d’un seul bloc ; les microservices en sont le découpage."
+    },
+    {
+      id: "zero-trust", terme: "Zero trust", domaine: "Réseau",
+      aka: ["confiance zéro", "zéro confiance", "zero-trust"],
+      une: "Un principe de sécurité : ne faire confiance à personne par défaut, même à l’intérieur du réseau, et tout vérifier à chaque accès.",
+      etapes: [
+        "Longtemps, on a protégé l’entreprise comme un château : une fois la porte franchie, on circulait librement.",
+        "Le zero trust renverse l’idée : être dans le réseau ne prouve rien, chaque personne et chaque appareil doivent se justifier à chaque demande.",
+        "On vérifie qui demande, depuis quel appareil, et pour quelle ressource précise, puis on n’ouvre que cet accès-là.",
+        "Un intrus qui entre n’a plus les clés de tout. Le prix : plus de contrôles à mettre en place et à entretenir."
+      ],
+      voir: "cybersecurite",
+      pas: "le pare-feu, qui garde la porte d’entrée ; le zero trust contrôle aussi à l’intérieur."
+    },
+    {
+      id: "vendor-lock-in", terme: "Verrouillage fournisseur", domaine: "SI",
+      aka: ["vendor lock-in", "lock-in", "dépendance fournisseur", "enfermement"],
+      une: "La situation où changer de fournisseur coûte si cher qu’on reste chez lui, même quand il ne convient plus.",
+      etapes: [
+        "On choisit un outil, on y met ses données, ses habitudes, ses liens avec d’autres outils.",
+        "Avec le temps, tout cela est écrit dans la forme propre à ce fournisseur : formats, fonctions, procédures.",
+        "Partir demande alors de tout récupérer, convertir et réapprendre : le coût du départ devient un frein, et le fournisseur peut augmenter ses prix.",
+        "On limite le risque en choisissant des formats ouverts, en vérifiant qu’on peut exporter ses données, et en gardant une porte de sortie prévue."
+      ],
+      voir: "cloud-saas",
+      pas: "un contrat long, qui engage sur une durée ; le verrouillage vient de la difficulté technique de partir, même sans engagement."
+    },
+    {
+      id: "transaction-bdd", terme: "Transaction (base de données)", domaine: "Data",
+      aka: ["transaction", "acid", "commit", "rollback", "annuler"],
+      une: "Un groupe d’opérations sur une base de données qui réussissent toutes ensemble, ou sont toutes annulées.",
+      etapes: [
+        "Un virement se fait en deux gestes : retirer d’un compte, ajouter à l’autre. S’arrêter au milieu perdrait l’argent.",
+        "La base regroupe ces gestes en une transaction : un paquet indivisible, traité comme une seule opération.",
+        "Si tout se passe bien, la transaction est validée et les changements deviennent visibles. Sinon, elle est annulée et la base revient à son état d’avant.",
+        "C’est ce qui garantit des données cohérentes malgré les pannes et les accès simultanés ; c’est vital pour l’argent et les stocks."
+      ],
+      voir: "base-de-donnees",
+      pas: "une sauvegarde, qui permet de revenir à un état ancien ; la transaction protège chaque opération en cours, à l’instant même."
     }
   ];
 
