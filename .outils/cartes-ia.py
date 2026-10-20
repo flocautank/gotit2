@@ -733,7 +733,7 @@ CARTES = [
    "Pour éviter les répétitions, la commande ne contient pas le nom du client, seulement son numéro : la colonne commune aux deux tableaux.",
    "La jointure rapproche les lignes des deux tableaux qui portent le même numéro, et reconstitue « telle commande, passée par tel client ».",
    "Si le numéro manque ou est faux d’un côté, la ligne ne trouve pas son pendant : c’est une cause classique de chiffres qui ne collent pas."],
-  voir='base-de-donnees',
+  voir='jointure',
   pas="le dédoublonnage, qui cherche les lignes en double au sein d’un tableau ; la jointure relie deux tableaux différents."),
 
  dict(id='biais-ia', terme='Biais (en IA)', aka=['biais', 'biais algorithmique', 'discrimination', 'équité', 'données biaisées'], dom='IA',
@@ -1195,5 +1195,29 @@ CARTES = [
   etapes=['Un virement se fait en deux gestes : retirer d’un compte, ajouter à l’autre. S’arrêter au milieu perdrait l’argent.', 'La base regroupe ces gestes en une transaction : un paquet indivisible, traité comme une seule opération.', 'Si tout se passe bien, la transaction est validée et les changements deviennent visibles. Sinon, elle est annulée et la base revient à son état d’avant.', 'C’est ce qui garantit des données cohérentes malgré les pannes et les accès simultanés ; c’est vital pour l’argent et les stocks.'],
   voir='base-de-donnees',
   pas='une sauvegarde, qui permet de revenir à un état ancien ; la transaction protège chaque opération en cours, à l’instant même.'),
+
+ dict(id='debogage', terme='Débogage', aka=['debug','déboguer','débugger','corriger un bug','trouver une erreur'], dom='Informatique',
+  une='La chasse à la cause d’un bug dans un programme, pour le corriger.',
+  etapes=['Un programme se comporte autrement que prévu : un calcul faux, un bouton muet, un plantage.', 'On commence par reproduire le problème à coup sûr : sans cela, impossible de savoir si on l’a réparé.', 'On resserre ensuite la zone suspecte, en relisant les messages d’erreur et en observant ce que fait le programme étape par étape.', 'Une fois la cause trouvée, on corrige, puis on vérifie que le défaut a disparu sans en créer un autre.'],
+  voir='code-source',
+  pas='le test, qui cherche à provoquer des erreurs avant la mise en service ; le débogage intervient quand une erreur est déjà constatée.'),
+
+ dict(id='tableau-croise', terme='Tableau croisé dynamique', aka=['tcd','pivot','table pivot','tableau croisé'], dom='Data',
+  une='Un tableau qui résume une longue liste en regroupant les lignes selon deux critères de votre choix.',
+  etapes=['Vous avez des milliers de lignes de ventes, impossibles à lire telles quelles.', 'Vous choisissez ce qui va en lignes (les produits), ce qui va en colonnes (les mois) et ce qu’on calcule (la somme des ventes).', 'Le tableur regroupe tout seul et remplit chaque case : le total d’un produit pour un mois donné.', 'Changer d’angle ne demande qu’un glisser-déposer. Le résumé n’est exact que si la liste de départ l’est.'],
+  voir='bi-tableau-de-bord',
+  pas='un tableau de bord, qui présente des indicateurs choisis à l’avance ; le tableau croisé sert à explorer en regroupant à la demande.'),
+
+ dict(id='deni-service', terme='Déni de service (DDoS)', aka=['ddos','dos','saturation','attaque par saturation'], dom='Réseau',
+  une='Une attaque qui submerge un service de demandes jusqu’à ce qu’il ne réponde plus aux vrais utilisateurs.',
+  etapes=['Un site répond à un nombre limité de demandes à la fois, comme un guichet.', 'L’attaquant envoie un flot de fausses demandes, souvent depuis de nombreuses machines infectées à la fois, ce qui le rend difficile à bloquer.', 'Le service, occupé à répondre aux fausses demandes, n’a plus de place pour les vraies : il ralentit ou tombe.', 'On se défend en filtrant le trafic suspect et en répartissant la charge. Rien n’est volé : le but est de bloquer, pas d’entrer.'],
+  voir='load-balancer',
+  pas='le rançongiciel, qui chiffre vos données pour réclamer de l’argent ; le déni de service ne touche pas aux données, il rend seulement le service injoignable.'),
+
+ dict(id='ticket-support', terme='Ticket (support)', aka=['ticket','incident','helpdesk','service desk','demande de support'], dom='SI',
+  une='La fiche qui suit une demande d’aide, de sa création à sa résolution.',
+  etapes=['Quand quelque chose ne marche pas, un message oral ou un courriel égaré finit vite oublié.', 'On crée un ticket : une fiche qui décrit le problème, la personne concernée et l’urgence.', 'La fiche est confiée à quelqu’un, qui note ce qu’il fait ; si besoin elle passe à un spécialiste, sans que le demandeur ait à tout répéter.', 'À la résolution, le ticket est clos. L’historique des tickets révèle les pannes qui reviennent et ce qu’il faut corriger à la source.'],
+  voir='support',
+  pas='un courriel, qui n’a ni responsable désigné ni état d’avancement ; le ticket garantit que la demande est suivie.'),
 
 ]
