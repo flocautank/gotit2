@@ -1,0 +1,123 @@
+TITRE: La jointure, relier deux tableaux par une colonne commune
+DESC: Comment une base de données rapproche les clients et leurs commandes sans tout recopier : la jointure, expliquée en schémas animés.
+FIL: <a href="../index.html#/data">Data</a><span>/</span>Stocker les données<span>/</span>Les bases de données
+LEAD: Un tableau pour les clients, un autre pour les commandes. Pour savoir qui a acheté quoi, il faut les rapprocher : c’est tout le métier de la jointure.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Dans un carnet d’adresses, vous n’écrivez pas toute la fiche de votre cousin à chaque fois qu’il
+        vous envoie une carte postale&nbsp;: vous notez «&nbsp;carte de Paul&nbsp;» et vous retrouvez Paul
+        dans le carnet. Les bases de données font pareil, et le geste qui retrouve Paul s’appelle une
+        <strong>jointure</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : les clients et les commandes sont rangés dans deux tableaux séparés, reliés par un numéro de client">
+        <div class="scene-title">Scène 1 — Un sujet, un tableau</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un tableau de clients à gauche, un tableau de commandes à droite, et une colonne de numéros qu’ils ont en commun">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="60" width="270" height="170" rx="10" class="s-box-teal"/>
+              <text x="175" y="90" text-anchor="middle" class="s-label-sm">Clients</text>
+              <text x="90" y="130" text-anchor="middle" class="s-label-xs">n° 1</text>
+              <text x="200" y="130" text-anchor="middle" class="s-label-xs">Paul</text>
+              <text x="90" y="170" text-anchor="middle" class="s-label-xs">n° 2</text>
+              <text x="200" y="170" text-anchor="middle" class="s-label-xs">Léa</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="490" y="60" width="270" height="170" rx="10" class="s-box"/>
+              <text x="625" y="90" text-anchor="middle" class="s-label-sm">Commandes</text>
+              <text x="540" y="130" text-anchor="middle" class="s-label-xs">vélo</text>
+              <text x="680" y="130" text-anchor="middle" class="s-label-xs">client 2</text>
+              <text x="540" y="170" text-anchor="middle" class="s-label-xs">casque</text>
+              <text x="680" y="170" text-anchor="middle" class="s-label-xs">client 1</text>
+            </g>
+            <path d="M310 120 H490" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M310 120 H490')"/>
+            <text x="400" y="106" text-anchor="middle" class="s-label-xs" data-show="3-4">même numéro</text>
+            <text x="400" y="272" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">pas de nom recopié</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Chaque sujet a son tableau.</b><span>Ici, les clients&nbsp;: un numéro et un nom par ligne.</span></p>
+          <p class="step" data-duration="4000"><b>Les commandes ont le leur.</b><span>Chaque ligne dit ce qui a été acheté, et par qui.</span></p>
+          <p class="step" data-duration="4400"><b>Le «&nbsp;par qui&nbsp;» est un simple numéro.</b><span>La commande ne recopie pas le nom&nbsp;: elle note le numéro du client. C’est la colonne commune.</span></p>
+          <p class="step" data-duration="4400"><b>Pourquoi ne pas tout mélanger&nbsp;?</b><span>Si Paul change de nom, une seule ligne à corriger, et non cinquante commandes.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le carnet d’adresses et la pile de cartes postales. Chaque carte porte seulement le prénom de
+          l’expéditeur&nbsp;; pour avoir son adresse complète, vous ouvrez le carnet à la bonne page.
+          Rapprocher les deux, c’est faire une jointure.
+        </p>
+      </div>
+
+      <h2>Rapprocher les lignes</h2>
+      <p>
+        Les deux tableaux sont séparés pour de bonnes raisons. Mais pour répondre à une question comme
+        «&nbsp;qui a acheté un vélo&nbsp;?&nbsp;», il faut les remettre côte à côte.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : la jointure associe chaque commande au client qui porte le même numéro, et une commande au numéro inconnu reste sans client">
+        <div class="scene-title">Scène 2 — Faire correspondre</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Chaque commande est reliée au client de même numéro ; une commande dont le numéro n’existe pas reste seule">
+            <g data-show="1-5" class="m-left">
+              <rect x="40" y="50" width="200" height="60" rx="10" class="s-box-teal"/>
+              <text x="140" y="86" text-anchor="middle" class="s-label-sm">Client 1 : Paul</text>
+              <rect x="40" y="130" width="200" height="60" rx="10" class="s-box-teal"/>
+              <text x="140" y="166" text-anchor="middle" class="s-label-sm">Client 2 : Léa</text>
+            </g>
+            <g data-show="1-5" class="m-right">
+              <rect x="560" y="50" width="200" height="60" rx="10" class="s-box"/>
+              <text x="660" y="86" text-anchor="middle" class="s-label-sm">Casque (n° 1)</text>
+              <rect x="560" y="130" width="200" height="60" rx="10" class="s-box"/>
+              <text x="660" y="166" text-anchor="middle" class="s-label-sm">Vélo (n° 2)</text>
+              <rect x="560" y="210" width="200" height="60" rx="10" class="s-box"/>
+              <text x="660" y="246" text-anchor="middle" class="s-label-sm">Sac (n° 9)</text>
+            </g>
+            <path d="M240 80 H560" class="s-line-accent m-draw" data-show="2-5"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M240 80 H560')"/>
+            <path d="M240 160 H560" class="s-line-accent m-draw" data-show="3-5"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M240 160 H560')"/>
+            <text x="400" y="256" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="4-5">n° 9 : inconnu</text>
+            <text x="400" y="286" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="5">Paul : casque · Léa : vélo</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>D’un côté les clients, de l’autre les commandes.</b><span>Chacun garde son numéro.</span></p>
+          <p class="step" data-duration="4200"><b>Le casque porte le n° 1.</b><span>La base cherche le client n° 1&nbsp;: c’est Paul, les deux lignes sont reliées.</span></p>
+          <p class="step" data-duration="4200"><b>Le vélo porte le n° 2.</b><span>Même geste&nbsp;: c’est Léa.</span></p>
+          <p class="step" data-duration="4400"><b>Le sac porte le n° 9.</b><span>Aucun client n’a ce numéro&nbsp;: la ligne ne trouve pas son pendant.</span></p>
+          <p class="step" data-duration="4600"><b>Le résultat est un tableau reconstitué.</b><span>«&nbsp;Paul : casque, Léa : vélo&nbsp;». C’est la jointure&nbsp;; le sac orphelin signale une donnée à corriger.</span></p>
+        </div>
+      </section>
+
+      <h2>Quand ça se passe mal</h2>
+      <p>
+        Une jointure ne devine rien&nbsp;: elle compare des valeurs à l’identique. Un numéro mal saisi, un
+        client supprimé, ou deux écritures du même numéro, et des lignes se perdent ou se dupliquent.
+        C’est une cause classique de chiffres qui ne collent pas d’un tableau de bord à l’autre.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Une base range chaque sujet dans <strong>son propre tableau</strong>, pour ne rien recopier.</li>
+        <li>Deux tableaux sont reliés par une <strong>colonne commune</strong>, souvent un numéro.</li>
+        <li>La <strong>jointure</strong> rapproche les lignes qui portent la même valeur.</li>
+        <li>Une valeur absente ou fautive d’un côté laisse une ligne <strong>orpheline</strong>.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir comment on retrouve vite une ligne parmi des millions, passez à la leçon sur l’index.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="base-de-donnees.html">← C'est quoi une base de données ?</a>
+        <a class="btn btn-primary" href="index-bdd.html">L’index →</a>
+      </nav>
