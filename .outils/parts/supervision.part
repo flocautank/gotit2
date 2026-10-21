@@ -1,0 +1,109 @@
+TITRE: La supervision, un tableau de bord qui prévient avant la panne
+DESC: Comment une entreprise surveille ses serveurs et applications en continu, et reçoit une alerte avant que les utilisateurs ne s’en aperçoivent. Expliqué en schémas animés.
+FIL: <a href="../index.html#/si">Système d’information</a><span>/</span>Faire vivre le SI<span>/</span>Le support
+LEAD: Quand un service tombe, l’idéal est que l’équipe le sache avant les utilisateurs. C’est le rôle de la supervision : des sondes qui regardent en permanence, et une alarme qui sonne au bon moment.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Dans un immeuble, personne ne monte vérifier chaque jour que le chauffage chauffe. Un
+        thermostat mesure, compare à une valeur attendue, et déclenche une alerte si ça dérape.
+        Dans un système d’information, ce rôle s’appelle la <strong>supervision</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : des sondes mesurent régulièrement l’état d’un service et envoient leurs mesures à un point central">
+        <div class="scene-title">Scène 1 — Mesurer en continu</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un service à gauche, des sondes qui prennent des mesures, un point central à droite qui les reçoit et les affiche">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="100" width="150" height="100" rx="10" class="s-box"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-sm">Service</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <circle cx="300" cy="150" r="30" class="s-box-accent pulse"/>
+              <text x="300" y="156" text-anchor="middle" class="s-label-sm">Sonde</text>
+            </g>
+            <path d="M180 150 H270" class="s-line m-draw" data-show="2-4"/>
+            <path d="M330 150 H600" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M330 150 H600')"/>
+            <text x="465" y="130" text-anchor="middle" class="s-label-xs" data-show="3">mesures</text>
+            <g data-show="3-4" class="m-right">
+              <rect x="600" y="80" width="170" height="140" rx="10" class="s-box-teal"/>
+              <text x="685" y="156" text-anchor="middle" class="s-label-sm">Console</text>
+            </g>
+            <text x="685" y="248" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">tout est visible</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Un service tourne.</b><span>Un site, un serveur, une application : il travaille, mais personne ne le regarde.</span></p>
+          <p class="step" data-duration="4200"><b>On lui colle une sonde.</b><span>Un petit programme qui relève à intervalles réguliers : répond-il ? à quelle vitesse ? reste-t-il de la place ?</span></p>
+          <p class="step" data-duration="4400"><b>Les mesures remontent.</b><span>Toutes les sondes envoient leurs relevés au même endroit.</span></p>
+          <p class="step" data-duration="4400"><b>Une console les rassemble.</b><span>Un écran unique montre l’état de tout le système d’information : c’est la supervision.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le tableau de bord d’une voiture. Il ne conduit pas à votre place : il vous montre la
+          vitesse, la température, le niveau d’essence, et allume un voyant avant la panne sèche.
+        </p>
+      </div>
+
+      <h2>Un seuil, une alerte</h2>
+      <p>
+        Regarder un écran toute la journée n’est pas tenable. On fixe donc des règles à l’avance.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : une mesure dépasse un seuil, ce qui déclenche une alerte envoyée à la bonne personne">
+        <div class="scene-title">Scène 2 — Du seuil à l’alerte</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une courbe qui monte, un seuil horizontal, puis une alerte envoyée vers une personne d’astreinte">
+            <path d="M40 240 H420" class="s-line" data-show="1-4"/>
+            <path d="M40 240 V60" class="s-line" data-show="1-4"/>
+            <path d="M40 220 L120 200 L200 190 L280 150" class="s-line-accent m-draw" data-show="1-4"/>
+            <path d="M280 150 L340 100 L400 70" class="s-line-accent m-draw" data-show="3-4"/>
+            <path d="M40 110 H420" class="s-line" stroke-dasharray="8 6" data-show="2-4"/>
+            <text x="430" y="114" class="s-label-xs" data-show="2-4">seuil</text>
+            <circle cx="340" cy="100" r="9" class="s-box-accent pulse" data-show="3-4"/>
+            <path d="M470 150 H600" class="s-line-accent m-draw" data-show="4"/>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M470 150 H600')"/>
+            <g data-show="4" class="m-right">
+              <rect x="600" y="110" width="170" height="80" rx="10" class="s-box-teal"/>
+              <text x="685" y="156" text-anchor="middle" class="s-label-sm">Alerte</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>La mesure évolue dans le temps.</b><span>Ici, l’espace disque utilisé grimpe doucement : tant que tout va bien, rien ne se passe.</span></p>
+          <p class="step" data-duration="4200"><b>On pose un seuil.</b><span>Une limite fixée à l’avance : « au-delà de ce niveau, il faut agir ».</span></p>
+          <p class="step" data-duration="4200"><b>La mesure franchit le seuil.</b><span>Le système le détecte tout seul, sans que personne ne regarde l’écran.</span></p>
+          <p class="step" data-duration="4600"><b>Une alerte part.</b><span>Message, courriel ou appel envoyé à la personne d’astreinte, qui agit avant que le service ne tombe.</span></p>
+        </div>
+      </section>
+
+      <h2>Les limites</h2>
+      <p>
+        Un seuil trop bas déclenche des fausses alertes en pagaille ; l’équipe finit par ne plus les
+        lire. Un seuil trop haut prévient trop tard. Régler ces seuils, c’est l’essentiel du métier.
+        Et la supervision signale un symptôme : elle ne dit pas toujours la cause.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>La <strong>supervision</strong> surveille en continu l’état des serveurs et applications.</li>
+        <li>Des <strong>sondes</strong> mesurent, une <strong>console</strong> rassemble tout.</li>
+        <li>Un <strong>seuil</strong> franchi déclenche une <strong>alerte</strong>, avant la panne.</li>
+        <li>Trop d’alertes inutiles tuent l’attention : le réglage des seuils compte.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Quand l’alerte révèle un vrai problème, il part en ticket : c’est la leçon sur le support.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="support.html">← Le support informatique</a>
+        <a class="btn btn-primary" href="recette.html">La recette →</a>
+      </nav>

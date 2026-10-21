@@ -1220,4 +1220,28 @@ CARTES = [
   voir='support',
   pas='un courriel, qui n’a ni responsable désigné ni état d’avancement ; le ticket garantit que la demande est suivie.'),
 
+ dict(id='ingenierie-sociale', terme='Ingénierie sociale', aka=['social engineering','arnaque','manipulation','fraude au président'], dom='Réseau',
+  une='Tromper une personne, plutôt qu’une machine, pour obtenir un accès ou une information.',
+  etapes=['Les systèmes les mieux protégés ont un point faible : les personnes qui les utilisent.', 'L’attaquant se fait passer pour quelqu’un de confiance : un collègue, un fournisseur, le support informatique.', 'Il joue sur l’urgence, la peur ou l’envie d’aider pour obtenir un mot de passe, un virement ou un clic.', 'Le meilleur réflexe est de vérifier par un autre canal, surtout quand on vous presse d’agir vite.'],
+  voir='cybersecurite',
+  pas='le hameçonnage, qui en est une forme par message de masse ; l’ingénierie sociale couvre aussi le téléphone et la rencontre en personne.'),
+
+ dict(id='reseau-local', terme='Réseau local (LAN)', aka=['lan','wan','réseau local','réseau étendu'], dom='Réseau',
+  une='Le réseau qui relie les appareils d’un même lieu, comme une maison ou un bureau.',
+  etapes=['Dans un bureau, les ordinateurs, imprimantes et téléphones doivent pouvoir se parler entre eux.', 'On les relie par câble ou Wi-Fi à un même équipement : cela forme un réseau local.', 'Les échanges internes y sont rapides et restent chez vous ; seule la box ouvre la porte vers Internet.', 'Entre plusieurs sites éloignés, on parle de réseau étendu : c’est le même principe, sur de plus grandes distances.'],
+  voir='wifi-box',
+  pas='Internet, qui est un réseau de réseaux ; le réseau local n’en est qu’une petite partie, la vôtre.'),
+
+ dict(id='csv', terme='CSV', aka=['csv','fichier csv','valeurs séparées par des virgules','export'], dom='Data',
+  une='Un fichier texte tout simple qui range un tableau : une ligne par ligne, des séparateurs entre les colonnes.',
+  etapes=['Pour échanger un tableau entre deux logiciels, il faut un format que tous comprennent.', 'Le CSV écrit chaque ligne du tableau sur une ligne de texte, et sépare les cases par un signe, souvent une virgule ou un point-virgule.', 'Il s’ouvre dans un tableur, un éditeur de texte ou presque n’importe quel outil de données.', 'Il ne contient ni mise en forme, ni formule, ni graphique : seulement les valeurs. Attention aux accents mal lus.'],
+  voir='fichiers',
+  pas='un fichier de tableur, qui garde aussi formules et mise en forme ; le CSV est plus léger et plus universel.'),
+
+ dict(id='modele-fondation', terme='Modèle de fondation', aka=['foundation model','modèle de base','modèle général'], dom='IA',
+  une='Un grand modèle entraîné une fois sur énormément de données, puis réutilisé pour de nombreux usages.',
+  etapes=['Entraîner un modèle depuis zéro coûte très cher : il faut des données immenses et beaucoup de puissance.', 'On le fait donc une seule fois, sur des données très variées, pour obtenir un modèle généraliste.', 'Ce modèle sert ensuite de base : on l’utilise tel quel, ou on l’adapte à un métier précis.', 'Ses forces comme ses défauts se transmettent à tout ce qui est construit dessus.'],
+  voir='entrainement-inference',
+  pas='un modèle spécialisé, bâti pour une seule tâche ; le modèle de fondation est le point de départ commun de plusieurs d’entre eux.'),
+
 ]
