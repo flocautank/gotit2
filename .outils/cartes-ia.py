@@ -1244,4 +1244,54 @@ CARTES = [
   voir='entrainement-inference',
   pas='un modèle spécialisé, bâti pour une seule tâche ; le modèle de fondation est le point de départ commun de plusieurs d’entre eux.'),
 
+ dict(id='tableur', terme='Tableur', aka=['excel','tableur','feuille de calcul','spreadsheet'], dom='Data',
+  une="Un logiciel qui range des données en lignes et colonnes et calcule dessus avec des formules.",
+  etapes=[
+   "Pour compter, trier ou comparer des chiffres, une feuille quadrillée sur papier devient vite pénible.",
+   "Un tableur reproduit cette feuille à l’écran : chaque case contient un texte, un nombre ou une formule.",
+   "Quand une valeur change, les formules qui en dépendent se recalculent seules.",
+   "Très pratique pour un usage personnel ; à plusieurs ou à grande échelle, une base de données prend le relais."],
+  voir='tableur-vs-bdd',
+  pas="une base de données, qui gère de gros volumes et des accès simultanés ; le tableur est fait pour un usage individuel."),
+
+ dict(id='cle-etrangere', terme='Clé étrangère', aka=['foreign key','clé externe','lien entre tables'], dom='Data',
+  une="Une colonne qui contient l’identifiant d’une ligne d’une autre table, pour les relier.",
+  etapes=[
+   "Dans une base, les clients et les commandes sont rangés dans deux tables séparées, pour ne pas tout répéter.",
+   "Chaque client a un identifiant unique : sa clé primaire.",
+   "Chaque commande porte, dans une colonne, l’identifiant du client concerné : c’est la clé étrangère.",
+   "La base peut alors refuser une commande rattachée à un client qui n’existe pas, et la jointure retrouve le lien."],
+  voir='jointure',
+  pas="la clé primaire, qui identifie une ligne dans sa propre table ; la clé étrangère pointe vers la ligne d’une autre."),
+
+ dict(id='sauvegarde-incrementale', terme='Sauvegarde incrémentale', aka=['incrémentale','différentielle','sauvegarde complète'], dom='Informatique',
+  une="Une sauvegarde qui ne copie que ce qui a changé depuis la précédente.",
+  etapes=[
+   "Recopier tous les fichiers chaque nuit prend du temps et beaucoup de place.",
+   "On fait d’abord une sauvegarde complète, une fois, comme point de départ.",
+   "Ensuite, chaque sauvegarde incrémentale ne copie que les fichiers nouveaux ou modifiés depuis la dernière.",
+   "C’est rapide et léger ; pour restaurer, il faut en revanche la complète et toute la chaîne qui suit."],
+  voir='sauvegarde',
+  pas="la sauvegarde complète, qui recopie tout à chaque fois ; elle est plus lourde mais se restaure plus simplement."),
+
+ dict(id='segmentation-reseau', terme='Segmentation réseau', aka=['vlan','segmentation','cloisonnement','réseau invité'], dom='Réseau',
+  une="Découper un réseau en zones séparées pour qu’un problème dans l’une ne gagne pas les autres.",
+  etapes=[
+   "Sur un réseau où tout communique avec tout, un appareil infecté peut atteindre n’importe quel autre.",
+   "On le découpe en zones : par exemple les postes du personnel, les serveurs et le Wi-Fi des visiteurs.",
+   "Entre les zones, un équipement ou un pare-feu ne laisse passer que les échanges nécessaires.",
+   "Un incident reste alors confiné à sa zone, comme les cloisons d’un navire limitent une voie d’eau."],
+  voir='pare-feu',
+  pas="le pare-feu, qui contrôle les passages ; la segmentation est le découpage qui lui donne des frontières à garder."),
+
+ dict(id='cycle-vie-donnee', terme='Cycle de vie de la donnée', aka=['archivage','durée de conservation','rétention','purge'], dom='Data',
+  une="Les étapes d’une donnée, de sa création à sa suppression ou son archivage.",
+  etapes=[
+   "Une donnée n’est pas éternelle : elle est créée, utilisée, puis finit par ne plus servir.",
+   "Tant qu’elle est utile, elle reste accessible et à jour dans les outils du quotidien.",
+   "Ensuite, on l’archive à moindre coût ou on la supprime, selon une durée de conservation fixée à l’avance.",
+   "Garder tout, tout le temps, coûte cher et expose à des risques ; le RGPD impose d’ailleurs de ne pas conserver sans raison."],
+  voir='rgpd',
+  pas="la sauvegarde, qui sert à restaurer en cas de perte ; le cycle de vie décide de ce que l’on garde et jusqu’à quand."),
+
 ]
