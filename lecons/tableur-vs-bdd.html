@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tableur ou base de données : quand le tableau ne suffit plus — GotIt !</title>
+<meta name="description" content="Pourquoi une entreprise quitte son fichier de tableur pour une base de données : copies qui divergent, modifications simultanées, volume. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/data">Data</a><span>/</span>Stocker les données<span>/</span>Les bases de données</div>
+      <h1>Tableur ou base de données : quand le tableau ne suffit plus</h1>
+      <p class="lead">Un tableur est parfait pour commencer. Mais à plusieurs, ou avec beaucoup de lignes, il atteint ses limites : voyons lesquelles, et ce que change une base de données.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Une petite association tient la liste de ses adhérents dans un fichier de tableur. Tout va bien… jusqu’au
+        jour où deux personnes en ont besoin en même temps. Ce moment-là, beaucoup d’entreprises le connaissent.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un fichier envoyé à plusieurs personnes devient plusieurs versions qui divergent">
+        <div class="scene-title">Scène 1 — Un fichier, trois copies</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un fichier est envoyé à deux personnes ; chacun le modifie de son côté et il existe trois versions différentes">
+            <g data-show="1-4" class="m-left">
+              <rect x="320" y="30" width="160" height="70" rx="10" class="s-box-accent"/>
+              <text x="400" y="72" text-anchor="middle" class="s-label-sm">Fichier</text>
+            </g>
+            <path d="M360 100 L170 190" class="s-line m-draw" data-show="2-4"/>
+            <path d="M440 100 L630 190" class="s-line m-draw" data-show="2-4"/>
+            <g data-show="2-4" class="m-pop">
+              <rect x="90" y="190" width="160" height="70" rx="10" class="s-box-teal"/>
+              <text x="170" y="232" text-anchor="middle" class="s-label-sm">Copie d’Ana</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="550" y="190" width="160" height="70" rx="10" class="s-box-teal"/>
+              <text x="630" y="232" text-anchor="middle" class="s-label-sm">Copie de Léo</text>
+            </g>
+            <text x="170" y="282" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3-4">modifiée</text>
+            <text x="630" y="282" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3-4">modifiée</text>
+            <text x="400" y="160" text-anchor="middle" class="s-label-sm" fill="var(--danger)" data-show="4">Laquelle fait foi ?</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Un seul fichier au départ.</b><span>Il contient la liste de référence.</span></p>
+          <p class="step" data-duration="4000"><b>On l’envoie à deux collègues.</b><span>Chacun en reçoit une copie, par courriel ou par partage.</span></p>
+          <p class="step" data-duration="4200"><b>Chacun corrige de son côté.</b><span>Ana ajoute une adhérente, Léo change une adresse. Les copies ne se parlent pas.</span></p>
+          <p class="step" data-duration="4400"><b>Trois versions, aucune complète.</b><span>Il faut les fusionner à la main, avec le risque d’écraser une correction.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un carnet d’adresses photocopié pour toute la famille : chacun note les changements dans sa copie,
+          et au bout d’un an plus aucune ne ressemble à une autre. Une base de données, c’est un seul carnet
+          posé au centre, que tout le monde consulte et corrige à la même place.
+        </p>
+      </div>
+
+      <h2>La base de données : un seul endroit, plusieurs accès</h2>
+      <p>
+        Au lieu d’échanger des copies, on place les données en un lieu unique, géré par un logiciel qui
+        reçoit toutes les demandes et les range dans l’ordre.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : plusieurs personnes passent par un logiciel de base de données qui garde une seule version des données">
+        <div class="scene-title">Scène 2 — Un point central</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Plusieurs personnes envoient leurs modifications vers une base de données centrale qui les range et renvoie à chacun la même version">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="40" width="130" height="60" rx="10" class="s-box-teal"/>
+              <text x="95" y="76" text-anchor="middle" class="s-label-sm">Ana</text>
+              <rect x="30" y="120" width="130" height="60" rx="10" class="s-box-teal"/>
+              <text x="95" y="156" text-anchor="middle" class="s-label-sm">Léo</text>
+              <rect x="30" y="200" width="130" height="60" rx="10" class="s-box-teal"/>
+              <text x="95" y="236" text-anchor="middle" class="s-label-sm">Sam</text>
+            </g>
+            <g data-show="2-5" class="m-pop">
+              <rect x="560" y="80" width="200" height="140" rx="12" class="s-box-accent"/>
+              <text x="660" y="156" text-anchor="middle" class="s-label-sm">Base de données</text>
+            </g>
+            <path d="M160 70 L560 130" class="s-line m-draw" data-show="3-5"/>
+            <path d="M160 150 H560" class="s-line m-draw" data-show="3-5"/>
+            <path d="M160 230 L560 170" class="s-line m-draw" data-show="3-5"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M160 150 H560')"/>
+            <text x="360" y="136" text-anchor="middle" class="s-label-xs" data-show="3">demandes</text>
+            <text x="360" y="276" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">une seule version à jour</text>
+            <text x="660" y="256" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="5">verrous, droits, historique</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3600"><b>Plusieurs personnes ont besoin des données.</b><span>Au même moment, parfois pour les mêmes lignes.</span></p>
+          <p class="step" data-duration="4000"><b>On installe un point central.</b><span>C’est la base de données : un logiciel qui garde les données et les protège.</span></p>
+          <p class="step" data-duration="4200"><b>Tout le monde passe par lui.</b><span>Chaque lecture et chaque modification est une demande adressée à la base.</span></p>
+          <p class="step" data-duration="4400"><b>Il n’existe plus qu’une version.</b><span>Ce que Ana enregistre, Léo le voit tout de suite.</span></p>
+          <p class="step" data-duration="4600"><b>Et la base surveille.</b><span>Elle évite que deux personnes écrasent la même ligne, contrôle qui a le droit de quoi, et peut garder l’historique.</span></p>
+        </div>
+      </section>
+
+      <h2>Alors, faut-il jeter le tableur ?</h2>
+      <p>
+        Non. Pour une analyse ponctuelle, un petit budget ou un brouillon, le tableur est plus simple et
+        plus rapide. On passe à une base quand les données <strong>servent à plusieurs</strong>, qu’elles
+        deviennent <strong>nombreuses</strong>, ou qu’une erreur coûte cher. Les deux cohabitent souvent :
+        la base garde la référence, et le tableur sert à l’explorer.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un <strong>tableur</strong> est idéal pour un usage <strong>personnel</strong> ou ponctuel.</li>
+        <li>Échangé à plusieurs, il produit des <strong>copies qui divergent</strong>.</li>
+        <li>Une <strong>base de données</strong> garde <strong>une seule version</strong> et règle les accès simultanés.</li>
+        <li>Le bon choix dépend de l’usage : <strong>nombre d’utilisateurs</strong>, volume et enjeu.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir comment une base range ses informations, ouvrez la leçon sur les bases de données.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="base-de-donnees.html">← C’est quoi une base de données ?</a>
+        <a class="btn btn-primary" href="jointure.html">La jointure →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
