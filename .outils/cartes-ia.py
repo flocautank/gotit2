@@ -1193,7 +1193,7 @@ CARTES = [
  dict(id='transaction-bdd', terme='Transaction (base de données)', aka=['transaction','acid','commit','rollback','annuler'], dom='Data',
   une='Un groupe d’opérations sur une base de données qui réussissent toutes ensemble, ou sont toutes annulées.',
   etapes=['Un virement se fait en deux gestes : retirer d’un compte, ajouter à l’autre. S’arrêter au milieu perdrait l’argent.', 'La base regroupe ces gestes en une transaction : un paquet indivisible, traité comme une seule opération.', 'Si tout se passe bien, la transaction est validée et les changements deviennent visibles. Sinon, elle est annulée et la base revient à son état d’avant.', 'C’est ce qui garantit des données cohérentes malgré les pannes et les accès simultanés ; c’est vital pour l’argent et les stocks.'],
-  voir='base-de-donnees',
+  voir='transaction',
   pas='une sauvegarde, qui permet de revenir à un état ancien ; la transaction protège chaque opération en cours, à l’instant même.'),
 
  dict(id='debogage', terme='Débogage', aka=['debug','déboguer','débugger','corriger un bug','trouver une erreur'], dom='Informatique',
@@ -1293,5 +1293,54 @@ CARTES = [
    "Garder tout, tout le temps, coûte cher et expose à des risques ; le RGPD impose d’ailleurs de ne pas conserver sans raison."],
   voir='rgpd',
   pas="la sauvegarde, qui sert à restaurer en cas de perte ; le cycle de vie décide de ce que l’on garde et jusqu’à quand."),
+
+ dict(id='logs', terme='Journal d’événements (logs)', aka=['logs','log','journal','fichier de log','traces'], dom='Informatique',
+  une="Le carnet de bord qu’un logiciel ou un serveur tient tout seul, ligne après ligne, de ce qui s’est passé.",
+  etapes=[
+   "Quand une panne survient, personne n’a vu ce qui s’est passé : le logiciel tourne sans témoin.",
+   "Alors il note lui-même chaque événement important : une connexion, une erreur, un fichier envoyé, avec l’heure exacte.",
+   "Ces lignes s’accumulent dans un fichier : le journal, ou « logs » en anglais.",
+   "En cas de problème, on le relit pour reconstituer ce qui s’est passé et trouver la cause."],
+  voir='supervision',
+  pas="la supervision, qui surveille en direct et prévient ; le journal, lui, garde la trace pour comprendre après coup."),
+
+ dict(id='jeu-de-test', terme='Jeu de test', aka=['jeu de test','test set','données de test','évaluation'], dom='IA',
+  une="Des exemples mis de côté pendant l’entraînement, pour vérifier honnêtement ce que l’IA a vraiment appris.",
+  etapes=[
+   "Interroger un modèle sur les exemples qu’il a déjà vus ne prouve rien : il peut les avoir appris par cœur.",
+   "On met donc de côté une partie des exemples, que le modèle ne voit jamais pendant l’entraînement.",
+   "À la fin, on lui pose ces questions inédites et on compte ses bonnes réponses.",
+   "Ce score est la vraie mesure de sa qualité ; un bon score à l’entraînement et un mauvais au test trahit un surapprentissage."],
+  voir='surapprentissage',
+  pas="le jeu d’entraînement, qui sert à apprendre ; le jeu de test ne sert qu’à noter."),
+
+ dict(id='nat', terme='NAT (traduction d’adresses)', aka=['nat','traduction d’adresses','adresse privée','adresse publique'], dom='Réseau',
+  une="Le mécanisme qui permet à tous les appareils d’une maison de sortir sur Internet avec une seule adresse publique.",
+  etapes=[
+   "Chez vous, chaque appareil a une adresse interne, que personne d’autre sur Internet ne peut utiliser directement.",
+   "Votre box, elle, possède une adresse publique, vue de l’extérieur.",
+   "Quand un appareil envoie une demande, la box la fait partir sous son adresse publique et note qui l’a posée.",
+   "Quand la réponse revient, la box consulte sa note et la remet au bon appareil."],
+  voir='adresse-ip',
+  pas="le pare-feu, qui filtre ce qui passe ; le NAT traduit les adresses, même si l’effet de bord est de masquer les appareils."),
+
+ dict(id='spof', terme='Point unique de défaillance', aka=['spof','single point of failure','maillon faible','point de défaillance'], dom='SI',
+  une="L’élément dont la panne arrête tout, parce que rien ne peut le remplacer.",
+  etapes=[
+   "Dans un système, certains éléments ont un double ; d’autres existent en un seul exemplaire.",
+   "Si l’un de ceux-là tombe, tout ce qui en dépend s’arrête : c’est le point unique de défaillance.",
+   "Il peut être une machine, une ligne Internet, un logiciel, ou même une seule personne qui détient un savoir.",
+   "On le repère en se demandant « que se passe-t-il si ceci s’arrête ? », puis on le double : c’est la redondance."],
+  voir='redondance'),
+
+ dict(id='agregation', terme='Agrégation', aka=['agréger','somme','moyenne','regroupement','group by'], dom='Data',
+  une="Résumer plusieurs lignes en un seul chiffre : une somme, une moyenne, un nombre.",
+  etapes=[
+   "Mille lignes de ventes ne se lisent pas : on veut savoir « combien en tout ? », ou « combien par mois ? ».",
+   "Agréger, c’est regrouper les lignes qui vont ensemble, par mois, par région ou par produit.",
+   "Pour chaque groupe, on calcule un résumé : une somme, une moyenne, un minimum, un maximum ou un décompte.",
+   "On gagne en lisibilité mais on perd le détail : une moyenne peut cacher de grands écarts."],
+  voir='bi-tableau-de-bord',
+  pas="le filtre, qui retire des lignes ; l’agrégation, elle, garde toutes les lignes mais les résume."),
 
 ]

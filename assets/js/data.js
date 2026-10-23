@@ -371,6 +371,13 @@ window.GOTIT = (function () {
       duration: '5 min', level: 2,
       keywords: ['index', 'base de données', 'recherche', 'requête', 'performance', 'table', 'tri']
     },
+    'transaction': {
+      title: 'La transaction, tout ou rien',
+      summary: 'Un virement ne se perd jamais à mi-chemin : les gestes forment un bloc, validé en entier ou annulé.',
+      path: 'lecons/transaction.html',
+      duration: '5 min', level: 2,
+      keywords: ['transaction', 'base de données', 'virement', 'annuler', 'valider', 'acid', 'cohérence']
+    },
     'jointure': {
       title: 'La jointure, relier deux tableaux par une colonne commune',
       summary: 'Les clients d’un côté, les commandes de l’autre : un numéro commun suffit à les rapprocher sans rien recopier.',
@@ -607,7 +614,7 @@ window.GOTIT = (function () {
           id: 'stocker', title: 'Stocker les données',
           subcategories: [
             { id: 'nature', title: 'La nature des données', lessons: ['donnees-structurees'] },
-            { id: 'bdd', title: 'Les bases de données', lessons: ['base-de-donnees', 'tableur-vs-bdd', 'jointure', 'index-bdd'] },
+            { id: 'bdd', title: 'Les bases de données', lessons: ['base-de-donnees', 'tableur-vs-bdd', 'jointure', 'index-bdd', 'transaction'] },
             { id: 'entrepots', title: 'Lacs, entrepôts et magasins', lessons: ['entrepots-data'] }
           ]
         },
@@ -2670,7 +2677,7 @@ window.GOTIT = (function () {
         "Si tout se passe bien, la transaction est validée et les changements deviennent visibles. Sinon, elle est annulée et la base revient à son état d’avant.",
         "C’est ce qui garantit des données cohérentes malgré les pannes et les accès simultanés ; c’est vital pour l’argent et les stocks."
       ],
-      voir: "base-de-donnees",
+      voir: "transaction",
       pas: "une sauvegarde, qui permet de revenir à un état ancien ; la transaction protège chaque opération en cours, à l’instant même."
     },
     {
@@ -2841,6 +2848,70 @@ window.GOTIT = (function () {
       ],
       voir: "rgpd",
       pas: "la sauvegarde, qui sert à restaurer en cas de perte ; le cycle de vie décide de ce que l’on garde et jusqu’à quand."
+    },
+    {
+      id: "logs", terme: "Journal d’événements (logs)", domaine: "Informatique",
+      aka: ["logs", "log", "journal", "fichier de log", "traces"],
+      une: "Le carnet de bord qu’un logiciel ou un serveur tient tout seul, ligne après ligne, de ce qui s’est passé.",
+      etapes: [
+        "Quand une panne survient, personne n’a vu ce qui s’est passé : le logiciel tourne sans témoin.",
+        "Alors il note lui-même chaque événement important : une connexion, une erreur, un fichier envoyé, avec l’heure exacte.",
+        "Ces lignes s’accumulent dans un fichier : le journal, ou « logs » en anglais.",
+        "En cas de problème, on le relit pour reconstituer ce qui s’est passé et trouver la cause."
+      ],
+      voir: "supervision",
+      pas: "la supervision, qui surveille en direct et prévient ; le journal, lui, garde la trace pour comprendre après coup."
+    },
+    {
+      id: "jeu-de-test", terme: "Jeu de test", domaine: "IA",
+      aka: ["jeu de test", "test set", "données de test", "évaluation"],
+      une: "Des exemples mis de côté pendant l’entraînement, pour vérifier honnêtement ce que l’IA a vraiment appris.",
+      etapes: [
+        "Interroger un modèle sur les exemples qu’il a déjà vus ne prouve rien : il peut les avoir appris par cœur.",
+        "On met donc de côté une partie des exemples, que le modèle ne voit jamais pendant l’entraînement.",
+        "À la fin, on lui pose ces questions inédites et on compte ses bonnes réponses.",
+        "Ce score est la vraie mesure de sa qualité ; un bon score à l’entraînement et un mauvais au test trahit un surapprentissage."
+      ],
+      voir: "surapprentissage",
+      pas: "le jeu d’entraînement, qui sert à apprendre ; le jeu de test ne sert qu’à noter."
+    },
+    {
+      id: "nat", terme: "NAT (traduction d’adresses)", domaine: "Réseau",
+      aka: ["nat", "traduction d’adresses", "adresse privée", "adresse publique"],
+      une: "Le mécanisme qui permet à tous les appareils d’une maison de sortir sur Internet avec une seule adresse publique.",
+      etapes: [
+        "Chez vous, chaque appareil a une adresse interne, que personne d’autre sur Internet ne peut utiliser directement.",
+        "Votre box, elle, possède une adresse publique, vue de l’extérieur.",
+        "Quand un appareil envoie une demande, la box la fait partir sous son adresse publique et note qui l’a posée.",
+        "Quand la réponse revient, la box consulte sa note et la remet au bon appareil."
+      ],
+      voir: "adresse-ip",
+      pas: "le pare-feu, qui filtre ce qui passe ; le NAT traduit les adresses, même si l’effet de bord est de masquer les appareils."
+    },
+    {
+      id: "spof", terme: "Point unique de défaillance", domaine: "SI",
+      aka: ["spof", "single point of failure", "maillon faible", "point de défaillance"],
+      une: "L’élément dont la panne arrête tout, parce que rien ne peut le remplacer.",
+      etapes: [
+        "Dans un système, certains éléments ont un double ; d’autres existent en un seul exemplaire.",
+        "Si l’un de ceux-là tombe, tout ce qui en dépend s’arrête : c’est le point unique de défaillance.",
+        "Il peut être une machine, une ligne Internet, un logiciel, ou même une seule personne qui détient un savoir.",
+        "On le repère en se demandant « que se passe-t-il si ceci s’arrête ? », puis on le double : c’est la redondance."
+      ],
+      voir: "redondance"
+    },
+    {
+      id: "agregation", terme: "Agrégation", domaine: "Data",
+      aka: ["agréger", "somme", "moyenne", "regroupement", "group by"],
+      une: "Résumer plusieurs lignes en un seul chiffre : une somme, une moyenne, un nombre.",
+      etapes: [
+        "Mille lignes de ventes ne se lisent pas : on veut savoir « combien en tout ? », ou « combien par mois ? ».",
+        "Agréger, c’est regrouper les lignes qui vont ensemble, par mois, par région ou par produit.",
+        "Pour chaque groupe, on calcule un résumé : une somme, une moyenne, un minimum, un maximum ou un décompte.",
+        "On gagne en lisibilité mais on perd le détail : une moyenne peut cacher de grands écarts."
+      ],
+      voir: "bi-tableau-de-bord",
+      pas: "le filtre, qui retire des lignes ; l’agrégation, elle, garde toutes les lignes mais les résume."
     }
   ];
 

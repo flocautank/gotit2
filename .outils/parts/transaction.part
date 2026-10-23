@@ -1,0 +1,110 @@
+TITRE: La transaction, tout ou rien
+DESC: Pourquoi un virement ne se perd jamais à mi-chemin : la transaction regroupe plusieurs gestes en un seul bloc, validé en entier ou annulé. Expliqué en schémas animés.
+FIL: <a href="../index.html#/data">Data</a><span>/</span>Stocker les données<span>/</span>Les bases de données
+LEAD: Un virement, c’est retirer d’un compte et ajouter à un autre. Si la machine s’arrête entre les deux, où va l’argent ? La transaction existe pour que cette question ne se pose jamais.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Vous déménagez un meuble par la fenêtre : un ami le descend, un autre le réceptionne.
+        Si le premier lâche prise avant que le second soit en place, le meuble est par terre.
+        Une base de données a le même risque dès qu’une opération demande <strong>plusieurs gestes</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un virement en deux gestes, interrompu entre les deux, perd l’argent">
+        <div class="scene-title">Scène 1 — Le risque du milieu</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Deux comptes reliés par une flèche ; l’argent quitte le premier compte puis la panne l’empêche d’arriver sur le second">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="100" width="160" height="90" rx="10" class="s-box-teal"/>
+              <text x="120" y="150" text-anchor="middle" class="s-label-sm">Compte A</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="600" y="100" width="160" height="90" rx="10" class="s-box"/>
+              <text x="680" y="150" text-anchor="middle" class="s-label-sm">Compte B</text>
+            </g>
+            <path d="M200 145 H600" class="s-line m-draw" data-show="2-4"/>
+            <circle r="8" class="packet" data-show="2" style="offset-path:path('M200 145 H400')"/>
+            <text x="400" y="110" text-anchor="middle" class="s-label-xs" data-show="2">geste 1 : retirer</text>
+            <text x="400" y="230" text-anchor="middle" class="s-label-sm" fill="var(--danger)" data-show="3-4">panne !</text>
+            <text x="400" y="266" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="4">argent perdu</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Un virement, deux comptes.</b><span>Il faut vider un compte et remplir l’autre.</span></p>
+          <p class="step" data-duration="4000"><b>Premier geste : retirer.</b><span>L’argent quitte le compte A.</span></p>
+          <p class="step" data-duration="4000"><b>Une panne survient au milieu.</b><span>Coupure de courant, erreur, serveur redémarré : le second geste n’a jamais lieu.</span></p>
+          <p class="step" data-duration="4400"><b>Résultat : l’argent n’est nulle part.</b><span>Retiré d’un côté, jamais arrivé de l’autre. Les données sont devenues incohérentes.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un contrat signé chez le notaire : soit toutes les signatures sont posées et l’affaire est
+          conclue, soit elle ne l’est pas du tout. Jamais à moitié.
+        </p>
+      </div>
+
+      <h2>Un bloc indivisible</h2>
+      <p>
+        La base regroupe les gestes en un paquet unique, qu’elle traite comme une seule opération.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : une transaction regroupe les gestes, puis est validée en entier ou annulée et tout revient comme avant">
+        <div class="scene-title">Scène 2 — Valider, ou annuler</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un cadre entoure deux gestes ; en cas de succès les changements sont validés, en cas d’échec tout revient à l’état de départ">
+            <g data-show="1-5" class="m-pop">
+              <rect x="150" y="50" width="500" height="120" rx="14" class="s-box-accent"/>
+              <text x="400" y="42" text-anchor="middle" class="s-label-xs">transaction</text>
+            </g>
+            <g data-show="1-5" class="m-left">
+              <rect x="190" y="85" width="190" height="50" rx="8" class="s-box"/>
+              <text x="285" y="116" text-anchor="middle" class="s-label-xs">retirer de A</text>
+            </g>
+            <g data-show="2-5" class="m-right">
+              <rect x="420" y="85" width="190" height="50" rx="8" class="s-box"/>
+              <text x="515" y="116" text-anchor="middle" class="s-label-xs">ajouter à B</text>
+            </g>
+            <text x="230" y="240" text-anchor="middle" class="s-label-sm" fill="var(--sage)" data-show="3">tout réussit</text>
+            <text x="230" y="270" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="3">validé</text>
+            <text x="570" y="240" text-anchor="middle" class="s-label-sm" fill="var(--danger)" data-show="4-5">un geste échoue</text>
+            <text x="570" y="270" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="5">tout est annulé</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>On entoure les gestes d’un même cadre.</b><span>Retirer et ajouter ne forment plus qu’une seule opération.</span></p>
+          <p class="step" data-duration="3800"><b>Les deux gestes sont préparés ensemble.</b><span>Tant que rien n’est validé, personne d’autre ne voit le résultat intermédiaire.</span></p>
+          <p class="step" data-duration="4200"><b>Si tout réussit, on valide.</b><span>Les changements apparaissent d’un coup, en entier.</span></p>
+          <p class="step" data-duration="4200"><b>Si un geste échoue, la base s’arrête.</b><span>Elle ne garde rien de ce qui a été préparé.</span></p>
+          <p class="step" data-duration="4600"><b>Tout est annulé.</b><span>La base revient exactement à son état de départ, comme si rien n’avait commencé.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que ça garantit</h2>
+      <p>
+        Les spécialistes résument cette garantie par un sigle, <strong>ACID</strong> : une transaction est
+        atomique (tout ou rien), cohérente, isolée des autres opérations simultanées, et durable une
+        fois validée. Retenez surtout la première idée : elle suffit à comprendre pourquoi un virement
+        ne se perd pas à mi-chemin, ni un stock ne descend sans que la commande soit enregistrée.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Une opération en <strong>plusieurs gestes</strong> peut s’interrompre au milieu et laisser des données incohérentes.</li>
+        <li>La <strong>transaction</strong> regroupe ces gestes en un bloc indivisible.</li>
+        <li>Tout est <strong>validé</strong> en entier, ou <strong>annulé</strong> pour revenir à l’état d’avant.</li>
+        <li>C’est vital partout où l’on manipule de l’<strong>argent</strong> ou des <strong>stocks</strong>.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour revoir comment une base range ses informations, retournez à la leçon sur la base de données.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="index-bdd.html">← L’index</a>
+        <a class="btn btn-primary" href="base-de-donnees.html">C'est quoi une base de données ? →</a>
+      </nav>
