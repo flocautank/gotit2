@@ -2912,6 +2912,70 @@ window.GOTIT = (function () {
       ],
       voir: "bi-tableau-de-bord",
       pas: "le filtre, qui retire des lignes ; l’agrégation, elle, garde toutes les lignes mais les résume."
+    },
+    {
+      id: "processeur", terme: "Processeur (CPU)", domaine: "Informatique",
+      aka: ["processeur", "cpu", "puce", "coeur", "cœur", "gigahertz"],
+      une: "Le composant qui exécute les instructions d’un programme, une par une, à une vitesse vertigineuse.",
+      etapes: [
+        "Un programme n’est qu’une longue liste d’instructions très simples : additionner, comparer, déplacer une valeur.",
+        "Le processeur les lit et les exécute dans l’ordre, des milliards de fois par seconde. Cette cadence se mesure en gigahertz.",
+        "Un processeur moderne contient plusieurs cœurs : autant de petits exécutants qui travaillent en parallèle sur des tâches différentes.",
+        "Un seul cœur plus rapide aide un programme séquentiel ; plus de cœurs aident quand le travail se découpe. Le reste du confort dépend aussi de la mémoire."
+      ],
+      voir: "ordinateur",
+      pas: "la carte graphique, spécialisée dans un très grand nombre de calculs simples en parallèle ; le processeur est le généraliste."
+    },
+    {
+      id: "gestionnaire-mots-de-passe", terme: "Gestionnaire de mots de passe", domaine: "Réseau",
+      aka: ["gestionnaire de mots de passe", "coffre-fort", "password manager", "mot de passe"],
+      une: "Un coffre-fort numérique qui retient à votre place un mot de passe différent pour chaque site.",
+      etapes: [
+        "Retenir un mot de passe solide par site est impossible. Alors on en réutilise un seul, et une fuite sur un site expose tous les autres.",
+        "Le gestionnaire génère un mot de passe long et aléatoire pour chaque compte, et le range dans un coffre chiffré.",
+        "Une seule phrase secrète, la vôtre, ouvre le coffre. Le gestionnaire remplit ensuite les formulaires à votre place.",
+        "Vous n’avez plus qu’un secret à protéger : choisissez-le long, et doublez-le d’une double authentification."
+      ],
+      voir: "mots-de-passe",
+      pas: "le mot de passe enregistré par le navigateur, plus limité ; un vrai gestionnaire fonctionne partout et se verrouille par sa propre phrase secrète."
+    },
+    {
+      id: "donnee-structuree", terme: "Donnée structurée et non structurée", domaine: "Data",
+      aka: ["donnée structurée", "non structurée", "données non structurées", "tableau", "texte libre"],
+      une: "Une donnée structurée tient dans les cases d’un tableau ; une donnée non structurée, non.",
+      etapes: [
+        "Un nom, une date, un montant rangés dans des colonnes : on peut les trier, les compter, les additionner.",
+        "Ce sont des données structurées : chaque information a sa case, avec un sens connu d’avance.",
+        "Un e-mail, une photo, un enregistrement audio ou un contrat ne rentrent dans aucune case. Ce sont des données non structurées.",
+        "Elles sont majoritaires dans une entreprise, et plus difficiles à exploiter : il faut d’abord en extraire de la structure."
+      ],
+      voir: "donnees-structurees",
+      pas: "le format du fichier ; un PDF contenant un tableau reste difficile à exploiter, et un fichier texte peut être parfaitement structuré."
+    },
+    {
+      id: "feuille-de-route", terme: "Feuille de route (roadmap)", domaine: "SI",
+      aka: ["roadmap", "feuille de route", "plan produit", "planning"],
+      une: "Le plan qui dit dans quel ordre, et à peu près quand, un produit ou un projet va évoluer.",
+      etapes: [
+        "Une équipe a toujours plus d’idées que de temps. Sans plan, on traite ce qui crie le plus fort.",
+        "La feuille de route range les grandes évolutions dans l’ordre, par trimestre ou par étape, selon leur valeur et leur urgence.",
+        "Elle indique la direction, pas un calendrier garanti : on ne détaille précisément que ce qui est proche.",
+        "Elle se relit et se corrige régulièrement, au fil de ce qu’on apprend. Elle sert surtout à s’accorder sur les priorités."
+      ],
+      voir: "projet-si",
+      pas: "le backlog, la liste détaillée du travail à faire ; la feuille de route est la vue d’ensemble qui le guide."
+    },
+    {
+      id: "moteur-recommandation", terme: "Moteur de recommandation", domaine: "IA",
+      aka: ["recommandation", "suggestions", "vous aimerez aussi", "filtrage collaboratif"],
+      une: "Le système qui devine ce que vous aimeriez voir, lire ou acheter, d’après ce que d’autres ont aimé.",
+      etapes: [
+        "Un catalogue de milliers de films ou de produits est impossible à parcourir. Il faut en proposer quelques-uns.",
+        "Le système garde la trace de ce que chacun regarde, note ou achète.",
+        "Il repère les gens aux goûts proches des vôtres, puis vous propose ce que ceux-là ont aimé et que vous n’avez pas encore vu.",
+        "Il fonctionne par ressemblance, pas par compréhension : il peut enfermer dans ses habitudes, et il se trompe sur un nouvel utilisateur sans historique."
+      ],
+      voir: "recommandation"
     }
   ];
 
