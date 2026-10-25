@@ -392,6 +392,13 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['cache', 'copie', 'rapidité', 'mémoire', 'performance', 'navigateur', 'vider le cache']
     },
+    'front-back': {
+      title: 'Front-end, back-end : la salle et la cuisine d’un site',
+      summary: 'Ce que vous voyez d’un site n’est que la vitrine : le vrai travail se fait sur un serveur, hors de votre vue.',
+      path: 'lecons/front-back.html',
+      duration: '5 min', level: 1,
+      keywords: ['front-end', 'back-end', 'frontend', 'backend', 'site web', 'serveur', 'application', 'interface', 'développeur']
+    },
     'tableur-vs-bdd': {
       title: 'Tableur ou base de données : quand le tableau ne suffit plus',
       summary: 'Un fichier partagé produit des copies qui divergent ; une base centrale garde une seule version et règle les accès simultanés.',
@@ -576,7 +583,7 @@ window.GOTIT = (function () {
         {
           id: 'logiciels', title: 'Le logiciel',
           subcategories: [
-            { id: 'programmes', title: 'De quoi est fait un programme', lessons: ['logiciel', 'algorithme', 'code-source'] },
+            { id: 'programmes', title: 'De quoi est fait un programme', lessons: ['logiciel', 'algorithme', 'code-source', 'front-back'] },
             { id: 'versions', title: 'Garder la trace des changements', lessons: ['versionnage'] }
           ]
         }
@@ -2976,6 +2983,57 @@ window.GOTIT = (function () {
         "Il fonctionne par ressemblance, pas par compréhension : il peut enfermer dans ses habitudes, et il se trompe sur un nouvel utilisateur sans historique."
       ],
       voir: "recommandation"
+    },
+    {
+      id: "blockchain", terme: "Blockchain", domaine: "Data",
+      aka: ["chaîne de blocs", "bitcoin", "registre distribué", "crypto"],
+      une: "Un registre partagé, recopié chez des milliers de participants, où ce qui est écrit ne peut plus être modifié en douce.",
+      etapes: [
+        "Un registre classique est tenu par un seul acteur, une banque par exemple : il faut lui faire confiance.",
+        "Ici, les écritures sont regroupées en blocs, et chaque bloc contient l’empreinte du précédent : ils forment une chaîne.",
+        "Des milliers d’ordinateurs gardent chacun la même copie et se contrôlent entre eux. Modifier un ancien bloc casserait toute la chaîne.",
+        "Utile quand plusieurs parties qui ne se font pas confiance partagent un registre ; inutile, et plus lourd, quand une seule organisation peut tenir la base."
+      ],
+      pas: "le bitcoin, qui n’est qu’une application de la blockchain parmi d’autres."
+    },
+    {
+      id: "iot", terme: "Objets connectés (IoT)", domaine: "Réseau",
+      aka: ["iot", "internet des objets", "objet connecté", "capteur"],
+      une: "Un objet du quotidien, équipé d’un capteur et d’une connexion, qui envoie ou reçoit des informations par Internet.",
+      etapes: [
+        "Un thermostat, une montre, une serrure sont d’abord des objets sans lien avec Internet.",
+        "On y ajoute un capteur qui mesure, une petite puce et une connexion (wifi, Bluetooth, réseau mobile).",
+        "L’objet envoie ses mesures à un service en ligne et peut recevoir des ordres : on règle le chauffage depuis son téléphone.",
+        "Chaque objet est une porte d’entrée de plus sur le réseau : mots de passe par défaut à changer, mises à jour à faire."
+      ],
+      voir: "cybersecurite",
+      pas: "un simple appareil électronique : c’est la connexion qui fait l’objet connecté."
+    },
+    {
+      id: "pipeline-donnees", terme: "Pipeline de données", domaine: "Data",
+      aka: ["pipeline", "chaîne de traitement", "flux de données", "data pipeline"],
+      une: "La chaîne automatique qui emmène les données de leur source jusqu’à l’endroit où on les utilise.",
+      etapes: [
+        "Les données naissent dans des endroits éparpillés : caisses, site web, logiciels de gestion.",
+        "Le pipeline les récupère, les nettoie et les met au même format, étape après étape.",
+        "Il les dépose dans un entrepôt ou un tableau de bord, à heure fixe ou en continu, sans que personne n’intervienne.",
+        "Si un maillon casse, tout ce qui est en aval se vide ou se trompe : il faut donc le surveiller."
+      ],
+      voir: "etl",
+      pas: "l’ETL, qui décrit surtout la transformation ; le pipeline désigne toute la chaîne de bout en bout."
+    },
+    {
+      id: "vulnerabilite", terme: "Faille de sécurité (vulnérabilité)", domaine: "Réseau",
+      aka: ["faille", "vulnérabilité", "cve", "patch", "correctif", "faille zero-day"],
+      une: "Un défaut dans un logiciel qu’une personne malveillante peut exploiter pour faire ce qui n’était pas prévu.",
+      etapes: [
+        "Tout logiciel est écrit par des humains, donc contient des erreurs. Certaines ouvrent une porte par inadvertance.",
+        "Un chercheur ou un attaquant la découvre. Si c’est un attaquant, il peut l’exploiter avant que l’éditeur le sache.",
+        "L’éditeur publie un correctif. La faille est alors connue de tous, y compris des attaquants.",
+        "Le risque restant vient de ceux qui n’installent pas la mise à jour : appliquer les correctifs vite est la meilleure défense."
+      ],
+      voir: "cybersecurite",
+      pas: "un virus : la faille est la porte entrouverte, le virus est ce qui entre par elle."
     }
   ];
 
