@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Front-end, back-end : la salle et la cuisine d’un site — GotIt !</title>
+<meta name="description" content="Ce que vous voyez d’un site n’est que la moitié du travail : l’autre moitié se passe sur un serveur. Front-end et back-end expliqués en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/informatique">Informatique</a><span>/</span>Le logiciel<span>/</span>De quoi est fait un programme</div>
+      <h1>Front-end, back-end : la salle et la cuisine d’un site</h1>
+      <p class="lead">Quand vous commandez sur un site, ce que vous touchez n’est qu’une vitrine. Le vrai travail se fait ailleurs, hors de votre vue.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Dans un restaurant, il y a la <strong>salle</strong>, où vous vous asseyez, lisez la carte et
+        passez commande, et la <strong>cuisine</strong>, où l’on prépare vraiment le plat. Vous ne voyez
+        jamais la cuisine, mais sans elle, la salle ne sert à rien. Un site web, une application mobile,
+        fonctionnent exactement ainsi.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : une partie visible devant vous, une partie cachée sur un serveur, et une demande qui passe de l’une à l’autre">
+        <div class="scene-title">Scène 1 — Deux moitiés</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="À gauche l’écran de l’utilisateur, à droite un serveur caché ; une demande part de l’écran vers le serveur puis une réponse revient">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="80" width="200" height="140" rx="10" class="s-box-teal"/>
+              <text x="140" y="156" text-anchor="middle" class="s-label-sm">Écran</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="560" y="80" width="200" height="140" rx="10" class="s-box"/>
+              <text x="660" y="156" text-anchor="middle" class="s-label-sm">Serveur</text>
+            </g>
+            <text x="140" y="256" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="1-4">ce que je vois</text>
+            <text x="660" y="256" text-anchor="middle" class="s-label-xs" data-show="2-4">caché</text>
+            <path d="M240 130 H560" class="s-line-accent m-draw" data-show="3"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M240 130 H560')"/>
+            <text x="400" y="108" text-anchor="middle" class="s-label-xs" data-show="3">ma demande</text>
+            <path d="M560 180 H240" class="s-line-accent m-draw" data-show="4"/>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M560 180 H240')"/>
+            <text x="400" y="212" text-anchor="middle" class="s-label-xs" data-show="4">la réponse</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Vous voyez des boutons, des images, des champs.</b><span>Tout ce qui s’affiche sur votre écran et que vous pouvez toucher.</span></p>
+          <p class="step" data-duration="4200"><b>Derrière, une machine travaille en silence.</b><span>Elle est loin de vous, sur un serveur, et vous ne la voyez jamais.</span></p>
+          <p class="step" data-duration="4200"><b>Chaque clic envoie une demande.</b><span>« Montre-moi mon panier », « enregistre ma commande » : l’écran ne sait pas répondre seul.</span></p>
+          <p class="step" data-duration="4400"><b>Le serveur répond, l’écran affiche.</b><span>Le résultat revient, et la page se met à jour sous vos yeux.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          La salle et la cuisine d’un restaurant. Le serveur de salle prend votre commande et vous
+          apporte le plat&nbsp;; la cuisine prépare, garde les stocks et sait les recettes. Chacun son métier,
+          et le client n’a affaire qu’à la salle.
+        </p>
+      </div>
+
+      <h2>Le nom de chaque moitié</h2>
+      <p>
+        La partie que vous voyez et touchez s’appelle le <strong>front-end</strong> (« l’avant »). La partie
+        cachée qui calcule, stocke et décide s’appelle le <strong>back-end</strong> (« l’arrière »).
+        Les deux se parlent par des demandes et des réponses, souvent via une API.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un exemple de commande en ligne, ce que fait chaque moitié">
+        <div class="scene-title">Scène 2 — Commander un livre</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Le front-end affiche le livre et le bouton, le back-end vérifie le stock dans une base de données et enregistre la commande">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="90" width="190" height="120" rx="10" class="s-box-teal"/>
+              <text x="125" y="156" text-anchor="middle" class="s-label-sm">Front-end</text>
+            </g>
+            <g data-show="1-4" class="m-pop">
+              <rect x="320" y="90" width="190" height="120" rx="10" class="s-box-accent"/>
+              <text x="415" y="156" text-anchor="middle" class="s-label-sm">Back-end</text>
+            </g>
+            <g data-show="3-4" class="m-right">
+              <rect x="610" y="100" width="160" height="100" rx="10" class="s-box"/>
+              <text x="690" y="156" text-anchor="middle" class="s-label-sm">Base</text>
+            </g>
+            <text x="125" y="250" text-anchor="middle" class="s-label-xs" data-show="1-2">bouton « Acheter »</text>
+            <path d="M220 130 H320" class="s-line-accent m-draw" data-show="2-4"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M220 130 H320')"/>
+            <path d="M510 150 H610" class="s-line m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M510 150 H610')"/>
+            <text x="415" y="250" text-anchor="middle" class="s-label-xs" data-show="3">stock ? prix ?</text>
+            <text x="125" y="250" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">« Commande validée »</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Vous cliquez sur « Acheter ».</b><span>Le front-end n’a fait qu’afficher le livre et son bouton.</span></p>
+          <p class="step" data-duration="4000"><b>Le front-end transmet la demande.</b><span>Il n’a ni le stock ni votre compte : il ne peut que poser la question.</span></p>
+          <p class="step" data-duration="4400"><b>Le back-end vérifie et enregistre.</b><span>Il interroge la base de données : reste-t-il un exemplaire ? Quel est le prix ?</span></p>
+          <p class="step" data-duration="4400"><b>Il répond, et le front-end affiche.</b><span>« Commande validée » apparaît à l’écran.</span></p>
+        </div>
+      </section>
+
+      <h2>Pourquoi cette séparation ?</h2>
+      <p>
+        Parce que ce qui compte ne doit pas rester sur votre appareil. Les prix, les stocks, les mots de
+        passe doivent rester dans la cuisine, où l’entreprise les contrôle&nbsp;: tout ce qui est affiché sur
+        votre écran peut être regardé ou modifié par vous. Séparer permet aussi de changer l’apparence sans
+        toucher au fonctionnement, et d’avoir plusieurs vitrines (site, application) pour une seule cuisine.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le <strong>front-end</strong> est la partie visible, qui s’exécute sur votre appareil.</li>
+        <li>Le <strong>back-end</strong> est la partie cachée, sur un serveur&nbsp;: il calcule, stocke et décide.</li>
+        <li>Ils communiquent par <strong>demandes et réponses</strong>, souvent à travers une API.</li>
+        <li>Ce qui est sensible (prix, comptes, règles) reste <strong>côté back-end</strong>, jamais seulement à l’écran.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir comment les deux moitiés se parlent, la leçon sur les API est faite pour ça.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="code-source.html">← Du code source au programme</a>
+        <a class="btn btn-primary" href="api.html">C’est quoi une API ? →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
