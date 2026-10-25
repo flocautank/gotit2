@@ -1,0 +1,26 @@
+# Managed by Vibeship — https://github.com/flocautank/vibeship (schema vibeship/v1)
+schema: vibeship/v1
+updated: '2026-10-25'
+products:
+- id: gotit
+  name: GotIt !
+  repo: flocautank/gotit2
+  kind: site
+  platforms:
+  - web
+  stage: live
+  summary: 'Visual explainer site: tech concepts taught through animated SVG and CSS diagrams in four steps.'
+  monetization:
+    model:
+    - none
+    state: none
+    notes: 'Pistes : sponsoring, offre de formation B2B, abonnement.'
+  publishing:
+  - channel: web
+    state: live
+    url: https://flocautank.github.io/gotit2/
+  todo:
+  - Traiter les retours du rapport hebdomadaire (rapports/)
+  - Nettoyer les ~57 branches claude/* restées après fusion
+  next_human_action: Déployer le relais du formulaire (relais/LISEZMOI.md) et renseigner son adresse dans assets/js/config.js
+  last_activity: '2026-10-24'
