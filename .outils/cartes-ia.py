@@ -1431,4 +1431,44 @@ CARTES = [
   voir='cybersecurite',
   pas="un virus : la faille est la porte entrouverte, le virus est ce qui entre par elle."),
 
+ dict(id='wifi', terme='Wi-Fi', aka=['wifi','sans fil','réseau sans fil','wlan'], dom='Réseau',
+  une="La technique qui relie vos appareils à la box par ondes radio, sans câble.",
+  etapes=[
+   "Un câble relie un appareil à un réseau, mais il est encombrant et fixe.",
+   "Le Wi-Fi le remplace par des ondes radio : la box émet un signal, et les appareils proches s’y connectent.",
+   "Le signal ne transporte pas Internet : il relie seulement l’appareil à la box, qui, elle, est reliée à Internet par un câble.",
+   "Plus on s’éloigne, plus le signal faiblit ; les murs et les voisins qui émettent aussi le gênent. Un mot de passe solide en protège l’accès."],
+  voir='wifi-box',
+  pas="Internet : le Wi-Fi n’est que le dernier mètre entre votre appareil et la box."),
+
+ dict(id='transformer', terme='Transformer', aka=['transformer','architecture transformer','attention','mécanisme d’attention'], dom='IA',
+  une="L’architecture de réseau de neurones derrière la plupart des modèles de langage actuels.",
+  etapes=[
+   "Pour comprendre une phrase, il faut relier les mots entre eux : dans « il l’a mangé », qui est « il », que désigne « l’ » ?",
+   "Le transformer règle cela avec un mécanisme d’attention : pour chaque mot, il pèse l’importance de tous les autres.",
+   "Il traite tous les mots d’un coup plutôt qu’un par un, ce qui convient bien aux cartes graphiques et permet d’entraîner de très grands modèles.",
+   "Ce n’est pas un modèle précis, mais un plan de construction. Beaucoup de modèles de langage en sont bâtis, et on l’utilise aussi pour l’image."],
+  voir='llm',
+  pas="un LLM : le transformer est la structure, le LLM est un modèle construit avec, puis entraîné sur beaucoup de texte."),
+
+ dict(id='compilateur', terme='Compilateur et interprète', aka=['compilateur','compiler','interpréteur','interprète','compilation'], dom='Informatique',
+  une="Les deux façons de transformer un code écrit par un humain en actions qu’une machine sait exécuter.",
+  etapes=[
+   "Un humain écrit du code lisible ; un processeur, lui, ne comprend que des instructions très élémentaires.",
+   "Un compilateur traduit tout le programme d’un coup, en amont, et produit un fichier prêt à être lancé.",
+   "Un interprète lit et exécute le code ligne après ligne, au moment où on le lance, sans fichier traduit intermédiaire.",
+   "Compilé : lancement rapide, mais une traduction à refaire à chaque modification. Interprété : plus souple, souvent plus lent. Beaucoup de langages mêlent les deux."],
+  voir='code-source',
+  pas="le code source lui-même : c’est le texte de départ, que le compilateur ou l’interprète prend en entrée."),
+
+ dict(id='requete', terme='Requête', aka=['requête','query','requête sql','interroger','question à une base'], dom='Data',
+  une="Une question posée à une base de données, formulée dans un langage qu’elle comprend.",
+  etapes=[
+   "Une base contient des milliers de lignes ; on ne cherche pas à la main, on pose une question.",
+   "La question dit quoi retrouver, dans quelle table, et sous quelles conditions : « les clients de Lyon qui ont commandé en mars ».",
+   "La base fait le travail et renvoie seulement les lignes qui répondent, parfois triées ou comptées.",
+   "Une requête mal posée renvoie une réponse juste à une autre question : mieux vaut vérifier ce qu’elle demande vraiment."],
+  voir='base-de-donnees',
+  pas="le SQL : c’est le langage le plus courant pour écrire une requête, pas la requête elle-même."),
+
 ]

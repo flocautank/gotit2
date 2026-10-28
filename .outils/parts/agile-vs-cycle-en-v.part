@@ -1,0 +1,134 @@
+TITRE: Agile ou cycle en V : deux façons de mener un projet
+DESC: Tout livrer à la fin, ou livrer par petits morceaux ? Deux façons de conduire un projet, expliquées en schémas animés, avec leurs forces et leurs pièges.
+FIL: <a href="../index.html#/si">Système d’information</a><span>/</span>Faire vivre le SI<span>/</span>Les projets
+LEAD: Construire un outil en une seule fois, ou par petits morceaux montrés tout au long ? Les deux se défendent, selon ce que l’on construit.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">6 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Imaginez que vous fassiez construire une maison. Soit l’architecte dessine <strong>tous les plans</strong>,
+        vous les signez, puis le chantier se déroule et vous découvrez la maison à la fin. Soit on construit
+        <strong>une pièce à la fois</strong>, et vous visitez après chacune pour dire ce qui ne va pas. Les projets
+        informatiques font exactement ce choix.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un projet en phases enchaînées, où l’utilisateur ne voit le résultat qu’à la fin">
+        <div class="scene-title">Scène 1 — Tout d’un bloc</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Quatre blocs en file : besoin, conception, construction, livraison ; l’utilisateur n’apparaît qu’au bout">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="100" width="150" height="90" rx="10" class="s-box-teal"/>
+              <text x="105" y="152" text-anchor="middle" class="s-label-sm">Besoin</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="220" y="100" width="150" height="90" rx="10" class="s-box"/>
+              <text x="295" y="152" text-anchor="middle" class="s-label-sm">Plans</text>
+            </g>
+            <g data-show="3-4" class="m-rise">
+              <rect x="410" y="100" width="150" height="90" rx="10" class="s-box"/>
+              <text x="485" y="152" text-anchor="middle" class="s-label-sm">Chantier</text>
+            </g>
+            <g data-show="4" class="m-right">
+              <rect x="600" y="100" width="170" height="90" rx="10" class="s-box-accent"/>
+              <text x="685" y="152" text-anchor="middle" class="s-label-sm">Livraison</text>
+            </g>
+            <path d="M180 145 H220" class="s-line m-draw" data-show="2-4"/>
+            <path d="M370 145 H410" class="s-line m-draw" data-show="3-4"/>
+            <path d="M560 145 H600" class="s-line-accent m-draw" data-show="4"/>
+            <text x="295" y="240" text-anchor="middle" class="s-label-xs" data-show="2-3">on n’y revient pas</text>
+            <text x="400" y="260" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="4">premier regard de l’utilisateur</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On commence par écrire le besoin.</b><span>Tout ce que l’outil devra faire, décrit avec soin avant de toucher à quoi que ce soit.</span></p>
+          <p class="step" data-duration="4200"><b>Puis on dessine la solution entière.</b><span>Chaque élément est prévu sur plan, jusque dans le détail.</span></p>
+          <p class="step" data-duration="4200"><b>Ensuite seulement, on construit.</b><span>Les phases s’enchaînent dans l’ordre, sans retour en arrière prévu.</span></p>
+          <p class="step" data-duration="4600"><b>L’utilisateur découvre le résultat à la fin.</b><span>Si son besoin a changé entre-temps, il est trop tard pour l’infléchir sans coût.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Faire bâtir une maison sur plans, contre aménager un appartement pièce par pièce. Sur plans, on sait
+          ce que l’on aura et ce que cela coûtera&nbsp;; pièce par pièce, on peut changer d’avis en cours de route.
+        </p>
+      </div>
+
+      <h2>La démarche classique : le cycle en V</h2>
+      <p>
+        Ce qu’on vient de voir porte un nom&nbsp;: le <strong>cycle en V</strong>. Chaque phase de conception a, en face,
+        une phase de <strong>vérification</strong> sur la remontée, d’où la forme de la lettre. C’est rassurant et
+        bien documenté, et cela convient quand le besoin est stable et bien connu d’avance.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un projet découpé en cycles courts, avec un retour de l’utilisateur après chacun">
+        <div class="scene-title">Scène 2 — Petit morceau par petit morceau</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Trois cycles courts successifs, chacun livrant un morceau et recevant un avis de l’utilisateur">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="110" width="170" height="80" rx="10" class="s-box-teal"/>
+              <text x="125" y="156" text-anchor="middle" class="s-label-sm">Cycle 1</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="315" y="110" width="170" height="80" rx="10" class="s-box-teal"/>
+              <text x="400" y="156" text-anchor="middle" class="s-label-sm">Cycle 2</text>
+            </g>
+            <g data-show="3-4" class="m-right">
+              <rect x="590" y="110" width="170" height="80" rx="10" class="s-box-teal"/>
+              <text x="675" y="156" text-anchor="middle" class="s-label-sm">Cycle 3</text>
+            </g>
+            <path d="M210 150 H315" class="s-line m-draw" data-show="2-4"/>
+            <path d="M485 150 H590" class="s-line m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="1" style="offset-path:path('M125 110 V60')"/>
+            <text x="125" y="48" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="1-4">avis</text>
+            <text x="400" y="48" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="2-4">avis</text>
+            <text x="675" y="48" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="3-4">avis</text>
+            <path d="M125 110 V60" class="s-line-accent m-draw" data-show="1-4"/>
+            <path d="M400 110 V60" class="s-line-accent m-draw" data-show="2-4"/>
+            <path d="M675 110 V60" class="s-line-accent m-draw" data-show="3-4"/>
+            <text x="400" y="250" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">on ajuste à chaque tour</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On livre d’abord un tout petit morceau.</b><span>Quelques semaines de travail, et quelque chose qui fonctionne déjà.</span></p>
+          <p class="step" data-duration="4200"><b>L’utilisateur l’essaie et réagit.</b><span>Son avis arrive tout de suite, pas des mois plus tard.</span></p>
+          <p class="step" data-duration="4200"><b>Le cycle suivant en tient compte.</b><span>On ajoute, on corrige, on change de priorité si le besoin a bougé.</span></p>
+          <p class="step" data-duration="4600"><b>Le projet s’ajuste en continu.</b><span>Les mauvaises surprises arrivent tôt, quand elles coûtent peu.</span></p>
+        </div>
+      </section>
+
+      <h2>La démarche agile</h2>
+      <p>
+        C’est la <strong>méthode agile</strong> : de courts cycles, souvent de deux à quatre semaines, appelés
+        <strong>sprints</strong> dans la variante la plus répandue, Scrum. À chaque fin de cycle, l’équipe montre
+        un résultat qui marche. En contrepartie, le métier doit rester <strong>disponible</strong> pour donner son avis,
+        et le contenu final n’est pas figé dès le départ.
+      </p>
+
+      <h2>Lequel choisir ?</h2>
+      <p>
+        Il n’y a pas de gagnant général. Quand le besoin est <strong>stable</strong>, que les règles sont imposées ou
+        que l’on doit prouver chaque étape, le cycle en V a du sens. Quand le besoin est <strong>flou ou susceptible
+        de bouger</strong>, l’agile limite le risque de livrer, à la fin, quelque chose dont plus personne ne veut. Beaucoup
+        de projets mélangent d’ailleurs les deux : un cadrage solide au départ, puis des livraisons par étapes.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le <strong>cycle en V</strong> enchaîne de grandes phases&nbsp;: tout est conçu avant d’être construit, puis vérifié.</li>
+        <li>L’<strong>agile</strong> découpe en cycles courts, avec un résultat montré et un avis recueilli à chaque fin.</li>
+        <li>Le V rassure quand le besoin est stable&nbsp;; l’agile protège quand il peut changer.</li>
+        <li>L’agile demande un <strong>métier présent</strong> tout au long du projet, pas seulement au début et à la fin.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir les phases d’un projet dans le détail, la leçon sur le déroulement d’un projet SI vient juste avant.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="projet-si.html">← Comment se déroule un projet SI</a>
+        <a class="btn btn-primary" href="recette.html">La recette →</a>
+      </nav>
