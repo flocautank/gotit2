@@ -1471,4 +1471,44 @@ CARTES = [
   voir='base-de-donnees',
   pas="le SQL : c’est le langage le plus courant pour écrire une requête, pas la requête elle-même."),
 
+ dict(id='serveur', terme='Serveur', aka=['serveur','server','machine serveur','hébergement'], dom='Informatique',
+  une="Un ordinateur dont le métier est de répondre aux demandes des autres, jour et nuit.",
+  etapes=[
+   "Quand vous ouvrez un site ou une messagerie, le contenu ne vient pas de votre appareil : il est quelque part ailleurs.",
+   "Ce « quelque part » est un ordinateur dédié à servir : il attend les demandes, et y répond.",
+   "Il n’a pas d’écran ni de clavier au quotidien, tourne sans arrêt, et sert souvent des milliers de personnes à la fois.",
+   "Serveur désigne aussi le logiciel qui répond, pas seulement la machine : un même ordinateur peut en héberger plusieurs."],
+  voir='serveur',
+  pas="le cloud : ce sont des serveurs qu’on loue à distance plutôt que de les posséder."),
+
+ dict(id='force-brute', terme='Attaque par force brute', aka=['force brute','brute force','deviner un mot de passe','essais successifs'], dom='Réseau',
+  une="Essayer toutes les combinaisons possibles jusqu’à tomber sur la bonne.",
+  etapes=[
+   "Un mot de passe est une combinaison à deviner. Un attaquant peut simplement les essayer une à une.",
+   "Un programme en teste des milliers par seconde, en commençant par les plus probables : « 123456 », un prénom, une date.",
+   "Chaque caractère ajouté multiplie le nombre de combinaisons : un mot de passe long résiste bien mieux qu’un mot de passe compliqué mais court.",
+   "Les parades : limiter les tentatives, bloquer le compte après plusieurs échecs, et ajouter une double authentification."],
+  voir='mots-de-passe',
+  pas="l’hameçonnage : ici personne n’est trompé, la machine essaie seulement très vite."),
+
+ dict(id='data-lake', terme='Lac de données (data lake)', aka=['data lake','lac de données','lac','datalake'], dom='Data',
+  une="Un grand réservoir où l’on verse les données telles qu’elles arrivent, sans les ranger d’abord.",
+  etapes=[
+   "Une entreprise produit des données de toutes formes : tableaux, messages, images, journaux d’événements.",
+   "Plutôt que de tout mettre en forme à l’avance, on les déverse brutes dans un même grand espace de stockage.",
+   "On ne les structure qu’au moment de s’en servir, selon la question posée : le rangement vient après, pas avant.",
+   "Sans catalogue ni règles, le lac se transforme en marécage : on ne sait plus ce qu’il contient ni s’il est fiable."],
+  voir='entrepots-data',
+  pas="un entrepôt de données : lui n’accueille que des données déjà nettoyées et rangées."),
+
+ dict(id='copilote', terme='Copilote IA', aka=['copilot','copilote','assistant IA','assistant intégré'], dom='IA',
+  une="Une IA intégrée à votre outil de travail, qui propose de l’aide pendant que vous travaillez.",
+  etapes=[
+   "Plutôt que d’ouvrir un site d’IA à part, l’assistant est placé directement dans l’outil que vous utilisez déjà.",
+   "Il voit ce que vous faites — le document ouvert, le code en cours — et s’en sert comme contexte.",
+   "Il propose : une phrase à reformuler, un résumé, une ligne de code. Vous gardez la main pour accepter ou refuser.",
+   "Il peut se tromper : le copilote suggère, la responsabilité du résultat reste à la personne qui valide."],
+  voir='llm',
+  pas="un agent : le copilote attend votre validation à chaque pas, l’agent enchaîne seul les actions."),
+
 ]

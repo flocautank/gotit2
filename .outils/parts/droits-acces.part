@@ -1,0 +1,127 @@
+TITRE: Les droits d’accès, qui a le droit de faire quoi
+DESC: Pourquoi chacun ne voit pas les mêmes choses dans les outils de l’entreprise : identité, rôles et droits, expliqués en schémas animés.
+FIL: <a href="../index.html#/si">Système d’information</a><span>/</span>La carte du SI<span>/</span>Faire dialoguer les outils
+LEAD: Le stagiaire ne voit pas les salaires, le comptable ne modifie pas le site. Ce n’est pas un hasard : chaque personne reçoit une liste précise de ce qu’elle peut faire.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Dans un immeuble de bureaux, votre badge n’ouvre pas toutes les portes&nbsp;: l’accueil, oui, la salle
+        des serveurs, non. Dans un système d’information, c’est pareil. Ce découpage s’appelle la gestion
+        des <strong>droits d’accès</strong> (ou des <strong>habilitations</strong>).
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : une personne est reconnue, puis ses droits décident de ce qu’elle peut ouvrir">
+        <div class="scene-title">Scène 1 — Qui êtes-vous, que pouvez-vous faire</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une personne se présente, est reconnue, puis une liste de droits autorise certaines portes et en refuse une autre">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="110" width="140" height="80" rx="10" class="s-box-teal"/>
+              <text x="100" y="156" text-anchor="middle" class="s-label-sm">Léa</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="250" y="110" width="130" height="80" rx="10" class="s-box-accent"/>
+              <text x="315" y="156" text-anchor="middle" class="s-label-sm">Identité</text>
+            </g>
+            <path d="M170 150 H250" class="s-line-accent m-draw" data-show="2-4"/>
+            <g data-show="3-4" class="m-pop">
+              <rect x="440" y="110" width="110" height="80" rx="10" class="s-box"/>
+              <text x="495" y="156" text-anchor="middle" class="s-label-sm">Droits</text>
+            </g>
+            <path d="M380 150 H440" class="s-line m-draw" data-show="3-4"/>
+            <g data-show="4" class="m-right">
+              <rect x="630" y="50" width="140" height="50" rx="10" class="s-box"/>
+              <text x="700" y="82" text-anchor="middle" class="s-label-xs" fill="var(--sage)">Agenda : oui</text>
+              <rect x="630" y="125" width="140" height="50" rx="10" class="s-box"/>
+              <text x="700" y="157" text-anchor="middle" class="s-label-xs" fill="var(--sage)">Clients : oui</text>
+              <rect x="630" y="200" width="140" height="50" rx="10" class="s-box"/>
+              <text x="700" y="232" text-anchor="middle" class="s-label-xs" fill="var(--danger)">Salaires : non</text>
+            </g>
+            <path d="M550 150 H630" class="s-line m-draw" data-show="4"/>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Léa se présente à un outil.</b><span>Pour le système, ce n’est encore qu’un nom tapé sur un écran.</span></p>
+          <p class="step" data-duration="4200"><b>Il commence par la reconnaître.</b><span>Mot de passe, double authentification&nbsp;: on prouve qui on est.</span></p>
+          <p class="step" data-duration="4200"><b>Puis il consulte la liste de ses droits.</b><span>Être reconnu ne suffit pas&nbsp;: reste à savoir ce qui lui est permis.</span></p>
+          <p class="step" data-duration="4600"><b>Chaque porte s’ouvre ou reste fermée.</b><span>Ces deux temps portent un nom&nbsp;: l’<em>authentification</em> (qui êtes-vous&nbsp;?) puis l’<em>autorisation</em> (qu’avez-vous le droit de faire&nbsp;?).</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          L’hôtel. À l’accueil, on vérifie votre pièce d’identité&nbsp;: c’est la reconnaissance. Puis on vous
+          remet une clé qui n’ouvre que votre chambre et la salle de petit-déjeuner, pas les autres chambres.
+        </p>
+      </div>
+
+      <h2>Des rôles plutôt que des cas par cas</h2>
+      <p>
+        Régler les droits personne par personne devient vite ingérable. On regroupe donc les droits en
+        <strong>rôles</strong> («&nbsp;commercial&nbsp;», «&nbsp;comptable&nbsp;»…), puis on attribue un rôle à chacun.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : des droits regroupés en rôle, le rôle attribué à une personne, puis retiré quand elle change de poste">
+        <div class="scene-title">Scène 2 — Le rôle, un paquet de droits</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Trois droits sont regroupés dans un rôle, le rôle est donné à une personne, puis retiré quand elle change de poste">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="50" width="150" height="46" rx="10" class="s-box"/>
+              <text x="105" y="79" text-anchor="middle" class="s-label-xs">Voir clients</text>
+              <rect x="30" y="127" width="150" height="46" rx="10" class="s-box"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-xs">Créer devis</text>
+              <rect x="30" y="204" width="150" height="46" rx="10" class="s-box"/>
+              <text x="105" y="233" text-anchor="middle" class="s-label-xs">Lire agenda</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="290" y="100" width="150" height="100" rx="12" class="s-box-accent pulse"/>
+              <text x="365" y="156" text-anchor="middle" class="s-label-sm">Rôle</text>
+              <text x="365" y="182" text-anchor="middle" class="s-label-xs">Commercial</text>
+            </g>
+            <path d="M180 150 H290" class="s-line-accent m-draw" data-show="2-4"/>
+            <g data-show="3-4" class="m-right">
+              <rect x="600" y="110" width="150" height="80" rx="10" class="s-box-teal"/>
+              <text x="675" y="156" text-anchor="middle" class="s-label-sm">Léa</text>
+            </g>
+            <path d="M440 150 H600" class="s-line-accent m-draw" data-show="3"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M440 150 H600')"/>
+            <text x="520" y="130" text-anchor="middle" class="s-label-xs" data-show="3">on lui donne</text>
+            <path d="M440 150 H600" class="s-line" stroke-dasharray="6 6" data-show="4"/>
+            <text x="520" y="130" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="4">on le retire</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Des droits isolés.</b><span>Voir les clients, créer un devis, lire l’agenda&nbsp;: autant de permissions distinctes.</span></p>
+          <p class="step" data-duration="4200"><b>On les range dans un rôle.</b><span>Un seul paquet, nommé d’après le métier qu’il sert.</span></p>
+          <p class="step" data-duration="4200"><b>On donne le rôle à la personne.</b><span>Un geste suffit, au lieu de recopier trois droits à la main.</span></p>
+          <p class="step" data-duration="4600"><b>Quand elle change de poste, on le retire.</b><span>Tous les droits partent d’un coup. Sans ce ménage, les droits s’accumulent au fil des années.</span></p>
+        </div>
+      </section>
+
+      <h2>Le bon réglage : juste assez</h2>
+      <p>
+        La règle de prudence est le <strong>moindre privilège</strong>&nbsp;: donner à chacun uniquement ce dont
+        il a besoin pour son travail. Trop peu, et la personne est bloquée ; trop, et une erreur ou un
+        compte piraté fait des dégâts bien plus larges. Dans la pratique, on revoit aussi les droits
+        régulièrement, et on les supprime le jour du départ d’un collaborateur.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Deux temps&nbsp;: <strong>authentification</strong> (prouver qui on est), puis <strong>autorisation</strong> (ce qu’on a le droit de faire).</li>
+        <li>Les droits se regroupent en <strong>rôles</strong>, attribués selon le poste.</li>
+        <li>Règle d’or&nbsp;: le <strong>moindre privilège</strong>, juste ce qu’il faut.</li>
+        <li>Des droits jamais retirés s’accumulent&nbsp;: on les <strong>revoit</strong> à chaque changement de poste et au départ.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour ne se connecter qu’une fois à tous ces outils, voyez la leçon sur le SSO.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="sso.html">← Le SSO</a>
+        <a class="btn btn-primary" href="cybersecurite.html">Les bases de la cybersécurité →</a>
+      </nav>
