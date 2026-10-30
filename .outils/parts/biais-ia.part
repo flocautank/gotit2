@@ -1,0 +1,121 @@
+TITRE: Le biais en IA, quand les exemples penchent d’un côté
+DESC: Pourquoi une IA peut favoriser certains cas sans que personne ne l’ait voulu : le biais vient des exemples. Expliqué en schémas animés.
+FIL: <a href="../index.html#/intelligence-artificielle">Intelligence artificielle</a><span>/</span>Fondamentaux<span>/</span>Apprendre par l’exemple
+LEAD: Une IA ne juge personne : elle reproduit ce qu’elle a vu. Si les exemples penchent d’un côté, ses réponses penchent aussi, à chaque fois.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Imaginez une personne qui n’a connu qu’un seul quartier toute sa vie. Si on lui demande de décrire
+        « une ville », elle décrira son quartier. Elle ne ment pas&nbsp;: elle ne connaît que cela. Une IA
+        est dans la même situation, et cette déformation s’appelle un <strong>biais</strong>.
+      </p>
+
+      <section class="scene" aria-label="Animation : une IA apprend à partir d’exemples déséquilibrés et reproduit ce déséquilibre">
+        <div class="scene-title">Scène 1 — Des exemples qui penchent</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une pile d’exemples déséquilibrée entre dans l’IA, qui produit des réponses déséquilibrées de la même façon">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="70" width="200" height="160" rx="10" class="s-box"/>
+              <text x="140" y="100" text-anchor="middle" class="s-label-sm">Exemples</text>
+            </g>
+            <g data-show="2-4" class="m-rise">
+              <rect x="70" y="120" width="30" height="90" rx="4" fill="var(--accent)"/>
+              <rect x="110" y="120" width="30" height="90" rx="4" fill="var(--accent)"/>
+              <rect x="150" y="120" width="30" height="90" rx="4" fill="var(--accent)"/>
+              <rect x="190" y="190" width="30" height="20" rx="4" fill="var(--slate)"/>
+            </g>
+            <path d="M240 150 H340" class="s-line m-draw" data-show="3-4"/>
+            <g data-show="3-4" class="m-pop">
+              <rect x="340" y="110" width="120" height="80" rx="10" class="s-box-accent"/>
+              <text x="400" y="156" text-anchor="middle" class="s-label-sm">IA</text>
+            </g>
+            <path d="M460 150 H560" class="s-line-accent m-draw" data-show="4"/>
+            <g data-show="4" class="m-right">
+              <rect x="560" y="70" width="200" height="160" rx="10" class="s-box"/>
+              <text x="660" y="100" text-anchor="middle" class="s-label-sm">Réponses</text>
+              <rect x="590" y="120" width="30" height="90" rx="4" fill="var(--accent)"/>
+              <rect x="630" y="120" width="30" height="90" rx="4" fill="var(--accent)"/>
+              <rect x="670" y="120" width="30" height="90" rx="4" fill="var(--accent)"/>
+              <rect x="710" y="190" width="30" height="20" rx="4" fill="var(--slate)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Une IA apprend à partir d’exemples.</b><span>Elle ne connaît du monde que ce que ces exemples lui montrent.</span></p>
+          <p class="step" data-duration="4200"><b>Ces exemples ne sont pas toujours équilibrés.</b><span>Certains cas sont très présents, d’autres rares, voire absents.</span></p>
+          <p class="step" data-duration="4000"><b>L’IA apprend sans rien remarquer.</b><span>Elle n’a aucun moyen de savoir que la pile penche.</span></p>
+          <p class="step" data-duration="4400"><b>Ses réponses penchent pareil.</b><span>Cette pente régulière, héritée des exemples, s’appelle un biais.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un élève qui n’a révisé que les chapitres un à trois. À l’examen, il est brillant sur ces
+          chapitres et perdu sur le reste. Il n’est pas mal intentionné&nbsp;: son entraînement était
+          incomplet. Le biais d’une IA, c’est ce programme de révision déséquilibré.
+        </p>
+      </div>
+
+      <h2>Un exemple concret</h2>
+      <p>
+        Un outil trie des candidatures. On l’a entraîné sur les dossiers des personnes déjà embauchées.
+        Il en déduit que « bon candidat » veut dire « ressemble à ceux d’avant ».
+      </p>
+
+      <section class="scene" aria-label="Animation : un tri de candidatures entraîné sur d’anciens profils favorise les profils semblables ; un contrôle et un humain corrigent la pente">
+        <div class="scene-title">Scène 2 — Repérer et corriger</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Des candidatures passent dans un tri ; les profils ressemblant aux anciens passent, les autres sont écartés ; un contrôle puis un humain rééquilibrent">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="100" width="150" height="100" rx="10" class="s-box-teal"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-sm">Candidats</text>
+            </g>
+            <path d="M180 150 H300" class="s-line m-draw" data-show="2-5"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M180 150 H300')"/>
+            <g data-show="2-5" class="m-pop">
+              <rect x="300" y="110" width="130" height="80" rx="10" class="s-box-accent"/>
+              <text x="365" y="156" text-anchor="middle" class="s-label-sm">Tri</text>
+            </g>
+            <path d="M430 135 H600" class="s-line-accent m-draw" data-show="3-5"/>
+            <text x="520" y="120" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="3-5">semblables : retenus</text>
+            <path d="M430 175 H600" class="s-line m-draw" data-show="3-5"/>
+            <text x="520" y="200" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3-5">autres : écartés</text>
+            <g data-show="4-5" class="m-rise">
+              <rect x="300" y="230" width="130" height="50" rx="10" class="s-box-teal"/>
+              <text x="365" y="261" text-anchor="middle" class="s-label-xs">Test par groupes</text>
+            </g>
+            <g data-show="5" class="m-rise">
+              <rect x="620" y="110" width="150" height="80" rx="10" class="s-box"/>
+              <text x="695" y="156" text-anchor="middle" class="s-label-sm">Humain</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Des candidatures arrivent.</b><span>Elles sont très variées.</span></p>
+          <p class="step" data-duration="3800"><b>Le tri les compare aux anciens dossiers.</b><span>C’est tout ce qu’il connaît de « bon candidat ».</span></p>
+          <p class="step" data-duration="4400"><b>Les profils semblables passent, les autres non.</b><span>Personne n’a écrit cette règle&nbsp;: elle vient des exemples.</span></p>
+          <p class="step" data-duration="4400"><b>On teste les résultats groupe par groupe.</b><span>Si un groupe est systématiquement écarté, la pente apparaît.</span></p>
+          <p class="step" data-duration="4600"><b>Un humain garde la décision finale.</b><span>On corrige les exemples de départ, et on continue de mesurer.</span></p>
+        </div>
+      </section>
+
+      <h2>À ne pas confondre</h2>
+      <p>
+        Une <strong>hallucination</strong> est une invention isolée&nbsp;; un biais est une pente régulière,
+        présente à chaque réponse. Et un biais ne signifie pas que l’IA est « méchante » : elle n’a aucune
+        intention, seulement des exemples.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Une IA <strong>reproduit</strong> ce que ses exemples lui ont montré, y compris leurs déséquilibres.</li>
+        <li>Un <strong>biais</strong> est une pente régulière, pas une erreur isolée.</li>
+        <li>On le repère en <strong>testant les résultats</strong> sur différents groupes.</li>
+        <li>On le limite par de meilleurs exemples et un <strong>humain dans la boucle</strong>.</li>
+      </ul>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="surapprentissage.html">← Le surapprentissage</a>
+        <a class="btn btn-primary" href="hallucination.html">Pourquoi une IA invente parfois →</a>
+      </nav>

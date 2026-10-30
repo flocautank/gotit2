@@ -1511,4 +1511,54 @@ CARTES = [
   voir='llm',
   pas="un agent : le copilote attend votre validation à chaque pas, l’agent enchaîne seul les actions."),
 
+ dict(id='supervision', terme='Supervision', aka=['monitoring','surveillance','alerte','observabilité'], dom='Système d’information',
+  une="Un tableau de bord qui surveille en continu les outils et prévient avant que les utilisateurs ne s’en aperçoivent.",
+  etapes=[
+   "Un système peut tomber en panne sans prévenir, et ce sont alors les utilisateurs qui l’apprennent en premier.",
+   "On installe donc des sondes qui mesurent en continu : le service répond-il, le disque se remplit-il, le temps de réponse augmente-t-il.",
+   "Chaque mesure est comparée à un seuil. Quand il est dépassé, une alerte est envoyée à l’équipe.",
+   "Trop d’alertes inutiles finissent par ne plus être lues : mieux vaut peu d’alertes, mais toutes utiles."],
+  voir='supervision',
+  pas="une sauvegarde : la supervision observe l’état présent, elle ne garde aucune copie."),
+
+ dict(id='redondance', terme='Redondance', aka=['haute disponibilité','doublon matériel','secours'], dom='Informatique',
+  une="Avoir deux exemplaires de ce qui est critique, pour qu’une panne de l’un n’arrête pas le service.",
+  etapes=[
+   "Tout équipement finit par tomber en panne. Si un service dépend d’un seul, il s’arrête avec lui.",
+   "On installe donc un deuxième exemplaire, prêt à prendre le relais.",
+   "Quand le premier défaille, le second continue : les utilisateurs ne voient rien.",
+   "Cela coûte deux fois le matériel : on ne double que ce qui est vraiment critique."],
+  voir='redondance',
+  pas="une sauvegarde : la redondance garde le service en marche, la sauvegarde permet de retrouver les données après un incident."),
+
+ dict(id='load-balancer', terme='Répartiteur de charge (load balancer)', aka=['load balancer','répartiteur','équilibrage de charge'], dom='Informatique',
+  une="Le point d’entrée qui distribue les visiteurs entre plusieurs serveurs identiques.",
+  etapes=[
+   "Un seul serveur ne peut servir qu’un nombre limité de visiteurs à la fois.",
+   "On place plusieurs serveurs identiques, et devant eux un répartiteur qui reçoit toutes les demandes.",
+   "Il envoie chaque demande vers un serveur disponible, et laisse de côté celui qui ne répond plus.",
+   "Le site tient mieux la charge et survit à la panne d’un serveur ; le répartiteur lui-même doit alors être doublé."],
+  voir='load-balancer',
+  pas="un cache : le répartiteur partage le travail, le cache évite de le refaire."),
+
+ dict(id='support-niveaux', terme='Support niveau 1, 2, 3', aka=['N1','N2','N3','niveaux de support','escalade'], dom='Système d’information',
+  une="L’organisation du support en paliers : chaque demande est traitée au plus simple niveau capable de la résoudre.",
+  etapes=[
+   "Une demande arrive au support : un mot de passe oublié, une imprimante en panne, un logiciel qui plante.",
+   "Le niveau 1 traite les cas courants avec des procédures connues, et répond vite.",
+   "Si cela ne suffit pas, la demande est transmise au niveau 2, plus technique, puis au niveau 3, souvent les spécialistes ou l’éditeur.",
+   "Ce tri garde les experts disponibles pour les vrais problèmes, à condition que chaque transmission reprenne tout l’historique."],
+  voir='support',
+  pas="une urgence : le niveau dépend de la complexité du problème, pas de sa gravité."),
+
+ dict(id='apprentissage-transfert', terme='Apprentissage par transfert', aka=['transfer learning','réutiliser un modèle'], dom='IA',
+  une="Repartir d’un modèle déjà entraîné pour l’adapter à une nouvelle tâche, plutôt que de tout recommencer.",
+  etapes=[
+   "Entraîner un modèle depuis zéro demande énormément d’exemples et de calcul.",
+   "Un modèle déjà entraîné sur une grande tâche a déjà appris des savoirs généraux, utiles ailleurs.",
+   "On le reprend et on le complète avec un petit nombre d’exemples propres à la nouvelle tâche.",
+   "C’est bien plus économique, mais le nouveau modèle hérite aussi des défauts du modèle de départ."],
+  voir='machine-learning',
+  pas="le fine-tuning : c’est une manière de procéder, l’apprentissage par transfert est l’idée générale."),
+
 ]
