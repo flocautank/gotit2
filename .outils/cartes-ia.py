@@ -663,7 +663,7 @@ CARTES = [
    "L’intégration continue (CI) rassemble et teste automatiquement chaque modification dès qu’un développeur la propose, plusieurs fois par jour.",
    "Le déploiement continu (CD) prend le relais : si les tests passent, le changement part en production sans attendre, parfois tout seul.",
    "Des changements petits et fréquents, testés à chaque étape, sont plus faciles à corriger qu’une grosse livraison annuelle qui casse tout à la fois."],
-  voir='projet-si',
+  voir='ci-cd',
   pas="la recette, qui fait rejouer les scénarios par de vrais utilisateurs avant mise en service — le CI/CD, lui, automatise des tests techniques, exécutés à chaque changement de code."),
 
  dict(id='test-ab', terme='Test A/B', aka=['test a/b','a/b testing','test ab'], dom='Data',
@@ -1560,5 +1560,44 @@ CARTES = [
    "C’est bien plus économique, mais le nouveau modèle hérite aussi des défauts du modèle de départ."],
   voir='machine-learning',
   pas="le fine-tuning : c’est une manière de procéder, l’apprentissage par transfert est l’idée générale."),
+
+ dict(id='kanban', terme='Kanban', aka=['kanban','tableau kanban','flux tiré'], dom='SI',
+  une="Un tableau de cartes qui montre où en est chaque tâche, avec une limite de tâches en cours.",
+  etapes=[
+   "Quand tout est lancé en même temps, plus rien ne se termine : on ne sait plus qui fait quoi ni où ça bloque.",
+   "Le Kanban affiche le travail sur un tableau : une colonne par étape (à faire, en cours, terminé), une carte par tâche.",
+   "On limite le nombre de cartes en cours : on n’en démarre une nouvelle que lorsqu’une autre avance.",
+   "Les blocages deviennent visibles d’un coup d’œil, et le travail s’écoule au lieu de s’empiler."],
+  pas="Scrum, qui découpe le travail en périodes fixes appelées sprints — le Kanban, lui, fonctionne en flux continu."),
+
+ dict(id='cluster', terme='Cluster', aka=['cluster','grappe de serveurs','grappe'], dom='Informatique',
+  une="Plusieurs machines reliées qui travaillent ensemble comme si elles n’en formaient qu’une.",
+  etapes=[
+   "Une seule machine finit par atteindre ses limites : trop de calculs, trop de visiteurs, ou une panne qui arrête tout.",
+   "Un cluster relie plusieurs machines, appelées nœuds, et leur fait partager le travail.",
+   "Un logiciel de coordination répartit les tâches, et reprend celles d’un nœud tombé en panne.",
+   "Pour l’utilisateur, c’est un seul service plus puissant et plus solide. Pour y gagner, il faut ajouter de la coordination à gérer."],
+  voir='redondance',
+  pas="le répartiteur de charge, qui distribue seulement les demandes — le cluster désigne l’ensemble des machines qui coopèrent."),
+
+ dict(id='donnees-synthetiques', terme='Données synthétiques', aka=['données synthétiques','données fictives','données artificielles'], dom='Data',
+  une="Des données fabriquées qui ressemblent aux vraies, sans décrire de vraies personnes.",
+  etapes=[
+   "Pour tester un logiciel ou entraîner un modèle, il faut beaucoup de données. Les vraies sont souvent personnelles, donc protégées.",
+   "On en fabrique des fausses : un programme génère des clients ou des commandes inventés, qui imitent la forme des vraies.",
+   "Bien faites, elles gardent les mêmes proportions et régularités que les données d’origine.",
+   "Elles évitent d’exposer des personnes réelles, mais restent un imitateur : mal générées, elles reproduisent ou déforment les défauts de l’original."],
+  voir='rgpd',
+  pas="l’anonymisation, qui modifie de vraies données — les données synthétiques sont créées de toutes pièces."),
+
+ dict(id='distillation', terme='Distillation', aka=['distillation','modèle distillé','modèle élève','petit modèle'], dom='IA',
+  une="Faire apprendre à un petit modèle à imiter les réponses d’un grand.",
+  etapes=[
+   "Un grand modèle répond bien, mais il est lent et coûteux à faire tourner.",
+   "On lui pose beaucoup de questions et on garde ses réponses : elles servent d’exemples à un modèle plus petit.",
+   "Le petit modèle, appelé élève, s’entraîne à reproduire les réponses du grand, qui joue le rôle de professeur.",
+   "Résultat : un modèle plus rapide et moins cher, souvent un peu moins capable que son professeur."],
+  voir='cout-ia',
+  pas="le fine-tuning, qui spécialise un modèle existant — la distillation transmet le savoir d’un grand modèle vers un plus petit."),
 
 ]
