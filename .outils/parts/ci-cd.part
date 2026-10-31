@@ -1,0 +1,122 @@
+TITRE: Du code à la mise en ligne : la chaîne qui livre toute seule
+DESC: Comment une modification de code est testée puis mise en ligne automatiquement, par petits pas. Le CI/CD expliqué en schémas animés.
+FIL: <a href="../index.html#/informatique">Informatique</a><span>/</span>Le logiciel<span>/</span>Garder la trace des changements
+LEAD: Un développeur change trois lignes : quelques minutes plus tard, le site est à jour. Entre les deux, une chaîne de contrôles automatiques a travaillé.
+META: <span class="tag tag-level-2">Intermédiaire</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Dans une usine, une pièce passe par plusieurs postes de contrôle avant de partir en caisse. Si un
+        poste détecte un défaut, la pièce s’arrête. Pour le code d’un logiciel, la même chaîne existe&nbsp;:
+        on l’appelle <strong>CI/CD</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : une modification passe par des postes de contrôle automatiques, puis part en ligne">
+        <div class="scene-title">Scène 1 — La chaîne de montage du code</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une modification traverse trois postes : assemblage, tests, mise en ligne">
+            <g data-show="1-5" class="m-left">
+              <rect x="20" y="110" width="120" height="80" rx="10" class="s-box-teal"/>
+              <text x="80" y="156" text-anchor="middle" class="s-label-sm">Changement</text>
+            </g>
+            <g data-show="2-5" class="m-pop">
+              <rect x="215" y="110" width="120" height="80" rx="10" class="s-box"/>
+              <text x="275" y="156" text-anchor="middle" class="s-label-sm">Assemblage</text>
+            </g>
+            <g data-show="3-5" class="m-pop">
+              <rect x="410" y="110" width="120" height="80" rx="10" class="s-box-accent"/>
+              <text x="470" y="156" text-anchor="middle" class="s-label-sm">Tests</text>
+            </g>
+            <g data-show="4-5" class="m-right">
+              <rect x="640" y="110" width="140" height="80" rx="10" class="s-box"/>
+              <text x="710" y="156" text-anchor="middle" class="s-label-sm">En ligne</text>
+            </g>
+            <path d="M140 150 H215" class="s-line m-draw" data-show="2-5"/>
+            <path d="M335 150 H410" class="s-line m-draw" data-show="3-5"/>
+            <path d="M530 150 H640" class="s-line-accent m-draw" data-show="4-5"/>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M530 150 H640')"/>
+            <text x="470" y="226" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="3-5">tout est vérifié</text>
+            <text x="710" y="226" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="5">sans intervention</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Quelqu’un modifie le code.</b><span>Une correction, une nouvelle fonction&nbsp;: un petit changement.</span></p>
+          <p class="step" data-duration="4200"><b>Il est assemblé automatiquement.</b><span>Le programme est reconstruit avec la modification, sans geste manuel.</span></p>
+          <p class="step" data-duration="4400"><b>Des tests tournent aussitôt.</b><span>Des vérifications écrites à l’avance contrôlent que rien ne s’est cassé.</span></p>
+          <p class="step" data-duration="4400"><b>Si tout passe, le changement part en ligne.</b><span>Les utilisateurs profitent de la nouveauté, quelques minutes après.</span></p>
+          <p class="step" data-duration="4400"><b>Cette chaîne s’appelle le CI/CD.</b><span>Intégration continue pour l’assemblage et les tests&nbsp;; déploiement continu pour la mise en ligne.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le tapis roulant d’une usine avec ses postes de contrôle. Chaque pièce est vérifiée à chaque poste,
+          et un défaut arrête la pièce avant l’emballage&nbsp;: le client ne reçoit jamais la pièce cassée.
+        </p>
+      </div>
+
+      <h2>Quand un test échoue</h2>
+      <p>
+        L’intérêt de la chaîne se voit quand ça se passe mal. Comparons à une livraison annuelle.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un test qui échoue bloque la mise en ligne ; le changement corrigé repart et passe">
+        <div class="scene-title">Scène 2 — Un défaut arrêté à temps</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un changement défectueux est bloqué aux tests ; après correction il passe et arrive en ligne">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="110" width="140" height="80" rx="10" class="s-box-teal"/>
+              <text x="100" y="156" text-anchor="middle" class="s-label-sm">Changement</text>
+            </g>
+            <g data-show="1-5" class="m-pop">
+              <rect x="330" y="110" width="140" height="80" rx="10" class="s-box-accent"/>
+              <text x="400" y="156" text-anchor="middle" class="s-label-sm">Tests</text>
+            </g>
+            <g data-show="1-5" class="m-right">
+              <rect x="630" y="110" width="140" height="80" rx="10" class="s-box"/>
+              <text x="700" y="156" text-anchor="middle" class="s-label-sm">En ligne</text>
+            </g>
+            <path d="M170 150 H330" class="s-line m-draw" data-show="2-5"/>
+            <text x="400" y="86" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2-3">un test échoue</text>
+            <text x="560" y="150" text-anchor="middle" class="s-label-sm" fill="var(--danger)" data-show="3">✗</text>
+            <text x="240" y="226" text-anchor="middle" class="s-label-xs" data-show="4">on corrige</text>
+            <text x="400" y="86" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4-5">tout passe</text>
+            <path d="M470 150 H630" class="s-line-accent m-draw" data-show="5"/>
+            <circle r="7" class="packet" data-show="5" style="offset-path:path('M470 150 H630')"/>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Un changement entre dans la chaîne.</b><span>Comme tous les autres, il passe par les tests.</span></p>
+          <p class="step" data-duration="4000"><b>Un test détecte un défaut.</b><span>Le comportement attendu n’est plus respecté.</span></p>
+          <p class="step" data-duration="4200"><b>La mise en ligne est bloquée.</b><span>Les utilisateurs ne voient rien&nbsp;: le défaut reste dans l’atelier.</span></p>
+          <p class="step" data-duration="4200"><b>Le développeur corrige.</b><span>Le problème est petit et récent&nbsp;: facile à trouver, car il n’y a que ce changement à examiner.</span></p>
+          <p class="step" data-duration="4400"><b>Les tests passent, la livraison part.</b><span>Corriger tôt et en petit coûte bien moins cher que de tout reprendre à la fin.</span></p>
+        </div>
+      </section>
+
+      <h2>Les limites</h2>
+      <p>
+        La chaîne ne vaut que ce que valent ses tests&nbsp;: un défaut que personne n’a pensé à vérifier passera.
+        Elle ne remplace donc pas la <strong>recette</strong>, où de vrais utilisateurs essaient le résultat.
+        Certaines équipes gardent aussi une validation humaine avant la dernière étape.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le <strong>CI/CD</strong> est une chaîne automatique&nbsp;: assembler, tester, puis mettre en ligne.</li>
+        <li>On livre des changements <strong>petits et fréquents</strong> plutôt qu’un gros bloc rare.</li>
+        <li>Un <strong>test qui échoue</strong> arrête la chaîne avant que les utilisateurs soient touchés.</li>
+        <li>La chaîne est aussi fiable que ses tests&nbsp;: elle <strong>complète</strong> la recette, sans la remplacer.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour comprendre comment chaque changement est enregistré avant d’entrer dans la chaîne, voyez la leçon sur le versionnage.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="versionnage.html">← Le versionnage</a>
+        <a class="btn btn-primary" href="../index.html#/informatique">Retour au catalogue →</a>
+      </nav>
