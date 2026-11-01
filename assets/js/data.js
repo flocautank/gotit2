@@ -590,6 +590,13 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['adresse ip', 'ip', 'port', 'box', 'réseau', 'ipv6', 'adresse privée', 'internet']
     },
+    'streaming': {
+      title: 'Le streaming, regarder une vidéo sans la télécharger en entier',
+      summary: 'La vidéo est découpée en petits morceaux, lue pendant qu’elle arrive ; un tampon encaisse les à-coups et la qualité s’adapte.',
+      path: 'lecons/streaming.html',
+      duration: '5 min', level: 1,
+      keywords: ['streaming', 'vidéo', 'tampon', 'buffer', 'débit', 'qualité', 'lecture en ligne', 'musique']
+    },
     /* ---------- Leçons prévues (affichées en grisé) ---------- */
 
   };
@@ -626,7 +633,7 @@ window.GOTIT = (function () {
         {
           id: 'circulation', title: 'Comment ça circule',
           subcategories: [
-            { id: 'bases-reseau', title: 'Les bases', lessons: ['internet', 'paquets', 'wifi-box', 'adresse-ip', 'dns', 'url'] },
+            { id: 'bases-reseau', title: 'Les bases', lessons: ['internet', 'paquets', 'wifi-box', 'adresse-ip', 'dns', 'url', 'streaming'] },
             { id: 'messagerie', title: 'La messagerie', lessons: ['email'] },
             { id: 'traces', title: 'Les traces qu\u2019on laisse', lessons: ['navigateur'] }
           ]
@@ -3283,6 +3290,58 @@ window.GOTIT = (function () {
       ],
       voir: "cout-ia",
       pas: "le fine-tuning, qui spécialise un modèle existant — la distillation transmet le savoir d’un grand modèle vers un plus petit."
+    },
+    {
+      id: "tampon", terme: "Tampon (buffer)", domaine: "Informatique",
+      aka: ["tampon", "buffer", "mise en mémoire tampon", "buffering"],
+      une: "Une petite réserve où l’on met des données de côté, le temps que l’autre côté soit prêt à les prendre.",
+      etapes: [
+        "Deux éléments ne vont pas toujours à la même vitesse : l’un envoie, l’autre consomme, et parfois l’un attend l’autre.",
+        "On place entre eux une petite zone de mémoire : le tampon. L’envoyeur y dépose, le consommateur y prend.",
+        "Les à-coups sont absorbés : si l’envoi ralentit un instant, la réserve permet de continuer sans interruption.",
+        "Un tampon vide fait attendre : c’est le cercle qui tourne sur une vidéo. Trop grand, il retarde ce qu’on voit."
+      ],
+      voir: "streaming",
+      pas: "le cache, qui garde une copie de ce qu’on redemande — le tampon ne fait que faire patienter des données en transit."
+    },
+    {
+      id: "derive-modele", terme: "Dérive d’un modèle", domaine: "IA",
+      aka: ["dérive", "model drift", "drift", "dérive des données"],
+      une: "La perte progressive de qualité d’une IA, parce que le monde a changé depuis son entraînement.",
+      etapes: [
+        "Un modèle apprend à partir de données d’un moment donné : il en garde une photographie du monde.",
+        "Avec le temps, les comportements, les produits ou les usages changent, alors que le modèle, lui, reste figé.",
+        "Ses réponses deviennent de moins en moins justes, sans aucun message d’erreur : il continue de répondre avec la même assurance.",
+        "On mesure donc ses résultats régulièrement, et on le ré-entraîne avec des données récentes quand l’écart se creuse."
+      ],
+      voir: "entrainement-inference",
+      pas: "le surapprentissage, qui est un défaut dès l’entraînement — la dérive apparaît après, quand le monde évolue."
+    },
+    {
+      id: "parties-prenantes", terme: "Parties prenantes", domaine: "Système d’information",
+      aka: ["parties prenantes", "stakeholders", "stakeholder", "acteurs du projet"],
+      une: "Toutes les personnes ou équipes qui sont concernées par un projet, ou qui peuvent l’influencer.",
+      etapes: [
+        "Un projet touche rarement une seule équipe : des utilisateurs, des décideurs, des techniciens, des fournisseurs sont concernés.",
+        "Ce sont les parties prenantes : celles qui financent, utilisent, réalisent ou subissent le résultat.",
+        "On les repère dès le début et on se demande pour chacune ce qu’elle attend et ce qu’elle peut bloquer.",
+        "Une partie prenante oubliée refait surface tard, souvent au moment de la mise en service, quand corriger coûte le plus cher."
+      ],
+      voir: "projet-si",
+      pas: "l’équipe projet, qui travaille sur le sujet — les parties prenantes incluent aussi ceux qui n’y travaillent pas mais en dépendent."
+    },
+    {
+      id: "incident-probleme", terme: "Incident et problème", domaine: "Système d’information",
+      aka: ["incident", "problème", "gestion des incidents", "gestion des problèmes"],
+      une: "Un incident est une panne à rétablir vite ; un problème est la cause profonde à supprimer pour qu’elle ne revienne pas.",
+      etapes: [
+        "Un outil ne répond plus : c’est un incident. L’urgence est de remettre les gens au travail, même par une solution provisoire.",
+        "Quand le service fonctionne à nouveau, l’incident est clos, mais sa cause n’est pas forcément traitée.",
+        "Le problème, lui, est cette cause : on l’analyse pour comprendre pourquoi cela s’est produit, souvent après plusieurs incidents semblables.",
+        "Distinguer les deux évite de se contenter de redémarrer à chaque panne sans jamais en traiter l’origine."
+      ],
+      voir: "support",
+      pas: "le ticket, qui est le dossier de suivi d’une demande — l’incident et le problème sont deux natures de situation à traiter."
     }
   ];
 

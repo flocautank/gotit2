@@ -1,0 +1,124 @@
+TITRE: Le streaming, regarder une vidéo sans la télécharger en entier
+DESC: Pourquoi une vidéo démarre en quelques secondes : elle est découpée en petits morceaux, reçus d’avance dans un tampon, avec une qualité qui s’adapte. Expliqué en schémas animés.
+FIL: <a href="../index.html#/reseau">Réseau</a><span>/</span>Comment ça circule<span>/</span>Les bases
+LEAD: Une vidéo de deux heures démarre en quelques secondes, et pourtant elle n’est pas arrivée en entier. Elle arrive par petits morceaux, juste avant d’être regardée.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Imaginez un robinet qui remplit un verre pendant que vous buvez. Vous n’attendez pas que la
+        piscine soit pleine pour boire une gorgée&nbsp;: vous buvez ce qui coule. Regarder une vidéo en
+        ligne fonctionne ainsi, et cela s’appelle le <strong>streaming</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : une vidéo est découpée en petits morceaux qui arrivent les uns après les autres pendant qu’on regarde le début">
+        <div class="scene-title">Scène 1 — Des morceaux, pas un bloc</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une vidéo à gauche est découpée en morceaux numérotés qui voyagent vers l’écran à droite, où le premier est déjà en cours de lecture">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="100" width="150" height="100" rx="10" class="s-box"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-sm">Vidéo</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="620" y="100" width="150" height="100" rx="10" class="s-box-teal"/>
+              <text x="695" y="156" text-anchor="middle" class="s-label-sm">Votre écran</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="215" y="125" width="50" height="50" rx="6" class="s-box-accent"/>
+              <text x="240" y="157" text-anchor="middle" class="s-label-sm">1</text>
+              <rect x="280" y="125" width="50" height="50" rx="6" class="s-box-accent"/>
+              <text x="305" y="157" text-anchor="middle" class="s-label-sm">2</text>
+              <rect x="345" y="125" width="50" height="50" rx="6" class="s-box-accent"/>
+              <text x="370" y="157" text-anchor="middle" class="s-label-sm">3</text>
+            </g>
+            <path d="M400 150 H610" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M400 150 H610')"/>
+            <text x="505" y="126" text-anchor="middle" class="s-label-xs" data-show="3">un par un</text>
+            <text x="695" y="236" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">ça joue déjà</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Une vidéo, c’est un très gros fichier.</b><span>Attendre qu’il arrive en entier avant de lancer la lecture prendrait de longues minutes.</span></p>
+          <p class="step" data-duration="4200"><b>Alors on la découpe en petits morceaux.</b><span>Chacun ne dure que quelques secondes de film, et il est numéroté pour garder l’ordre.</span></p>
+          <p class="step" data-duration="4400"><b>Les morceaux voyagent à la suite.</b><span>Le serveur envoie le premier, puis le deuxième, puis le troisième.</span></p>
+          <p class="step" data-duration="4600"><b>La lecture commence dès le premier.</b><span>Pendant que vous regardez le début, la suite est déjà en chemin. C’est le streaming&nbsp;: lire pendant que ça arrive.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un livre livré page par page par un coursier. Vous lisez la page 1 pendant qu’il apporte la
+          page 2&nbsp;: tant qu’il va aussi vite que vous lisez, vous n’attendez jamais.
+        </p>
+      </div>
+
+      <h2>Le tampon, une réserve d’avance</h2>
+      <p>
+        Le réseau n’est pas toujours régulier&nbsp;: un morceau peut arriver en retard. Pour que l’image ne
+        s’arrête pas, votre appareil garde quelques secondes d’avance.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un tampon se remplit d’avance, et quand le réseau ralentit, la qualité baisse pour que la lecture continue">
+        <div class="scene-title">Scène 2 — Le tampon et la qualité</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un tuyau amène les morceaux dans un tampon qui se vide vers l’écran ; quand le tuyau ralentit, le tampon baisse et la qualité diminue">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="110" width="130" height="80" rx="10" class="s-box"/>
+              <text x="95" y="156" text-anchor="middle" class="s-label-sm">Serveur</text>
+            </g>
+            <g data-show="1-5" class="m-pop">
+              <rect x="320" y="90" width="150" height="120" rx="10" class="s-box-accent"/>
+              <text x="395" y="78" text-anchor="middle" class="s-label-xs">Tampon</text>
+            </g>
+            <rect x="335" y="150" width="120" height="45" rx="6" fill="var(--sage)" opacity="0.55" data-show="2-3"/>
+            <rect x="335" y="105" width="120" height="90" rx="6" fill="var(--sage)" opacity="0.55" data-show="4"/>
+            <rect x="335" y="180" width="120" height="15" rx="6" fill="var(--sage)" opacity="0.55" data-show="5"/>
+            <g data-show="1-5" class="m-right">
+              <rect x="620" y="110" width="150" height="80" rx="10" class="s-box-teal"/>
+              <text x="695" y="156" text-anchor="middle" class="s-label-sm">Écran</text>
+            </g>
+            <path d="M160 150 H320" class="s-line m-draw" data-show="2-5"/>
+            <path d="M470 150 H620" class="s-line-accent m-draw" data-show="2-5"/>
+            <circle r="7" class="packet" data-show="2,4" style="offset-path:path('M160 150 H320')"/>
+            <text x="240" y="126" text-anchor="middle" class="s-label-xs" data-show="2">arrivée</text>
+            <text x="240" y="126" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3,5">trop lent</text>
+            <text x="395" y="250" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">qualité réduite</text>
+            <text x="395" y="250" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="5">presque vide</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Un tampon se place entre le réseau et l’écran.</b><span>C’est une petite réserve de morceaux déjà reçus mais pas encore lus.</span></p>
+          <p class="step" data-duration="4200"><b>Il se remplit un peu plus vite qu’il ne se vide.</b><span>Les morceaux arrivent plus vite qu’on ne les regarde&nbsp;: la réserve grandit.</span></p>
+          <p class="step" data-duration="4400"><b>Le réseau ralentit.</b><span>Les morceaux arrivent moins vite que la lecture. Le tampon se vide peu à peu.</span></p>
+          <p class="step" data-duration="4600"><b>Le lecteur demande une qualité plus légère.</b><span>Des morceaux moins lourds arrivent plus vite&nbsp;: l’image est moins nette, mais elle ne s’arrête pas. C’est la qualité adaptative.</span></p>
+          <p class="step" data-duration="4800"><b>Si le tampon se vide, l’image se fige.</b><span>C’est le cercle qui tourne au milieu de l’écran&nbsp;: on attend que la réserve se remplisse à nouveau.</span></p>
+        </div>
+      </section>
+
+      <h2>Streaming ou téléchargement</h2>
+      <p>
+        Télécharger, c’est rapatrier le fichier en entier pour le garder. Le streaming, lui, affiche
+        puis oublie en grande partie les morceaux déjà lus&nbsp;: sans connexion, rien à regarder, sauf si
+        l’application propose d’enregistrer la vidéo à l’avance. Le même principe sert pour la musique,
+        les appels vidéo et les directs.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le <strong>streaming</strong> envoie la vidéo en <strong>petits morceaux</strong> et la lit pendant qu’elle arrive.</li>
+        <li>Un <strong>tampon</strong> garde quelques secondes d’avance pour absorber les à-coups du réseau.</li>
+        <li>Quand le réseau faiblit, la <strong>qualité baisse</strong> pour que la lecture continue.</li>
+        <li>Si le tampon se vide, l’image <strong>se fige</strong> le temps de le remplir.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour comprendre comment ces morceaux voyagent, retournez voir la leçon sur les paquets.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="paquets.html">← Les paquets</a>
+        <a class="btn btn-primary" href="wifi-box.html">Wifi, box et débit →</a>
+      </nav>
