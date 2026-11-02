@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les tests automatiques, un filet de sécurité pour le code — GotIt !</title>
+<meta name="description" content="Pourquoi les équipes font vérifier leur programme par d’autres programmes : un test automatique rejoue des contrôles à chaque modification. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/informatique">Informatique</a><span>/</span>Le logiciel<span>/</span>Livrer sans casser</div>
+      <h1>Les tests automatiques, un filet de sécurité pour le code</h1>
+      <p class="lead">Quand on modifie un programme, on risque de casser ce qui marchait. Des tests écrits une fois, rejoués à chaque changement, préviennent avant que ça arrive.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Avant chaque vol, un pilote parcourt la même liste de vérifications, même s’il a volé mille fois.
+        Il ne la refait pas de mémoire&nbsp;: elle est écrite, et on la suit point par point. En
+        informatique, cette liste existe aussi, et c’est un programme qui la déroule&nbsp;: ce sont les
+        <strong>tests automatiques</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un test donne une entrée connue au programme, compare le résultat obtenu au résultat attendu et signale un écart">
+        <div class="scene-title">Scène 1 — Un test, c’est une question dont on connaît la réponse</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une entrée connue entre dans le programme, le résultat obtenu est comparé au résultat attendu, puis le test passe ou échoue">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="110" width="130" height="80" rx="10" class="s-box-teal"/>
+              <text x="95" y="156" text-anchor="middle" class="s-label-sm">Entrée</text>
+            </g>
+            <g data-show="2-5" class="m-pop">
+              <rect x="300" y="100" width="150" height="100" rx="10" class="s-box-accent"/>
+              <text x="375" y="156" text-anchor="middle" class="s-label-sm">Programme</text>
+            </g>
+            <path d="M160 150 H300" class="s-line m-draw" data-show="2-5"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M160 150 H300')"/>
+            <g data-show="3-5" class="m-right">
+              <rect x="620" y="60" width="150" height="70" rx="10" class="s-box"/>
+              <text x="695" y="102" text-anchor="middle" class="s-label-sm">Obtenu</text>
+            </g>
+            <path d="M450 135 L620 100" class="s-line m-draw" data-show="3-5"/>
+            <g data-show="3-5" class="m-right">
+              <rect x="620" y="170" width="150" height="70" rx="10" class="s-box-teal"/>
+              <text x="695" y="212" text-anchor="middle" class="s-label-sm">Attendu</text>
+            </g>
+            <text x="560" y="156" text-anchor="middle" class="s-label-xs" data-show="4-5">comparés</text>
+            <text x="375" y="262" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">pareil : le test passe</text>
+            <text x="375" y="262" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="5">différent : le test échoue</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On choisit un cas dont on connaît la réponse.</b><span>Par exemple&nbsp;: 2 articles à 10&nbsp;€ doivent faire un panier à 20&nbsp;€.</span></p>
+          <p class="step" data-duration="4000"><b>On le donne au programme.</b><span>Sans personne devant l’écran&nbsp;: le test s’en charge tout seul.</span></p>
+          <p class="step" data-duration="4200"><b>On compare le résultat obtenu au résultat attendu.</b><span>Les deux sont écrits noir sur blanc dans le test.</span></p>
+          <p class="step" data-duration="4200"><b>Identiques&nbsp;: le test passe.</b><span>Le programme fait ce qu’on attend sur ce cas.</span></p>
+          <p class="step" data-duration="4400"><b>Différents&nbsp;: le test échoue.</b><span>Et il dit lequel, donc où chercher. C’est un signal, pas une panne.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          La liste de contrôle d’un pilote avant le décollage. Elle ne garantit pas que le vol se passera
+          sans souci, mais elle attrape les oublis les plus courants, à chaque vol, sans dépendre
+          de la forme du jour.
+        </p>
+      </div>
+
+      <h2>Le vrai intérêt&nbsp;: oser modifier</h2>
+      <p>
+        Un programme change tout le temps. Chaque modification peut casser, sans qu’on s’en aperçoive,
+        quelque chose qui marchait la veille. Avec une collection de tests, on les relance tous
+        après chaque changement.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : une modification est faite, tous les tests sont rejoués, et l’un d’eux échoue ce qui révèle une régression avant la mise en ligne">
+        <div class="scene-title">Scène 2 — Rejouer tous les tests à chaque changement</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une modification arrive, une rangée de tests est rejouée, un test devient rouge, la mise en ligne est stoppée jusqu’à la correction">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="110" width="150" height="80" rx="10" class="s-box-teal"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-sm">Modification</text>
+            </g>
+            <path d="M180 150 H300" class="s-line m-draw" data-show="2-5"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M180 150 H300')"/>
+            <g data-show="2-5" class="m-pop">
+              <rect x="300" y="60" width="150" height="40" rx="8" class="s-box" style="stroke:var(--sage)"/>
+              <rect x="300" y="130" width="150" height="40" rx="8" class="s-box" style="stroke:var(--sage)"/>
+              <rect x="300" y="200" width="150" height="40" rx="8" class="s-box" style="stroke:var(--sage)"/>
+              <text x="375" y="86" text-anchor="middle" class="s-label-xs">Test 1</text>
+              <text x="375" y="156" text-anchor="middle" class="s-label-xs">Test 2</text>
+              <text x="375" y="226" text-anchor="middle" class="s-label-xs">Test 3</text>
+            </g>
+            <rect x="300" y="130" width="150" height="40" rx="8" class="s-box-accent pulse" style="stroke:var(--danger)" data-show="3-5"/>
+            <text x="375" y="156" text-anchor="middle" class="s-label-xs" data-show="3-5">Test 2</text>
+            <text x="545" y="156" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3-4">échec</text>
+            <g data-show="4-5" class="m-right">
+              <rect x="620" y="110" width="150" height="80" rx="10" class="s-box"/>
+              <text x="695" y="156" text-anchor="middle" class="s-label-sm">Mise en ligne</text>
+            </g>
+            <text x="695" y="226" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="4">bloquée</text>
+            <text x="695" y="226" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="5">livrable</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Quelqu’un modifie le programme.</b><span>Pour ajouter une fonction, ou pour corriger autre chose.</span></p>
+          <p class="step" data-duration="4000"><b>On rejoue tous les tests, pas seulement les nouveaux.</b><span>C’est rapide&nbsp;: quelques secondes à quelques minutes, sans effort humain.</span></p>
+          <p class="step" data-duration="4200"><b>Un ancien test échoue.</b><span>La modification a cassé, sans le vouloir, une chose qui marchait. On parle de régression.</span></p>
+          <p class="step" data-duration="4200"><b>La mise en ligne est stoppée.</b><span>Le défaut est attrapé chez nous, pas chez les utilisateurs.</span></p>
+          <p class="step" data-duration="4600"><b>On corrige, on rejoue, et ça repart.</b><span>Tous les tests au vert&nbsp;: on peut livrer avec bien plus de confiance.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que les tests ne font pas</h2>
+      <p>
+        Un test ne vérifie que ce qu’on a pensé à lui faire vérifier. Tous les tests au vert ne prouvent pas
+        l’absence de défaut&nbsp;: ils prouvent que les cas prévus fonctionnent. Un test mal conçu peut aussi
+        passer à côté d’une vraie erreur. Il complète donc l’essai par de vraies personnes
+        (la <strong>recette</strong>) sans le remplacer.
+      </p>
+      <p>
+        Et ils ont un coût&nbsp;: il faut les écrire, puis les tenir à jour quand le programme évolue
+        volontairement. C’est un investissement qui se rentabilise surtout sur les programmes qui
+        vivent longtemps.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un <strong>test automatique</strong> donne un cas connu au programme et compare le résultat à ce qui était attendu.</li>
+        <li>On <strong>rejoue tous les tests</strong> à chaque modification&nbsp;: un échec signale une <strong>régression</strong>.</li>
+        <li>Le défaut est attrapé <strong>avant</strong> la mise en ligne, et le test dit où chercher.</li>
+        <li>Des tests au vert ne prouvent pas l’absence de défaut&nbsp;: ils couvrent <strong>les cas prévus</strong>.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir comment ces tests s’enchaînent automatiquement jusqu’à la mise en ligne, passez à la leçon sur la chaîne de livraison.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="ci-cd.html">← Du code à la mise en ligne</a>
+        <a class="btn btn-primary" href="recette.html">La recette →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
