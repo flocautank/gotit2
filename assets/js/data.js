@@ -597,6 +597,13 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['streaming', 'vidéo', 'tampon', 'buffer', 'débit', 'qualité', 'lecture en ligne', 'musique']
     },
+    'tests-logiciels': {
+      title: 'Les tests automatiques, un filet de sécurité pour le code',
+      summary: 'Des tests écrits une fois et rejoués à chaque modification attrapent les régressions avant la mise en ligne.',
+      path: 'lecons/tests-logiciels.html',
+      duration: '5 min', level: 1,
+      keywords: ['test', 'test automatique', 'régression', 'qualité', 'code', 'mise en ligne', 'bug']
+    },
     /* ---------- Leçons prévues (affichées en grisé) ---------- */
 
   };
@@ -620,7 +627,8 @@ window.GOTIT = (function () {
           id: 'logiciels', title: 'Le logiciel',
           subcategories: [
             { id: 'programmes', title: 'De quoi est fait un programme', lessons: ['logiciel', 'algorithme', 'code-source', 'front-back'] },
-            { id: 'versions', title: 'Garder la trace des changements', lessons: ['versionnage', 'ci-cd'] }
+            { id: 'versions', title: 'Garder la trace des changements', lessons: ['versionnage', 'ci-cd'] },
+            { id: 'livrer-sans-casser', title: 'Livrer sans casser', lessons: ['tests-logiciels'] }
           ]
         }
       ]
@@ -3342,6 +3350,71 @@ window.GOTIT = (function () {
       ],
       voir: "support",
       pas: "le ticket, qui est le dossier de suivi d’une demande — l’incident et le problème sont deux natures de situation à traiter."
+    },
+    {
+      id: "test-unitaire", terme: "Test unitaire", domaine: "Informatique",
+      aka: ["test unitaire", "tests automatiques", "test automatique", "test logiciel", "régression"],
+      une: "Un petit programme qui vérifie qu’un morceau précis d’un logiciel donne bien le résultat attendu.",
+      etapes: [
+        "Quand on modifie un logiciel, on risque de casser, sans le voir, une fonction qui marchait.",
+        "Un test unitaire isole un petit morceau, lui donne un cas dont on connaît la réponse, et compare le résultat obtenu à celui attendu.",
+        "On rejoue tous les tests après chaque modification : un échec indique quel morceau a cessé de fonctionner.",
+        "Des tests qui passent ne prouvent pas l’absence de défaut : ils garantissent seulement les cas prévus."
+      ],
+      voir: "tests-logiciels",
+      pas: "la recette, où de vraies personnes essaient l’outil à la fin du projet — le test unitaire est écrit par les développeurs et vérifie un petit morceau."
+    },
+    {
+      id: "ip-publique-privee", terme: "Adresse IP publique et privée", domaine: "Réseau",
+      aka: ["ip publique", "ip privée", "adresse privée", "192.168"],
+      une: "L’adresse publique identifie votre box face à Internet ; les adresses privées ne servent qu’entre les appareils de votre maison.",
+      etapes: [
+        "Chez vous, plusieurs appareils partagent une seule connexion à Internet.",
+        "Chacun reçoit de la box une adresse privée, utilisable seulement à l’intérieur du réseau local.",
+        "Face à Internet, la box présente une seule adresse publique, et traduit les échanges des appareils vers elle.",
+        "Deux maisons peuvent donc avoir les mêmes adresses privées sans conflit : seule l’adresse publique doit être unique."
+      ],
+      voir: "adresse-ip",
+      pas: "l’adresse MAC, qui est gravée dans la carte réseau de l’appareil — les adresses IP, elles, dépendent du réseau où l’on se trouve."
+    },
+    {
+      id: "archivage", terme: "Archivage", domaine: "Data",
+      aka: ["archivage", "archiver", "archives", "conservation des données"],
+      une: "Ranger à long terme des données qu’on n’utilise plus au quotidien, mais qu’on doit ou veut conserver.",
+      etapes: [
+        "Des données vieillissent : on ne s’en sert plus tous les jours, mais on ne peut pas toujours les jeter.",
+        "On les déplace vers un espace moins coûteux et moins rapide, séparé des données du quotidien.",
+        "On y garde aussi leur contexte et on fixe une durée de conservation, après laquelle on les supprime.",
+        "Archiver n’est pas sauvegarder : la sauvegarde sert à restaurer après un incident, l’archive sert à retrouver le passé."
+      ],
+      voir: "sauvegarde",
+      pas: "la sauvegarde, copie récente pour remettre un service en route après une panne — l’archive conserve des données anciennes et n’est pas faite pour redémarrer."
+    },
+    {
+      id: "etiquetage-donnees", terme: "Étiquetage des données", domaine: "IA",
+      aka: ["étiquetage", "labellisation", "annotation", "labeling"],
+      une: "Ajouter à chaque exemple la bonne réponse, pour qu’une IA puisse apprendre à partir d’exemples corrigés.",
+      etapes: [
+        "Pour apprendre à reconnaître un chat sur une photo, une IA a besoin d’exemples dont on connaît la réponse.",
+        "Des personnes associent à chaque exemple une étiquette : « chat », « pas un chat ».",
+        "Le modèle compare ses propres réponses à ces étiquettes, et s’ajuste à chaque écart.",
+        "Des étiquettes fausses ou incohérentes apprennent de mauvaises choses à l’IA : leur qualité compte autant que leur nombre."
+      ],
+      voir: "machine-learning",
+      pas: "l’inférence, où l’IA répond sur de nouveaux exemples sans étiquette — l’étiquetage sert uniquement à l’apprentissage."
+    },
+    {
+      id: "copil", terme: "Comité de pilotage (COPIL)", domaine: "Système d’information",
+      aka: ["copil", "comité de pilotage", "comité de suivi"],
+      une: "La réunion où les décideurs d’un projet font le point à intervalles réguliers et tranchent ce qui bloque.",
+      etapes: [
+        "Une équipe projet avance au quotidien, mais certains choix dépassent son pouvoir : budget, priorités, arbitrages entre équipes.",
+        "Le comité de pilotage réunit les décideurs concernés à intervalles réguliers.",
+        "L’équipe présente l’avancement, les risques et les décisions à prendre ; le comité décide et garde une trace.",
+        "Sans comité, les décisions traînent ; avec trop de monde ou sans décision claire, il devient une réunion de plus."
+      ],
+      voir: "projet-si",
+      pas: "le point d’équipe, où l’équipe projet se synchronise elle-même — le COPIL, lui, est le lieu des arbitrages des décideurs."
     }
   ];
 
