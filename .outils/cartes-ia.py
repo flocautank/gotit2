@@ -1690,4 +1690,44 @@ CARTES = [
   voir='projet-si',
   pas="le point d’équipe, où l’équipe projet se synchronise elle-même — le COPIL, lui, est le lieu des arbitrages des décideurs."),
 
+ dict(id='pull-request', terme='Pull request', aka=['pull request','PR','demande de fusion','merge request'], dom='Informatique',
+  une="La proposition de modifier un code, que l’équipe relit et discute avant qu’elle ne rejoigne la version principale.",
+  etapes=[
+   "Quand plusieurs personnes écrivent le même code, une modification faite sans contrôle peut tout casser pour les autres.",
+   "On travaille donc sur une copie à part, puis on ouvre une pull request : « voici ce que j’ai changé, voulez-vous l’intégrer ? ».",
+   "Les collègues relisent les changements ligne par ligne, commentent, demandent des corrections ; des contrôles automatiques peuvent tourner en même temps.",
+   "Une fois acceptée, la modification est fusionnée dans la version principale, et l’historique garde la trace de qui a proposé quoi."],
+  voir='versionnage',
+  pas="le commit, simple enregistrement d’une modification — la pull request est la demande de l’intégrer à la version principale."),
+
+ dict(id='nettoyage-donnees', terme='Nettoyage des données', aka=['nettoyage','data cleaning','data cleansing','préparation des données'], dom='Data',
+  une="Corriger, compléter ou retirer les données fausses, en double ou mal écrites avant de s’en servir.",
+  etapes=[
+   "Des données réelles sont rarement propres : fautes de frappe, dates écrites de trois façons, cases vides, lignes en double.",
+   "Le nettoyage repère ces défauts : on uniformise les formats, on corrige ce qui peut l’être, on supprime les doublons.",
+   "Ce qu’on ne peut pas corriger est complété par une valeur prudente, mis de côté ou signalé plutôt que laissé tel quel.",
+   "Une analyse faite sur des données sales donne des résultats faux avec l’air d’être justes : c’est souvent l’étape qui prend le plus de temps."],
+  voir='etl',
+  pas="le dédoublonnage, qui ne traite que les doublons — le nettoyage couvre aussi les formats, les erreurs et les valeurs manquantes."),
+
+ dict(id='rlhf', terme='Apprentissage par retour humain (RLHF)', aka=['rlhf','retour humain','reinforcement learning from human feedback','alignement'], dom='IA',
+  une="Une méthode où des personnes notent les réponses d’une IA, pour qu’elle apprenne à donner celles qu’on juge les meilleures.",
+  etapes=[
+   "Un modèle de langage appris sur du texte sait continuer une phrase, mais pas forcément répondre de façon utile et polie.",
+   "On lui fait produire plusieurs réponses à une même question, et des personnes les classent de la meilleure à la moins bonne.",
+   "Ces classements servent à régler le modèle : il apprend à rendre plus souvent le type de réponse que les humains préfèrent.",
+   "Cela rend l’IA plus agréable et plus prudente, mais elle reflète les préférences des personnes qui ont noté, avec leurs limites."],
+  voir='llm',
+  pas="l’entraînement initial, où le modèle apprend du texte brut — le retour humain est une seconde phase, qui affine son comportement."),
+
+ dict(id='derive-perimetre', terme='Dérive de périmètre (scope creep)', aka=['scope creep','dérive du périmètre','glissement de périmètre','périmètre'], dom='Système d’information',
+  une="Le glissement progressif d’un projet vers plus de fonctions que prévu, sans que le temps ni le budget suivent.",
+  etapes=[
+   "Au départ, un projet a un périmètre : la liste de ce qui sera livré, et ce qui ne le sera pas.",
+   "En cours de route, chacun glisse une petite demande de plus : « tant qu’on y est, ce serait bien d’ajouter… ».",
+   "Chaque ajout paraît léger, mais ils s’accumulent : les délais s’allongent, le budget gonfle, l’équipe s’épuise.",
+   "Le remède : toute demande nouvelle est chiffrée et arbitrée, par exemple en comité de pilotage, puis acceptée ou renvoyée à une version suivante."],
+  voir='projet-si',
+  pas="un changement de besoin décidé en connaissance de cause — la dérive est l’ajout qu’on ne décide jamais vraiment."),
+
 ]

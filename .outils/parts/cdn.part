@@ -1,0 +1,144 @@
+TITRE: Le CDN, des copies du site posées près de vous
+DESC: Pourquoi un site s’affiche vite près de son serveur et lentement à l’autre bout du monde, et comment un CDN pose des copies partout pour répondre depuis la plus proche. Expliqué en schémas animés.
+FIL: <a href="../index.html#/reseau">Réseau</a><span>/</span>Comment ça circule<span>/</span>Les bases
+LEAD: Un site n’existe qu’à un endroit, mais ses visiteurs sont partout. Pour qu’il reste rapide pour tous, on ne rapproche pas les visiteurs du site&nbsp;: on rapproche le site des visiteurs.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Imaginez une seule boulangerie pour tout un pays. Les voisins sont servis en une minute&nbsp;;
+        ceux qui habitent à l’autre bout attendent des heures que la baguette arrive. Un site
+        hébergé sur <strong>un seul serveur</strong> est cette boulangerie&nbsp;: plus on est loin,
+        plus la réponse met de temps à revenir.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un seul serveur répond à des visiteurs situés à des distances différentes ; plus le visiteur est loin, plus la réponse est longue, et tous sollicitent le même serveur">
+        <div class="scene-title">Scène 1 — Un seul serveur pour tous</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un serveur à gauche et trois visiteurs à des distances croissantes ; les réponses mettent plus de temps à parcourir les trajets longs">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="110" width="140" height="80" rx="10" class="s-box"/>
+              <text x="100" y="156" text-anchor="middle" class="s-label-sm">Serveur</text>
+            </g>
+            <g data-show="1-4" class="m-pop">
+              <rect x="270" y="45" width="90" height="50" rx="10" class="s-box-teal"/>
+              <text x="315" y="76" text-anchor="middle" class="s-label-sm">Près</text>
+            </g>
+            <path d="M170 130 L270 70" class="s-line m-draw" data-show="1-4"/>
+            <circle r="7" class="packet" data-show="1" style="offset-path:path('M170 130 L270 70')"/>
+            <g data-show="2-4" class="m-pop">
+              <rect x="480" y="125" width="90" height="50" rx="10" class="s-box-teal"/>
+              <text x="525" y="156" text-anchor="middle" class="s-label-sm">Loin</text>
+            </g>
+            <path d="M170 150 H480" class="s-line m-draw" data-show="2-4"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M170 150 H480')"/>
+            <g data-show="2-4" class="m-pop">
+              <rect x="680" y="225" width="100" height="50" rx="10" class="s-box-teal"/>
+              <text x="730" y="256" text-anchor="middle" class="s-label-sm">Très loin</text>
+            </g>
+            <path d="M170 170 L680 250" class="s-line m-draw" data-show="2-4"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M170 170 L680 250')"/>
+            <circle r="7" class="packet" data-show="3-4" style="offset-path:path('M170 130 L270 70')"/>
+            <circle r="7" class="packet" data-show="3-4" style="offset-path:path('M170 150 H480')"/>
+            <circle r="7" class="packet" data-show="3-4" style="offset-path:path('M170 170 L680 250')"/>
+            <text x="100" y="230" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3">même serveur</text>
+            <text x="100" y="230" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="4">distance = délai</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Un site vit sur un serveur, à un endroit précis.</b><span>Un visiteur proche reçoit la page presque tout de suite&nbsp;: le trajet est court.</span></p>
+          <p class="step" data-duration="4400"><b>Plus le visiteur est loin, plus la réponse voyage.</b><span>Les données traversent davantage de câbles et de machines relais avant d’arriver.</span></p>
+          <p class="step" data-duration="4400"><b>Et tout le monde sollicite le même serveur.</b><span>Un jour de forte affluence, des milliers de demandes arrivent au même endroit, qui finit par ralentir.</span></p>
+          <p class="step" data-duration="4600"><b>Ce délai de trajet s’appelle la latence.</b><span>Un seul serveur cumule deux faiblesses&nbsp;: la distance pour les uns, l’embouteillage pour tous.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Une grande enseigne ne livre pas tout le pays depuis son usine. Elle a des entrepôts
+          répartis dans les régions, remplis des produits les plus demandés&nbsp;: le colis part de
+          l’entrepôt le plus proche, pas de l’usine.
+        </p>
+      </div>
+
+      <h2>Copier près des gens</h2>
+      <p>
+        Plutôt que d’agrandir le serveur, on <strong>multiplie les copies</strong> des fichiers que
+        tout le monde demande&nbsp;: images, vidéos, feuilles de style. Ces copies sont posées sur des
+        serveurs répartis dans de nombreuses régions.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : le serveur d’origine envoie des copies à trois serveurs répartis près des visiteurs, et chaque visiteur est servi par la copie la plus proche">
+        <div class="scene-title">Scène 2 — Les copies près des visiteurs</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Le serveur d’origine envoie une copie à trois serveurs intermédiaires, chacun voisin d’un visiteur qu’il sert directement">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="110" width="110" height="80" rx="10" class="s-box"/>
+              <text x="85" y="156" text-anchor="middle" class="s-label-sm">Origine</text>
+            </g>
+            <path d="M140 140 L360 50" class="s-line m-draw" data-show="1-4"/>
+            <path d="M140 150 H360" class="s-line m-draw" data-show="1-4"/>
+            <path d="M140 160 L360 250" class="s-line m-draw" data-show="1-4"/>
+            <circle r="7" class="packet" data-show="1" style="offset-path:path('M140 140 L360 50')"/>
+            <circle r="7" class="packet" data-show="1" style="offset-path:path('M140 150 H360')"/>
+            <circle r="7" class="packet" data-show="1" style="offset-path:path('M140 160 L360 250')"/>
+            <g data-show="1-4" class="m-pop">
+              <rect x="360" y="25" width="90" height="50" rx="10" class="s-box-violet"/>
+              <text x="405" y="56" text-anchor="middle" class="s-label-sm">Copie</text>
+              <rect x="360" y="125" width="90" height="50" rx="10" class="s-box-violet"/>
+              <text x="405" y="156" text-anchor="middle" class="s-label-sm">Copie</text>
+              <rect x="360" y="225" width="90" height="50" rx="10" class="s-box-violet"/>
+              <text x="405" y="256" text-anchor="middle" class="s-label-sm">Copie</text>
+            </g>
+            <g data-show="2-4" class="m-right">
+              <rect x="650" y="25" width="110" height="50" rx="10" class="s-box-teal"/>
+              <text x="705" y="56" text-anchor="middle" class="s-label-sm">Visiteur</text>
+              <rect x="650" y="125" width="110" height="50" rx="10" class="s-box-teal"/>
+              <text x="705" y="156" text-anchor="middle" class="s-label-sm">Visiteur</text>
+              <rect x="650" y="225" width="110" height="50" rx="10" class="s-box-teal"/>
+              <text x="705" y="256" text-anchor="middle" class="s-label-sm">Visiteur</text>
+            </g>
+            <path d="M450 50 H650" class="s-line-accent m-draw" data-show="3-4"/>
+            <path d="M450 150 H650" class="s-line-accent m-draw" data-show="3-4"/>
+            <path d="M450 250 H650" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M450 50 H650')"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M450 150 H650')"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M450 250 H650')"/>
+            <text x="85" y="230" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">peu sollicitée</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>L’origine envoie des copies.</b><span>Les fichiers les plus demandés sont dupliqués vers plusieurs serveurs répartis dans le monde.</span></p>
+          <p class="step" data-duration="4400"><b>Chaque copie se place près de visiteurs.</b><span>Il y en a dans plusieurs régions, voire plusieurs continents, au plus près de là où se trouvent les gens.</span></p>
+          <p class="step" data-duration="4400"><b>Chacun est servi par la copie la plus proche.</b><span>Le trajet est court, donc la page s’affiche vite, où que l’on soit.</span></p>
+          <p class="step" data-duration="4600"><b>L’origine respire.</b><span>Elle n’est plus appelée que pour ce qu’aucune copie n’a encore. Ce réseau de copies s’appelle un CDN.</span></p>
+        </div>
+      </section>
+
+      <h2>Et si la copie n’a pas le fichier&nbsp;?</h2>
+      <p>
+        Elle le demande à l’origine, le transmet au visiteur, <strong>puis le garde</strong> pour les
+        suivants. C’est exactement le principe du cache&nbsp;: la première personne d’une région attend un
+        peu, toutes les suivantes sont servies tout de suite. Quand le site change, les copies
+        sont renouvelées ou vidées pour ne pas montrer une version périmée.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Plus un visiteur est <strong>loin du serveur</strong>, plus la page met de temps&nbsp;: c’est la latence.</li>
+        <li>Un <strong>CDN</strong> (réseau de diffusion de contenu) pose des <strong>copies</strong> des fichiers sur des serveurs répartis dans le monde.</li>
+        <li>Chaque visiteur est servi par la <strong>copie la plus proche</strong>&nbsp;; l’origine est déchargée.</li>
+        <li>C’est un <strong>cache à l’échelle de la planète</strong>&nbsp;: la première demande est plus lente, les suivantes rapides.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour comprendre le principe de la copie gardée sous la main, voyez la leçon sur le cache.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="cache.html">← Le cache</a>
+        <a class="btn btn-primary" href="load-balancer.html">Le répartiteur de charge →</a>
+      </nav>
