@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment une IA dessine une image — GotIt !</title>
+<meta name="description" content="Comment une IA transforme un texte en image en partant d’un brouillard de points qu’elle nettoie peu à peu. La diffusion expliquée en deux schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/intelligence-artificielle">Intelligence artificielle</a><span>/</span>Fondamentaux<span>/</span>Apprendre par l’exemple</div>
+      <h1>Comment une IA dessine une image</h1>
+      <p class="lead">Une IA qui dessine ne cherche pas une image dans une réserve et ne la découpe pas à partir de morceaux. Elle part d’un écran de neige et l’éclaircit, passe après passe, jusqu’à ce qu’une image apparaisse.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Imaginez un sculpteur devant un bloc de pierre&nbsp;: il ne « pose » pas la statue, il
+        <strong>retire</strong> ce qui n’en fait pas partie. Une IA de création d’images procède de
+        la même façon, mais avec du bruit. Pour la comprendre, il faut d’abord voir comment elle
+        s’entraîne.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : une image réelle est abîmée par du bruit en plusieurs niveaux jusqu’à devenir illisible, puis le modèle apprend à faire le chemin inverse">
+        <div class="scene-title">Scène 1 — Apprendre à retirer le bruit</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Quatre vignettes de gauche à droite : une image nette, puis de plus en plus de points parasites jusqu’au bruit pur, et une flèche qui revient en arrière">
+            <g data-show="1-4" class="m-pop">
+              <rect x="30" y="60" width="140" height="140" rx="10" class="s-box"/>
+              <g opacity="1"><circle cx="125" cy="100" r="18" fill="var(--accent)"/><path d="M34 180 Q80 140 166 165 V190 H34 Z" fill="var(--sage)"/></g>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="230" y="60" width="140" height="140" rx="10" class="s-box"/>
+              <g opacity="0.55"><circle cx="325" cy="100" r="18" fill="var(--accent)"/><path d="M234 180 Q280 140 366 165 V190 H234 Z" fill="var(--sage)"/></g><rect x="275" y="185" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="284" y="147" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="243" y="169" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="280" y="138" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="350" y="128" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="238" y="75" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="287" y="72" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="245" y="134" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="241" y="169" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="355" y="92" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="307" y="138" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="240" y="188" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="239" y="135" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="271" y="117" width="6" height="6" rx="1" fill="var(--accent)"/>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="430" y="60" width="140" height="140" rx="10" class="s-box"/>
+              <g opacity="0.2"><circle cx="525" cy="100" r="18" fill="var(--accent)"/><path d="M434 180 Q480 140 566 165 V190 H434 Z" fill="var(--sage)"/></g><rect x="503" y="79" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="505" y="168" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="447" y="138" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="481" y="76" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="506" y="71" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="497" y="151" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="533" y="104" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="508" y="182" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="480" y="102" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="535" y="87" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="444" y="137" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="501" y="127" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="527" y="121" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="511" y="189" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="449" y="129" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="455" y="160" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="453" y="183" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="487" y="69" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="531" y="135" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="477" y="152" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="510" y="127" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="442" y="171" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="554" y="98" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="523" y="149" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="441" y="157" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="516" y="137" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="470" y="155" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="547" y="149" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="436" y="184" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="479" y="85" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="497" y="71" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="532" y="100" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="528" y="95" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="484" y="181" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="444" y="85" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="485" y="134" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="547" y="81" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="544" y="134" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="524" y="117" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="521" y="177" width="6" height="6" rx="1" fill="var(--line)"/>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <rect x="630" y="60" width="140" height="140" rx="10" class="s-box"/>
+              <rect x="756" y="93" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="644" y="86" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="663" y="148" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="635" y="126" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="667" y="100" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="652" y="117" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="712" y="136" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="755" y="80" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="692" y="179" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="684" y="115" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="647" y="125" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="641" y="88" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="760" y="90" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="654" y="78" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="710" y="70" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="634" y="136" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="702" y="76" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="712" y="67" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="745" y="90" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="653" y="145" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="756" y="108" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="694" y="79" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="742" y="126" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="695" y="125" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="644" y="82" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="729" y="107" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="695" y="170" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="700" y="66" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="755" y="185" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="652" y="152" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="731" y="131" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="759" y="146" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="723" y="172" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="700" y="110" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="679" y="162" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="702" y="133" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="715" y="92" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="737" y="94" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="728" y="166" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="659" y="130" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="679" y="157" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="760" y="67" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="694" y="97" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="722" y="141" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="691" y="167" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="756" y="188" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="644" y="92" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="663" y="124" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="677" y="90" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="713" y="190" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="695" y="180" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="736" y="146" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="740" y="148" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="750" y="113" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="695" y="177" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="689" y="165" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="645" y="166" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="693" y="115" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="726" y="84" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="650" y="67" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="709" y="179" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="737" y="147" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="712" y="169" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="718" y="183" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="653" y="134" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="636" y="65" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="701" y="159" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="689" y="190" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="739" y="175" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="637" y="96" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="671" y="128" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="731" y="139" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="667" y="133" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="740" y="80" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="750" y="158" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="748" y="122" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="739" y="181" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="702" y="83" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="745" y="120" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="711" y="64" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="656" y="82" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="713" y="156" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="705" y="71" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="721" y="130" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="734" y="163" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="747" y="135" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="665" y="88" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="639" y="162" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="698" y="121" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="731" y="178" width="6" height="6" rx="1" fill="var(--slate)"/>
+            </g>
+            <path d="M170 130 H230" class="s-line m-draw" data-show="2-4"/>
+            <path d="M370 130 H430" class="s-line m-draw" data-show="2-4"/>
+            <path d="M570 130 H630" class="s-line m-draw" data-show="3-4"/>
+            <path d="M700 215 V240 H100 V215" class="s-line-accent m-draw" data-show="4"/>
+            <text x="400" y="272" text-anchor="middle" class="s-label-sm" fill="var(--accent)" data-show="4">il apprend à retirer le bruit</text>
+            <text x="100" y="42" text-anchor="middle" class="s-label-xs" data-show="1-4">Image réelle</text>
+            <text x="700" y="42" text-anchor="middle" class="s-label-xs" data-show="3-4">Bruit pur</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On part de vraies images.</b><span>Des millions d’images, souvent accompagnées de leur description, servent d’exemples.</span></p>
+          <p class="step" data-duration="4600"><b>On les abîme volontairement.</b><span>On ajoute des points parasites, comme de la neige sur un vieil écran, un peu plus à chaque étape.</span></p>
+          <p class="step" data-duration="4400"><b>Jusqu’à ne plus rien reconnaître.</b><span>À la fin, il ne reste qu’un bruit pur, sans aucune trace de l’image de départ.</span></p>
+          <p class="step" data-duration="5000"><b>Le modèle apprend le chemin inverse.</b><span>À chaque niveau de bruit, il s’exerce à deviner ce qu’il faut retirer pour se rapprocher d’une vraie image.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un restaurateur de tableaux a vu des centaines d’œuvres abîmées puis réparées. Il sait, devant
+          une tache, ce qui devait probablement se trouver dessous. Le modèle fait pareil, mais devant
+          des taches si nombreuses qu’il ne reste plus rien du tableau&nbsp;: il le « restaure » alors à partir de rien.
+        </p>
+      </div>
+
+      <h2>Créer, c’est nettoyer un brouillard</h2>
+      <p>
+        Une fois entraîné, le modèle sait nettoyer. Pour créer, on lui donne donc le pire
+        point de départ possible&nbsp;: <strong>un bruit pur</strong>, tiré au hasard. Et on lui joint votre
+        texte, qui lui indique <strong>vers quelle image</strong> nettoyer.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : à partir d’un bruit pur et d’une phrase, le modèle nettoie l’image en plusieurs passes jusqu’à faire apparaître un chat sur un toit">
+        <div class="scene-title">Scène 2 — Du bruit à l’image</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un bruit pur à gauche, une phrase au-dessus, puis trois passes de nettoyage successives qui font apparaître peu à peu un chat sur un toit">
+            <g data-show="1-4" class="m-pop">
+              <rect x="30" y="110" width="140" height="140" rx="10" class="s-box"/>
+              <rect x="99" y="145" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="154" y="235" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="45" y="154" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="62" y="223" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="126" y="155" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="128" y="134" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="124" y="200" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="72" y="130" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="70" y="151" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="58" y="178" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="88" y="140" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="123" y="117" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="34" y="224" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="146" y="163" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="137" y="228" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="148" y="163" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="45" y="114" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="84" y="159" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="126" y="213" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="51" y="163" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="150" y="187" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="95" y="213" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="78" y="202" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="69" y="149" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="69" y="178" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="40" y="229" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="104" y="142" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="76" y="156" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="53" y="184" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="34" y="196" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="64" y="190" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="137" y="239" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="51" y="167" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="111" y="132" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="158" y="124" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="37" y="127" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="53" y="183" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="76" y="142" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="139" y="212" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="132" y="217" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="78" y="222" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="150" y="208" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="114" y="116" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="148" y="137" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="54" y="155" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="141" y="200" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="121" y="115" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="92" y="164" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="77" y="209" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="124" y="114" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="44" y="162" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="93" y="201" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="99" y="151" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="47" y="236" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="137" y="206" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="55" y="145" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="51" y="182" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="130" y="178" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="62" y="129" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="118" y="163" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="44" y="133" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="116" y="162" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="138" y="170" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="99" y="149" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="111" y="165" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="89" y="218" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="65" y="141" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="83" y="156" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="116" y="219" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="56" y="183" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="62" y="230" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="46" y="169" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="142" y="148" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="137" y="183" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="99" y="202" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="139" y="205" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="65" y="226" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="67" y="124" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="84" y="145" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="88" y="164" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="103" y="227" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="159" y="125" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="160" y="240" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="39" y="205" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="110" y="240" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="53" y="150" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="56" y="167" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="86" y="183" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="45" y="130" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="70" y="178" width="6" height="6" rx="1" fill="var(--line)"/>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <rect x="230" y="110" width="140" height="140" rx="10" class="s-box"/>
+              <g opacity="0.3"><path d="M240 235 L300 180 L360 235 Z" fill="var(--slate)"/><circle cx="300" cy="165" r="20" fill="var(--accent)"/><path d="M284 152 l4 -14 l8 8 Z M316 152 l-4 -14 l-8 8 Z" fill="var(--accent)"/></g><rect x="260" y="123" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="306" y="189" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="261" y="202" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="311" y="210" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="332" y="167" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="267" y="191" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="321" y="240" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="240" y="212" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="331" y="204" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="354" y="182" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="355" y="219" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="282" y="217" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="326" y="163" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="234" y="205" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="309" y="121" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="306" y="195" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="330" y="131" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="269" y="233" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="303" y="206" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="285" y="174" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="311" y="127" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="258" y="217" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="323" y="152" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="238" y="196" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="305" y="222" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="306" y="194" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="351" y="120" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="338" y="157" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="318" y="231" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="332" y="132" width="6" height="6" rx="1" fill="var(--accent)"/>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <rect x="430" y="110" width="140" height="140" rx="10" class="s-box"/>
+              <g opacity="0.7"><path d="M440 235 L500 180 L560 235 Z" fill="var(--slate)"/><circle cx="500" cy="165" r="20" fill="var(--accent)"/><path d="M484 152 l4 -14 l8 8 Z M516 152 l-4 -14 l-8 8 Z" fill="var(--accent)"/></g><rect x="460" y="185" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="528" y="230" width="6" height="6" rx="1" fill="var(--sage)"/>
+              <rect x="502" y="189" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="440" y="204" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="451" y="162" width="6" height="6" rx="1" fill="var(--line)"/>
+              <rect x="463" y="131" width="6" height="6" rx="1" fill="var(--slate)"/>
+              <rect x="466" y="226" width="6" height="6" rx="1" fill="var(--accent)"/>
+              <rect x="461" y="175" width="6" height="6" rx="1" fill="var(--accent)"/>
+            </g>
+            <g data-show="4" class="m-pop">
+              <rect x="630" y="110" width="140" height="140" rx="10" class="s-box"/>
+              <g opacity="1"><path d="M640 235 L700 180 L760 235 Z" fill="var(--slate)"/><circle cx="700" cy="165" r="20" fill="var(--accent)"/><path d="M684 152 l4 -14 l8 8 Z M716 152 l-4 -14 l-8 8 Z" fill="var(--accent)"/></g>
+            </g>
+            <path d="M170 180 H230" class="s-line-accent m-draw" data-show="3-4"/>
+            <path d="M370 180 H430" class="s-line-accent m-draw" data-show="3-4"/>
+            <path d="M570 180 H630" class="s-line-accent m-draw" data-show="4"/>
+            <g data-show="2-4" class="m-fall">
+              <rect x="230" y="20" width="340" height="44" rx="10" class="s-box-violet"/>
+              <text x="400" y="48" text-anchor="middle" class="s-label-sm">« un chat sur un toit »</text>
+            </g>
+            <path d="M400 64 V86 M400 86 H300 M400 86 H500 M400 86 H700" class="s-line-accent m-draw" data-show="2-4"/>
+            <text x="100" y="272" text-anchor="middle" class="s-label-xs" data-show="1-4">Départ : du bruit</text>
+            <text x="700" y="272" text-anchor="middle" class="s-label-xs" data-show="4">Arrivée : une image</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>On tire un bruit au hasard.</b><span>Une image sans aucun sens&nbsp;: c’est la matière brute, toujours différente.</span></p>
+          <p class="step" data-duration="4400"><b>Votre phrase indique la direction.</b><span>Le texte est traduit en nombres que le modèle garde sous les yeux à chaque passe.</span></p>
+          <p class="step" data-duration="4800"><b>Le modèle nettoie, passe après passe.</b><span>À chaque tour, il retire un peu de bruit en direction de ce que décrit la phrase&nbsp;: des formes vagues émergent, puis se précisent.</span></p>
+          <p class="step" data-duration="4800"><b>Une image apparaît.</b><span>Elle ressemble à ce que vous avez demandé sans copier une image précise. Cette méthode s’appelle la diffusion.</span></p>
+        </div>
+      </section>
+
+      <h2>Pourquoi une même phrase donne des images différentes</h2>
+      <p>
+        Le point de départ est un bruit tiré au hasard&nbsp;: changez-le, et le nettoyage aboutit à une
+        autre image, tout en respectant la même phrase. C’est pourquoi on peut « relancer » une
+        demande et obtenir une nouvelle version.
+      </p>
+
+      <h2>Pourquoi des erreurs étranges&nbsp;?</h2>
+      <p>
+        Le modèle a appris à quoi <strong>ressemblent</strong> les images, pas ce que sont les objets.
+        Il n’a pas de notion de ce qu’est une main, seulement l’habitude de voir des formes qui se
+        ressemblent. D’où des détails parfois absurdes&nbsp;: doigts en trop, texte illisible, reflets incohérents.
+        L’image est <strong>plausible</strong>, pas vérifiée.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Pour apprendre, on <strong>abîme de vraies images avec du bruit</strong>, et le modèle s’entraîne à faire l’inverse.</li>
+        <li>Pour créer, on part d’un <strong>bruit pur</strong> et on le <strong>nettoie en plusieurs passes</strong>.</li>
+        <li>Votre <strong>texte oriente</strong> le nettoyage&nbsp;; un autre bruit de départ donne une autre image.</li>
+        <li>L’image est <strong>plausible, pas garantie juste</strong>&nbsp;: les détails peuvent être faux.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour comprendre la machinerie qui apprend à partir d’exemples, voyez la leçon sur le réseau de neurones.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="reseau-neurones.html">← Le réseau de neurones</a>
+        <a class="btn btn-primary" href="recommandation.html">Comment une IA recommande →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
