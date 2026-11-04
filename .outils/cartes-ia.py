@@ -1122,7 +1122,7 @@ CARTES = [
  dict(id='modele-diffusion', terme='Modèle de diffusion (images IA)', aka=['diffusion', 'modèle de diffusion', 'génération d’images', 'image par ia', 'text-to-image'], dom='IA',
   une='Le type d’IA qui crée une image en partant d’un brouillard de points et en le nettoyant peu à peu.',
   etapes=['Pour apprendre, on prend de vraies images et on y ajoute du bruit, comme de la neige sur un écran, jusqu’à ce qu’il ne reste plus rien de lisible.', 'Le modèle s’entraîne à faire l’inverse : deviner, à chaque niveau de bruit, ce qu’il faut retirer pour se rapprocher d’une vraie image.', 'Pour créer, on part d’un bruit pur et on le nettoie en plusieurs passes. Votre texte de demande oriente ce qui émerge.', 'Le résultat ressemble à une image, sans copier une image précise. D’où des détails parfois absurdes : des mains aux doigts en trop, par exemple.'],
-  voir='reseau-neurones',
+  voir='ia-image',
   pas='un modèle de langage, qui prédit le texte mot après mot ; la diffusion produit une image en la débruitant.'),
 
  dict(id='json', terme='JSON', aka=['json', 'format json', 'format d’échange', 'données api'], dom='Data',
@@ -1729,5 +1729,45 @@ CARTES = [
    "Le remède : toute demande nouvelle est chiffrée et arbitrée, par exemple en comité de pilotage, puis acceptée ou renvoyée à une version suivante."],
   voir='projet-si',
   pas="un changement de besoin décidé en connaissance de cause — la dérive est l’ajout qu’on ne décide jamais vraiment."),
+
+ dict(id='session-web', terme='Session (connexion web)', aka=['session','session web','rester connecté','déconnexion automatique','jeton de session'], dom='Réseau',
+  une="Le laps de temps pendant lequel un site vous reconnaît après votre connexion, sans redemander votre mot de passe à chaque page.",
+  etapes=[
+   "Un site ne retient rien d’une page à l’autre : sans astuce, il faudrait saisir son mot de passe à chaque clic.",
+   "Une fois le mot de passe vérifié, le site ouvre une session : il vous remet un identifiant temporaire, que votre navigateur garde.",
+   "À chaque page suivante, le navigateur présente cet identifiant, et le site comprend que c’est toujours vous.",
+   "La session prend fin quand vous vous déconnectez ou après un délai d’inactivité : c’est pourquoi un site vous « déconnecte » seul, par prudence."],
+  voir='navigateur',
+  pas="le mot de passe, qui prouve qui vous êtes une seule fois — la session est le ticket temporaire qui évite de le redonner."),
+
+ dict(id='devops', terme='DevOps', aka=['devops','dev et ops','développeurs et exploitants','culture devops'], dom='Informatique',
+  une="Une façon de travailler où ceux qui écrivent un logiciel et ceux qui le font tourner forment une seule équipe.",
+  etapes=[
+   "Autrefois, les développeurs écrivaient le logiciel puis le « jetaient par-dessus le mur » aux exploitants, qui devaient le faire tourner.",
+   "Chaque camp avait un but opposé : les uns voulaient changer vite, les autres ne rien casser. D’où retards et reproches.",
+   "DevOps rapproche les deux : une équipe commune, des outils partagés, et une automatisation de la livraison et de la surveillance.",
+   "On livre plus souvent, par petits morceaux, et quand une panne survient, la même équipe la corrige et en tire la leçon."],
+  voir='ci-cd',
+  pas="un outil ou un métier précis — DevOps est d’abord une manière de collaborer, que des outils comme le CI/CD rendent possible."),
+
+ dict(id='nlp', terme='Traitement du langage naturel (NLP)', aka=['nlp','tal','natural language processing','traitement automatique des langues','langage naturel'], dom='IA',
+  une="Le domaine de l’IA qui apprend aux machines à lire, comprendre et produire le langage humain.",
+  etapes=[
+   "Une machine ne comprend que des nombres, alors que nous écrivons avec des phrases pleines de sous-entendus, de fautes et de doubles sens.",
+   "Le traitement du langage naturel découpe le texte et le transforme en nombres, pour que des modèles puissent y repérer des régularités.",
+   "On s’en sert pour traduire, résumer, classer des e-mails, détecter un sentiment dans un avis, ou discuter avec un assistant.",
+   "Les grands modèles de langage actuels en sont l’aboutissement le plus visible, mais le domaine existe depuis bien avant eux."],
+  voir='llm',
+  pas="un modèle de langage, qui n’est qu’une technique parmi d’autres — le NLP désigne l’ensemble du domaine."),
+
+ dict(id='appel-offres', terme='Appel d’offres', aka=['appel d’offres','ao','rfp','consultation','mise en concurrence'], dom='Système d’information',
+  une="La procédure par laquelle une organisation décrit son besoin et met plusieurs fournisseurs en concurrence pour le choisir.",
+  etapes=[
+   "Quand une organisation veut acheter une solution ou une prestation, elle ne choisit pas au hasard le premier fournisseur venu.",
+   "Elle rédige son besoin, souvent dans un cahier des charges, puis l’envoie à plusieurs fournisseurs, qui répondent par une proposition chiffrée.",
+   "Les réponses sont comparées avec une grille fixée à l’avance : adéquation au besoin, prix, délais, références.",
+   "Le but est un choix argumenté et équitable ; une grille bâclée ou un besoin flou donnent des offres difficiles à comparer."],
+  voir='projet-si',
+  pas="le cahier des charges, qui décrit le besoin — l’appel d’offres est la procédure qui s’en sert pour consulter les fournisseurs."),
 
 ]
