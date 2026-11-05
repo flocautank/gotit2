@@ -3532,6 +3532,71 @@ window.GOTIT = (function () {
       ],
       voir: "projet-si",
       pas: "le cahier des charges, qui décrit le besoin — l’appel d’offres est la procédure qui s’en sert pour consulter les fournisseurs."
+    },
+    {
+      id: "ux-ui", terme: "UX et UI", domaine: "Informatique",
+      aka: ["ux", "ui", "expérience utilisateur", "interface utilisateur", "design d’interface", "ergonomie"],
+      une: "L’UI est l’apparence d’un écran (boutons, couleurs, textes) ; l’UX est ce que vit la personne qui s’en sert, de la première seconde jusqu’au but atteint.",
+      etapes: [
+        "Un même logiciel peut être joli et pourtant exaspérant : on ne trouve pas le bouton, on se trompe, on abandonne.",
+        "On distingue donc deux choses : l’interface (UI), ce qu’on voit et touche, et l’expérience (UX), ce qu’on ressent en essayant de faire une tâche.",
+        "Pour soigner l’UX, on observe de vraies personnes qui essaient, on repère où elles hésitent, puis on simplifie le parcours.",
+        "Une belle UI sans bonne UX déçoit ; une bonne UX avec une UI sobre fonctionne souvent très bien."
+      ],
+      voir: "front-back",
+      pas: "le front-end, qui est la partie du site construite pour l’écran — l’UX et l’UI en décrivent la qualité d’usage et l’aspect."
+    },
+    {
+      id: "sous-reseau", terme: "Sous-réseau", domaine: "Réseau",
+      aka: ["sous réseau", "subnet", "subnetting", "masque de sous-réseau", "vlan"],
+      une: "Une portion d’un réseau découpée à part, dont les machines se parlent directement et passent par un routeur pour joindre le reste.",
+      etapes: [
+        "Dans une grande entreprise, mettre tous les appareils dans un seul grand réseau les ferait tous s’entendre et se gêner.",
+        "On découpe alors ce réseau en parties plus petites : les sous-réseaux, chacun avec sa plage d’adresses IP.",
+        "Les machines d’un même sous-réseau se parlent directement ; pour sortir vers un autre, le message passe par un routeur qui peut le contrôler.",
+        "On gagne en ordre et en sécurité : la comptabilité, les visiteurs et les caméras ne partagent plus la même pièce numérique."
+      ],
+      voir: "adresse-ip",
+      pas: "la segmentation réseau, qui est l’intention de séparer pour protéger — le sous-réseau est l’un des moyens techniques d’y arriver."
+    },
+    {
+      id: "echantillon", terme: "Échantillon", domaine: "Data",
+      aka: ["échantillonnage", "sondage", "biais d’échantillonnage", "sample", "population"],
+      une: "Un petit groupe choisi pour représenter un ensemble trop grand pour être mesuré en entier.",
+      etapes: [
+        "Interroger ou mesurer tout le monde coûte trop cher, ou prend trop de temps : on ne goûte pas toute la soupe pour savoir si elle est salée.",
+        "On prélève donc un échantillon, un petit groupe, et on suppose que ce qu’on y observe vaut pour l’ensemble, appelé la population.",
+        "Cela ne marche que si le groupe ressemble à l’ensemble : le plus sûr est de le tirer au hasard, après avoir bien mélangé.",
+        "Un échantillon mal choisi (seulement les volontaires, seulement les clients satisfaits) donne une réponse nette… et fausse."
+      ],
+      voir: "graphique-trompeur",
+      pas: "le jeu de données, qui désigne les données qu’on possède — l’échantillon est la part qu’on en prélève pour représenter un plus grand ensemble."
+    },
+    {
+      id: "licence-logicielle", terme: "Licence logicielle", domaine: "Système d’information",
+      aka: ["licence", "licences", "licence d’utilisation", "abonnement logiciel", "éditeur"],
+      une: "Le contrat qui dit ce qu’on a le droit de faire d’un logiciel : l’utiliser, combien de personnes, pendant combien de temps, et le modifier ou non.",
+      etapes: [
+        "Quand on « achète » un logiciel, on n’en devient presque jamais propriétaire : on achète un droit de s’en servir.",
+        "Ce droit est écrit dans une licence : pour combien d’utilisateurs ou de machines, pour quelle durée, avec ou sans le droit de le modifier.",
+        "Selon l’éditeur, on paie par utilisateur et par mois, une fois pour toutes, ou rien du tout dans le cas de l’open source.",
+        "Dans une organisation, il faut compter ses licences : trop peu expose à un litige, trop en gaspille de l’argent pour des comptes jamais utilisés."
+      ],
+      voir: "cloud-saas",
+      pas: "l’open source, qui est une famille de licences ouvertes — la licence logicielle désigne le contrat en général, ouvert ou non."
+    },
+    {
+      id: "alignement-ia", terme: "Alignement", domaine: "IA",
+      aka: ["alignement de l’ia", "ai alignment", "aligner un modèle", "alignement des valeurs"],
+      une: "Le travail qui consiste à faire en sorte qu’une IA se comporte comme ses concepteurs et ses utilisateurs le veulent réellement.",
+      etapes: [
+        "Une IA fait ce qu’on lui a appris à optimiser, pas forcément ce qu’on avait en tête : une consigne peut être respectée à la lettre et trahie dans l’esprit.",
+        "L’alignement cherche à rapprocher les deux : que le comportement du modèle suive l’intention et les valeurs de ceux qui l’emploient.",
+        "On s’y prend avec des exemples de bonnes réponses, des retours donnés par des humains, des règles à respecter et des tests de situations délicates.",
+        "Le travail n’est jamais fini : on ne peut pas prévoir toutes les situations, d’où le besoin de tests continus et de garde-fous."
+      ],
+      voir: "ia-limites",
+      pas: "les garde-fous, qui sont des barrières posées autour du modèle — l’alignement agit sur son comportement lui-même, dès l’entraînement."
     }
   ];
 
