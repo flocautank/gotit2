@@ -1,0 +1,124 @@
+TITRE: L’open source, un logiciel dont la recette est publique
+DESC: Un logiciel libre publie son code : tout le monde peut le lire, le vérifier et l’améliorer. Expliqué en schémas animés, sans prérequis.
+FIL: <a href="../index.html#/informatique">Informatique</a><span>/</span>Le logiciel<span>/</span>De quoi est fait un programme
+LEAD: Beaucoup de logiciels que vous utilisez sans le savoir sont « ouverts » : leur code est public. Ce que cela change, et ce que cela ne change pas.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Une recette de cuisine peut rester secrète, enfermée dans le coffre d’un restaurant&nbsp;; ou
+        être imprimée dans un livre, que chacun peut lire et refaire. Un logiciel, c’est pareil&nbsp;: sa
+        recette s’appelle le <strong>code source</strong>. Quand elle est publique, on parle d’<strong>open source</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un code fermé reste dans un coffre, un code ouvert est lisible par tous">
+        <div class="scene-title">Scène 1 — Fermé, ou ouvert</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="À gauche un code enfermé dans un coffre dont seul l’éditeur a la clé ; à droite le même code posé à la vue de plusieurs lecteurs">
+            <g data-show="1-4" class="m-left">
+              <rect x="50" y="90" width="200" height="120" rx="10" class="s-box"/>
+              <text x="150" y="156" text-anchor="middle" class="s-label-sm">Code fermé</text>
+            </g>
+            <text x="150" y="250" text-anchor="middle" class="s-label-xs" data-show="2-4">seul l’éditeur le voit</text>
+            <g data-show="3-4" class="m-right">
+              <rect x="470" y="90" width="200" height="120" rx="10" class="s-box-accent pulse"/>
+              <text x="570" y="156" text-anchor="middle" class="s-label-sm">Code ouvert</text>
+            </g>
+            <g data-show="3-4">
+              <circle cx="720" cy="70" r="14" class="s-box-teal"/>
+              <circle cx="740" cy="150" r="14" class="s-box-teal"/>
+              <circle cx="720" cy="230" r="14" class="s-box-teal"/>
+              <path d="M706 76 L672 110" class="s-line"/>
+              <path d="M726 150 H672" class="s-line"/>
+              <path d="M706 224 L672 190" class="s-line"/>
+            </g>
+            <text x="570" y="270" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">tout le monde le lit</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Un logiciel est écrit dans un code.</b><span>C’est la liste précise de ce que l’ordinateur doit faire.</span></p>
+          <p class="step" data-duration="4200"><b>Souvent, ce code est gardé secret.</b><span>On utilise le logiciel sans jamais voir comment il est fait&nbsp;: il est dit propriétaire.</span></p>
+          <p class="step" data-duration="4200"><b>Parfois, il est publié.</b><span>N’importe qui peut le lire, à côté de la licence qui dit ce qu’on a le droit d’en faire.</span></p>
+          <p class="step" data-duration="4400"><b>C’est ce qu’on appelle l’open source.</b><span>Ouvert veut dire lisible, pas forcément sans règles&nbsp;: la licence fixe toujours le cadre.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          La recette secrète du restaurant et la recette du livre de cuisine. Avec le livre, on peut
+          vérifier qu’il n’y a rien de louche dans la sauce, corriger une erreur, ou inventer sa propre
+          variante. Avec le coffre, on goûte et on fait confiance.
+        </p>
+      </div>
+
+      <h2>Ce que cela permet</h2>
+      <p>
+        Parce que le code est visible, plusieurs personnes peuvent le relire, signaler un défaut
+        et proposer une amélioration.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un lecteur trouve un défaut, propose une correction, et le logiciel s’améliore pour tous">
+        <div class="scene-title">Scène 2 — Une correction venue d’ailleurs</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un lecteur à gauche repère un défaut dans un code au centre, envoie une correction, et le code corrigé profite à un groupe d’utilisateurs à droite">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="110" width="130" height="80" rx="10" class="s-box-teal"/>
+              <text x="95" y="156" text-anchor="middle" class="s-label-sm">Lecteur</text>
+            </g>
+            <g data-show="1-5" class="m-pop">
+              <rect x="320" y="110" width="150" height="80" rx="10" class="s-box-accent"/>
+              <text x="395" y="156" text-anchor="middle" class="s-label-sm">Code</text>
+            </g>
+            <g data-show="1-5" class="m-right">
+              <rect x="640" y="110" width="130" height="80" rx="10" class="s-box"/>
+              <text x="705" y="156" text-anchor="middle" class="s-label-sm">Utilisateurs</text>
+            </g>
+            <path d="M160 150 H320" class="s-line m-draw" data-show="2-5"/>
+            <text x="240" y="130" text-anchor="middle" class="s-label-xs" data-show="2">il lit</text>
+            <text x="395" y="86" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2-3">un défaut</text>
+            <path d="M160 180 H320" class="s-line-accent m-draw" data-show="3-5"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M160 180 H320')"/>
+            <text x="240" y="226" text-anchor="middle" class="s-label-xs" data-show="3">sa correction</text>
+            <text x="395" y="86" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4-5">corrigé</text>
+            <path d="M470 150 H640" class="s-line-accent m-draw" data-show="5"/>
+            <circle r="7" class="packet" data-show="5" style="offset-path:path('M470 150 H640')"/>
+            <text x="555" y="226" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="5">pour tous</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Quelqu’un lit le code.</b><span>Un développeur, une entreprise, un chercheur&nbsp;: peu importe, il est ouvert.</span></p>
+          <p class="step" data-duration="4000"><b>Il y repère un défaut.</b><span>Une erreur, ou une faille de sécurité que d’autres n’avaient pas vue.</span></p>
+          <p class="step" data-duration="4200"><b>Il propose une correction.</b><span>Les responsables du projet la relisent avant de l’accepter.</span></p>
+          <p class="step" data-duration="4200"><b>Le code est corrigé.</b><span>La modification entre dans le logiciel officiel.</span></p>
+          <p class="step" data-duration="4600"><b>Tous les utilisateurs en profitent.</b><span>Une seule correction, partagée avec tous ceux qui utilisent le logiciel.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que cela ne veut pas dire</h2>
+      <p>
+        <strong>Gratuit</strong>&nbsp;? Pas forcément&nbsp;: le code est ouvert, mais l’installer, le faire
+        tourner et le sécuriser demande du temps ou un prestataire, qui se paie. <strong>Sans règles</strong>&nbsp;?
+        Non plus&nbsp;: la licence précise ce qu’on peut faire, par exemple l’obligation de partager
+        à son tour ses modifications. <strong>Plus sûr</strong>&nbsp;? Pas automatiquement&nbsp;: un code que
+        personne ne relit ne protège de rien. Ce qu’on gagne, c’est la <em>possibilité</em> de vérifier.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un logiciel <strong>open source</strong> publie son <strong>code source</strong> : chacun peut le lire.</li>
+        <li>Une <strong>licence</strong> dit ce qu’on a le droit d’en faire&nbsp;: ouvert ne veut pas dire sans règles.</li>
+        <li>Plusieurs paires d’yeux repèrent et corrigent les défauts, au profit de tous les utilisateurs.</li>
+        <li><strong>Ouvert</strong> n’est pas synonyme de <strong>gratuit</strong> ni de <strong>sûr</strong>&nbsp;: c’est la possibilité de vérifier.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir ce qu’est ce code et comment il devient un programme qui tourne, relisez la leçon sur le code source.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="code-source.html">← Du code source au programme</a>
+        <a class="btn btn-primary" href="front-back.html">Front-end, back-end →</a>
+      </nav>
