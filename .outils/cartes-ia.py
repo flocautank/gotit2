@@ -374,6 +374,7 @@ CARTES = [
    "Un logiciel open source publie ce code sous une licence qui autorise à le lire, le corriger, et souvent le redistribuer.",
    "N’importe qui peut alors vérifier ce qu’il fait vraiment, y ajouter une fonction manquante, ou l’adapter à un besoin précis.",
    "Gratuit ne veut pas dire sans coût : l’installer, le maintenir et le sécuriser demande quand même des compétences ou un prestataire."],
+  voir='open-source',
   pas="le modèle ouvert (open weights) d’une IA, qui publie les réglages d’un modèle entraîné — l’open source, lui, concerne le code d’un programme classique."),
 
  dict(id='conteneur', terme='Conteneur (Docker)', aka=['conteneur','container','docker','dockerisé'], dom='Informatique',
@@ -1819,5 +1820,45 @@ CARTES = [
    "Le travail n’est jamais fini : on ne peut pas prévoir toutes les situations, d’où le besoin de tests continus et de garde-fous."],
   voir='ia-limites',
   pas="les garde-fous, qui sont des barrières posées autour du modèle — l’alignement agit sur son comportement lui-même, dès l’entraînement."),
+
+ dict(id='cle-acces-passkey', terme='Clé d’accès (passkey)', aka=['passkey','passkeys','clé d’accès','connexion sans mot de passe','sans mot de passe'], dom='Réseau',
+  une="Un moyen de se connecter à un site sans mot de passe, en prouvant son identité avec son téléphone ou son ordinateur.",
+  etapes=[
+   "Un mot de passe peut être deviné, volé ou donné par erreur sur un faux site : c’est le maillon faible de la connexion.",
+   "Une clé d’accès le remplace par deux clés liées : l’une, publique, est confiée au site ; l’autre, secrète, ne quitte jamais votre appareil.",
+   "À la connexion, le site pose une question que seul l’appareil sait résoudre ; on confirme d’un geste, empreinte, visage ou code de l’appareil.",
+   "Rien de secret ne circule, et la clé ne marche que pour le vrai site : un faux site ne peut rien en tirer. Reste à protéger l’appareil lui-même."],
+  voir='mots-de-passe',
+  pas="la double authentification, qui ajoute une preuve en plus du mot de passe — la clé d’accès remplace le mot de passe lui-même."),
+
+ dict(id='revue-de-code', terme='Revue de code', aka=['code review','relecture de code','revue'], dom='Informatique',
+  une="La relecture d’un code par un autre développeur avant qu’il ne rejoigne le logiciel.",
+  etapes=[
+   "Celui qui écrit un code a du mal à y voir ses propres erreurs, comme on relit mal son propre texte.",
+   "Avant d’intégrer une modification, un autre développeur la relit : est-ce juste, clair, sûr, cohérent avec le reste ?",
+   "Il commente ce qui l’interroge ; l’auteur répond ou corrige, puis la modification est acceptée.",
+   "On y gagne des défauts évités et du savoir partagé ; le piège est de la bâcler, ou d’en faire un jugement sur la personne plutôt que sur le code."],
+  voir='versionnage',
+  pas="les tests automatiques, qui vérifient que le code fait ce qu’on attend — la revue repose sur le regard d’une personne."),
+
+ dict(id='visualisation-donnees', terme='Visualisation de données', aka=['dataviz','data visualisation','visualisation','graphique','data viz'], dom='Data',
+  une="Montrer des données sous forme de graphique, de carte ou de schéma pour qu’on les comprenne d’un coup d’œil.",
+  etapes=[
+   "Un tableau de milliers de chiffres est illisible : l’œil ne repère ni la tendance, ni l’écart, ni l’exception.",
+   "La visualisation traduit les chiffres en formes, longueurs, positions et couleurs, que le regard compare bien plus vite que des nombres.",
+   "Le bon choix dépend de la question : une courbe pour une évolution dans le temps, des barres pour comparer, une carte pour un lieu.",
+   "Un graphique choisi ou réglé de travers peut tromper sans fausser un seul chiffre : l’échelle, les axes et les couleurs comptent autant que les données."],
+  voir='graphique-trompeur',
+  pas="le tableau de bord, qui rassemble plusieurs indicateurs sur un écran — la visualisation désigne l’art de représenter une donnée, un graphique à la fois."),
+
+ dict(id='petit-modele-langage', terme='Petit modèle de langage', aka=['slm','small language model','petit modèle','modèle léger','modèle local'], dom='IA',
+  une="Un modèle de langage de taille réduite, assez léger pour tourner sur un ordinateur ou un téléphone au lieu d’un grand centre de calcul.",
+  etapes=[
+   "Les plus grands modèles de langage demandent des machines très puissantes : on les utilise à distance, via un service en ligne.",
+   "Un petit modèle a bien moins de paramètres, donc il est plus rapide, moins coûteux, et peut tourner sur du matériel ordinaire.",
+   "Il est en général moins polyvalent, mais bien entraîné sur une tâche précise, il peut y suffire : classer, résumer, répondre sur un sujet limité.",
+   "Intérêt : les données peuvent ne pas quitter l’appareil. Limite : sur les demandes ouvertes et complexes, il reste souvent derrière un grand modèle."],
+  voir='llm',
+  pas="la distillation, qui est une façon de fabriquer un petit modèle à partir d’un grand — le petit modèle désigne le résultat, quelle que soit la méthode."),
 
 ]
