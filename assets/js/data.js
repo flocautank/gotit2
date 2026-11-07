@@ -449,6 +449,13 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['tableur', 'excel', 'base de données', 'copies', 'versions', 'partage', 'accès simultanés']
     },
+    'journaux': {
+      title: 'Les journaux, la boîte noire d’un logiciel',
+      summary: 'Un logiciel note tout seul chaque événement dans un journal daté : on le relit après une panne pour en retrouver la cause.',
+      path: 'lecons/journaux.html',
+      duration: '5 min', level: 1,
+      keywords: ['journal', 'logs', 'log', 'trace', 'panne', 'erreur', 'diagnostic']
+    },
     'supervision': {
       title: 'La supervision, un tableau de bord qui prévient avant la panne',
       summary: 'Des sondes mesurent en continu, un seuil déclenche une alerte : l’équipe sait avant les utilisateurs.',
@@ -717,7 +724,7 @@ window.GOTIT = (function () {
           id: 'conduite', title: 'Faire vivre le SI',
           subcategories: [
             { id: 'projets', title: 'Les projets', lessons: ['projet-si', 'agile-vs-cycle-en-v', 'recette'] },
-            { id: 'support', title: 'Le support', lessons: ['support', 'supervision'] },
+            { id: 'support', title: 'Le support', lessons: ['support', 'supervision', 'journaux'] },
             { id: 'construire', title: 'Construire sans développeur', lessons: ['no-code'] },
             { id: 'adoption', title: 'Faire adopter l’outil', lessons: ['conduite-changement'] }
           ]
@@ -2931,7 +2938,7 @@ window.GOTIT = (function () {
         "Ces lignes s’accumulent dans un fichier : le journal, ou « logs » en anglais.",
         "En cas de problème, on le relit pour reconstituer ce qui s’est passé et trouver la cause."
       ],
-      voir: "supervision",
+      voir: "journaux",
       pas: "la supervision, qui surveille en direct et prévient ; le journal, lui, garde la trace pour comprendre après coup."
     },
     {
@@ -3657,6 +3664,58 @@ window.GOTIT = (function () {
       ],
       voir: "llm",
       pas: "la distillation, qui est une façon de fabriquer un petit modèle à partir d’un grand — le petit modèle désigne le résultat, quelle que soit la méthode."
+    },
+    {
+      id: "stack-technique", terme: "Stack technique", domaine: "Informatique",
+      aka: ["stack", "tech stack", "pile technologique", "technologies utilisées"],
+      une: "L’ensemble des technologies empilées qui font tourner un logiciel : de l’écran de l’utilisateur jusqu’au serveur et à la base de données.",
+      etapes: [
+        "Un logiciel n’est jamais fait d’un seul bloc : il faut un affichage, une logique, un endroit où stocker les données, une machine pour le faire tourner.",
+        "Chacune de ces couches s’appuie sur une technologie choisie : un langage, un outil de stockage, un type de serveur.",
+        "L’ensemble de ces choix, empilés les uns sur les autres, s’appelle la stack technique.",
+        "Elle compte pour l’avenir : trouver des gens qui la maîtrisent, la faire évoluer, la maintenir. Changer de stack est un chantier, pas un simple réglage."
+      ],
+      voir: "front-back",
+      pas: "l’architecture, qui décrit comment les blocs s’organisent entre eux — la stack liste les technologies qui les composent."
+    },
+    {
+      id: "code-http", terme: "Code d’erreur HTTP (404, 500…)", domaine: "Réseau",
+      aka: ["404", "500", "403", "erreur 404", "page introuvable", "code http", "erreur serveur"],
+      une: "Un numéro que le serveur renvoie avec chaque réponse pour dire si la demande a réussi, et sinon pourquoi.",
+      etapes: [
+        "Quand votre navigateur demande une page, il faut qu’il sache si la demande a abouti, sans avoir à deviner d’après le contenu.",
+        "Le serveur joint donc à sa réponse un numéro à trois chiffres, que le navigateur lit avant tout.",
+        "Les codes en 2 disent que tout va bien (200), ceux en 4 que la demande pose problème (404 : introuvable, 403 : accès refusé), ceux en 5 que le serveur a un souci (500).",
+        "Voir une 404 ne veut pas dire que le site est en panne : seule cette page-là n’existe pas, ou plus, à cette adresse."
+      ],
+      voir: "url",
+      pas: "le message d’erreur affiché à l’écran, que chaque site habille à sa façon — le code est le numéro standard qui se cache derrière."
+    },
+    {
+      id: "bascule", terme: "Bascule (go live)", domaine: "Système d’information",
+      aka: ["go live", "go-live", "cutover", "mise en service", "date de bascule", "big bang"],
+      une: "Le moment précis où l’on arrête l’ancien outil et où tout le monde commence à utiliser le nouveau.",
+      etapes: [
+        "Un nouveau système ne remplace pas l’ancien par magie : à un moment, il faut décider de passer de l’un à l’autre.",
+        "Ce passage est la bascule : on prépare les données à reprendre, on prévient les équipes, on choisit une date et une heure.",
+        "On choisit souvent un moment calme, comme un week-end, et on garde de quoi revenir en arrière si quelque chose tourne mal.",
+        "Le premier jour est toujours délicat : une équipe d’aide renforcée est de mise, car c’est là que les surprises apparaissent."
+      ],
+      voir: "migration-donnees",
+      pas: "la recette, qui vérifie avant le passage que le nouvel outil fonctionne — la bascule est le passage lui-même."
+    },
+    {
+      id: "ancrage-ia", terme: "Ancrage (grounding)", domaine: "IA",
+      aka: ["grounding", "ancrer une réponse", "sources", "citer ses sources", "réponse sourcée"],
+      une: "Faire en sorte qu’une IA appuie sa réponse sur des documents ou des données précis plutôt que sur ce qu’elle croit se rappeler.",
+      etapes: [
+        "Un modèle de langage répond d’après ce qu’il a appris : sans source sous la main, il peut sonner juste et se tromper.",
+        "L’ancrage lui fournit, au moment de répondre, les passages fiables d’où tirer sa réponse : un document, une base, une page web.",
+        "On lui demande de s’en tenir à ces sources et, de préférence, de les citer, pour qu’on puisse vérifier.",
+        "Cela réduit les erreurs mais ne les supprime pas : il faut encore que les sources soient bonnes, et que la réponse les respecte vraiment."
+      ],
+      voir: "rag",
+      pas: "le RAG, qui est une méthode pour aller chercher ces passages — l’ancrage désigne l’objectif : une réponse appuyée sur des sources."
     }
   ];
 
