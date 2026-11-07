@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les journaux, la boîte noire d’un logiciel — GotIt !</title>
+<meta name="description" content="Un logiciel note tout seul ce qui s’est passé, ligne après ligne. Comment ce carnet de bord sert à retrouver l’origine d’une panne. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/si">Système d’information</a><span>/</span>Faire vivre le SI<span>/</span>Le support</div>
+      <h1>Les journaux, la boîte noire d’un logiciel</h1>
+      <p class="lead">Quand un service plante, personne n’était là pour voir. Heureusement, le logiciel a tout noté : voilà comment on relit ce carnet pour comprendre.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Dans un avion, la boîte noire enregistre tout ce qui se passe, pour comprendre après coup. Un
+        logiciel fait la même chose avec un fichier appelé <strong>journal</strong>, ou <strong>logs</strong>
+        en anglais&nbsp;: une ligne par événement, avec l’heure exacte.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un logiciel écrit une ligne dans son journal à chaque événement">
+        <div class="scene-title">Scène 1 — Le logiciel prend des notes</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un logiciel à gauche envoie des événements vers un fichier journal à droite, où chaque événement devient une ligne datée">
+            <g data-show="1-4" class="m-left">
+              <rect x="40" y="90" width="190" height="120" rx="10" class="s-box-accent"/>
+              <text x="135" y="156" text-anchor="middle" class="s-label-sm">Logiciel</text>
+            </g>
+            <path d="M230 150 H480" class="s-line m-draw" data-show="2-4"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M230 150 H480')"/>
+            <text x="355" y="130" text-anchor="middle" class="s-label-xs" data-show="2">un événement</text>
+            <g data-show="2-4" class="m-right">
+              <rect x="480" y="50" width="280" height="200" rx="10" class="s-box"/>
+              <text x="620" y="78" text-anchor="middle" class="s-label-xs">Journal</text>
+            </g>
+            <g data-show="3-4">
+              <path d="M505 110 H735" class="s-line"/>
+              <path d="M505 145 H735" class="s-line"/>
+              <path d="M505 180 H735" class="s-line"/>
+            </g>
+            <text x="620" y="228" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="4">heure + événement</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Un logiciel travaille sans témoin.</b><span>Il fait des centaines d’opérations par minute, et personne ne regarde.</span></p>
+          <p class="step" data-duration="4000"><b>À chaque événement important, il écrit.</b><span>Une connexion, un envoi de fichier, une erreur&nbsp;: il le signale, sans qu’on le lui demande.</span></p>
+          <p class="step" data-duration="4200"><b>Les notes s’empilent dans un fichier.</b><span>Une ligne par événement, dans l’ordre où ils arrivent.</span></p>
+          <p class="step" data-duration="4400"><b>Chaque ligne est datée.</b><span>L’heure exacte et la description&nbsp;: c’est ce qui permet de reconstituer le fil de l’histoire.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le registre à l’entrée d’un immeuble, où le gardien note chaque passage avec l’heure.
+          Personne ne le lit au quotidien&nbsp;; mais le jour où quelque chose disparaît, c’est lui
+          qui permet de savoir qui est passé, et quand.
+        </p>
+      </div>
+
+      <h2>Retrouver l’origine d’une panne</h2>
+      <p>
+        Le journal ne sert à rien tant que tout va bien. Son heure vient quand un utilisateur
+        dit « ça n’a pas marché hier à 14 h ».
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : une panne signalée, on remonte dans le journal à l’heure du problème et on trouve la ligne qui l’explique">
+        <div class="scene-title">Scène 2 — Remonter jusqu’à la cause</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un utilisateur signale une panne, un technicien ouvre le journal, repère la ligne d’erreur à l’heure indiquée et en déduit la cause">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="110" width="140" height="80" rx="10" class="s-box-teal"/>
+              <text x="100" y="156" text-anchor="middle" class="s-label-sm">Utilisateur</text>
+            </g>
+            <path d="M170 150 H300" class="s-line-accent m-draw" data-show="2-5"/>
+            <text x="235" y="130" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="2">« ça plante »</text>
+            <g data-show="3-5" class="m-pop">
+              <rect x="300" y="40" width="260" height="220" rx="10" class="s-box"/>
+              <text x="430" y="68" text-anchor="middle" class="s-label-xs">Journal</text>
+              <path d="M320 100 H540" class="s-line"/>
+              <path d="M320 130 H540" class="s-line"/>
+              <path d="M320 200 H540" class="s-line"/>
+              <path d="M320 230 H540" class="s-line"/>
+            </g>
+            <rect x="312" y="152" width="236" height="30" rx="6" class="s-box-accent pulse" data-show="4-5"/>
+            <text x="430" y="172" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="4-5">14:02 erreur</text>
+            <path d="M560 167 H640" class="s-line-accent m-draw" data-show="5"/>
+            <g data-show="5" class="m-right">
+              <rect x="640" y="110" width="140" height="80" rx="10" class="s-box-teal"/>
+              <text x="710" y="156" text-anchor="middle" class="s-label-sm">Cause</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Un utilisateur a rencontré un problème.</b><span>Il sait à peu près quand, pas pourquoi.</span></p>
+          <p class="step" data-duration="4000"><b>Il le signale à l’équipe technique.</b><span>Avec le moment où c’est arrivé, c’est l’indice le plus précieux.</span></p>
+          <p class="step" data-duration="4200"><b>Le technicien ouvre le journal.</b><span>Des milliers de lignes&nbsp;: trop pour tout lire, mais bien rangées par date.</span></p>
+          <p class="step" data-duration="4200"><b>Il se place à l’heure du problème.</b><span>Et repère la ligne d’erreur juste à ce moment-là.</span></p>
+          <p class="step" data-duration="4600"><b>La ligne dit ce qui a cassé.</b><span>On connaît la cause, on peut corriger&nbsp;: sans journal, on en serait réduit à deviner.</span></p>
+        </div>
+      </section>
+
+      <h2>Ce que le journal ne fait pas</h2>
+      <p>
+        Il <strong>n’alerte</strong> personne&nbsp;: c’est un carnet qu’on relit, pas une sonnerie.
+        La <strong>supervision</strong> surveille en direct et prévient&nbsp;; le journal garde la trace
+        pour comprendre après coup. Autre précaution&nbsp;: un journal peut contenir des
+        informations sensibles, et il faut décider combien de temps on le conserve.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un <strong>journal</strong> (logs) est le carnet de bord qu’un logiciel tient tout seul, une ligne datée par événement.</li>
+        <li>Il sert à <strong>comprendre après coup</strong> : on remonte à l’heure du problème et on lit ce qui s’est passé.</li>
+        <li>Il ne prévient pas en direct&nbsp;: c’est le rôle de la <strong>supervision</strong>.</li>
+        <li>Il peut contenir des données sensibles&nbsp;: on décide de ce qu’on y écrit et de sa durée de conservation.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour la surveillance en direct, qui prévient avant que les utilisateurs ne s’en aperçoivent, voyez la leçon sur la supervision.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="supervision.html">← La supervision</a>
+        <a class="btn btn-primary" href="recette.html">La recette →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
