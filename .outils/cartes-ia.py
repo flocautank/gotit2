@@ -1901,4 +1901,44 @@ CARTES = [
   voir='rag',
   pas="le RAG, qui est une méthode pour aller chercher ces passages — l’ancrage désigne l’objectif : une réponse appuyée sur des sources."),
 
+ dict(id='bibliotheque-logicielle', terme='Bibliothèque logicielle', aka=['bibliothèque','librairie','library','dépendance','package','module'], dom='Informatique',
+  une="Un lot de code déjà écrit par d’autres, qu’un programme réutilise au lieu de tout réécrire.",
+  etapes=[
+   "Écrire un programme entièrement soi-même demande de refaire des choses que des milliers de gens ont déjà faites : afficher une date, lire un fichier, envoyer un e-mail.",
+   "Des développeurs ont donc rassemblé ces briques toutes prêtes dans des bibliothèques, que l’on peut brancher à son programme.",
+   "Le programme appelle la bibliothèque quand il en a besoin : c’est lui qui décide quand, et la bibliothèque qui sait faire.",
+   "On gagne du temps, mais on dépend de code qu’on n’a pas écrit : il faut le tenir à jour, car une faille dans une bibliothèque touche tous ceux qui l’utilisent."],
+  voir='code-source',
+  pas="le framework, qui impose en plus la structure du programme — avec une bibliothèque, c’est vous qui menez."),
+
+ dict(id='batch-temps-reel', terme='Traitement par lots et temps réel', aka=['batch','temps réel','real time','streaming de données','flux de données','traitement par lot'], dom='Data',
+  une="Deux façons de traiter des données : toutes ensemble à heure fixe, ou une par une au moment où elles arrivent.",
+  etapes=[
+   "Des données arrivent sans cesse : des ventes, des clics, des mesures de capteurs. Il faut décider quand les traiter.",
+   "Par lots, on les laisse s’accumuler, puis on les traite d’un coup, par exemple chaque nuit.",
+   "En temps réel, chaque donnée est traitée presque dès son arrivée, ce qui permet de réagir tout de suite.",
+   "Le temps réel est plus coûteux et plus complexe : on le garde pour ce qui ne peut pas attendre, comme la détection d’une fraude, et le reste se traite par lots."],
+  voir='etl',
+  pas="le streaming vidéo, qui désigne le fait de regarder un contenu au fil de son envoi — ici il s’agit de traiter des données."),
+
+ dict(id='intranet-extranet', terme='Intranet et extranet', aka=['intranet','extranet','réseau interne','portail interne'], dom='Réseau',
+  une="Un intranet est un site réservé aux membres d’une organisation ; un extranet ouvre une partie de ce site à des partenaires choisis.",
+  etapes=[
+   "Une entreprise a des informations utiles à ses équipes : annuaire, procédures, actualités. Elle ne veut pas les publier à tout Internet.",
+   "Elle les place sur un intranet : un site qui fonctionne comme les autres, mais auquel seuls ses salariés peuvent accéder.",
+   "Pour travailler avec des clients ou des fournisseurs, elle peut ouvrir une partie de ce site à des personnes extérieures, avec un compte : c’est un extranet.",
+   "Dans les deux cas, ce qui compte est le contrôle d’accès : le contenu ressemble à un site ordinaire, c’est la porte qui change."],
+  voir='internet',
+  pas="Internet, ouvert à tous — l’intranet en reprend les techniques, mais pour un public restreint."),
+
+ dict(id='hebergement', terme='Hébergement', aka=['hébergeur','hosting','héberger un site','serveur d’hébergement'], dom='Informatique',
+  une="Le fait de confier un site ou une application à un serveur toujours allumé et relié à Internet, pour que chacun puisse y accéder à toute heure.",
+  etapes=[
+   "Un site doit être stocké quelque part, sur une machine qui reste allumée et connectée jour et nuit. Votre ordinateur personnel n’est pas fait pour cela.",
+   "L’hébergeur loue cette machine, ou une partie de celle-ci, avec l’électricité, la connexion et la surveillance qui vont avec.",
+   "Vous y déposez votre site : à chaque visite, le serveur de l’hébergeur renvoie les pages demandées.",
+   "Le choix de l’hébergeur pèse sur la vitesse, la fiabilité, le prix et le lieu où sont stockées vos données."],
+  voir='local-vs-cloud',
+  pas="le nom de domaine, qui est l’adresse que l’on tape — l’hébergement est l’endroit où le site se trouve réellement."),
+
 ]

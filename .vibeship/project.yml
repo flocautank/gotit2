@@ -1,6 +1,6 @@
 # Managed by Vibeship — https://github.com/flocautank/vibeship (schema vibeship/v1)
 schema: vibeship/v1
-updated: '2026-11-07'
+updated: '2026-11-08'
 products:
 - id: gotit
   name: GotIt !
@@ -23,4 +23,4 @@ products:
   - Traiter les retours du rapport hebdomadaire (rapports/)
   - Nettoyer les ~57 branches claude/* restées après fusion
   next_human_action: Déployer le relais du formulaire (relais/LISEZMOI.md) et renseigner son adresse dans assets/js/config.js
-  last_activity: '2026-11-07'
+  last_activity: '2026-11-08'

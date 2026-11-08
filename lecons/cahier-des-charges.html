@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le cahier des charges, écrire ce qu’on veut avant de construire — GotIt !</title>
+<meta name="description" content="Pourquoi un projet commence par un document qui dit précisément ce qu’on attend, et comment il évite les « ce n’est pas ce que je voulais ». Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/si">Système d’information</a><span>/</span>Faire vivre le SI<span>/</span>Les projets</div>
+      <h1>Le cahier des charges, écrire ce qu’on veut avant de construire</h1>
+      <p class="lead">« Je voudrais quelque chose de plus simple. » Entre cette phrase et un outil livré, il y a un document qui évite bien des malentendus.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Vous demandez à un artisan de refaire votre cuisine. Si vous dites seulement «&nbsp;je la veux plus
+        pratique&nbsp;», chacun imagine autre chose. Alors on met par écrit les mesures, les meubles, le
+        budget et la date. En projet informatique, ce papier s’appelle un <strong>cahier des charges</strong>.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un besoin flou est transformé en questions précises, dont les réponses sont rassemblées dans un document approuvé">
+        <div class="scene-title">Scène 1 — Du flou au précis</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un besoin flou à gauche passe par trois questions au milieu, puis aboutit à un document à droite">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="105" width="150" height="90" rx="10" class="s-box-teal"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-sm">Besoin flou</text>
+            </g>
+            <path d="M180 150 H300" class="s-line m-draw" data-show="2-4"/>
+            <g data-show="2-4" class="m-pop">
+              <rect x="300" y="40" width="150" height="56" rx="10" class="s-box"/>
+              <text x="375" y="73" text-anchor="middle" class="s-label-xs">Qui s’en sert ?</text>
+              <rect x="300" y="122" width="150" height="56" rx="10" class="s-box"/>
+              <text x="375" y="155" text-anchor="middle" class="s-label-xs">Pour quoi faire ?</text>
+              <rect x="300" y="204" width="150" height="56" rx="10" class="s-box"/>
+              <text x="375" y="237" text-anchor="middle" class="s-label-xs">Quelles limites ?</text>
+            </g>
+            <path d="M450 150 H610" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M450 150 H610')"/>
+            <g data-show="3-4" class="m-right">
+              <rect x="610" y="80" width="160" height="140" rx="10" class="s-box-accent"/>
+              <text x="690" y="145" text-anchor="middle" class="s-label-sm">Cahier</text>
+              <text x="690" y="172" text-anchor="middle" class="s-label-sm">des charges</text>
+            </g>
+            <text x="690" y="256" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">validé par tous</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Tout part d’un besoin, souvent flou.</b><span>« On voudrait que ce soit plus simple » : une envie, pas encore une commande.</span></p>
+          <p class="step" data-duration="4400"><b>On le précise par des questions.</b><span>Qui s’en servira, pour faire quoi, avec quelles limites de budget, de délai ou de sécurité.</span></p>
+          <p class="step" data-duration="4400"><b>Les réponses sont mises par écrit.</b><span>Elles forment un seul document : le cahier des charges.</span></p>
+          <p class="step" data-duration="4600"><b>Et chacun le valide.</b><span>Ceux qui demandent et ceux qui construisent le lisent et disent : « oui, c’est bien cela ».</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Le devis de la cuisine, avec le plan et les mesures. Une fois signé, on sait ce qui sera posé, où,
+          et pour combien. Sans lui, on découvre le résultat à la livraison.
+        </p>
+      </div>
+
+      <h2>À quoi il sert ensuite</h2>
+      <p>
+        Le document ne sert pas qu’au départ. Il reste la référence commune pendant tout le projet.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : ceux qui demandent et ceux qui construisent s’appuient sur le même document, que l’on relit en cas de désaccord">
+        <div class="scene-title">Scène 2 — Une référence commune</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Deux équipes de part et d’autre d’un document central ; en cas de désaccord, on relit le document">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="100" width="160" height="90" rx="10" class="s-box-teal"/>
+              <text x="110" y="152" text-anchor="middle" class="s-label-sm">Le métier</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="610" y="100" width="160" height="90" rx="10" class="s-box"/>
+              <text x="690" y="152" text-anchor="middle" class="s-label-sm">L’équipe</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="320" y="90" width="160" height="110" rx="10" class="s-box-accent"/>
+              <text x="400" y="152" text-anchor="middle" class="s-label-sm">Cahier</text>
+              <text x="400" y="176" text-anchor="middle" class="s-label-sm">des charges</text>
+            </g>
+            <path d="M190 145 H320" class="s-line m-draw" data-show="2-4"/>
+            <path d="M610 145 H480" class="s-line m-draw" data-show="2-4"/>
+            <text x="400" y="62" text-anchor="middle" class="s-label-xs" fill="var(--danger)" data-show="3">désaccord</text>
+            <text x="400" y="62" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">le texte tranche</text>
+            <path d="M400 70 V90" class="s-line-accent m-draw" data-show="4"/>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M400 70 V90')"/>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Deux mondes travaillent ensemble.</b><span>Le métier, qui exprime le besoin, et l’équipe, qui construit l’outil.</span></p>
+          <p class="step" data-duration="4200"><b>Tous deux s’appuient sur le même document.</b><span>Ce qui est écrit est connu des deux côtés.</span></p>
+          <p class="step" data-duration="4200"><b>En cours de route, un désaccord surgit.</b><span>« Je croyais que cela devait aussi faire ça. » Les souvenirs diffèrent.</span></p>
+          <p class="step" data-duration="4600"><b>On relit le cahier des charges.</b><span>Il tranche : soit c’était prévu, soit c’est une demande nouvelle, à chiffrer à part.</span></p>
+        </div>
+      </section>
+
+      <h2>Ses limites</h2>
+      <p>
+        Un cahier des charges trop flou ne protège de rien&nbsp;; un cahier trop figé peut devenir
+        faux quand le besoin évolue. C’est pourquoi on le <strong>met à jour</strong> en suivant les
+        changements acceptés, et pourquoi certaines équipes, en méthode agile, préfèrent une liste
+        d’attentes qui évolue au fil des cycles plutôt qu’un gros document de départ.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le <strong>cahier des charges</strong> décrit par écrit ce qu’un projet doit produire, avant de le construire.</li>
+        <li>Il transforme un besoin <strong>flou</strong> en exigences précises : qui, quoi, avec quelles limites.</li>
+        <li>Il est <strong>validé par les deux côtés</strong> : celui qui demande et celui qui construit.</li>
+        <li>C’est la <strong>référence commune</strong> en cas de désaccord, à faire évoluer si le besoin change.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir où le cahier des charges se place dans la vie d’un projet, relisez la leçon sur le projet SI.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="projet-si.html">← Comment se déroule un projet SI</a>
+        <a class="btn btn-primary" href="agile-vs-cycle-en-v.html">Agile ou cycle en V →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
