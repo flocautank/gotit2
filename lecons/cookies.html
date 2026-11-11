@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les cookies, le ticket de vestiaire du web — GotIt !</title>
+<meta name="description" content="Pourquoi un site vous reconnaît d’une page à l’autre, ce que contient vraiment un cookie, et la différence entre un cookie utile et un cookie qui vous suit. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/reseau">Réseau</a><span>/</span>Les traces qu’on laisse<span>/</span>Les cookies</div>
+      <h1>Les cookies, le ticket de vestiaire du web</h1>
+      <p class="lead">Un site web n’a aucune mémoire&nbsp;: à chaque page, il vous découvre. Le cookie est la petite astuce qui lui permet de vous reconnaître sans rien savoir de vous.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Imaginez un serveur de restaurant atteint d’<strong>amnésie</strong>&nbsp;: chaque fois qu’il revient
+        à votre table, il vous prend pour un nouveau client. Impossible de lui demander
+        «&nbsp;la même chose que tout à l’heure&nbsp;». C’est exactement le fonctionnement du web
+        sans cookie&nbsp;: chaque page demandée est traitée comme une première visite.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : le site remet un petit ticket au navigateur à la première visite, le navigateur le représente à chaque page suivante, et le site reconnaît le visiteur">
+        <div class="scene-title">Scène 1 — Le ticket qu’on vous remet</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un navigateur à gauche et un site à droite : le site remet un ticket au navigateur, qui le garde puis le rend à chaque nouvelle demande">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="100" width="150" height="100" rx="10" class="s-box-teal"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-sm">Navigateur</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="620" y="100" width="150" height="100" rx="10" class="s-box"/>
+              <text x="695" y="156" text-anchor="middle" class="s-label-sm">Site</text>
+            </g>
+            <path d="M180 130 H620" class="s-line m-draw" data-show="1-4"/>
+            <circle r="7" class="packet" data-show="1" style="offset-path:path('M180 130 H620')"/>
+            <path d="M620 175 H180" class="s-line-accent m-draw" data-show="2-4"/>
+            <rect x="330" y="215" width="140" height="40" rx="8" class="s-box-accent m-pop" data-show="2-4"/>
+            <text x="400" y="241" text-anchor="middle" class="s-label-xs" data-show="2-4">ticket n° 4821</text>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M620 175 H180')"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M180 130 H620')"/>
+            <text x="400" y="110" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="3">+ ticket</text>
+            <text x="695" y="240" text-anchor="middle" class="s-label-xs" fill="var(--sage)" data-show="4">je vous reconnais</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Première visite&nbsp;: le site ne sait rien.</b><span>Il reçoit une demande de page d’un inconnu, comme des milliers d’autres.</span></p>
+          <p class="step" data-duration="4400"><b>Il répond, avec un ticket en plus.</b><span>Un court texte, par exemple un numéro, que le navigateur garde de son côté.</span></p>
+          <p class="step" data-duration="4400"><b>À la page suivante, le navigateur rend le ticket.</b><span>Sans que vous ne fassiez rien, il l’ajoute automatiquement à chaque demande vers ce même site.</span></p>
+          <p class="step" data-duration="4600"><b>Le site vous reconnaît.</b><span>Le numéro lui permet de retrouver votre panier ou votre connexion. Ce ticket s’appelle un cookie.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Au vestiaire d’un musée, on vous donne un <strong>ticket numéroté</strong>. Le personnel ne retient
+          ni votre visage ni votre nom&nbsp;: il garde simplement votre manteau sous ce numéro. Le cookie
+          est ce ticket&nbsp;: il ne contient pas votre vie, juste de quoi retrouver ce qui vous attend.
+        </p>
+      </div>
+
+      <h2>Utile, ou espion&nbsp;?</h2>
+      <p>
+        Le mécanisme est le même, c’est l’<strong>usage</strong> qui change. Un cookie déposé par le site que vous visitez
+        sert à se souvenir de vous chez lui. Mais une publicité ou un bouton de partage venu d’une
+        autre société peut déposer le sien sur des milliers de sites&nbsp;: il la reconnaît alors partout où elle apparaît.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : un cookie du site garde le panier d’un visiteur, tandis qu’un cookie publicitaire déposé par une régie est lu sur plusieurs sites différents pour suivre le même visiteur">
+        <div class="scene-title">Scène 2 — Même mécanisme, deux usages</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="En haut, un visiteur et un seul site qui garde son panier. En bas, le même visiteur sur trois sites, tous relayés vers une même régie publicitaire qui le suit">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="110" width="120" height="80" rx="10" class="s-box-teal"/>
+              <text x="90" y="156" text-anchor="middle" class="s-label-sm">Vous</text>
+            </g>
+            <g data-show="1-4" class="m-right">
+              <rect x="330" y="30" width="120" height="50" rx="10" class="s-box"/>
+              <text x="390" y="61" text-anchor="middle" class="s-label-sm">Boutique</text>
+            </g>
+            <path d="M150 130 L330 60" class="s-line m-draw" data-show="1-4"/>
+            <text x="560" y="62" class="s-label-xs" fill="var(--sage)" data-show="2-4">panier gardé</text>
+            <g data-show="3-4" class="m-right">
+              <rect x="330" y="130" width="120" height="50" rx="10" class="s-box"/>
+              <text x="390" y="161" text-anchor="middle" class="s-label-sm">Journal</text>
+              <rect x="330" y="225" width="120" height="50" rx="10" class="s-box"/>
+              <text x="390" y="256" text-anchor="middle" class="s-label-sm">Météo</text>
+            </g>
+            <path d="M150 155 L330 155" class="s-line m-draw" data-show="3-4"/>
+            <path d="M150 175 L330 250" class="s-line m-draw" data-show="3-4"/>
+            <g data-show="3-4" class="m-pop">
+              <rect x="620" y="130" width="140" height="50" rx="10" class="s-box-accent"/>
+              <text x="690" y="161" text-anchor="middle" class="s-label-sm">Régie pub</text>
+            </g>
+            <path d="M450 155 H620" class="s-line-accent m-draw" data-show="3-4"/>
+            <path d="M450 250 L620 175" class="s-line-accent m-draw" data-show="3-4"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M450 155 H620')"/>
+            <circle r="7" class="packet" data-show="3" style="offset-path:path('M450 250 L620 175')"/>
+            <text x="690" y="215" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="4">je vous suis</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Cookie du site&nbsp;: un service rendu.</b><span>La boutique dépose un ticket pour retrouver votre visite.</span></p>
+          <p class="step" data-duration="4400"><b>Il garde votre panier ou votre connexion.</b><span>Sans lui, il faudrait tout recommencer à chaque clic.</span></p>
+          <p class="step" data-duration="4400"><b>Cookie tiers&nbsp;: un autre acteur se glisse.</b><span>Un même service publicitaire est présent sur plusieurs sites, et y dépose le même ticket.</span></p>
+          <p class="step" data-duration="4600"><b>Il relie vos visites entre elles.</b><span>La régie reconnaît le même navigateur partout et en déduit vos centres d’intérêt.</span></p>
+        </div>
+      </section>
+
+      <h2>Le bandeau, à quoi ça sert&nbsp;?</h2>
+      <p>
+        En Europe, les cookies purement <strong>nécessaires</strong> au fonctionnement (panier, connexion) n’ont pas
+        besoin de votre accord. Ceux qui servent à vous suivre ou à cibler la publicité demandent votre
+        <strong>consentement</strong>&nbsp;: c’est le rôle du bandeau qui s’affiche à la première visite.
+        Vous pouvez aussi supprimer les cookies à tout moment depuis les réglages du navigateur&nbsp;; vous serez
+        alors simplement «&nbsp;un inconnu&nbsp;» à la prochaine visite.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le web <strong>n’a pas de mémoire</strong>&nbsp;: sans astuce, chaque page est une première rencontre.</li>
+        <li>Un <strong>cookie</strong> est un petit texte remis par un site, que le navigateur <strong>rend à chaque visite suivante</strong>.</li>
+        <li>Il contient en général un <strong>numéro</strong>, pas votre identité&nbsp;; le site retrouve le reste de son côté.</li>
+        <li>Même mécanisme, deux usages&nbsp;: <strong>se souvenir de vous</strong> chez soi, ou <strong>vous suivre</strong> d’un site à l’autre.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour voir tout ce que votre navigateur sait de vous, ouvrez la leçon qui lui est consacrée.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="navigateur.html">← Ce que sait votre navigateur</a>
+        <a class="btn btn-primary" href="mots-de-passe.html">Les mots de passe →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
