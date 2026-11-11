@@ -394,7 +394,7 @@ CARTES = [
    "Un cookie est un petit texte que le site dépose dans le navigateur, puis se fait redonner automatiquement à chaque page suivante.",
    "Certains sont utiles : rester connecté, garder un panier rempli. D’autres suivent la navigation d’un site à l’autre pour cibler la publicité.",
    "Le bandeau qui demande un accord au premier clic sépare les deux : cookies nécessaires acceptés d’office, cookies publicitaires soumis au choix du visiteur."],
-  voir='navigateur'),
+  voir='cookies'),
 
  dict(id='index-bdd', terme='Index (base de données)', aka=['index','indexation','index de base de données'], dom='Data',
   une="Un raccourci qui évite à la base de données de relire toute une table pour répondre à une question.",
@@ -1940,5 +1940,45 @@ CARTES = [
    "Le choix de l’hébergeur pèse sur la vitesse, la fiabilité, le prix et le lieu où sont stockées vos données."],
   voir='local-vs-cloud',
   pas="le nom de domaine, qui est l’adresse que l’on tape — l’hébergement est l’endroit où le site se trouve réellement."),
+
+ dict(id='ipv4-ipv6', terme='IPv4 et IPv6', aka=['ipv4','ipv6','adresse ip version 6','pénurie d’adresses'], dom='Réseau',
+  une="Les deux générations d’adresses IP : la première commence à manquer, la seconde en offre un nombre quasi illimité.",
+  etapes=[
+   "Chaque appareil connecté a besoin d’une adresse IP. La première version, IPv4, s’écrit avec quatre nombres, par exemple 192.168.0.1.",
+   "Elle est codée sur 32 bits : cela fait environ 4,3 milliards d’adresses possibles, moins qu’il n’y a d’appareils connectés aujourd’hui.",
+   "IPv6 la remplace progressivement : elle est codée sur 128 bits, soit un nombre d’adresses si grand qu’on ne risque pas de l’épuiser.",
+   "Les deux cohabitent encore, et votre box les gère souvent toutes les deux : vous n’avez normalement rien à faire."],
+  voir='adresse-ip',
+  pas="l’adresse publique et privée : celle-ci décrit qui voit l’adresse, pas sa version."),
+
+ dict(id='valeur-manquante', terme='Valeur manquante', aka=['valeur manquante','donnée manquante','champ vide','null','missing value'], dom='Data',
+  une="Une case restée vide dans un tableau de données : l’information existe peut-être, mais elle n’a pas été saisie.",
+  etapes=[
+   "Dans un tableau réel, des cases restent vides : un client n’a pas donné son téléphone, un capteur est tombé en panne.",
+   "Une case vide n’est pas un zéro : zéro est une réponse, le vide veut dire « on ne sait pas ». Les confondre fausse les calculs.",
+   "On a trois réactions possibles : retirer la ligne, remplir avec une estimation raisonnable, ou garder le vide en le signalant.",
+   "Le bon choix dépend du cas, et il doit être écrit : un trou comblé en silence rend les chiffres plus beaux, pas plus vrais."],
+  voir='graphique-trompeur',
+  pas="la valeur aberrante, qui est présente mais anormale — la valeur manquante est justement absente."),
+
+ dict(id='jeux-apprentissage-test', terme='Jeu d’entraînement, de validation et de test', aka=['train test split','jeu de test','jeu de validation','jeu d’entraînement','train set','test set'], dom='IA',
+  une="Les trois lots de données dans lesquels on découpe les exemples pour apprendre, régler, puis juger honnêtement un modèle.",
+  etapes=[
+   "Évaluer un modèle sur les exemples qu’il a déjà vus, c’est comme donner à un élève le sujet dont il connaît le corrigé : la note ne prouve rien.",
+   "On met donc de côté une partie des données avant de commencer. Le jeu d’entraînement sert à apprendre.",
+   "Le jeu de validation sert à comparer des réglages en cours de route. Le jeu de test, lui, n’est ouvert qu’une fois, à la fin.",
+   "Le score sur le test dit alors comment le modèle se débrouillera sur du neuf. Un score excellent à l’entraînement et mauvais au test trahit un surapprentissage."],
+  voir='surapprentissage',
+  pas="le jeu de test en recette logicielle, qui est un ensemble de cas pour vérifier un programme — ici, il s’agit de données pour juger un modèle."),
+
+ dict(id='source-de-verite', terme='Source de vérité', aka=['source de vérité','single source of truth','référence unique','donnée maître'], dom='Système d’information',
+  une="L’endroit unique où une information est tenue à jour, et que tous les autres outils doivent consulter plutôt que recopier.",
+  etapes=[
+   "Dans beaucoup d’entreprises, l’adresse d’un client est saisie dans trois outils. Un jour, elle change dans un seul : les trois versions divergent.",
+   "On désigne alors une source de vérité : un seul outil où l’information est créée et corrigée, et reconnu comme faisant foi.",
+   "Les autres outils la lisent ou en reçoivent une copie automatique ; ils ne la modifient pas de leur côté.",
+   "Quand deux chiffres se contredisent, on sait lequel croire. Le piège : désigner une source sans que personne ne soit chargé de la tenir propre."],
+  voir='gouvernance-data',
+  pas="les données de référence, qui sont les listes communes (pays, codes produits) — la source de vérité désigne l’outil qui fait foi pour une donnée."),
 
 ]

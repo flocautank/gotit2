@@ -590,6 +590,12 @@ window.GOTIT = (function () {
       duration: '5 min', level: 1,
       keywords: ['mot de passe', 'hachage', 'empreinte', 'sel', 'connexion', 'identifiant', 'sécurité', 'gestionnaire de mots de passe']
     },
+    'cookies': {
+      title: 'Les cookies, le ticket de vestiaire du web',
+      summary: 'Pourquoi un site vous reconna\u00eet d\u2019une page \u00e0 l\u2019autre, et la diff\u00e9rence entre un cookie utile et un cookie qui vous suit.',
+      path: 'lecons/cookies.html', duration: '5 min', level: 1,
+      keywords: ['cookie', 'cookies', 'traceur', 'bandeau', 'consentement', 'navigateur', 'publicit\u00e9', 'panier', 'connexion']
+    },
     'cdn': {
       title: 'Le CDN, des copies du site pos\u00e9es pr\u00e8s de vous',
       summary: 'Pourquoi un site est lent \u00e0 l\u2019autre bout du monde, et comment des copies r\u00e9parties partout r\u00e9pondent \u00e0 la place du serveur d\u2019origine.',
@@ -677,7 +683,7 @@ window.GOTIT = (function () {
           subcategories: [
             { id: 'bases-reseau', title: 'Les bases', lessons: ['internet', 'paquets', 'wifi-box', 'adresse-ip', 'dns', 'url', 'streaming', 'cdn'] },
             { id: 'messagerie', title: 'La messagerie', lessons: ['email'] },
-            { id: 'traces', title: 'Les traces qu\u2019on laisse', lessons: ['navigateur'] }
+            { id: 'traces', title: 'Les traces qu\u2019on laisse', lessons: ['navigateur', 'cookies'] }
           ]
         },
         {
@@ -1302,7 +1308,7 @@ window.GOTIT = (function () {
         "Certains sont utiles : rester connecté, garder un panier rempli. D’autres suivent la navigation d’un site à l’autre pour cibler la publicité.",
         "Le bandeau qui demande un accord au premier clic sépare les deux : cookies nécessaires acceptés d’office, cookies publicitaires soumis au choix du visiteur."
       ],
-      voir: "navigateur"
+      voir: "cookies"
     },
     {
       id: "index-bdd", terme: "Index (base de données)", domaine: "Data",
@@ -3775,6 +3781,58 @@ window.GOTIT = (function () {
       ],
       voir: "local-vs-cloud",
       pas: "le nom de domaine, qui est l’adresse que l’on tape — l’hébergement est l’endroit où le site se trouve réellement."
+    },
+    {
+      id: "ipv4-ipv6", terme: "IPv4 et IPv6", domaine: "Réseau",
+      aka: ["ipv4", "ipv6", "adresse ip version 6", "pénurie d’adresses"],
+      une: "Les deux générations d’adresses IP : la première commence à manquer, la seconde en offre un nombre quasi illimité.",
+      etapes: [
+        "Chaque appareil connecté a besoin d’une adresse IP. La première version, IPv4, s’écrit avec quatre nombres, par exemple 192.168.0.1.",
+        "Elle est codée sur 32 bits : cela fait environ 4,3 milliards d’adresses possibles, moins qu’il n’y a d’appareils connectés aujourd’hui.",
+        "IPv6 la remplace progressivement : elle est codée sur 128 bits, soit un nombre d’adresses si grand qu’on ne risque pas de l’épuiser.",
+        "Les deux cohabitent encore, et votre box les gère souvent toutes les deux : vous n’avez normalement rien à faire."
+      ],
+      voir: "adresse-ip",
+      pas: "l’adresse publique et privée : celle-ci décrit qui voit l’adresse, pas sa version."
+    },
+    {
+      id: "valeur-manquante", terme: "Valeur manquante", domaine: "Data",
+      aka: ["valeur manquante", "donnée manquante", "champ vide", "null", "missing value"],
+      une: "Une case restée vide dans un tableau de données : l’information existe peut-être, mais elle n’a pas été saisie.",
+      etapes: [
+        "Dans un tableau réel, des cases restent vides : un client n’a pas donné son téléphone, un capteur est tombé en panne.",
+        "Une case vide n’est pas un zéro : zéro est une réponse, le vide veut dire « on ne sait pas ». Les confondre fausse les calculs.",
+        "On a trois réactions possibles : retirer la ligne, remplir avec une estimation raisonnable, ou garder le vide en le signalant.",
+        "Le bon choix dépend du cas, et il doit être écrit : un trou comblé en silence rend les chiffres plus beaux, pas plus vrais."
+      ],
+      voir: "graphique-trompeur",
+      pas: "la valeur aberrante, qui est présente mais anormale — la valeur manquante est justement absente."
+    },
+    {
+      id: "jeux-apprentissage-test", terme: "Jeu d’entraînement, de validation et de test", domaine: "IA",
+      aka: ["train test split", "jeu de test", "jeu de validation", "jeu d’entraînement", "train set", "test set"],
+      une: "Les trois lots de données dans lesquels on découpe les exemples pour apprendre, régler, puis juger honnêtement un modèle.",
+      etapes: [
+        "Évaluer un modèle sur les exemples qu’il a déjà vus, c’est comme donner à un élève le sujet dont il connaît le corrigé : la note ne prouve rien.",
+        "On met donc de côté une partie des données avant de commencer. Le jeu d’entraînement sert à apprendre.",
+        "Le jeu de validation sert à comparer des réglages en cours de route. Le jeu de test, lui, n’est ouvert qu’une fois, à la fin.",
+        "Le score sur le test dit alors comment le modèle se débrouillera sur du neuf. Un score excellent à l’entraînement et mauvais au test trahit un surapprentissage."
+      ],
+      voir: "surapprentissage",
+      pas: "le jeu de test en recette logicielle, qui est un ensemble de cas pour vérifier un programme — ici, il s’agit de données pour juger un modèle."
+    },
+    {
+      id: "source-de-verite", terme: "Source de vérité", domaine: "Système d’information",
+      aka: ["source de vérité", "single source of truth", "référence unique", "donnée maître"],
+      une: "L’endroit unique où une information est tenue à jour, et que tous les autres outils doivent consulter plutôt que recopier.",
+      etapes: [
+        "Dans beaucoup d’entreprises, l’adresse d’un client est saisie dans trois outils. Un jour, elle change dans un seul : les trois versions divergent.",
+        "On désigne alors une source de vérité : un seul outil où l’information est créée et corrigée, et reconnu comme faisant foi.",
+        "Les autres outils la lisent ou en reçoivent une copie automatique ; ils ne la modifient pas de leur côté.",
+        "Quand deux chiffres se contredisent, on sait lequel croire. Le piège : désigner une source sans que personne ne soit chargé de la tenir propre."
+      ],
+      voir: "gouvernance-data",
+      pas: "les données de référence, qui sont les listes communes (pays, codes produits) — la source de vérité désigne l’outil qui fait foi pour une donnée."
     }
   ];
 
