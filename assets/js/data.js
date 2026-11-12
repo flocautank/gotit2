@@ -3833,6 +3833,70 @@ window.GOTIT = (function () {
       ],
       voir: "gouvernance-data",
       pas: "les données de référence, qui sont les listes communes (pays, codes produits) — la source de vérité désigne l’outil qui fait foi pour une donnée."
+    },
+    {
+      id: "regex", terme: "Expression régulière (regex)", domaine: "Informatique",
+      aka: ["regex", "regexp", "expression régulière", "expressions régulières", "motif de recherche"],
+      une: "Une petite formule qui décrit la forme d’un texte, pour le retrouver ou le vérifier automatiquement.",
+      etapes: [
+        "Chercher « 12 rue de la Paix » dans un texte est facile. Chercher n’importe quelle adresse, ou n’importe quel numéro de téléphone, l’est beaucoup moins : on ne connaît pas le texte exact à l’avance.",
+        "Une expression régulière décrit la forme plutôt que le contenu : « deux chiffres, un point, deux chiffres » reconnaît 12.34 comme 56.78.",
+        "Elle s’écrit avec des symboles très compacts, que l’ordinateur applique à chaque ligne. Il en sort les passages qui correspondent, ou un simple oui / non.",
+        "Elle sert à contrôler un champ de formulaire ou à extraire des données d’un texte. Le piège : une formule trop longue devient illisible, même pour son auteur quelques mois plus tard."
+      ],
+      pas: "un moteur de recherche, qui retrouve des mots précis : la regex retrouve une forme, un gabarit."
+    },
+    {
+      id: "sdk", terme: "SDK (kit de développement)", domaine: "Informatique",
+      aka: ["sdk", "kit de développement", "software development kit", "trousse à outils"],
+      une: "Une boîte à outils fournie par un éditeur pour construire facilement quelque chose qui fonctionne avec son produit.",
+      etapes: [
+        "Vous voulez qu’une application se branche sur un service, par exemple un paiement en ligne. Tout reconstruire à la main serait long et risqué.",
+        "L’éditeur du service livre alors un kit : du code déjà écrit, des outils de test, de la documentation et des exemples.",
+        "Le développeur n’a plus qu’à appeler les fonctions du kit, qui se chargent des échanges avec le service.",
+        "On gagne du temps et on évite des erreurs. En contrepartie, on dépend du kit : s’il change ou disparaît, il faut adapter son application."
+      ],
+      voir: "api",
+      pas: "une API, qui est la porte d’entrée du service : le SDK est l’outillage qui facilite son usage."
+    },
+    {
+      id: "telemetrie", terme: "Télémétrie", domaine: "SI",
+      aka: ["télémétrie", "telemetry", "données d’usage", "mesures à distance"],
+      une: "Les mesures qu’un logiciel ou un appareil envoie tout seul à son éditeur pour dire comment il se porte et comment on l’utilise.",
+      etapes: [
+        "Un éditeur ne voit pas ce qui se passe chez ses utilisateurs : quelle fonction plante, laquelle n’est jamais utilisée ?",
+        "Le logiciel envoie donc de petits relevés automatiques : version utilisée, erreurs rencontrées, fonctions cliquées, temps de chargement.",
+        "Ces relevés sont regroupés et analysés. Ils montrent où corriger en priorité et quoi améliorer, sans interroger personne.",
+        "C’est utile, mais cela touche à la vie privée. Un bon dispositif dit ce qu’il collecte et laisse le choix de le désactiver."
+      ],
+      voir: "journaux",
+      pas: "les journaux (logs), qui racontent ce qui s’est passé dans un système ; la télémétrie remonte des mesures vers l’éditeur."
+    },
+    {
+      id: "precision-rappel", terme: "Précision et rappel", domaine: "IA",
+      aka: ["précision", "rappel", "precision recall", "recall", "mesurer un modèle"],
+      une: "Deux façons de noter un modèle qui trie : ses réponses positives sont-elles justes, et en a-t-il oublié ?",
+      etapes: [
+        "Un modèle doit repérer des mails frauduleux parmi mille messages. Dire « il a raison dans 99 % des cas » ne suffit pas : s’il n’y en a que dix, ne rien repérer donne déjà un très bon score.",
+        "La précision répond à : parmi les messages qu’il a signalés, combien étaient vraiment frauduleux ?",
+        "Le rappel répond à : parmi tous les messages frauduleux, combien en a-t-il retrouvés ?",
+        "Les deux se contrarient : un modèle prudent a une bonne précision mais oublie des cas, un modèle zélé trouve tout mais se trompe plus. On choisit selon ce qui coûte le plus cher."
+      ],
+      voir: "ia-limites",
+      pas: "le taux de réussite global, qui peut paraître excellent même quand les cas rares sont tous ratés."
+    },
+    {
+      id: "edge-computing", terme: "Edge computing (informatique en périphérie)", domaine: "Réseau",
+      aka: ["edge", "edge computing", "informatique en périphérie", "calcul en périphérie", "traitement local"],
+      une: "Faire les calculs au plus près de l’endroit où naissent les données, plutôt que de tout envoyer vers un centre lointain.",
+      etapes: [
+        "Une caméra de surveillance produit des images en continu. Tout envoyer vers un centre de données lointain demande beaucoup de débit, et prend du temps.",
+        "On place donc un petit ordinateur au plus près : dans la caméra, dans l’usine, dans le magasin. C’est la périphérie du réseau, « the edge » en anglais.",
+        "Il traite sur place ce qui est urgent et n’envoie au centre que l’essentiel : une alerte, un résumé.",
+        "La réaction est plus rapide et le réseau moins chargé. En contrepartie, il faut gérer et mettre à jour de nombreux petits équipements dispersés."
+      ],
+      voir: "cloud-saas",
+      pas: "le cloud, où les calculs se font dans de grands centres de données : l’edge rapproche une partie du travail de la source."
     }
   ];
 
