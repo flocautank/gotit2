@@ -115,7 +115,7 @@ Toutes les explications du site suivent le même rythme : **quatre étapes**.
 | [Le prompt injection, le risque caché des agents IA](lecons/injection-prompt.html) | IA | Intermédiaire |
 | [Comment une IA dessine une image](lecons/ia-image.html) | IA | Découverte |
 
-**240 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
+**245 cartes de concept** couvrent le jargon de l'IA — jeton, fenêtre de contexte, prompt,
 prompt système, température, RAG, embedding, fine-tuning, entraînement, inférence, GPU, LLM,
 IA générative, multimodal, hallucination, agent, harness, workflow, skill, MCP, AGI, modèle
 ouvert, benchmark, garde-fous, prompt injection, Machine Learning, appel d'outils, réseau de neurones, biais —, celui des
