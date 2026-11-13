@@ -2030,4 +2030,45 @@ CARTES = [
   voir='cloud-saas',
   pas="le cloud, où les calculs se font dans de grands centres de données : l’edge rapproche une partie du travail de la source."),
 
+ dict(id='variable', terme='Variable', aka=['variable','variables','variable informatique','stocker une valeur'], dom='Informatique',
+  une="Une case nommée où un programme range une valeur pour la retrouver et la modifier plus tard.",
+  etapes=[
+   "Un programme manipule des informations qui changent : le prénom d’un client, le total d’un panier, le score d’une partie. Il lui faut un endroit où les garder.",
+   "Il crée une variable : une case de la mémoire à laquelle il donne un nom, par exemple « total », et dans laquelle il range une valeur.",
+   "Chaque fois qu’il écrit « total », il retrouve la valeur en cours. Quand le panier change, il remplace le contenu de la case, et tout ce qui s’en sert suit.",
+   "Un bon nom de variable explique ce qu’elle contient : c’est ce qui rend un code lisible par quelqu’un d’autre, ou par vous dans six mois."],
+  voir='algorithme',
+  pas="la constante, une case dont la valeur ne change plus une fois posée — la variable, elle, est faite pour évoluer."),
+
+ dict(id='tache-planifiee', terme='Tâche planifiée', aka=['cron','tâche cron','planificateur','scheduler','traitement programmé','job planifié'], dom='Informatique',
+  une="Une action que l’ordinateur lance tout seul à une heure ou à un rythme choisis, sans que personne ne la déclenche.",
+  etapes=[
+   "Certaines opérations reviennent sans cesse : sauvegarder les données, envoyer un rapport, nettoyer des fichiers. Les faire à la main, c’est les oublier un jour.",
+   "On les confie à un planificateur, un programme qui surveille l’horloge et connaît la liste des travaux à lancer.",
+   "On lui dit quoi faire et quand : « chaque nuit à deux heures », « le lundi matin », « toutes les dix minutes ». Sur de nombreux systèmes, l’outil classique s’appelle cron.",
+   "La tâche s’exécute même si personne n’est là. Reste à surveiller qu’elle a bien tourné : une tâche qui échoue en silence peut passer inaperçue longtemps."],
+  voir='sauvegarde',
+  pas="le traitement en temps réel, qui réagit à chaque événement dès qu’il arrive — la tâche planifiée, elle, attend son horaire."),
+
+ dict(id='fuite-donnees', terme='Fuite de données', aka=['fuite de données','data leak','data breach','violation de données','données volées','piratage de données'], dom='Réseau',
+  une="Un incident où des informations censées rester privées sont vues, copiées ou diffusées par des personnes qui n’y avaient pas droit.",
+  etapes=[
+   "Une organisation garde des informations sur des gens : adresses, e-mails, parfois des mots de passe. Elles ne sont censées être lisibles que par ceux qui en ont besoin.",
+   "Une fuite survient quand elles sortent de ce cercle : un pirate entre dans le système, un mot de passe est volé, un fichier est envoyé à la mauvaise personne, un accès reste ouvert par erreur.",
+   "Les données peuvent alors être revendues ou servir à tromper les personnes concernées, par exemple par de faux messages qui citent de vrais détails.",
+   "Pour une personne : changer ses mots de passe et se méfier des messages inhabituels. Pour une organisation, le RGPD prévoit en général d’avertir l’autorité de protection des données et, selon la gravité, les personnes touchées."],
+  voir='rgpd',
+  pas="la faille de sécurité, qui est le défaut exploitable — la fuite est la conséquence : les données qui sont réellement sorties."),
+
+ dict(id='encodage-unicode', terme='Encodage des caractères (Unicode)', aka=['encodage','unicode','utf-8','ascii','caractères bizarres','accents cassés'], dom='Informatique',
+  une="La règle qui associe chaque lettre, chiffre, accent ou symbole à un nombre, pour que deux machines lisent le même texte de la même façon.",
+  etapes=[
+   "Un ordinateur ne connaît que des nombres. Pour stocker un texte, il faut décider quel nombre représente quelle lettre.",
+   "Cette table de correspondance s’appelle un encodage. Unicode est une immense table commune qui vise à couvrir les écritures du monde, les accents et les symboles.",
+   "UTF-8 est la façon la plus répandue d’écrire ces nombres en octets. Lu avec la même règle, « é » reste « é » partout.",
+   "Quand un fichier est lu avec une autre règle que celle de son écriture, des signes étranges apparaissent à la place des accents : le texte n’est pas abîmé, il est mal interprété."],
+  voir='binaire',
+  pas="la police de caractères, qui décide de l’aspect des lettres à l’écran — l’encodage décide de leur identité."),
+
+
 ]

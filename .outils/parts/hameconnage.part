@@ -1,0 +1,127 @@
+TITRE: Le hameçonnage, reconnaître un faux message avant de cliquer
+DESC: Comment un faux message vous pousse à donner vous-même vos identifiants, et les quatre signaux qui permettent de le repérer. Expliqué en schémas animés.
+FIL: <a href="../index.html#/reseau">Réseau</a><span>/</span>Se protéger<span>/</span>Les gestes du quotidien
+LEAD: « Votre compte sera bloqué dans 24 h. » Un message qui vous presse est rarement là pour vous rendre service.
+META: <span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span>
+
+      <p>
+        Un pêcheur ne court pas après les poissons : il lance une ligne avec un appât et attend que l’un d’eux morde.
+        Le <strong>hameçonnage</strong> (en anglais <em>phishing</em>) fonctionne ainsi : personne ne force votre porte,
+        on vous envoie un faux message et on espère que vous donnerez <em>vous-même</em> ce qu’on veut.
+      </p>
+
+      <!-- ============ SCÈNE 1 ============ -->
+      <section class="scene" aria-label="Animation : un faux message imite une vraie organisation, vous mène vers une fausse page, et vos identifiants arrivent chez l’escroc">
+        <div class="scene-title">Scène 1 — Comment la ligne est lancée</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un escroc envoie un message, qui arrive chez vous ; le lien mène à une fausse page où vos identifiants repartent vers l’escroc">
+            <g data-show="1-4" class="m-left">
+              <rect x="30" y="105" width="150" height="90" rx="10" class="s-box-accent"/>
+              <text x="105" y="156" text-anchor="middle" class="s-label-sm">Escroc</text>
+            </g>
+            <path d="M180 150 H320" class="s-line-accent m-draw" data-show="2-4"/>
+            <circle r="7" class="packet" data-show="2" style="offset-path:path('M180 150 H320')"/>
+            <g data-show="2-4" class="m-pop">
+              <rect x="320" y="105" width="150" height="90" rx="10" class="s-box"/>
+              <text x="395" y="156" text-anchor="middle" class="s-label-sm">Message</text>
+            </g>
+            <path d="M470 150 H610" class="s-line m-draw" data-show="3-4"/>
+            <g data-show="3-4" class="m-right">
+              <rect x="610" y="105" width="160" height="90" rx="10" class="s-box-teal"/>
+              <text x="690" y="145" text-anchor="middle" class="s-label-sm">Fausse</text>
+              <text x="690" y="172" text-anchor="middle" class="s-label-sm">page</text>
+            </g>
+            <path d="M690 105 V50 H105 V105" class="s-line-accent m-draw" data-show="4"/>
+            <circle r="7" class="packet" data-show="4" style="offset-path:path('M690 105 V50 H105 V105')"/>
+            <text x="400" y="38" text-anchor="middle" class="s-label-xs" fill="var(--accent)" data-show="4">vos identifiants</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>L’escroc se fait passer pour quelqu’un de confiance.</b><span>Une banque, un livreur, les impôts, votre service informatique : il choisit un nom que vous connaissez.</span></p>
+          <p class="step" data-duration="4200"><b>Il envoie le même message à des milliers de gens.</b><span>Par e-mail, par SMS ou par messagerie. Il suffit que quelques-uns réagissent.</span></p>
+          <p class="step" data-duration="4400"><b>Le lien mène à une copie du vrai site.</b><span>Même logo, mêmes couleurs, mais une adresse qui n’est pas la bonne.</span></p>
+          <p class="step" data-duration="4600"><b>Vous saisissez vos identifiants, et ils partent chez lui.</b><span>Il n’a rien eu à pirater : c’est vous qui les avez tapés.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Quelqu’un sonne chez vous en uniforme de « technicien du gaz » et demande à entrer pour une vérification
+          urgente. L’uniforme est faux, mais il rassure. Le hameçonnage, c’est cet uniforme, version message.
+        </p>
+      </div>
+
+      <h2>Les quatre signaux</h2>
+      <p>
+        Les faux messages se ressemblent : ils jouent sur des émotions plutôt que sur la technique.
+        Quatre signaux suffisent à en repérer la plupart.
+      </p>
+
+      <!-- ============ SCÈNE 2 ============ -->
+      <section class="scene" aria-label="Animation : quatre signaux d’alerte sur un message, puis le bon réflexe, qui consiste à passer par le site habituel">
+        <div class="scene-title">Scène 2 — Les signaux et le bon réflexe</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un message avec quatre signaux d’alerte : urgence, expéditeur étrange, lien suspect, demande d’identifiants ; puis une flèche vers le site habituel">
+            <g data-show="1-5" class="m-left">
+              <rect x="30" y="30" width="330" height="240" rx="12" class="s-box"/>
+              <text x="195" y="62" text-anchor="middle" class="s-label-sm">Message reçu</text>
+            </g>
+            <g data-show="2-4" class="m-pop">
+              <rect x="55" y="82" width="280" height="38" rx="8" class="s-box-accent"/>
+              <text x="195" y="107" text-anchor="middle" class="s-label-xs">Urgent : sous 24 h !</text>
+            </g>
+            <g data-show="3-4" class="m-pop">
+              <rect x="55" y="130" width="280" height="38" rx="8" class="s-box-accent"/>
+              <text x="195" y="155" text-anchor="middle" class="s-label-xs">Expéditeur étrange</text>
+            </g>
+            <g data-show="4" class="m-pop">
+              <rect x="55" y="178" width="280" height="38" rx="8" class="s-box-accent"/>
+              <text x="195" y="203" text-anchor="middle" class="s-label-xs">Lien qui ne colle pas</text>
+              <rect x="55" y="224" width="280" height="38" rx="8" class="s-box-accent"/>
+              <text x="195" y="249" text-anchor="middle" class="s-label-xs">Mot de passe demandé</text>
+            </g>
+            <path d="M360 150 H520" class="s-line m-draw" data-show="5"/>
+            <circle r="7" class="packet" data-show="5" style="offset-path:path('M360 150 H520')"/>
+            <g data-show="5" class="m-right">
+              <rect x="520" y="95" width="250" height="110" rx="10" class="s-box-teal"/>
+              <text x="645" y="145" text-anchor="middle" class="s-label-sm">Site habituel</text>
+              <text x="645" y="172" text-anchor="middle" class="s-label-xs" fill="var(--sage)">tapé ou en favori</text>
+            </g>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Un message arrive.</b><span>Il parle de votre compte, d’un colis ou d’un remboursement.</span></p>
+          <p class="step" data-duration="4200"><b>Premier signal : l’urgence.</b><span>« Sous 24 h », « dernier avertissement » : on veut vous empêcher de réfléchir.</span></p>
+          <p class="step" data-duration="4400"><b>Deuxième signal : l’expéditeur.</b><span>Regardez la vraie adresse derrière le nom affiché : elle ne correspond souvent pas à l’organisation citée.</span></p>
+          <p class="step" data-duration="4800"><b>Deux autres : le lien et la demande.</b><span>Un lien dont l’adresse ne correspond pas au site annoncé, et une demande de mot de passe ou de code : un service sérieux ne vous les réclame pas par message.</span></p>
+          <p class="step" data-duration="4800"><b>Le bon réflexe : ne pas cliquer.</b><span>Ouvrez vous-même le site habituel, en tapant l’adresse ou via vos favoris, et vérifiez s’il y a vraiment quelque chose à faire.</span></p>
+        </div>
+      </section>
+
+      <h2>Et si l’on a déjà cliqué ?</h2>
+      <p>
+        Cliquer sur un lien ne suffit pas toujours à causer des dégâts : le danger vient surtout de ce qu’on
+        <strong>saisit</strong> ensuite. Si vous avez donné un mot de passe, changez-le tout de suite sur le vrai site
+        (et partout où vous l’aviez réutilisé), activez la double authentification, et prévenez le service concerné.
+        Plus on réagit tôt, moins l’escroc a le temps d’en profiter. Pas de honte à avoir : ces messages sont conçus
+        pour tromper des gens attentifs.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Le <strong>hameçonnage</strong> consiste à vous faire donner vous-même vos identifiants, par un faux message.</li>
+        <li>Il joue sur l’<strong>urgence</strong> et la peur : un message qui vous presse mérite de ralentir.</li>
+        <li>Vérifiez l’<strong>expéditeur</strong> et l’<strong>adresse du lien</strong> ; aucun service sérieux ne demande votre mot de passe par message.</li>
+        <li>Le bon réflexe : <strong>ne pas cliquer</strong>, aller soi-même sur le site habituel.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour que même un mot de passe volé ne suffise pas, voyez la leçon sur la double authentification.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="mots-de-passe.html">← Mots de passe</a>
+        <a class="btn btn-primary" href="mfa.html">La double authentification →</a>
+      </nav>
