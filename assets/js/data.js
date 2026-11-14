@@ -3956,6 +3956,70 @@ window.GOTIT = (function () {
       ],
       voir: "binaire",
       pas: "la police de caractères, qui décide de l’aspect des lettres à l’écran — l’encodage décide de leur identité."
+    },
+    {
+      id: "paquet-reseau", terme: "Paquet (réseau)", domaine: "Réseau",
+      aka: ["paquet", "paquets", "packet", "paquet réseau", "données découpées"],
+      une: "Un petit morceau de message, étiqueté avec son origine et sa destination, qui voyage seul sur le réseau.",
+      etapes: [
+        "Envoyer un gros fichier d’un seul bloc serait fragile : une coupure, et tout serait à recommencer.",
+        "Les données sont donc découpées en petits morceaux. Chacun reçoit une étiquette : qui envoie, qui reçoit, et son numéro dans la série.",
+        "Chaque morceau, appelé paquet, voyage de son côté. Les routeurs le font avancer de proche en proche et deux paquets du même message ne suivent pas forcément le même chemin.",
+        "À l’arrivée, les numéros permettent de remettre les paquets dans l’ordre. Si l’un manque, on ne redemande que celui-là."
+      ],
+      voir: "paquets",
+      pas: "le message complet (un e-mail, une photo) : le paquet n’en est qu’un fragment, et un message en compte souvent des centaines."
+    },
+    {
+      id: "maintenance-logicielle", terme: "Maintenance corrective et évolutive", domaine: "Système d’information",
+      aka: ["maintenance", "maintenance corrective", "maintenance évolutive", "correctif", "évolution"],
+      une: "Deux façons de faire vivre un logiciel après sa mise en service : réparer ce qui ne va pas, ou lui apprendre quelque chose de nouveau.",
+      etapes: [
+        "Un logiciel n’est jamais « fini » : une fois utilisé, on découvre des défauts, et les besoins des gens changent.",
+        "La maintenance corrective répare : un calcul faux, un bouton qui ne répond pas. On revient à ce qui était promis au départ.",
+        "La maintenance évolutive ajoute ou modifie une fonction : un nouveau champ, un nouveau rapport. On va au-delà de ce qui était promis au départ.",
+        "La distinction compte, car elle sert souvent à décider qui paie et dans quel délai : une correction relève en général de la garantie, une évolution fait l’objet d’une demande chiffrée."
+      ],
+      voir: "projet-si",
+      pas: "la mise à jour, qui est le moyen de livrer le changement aux utilisateurs — la maintenance est le travail qui le produit."
+    },
+    {
+      id: "table-ligne-colonne", terme: "Table, ligne, colonne", domaine: "Data",
+      aka: ["table", "ligne", "colonne", "enregistrement", "champ", "tableau de données"],
+      une: "La façon dont une base de données range l’information : un tableau par sujet, une ligne par chose décrite, une colonne par caractéristique.",
+      etapes: [
+        "Pour retrouver l’information vite, une base la range comme un tableau bien tenu.",
+        "Chaque sujet a son propre tableau, appelé table : une table pour les clients, une autre pour les commandes.",
+        "Chaque ligne décrit une chose précise : un client, une commande. On l’appelle aussi enregistrement.",
+        "Chaque colonne décrit une caractéristique, la même pour toutes les lignes : nom, ville, date. Une ligne et une colonne se croisent dans une case qui contient une valeur."
+      ],
+      voir: "base-de-donnees",
+      pas: "la base de données, qui est l’ensemble : elle contient plusieurs tables, souvent reliées entre elles."
+    },
+    {
+      id: "reconnaissance-vocale", terme: "Reconnaissance vocale", domaine: "IA",
+      aka: ["reconnaissance vocale", "speech to text", "dictée vocale", "transcription", "assistant vocal", "voix en texte"],
+      une: "Une IA qui transforme de la parole en texte écrit.",
+      etapes: [
+        "Une voix est un son : une vibration qui varie dans le temps. Un ordinateur la reçoit comme une suite de mesures du son, sans y voir de mots.",
+        "Un modèle entraîné sur de très nombreux enregistrements, accompagnés de leur transcription, a appris à associer des sons à des lettres et des mots.",
+        "Face à un nouvel enregistrement, il propose le texte le plus vraisemblable, en s’aidant du contexte : entre deux mots qui se prononcent pareil, il choisit celui qui a du sens dans la phrase.",
+        "Le résultat peut se tromper, surtout avec du bruit, un accent peu représenté dans ses exemples ou un mot rare : une relecture reste nécessaire."
+      ],
+      pas: "la compréhension : la reconnaissance vocale écrit ce qui a été dit, c’est une autre étape de décider quoi en faire."
+    },
+    {
+      id: "processus", terme: "Processus", domaine: "Informatique",
+      aka: ["processus", "process", "programme en cours", "gestionnaire des tâches", "tâche en cours", "plantage"],
+      une: "Un programme en train de s’exécuter, avec sa part de mémoire et de temps de calcul.",
+      etapes: [
+        "Un programme enregistré sur le disque est seulement une recette écrite : il ne fait rien tant qu’on ne le lance pas.",
+        "Quand on le lance, le système d’exploitation lui réserve de la mémoire et du temps de processeur. Ce programme vivant s’appelle un processus.",
+        "Plusieurs processus tournent en même temps : le navigateur, la musique, les mises à jour. Le système les fait passer tour à tour sur le processeur, si vite que tout semble simultané.",
+        "Si l’un se bloque, on peut le fermer seul sans arrêter les autres : c’est le rôle du gestionnaire des tâches."
+      ],
+      voir: "ordinateur",
+      pas: "le programme, qui est le fichier au repos — un même programme lancé deux fois donne deux processus."
     }
   ];
 
