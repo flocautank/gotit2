@@ -539,6 +539,12 @@ window.GOTIT = (function () {
       path: 'lecons/compression.html', duration: '6 min', level: 1,
       keywords: ['compression', 'zip', 'jpg', 'mp3', 'sans perte', 'avec perte', 'algorithme', 'fichier', 'd\u00e9compresser']
     },
+    'qr-code': {
+      title: 'Le QR code, un message écrit en petits carrés',
+      summary: 'Comment une grille de cases noires et blanches contient une adresse web, pourquoi elle se lit même abîmée, et pourquoi on vérifie où elle mène.',
+      path: 'lecons/qr-code.html', duration: '5 min', level: 1,
+      keywords: ['qr code', 'qrcode', 'code', 'scanner', 'binaire', 'carr\u00e9s', 'lien', 'appareil photo', 'correction d\u2019erreurs']
+    },
     'navigateur': {
       title: 'Ce que sait votre navigateur',
       summary: 'Cookies, pistage, navigation priv\u00e9e : ce qui est enregistr\u00e9, et par qui.',
@@ -667,7 +673,7 @@ window.GOTIT = (function () {
             { id: 'dans-la-machine', title: 'Dans la machine', lessons: ['ordinateur', 'serveur', 'cache'] },
             { id: 'trop-de-monde', title: 'Quand un site attire trop de monde', lessons: ['load-balancer', 'redondance'] },
             { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas', 'virtualisation', 'conteneurs'] },
-            { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['binaire', 'fichiers', 'compression'] }
+            { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['binaire', 'fichiers', 'compression', 'qr-code'] }
           ]
         },
         {
@@ -4020,6 +4026,69 @@ window.GOTIT = (function () {
       ],
       voir: "ordinateur",
       pas: "le programme, qui est le fichier au repos — un même programme lancé deux fois donne deux processus."
+    },
+    {
+      id: "qr-code", terme: "QR code", domaine: "Informatique",
+      aka: ["qr code", "qrcode", "code qr", "flashcode", "scanner un code", "code carré"],
+      une: "Un carré de cases noires et blanches qui contient un petit message, le plus souvent une adresse web, lisible avec un appareil photo.",
+      etapes: [
+        "Un code-barres range un numéro dans des traits ; il en faut beaucoup pour peu de place.",
+        "Le QR code range l’information dans une grille de cases, chacune noire ou blanche : des 1 et des 0.",
+        "L’appareil photo s’oriente grâce aux trois grands carrés des coins, lit les cases et traduit la suite en texte, souvent une adresse web.",
+        "Le code ne prouve rien sur ce qu’il contient : on regarde l’adresse affichée avant d’ouvrir, comme pour un lien reçu par message."
+      ],
+      voir: "qr-code",
+      pas: "le code-barres, qui ne se lit que dans un sens et contient surtout un numéro."
+    },
+    {
+      id: "bluetooth", terme: "Bluetooth", domaine: "Réseau",
+      aka: ["bluetooth", "sans fil courte portée", "casque sans fil", "enceinte sans fil", "appairage"],
+      une: "Une liaison sans fil à courte portée, pour relier directement deux appareils proches.",
+      etapes: [
+        "Un casque, une enceinte ou une montre doivent échanger avec un téléphone sans câble, et à quelques mètres seulement.",
+        "Le Bluetooth établit une liaison directe entre deux appareils : pas besoin de box ni d’Internet.",
+        "On commence par les appairer une fois : ils se reconnaissent ensuite et se reconnectent tout seuls.",
+        "La portée est courte, de l’ordre de quelques mètres, et le débit modeste : il sert à relier des appareils, pas à naviguer sur le web."
+      ],
+      voir: "wifi-box",
+      pas: "le Wi-Fi, qui relie les appareils à la box et donc à Internet, sur une plus grande distance."
+    },
+    {
+      id: "biometrie", terme: "Biométrie", domaine: "Réseau",
+      aka: ["biométrie", "empreinte digitale", "reconnaissance faciale", "face id", "biométrique", "déverrouillage par visage"],
+      une: "Se prouver soi-même par une caractéristique de son corps, comme une empreinte digitale ou un visage.",
+      etapes: [
+        "Un mot de passe s’oublie ou se vole ; le corps, lui, on l’a toujours avec soi.",
+        "La biométrie utilise une caractéristique propre à la personne : empreinte digitale, visage, voix.",
+        "À l’inscription, l’appareil mesure cette caractéristique et en garde une version mathématique. Ensuite, il compare chaque nouvelle mesure à celle enregistrée.",
+        "La comparaison n’est jamais exacte à 100 % : l’appareil accepte une ressemblance suffisante. Et on ne peut pas changer son visage comme un mot de passe, d’où l’intérêt de la combiner avec un code."
+      ],
+      voir: "mfa",
+      pas: "le mot de passe, qui est quelque chose qu’on sait, alors que la biométrie est quelque chose qu’on est."
+    },
+    {
+      id: "micrologiciel", terme: "Micrologiciel (firmware)", domaine: "Informatique",
+      aka: ["micrologiciel", "firmware", "logiciel interne", "mise à jour de la box", "mise à jour de l’imprimante"],
+      une: "Le petit logiciel installé à l’intérieur d’un appareil, qui lui dit comment fonctionner.",
+      etapes: [
+        "Une box, une imprimante ou un téléviseur ne sont pas qu’une carcasse : une petite puce doit leur dire quoi faire.",
+        "Cette consigne est un logiciel enregistré dans l’appareil lui-même : le micrologiciel, ou firmware en anglais.",
+        "L’utilisateur ne le voit presque jamais : il n’a pas d’écran à lui, il fait simplement marcher le matériel dès l’allumage.",
+        "Il reçoit parfois des mises à jour qui corrigent des bugs ou des failles de sécurité : un appareil jamais mis à jour reste vulnérable."
+      ],
+      pas: "une application, qu’on choisit d’installer ou de supprimer, alors que le micrologiciel fait partie de l’appareil."
+    },
+    {
+      id: "sans-contact", terme: "Paiement sans contact (NFC)", domaine: "Informatique",
+      aka: ["nfc", "sans contact", "paiement sans contact", "carte sans contact", "communication en champ proche"],
+      une: "Une communication sans fil à quelques centimètres, qui permet par exemple de payer en approchant sa carte.",
+      etapes: [
+        "Pour payer, on veut éviter de glisser la carte dans l’appareil et de taper un code à chaque fois.",
+        "La technologie NFC permet à deux objets de s’échanger de petites informations quand on les approche à quelques centimètres seulement.",
+        "La carte ou le téléphone répond au terminal, qui transmet à la banque ce qu’il faut pour valider le paiement.",
+        "La portée très courte limite les risques ; les banques posent en plus un plafond de montant, au-delà duquel un code est demandé."
+      ],
+      pas: "le Bluetooth, qui porte plus loin et sert à relier durablement des appareils."
     }
   ];
 
