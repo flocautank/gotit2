@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chasser un bug, la méthode pour trouver la cause — GotIt !</title>
+<meta name="description" content="Comment on retrouve la cause d’un bug : reproduire l’erreur, puis couper le programme en deux jusqu’à isoler l’étape fautive. Expliqué en schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/informatique">Informatique</a><span>/</span>Les logiciels<span>/</span>De quoi est fait un programme</div>
+      <h1>Chasser un bug, la méthode pour trouver la cause</h1>
+      <p class="lead">Quand un programme se trompe, la cause n’est pas un caprice de la machine. Elle se trouve, à condition de chercher avec méthode plutôt qu’au hasard.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">2 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Un <strong>bug</strong> est un défaut dans un programme&nbsp;: il ne fait pas ce qu’il devait faire.
+        Le <strong>débogage</strong> est la méthode pour retrouver d’où il vient. Bonne nouvelle&nbsp;:
+        il existe une méthode qui marche presque toujours, et elle n’a rien de mystérieux.
+      </p>
+
+      <section class="scene" aria-label="Animation : un programme est une suite de huit étapes ; avec l’entrée 5 il donne 14 au lieu de 12, et l’erreur se reproduit à l’identique">
+        <div class="scene-title">Scène 1 — Le programme se trompe</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Huit étapes alignées ; l’entrée 5 donne la sortie 14 alors que 12 était attendu">
+<rect x="40" y="140" width="70" height="56" rx="10" class="s-box m-rise" data-show="1-4"/><text x="75" y="174" text-anchor="middle" class="s-label" data-show="1-4">1</text>
+<rect x="130" y="140" width="70" height="56" rx="10" class="s-box m-rise" data-show="1-4"/><text x="165" y="174" text-anchor="middle" class="s-label" data-show="1-4">2</text>
+<rect x="220" y="140" width="70" height="56" rx="10" class="s-box m-rise" data-show="1-4"/><text x="255" y="174" text-anchor="middle" class="s-label" data-show="1-4">3</text>
+<rect x="310" y="140" width="70" height="56" rx="10" class="s-box m-rise" data-show="1-4"/><text x="345" y="174" text-anchor="middle" class="s-label" data-show="1-4">4</text>
+<rect x="400" y="140" width="70" height="56" rx="10" class="s-box m-rise" data-show="1-4"/><text x="435" y="174" text-anchor="middle" class="s-label" data-show="1-4">5</text>
+<rect x="490" y="140" width="70" height="56" rx="10" class="s-box m-rise" data-show="1-4"/><text x="525" y="174" text-anchor="middle" class="s-label" data-show="1-4">6</text>
+<rect x="580" y="140" width="70" height="56" rx="10" class="s-box m-rise" data-show="1-4"/><text x="615" y="174" text-anchor="middle" class="s-label" data-show="1-4">7</text>
+<rect x="670" y="140" width="70" height="56" rx="10" class="s-box m-rise" data-show="1-4"/><text x="705" y="174" text-anchor="middle" class="s-label" data-show="1-4">8</text>
+<text x="40" y="70" class="s-label" data-show="2-3">Entrée : 5</text>
+<path d="M75 90 V132" class="s-line m-draw" data-show="2-3"/>
+<text x="740" y="60" text-anchor="end" class="s-label" data-show="2-4">Sortie : 14</text>
+<text x="740" y="88" text-anchor="end" class="s-label-sm" data-show="2-4">Attendu : 12</text>
+<path d="M705 100 V132" class="s-line-accent m-draw" data-show="2-4"/>
+<text x="400" y="240" text-anchor="middle" class="s-label-sm" data-show="3">Même entrée, même erreur : reproduit</text>
+<path d="M40 222 H740" class="s-line-accent m-draw" data-show="4"/>
+<text x="400" y="255" text-anchor="middle" class="s-label" data-show="4">Le défaut est dans l’une des 8 étapes</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4000"><b>Un programme, c’est une suite d’étapes.</b><span>Ici huit, exécutées l’une après l’autre, chacune reprenant ce que la précédente a produit.</span></p>
+          <p class="step" data-duration="4400"><b>Et le résultat est faux.</b><span>On donne 5 ; on attend 12 ; le programme répond 14. Quelque part, une étape a mal travaillé.</span></p>
+          <p class="step" data-duration="4600"><b>Première chose : reproduire.</b><span>Même entrée, même résultat faux. Un défaut qui se répète peut être traqué ; un défaut qui apparaît au hasard, non.</span></p>
+          <p class="step" data-duration="4600"><b>Reste à situer la cause.</b><span>L’erreur est dans l’une des huit étapes, et chaque étape est suspecte. Lire le code de bout en bout serait long.</span></p>
+        </div>
+      </section>
+
+      <h2>Couper le problème en deux</h2>
+      <p>
+        Plutôt que de relire tout le programme, on le contrôle <strong>à mi-chemin</strong>. Le résultat
+        intermédiaire est juste&nbsp;? Le défaut est plus loin. Il est faux&nbsp;? Il est plus tôt. À chaque
+        contrôle, la zone suspecte est divisée par deux.
+      </p>
+
+      <section class="scene" aria-label="Animation : on vérifie le résultat au milieu du programme : s’il est juste, le défaut est après ; s’il est faux, il est avant ; en répétant, on isole l’étape fautive">
+        <div class="scene-title">Scène 2 — Couper en deux, encore et encore</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="On contrôle le résultat après l’étape 4, puis 6, puis 5 ; l’étape 5 est désignée puis corrigée">
+<rect x="40" y="140" width="70" height="56" rx="10" class="s-box" data-show="1-4"/>
+<rect x="130" y="140" width="70" height="56" rx="10" class="s-box" data-show="1-4"/>
+<rect x="220" y="140" width="70" height="56" rx="10" class="s-box" data-show="1-4"/>
+<rect x="310" y="140" width="70" height="56" rx="10" class="s-box" data-show="1-4"/>
+<rect x="400" y="140" width="70" height="56" rx="10" class="s-box" data-show="1-4"/>
+<rect x="490" y="140" width="70" height="56" rx="10" class="s-box" data-show="1-4"/>
+<rect x="580" y="140" width="70" height="56" rx="10" class="s-box" data-show="1-4"/>
+<rect x="670" y="140" width="70" height="56" rx="10" class="s-box" data-show="1-4"/>
+<rect x="40" y="140" width="70" height="56" rx="10" class="s-box-teal m-pop" data-show="1-4"/>
+<rect x="130" y="140" width="70" height="56" rx="10" class="s-box-teal m-pop" data-show="1-4"/>
+<rect x="220" y="140" width="70" height="56" rx="10" class="s-box-teal m-pop" data-show="1-4"/>
+<rect x="310" y="140" width="70" height="56" rx="10" class="s-box-teal m-pop" data-show="1-4"/>
+<rect x="400" y="140" width="70" height="56" rx="10" class="s-box-accent m-pop" data-show="3"/>
+<rect x="400" y="140" width="70" height="56" rx="10" class="s-box-teal m-pop" data-show="4"/>
+<text x="75" y="174" text-anchor="middle" class="s-label" data-show="1-4">1</text>
+<text x="165" y="174" text-anchor="middle" class="s-label" data-show="1-4">2</text>
+<text x="255" y="174" text-anchor="middle" class="s-label" data-show="1-4">3</text>
+<text x="345" y="174" text-anchor="middle" class="s-label" data-show="1-4">4</text>
+<text x="435" y="174" text-anchor="middle" class="s-label" data-show="1-4">5</text>
+<text x="525" y="174" text-anchor="middle" class="s-label" data-show="1-4">6</text>
+<text x="615" y="174" text-anchor="middle" class="s-label" data-show="1-4">7</text>
+<text x="705" y="174" text-anchor="middle" class="s-label" data-show="1-4">8</text>
+<path d="M390 110 V226" class="s-line-accent m-draw" data-show="1"/>
+<text x="390" y="98" text-anchor="middle" class="s-label-sm" data-show="1">Juste</text>
+<path d="M570 110 V226" class="s-line-accent m-draw" data-show="2"/>
+<text x="570" y="98" text-anchor="middle" class="s-label-sm" data-show="2">Faux</text>
+<path d="M480 110 V226" class="s-line-accent m-draw" data-show="3"/>
+<text x="480" y="98" text-anchor="middle" class="s-label-sm" data-show="3">Faux</text>
+<text x="400" y="262" text-anchor="middle" class="s-label" data-show="3">Coupable : l’étape 5</text>
+<text x="400" y="262" text-anchor="middle" class="s-label" data-show="4">Corrigée : sortie 12, juste</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4600"><b>On contrôle au milieu.</b><span>Après l’étape 4, tout est correct. Le défaut ne peut donc être que dans les étapes 5 à 8 : la moitié du programme est disculpée.</span></p>
+          <p class="step" data-duration="4400"><b>On recoupe ce qui reste.</b><span>Après l’étape 6, c’est déjà faux. Le défaut est donc dans l’étape 5 ou la 6.</span></p>
+          <p class="step" data-duration="4600"><b>Un dernier contrôle.</b><span>Après l’étape 5, c’est faux : l’étape 5 est coupable. Trois contrôles ont suffi, au lieu de huit lectures.</span></p>
+          <p class="step" data-duration="4600"><b>On corrige, puis on revérifie.</b><span>On répare l’étape 5, on relance avec la même entrée : 12 cette fois. On vérifie aussi que rien d’autre n’a bougé.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un gâteau trop salé. Vous ne refaites pas toute la recette au hasard&nbsp;: vous goûtez la pâte
+          à mi-parcours, puis encore un peu avant ou après, jusqu’à repérer l’étape où le sel est entré.
+        </p>
+      </div>
+
+      <h2>Les outils du métier</h2>
+      <p>
+        Dans la pratique, on affiche ou on enregistre la valeur
+        intermédiaire à chaque endroit voulu (par exemple dans les <a href="journaux.html">journaux</a>), ou on utilise
+        un outil de débogage qui permet d’arrêter le programme sur une ligne et d’examiner ses valeurs.
+        Le principe reste celui des contrôles à mi-chemin.
+      </p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Un <strong>bug</strong> est un défaut dans les instructions&nbsp;; le <strong>débogage</strong> est la recherche de sa cause.</li>
+        <li>D’abord <strong>reproduire</strong>&nbsp;: sans cela, impossible de savoir si on l’a corrigé.</li>
+        <li>Ensuite <strong>couper en deux</strong>&nbsp;: contrôler au milieu, garder la moitié fautive, recommencer.</li>
+        <li>Après correction, <strong>revérifier</strong> avec la même entrée, et s’assurer que rien d’autre n’a cassé.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour éviter qu’un bug n’arrive jusqu’aux utilisateurs, voyez comment on teste un logiciel avant de le livrer.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="code-source.html">← Du code source au programme</a>
+        <a class="btn btn-primary" href="tests-logiciels.html">Les tests →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
