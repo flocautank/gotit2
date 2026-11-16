@@ -2167,4 +2167,41 @@ CARTES = [
    "La portée très courte limite les risques ; les banques posent en plus un plafond de montant, au-delà duquel un code est demandé."],
   pas="le Bluetooth, qui porte plus loin et sert à relier durablement des appareils."),
 
+ dict(id='logiciel-malveillant', terme='Logiciel malveillant (malware)', aka=['malware','virus','cheval de troie','spyware','logiciel espion'], dom='Réseau',
+  une="Un programme conçu pour nuire : voler, espionner, bloquer ou détruire.",
+  etapes=[
+   "Un logiciel malveillant ressemble à n’importe quel programme : c’est son but, et non sa forme, qui le rend dangereux.",
+   "Il arrive le plus souvent par un geste de l’utilisateur : une pièce jointe ouverte, un faux programme installé, un lien cliqué.",
+   "Une fois lancé, il agit selon sa fonction : espionner, voler des mots de passe, chiffrer des fichiers contre rançon, ou se servir de la machine.",
+   "On s’en protège par des mises à jour, des logiciels pris sur des sources sûres, une vigilance sur les pièces jointes et des sauvegardes."],
+  voir='hameconnage',
+  pas="la faille de sécurité, qui est le défaut exploité ; le logiciel malveillant est l’outil qui s’en sert."),
+
+ dict(id='chiffrement', terme='Chiffrement', aka=['chiffrer','crypter','cryptage','clé de chiffrement','déchiffrer'], dom='Réseau',
+  une="Transformer un message en une suite illisible, que seule la bonne clé permet de remettre en clair.",
+  etapes=[
+   "Un message qui circule ou qui dort sur un disque peut être lu par quiconque y accède.",
+   "Le chiffrement le brouille avec une méthode de calcul et une clé : sans cette clé, le résultat n’a aucun sens.",
+   "Le destinataire, qui possède la bonne clé, applique l’opération inverse et retrouve le texte d’origine : c’est le déchiffrement.",
+   "La méthode est publique ; seule la clé reste secrète. Perdre la clé, c’est perdre l’accès, y compris pour son propriétaire."],
+  voir='chiffrement',
+  pas="le hachage, qui ne se déchiffre pas : il produit une empreinte et ne permet pas de revenir au message."),
+
+ dict(id='cle-publique-privee', terme='Clé publique et clé privée', aka=['chiffrement asymétrique','clé publique','clé privée','paire de clés'], dom='Réseau',
+  une="Deux clés liées : l’une se donne à tout le monde pour envoyer, l’autre reste secrète pour lire.",
+  etapes=[
+   "Pour chiffrer avec une seule clé, il faut d’abord la transmettre à l’autre personne, sans qu’on l’intercepte : un casse-tête.",
+   "On crée donc une paire de clés liées entre elles. La clé publique se diffuse librement ; la clé privée ne quitte jamais son propriétaire.",
+   "Un message chiffré avec la clé publique ne peut être ouvert qu’avec la clé privée correspondante.",
+   "C’est ce qui rend possible un échange sécurisé entre deux personnes qui ne se sont jamais rencontrées, comme sur un site en https."],
+  voir='https-cadenas'),
+
+ dict(id='horodatage', terme='Horodatage', aka=['timestamp','date et heure','horodater','heure de création'], dom='Informatique',
+  une="La date et l’heure précises, inscrites automatiquement sur un événement ou un fichier.",
+  etapes=[
+   "Pour savoir ce qui s’est passé, et dans quel ordre, il faut une trace du moment où chaque chose a eu lieu.",
+   "L’ordinateur ajoute lui-même la date et l’heure à chaque événement : un fichier modifié, un message envoyé, une ligne de journal.",
+   "Ces repères permettent de trier, de retrouver une version précise et de reconstituer le déroulé d’un incident.",
+   "Un horodatage n’est fiable que si l’horloge de l’appareil est juste, et que les fuseaux horaires sont précisés."],
+  voir='journaux'),
 ]
