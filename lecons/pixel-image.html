@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le pixel, comment une image tient dans des nombres — GotIt !</title>
+<meta name="description" content="Une image numérique est une mosaïque de pixels, chacun défini par trois nombres. Pourquoi plus de pixels donne plus de détails, et un fichier plus lourd. Schémas animés.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z' fill='%23C3623F'/><path d='M14.8 20.8 L21 27 L33.2 14' fill='none' stroke='%23FBF9F5' stroke-width='4.8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/lesson.css">
+<link rel="stylesheet" href="../assets/css/theme-klint.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M11 4h26a8 8 0 0 1 8 8v17a8 8 0 0 1-8 8H23.8l-8.4 6.9A1.5 1.5 0 0 1 13 43.7V37h-2a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="currentColor"/><path d="M14.8 20.8 L21 27 L33.2 14" fill="none" stroke="#FBF9F5" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="brand-word">GotIt<span class="bang">!</span></span></a>
+    <nav class="site-nav"><a href="../index.html#catalogue">Leçons</a> <a href="../cartes.html">Cartes</a> <a href="../explorer.html">Explorer</a> <a href="../idees.html">Idées</a></nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="lesson-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html#/informatique">Informatique</a><span>/</span>Fichiers et formats<span>/</span>Le pixel</div>
+      <h1>Le pixel, comment une image tient dans des nombres</h1>
+      <p class="lead">Une photo n’est pas une image continue pour l’ordinateur : c’est une grille de petits points, chacun décrit par des nombres. Tout le reste en découle.</p>
+      <div class="lesson-meta"><span class="tag tag-level-1">Découverte</span><span class="tag">5 min</span><span class="tag">3 animations</span></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <article class="lesson-body">
+
+      <p>
+        Une photo affichée sur un écran paraît lisse et continue. Pourtant, l’ordinateur ne sait rien
+        garder d’autre que des nombres. Pour y ranger une image, il la <strong>découpe en petits carrés</strong>,
+        les <strong>pixels</strong>, et note la couleur de chacun.
+      </p>
+
+      <section class="scene" aria-label="Animation : une photo, vue de très près, se révèle être une grille de petits carrés dont chacun porte une seule couleur">
+        <div class="scene-title">Scène 1 — Zoomer dans une photo</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Une photo avec un soleil et une colline ; un zoom sur le bord du soleil montre une grille de carrés de couleur unie">
+<rect x="40" y="45" width="280" height="210" rx="6" style="fill:var(--line)" data-show="1-4"/>
+<circle cx="241.6" cy="108" r="38.5" style="fill:var(--accent)" data-show="1-4"/>
+<path d="M40 255 L40.0 175.2 L40.0 175.2 L47.0 177.7 L54.0 180.2 L61.0 182.5 L68.0 184.7 L75.0 186.7 L82.0 188.4 L89.0 189.8 L96.0 190.9 L103.0 191.6 L110.0 192.0 L117.0 191.9 L124.0 191.6 L131.0 190.8 L138.0 189.7 L145.0 188.3 L152.0 186.5 L159.0 184.6 L166.0 182.4 L173.0 180.0 L180.0 177.6 L187.0 175.1 L194.0 172.5 L201.0 170.1 L208.0 167.8 L215.0 165.6 L222.0 163.6 L229.0 162.0 L236.0 160.6 L243.0 159.5 L250.0 158.8 L257.0 158.4 L264.0 158.5 L271.0 158.9 L278.0 159.6 L285.0 160.8 L292.0 162.2 L299.0 164.0 L306.0 165.9 L313.0 168.1 L320.0 170.5 L320 255 Z" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="207" y="82" width="72" height="54" rx="3" class="s-box-accent m-pop" style="fill:none" data-show="2-4"/>
+<path d="M279 82 L440 45" class="s-line-accent m-draw" data-show="2-4"/>
+<path d="M279 136 L440 255" class="s-line-accent m-draw" data-show="2-4"/>
+<rect x="440" y="45" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="475" y="45" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="510" y="45" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="545" y="45" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="45" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="615" y="45" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="650" y="45" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="685" y="45" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="440" y="80" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="475" y="80" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="510" y="80" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="545" y="80" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="80" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="615" y="80" width="35" height="35" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="650" y="80" width="35" height="35" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="685" y="80" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="440" y="115" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="475" y="115" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="510" y="115" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="545" y="115" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="115" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="615" y="115" width="35" height="35" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="650" y="115" width="35" height="35" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="685" y="115" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="440" y="150" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="475" y="150" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="510" y="150" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="545" y="150" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="150" width="35" height="35" style="fill:var(--line)" data-show="2-4"/>
+<rect x="615" y="150" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="650" y="150" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="685" y="150" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="440" y="185" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="475" y="185" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="510" y="185" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="545" y="185" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="580" y="185" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="615" y="185" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="650" y="185" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="685" y="185" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="440" y="220" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="475" y="220" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="510" y="220" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="545" y="220" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="580" y="220" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="615" y="220" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="650" y="220" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="685" y="220" width="35" height="35" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="440" y="115" width="35" height="35" style="fill:none" class="s-line-accent" data-show="3"/>
+<text x="640" y="285" text-anchor="end" class="s-label" data-show="3">1 pixel = 1 couleur</text>
+<text x="400" y="285" text-anchor="middle" class="s-label" data-show="4">Une mosaïque de pixels</text>
+<text x="180" y="285" text-anchor="middle" class="s-label-sm" data-show="1">Une photo</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3800"><b>Une photo, vue de loin.</b><span>Un soleil, une colline : tout semble fondu, sans aucune séparation visible.</span></p>
+          <p class="step" data-duration="4400"><b>On zoome très fort.</b><span>Le bord du soleil n’est plus une courbe lisse : il apparaît en marches d’escalier, fait de petits carrés.</span></p>
+          <p class="step" data-duration="4400"><b>Chaque carré n’a qu’une couleur.</b><span>Un carré est un <strong>pixel</strong>. À l’intérieur, aucune nuance : une seule couleur, toujours la même.</span></p>
+          <p class="step" data-duration="4400"><b>L’œil fait le reste.</b><span>Ces carrés sont assez petits pour que le cerveau les fonde en une image continue. Une photo est une mosaïque.</span></p>
+        </div>
+      </section>
+
+      <h2>Une couleur, c’est trois nombres</h2>
+      <p>
+        Comment noter la couleur d’un pixel&nbsp;? Un écran fabrique toutes ses teintes en mélangeant trois
+        lumières&nbsp;: du <strong>rouge</strong>, du <strong>vert</strong> et du <strong>bleu</strong>. Il suffit donc
+        de noter la quantité de chacune.
+      </p>
+
+      <section class="scene" aria-label="Animation : un pixel de couleur terre cuite est décrit par trois nombres, un pour le rouge, un pour le vert, un pour le bleu, chacun entre 0 et 255">
+        <div class="scene-title">Scène 2 — Trois nombres par pixel</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="Un pixel terre cuite et trois jauges : rouge 195, vert 98, bleu 63">
+<rect x="40" y="60" width="160" height="160" rx="12" style="fill:var(--accent)" class="m-pop" data-show="1-4"/>
+<text x="120" y="250" text-anchor="middle" class="s-label-sm" data-show="1-4">Un pixel</text>
+<text x="250" y="77" class="s-label-sm" data-show="2-4">Rouge</text>
+<rect x="340" y="60"  width="300" height="22" rx="6" class="s-box m-rise" data-show="2-4"/>
+<rect x="340" y="60" width="229" height="22" rx="6" class="s-box-accent m-draw" data-show="3-4"/>
+<text x="670" y="78" class="s-label" data-show="3-4">195</text>
+<text x="250" y="137" class="s-label-sm" data-show="2-4">Vert</text>
+<rect x="340" y="120"  width="300" height="22" rx="6" class="s-box m-rise" data-show="2-4"/>
+<rect x="340" y="120" width="115" height="22" rx="6" class="s-box-teal m-draw" data-show="3-4"/>
+<text x="670" y="138" class="s-label" data-show="3-4">98</text>
+<text x="250" y="197" class="s-label-sm" data-show="2-4">Bleu</text>
+<rect x="340" y="180"  width="300" height="22" rx="6" class="s-box m-rise" data-show="2-4"/>
+<rect x="340" y="180" width="74" height="22" rx="6" class="s-box-violet m-draw" data-show="3-4"/>
+<text x="670" y="198" class="s-label" data-show="3-4">63</text>
+<text x="340" y="250" class="s-label-sm" data-show="3-4">Chaque nombre va de 0 à 255</text>
+<text x="440" y="285" text-anchor="middle" class="s-label" data-show="4">16 777 216 couleurs possibles</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="3600"><b>Prenons un seul pixel.</b><span>Ici, un orange terre cuite. Que faut-il écrire pour que l’ordinateur le retrouve exactement&nbsp;?</span></p>
+          <p class="step" data-duration="4200"><b>Trois dosages de lumière.</b><span>Une quantité de rouge, une de vert, une de bleu. Les trois ensemble fixent la couleur.</span></p>
+          <p class="step" data-duration="4600"><b>Chaque dosage est un nombre de 0 à 255.</b><span>0 veut dire « éteint », 255 « à fond ». Ici&nbsp;: 195 de rouge, 98 de vert, 63 de bleu.</span></p>
+          <p class="step" data-duration="4600"><b>De quoi faire toutes les teintes.</b><span>256 choix pour chacune des trois lumières, cela donne 256 × 256 × 256, soit plus de 16&nbsp;millions de couleurs.</span></p>
+        </div>
+      </section>
+
+      <div class="callout callout-analogy">
+        <div class="callout-title">L’analogie</div>
+        <p>
+          Un tableau en mosaïque&nbsp;: des centaines de petites tesselles, chacune d’une seule teinte. De près,
+          on voit les carreaux&nbsp;; de loin, un visage. Le pixel est la tesselle, et sa teinte est
+          une recette de trois dosages.
+        </p>
+      </div>
+
+      <h2>Plus de pixels, plus de détails, plus de poids</h2>
+      <p>
+        Le nombre de pixels d’une image s’appelle sa <strong>résolution</strong>. Il fixe la finesse des détails,
+        mais aussi la taille du fichier, puisque chaque pixel demande ses trois nombres.
+      </p>
+
+      <section class="scene" aria-label="Animation : la même image en 48 pixels puis en 192 pixels, plus fine ; le fichier grossit avec le nombre de pixels ; agrandir une petite image n’ajoute aucun détail">
+        <div class="scene-title">Scène 3 — La résolution</div>
+        <div class="stage">
+          <svg viewBox="0 0 800 300" role="img" aria-label="La même image dessinée avec 48 pixels, très grossière, puis avec 192 pixels, plus fidèle">
+<text x="160" y="40" text-anchor="middle" class="s-label-sm" data-show="1-4">48 pixels</text>
+<rect x="40" y="55" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="70" y="55" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="100" y="55" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="130" y="55" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="160" y="55" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="190" y="55" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="220" y="55" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="250" y="55" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="40" y="85" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="70" y="85" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="100" y="85" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="130" y="85" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="160" y="85" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="190" y="85" width="30" height="30" style="fill:var(--accent)" data-show="1-4"/>
+<rect x="220" y="85" width="30" height="30" style="fill:var(--accent)" data-show="1-4"/>
+<rect x="250" y="85" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="40" y="115" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="70" y="115" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="100" y="115" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="130" y="115" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="160" y="115" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="190" y="115" width="30" height="30" style="fill:var(--accent)" data-show="1-4"/>
+<rect x="220" y="115" width="30" height="30" style="fill:var(--accent)" data-show="1-4"/>
+<rect x="250" y="115" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="40" y="145" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="70" y="145" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="100" y="145" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="130" y="145" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="160" y="145" width="30" height="30" style="fill:var(--line)" data-show="1-4"/>
+<rect x="190" y="145" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="220" y="145" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="250" y="145" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="40" y="175" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="70" y="175" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="100" y="175" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="130" y="175" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="160" y="175" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="190" y="175" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="220" y="175" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="250" y="175" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="40" y="205" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="70" y="205" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="100" y="205" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="130" y="205" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="160" y="205" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="190" y="205" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="220" y="205" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<rect x="250" y="205" width="30" height="30" style="fill:var(--sage)" data-show="1-4"/>
+<text x="640" y="40" text-anchor="middle" class="s-label-sm" data-show="2-4">192 pixels</text>
+<rect x="520" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="535" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="550" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="565" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="595" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="610" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="625" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="640" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="655" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="670" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="685" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="700" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="715" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="730" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="745" y="55" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="520" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="535" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="550" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="565" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="595" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="610" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="625" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="640" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="655" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="670" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="685" y="70" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="700" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="715" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="730" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="745" y="70" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="520" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="535" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="550" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="565" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="595" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="610" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="625" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="640" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="655" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="670" y="85" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="685" y="85" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="700" y="85" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="715" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="730" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="745" y="85" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="520" y="100" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="535" y="100" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="550" y="100" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="565" y="100" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="100" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="595" y="100" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="610" y="100" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="625" y="100" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="640" y="100" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="655" y="100" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="670" y="100" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="685" y="100" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="700" y="100" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="715" y="100" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="730" y="100" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="745" y="100" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="520" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="535" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="550" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="565" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="595" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="610" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="625" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="640" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="655" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="670" y="115" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="685" y="115" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="700" y="115" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="715" y="115" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="730" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="745" y="115" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="520" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="535" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="550" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="565" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="595" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="610" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="625" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="640" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="655" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="670" y="130" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="685" y="130" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="700" y="130" width="15" height="15" style="fill:var(--accent)" data-show="2-4"/>
+<rect x="715" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="730" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="745" y="130" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="520" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="535" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="550" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="565" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="595" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="610" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="625" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="640" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="655" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="670" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="685" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="700" y="145" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="715" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="730" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="745" y="145" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="520" y="160" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="535" y="160" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="550" y="160" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="565" y="160" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="580" y="160" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="595" y="160" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="610" y="160" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="625" y="160" width="15" height="15" style="fill:var(--line)" data-show="2-4"/>
+<rect x="640" y="160" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="655" y="160" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="670" y="160" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="685" y="160" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="700" y="160" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="715" y="160" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="730" y="160" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="745" y="160" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="520" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="535" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="550" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="565" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="580" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="595" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="610" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="625" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="640" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="655" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="670" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="685" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="700" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="715" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="730" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="745" y="175" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="520" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="535" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="550" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="565" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="580" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="595" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="610" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="625" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="640" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="655" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="670" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="685" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="700" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="715" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="730" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="745" y="190" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="520" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="535" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="550" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="565" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="580" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="595" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="610" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="625" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="640" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="655" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="670" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="685" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="700" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="715" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="730" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="745" y="205" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="520" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="535" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="550" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="565" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="580" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="595" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="610" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="625" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="640" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="655" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="670" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="685" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="700" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="715" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="730" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<rect x="745" y="220" width="15" height="15" style="fill:var(--sage)" data-show="2-4"/>
+<path d="M300 145 H 500" class="s-line-accent m-draw" data-show="2-4"/>
+<text x="400" y="270" text-anchor="middle" class="s-label" data-show="3">12 millions de pixels ≈ 36 Mo</text>
+<text x="400" y="270" text-anchor="middle" class="s-label" data-show="4">Agrandir n’ajoute aucun détail</text>
+          </svg>
+        </div>
+        <div class="scene-caption">
+          <p class="step" data-duration="4200"><b>Peu de pixels, une image grossière.</b><span>Avec 48 carrés, on devine le soleil et la colline, mais les contours sont en gros blocs.</span></p>
+          <p class="step" data-duration="4400"><b>Plus de pixels, un dessin plus fidèle.</b><span>Le même sujet en 192 carrés&nbsp;: les courbes s’affinent. Les photos modernes en comptent des millions.</span></p>
+          <p class="step" data-duration="4800"><b>Mais chaque pixel coûte des nombres.</b><span>Une photo de 12 millions de pixels, à trois nombres chacun, pèse environ 36&nbsp;Mo avant <a href="compression.html">compression</a>.</span></p>
+          <p class="step" data-duration="4800"><b>Agrandir ne crée pas de détails.</b><span>Étirer une petite image ne fait qu’étaler les mêmes pixels, en plus gros. Le détail perdu à la prise de vue ne se récupère pas.</span></p>
+        </div>
+      </section>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>Une image numérique est une <strong>grille de pixels</strong>, des carrés d’une seule couleur.</li>
+        <li>La couleur d’un pixel se note avec <strong>trois nombres</strong>, de 0 à 255&nbsp;: rouge, vert, bleu.</li>
+        <li>La <strong>résolution</strong> est le nombre de pixels&nbsp;: plus il est grand, plus l’image est fine et le fichier lourd.</li>
+        <li>On ne retrouve pas un détail <strong>qui n’a pas été capturé</strong>&nbsp;: agrandir rend flou, pas net.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">La suite</div>
+        <p>Pour comprendre pourquoi ces nombres sont stockés en 0 et en 1, voyez le binaire&nbsp;; pour alléger les fichiers d’images, la compression.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        <a class="btn" href="binaire.html">← Le binaire</a>
+        <a class="btn btn-primary" href="compression.html">La compression →</a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>GotIt ! — vulgarisation visuelle.</span><span><a href="../index.html">Retour à l’accueil</a></span></div>
+</footer>
+
+<script src="../assets/js/scene.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
