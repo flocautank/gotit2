@@ -1099,7 +1099,7 @@ CARTES = [
  dict(id='pixel', terme='Pixel (résolution)', aka=['pixel', 'pixels', 'résolution', 'définition d’écran', 'full hd', '4k'], dom='Informatique',
   une='Le plus petit point d’une image numérique : une image n’est qu’une mosaïque de pixels.',
   etapes=['Une photo affichée à l’écran semble continue. Pourtant, en zoomant beaucoup, on voit apparaître de petits carrés.', 'Chaque carré est un pixel : un point qui ne porte qu’une seule couleur, codée par des nombres (le dosage de rouge, de vert et de bleu).', 'La résolution est le nombre de pixels de l’image, en largeur et en hauteur. Plus il y en a, plus les détails sont fins.', 'Plus de pixels, c’est aussi un fichier plus lourd. Agrandir une petite image ne crée aucun détail : on étire les mêmes pixels, elle devient floue.'],
-  voir='binaire',
+  voir='pixel-image',
   pas='la taille de l’écran, qui se mesure en centimètres ; la résolution compte, elle, les points affichés.'),
 
  dict(id='ping', terme='Ping', aka=['ping', 'test de connexion', 'temps de réponse', 'ms'], dom='Réseau',
@@ -2204,4 +2204,43 @@ CARTES = [
    "Ces repères permettent de trier, de retrouver une version précise et de reconstituer le déroulé d’un incident.",
    "Un horodatage n’est fiable que si l’horloge de l’appareil est juste, et que les fuseaux horaires sont précisés."],
   voir='journaux'),
+
+ dict(id='localhost', terme='Localhost', aka=['localhost','127.0.0.1','boucle locale','loopback','en local'], dom='Réseau',
+  une="Le nom qui désigne votre propre machine : une adresse qui ne mène nulle part ailleurs.",
+  etapes=[
+   "Un développeur veut tester son site avant de le publier. Il lui faut une adresse pour y accéder, sans passer par Internet.",
+   "Chaque ordinateur possède une adresse réservée qui signifie « moi-même » : localhost, soit 127.0.0.1 en adresse IP.",
+   "Un message envoyé à cette adresse ne quitte jamais la machine : il repart aussitôt vers elle-même, sans toucher le réseau.",
+   "Un site servi sur localhost n’est visible que de votre poste : personne d’autre ne peut l’ouvrir en tapant la même adresse."],
+  voir='adresse-ip',
+  pas="l’adresse IP privée, qui identifie votre machine pour les autres appareils du réseau local ; localhost ne sert qu’à vous parler à vous-même."),
+
+ dict(id='file-attente', terme='File d’attente (queue)', aka=['file d’attente','queue','message queue','file de messages'], dom='Informatique',
+  une="Une liste où les tâches attendent leur tour, la première arrivée étant la première servie.",
+  etapes=[
+   "Un service reçoit parfois plus de demandes qu’il ne peut en traiter à la fois. Sans organisation, certaines se perdraient.",
+   "On les range donc dans une file d’attente, comme à un guichet : chaque nouvelle demande se place en queue.",
+   "Un ou plusieurs travailleurs prennent la demande en tête de file, la traitent, puis passent à la suivante.",
+   "La file absorbe les pointes de trafic, mais ne les efface pas : si les demandes arrivent plus vite qu’elles ne sont traitées, l’attente s’allonge."],
+  pas="le tampon, qui lisse un flux de données ; la file, elle, ordonne des tâches distinctes à traiter une par une."),
+
+ dict(id='moyenne-mediane', terme='Moyenne et médiane', aka=['moyenne','médiane','mediane','valeur centrale','statistique'], dom='Data',
+  une="Deux façons de résumer une série de chiffres par une seule valeur « typique », qui ne racontent pas la même chose.",
+  etapes=[
+   "Pour résumer des centaines de valeurs, par exemple des salaires, on cherche un seul chiffre qui représente le groupe.",
+   "La moyenne additionne tout et divise par le nombre de valeurs. La médiane range les valeurs par ordre et prend celle du milieu.",
+   "Une valeur extrême tire la moyenne vers elle : un seul très gros salaire la fait monter. La médiane, elle, reste en place.",
+   "Quand quelques valeurs sont très éloignées des autres, la médiane décrit mieux le cas courant ; sinon, les deux se rejoignent."],
+  voir='graphique-trompeur',
+  pas="la valeur aberrante, qui est la donnée extrême elle-même ; la médiane est le résumé qui lui résiste."),
+
+ dict(id='base-vectorielle', terme='Base de données vectorielle', aka=['base vectorielle','vector database','vector db','recherche sémantique','recherche par similarité'], dom='IA',
+  une="Une base de données qui retrouve les contenus par leur sens, et non par les mots exacts.",
+  etapes=[
+   "Une recherche classique cherche des mots identiques. Quelqu’un qui tape « voiture » ne trouvera pas un texte sur une « automobile ».",
+   "On transforme d’abord chaque texte en embedding : une liste de nombres qui place les contenus proches par le sens à des endroits proches.",
+   "La base range ces listes de nombres. À chaque question, elle la convertit pareil et renvoie les contenus dont les nombres sont les plus voisins.",
+   "C’est le moteur de la recherche dans les documents d’un RAG. Elle trouve des passages proches, sans garantir qu’ils répondent à la question."],
+  voir='rag',
+  pas="la base de données relationnelle, qui retrouve des lignes par des valeurs exactes ; la base vectorielle cherche par ressemblance."),
 ]

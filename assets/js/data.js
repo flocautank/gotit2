@@ -551,6 +551,12 @@ window.GOTIT = (function () {
       path: 'lecons/qr-code.html', duration: '5 min', level: 1,
       keywords: ['qr code', 'qrcode', 'code', 'scanner', 'binaire', 'carr\u00e9s', 'lien', 'appareil photo', 'correction d\u2019erreurs']
     },
+    'pixel-image': {
+      title: 'Le pixel, comment une image tient dans des nombres',
+      summary: 'Une photo est une mosaïque de petits carrés, chacun décrit par trois nombres : pourquoi plus de pixels donne plus de détails, et un fichier plus lourd.',
+      path: 'lecons/pixel-image.html', duration: '5 min', level: 1,
+      keywords: ['pixel', 'pixels', 'image', 'photo', 'résolution', 'couleur', 'rvb', 'rgb', 'mégapixel']
+    },
     'navigateur': {
       title: 'Ce que sait votre navigateur',
       summary: 'Cookies, pistage, navigation priv\u00e9e : ce qui est enregistr\u00e9, et par qui.',
@@ -679,7 +685,7 @@ window.GOTIT = (function () {
             { id: 'dans-la-machine', title: 'Dans la machine', lessons: ['ordinateur', 'serveur', 'cache'] },
             { id: 'trop-de-monde', title: 'Quand un site attire trop de monde', lessons: ['load-balancer', 'redondance'] },
             { id: 'ou-ca-tourne', title: 'Où tournent les programmes', lessons: ['local-vs-cloud', 'cloud-saas', 'virtualisation', 'conteneurs'] },
-            { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['binaire', 'fichiers', 'compression', 'qr-code'] }
+            { id: 'fichiers-formats', title: 'Fichiers et formats', lessons: ['binaire', 'fichiers', 'compression', 'qr-code', 'pixel-image'] }
           ]
         },
         {
@@ -2581,7 +2587,7 @@ window.GOTIT = (function () {
         "La résolution est le nombre de pixels de l’image, en largeur et en hauteur. Plus il y en a, plus les détails sont fins.",
         "Plus de pixels, c’est aussi un fichier plus lourd. Agrandir une petite image ne crée aucun détail : on étire les mêmes pixels, elle devient floue."
       ],
-      voir: "binaire",
+      voir: "pixel-image",
       pas: "la taille de l’écran, qui se mesure en centimètres ; la résolution compte, elle, les points affichés."
     },
     {
@@ -4145,6 +4151,57 @@ window.GOTIT = (function () {
         "Un horodatage n’est fiable que si l’horloge de l’appareil est juste, et que les fuseaux horaires sont précisés."
       ],
       voir: "journaux"
+    },
+    {
+      id: "localhost", terme: "Localhost", domaine: "Réseau",
+      aka: ["localhost", "127.0.0.1", "boucle locale", "loopback", "en local"],
+      une: "Le nom qui désigne votre propre machine : une adresse qui ne mène nulle part ailleurs.",
+      etapes: [
+        "Un développeur veut tester son site avant de le publier. Il lui faut une adresse pour y accéder, sans passer par Internet.",
+        "Chaque ordinateur possède une adresse réservée qui signifie « moi-même » : localhost, soit 127.0.0.1 en adresse IP.",
+        "Un message envoyé à cette adresse ne quitte jamais la machine : il repart aussitôt vers elle-même, sans toucher le réseau.",
+        "Un site servi sur localhost n’est visible que de votre poste : personne d’autre ne peut l’ouvrir en tapant la même adresse."
+      ],
+      voir: "adresse-ip",
+      pas: "l’adresse IP privée, qui identifie votre machine pour les autres appareils du réseau local ; localhost ne sert qu’à vous parler à vous-même."
+    },
+    {
+      id: "file-attente", terme: "File d’attente (queue)", domaine: "Informatique",
+      aka: ["file d’attente", "queue", "message queue", "file de messages"],
+      une: "Une liste où les tâches attendent leur tour, la première arrivée étant la première servie.",
+      etapes: [
+        "Un service reçoit parfois plus de demandes qu’il ne peut en traiter à la fois. Sans organisation, certaines se perdraient.",
+        "On les range donc dans une file d’attente, comme à un guichet : chaque nouvelle demande se place en queue.",
+        "Un ou plusieurs travailleurs prennent la demande en tête de file, la traitent, puis passent à la suivante.",
+        "La file absorbe les pointes de trafic, mais ne les efface pas : si les demandes arrivent plus vite qu’elles ne sont traitées, l’attente s’allonge."
+      ],
+      pas: "le tampon, qui lisse un flux de données ; la file, elle, ordonne des tâches distinctes à traiter une par une."
+    },
+    {
+      id: "moyenne-mediane", terme: "Moyenne et médiane", domaine: "Data",
+      aka: ["moyenne", "médiane", "mediane", "valeur centrale", "statistique"],
+      une: "Deux façons de résumer une série de chiffres par une seule valeur « typique », qui ne racontent pas la même chose.",
+      etapes: [
+        "Pour résumer des centaines de valeurs, par exemple des salaires, on cherche un seul chiffre qui représente le groupe.",
+        "La moyenne additionne tout et divise par le nombre de valeurs. La médiane range les valeurs par ordre et prend celle du milieu.",
+        "Une valeur extrême tire la moyenne vers elle : un seul très gros salaire la fait monter. La médiane, elle, reste en place.",
+        "Quand quelques valeurs sont très éloignées des autres, la médiane décrit mieux le cas courant ; sinon, les deux se rejoignent."
+      ],
+      voir: "graphique-trompeur",
+      pas: "la valeur aberrante, qui est la donnée extrême elle-même ; la médiane est le résumé qui lui résiste."
+    },
+    {
+      id: "base-vectorielle", terme: "Base de données vectorielle", domaine: "IA",
+      aka: ["base vectorielle", "vector database", "vector db", "recherche sémantique", "recherche par similarité"],
+      une: "Une base de données qui retrouve les contenus par leur sens, et non par les mots exacts.",
+      etapes: [
+        "Une recherche classique cherche des mots identiques. Quelqu’un qui tape « voiture » ne trouvera pas un texte sur une « automobile ».",
+        "On transforme d’abord chaque texte en embedding : une liste de nombres qui place les contenus proches par le sens à des endroits proches.",
+        "La base range ces listes de nombres. À chaque question, elle la convertit pareil et renvoie les contenus dont les nombres sont les plus voisins.",
+        "C’est le moteur de la recherche dans les documents d’un RAG. Elle trouve des passages proches, sans garantir qu’ils répondent à la question."
+      ],
+      voir: "rag",
+      pas: "la base de données relationnelle, qui retrouve des lignes par des valeurs exactes ; la base vectorielle cherche par ressemblance."
     }
   ];
 
